@@ -1,0 +1,700 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #912 (low_threshold for disk usage)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/911" title="Ticket #911" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/912?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/912?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/912?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/913" title="Ticket #913" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="6ec9bb665822845aefc5a528";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/911" title="Ticket #911">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/913" title="Ticket #913">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-12-31T18%3A45%3A01%2B01%3A00&amp;precision=second" title="See timeline at 12/31/12 18:45:01">2 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2014-03-11T18%3A26%3A15%2B01%3A00&amp;precision=second" title="See timeline at 03/11/14 18:26:15">13 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/912" class="trac-id">#912</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=enhancement">enhancement</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">low_threshold for disk usage</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">raphael@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=trivial">trivial</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=i3status">i3status</a>
+        </td>
+    </tr><tr>
+        <th id="h_version" class="missing">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version="></a>
+        </td>
+        <th id="h_keywords">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+              <a href="/report/query?status=!closed&amp;keywords=~i3status">i3status</a>, <a href="/report/query?status=!closed&amp;keywords=~colorization">colorization</a>, <a href="/report/query?status=!closed&amp;keywords=~disk">disk</a>
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion" class="missing">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+              rami
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+It would be nice if i3status supported setting thresholds for colorization of disk usage like it already does for battery and cpu temperature.<br />
+</p>
+<p>
+I attached a patch which implements the feature but maybe someone should carefully read it (and give me feedback, if possible), it is the second real piece of C I ever wrote. (The first was <a class="closed ticket" href="/report/ticket/911" title="enhancement: max_threshold for load and disk (closed: reporter_inactive)">#911</a> and sorry that I named the other ticked wrong, I decided to split it into two tickets after I wrote the first one.)<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(4)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/912/colorization_disk.patch" title="View attachment">colorization_disk.patch</a><a href="/report/raw-attachment/ticket/912/colorization_disk.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="5622 bytes">5.5 KB</span>) -
+      added by <em>raphael@…</em> <a class="timeline" href="/report/timeline?from=2012-12-31T18%3A45%3A15%2B01%3A00&amp;precision=second" title="See timeline at 12/31/12 18:45:15">2 years ago</a>.
+  </dt>
+              <dd>
+                Patch
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/912/ticket912_corrected.patch" title="View attachment">ticket912_corrected.patch</a><a href="/report/raw-attachment/ticket/912/ticket912_corrected.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="11721 bytes">11.4 KB</span>) -
+      added by <em>raphael@…</em> <a class="timeline" href="/report/timeline?from=2013-01-02T18%3A06%3A33%2B01%3A00&amp;precision=second" title="See timeline at 01/02/13 18:06:33">2 years ago</a>.
+  </dt>
+              <dd>
+                Corrected version
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/912/ticket912_corrected_2.patch" title="View attachment">ticket912_corrected_2.patch</a><a href="/report/raw-attachment/ticket/912/ticket912_corrected_2.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="5696 bytes">5.6 KB</span>) -
+      added by <em>raphael@…</em> <a class="timeline" href="/report/timeline?from=2013-01-10T21%3A05%3A47%2B01%3A00&amp;precision=second" title="See timeline at 01/10/13 21:05:47">2 years ago</a>.
+  </dt>
+              <dd>
+                Including the next corrections and this time all in one commit
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/912/0001-Colorized-output-for-disk-usage.patch" title="View attachment">0001-Colorized-output-for-disk-usage.patch</a><a href="/report/raw-attachment/ticket/912/0001-Colorized-output-for-disk-usage.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="5311 bytes">5.2 KB</span>) -
+      added by <em>kev@…</em> <a class="timeline" href="/report/timeline?from=2013-11-04T07%3A02%3A39%2B01%3A00&amp;precision=second" title="See timeline at 11/04/13 07:02:39">17 months ago</a>.
+  </dt>
+              <dd>
+                Patch as submitted for CR
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/912/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(13)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-12-31T18%3A45%3A15%2B01%3A00&amp;precision=second" title="See timeline at 12/31/12 18:45:15">2 years ago</a> by raphael@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/912/colorization_disk.patch"><em>colorization_disk.patch</em></a><a href="/report/raw-attachment/ticket/912/colorization_disk.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Patch<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-1-1356976059787770">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-12-31T18%3A47%3A39%2B01%3A00&amp;precision=second" title="See timeline at 12/31/12 18:47:39">2 years ago</a> by raphael@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Be careful when applying my patch, I accidentally deleted a line in man/i3status.man. Sorry for that!<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1357051812941677">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:3" class="follow-up">↓ 3</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-01-01T15%3A50%3A12%2B01%3A00&amp;precision=second" title="See timeline at 01/01/13 15:50:12">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+In addition to my comments regarding <a class="closed ticket" href="/report/ticket/911" title="enhancement: max_threshold for load and disk (closed: reporter_inactive)">#911</a>, here are my comments about your patch:<br />
+</p>
+<ol><li>Please use <tt>strncmp() != 0</tt> explicitly, not just <tt>strncmp()</tt>.
+</li><li>We place operators at the end of the previous line, e.g. <tt>if (foo &amp;&amp;\nbar)</tt>, not <tt>if (foo\n &amp;&amp; bar)</tt>.
+</li><li>I think you should place your your additional code outside the loop. Otherwise you might have a problem with colorful_output.
+</li><li>Instead of using 10737418240, use <tt>10 * 1024 * 1024 * 1024</tt> (the compiler will optimize it away). Also, the comment is wrong: it’s 10 GiB, not 10 GB ;-).
+</li></ol>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1357146381714523">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+        in reply to:
+    <a href="#comment:2">↑ 2</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-01-02T18%3A06%3A21%2B01%3A00&amp;precision=second" title="See timeline at 01/02/13 18:06:21">2 years ago</a> by raphael@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I added a corrected version in which I also changed the settings unit from bytes to MiB, because I ran into some int overflow problems when testing and I thought this might by the most elegant solution. I hope I got everything right now (although I want to add that I copied some of the wrong styling like <tt>if (foo\n &amp;&amp; bar)</tt> from other source files of the project which I used as a template (for example print_battery_status.c). :-)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-01-02T18%3A06%3A33%2B01%3A00&amp;precision=second" title="See timeline at 01/02/13 18:06:33">2 years ago</a> by raphael@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/912/ticket912_corrected.patch"><em>ticket912_corrected.patch</em></a><a href="/report/raw-attachment/ticket/912/ticket912_corrected.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Corrected version<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1357295967775265">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-01-04T11%3A39%3A27%2B01%3A00&amp;precision=second" title="See timeline at 01/04/13 11:39:27">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Thanks for updating the patch. Here are my comments:<br />
+</p>
+<ol><li>Your patch file looks weird. It seems to contain the old patch <strong>and</strong> the new patch? Please just provide a patch file with <strong>one</strong> patch against the current git version, not all the history that lead you there. Google for <tt>git rebase -i</tt> (interactive rebase) for a handy way to do that. Also please make sure your commit message is meaningful (that is, don’t use “Previous patch corrected”, but “Colorized output for disk usage”.
+</li><li>While you have corrected GB to GiB you are still using megabytes instead of mibibytes :-). I would recommend to use mibibytes in the code, comments and documentation, but allow “megabytes” as a synonym to gracefully handle errors.
+</li><li>Since you run exactly the same code in two branches of your big if/else statement, you could just combine the first two branches, that is, combine the two conditions into one big condition. Also, I think using <tt>strncmp()</tt> is not necessary since you don’t want to match only the beginning of the string, but the entire string, right? So <tt>strcmp</tt> should be more correct and less to type.
+</li><li>Given that you calculate using explicit casts to <tt>uint64_t</tt>, you should also use a <tt>uint64_t</tt> instead of an <tt>int</tt> to store the result. <tt>int</tt> is not necessarily 64-bit on any platform i3status runs on.
+</li></ol>
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-01-10T21%3A05%3A47%2B01%3A00&amp;precision=second" title="See timeline at 01/10/13 21:05:47">2 years ago</a> by raphael@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/912/ticket912_corrected_2.patch"><em>ticket912_corrected_2.patch</em></a><a href="/report/raw-attachment/ticket/912/ticket912_corrected_2.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Including the next corrections and this time all in one commit<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1361375088423534">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-02-20T16%3A44%3A48%2B01%3A00&amp;precision=second" title="See timeline at 02/20/13 16:44:48">2 years ago</a> by j-pi@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Would not be more user friendly to select type of treshold by value (value suffix)?<br />
+</p>
+<p>
+eg<br />
+</p>
+<blockquote>
+<p>
+treshold_low = 10MiB<br />
+</p>
+</blockquote>
+<p>
+or <br />
+</p>
+<blockquote>
+<p>
+treshold_low = 95%<br />
+</p>
+</blockquote>
+<p>
+or<br />
+</p>
+<blockquote>
+<p>
+treshold_low = 10MB<br />
+</p>
+</blockquote>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1361375164738432">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-02-20T16%3A46%3A04%2B01%3A00&amp;precision=second" title="See timeline at 02/20/13 16:46:04">2 years ago</a> by j-pi@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+that shoudl be of couse treshold_low = 5% (we assume free space)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1383544894066809">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-11-04T07%3A01%3A34%2B01%3A00&amp;precision=second" title="See timeline at 11/04/13 07:01:34">17 months ago</a> by kev@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Since this seems to have been languishing for some time, and I just filled my disk, I've tidied up this patch (and made one fix, to use buf.f_bavail instead of buf.f_bfree, so as to get user-available blocks) and submitted it to <a class="ext-link" href="http://cr.i3wm.org/"><span class="icon">​</span>http://cr.i3wm.org/</a> for review.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-11-04T07%3A02%3A39%2B01%3A00&amp;precision=second" title="See timeline at 11/04/13 07:02:39">17 months ago</a> by kev@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/912/0001-Colorized-output-for-disk-usage.patch"><em>0001-Colorized-output-for-disk-usage.patch</em></a><a href="/report/raw-attachment/ticket/912/0001-Colorized-output-for-disk-usage.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Patch as submitted for CR<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1394553310767423">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-03-11T16%3A55%3A10%2B01%3A00&amp;precision=second" title="See timeline at 03/11/14 16:55:10">13 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+It seems that changes to repositories other than i3 itself don’t trigger updates to the bug tracker...<br />
+</p>
+<p>
+Nevertheless, this bug was fixed in <a class="ext-link" href="http://code.stapelberg.de/git/i3status/commit/?id=bc0bd8c9e03d92ab133f4dfae52dc202c3e0cbf6"><span class="icon">​</span>bc0bd8c9e0</a>.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1394558775795113">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-03-11T18%3A26%3A15%2B01%3A00&amp;precision=second" title="See timeline at 03/11/14 18:26:15">13 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>closed</em>
+    </li>
+  </ul>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/912?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/912?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/912?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

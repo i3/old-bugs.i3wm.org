@@ -1,0 +1,262 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+set $mod Mod4
+
+focus_follows_mouse no
+
+# new_window <normal|1pixel|none>
+new_window 1pixel
+
+####################
+# appearance
+####################
+
+# font for window titles. ISO 10646 = Unicode
+# for i3 without pango support: 
+# font -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
+
+# for i3-pango: 
+font xft:Bitstream Vera Sans Mono 8
+#font xft:Arial 8
+
+# colors
+# semantics: 
+#       border is for border in title (if present)
+#       background is for text background and border around client/container
+#       text is for text in title (if present)
+#                       border  background text
+#client.unfocused        #1AB512 #000000 #ED1C24
+#client.focused_inactive #23E619 #000000 #1AB512
+#client.focused          #1AB512 #1AB512 #000000
+#client.urgent           #FF0000 #909090 #eeeeee
+
+#####################
+#floating settings
+#####################
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+#####################
+# launch programs 
+#####################
+
+#bindsym $mod+Return exec --no-startup-id urxvt -ip -sh 70
+bindsym $mod+Return exec --no-startup-id urxvt 
+bindsym $mod+Shift+Return exec --no-startup-id /home/joep/bin/cwdspawn
+bindsym $mod+Shift+P exec --no-startup-id ~/bin/dmenurun
+bindsym $mod+m exec mpddmenu
+bindsym $mod+p exec --no-startup-id ~/bin/launch
+bindsym $mod+n exec --no-startup-id ~/.config/dwb/userscripts/dwbhist
+bindsym $mod+b exec --no-startup-id ~/.config/dwb/userscripts/dwbbookmark
+
+# kill kill kill! 
+bindsym $mod+BackSpace kill
+
+#####################
+# control tiling
+#####################
+
+# change focus
+# with arrows
+bindsym $mod+Left        focus left
+bindsym $mod+Down        focus down
+bindsym $mod+Up          focus up
+bindsym $mod+Right       focus right
+
+# move focused window
+bindsym $mod+Shift+J     move left
+bindsym $mod+Shift+K     move down
+bindsym $mod+Shift+L     move up
+bindsym $mod+Shift+colon move right
+# with arrows
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
+bindsym $mod+Shift+Right move right
+
+###################
+# container control
+###################
+
+# split in horizontal/vertical orientation
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+Shift+H splith
+bindsym $mod+Shift+V splitv
+
+# toggle fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split 
+bindsym $mod+t border toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+d focus child
+
+# switch to workspace
+# alt-tab to jump to last workspace
+bindsym Mod1+Tab workspace back_and_forth
+
+# dmenu script to jump to open windows: 
+bindsym $mod+j exec winmenu
+
+
+set $1  1: browse
+set $2  2
+set $3  3
+set $4  4
+set $5  5
+set $6  6
+set $7  7: mail
+set $8  8: irc
+set $9  9: skype
+set $0  10
+
+bindsym $mod+1 workspace $1
+bindsym $mod+2 workspace $2
+bindsym $mod+3 workspace $3
+bindsym $mod+4 workspace $4
+bindsym $mod+5 workspace $5
+bindsym $mod+6 workspace $6
+bindsym $mod+7 workspace $7
+bindsym $mod+8 workspace $8
+bindsym $mod+9 workspace $9
+bindsym $mod+0 workspace $0
+
+# move focused container to workspace
+bindsym $mod+Shift+exclam      move workspace $1
+bindsym $mod+Shift+at          move workspace $2
+bindsym $mod+Shift+numbersign  move workspace $3
+bindsym $mod+Shift+dollar      move workspace $4
+bindsym $mod+Shift+percent     move workspace $5
+bindsym $mod+Shift+asciicircum move workspace $6
+bindsym $mod+Shift+ampersand   move workspace $7
+bindsym $mod+Shift+asterisk    move workspace $8
+bindsym $mod+Shift+parenleft   move workspace $9
+bindsym $mod+Shift+parenright  move workspace $0
+
+# move and follow focused container to workspace
+bindsym $mod+Control+1 move workspace $1; workspace $1
+bindsym $mod+Control+2 move workspace $2; workspace $2
+bindsym $mod+Control+3 move workspace $3; workspace $3
+bindsym $mod+Control+4 move workspace $4; workspace $4
+bindsym $mod+Control+5 move workspace $5; workspace $5
+bindsym $mod+Control+6 move workspace $6; workspace $6
+bindsym $mod+Control+7 move workspace $7; workspace $7
+bindsym $mod+Control+8 move workspace $8; workspace $8
+bindsym $mod+Control+9 move workspace $9; workspace $9
+bindsym $mod+Control+0 move workspace $0; workspace $0
+
+# make use of the names: 
+assign [instance="^Navigator$"] → $1
+assign [instance="^uzbl-core$"] → $1
+# assign [instance="^dwb"] → $1
+assign [instance="^claws-mail$" window_role="mainwindow"] → $7
+assign [instance="^skype$"] → $9
+for_window [class="^Dwb"] layout tabbed
+
+#################
+# resize window #
+# (you can also use the mouse for that)
+#################
+set $horsize 5
+set $versize 5
+
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # They resize the border in the direction you pressed, e.g.
+        # when pressing left, the window is resized so that it has
+        # more space on its left
+
+        bindsym j           resize shrink left  $horsize px or $horsize ppt
+        bindsym Shift+J     resize grow   left  $horsize px or $horsize ppt
+
+        bindsym k           resize shrink down  $versize px or $versize ppt
+        bindsym Shift+K     resize grow   down  $versize px or $versize ppt
+
+        bindsym l           resize shrink up    $versize px or $versize ppt
+        bindsym Shift+L     resize grow   up    $versize px or $versize ppt
+
+        bindsym semicolon   resize shrink right $horsize px or $horsize ppt
+        bindsym Shift+colon resize grow   right $horsize px or $horsize ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink left  $horsize px or $horsize ppt
+        bindsym Shift+Left  resize grow   left  $horsize px or $horsize ppt
+
+        bindsym Down        resize shrink down  $versize px or $versize ppt
+        bindsym Shift+Down  resize grow   down  $versize px or $versize ppt
+
+        bindsym Up          resize shrink up    $versize px or $versize ppt
+        bindsym Shift+Up    resize grow   up    $versize px or $versize ppt
+
+        bindsym Right       resize shrink right $horsize px or $horsize ppt
+        bindsym Shift+Right resize grow   right $horsize px or $horsize ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        }
+
+bindsym $mod+r mode "resize"
+
+
+#####################
+# do stuff to i3
+#####################
+
+# reload the configuration file
+bindsym $mod+Shift+C reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+R restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+E exit
+
+#####################
+# Actions on launch  
+#####################
+
+bar {
+    status_command      i3status
+    position            top
+    #output              LVDS1
+    workspace_buttons   yes
+    tray_output         LVDS1
+    mode                dock
+    font xft:Dejavu Mono 8
+
+    colors {
+        background #000000
+        statusline #285577
+
+        #                   text    bckgr   border
+        focused_workspace   #ffffff #285577 
+        active_workspace    #ffffff #333333
+        inactive_workspace  #888888 #222222
+        urgent_workspace    #ffffff #900000
+    }
+
+}
+
+exec /usr/bin/xrandr --output VGA1 --auto --right-of LVDS1
+exec --no-startup-id /usr/bin/feh --bg-center ~/fyre_fwh.png
+
+
+
+
+
+

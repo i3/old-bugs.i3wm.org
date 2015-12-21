@@ -1,0 +1,25 @@
+[i3lock-debug] found Xinerama screen: 1366 x 768 at 0 x 0
+[i3lock-debug] found Xinerama screen: 1366 x 768 at 0 x 0
+[i3lock-debug] current password = d
+[i3lock-debug] current password = de
+[i3lock-debug] current password = deb
+[i3lock-debug] current password = debu
+[i3lock-debug] current password = debug
+[i3lock-debug] current password = debugg
+[i3lock-debug] current password = debuggy
+[i3lock-debug] current password = debuggyb
+[i3lock-debug] current password = debuggybu
+[i3lock-debug] current password = debuggybug
+[i3lock-debug] current password = debuggybugb
+[i3lock-debug] current password = debuggybugbu
+[i3lock-debug] current password = debuggybugbug
+[i3lock-debug] successfully authenticated
+[i3lock-debug] found Xinerama screen: 1366 x 768 at 0 x 0
+[i3lock-debug] Watching window 0x03400005
+[i3lock-debug] Read event of type 15
+[i3lock-debug] Read event of type 34
+[i3lock-debug] Unhandled event type 34
+[i3lock-debug] Read event of type 34
+[i3lock-debug] Unhandled event type 34
+[i3lock-debug] Read event of type 18
+[i3lock-debug] UnmapNotify for 0x03400005

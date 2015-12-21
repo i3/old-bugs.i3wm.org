@@ -1,0 +1,40 @@
+--- a/i3bar/src/xcb.c	2012-04-28 00:00:00.000000000 +0000
++++ b/i3bar/src/xcb.c	2012-08-29 00:00:00.000000000 +0000
+@@ -1232,7 +1232,7 @@
+                                                                      xcb_root,
+                                                                      walk->rect.x, walk->rect.y + walk->rect.h - font.height - 6,
+                                                                      walk->rect.w, font.height + 6,
+-                                                                     1,
++                                                                     0,
+                                                                      XCB_WINDOW_CLASS_INPUT_OUTPUT,
+                                                                      xcb_screen->root_visual,
+                                                                      mask,
+@@ -1492,7 +1492,7 @@
+                           outputs_walk->bargc,
+                           mask,
+                           vals_border);
+-            xcb_rectangle_t rect_border = { i, 0, ws_walk->name_width + 10, font.height + 4 };
++            xcb_rectangle_t rect_border = { i, 0, ws_walk->name_width + 9, font.height + 6 };
+             xcb_poly_fill_rectangle(xcb_connection,
+                                     outputs_walk->buffer,
+                                     outputs_walk->bargc,
+@@ -1503,7 +1503,7 @@
+                           outputs_walk->bargc,
+                           mask,
+                           vals);
+-            xcb_rectangle_t rect = { i + 1, 1, ws_walk->name_width + 8, font.height + 2 };
++            xcb_rectangle_t rect = { i + 1, 1, ws_walk->name_width + 7, font.height + 4 };
+             xcb_poly_fill_rectangle(xcb_connection,
+                                     outputs_walk->buffer,
+                                     outputs_walk->bargc,
+@@ -1511,8 +1511,8 @@
+                                     &rect);
+             set_font_colors(outputs_walk->bargc, fg_color, bg_color);
+             draw_text((char*)ws_walk->ucs2_name, ws_walk->name_glyphs, true,
+-                    outputs_walk->buffer, outputs_walk->bargc, i + 5, 2, ws_walk->name_width);
+-            i += 10 + ws_walk->name_width + 1;
++                    outputs_walk->buffer, outputs_walk->bargc, i + 5, 3, ws_walk->name_width);
++            i += 9 + ws_walk->name_width + 1;
+         }
+ 
+         i = 0;

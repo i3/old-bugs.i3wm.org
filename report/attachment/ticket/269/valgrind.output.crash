@@ -1,0 +1,59 @@
+==14476== Invalid write of size 8
+==14476==    at 0x6B54252: ??? (in /lib64/libc-2.12.1.so)
+==14476==    by 0x422825: parse_file (cfgparse.y:152)
+==14476==    by 0x40EF30: parse_configuration (config.c:299)
+==14476==    by 0x40F488: load_configuration (config.c:378)
+==14476==    by 0x40FE7B: main (mainx.c:286)
+==14476==  Address 0x73cd160 is 5,040 bytes inside a block of size 5,047 alloc'd
+==14476==    at 0x4C2602E: malloc (vg_replace_malloc.c:195)
+==14476==    by 0x41B202: smalloc (util.c:69)
+==14476==    by 0x422721: parse_file (cfgparse.y:134)
+==14476==    by 0x40EF30: parse_configuration (config.c:299)
+==14476==    by 0x40F488: load_configuration (config.c:378)
+==14476==    by 0x40FE7B: main (mainx.c:286)
+==14476== 
+==14476== Invalid write of size 1
+==14476==    at 0x422849: parse_file (cfgparse.y:154)
+==14476==    by 0x40EF30: parse_configuration (config.c:299)
+==14476==    by 0x40F488: load_configuration (config.c:378)
+==14476==    by 0x40FE7B: main (mainx.c:286)
+==14476==  Address 0x73cd168 is 1 bytes after a block of size 5,047 alloc'd
+==14476==    at 0x4C2602E: malloc (vg_replace_malloc.c:195)
+==14476==    by 0x41B202: smalloc (util.c:69)
+==14476==    by 0x422721: parse_file (cfgparse.y:134)
+==14476==    by 0x40EF30: parse_configuration (config.c:299)
+==14476==    by 0x40F488: load_configuration (config.c:378)
+==14476==    by 0x40FE7B: main (mainx.c:286)
+==14476== 
+==14476== Invalid read of size 8
+==14476==    at 0x6AC3076: __GI_strlen (in /lib64/libc-2.12.1.so)
+==14476==    by 0x428528: yy_scan_string (cfgparse.yy.c:4224)
+==14476==    by 0x4228F7: parse_file (cfgparse.y:165)
+==14476==    by 0x40EF30: parse_configuration (config.c:299)
+==14476==    by 0x40F488: load_configuration (config.c:378)
+==14476==    by 0x40FE7B: main (mainx.c:286)
+==14476==  Address 0x73cd160 is 5,040 bytes inside a block of size 5,047 alloc'd
+==14476==    at 0x4C2602E: malloc (vg_replace_malloc.c:195)
+==14476==    by 0x41B202: smalloc (util.c:69)
+==14476==    by 0x422721: parse_file (cfgparse.y:134)
+==14476==    by 0x40EF30: parse_configuration (config.c:299)
+==14476==    by 0x40F488: load_configuration (config.c:378)
+==14476==    by 0x40FE7B: main (mainx.c:286)
+==14476== 
+==14476== Invalid read of size 1
+==14476==    at 0x428593: yy_scan_bytes (cfgparse.yy.c:4248)
+==14476==    by 0x428538: yy_scan_string (cfgparse.yy.c:4224)
+==14476==    by 0x4228F7: parse_file (cfgparse.y:165)
+==14476==    by 0x40EF30: parse_configuration (config.c:299)
+==14476==    by 0x40F488: load_configuration (config.c:378)
+==14476==    by 0x40FE7B: main (mainx.c:286)
+==14476==  Address 0x73cd167 is 0 bytes after a block of size 5,047 alloc'd
+==14476==    at 0x4C2602E: malloc (vg_replace_malloc.c:195)
+==14476==    by 0x41B202: smalloc (util.c:69)
+==14476==    by 0x422721: parse_file (cfgparse.y:134)
+==14476==    by 0x40EF30: parse_configuration (config.c:299)
+==14476==    by 0x40F488: load_configuration (config.c:378)
+==14476==    by 0x40FE7B: main (mainx.c:286)
+==14476== 
+font -*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-*
+        Found symbolic mod8 with key f and command f

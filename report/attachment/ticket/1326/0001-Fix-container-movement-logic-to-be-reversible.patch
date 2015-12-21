@@ -1,0 +1,45 @@
+From 1808fca1883f359427d196b2356c86ade18f2fb8 Mon Sep 17 00:00:00 2001
+From: icandothings <icandothings@gmail.com>
+Date: Thu, 18 Sep 2014 22:36:39 -0400
+Subject: [PATCH 1/1] Fix container movement logic to be reversible
+
+Fixes #1326
+Logic for this was already there for when we were moving to the
+beginning/end of the parent container.  Just removed the logic that
+inserts into the previous/next container when the parent isn't of the
+same orientation as the move.
+---
+ src/move.c | 17 +++--------------
+ 1 file changed, 3 insertions(+), 14 deletions(-)
+
+diff --git a/src/move.c b/src/move.c
+index 42510d5..82c6090 100644
+--- a/src/move.c
++++ b/src/move.c
+@@ -239,20 +239,9 @@ void tree_move(int direction) {
+ 
+     Con *next = (direction == D_UP || direction == D_LEFT ? TAILQ_PREV(above, nodes_head, nodes) : TAILQ_NEXT(above, nodes));
+ 
+-    if (next && !con_is_leaf(next)) {
+-        DLOG("Moving into the bordering branch of our adjacent container\n");
+-        target = con_descend_direction(next, direction);
+-        position = (con_orientation(target->parent) != o ||
+-                            direction == D_UP ||
+-                            direction == D_LEFT
+-                        ? AFTER
+-                        : BEFORE);
+-        insert_con_into(con, target, position);
+-    } else {
+-        DLOG("Moving into container above\n");
+-        position = (direction == D_UP || direction == D_LEFT ? BEFORE : AFTER);
+-        insert_con_into(con, above, position);
+-    }
++    DLOG("Moving into container above\n");
++    position = (direction == D_UP || direction == D_LEFT ? BEFORE : AFTER);
++    insert_con_into(con, above, position);
+ 
+ end:
+     /* We need to call con_focus() to fix the focus stack "above" the container
+-- 
+2.1.0
+

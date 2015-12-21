@@ -1,0 +1,71 @@
+/tmp:
+total 188K
+-rw-r--r-- 1 sar  users 117K Jun 13 20:17 compton.log
+drwx------ 2 sar  users 4.0K Jun 13 20:09 i3-sar.0adg3h
+drwx------ 2 sar  users 4.0K Jun 13 20:09 i3-sar.F7GFss
+drwx------ 2 sar  users 4.0K Jun 12 22:20 i3-sar.Gl8LAF
+drwx------ 2 sar  users 4.0K Jun 12 22:20 i3-sar.HpOnDS
+drwx------ 2 sar  users 4.0K Jun 13 02:05 i3-sar.JJsfbv
+drwx------ 2 sar  users 4.0K Jun 12 22:20 i3-sar.LyOEv7
+drwx------ 2 sar  users 4.0K Jun 13 02:05 i3-sar.M7HnV4
+drwx------ 2 sar  users 4.0K Jun 13 20:18 i3-sar.NKJEVy
+drwx------ 2 sar  users 4.0K Jun 12 18:33 i3-sar.Q4zAbu
+drwx------ 2 sar  users 4.0K Jun 12 18:33 i3-sar.XH3MCg
+drwx------ 2 sar  users 4.0K Jun 13 00:51 i3-sar.aibeRA
+drwx------ 2 sar  users 4.0K Jun 12 18:33 i3-sar.etdc30
+drwx------ 2 sar  users 4.0K Jun 12 18:33 i3-sar.k6y1OX
+drwx------ 2 sar  users 4.0K Jun 12 22:35 i3-sar.pelen4
+drwx------ 2 sar  users 4.0K Jun 12 22:20 i3-sar.wS5XB3
+drwxrwxrwt 2 root root  4.0K Apr  7 16:08 spacefm.tmp
+
+/tmp/i3-sar.0adg3h:
+total 0
+
+/tmp/i3-sar.F7GFss:
+total 0
+srwxr-xr-x 1 sar users 0 Jun 13 03:44 ipc-socket.5081
+
+/tmp/i3-sar.Gl8LAF:
+total 0
+
+/tmp/i3-sar.HpOnDS:
+total 0
+
+/tmp/i3-sar.JJsfbv:
+total 0
+srwxr-xr-x 1 sar users 0 Jun 12 23:36 ipc-socket.25227
+
+/tmp/i3-sar.LyOEv7:
+total 0
+
+/tmp/i3-sar.M7HnV4:
+total 0
+
+/tmp/i3-sar.NKJEVy:
+total 0
+-rw-r--r-- 1 sar users 0 Jun 13 20:18 errorlog.2522
+srwxr-xr-x 1 sar users 0 Jun 13 20:18 ipc-socket.2522
+
+/tmp/i3-sar.Q4zAbu:
+total 0
+
+/tmp/i3-sar.XH3MCg:
+total 0
+
+/tmp/i3-sar.aibeRA:
+total 0
+
+/tmp/i3-sar.etdc30:
+total 0
+
+/tmp/i3-sar.k6y1OX:
+total 0
+
+/tmp/i3-sar.pelen4:
+total 0
+
+/tmp/i3-sar.wS5XB3:
+total 0
+
+/tmp/spacefm.tmp:
+total 0

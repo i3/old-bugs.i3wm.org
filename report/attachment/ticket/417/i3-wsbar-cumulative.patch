@@ -1,0 +1,52 @@
+--- i3-wsbar	2011-06-22 13:11:22.295903847 +0200
++++ /usr/bin/i3-wsbar	2011-06-22 13:13:26.967903899 +0200
+@@ -7,6 +7,7 @@
+ use Getopt::Long;
+ use Pod::Usage;
+ use IPC::Run qw(start pump);
++use Try::Tiny;
+ use AnyEvent::I3;
+ use AnyEvent;
+ use v5.10;
+@@ -141,6 +142,7 @@
+ sub update_output {
+     my $dzen_bg = "#111111";
+     my $out;
++	my $previous_output;
+ 
+     for my $name (keys %{$outputs}) {
+         my $width = $outputs->{$name}->{rect}->{width};
+@@ -149,12 +151,29 @@
+         for my $ws (@{$workspaces}) {
+             next if $ws->{output} ne $name and !$show_all;
+ 
+-            my ($bg, $fg) = qw(333333 888888);
+-            ($bg, $fg) = qw(4c7899 ffffff) if $ws->{visible};
+-            ($bg, $fg) = qw(900000 ffffff) if $ws->{urgent};
++			my $unfocused_bg = $ENV{'I3_WSBAR_UNFOCUSED_BG'};
++			$unfocused_bg = ($unfocused_bg eq '') ? "333333" : $unfocused_bg;
++			my $unfocused_fg = $ENV{'I3_WSBAR_UNFOCUSED_FG'};
++			$unfocused_fg = ($unfocused_fg eq '') ? "888888" : $unfocused_fg;
++			my $focused_bg = $ENV{'I3_WSBAR_FOCUSED_BG'};
++			$focused_bg = ($focused_bg eq '') ? "4c7899" : $focused_bg;
++			my $focused_fg = $ENV{'I3_WSBAR_FOCUSED_FG'};
++			$focused_fg = ($focused_fg eq '') ? "ffffff" : $focused_fg;
++			my $urgent_bg = $ENV{'I3_WSBAR_URGENT_BG'};
++			$urgent_bg = ($urgent_bg eq '') ? "900000" : $urgent_bg;
++			my $urgent_fg = $ENV{'I3_WSBAR_URGENT_FG'};
++			$urgent_fg = ($urgent_fg eq '') ? "ffffff" : $urgent_fg;
++            my ($bg, $fg) = ($unfocused_bg, $unfocused_fg);
++            ($bg, $fg) = ($focused_bg, $focused_fg) if $ws->{visible};
++            ($bg, $fg) = ($urgent_bg, $urgent_fg) if $ws->{urgent};
+ 
+-            my $cmd = q|i3-msg "| . $ws->{num} . q|"|;
++            my $cmd = q|i3-msg "workspace | . $ws->{num} . q|"|;
+             my $name = $ws->{name};
++			
++			if ($previous_output ne "" && $previous_output ne $ws->{output}) {
++				$out .= qq|^fg(#$urgent_bg)^ib(1)\|^ib(0)^p(+4)|;
++			}
++			$previous_output = $ws->{output};
+ 
+             # Begin the clickable area
+             $out .= qq|^ca(1,$cmd)|;

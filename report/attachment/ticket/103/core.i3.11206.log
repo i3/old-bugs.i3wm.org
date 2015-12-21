@@ -1,0 +1,1185 @@
+
+07.09.2009 00:20:42 - src/commands.c:parse_command:813 - --- parsing command "2" ---
+07.09.2009 00:20:42 - src/workspace.c:workspace_show:78 - show_workspace(2)
+07.09.2009 00:20:42 - src/workspace.c:workspace_initialize:212 - Workspace already initialized
+07.09.2009 00:20:42 - src/util.c:set_focus:265 - Window: frame 0x00a00039, child 0x0100003d
+07.09.2009 00:20:42 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:42 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+Event NoExpose following seqnum 56084.
+07.09.2009 00:20:42 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:43 - src/handlers.c:handle_key_press:98 - Keypress 12, state raw = 24
+07.09.2009 00:20:43 - src/handlers.c:handle_key_press:102 - (removed numlock, state = 8)
+07.09.2009 00:20:43 - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 8)
+07.09.2009 00:20:43 - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 8)
+07.09.2009 00:20:43 - src/commands.c:parse_command:813 - --- parsing command "3" ---
+07.09.2009 00:20:43 - src/workspace.c:workspace_show:78 - show_workspace(3)
+07.09.2009 00:20:43 - src/workspace.c:workspace_initialize:212 - Workspace already initialized
+07.09.2009 00:20:43 - src/workspace.c:workspace_unmap_clients:314 - unmapping normal client 0xe821e0 / 0xa00039 / 0x100003d
+07.09.2009 00:20:43 - src/workspace.c:workspace_show:134 - new current row = 0, current col = 0
+07.09.2009 00:20:43 - src/util.c:set_focus:265 - Window: frame 0x00a00031, child 0x00800084
+07.09.2009 00:20:43 - src/layout.c:render_workspace:618 - height is 1163
+07.09.2009 00:20:43 - src/layout.c:render_bars:483 - client is at 1163, should be at 1163
+07.09.2009 00:20:43 - src/layout.c:render_bars:495 - desired_height = 18
+07.09.2009 00:20:43 - src/layout.c:render_workspace:618 - height is 845
+07.09.2009 00:20:43 - src/handlers.c:handle_unmap_notify_event:649 - event->window = 00a00039, event->event = 00a00039
+07.09.2009 00:20:43 - src/handlers.c:handle_unmap_notify_event:650 - UnmapNotify for 0x00a00039 (received from 0x00a00039)
+07.09.2009 00:20:43 - src/handlers.c:handle_unmap_notify_event:652 - not a managed window. Ignoring.
+07.09.2009 00:20:43 - src/handlers.c:handle_enter_notify:184 - enter_notify for 00000116, mode = 0, detail 2, serial 56094
+Event MapNotify following seqnum 56101.
+07.09.2009 00:20:43 - src/handlers.c:handle_expose_event:906 - window = 00a00031
+07.09.2009 00:20:45 - src/handlers.c:handle_windowname_change:758 - _NET_WM_NAME changed to "aMule remote control 2.2.5 -- Up: 20,0 | Down: 11,8"
+07.09.2009 00:20:46 - src/handlers.c:handle_key_press:98 - Keypress 13, state raw = 24
+07.09.2009 00:20:46 - src/handlers.c:handle_key_press:102 - (removed numlock, state = 8)
+07.09.2009 00:20:46 - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 8)
+07.09.2009 00:20:46 - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 8)
+07.09.2009 00:20:46 - src/commands.c:parse_command:813 - --- parsing command "4" ---
+07.09.2009 00:20:46 - src/workspace.c:workspace_show:78 - show_workspace(4)
+07.09.2009 00:20:46 - src/workspace.c:workspace_unmap_clients:314 - unmapping normal client 0xe8c880 / 0xa00031 / 0x800084
+07.09.2009 00:20:46 - src/workspace.c:workspace_show:134 - new current row = 0, current col = 0
+07.09.2009 00:20:46 - src/layout.c:render_workspace:618 - height is 1163
+07.09.2009 00:20:46 - src/layout.c:render_bars:483 - client is at 1163, should be at 1163
+07.09.2009 00:20:46 - src/layout.c:render_bars:495 - desired_height = 18
+07.09.2009 00:20:46 - src/layout.c:render_workspace:618 - height is 845
+07.09.2009 00:20:46 - src/handlers.c:handle_unmap_notify_event:649 - event->window = 00a00031, event->event = 00a00031
+07.09.2009 00:20:46 - src/handlers.c:handle_unmap_notify_event:650 - UnmapNotify for 0x00a00031 (received from 0x00a00031)
+07.09.2009 00:20:46 - src/handlers.c:handle_unmap_notify_event:652 - not a managed window. Ignoring.
+07.09.2009 00:20:46 - src/handlers.c:handle_enter_notify:184 - enter_notify for 00000116, mode = 0, detail 2, serial 56194
+07.09.2009 00:20:46 - src/handlers.c:handle_key_press:98 - Keypress 11, state raw = 24
+07.09.2009 00:20:46 - src/handlers.c:handle_key_press:102 - (removed numlock, state = 8)
+07.09.2009 00:20:46 - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 8)
+07.09.2009 00:20:46 - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 8)
+07.09.2009 00:20:46 - src/commands.c:parse_command:813 - --- parsing command "2" ---
+07.09.2009 00:20:46 - src/workspace.c:workspace_show:78 - show_workspace(2)
+07.09.2009 00:20:46 - src/workspace.c:workspace_initialize:212 - Workspace already initialized
+07.09.2009 00:20:46 - src/workspace.c:workspace_unmap_clients:335 - workspace 0x61fa70 is empty
+07.09.2009 00:20:46 - src/workspace.c:workspace_show:134 - new current row = 0, current col = 0
+07.09.2009 00:20:46 - src/util.c:set_focus:265 - Window: frame 0x00a00039, child 0x0100003d
+07.09.2009 00:20:46 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:46 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:46 - src/layout.c:render_workspace:618 - height is 1163
+07.09.2009 00:20:46 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:46 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:46 - src/layout.c:render_bars:483 - client is at 1163, should be at 1163
+07.09.2009 00:20:46 - src/layout.c:render_bars:495 - desired_height = 18
+07.09.2009 00:20:46 - src/layout.c:render_workspace:618 - height is 845
+Event MapNotify following seqnum 56258.
+07.09.2009 00:20:46 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:46 - src/handlers.c:handle_expose_event:906 - window = 00a00034
+07.09.2009 00:20:46 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:46 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+Event NoExpose following seqnum 56271.
+07.09.2009 00:20:46 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+Event NoExpose following seqnum 56283.
+Event NoExpose following seqnum 56347.
+07.09.2009 00:20:48 - src/handlers.c:handle_key_press:98 - Keypress 43, state raw = 24
+07.09.2009 00:20:48 - src/handlers.c:handle_key_press:102 - (removed numlock, state = 8)
+07.09.2009 00:20:48 - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 8)
+07.09.2009 00:20:48 - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 8)
+07.09.2009 00:20:48 - src/commands.c:parse_command:813 - --- parsing command "s" ---
+07.09.2009 00:20:48 - src/commands.c:parse_command:894 - Switching mode for current container
+07.09.2009 00:20:48 - src/handlers.c:handle_key_press:98 - Keypress 26, state raw = 24
+07.09.2009 00:20:48 - src/handlers.c:handle_key_press:102 - (removed numlock, state = 8)
+07.09.2009 00:20:48 - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 8)
+07.09.2009 00:20:48 - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 8)
+07.09.2009 00:20:48 - src/commands.c:parse_command:813 - --- parsing command "d" ---
+07.09.2009 00:20:48 - src/commands.c:parse_command:894 - Switching mode for current container
+07.09.2009 00:20:48 - src/layout.c:render_workspace:618 - height is 1163
+07.09.2009 00:20:48 - src/layout.c:resize_client:248 - frame 0x00a00039 needs to be pushed to 0x0
+07.09.2009 00:20:48 - src/layout.c:resize_client:249 - resizing client 0x00a00039 to 1920 x 1163
+07.09.2009 00:20:48 - src/layout.c:resize_client:329 - child will be at 2x17 with size 1916x1144
+07.09.2009 00:20:48 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:48 - src/layout.c:render_bars:483 - client is at 1163, should be at 1163
+07.09.2009 00:20:48 - src/layout.c:render_bars:495 - desired_height = 18
+07.09.2009 00:20:48 - src/layout.c:render_workspace:618 - height is 845
+07.09.2009 00:20:48 - src/util.c:set_focus:265 - Window: frame 0x00a00039, child 0x0100003d
+07.09.2009 00:20:48 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:48 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:49 - src/handlers.c:handle_key_press:98 - Keypress 43, state raw = 24
+07.09.2009 00:20:49 - src/handlers.c:handle_key_press:102 - (removed numlock, state = 8)
+07.09.2009 00:20:49 - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 8)
+07.09.2009 00:20:49 - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 8)
+07.09.2009 00:20:49 - src/commands.c:parse_command:813 - --- parsing command "s" ---
+07.09.2009 00:20:49 - src/commands.c:parse_command:894 - Switching mode for current container
+07.09.2009 00:20:49 - src/layout.c:render_workspace:618 - height is 1163
+07.09.2009 00:20:49 - src/layout.c:render_container:393 - remapping stack win
+07.09.2009 00:20:49 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:49 - src/xcb.c:cached_pixmap_prepare:282 - Creating new pixmap...
+07.09.2009 00:20:49 - src/layout.c:resize_client:248 - frame 0x00a00039 needs to be pushed to 0x17
+07.09.2009 00:20:49 - src/layout.c:resize_client:249 - resizing client 0x00a00039 to 1920 x 1146
+07.09.2009 00:20:49 - src/layout.c:resize_client:329 - child will be at 2x0 with size 1916x1144
+07.09.2009 00:20:49 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:49 - src/layout.c:render_bars:483 - client is at 1163, should be at 1163
+07.09.2009 00:20:49 - src/layout.c:render_bars:495 - desired_height = 18
+07.09.2009 00:20:49 - src/layout.c:render_workspace:618 - height is 845
+07.09.2009 00:20:49 - src/util.c:set_focus:265 - Window: frame 0x00a00039, child 0x0100003d
+07.09.2009 00:20:49 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:49 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:49 - src/handlers.c:handle_expose_event:906 - window = 00a000a8
+07.09.2009 00:20:49 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:49 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:49 - src/handlers.c:handle_expose_event:906 - window = 00a000a8
+07.09.2009 00:20:49 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:49 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:49 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:49 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+Event NoExpose following seqnum 56479.
+Event NoExpose following seqnum 56540.
+07.09.2009 00:20:49 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+Event NoExpose following seqnum 56550.
+Event NoExpose following seqnum 56559.
+07.09.2009 00:20:49 - src/handlers.c:handle_key_press:98 - Keypress 26, state raw = 24
+07.09.2009 00:20:49 - src/handlers.c:handle_key_press:102 - (removed numlock, state = 8)
+07.09.2009 00:20:49 - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 8)
+07.09.2009 00:20:49 - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 8)
+07.09.2009 00:20:49 - src/commands.c:parse_command:813 - --- parsing command "d" ---
+07.09.2009 00:20:49 - src/commands.c:parse_command:894 - Switching mode for current container
+07.09.2009 00:20:49 - src/layout.c:render_workspace:618 - height is 1163
+07.09.2009 00:20:49 - src/layout.c:resize_client:248 - frame 0x00a00039 needs to be pushed to 0x0
+07.09.2009 00:20:49 - src/layout.c:resize_client:249 - resizing client 0x00a00039 to 1920 x 1163
+07.09.2009 00:20:49 - src/layout.c:resize_client:329 - child will be at 2x17 with size 1916x1144
+07.09.2009 00:20:49 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:49 - src/layout.c:render_bars:483 - client is at 1163, should be at 1163
+07.09.2009 00:20:49 - src/layout.c:render_bars:495 - desired_height = 18
+07.09.2009 00:20:49 - src/layout.c:render_workspace:618 - height is 845
+07.09.2009 00:20:49 - src/util.c:set_focus:265 - Window: frame 0x00a00039, child 0x0100003d
+07.09.2009 00:20:49 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:49 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:50 - src/handlers.c:handle_key_press:98 - Keypress 43, state raw = 24
+07.09.2009 00:20:50 - src/handlers.c:handle_key_press:102 - (removed numlock, state = 8)
+07.09.2009 00:20:50 - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 8)
+07.09.2009 00:20:50 - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 8)
+07.09.2009 00:20:50 - src/commands.c:parse_command:813 - --- parsing command "s" ---
+07.09.2009 00:20:50 - src/commands.c:parse_command:894 - Switching mode for current container
+07.09.2009 00:20:50 - src/layout.c:render_workspace:618 - height is 1163
+07.09.2009 00:20:50 - src/layout.c:render_container:393 - remapping stack win
+07.09.2009 00:20:50 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:50 - src/xcb.c:cached_pixmap_prepare:282 - Creating new pixmap...
+07.09.2009 00:20:50 - src/layout.c:resize_client:248 - frame 0x00a00039 needs to be pushed to 0x17
+07.09.2009 00:20:50 - src/layout.c:resize_client:249 - resizing client 0x00a00039 to 1920 x 1146
+07.09.2009 00:20:50 - src/layout.c:resize_client:329 - child will be at 2x0 with size 1916x1144
+07.09.2009 00:20:50 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:50 - src/layout.c:render_bars:483 - client is at 1163, should be at 1163
+07.09.2009 00:20:50 - src/layout.c:render_bars:495 - desired_height = 18
+07.09.2009 00:20:50 - src/layout.c:render_workspace:618 - height is 845
+07.09.2009 00:20:50 - src/util.c:set_focus:265 - Window: frame 0x00a00039, child 0x0100003d
+07.09.2009 00:20:50 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:50 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:50 - src/handlers.c:handle_expose_event:906 - window = 00a000ac
+07.09.2009 00:20:50 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:50 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:50 - src/handlers.c:handle_expose_event:906 - window = 00a000ac
+07.09.2009 00:20:50 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:50 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:50 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:50 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+Event NoExpose following seqnum 56698.
+Event NoExpose following seqnum 56759.
+07.09.2009 00:20:50 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+Event NoExpose following seqnum 56769.
+Event NoExpose following seqnum 56778.
+07.09.2009 00:20:50 - src/handlers.c:handle_windowname_change:758 - _NET_WM_NAME changed to "aMule remote control 2.2.5 -- Up: 20,0 | Down: 12,1"
+07.09.2009 00:20:50 - src/handlers.c:handle_key_press:98 - Keypress 26, state raw = 24
+07.09.2009 00:20:50 - src/handlers.c:handle_key_press:102 - (removed numlock, state = 8)
+07.09.2009 00:20:50 - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 8)
+07.09.2009 00:20:50 - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 8)
+07.09.2009 00:20:50 - src/commands.c:parse_command:813 - --- parsing command "d" ---
+07.09.2009 00:20:50 - src/commands.c:parse_command:894 - Switching mode for current container
+07.09.2009 00:20:50 - src/layout.c:render_workspace:618 - height is 1163
+07.09.2009 00:20:50 - src/layout.c:resize_client:248 - frame 0x00a00039 needs to be pushed to 0x0
+07.09.2009 00:20:50 - src/layout.c:resize_client:249 - resizing client 0x00a00039 to 1920 x 1163
+07.09.2009 00:20:50 - src/layout.c:resize_client:329 - child will be at 2x17 with size 1916x1144
+07.09.2009 00:20:50 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:50 - src/layout.c:render_bars:483 - client is at 1163, should be at 1163
+07.09.2009 00:20:50 - src/layout.c:render_bars:495 - desired_height = 18
+07.09.2009 00:20:50 - src/layout.c:render_workspace:618 - height is 845
+07.09.2009 00:20:50 - src/util.c:set_focus:265 - Window: frame 0x00a00039, child 0x0100003d
+07.09.2009 00:20:50 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:50 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:50 - src/handlers.c:handle_key_press:98 - Keypress 43, state raw = 24
+07.09.2009 00:20:50 - src/handlers.c:handle_key_press:102 - (removed numlock, state = 8)
+07.09.2009 00:20:50 - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 8)
+07.09.2009 00:20:50 - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 8)
+07.09.2009 00:20:50 - src/commands.c:parse_command:813 - --- parsing command "s" ---
+07.09.2009 00:20:50 - src/commands.c:parse_command:894 - Switching mode for current container
+07.09.2009 00:20:50 - src/layout.c:render_workspace:618 - height is 1163
+07.09.2009 00:20:50 - src/layout.c:render_container:393 - remapping stack win
+07.09.2009 00:20:50 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:50 - src/xcb.c:cached_pixmap_prepare:282 - Creating new pixmap...
+07.09.2009 00:20:50 - src/layout.c:resize_client:248 - frame 0x00a00039 needs to be pushed to 0x17
+07.09.2009 00:20:50 - src/layout.c:resize_client:249 - resizing client 0x00a00039 to 1920 x 1146
+07.09.2009 00:20:50 - src/layout.c:resize_client:329 - child will be at 2x0 with size 1916x1144
+07.09.2009 00:20:50 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:50 - src/layout.c:render_bars:483 - client is at 1163, should be at 1163
+07.09.2009 00:20:50 - src/layout.c:render_bars:495 - desired_height = 18
+07.09.2009 00:20:50 - src/layout.c:render_workspace:618 - height is 845
+07.09.2009 00:20:50 - src/util.c:set_focus:265 - Window: frame 0x00a00039, child 0x0100003d
+07.09.2009 00:20:50 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:50 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:50 - src/handlers.c:handle_expose_event:906 - window = 00a000b0
+07.09.2009 00:20:50 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:50 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:50 - src/handlers.c:handle_expose_event:906 - window = 00a000b0
+07.09.2009 00:20:50 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:50 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:50 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:50 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+Event NoExpose following seqnum 56929.
+Event NoExpose following seqnum 56990.
+07.09.2009 00:20:50 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+Event NoExpose following seqnum 57000.
+Event NoExpose following seqnum 57009.
+07.09.2009 00:20:51 - src/handlers.c:handle_key_press:98 - Keypress 26, state raw = 24
+07.09.2009 00:20:51 - src/handlers.c:handle_key_press:102 - (removed numlock, state = 8)
+07.09.2009 00:20:51 - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 8)
+07.09.2009 00:20:51 - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 8)
+07.09.2009 00:20:51 - src/commands.c:parse_command:813 - --- parsing command "d" ---
+07.09.2009 00:20:51 - src/commands.c:parse_command:894 - Switching mode for current container
+07.09.2009 00:20:51 - src/layout.c:render_workspace:618 - height is 1163
+07.09.2009 00:20:51 - src/layout.c:resize_client:248 - frame 0x00a00039 needs to be pushed to 0x0
+07.09.2009 00:20:51 - src/layout.c:resize_client:249 - resizing client 0x00a00039 to 1920 x 1163
+07.09.2009 00:20:51 - src/layout.c:resize_client:329 - child will be at 2x17 with size 1916x1144
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:51 - src/layout.c:render_bars:483 - client is at 1163, should be at 1163
+07.09.2009 00:20:51 - src/layout.c:render_bars:495 - desired_height = 18
+07.09.2009 00:20:51 - src/layout.c:render_workspace:618 - height is 845
+07.09.2009 00:20:51 - src/util.c:set_focus:265 - Window: frame 0x00a00039, child 0x0100003d
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:51 - src/handlers.c:handle_key_press:98 - Keypress 43, state raw = 24
+07.09.2009 00:20:51 - src/handlers.c:handle_key_press:102 - (removed numlock, state = 8)
+07.09.2009 00:20:51 - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 8)
+07.09.2009 00:20:51 - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 8)
+07.09.2009 00:20:51 - src/commands.c:parse_command:813 - --- parsing command "s" ---
+07.09.2009 00:20:51 - src/commands.c:parse_command:894 - Switching mode for current container
+07.09.2009 00:20:51 - src/layout.c:render_workspace:618 - height is 1163
+07.09.2009 00:20:51 - src/layout.c:render_container:393 - remapping stack win
+07.09.2009 00:20:51 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:51 - src/xcb.c:cached_pixmap_prepare:282 - Creating new pixmap...
+07.09.2009 00:20:51 - src/layout.c:resize_client:248 - frame 0x00a00039 needs to be pushed to 0x17
+07.09.2009 00:20:51 - src/layout.c:resize_client:249 - resizing client 0x00a00039 to 1920 x 1146
+07.09.2009 00:20:51 - src/layout.c:resize_client:329 - child will be at 2x0 with size 1916x1144
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:51 - src/layout.c:render_bars:483 - client is at 1163, should be at 1163
+07.09.2009 00:20:51 - src/layout.c:render_bars:495 - desired_height = 18
+07.09.2009 00:20:51 - src/layout.c:render_workspace:618 - height is 845
+07.09.2009 00:20:51 - src/util.c:set_focus:265 - Window: frame 0x00a00039, child 0x0100003d
+07.09.2009 00:20:51 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:51 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a000b4
+07.09.2009 00:20:51 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:51 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a000b4
+07.09.2009 00:20:51 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:51 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+Event NoExpose following seqnum 57148.
+Event NoExpose following seqnum 57209.
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+Event NoExpose following seqnum 57219.
+Event NoExpose following seqnum 57228.
+07.09.2009 00:20:51 - src/handlers.c:handle_configure_request:529 - window 0x01600011 wants to be at 815x497 with 290x206
+07.09.2009 00:20:51 - src/handlers.c:handle_configure_request:529 - window 0x01600011 wants to be at 815x497 with 290x206
+07.09.2009 00:20:51 - src/handlers.c:handle_configure_request:529 - window 0x01600011 wants to be at 815x497 with 290x206
+07.09.2009 00:20:51 - src/handlers.c:handle_map_request:514 - window = 0x01600011, serial is 57241.
+07.09.2009 00:20:51 - src/manage.c:reparent_window:156 - Reparenting window 0x01600011
+07.09.2009 00:20:51 - src/manage.c:reparent_window:157 - x = 815, y = 497, width = 290, height = 206
+07.09.2009 00:20:51 - src/handlers.c:handle_windowname_change:758 - _NET_WM_NAME changed to "Gourmet Rezept-Manager startet..."
+07.09.2009 00:20:51 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:51 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:51 - src/handlers.c:handle_windowclass_change:880 - WM_CLASS changed to gourmet
+07.09.2009 00:20:51 - src/handlers.c:handle_clientleader_change:1159 - Client leader changed to 01600001
+07.09.2009 00:20:51 - src/layout.c:render_workspace:618 - height is 1163
+07.09.2009 00:20:51 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 2
+07.09.2009 00:20:51 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:51 - src/xcb.c:cached_pixmap_prepare:286 - Re-creating this pixmap...
+07.09.2009 00:20:51 - src/layout.c:resize_client:248 - frame 0x00a00039 needs to be pushed to 0x34
+07.09.2009 00:20:51 - src/layout.c:resize_client:249 - resizing client 0x00a00039 to 1920 x 1129
+07.09.2009 00:20:51 - src/layout.c:resize_client:329 - child will be at 2x0 with size 1916x1127
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:51 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:51 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 1920 x 1129
+07.09.2009 00:20:51 - src/layout.c:resize_client:329 - child will be at 2x0 with size 1916x1127
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:51 - src/layout.c:render_bars:483 - client is at 1163, should be at 1163
+07.09.2009 00:20:51 - src/layout.c:render_bars:495 - desired_height = 18
+07.09.2009 00:20:51 - src/layout.c:render_workspace:618 - height is 845
+07.09.2009 00:20:51 - src/handlers.c:handle_windowclass_change:880 - WM_CLASS changed to gourmet
+07.09.2009 00:20:51 - src/handlers.c:handle_normal_hints:1015 - Window: frame 0x00a000b9, child 0x01600011
+07.09.2009 00:20:51 - src/handlers.c:handle_clientleader_change:1159 - Client leader changed to 01600001
+07.09.2009 00:20:51 - src/handlers.c:handle_windowname_change:758 - _NET_WM_NAME changed to "Gourmet Rezept-Manager startet..."
+Event ReparentNotify following seqnum 57259.
+Event ReparentNotify following seqnum 57259.
+Event NoExpose following seqnum 57271.
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a000b4
+07.09.2009 00:20:51 - src/layout.c:render_container:396 - not remapping stackwin, height = 34, num_clients = 2
+07.09.2009 00:20:51 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+Event NoExpose following seqnum 57309.
+Event MapNotify following seqnum 57363.
+Event MapNotify following seqnum 57363.
+Event MapNotify following seqnum 57365.
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:51 - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a000b9, mode = 0, detail 4, serial 57365
+07.09.2009 00:20:51 - src/handlers.c:handle_enter_notify:184 - enter_notify for 01600011, mode = 0, detail 3, serial 57365
+Event NoExpose following seqnum 57387.
+07.09.2009 00:20:51 - src/handlers.c:handle_key_press:98 - Keypress 26, state raw = 24
+07.09.2009 00:20:51 - src/handlers.c:handle_key_press:102 - (removed numlock, state = 8)
+07.09.2009 00:20:51 - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 8)
+07.09.2009 00:20:51 - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 8)
+07.09.2009 00:20:51 - src/commands.c:parse_command:813 - --- parsing command "d" ---
+07.09.2009 00:20:51 - src/commands.c:parse_command:894 - Switching mode for current container
+07.09.2009 00:20:51 - src/layout.c:render_workspace:618 - height is 1163
+07.09.2009 00:20:51 - src/layout.c:resize_client:248 - frame 0x00a00039 needs to be pushed to 0x0
+07.09.2009 00:20:51 - src/layout.c:resize_client:249 - resizing client 0x00a00039 to 1920 x 581
+07.09.2009 00:20:51 - src/layout.c:resize_client:329 - child will be at 2x17 with size 1916x562
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:51 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x581
+07.09.2009 00:20:51 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 1920 x 581
+07.09.2009 00:20:51 - src/layout.c:resize_client:329 - child will be at 2x17 with size 1916x562
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:51 - src/layout.c:render_bars:483 - client is at 1163, should be at 1163
+07.09.2009 00:20:51 - src/layout.c:render_bars:495 - desired_height = 18
+07.09.2009 00:20:51 - src/layout.c:render_workspace:618 - height is 845
+07.09.2009 00:20:51 - src/util.c:switch_layout_mode:418 - Putting last_focused directly underneath the currently focused
+07.09.2009 00:20:51 - src/util.c:set_focus:265 - Window: frame 0x00a000b9, child 0x01600011
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:51 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:52 - src/handlers.c:handle_key_press:98 - Keypress 43, state raw = 24
+07.09.2009 00:20:52 - src/handlers.c:handle_key_press:102 - (removed numlock, state = 8)
+07.09.2009 00:20:52 - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 8)
+07.09.2009 00:20:52 - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 8)
+07.09.2009 00:20:52 - src/commands.c:parse_command:813 - --- parsing command "s" ---
+07.09.2009 00:20:52 - src/commands.c:parse_command:894 - Switching mode for current container
+07.09.2009 00:20:52 - src/layout.c:render_workspace:618 - height is 1163
+07.09.2009 00:20:52 - src/layout.c:render_container:393 - remapping stack win
+07.09.2009 00:20:52 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:52 - src/xcb.c:cached_pixmap_prepare:282 - Creating new pixmap...
+07.09.2009 00:20:52 - src/layout.c:resize_client:248 - frame 0x00a00039 needs to be pushed to 0x34
+07.09.2009 00:20:52 - src/layout.c:resize_client:249 - resizing client 0x00a00039 to 1920 x 1129
+07.09.2009 00:20:52 - src/layout.c:resize_client:329 - child will be at 2x0 with size 1916x1127
+07.09.2009 00:20:52 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:52 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:52 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 1920 x 1129
+07.09.2009 00:20:52 - src/layout.c:resize_client:329 - child will be at 2x0 with size 1916x1127
+07.09.2009 00:20:52 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:52 - src/layout.c:render_bars:483 - client is at 1163, should be at 1163
+07.09.2009 00:20:52 - src/layout.c:render_bars:495 - desired_height = 18
+07.09.2009 00:20:52 - src/layout.c:render_workspace:618 - height is 845
+07.09.2009 00:20:52 - src/util.c:switch_layout_mode:418 - Putting last_focused directly underneath the currently focused
+07.09.2009 00:20:52 - src/util.c:set_focus:265 - Window: frame 0x00a000b9, child 0x01600011
+07.09.2009 00:20:52 - src/util.c:set_focus:283 - raising above frame 0xa00039 / child 0x100003d
+07.09.2009 00:20:52 - src/layout.c:render_container:396 - not remapping stackwin, height = 34, num_clients = 2
+07.09.2009 00:20:52 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:52 - src/handlers.c:handle_expose_event:906 - window = 00a000bc
+07.09.2009 00:20:52 - src/layout.c:render_container:396 - not remapping stackwin, height = 34, num_clients = 2
+07.09.2009 00:20:52 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:52 - src/handlers.c:handle_expose_event:906 - window = 00a000bc
+07.09.2009 00:20:52 - src/layout.c:render_container:396 - not remapping stackwin, height = 34, num_clients = 2
+07.09.2009 00:20:52 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:52 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:52 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+Event NoExpose following seqnum 57589.
+Event NoExpose following seqnum 57660.
+07.09.2009 00:20:52 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+Event NoExpose following seqnum 57676.
+Event NoExpose following seqnum 57691.
+07.09.2009 00:20:53 - src/handlers.c:handle_key_press:98 - Keypress 65, state raw = 25
+07.09.2009 00:20:53 - src/handlers.c:handle_key_press:102 - (removed numlock, state = 9)
+07.09.2009 00:20:53 - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 9)
+07.09.2009 00:20:53 - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 9)
+07.09.2009 00:20:53 - src/commands.c:parse_command:813 - --- parsing command "t" ---
+07.09.2009 00:20:53 - src/floating.c:toggle_floating_mode:81 - Entering floating for client 01600011
+07.09.2009 00:20:53 - src/floating.c:toggle_floating_mode:91 - Need to re-adjust currently_focused
+07.09.2009 00:20:53 - src/floating.c:toggle_floating_mode:115 - copying size from tiling (0, 34) size (290, 206)
+07.09.2009 00:20:53 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:53 - src/xinerama.c:get_screen_containing:78 - comparing x=0 y=34 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:53 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:53 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 294 x 225
+07.09.2009 00:20:53 - src/layout.c:resize_client:329 - child will be at 2x17 with size 290x206
+07.09.2009 00:20:53 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:53 - src/layout.c:render_container:396 - not remapping stackwin, height = 34, num_clients = 1
+07.09.2009 00:20:53 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:53 - src/xcb.c:cached_pixmap_prepare:286 - Re-creating this pixmap...
+07.09.2009 00:20:53 - src/layout.c:resize_client:248 - frame 0x00a00039 needs to be pushed to 0x17
+07.09.2009 00:20:53 - src/layout.c:resize_client:249 - resizing client 0x00a00039 to 1920 x 1146
+07.09.2009 00:20:53 - src/layout.c:resize_client:329 - child will be at 2x0 with size 1916x1144
+07.09.2009 00:20:53 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:53 - src/table.c:cleanup_table:286 - cleanup_table()
+07.09.2009 00:20:53 - src/util.c:set_focus:265 - Window: frame 0x00a00039, child 0x0100003d
+07.09.2009 00:20:53 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:53 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:53 - src/util.c:set_focus:297 - Coming from floating client, searching next tiling...
+07.09.2009 00:20:53 - src/util.c:set_focus:303 - Found window: 0xa00039 / child 0x100003d
+07.09.2009 00:20:53 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:53 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:53 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:53 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:53 - src/table.c:fix_colrowspan:351 - Fixing col/rowspan
+07.09.2009 00:20:53 - src/layout.c:render_workspace:618 - height is 1163
+07.09.2009 00:20:53 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:53 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:53 - src/layout.c:render_bars:483 - client is at 1163, should be at 1163
+07.09.2009 00:20:53 - src/layout.c:render_bars:495 - desired_height = 18
+07.09.2009 00:20:53 - src/util.c:set_focus:265 - Window: frame 0x00a000b9, child 0x01600011
+07.09.2009 00:20:53 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:53 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:53 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:53 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:53 - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a00039, mode = 0, detail 4, serial 57707
+07.09.2009 00:20:53 - src/handlers.c:handle_enter_notify:184 - enter_notify for 0100003d, mode = 0, detail 4, serial 57707
+07.09.2009 00:20:53 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:53 - src/handlers.c:handle_expose_event:906 - window = 00a000bc
+07.09.2009 00:20:53 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:53 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:53 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+Event NoExpose following seqnum 57750.
+Event NoExpose following seqnum 57760.
+07.09.2009 00:20:53 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+Event NoExpose following seqnum 57770.
+07.09.2009 00:20:53 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+Event NoExpose following seqnum 57790.
+07.09.2009 00:20:53 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+Event NoExpose following seqnum 57802.
+Event NoExpose following seqnum 57845.
+07.09.2009 00:20:53 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+Event NoExpose following seqnum 57889.
+07.09.2009 00:20:54 - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a00039, mode = 0, detail 2, serial 57910
+07.09.2009 00:20:54 - src/util.c:set_focus:265 - Window: frame 0x00a00039, child 0x0100003d
+07.09.2009 00:20:54 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:54 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:54 - src/util.c:set_focus:297 - Coming from floating client, searching next tiling...
+07.09.2009 00:20:54 - src/util.c:set_focus:303 - Found window: 0xa00039 / child 0x100003d
+07.09.2009 00:20:54 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:54 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:54 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:54 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+Event NoExpose following seqnum 57920.
+07.09.2009 00:20:54 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+Event NoExpose following seqnum 57930.
+07.09.2009 00:20:54 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+Event NoExpose following seqnum 57950.
+07.09.2009 00:20:54 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:54 - src/handlers.c:handle_enter_notify:184 - enter_notify for 0100003d, mode = 0, detail 1, serial 57963
+07.09.2009 00:20:55 - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a000b9, mode = 0, detail 3, serial 57963
+07.09.2009 00:20:55 - src/util.c:set_focus:265 - Window: frame 0x00a000b9, child 0x01600011
+07.09.2009 00:20:55 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:55 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:55 - src/handlers.c:handle_enter_notify:184 - enter_notify for 01600011, mode = 0, detail 0, serial 57963
+Event NoExpose following seqnum 57973.
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:55 - src/handlers.c:handle_button_press:365 - Button 24 pressed
+07.09.2009 00:20:55 - src/handlers.c:handle_button_press:383 - button 3 pressed
+07.09.2009 00:20:55 - src/handlers.c:handle_button_press:388 - right mouse button
+07.09.2009 00:20:55 - src/floating.c:floating_resize_window:268 - floating_resize_window
+07.09.2009 00:20:55 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:55 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 295 x 225
+07.09.2009 00:20:55 - src/layout.c:resize_client:329 - child will be at 2x17 with size 291x206
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:55 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 296 x 226
+07.09.2009 00:20:55 - src/layout.c:resize_client:329 - child will be at 2x17 with size 292x207
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:55 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 297 x 226
+07.09.2009 00:20:55 - src/layout.c:resize_client:329 - child will be at 2x17 with size 293x207
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:55 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 298 x 226
+07.09.2009 00:20:55 - src/layout.c:resize_client:329 - child will be at 2x17 with size 294x207
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:55 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 299 x 226
+07.09.2009 00:20:55 - src/layout.c:resize_client:329 - child will be at 2x17 with size 295x207
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_windowname_change:758 - _NET_WM_NAME changed to "aMule remote control 2.2.5 -- Up: 20,0 | Down: 11,5"
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:55 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 301 x 227
+07.09.2009 00:20:55 - src/layout.c:resize_client:329 - child will be at 2x17 with size 297x208
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:55 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 302 x 227
+07.09.2009 00:20:55 - src/layout.c:resize_client:329 - child will be at 2x17 with size 298x208
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:55 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 302 x 228
+07.09.2009 00:20:55 - src/layout.c:resize_client:329 - child will be at 2x17 with size 298x209
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:55 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 300 x 227
+07.09.2009 00:20:55 - src/layout.c:resize_client:329 - child will be at 2x17 with size 296x208
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:55 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 299 x 227
+07.09.2009 00:20:55 - src/layout.c:resize_client:329 - child will be at 2x17 with size 295x208
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:55 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 298 x 226
+07.09.2009 00:20:55 - src/layout.c:resize_client:329 - child will be at 2x17 with size 294x207
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:55 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 297 x 226
+07.09.2009 00:20:55 - src/layout.c:resize_client:329 - child will be at 2x17 with size 293x207
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:55 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 296 x 226
+07.09.2009 00:20:55 - src/layout.c:resize_client:329 - child will be at 2x17 with size 292x207
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:55 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 295 x 225
+07.09.2009 00:20:55 - src/layout.c:resize_client:329 - child will be at 2x17 with size 291x206
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:55 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 294 x 225
+07.09.2009 00:20:55 - src/layout.c:resize_client:329 - child will be at 2x17 with size 290x206
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:55 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 293 x 224
+07.09.2009 00:20:55 - src/layout.c:resize_client:329 - child will be at 2x17 with size 289x205
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:55 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 292 x 224
+07.09.2009 00:20:55 - src/layout.c:resize_client:329 - child will be at 2x17 with size 288x205
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:55 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 292 x 223
+07.09.2009 00:20:55 - src/layout.c:resize_client:329 - child will be at 2x17 with size 288x204
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:55 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:55 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:56 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 291 x 223
+07.09.2009 00:20:56 - src/layout.c:resize_client:329 - child will be at 2x17 with size 287x204
+07.09.2009 00:20:56 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:56 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 291 x 224
+07.09.2009 00:20:56 - src/layout.c:resize_client:329 - child will be at 2x17 with size 287x205
+07.09.2009 00:20:56 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:56 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 291 x 225
+07.09.2009 00:20:56 - src/layout.c:resize_client:329 - child will be at 2x17 with size 287x206
+07.09.2009 00:20:56 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:56 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 292 x 225
+07.09.2009 00:20:56 - src/layout.c:resize_client:329 - child will be at 2x17 with size 288x206
+07.09.2009 00:20:56 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:56 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 292 x 226
+07.09.2009 00:20:56 - src/layout.c:resize_client:329 - child will be at 2x17 with size 288x207
+07.09.2009 00:20:56 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:56 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/handlers.c:handle_configure_request:529 - window 0x016000b2 wants to be at 2x17 with 1916x1144
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/handlers.c:handle_configure_request:529 - window 0x016000b2 wants to be at 0x0 with 1916x1144
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/handlers.c:handle_map_request:514 - window = 0x016000b2, serial is 58660.
+07.09.2009 00:20:57 - src/manage.c:reparent_window:156 - Reparenting window 0x016000b2
+07.09.2009 00:20:57 - src/manage.c:reparent_window:157 - x = 2, y = 17, width = 1916, height = 1144
+07.09.2009 00:20:57 - src/handlers.c:handle_windowname_change:758 - _NET_WM_NAME changed to "Gourmet Recipe Manager"
+07.09.2009 00:20:57 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 1
+07.09.2009 00:20:57 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:57 - src/handlers.c:handle_windowclass_change:880 - WM_CLASS changed to gourmet
+07.09.2009 00:20:57 - src/handlers.c:handle_clientleader_change:1159 - Client leader changed to 01600001
+07.09.2009 00:20:57 - src/client.c:client_set_below_floating:240 - Setting below floating
+07.09.2009 00:20:57 - src/layout.c:render_workspace:618 - height is 1163
+07.09.2009 00:20:57 - src/layout.c:render_container:396 - not remapping stackwin, height = 17, num_clients = 2
+07.09.2009 00:20:57 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:57 - src/xcb.c:cached_pixmap_prepare:286 - Re-creating this pixmap...
+07.09.2009 00:20:57 - src/layout.c:resize_client:248 - frame 0x00a00039 needs to be pushed to 0x34
+07.09.2009 00:20:57 - src/layout.c:resize_client:249 - resizing client 0x00a00039 to 1920 x 1129
+07.09.2009 00:20:57 - src/layout.c:resize_client:329 - child will be at 2x0 with size 1916x1127
+07.09.2009 00:20:57 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:57 - src/layout.c:resize_client:248 - frame 0x00a000c1 needs to be pushed to 0x34
+07.09.2009 00:20:57 - src/layout.c:resize_client:249 - resizing client 0x00a000c1 to 1920 x 1129
+07.09.2009 00:20:57 - src/layout.c:resize_client:329 - child will be at 2x0 with size 1916x1127
+07.09.2009 00:20:57 - src/handlers.c:handle_expose_event:906 - window = 00a000c1
+07.09.2009 00:20:57 - src/layout.c:render_bars:483 - client is at 1163, should be at 1163
+07.09.2009 00:20:57 - src/layout.c:render_bars:495 - desired_height = 18
+07.09.2009 00:20:57 - src/layout.c:render_workspace:618 - height is 845
+07.09.2009 00:20:57 - src/handlers.c:handle_windowclass_change:880 - WM_CLASS changed to gourmet
+07.09.2009 00:20:57 - src/handlers.c:handle_normal_hints:1015 - Window: frame 0x00a000c1, child 0x016000b2
+07.09.2009 00:20:57 - src/handlers.c:handle_clientleader_change:1159 - Client leader changed to 01600001
+07.09.2009 00:20:57 - src/handlers.c:handle_windowname_change:758 - _NET_WM_NAME changed to "Gourmet Recipe Manager"
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+Event ReparentNotify following seqnum 58678.
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+Event ReparentNotify following seqnum 58678.
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+Event NoExpose following seqnum 58690.
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/handlers.c:handle_expose_event:906 - window = 00a000bc
+07.09.2009 00:20:57 - src/layout.c:render_container:396 - not remapping stackwin, height = 34, num_clients = 2
+07.09.2009 00:20:57 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/handlers.c:handle_expose_event:906 - window = 00a00039
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+Event NoExpose following seqnum 58729.
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+Event MapNotify following seqnum 58783.
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+Event MapNotify following seqnum 58783.
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+Event MapNotify following seqnum 58785.
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/handlers.c:handle_expose_event:906 - window = 00a000c1
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+Event NoExpose following seqnum 58807.
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:resize_client:248 - frame 0x00a000b9 needs to be pushed to 0x34
+07.09.2009 00:20:57 - src/layout.c:resize_client:249 - resizing client 0x00a000b9 to 291 x 225
+07.09.2009 00:20:57 - src/layout.c:resize_client:329 - child will be at 2x17 with size 287x206
+07.09.2009 00:20:57 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/handlers.c:handle_expose_event:906 - window = 00a000c1
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a000b9, mode = 2, detail 1, serial 58857
+07.09.2009 00:20:57 - src/handlers.c:handle_enter_notify:186 - This was not a normal notify, ignoring
+07.09.2009 00:20:57 - src/handlers.c:handle_enter_notify:184 - enter_notify for 01600011, mode = 2, detail 0, serial 58857
+07.09.2009 00:20:57 - src/handlers.c:handle_enter_notify:186 - This was not a normal notify, ignoring
+07.09.2009 00:20:57 - src/handlers.c:handle_button_press:365 - Button 24 pressed
+07.09.2009 00:20:57 - src/handlers.c:handle_button_press:383 - button 1 pressed
+07.09.2009 00:20:57 - src/handlers.c:handle_button_press:385 - left mouse button, dragging
+07.09.2009 00:20:57 - src/floating.c:floating_drag_window:245 - floating_drag_window
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 1x35
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=1 y=35 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/handlers.c:handle_expose_event:906 - window = 00a000c1
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 6x38
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=6 y=38 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/handlers.c:handle_expose_event:906 - window = 00a000c1
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 13x43
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=13 y=43 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 18x45
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=18 y=45 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 25x47
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=25 y=47 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 32x51
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=32 y=51 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 40x53
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=40 y=53 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 49x55
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=49 y=55 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 58x59
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=58 y=59 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 68x63
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=68 y=63 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 80x66
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=80 y=66 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 91x70
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=91 y=70 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 103x74
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=103 y=74 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 115x78
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=115 y=78 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 127x82
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=127 y=82 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 138x86
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=138 y=86 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 147x88
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=147 y=88 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 158x93
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=158 y=93 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 170x95
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=170 y=95 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 181x100
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=181 y=100 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 192x105
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=192 y=105 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 204x109
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=204 y=109 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 216x114
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=216 y=114 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 228x119
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=228 y=119 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 243x124
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=243 y=124 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 258x130
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=258 y=130 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 273x135
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=273 y=135 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 289x140
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=289 y=140 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 306x147
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=306 y=147 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 325x154
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=325 y=154 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 345x161
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=345 y=161 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 366x169
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=366 y=169 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 388x177
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=388 y=177 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 410x185
+07.09.2009 00:20:57 - src/xinerama.c:get_screen_containing:78 - comparing x=410 y=185 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:57 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 433x193
+07.09.2009 00:20:58 - src/xinerama.c:get_screen_containing:78 - comparing x=433 y=193 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 457x204
+07.09.2009 00:20:58 - src/xinerama.c:get_screen_containing:78 - comparing x=457 y=204 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 481x215
+07.09.2009 00:20:58 - src/xinerama.c:get_screen_containing:78 - comparing x=481 y=215 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 505x225
+07.09.2009 00:20:58 - src/xinerama.c:get_screen_containing:78 - comparing x=505 y=225 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 529x236
+07.09.2009 00:20:58 - src/xinerama.c:get_screen_containing:78 - comparing x=529 y=236 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 550x247
+07.09.2009 00:20:58 - src/xinerama.c:get_screen_containing:78 - comparing x=550 y=247 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 570x257
+07.09.2009 00:20:58 - src/xinerama.c:get_screen_containing:78 - comparing x=570 y=257 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 605x277
+07.09.2009 00:20:58 - src/xinerama.c:get_screen_containing:78 - comparing x=605 y=277 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 620x287
+07.09.2009 00:20:58 - src/xinerama.c:get_screen_containing:78 - comparing x=620 y=287 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 633x296
+07.09.2009 00:20:58 - src/xinerama.c:get_screen_containing:78 - comparing x=633 y=296 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 644x304
+07.09.2009 00:20:58 - src/xinerama.c:get_screen_containing:78 - comparing x=644 y=304 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 651x310
+07.09.2009 00:20:58 - src/xinerama.c:get_screen_containing:78 - comparing x=651 y=310 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 656x316
+07.09.2009 00:20:58 - src/xinerama.c:get_screen_containing:78 - comparing x=656 y=316 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 660x321
+07.09.2009 00:20:58 - src/xinerama.c:get_screen_containing:78 - comparing x=660 y=321 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 662x325
+07.09.2009 00:20:58 - src/xinerama.c:get_screen_containing:78 - comparing x=662 y=325 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 664x328
+07.09.2009 00:20:58 - src/xinerama.c:get_screen_containing:78 - comparing x=664 y=328 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 665x330
+07.09.2009 00:20:58 - src/xinerama.c:get_screen_containing:78 - comparing x=665 y=330 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00a000b9 needs to be pushed to 666x332
+07.09.2009 00:20:58 - src/xinerama.c:get_screen_containing:78 - comparing x=666 y=332 with x=0 and y=0 width 1920 height 1200
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/handlers.c:handle_unmap_notify_event:649 - event->window = 01600011, event->event = 00a000b9
+07.09.2009 00:20:58 - src/handlers.c:handle_unmap_notify_event:650 - UnmapNotify for 0x01600011 (received from 0x00a000b9)
+07.09.2009 00:20:58 - src/handlers.c:handle_unmap_notify_event:683 - Removing from floating clients
+07.09.2009 00:20:58 - src/handlers.c:handle_unmap_notify_event:693 - child of 0x00a000b9.
+07.09.2009 00:20:58 - src/layout.c:render_workspace:618 - height is 1163
+07.09.2009 00:20:58 - src/layout.c:render_container:396 - not remapping stackwin, height = 34, num_clients = 2
+07.09.2009 00:20:58 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:58 - src/layout.c:render_bars:483 - client is at 1163, should be at 1163
+07.09.2009 00:20:58 - src/layout.c:render_bars:495 - desired_height = 18
+07.09.2009 00:20:58 - src/layout.c:render_workspace:618 - height is 845
+07.09.2009 00:20:58 - src/util.c:set_focus:265 - Window: frame 0x00a000c1, child 0x016000b2
+07.09.2009 00:20:58 - src/util.c:set_focus:283 - raising above frame 0xa00039 / child 0x100003d
+07.09.2009 00:20:58 - src/layout.c:render_container:396 - not remapping stackwin, height = 34, num_clients = 2
+07.09.2009 00:20:58 - src/xcb.c:cached_pixmap_prepare:273 - preparing pixmap
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/handlers.c:handle_expose_event:906 - window = 00a000b9
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/handlers.c:handle_unmap_notify_event:649 - event->window = 01600011, event->event = 00000116
+07.09.2009 00:20:58 - src/handlers.c:handle_unmap_notify_event:650 - UnmapNotify for 0x01600011 (received from 0x00000116)
+07.09.2009 00:20:58 - src/handlers.c:handle_unmap_notify_event:652 - not a managed window. Ignoring.
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+Event ReparentNotify following seqnum 58971.
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+Event ReparentNotify following seqnum 58971.
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/handlers.c:handle_unmap_notify_event:649 - event->window = 00a000b9, event->event = 00a000b9
+07.09.2009 00:20:58 - src/handlers.c:handle_unmap_notify_event:650 - UnmapNotify for 0x00a000b9 (received from 0x00a000b9)
+07.09.2009 00:20:58 - src/handlers.c:handle_unmap_notify_event:652 - not a managed window. Ignoring.
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+Event DestroyNotify following seqnum 58974.
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+Event NoExpose following seqnum 58993.
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+Event NoExpose following seqnum 59063.
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/floating.c:drag_pointer:348 - Passing to original handler
+07.09.2009 00:20:58 - src/handlers.c:handle_expose_event:906 - window = 00a000c1
+07.09.2009 00:20:58 - src/layout.c:reposition_client:216 - frame 0x00000000 needs to be pushed to 667x334
+Connecting to file  /home/mist/.gourmet/recipes.db
+Connecting...
+Going to event loop...
+Remote GUI EC event handler
+LOG: Gelungen! Verbindung aufgebaut zu aMule 2.2.5
+LOG: 
+LOG:  - Dies ist aMule 2.2.5 using wxGTK2 v2.8.7, basierend auf eMule.
+LOG:    Läuft auf Linux 2.6.30-1-amd64 x86_64
+LOG:  - Besuche http://www.amule.org um zu sehen, ob eine neue Version verfügbar ist.
+LOG: 
+LOG: 248 Flaggenbitmaps geladen.

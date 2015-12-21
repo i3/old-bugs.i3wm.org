@@ -1,0 +1,40 @@
+From 9e4987ed93cecf3dc0e22230e0d9d49f37685c10 Mon Sep 17 00:00:00 2001
+From: Peter Bui <pnutzh4x0r@gmail.com>
+Date: Wed, 31 Aug 2011 12:02:26 -0400
+Subject: [PATCH] bug-fix-509: only warp pointer if it is not on the same
+ output
+
+TODO: we can introduce a boolean to override this behavior when we
+introduce a configuration option for warping.
+---
+ src/xcb.c |   14 ++++++++++++++
+ 1 files changed, 14 insertions(+), 0 deletions(-)
+
+diff --git a/src/xcb.c b/src/xcb.c
+index b11b0ca..c800feb 100644
+--- a/src/xcb.c
++++ b/src/xcb.c
+@@ -370,6 +370,20 @@ void xcb_warp_pointer_rect(xcb_connection_t *conn, Rect *rect) {
+     int mid_x = rect->x + (rect->width / 2);
+     int mid_y = rect->y + (rect->height / 2);
+ 
++    /* Check if the pointer is on the current output.  If so, do not warp */
++    xcb_query_pointer_cookie_t pointercookie = xcb_query_pointer(conn, root);
++    xcb_query_pointer_reply_t *pointerreply  = xcb_query_pointer_reply(conn, pointercookie, NULL);
++    if (!pointerreply) {
++         ELOG("Could not query pointer position\n");
++    } else {
++        Output *curr = get_output_containing(pointerreply->root_x, pointerreply->root_y);
++        Output *next = get_output_containing(mid_x, mid_y);
++        if (curr == next) {
++            LOG("Pointer on same output, so do not warp\n");
++            return;
++        }
++    }
++
+     LOG("warp pointer to: %d %d\n", mid_x, mid_y);
+     xcb_warp_pointer(conn, XCB_NONE, root, 0, 0, 0, 0, mid_x, mid_y);
+ }
+-- 
+1.7.6.1
+

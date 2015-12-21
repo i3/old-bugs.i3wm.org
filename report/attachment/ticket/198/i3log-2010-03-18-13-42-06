@@ -1,0 +1,137 @@
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+	Found symbolic mod64 with key f and command f
+	Found symbolic mod64 with key y and command s
+	Found symbolic mod64 with key w and command T
+	Found symbolic mod64 with key e and command d
+	Found symbolic mod65 with key space and command t
+	Found symbolic mod64 with key t and command focus ft
+	Found symbolic mod64 with key h and command h
+	Found symbolic mod64 with key j and command j
+	Found symbolic mod64 with key k and command k
+	Found symbolic mod64 with key l and command l
+	Found symbolic mod64 with key Tab and command l
+	Found symbolic mod65 with key Tab and command h
+	Found symbolic mod64 with key Left and command h
+	Found symbolic mod64 with key Down and command j
+	Found symbolic mod64 with key Up and command k
+	Found symbolic mod64 with key Right and command l
+	Found symbolic mod32 with key h and command wch
+	Found symbolic mod32 with key j and command wcj
+	Found symbolic mod32 with key k and command wck
+	Found symbolic mod32 with key l and command wcl
+	Found symbolic mod32 with key Left and command h
+	Found symbolic mod32 with key Down and command j
+	Found symbolic mod32 with key Up and command k
+	Found symbolic mod32 with key Right and command l
+	Found symbolic mod68 with key h and command sh
+	Found symbolic mod68 with key j and command sj
+	Found symbolic mod68 with key k and command sk
+	Found symbolic mod68 with key l and command sl
+	Found symbolic mod68 with key Left and command h
+	Found symbolic mod68 with key Down and command j
+	Found symbolic mod68 with key Up and command k
+	Found symbolic mod68 with key Right and command l
+	Found symbolic mod65 with key h and command mh
+	Found symbolic mod65 with key j and command mj
+	Found symbolic mod65 with key k and command mk
+	Found symbolic mod65 with key l and command ml
+	Found symbolic mod65 with key Left and command h
+	Found symbolic mod65 with key Down and command j
+	Found symbolic mod65 with key Up and command k
+	Found symbolic mod65 with key Right and command l
+	Found symbolic mod33 with key h and command wcmh
+	Found symbolic mod33 with key j and command wcmj
+	Found symbolic mod33 with key k and command wcmk
+	Found symbolic mod33 with key l and command wcml
+	Found binding mod64 with key 10 and command 1
+	Found binding mod64 with key 11 and command 2
+	Found binding mod64 with key 12 and command 3
+	Found binding mod64 with key 13 and command 4
+	Found binding mod64 with key 14 and command 5
+	Found binding mod64 with key 15 and command 6
+	Found binding mod64 with key 16 and command 7
+	Found binding mod64 with key 17 and command 8
+	Found binding mod64 with key 18 and command 9
+	Found binding mod64 with key 19 and command 10
+	Found binding mod65 with key 10 and command m1
+	Found binding mod65 with key 11 and command m2
+	Found binding mod65 with key 12 and command m3
+	Found binding mod65 with key 13 and command m4
+	Found binding mod65 with key 14 and command m5
+	Found binding mod65 with key 15 and command m6
+	Found binding mod65 with key 16 and command m7
+	Found binding mod65 with key 17 and command m8
+	Found binding mod65 with key 18 and command m9
+	Found binding mod65 with key 19 and command m10
+	Found symbolic mod65 with key m and command mode resize
+	Found symbolic mod0 with key j and command resize left +10
+	Found symbolic mod1 with key j and command resize left -10
+	Found symbolic mod0 with key k and command resize bottom +10
+	Found symbolic mod1 with key k and command resize bottom -10
+	Found symbolic mod0 with key i and command resize top +10
+	Found symbolic mod1 with key i and command resize top -10
+	Found symbolic mod0 with key l and command resize right +10
+	Found symbolic mod1 with key l and command resize right -10
+	Found symbolic mod0 with key Return and command mode default
+	 now in mode resize
+	 current bindings = 0x8325da0
+got binding on mods 0, keycode 0, symbol j, command resize left +10
+got binding on mods 1, keycode 0, symbol j, command resize left -10
+got binding on mods 0, keycode 0, symbol k, command resize bottom +10
+got binding on mods 1, keycode 0, symbol k, command resize bottom -10
+got binding on mods 0, keycode 0, symbol i, command resize top +10
+got binding on mods 1, keycode 0, symbol i, command resize top -10
+got binding on mods 0, keycode 0, symbol l, command resize right +10
+got binding on mods 1, keycode 0, symbol l, command resize right -10
+got binding on mods 0, keycode 0, symbol Return, command mode default
+	Found symbolic mod64 with key Return and command exec /usr/bin/x-terminal-emulator -bg black -fg green -vb
+	Found symbolic mod65 with key c and command kill
+	Found symbolic mod64 with key r and command exec /usr/bin/dmenu_run
+	Found symbolic mod64 with key s and command exec sleep 0.2; i3-input -p 'exec /usr/local/bin/i3_ssh.sh '  -P 'ssh: '
+	Found symbolic mod64 with key p and command exec sleep 0.2; i3-input -p 'exec /usr/local/bin/phonebook.sh ' -P 'name: '
+	Found symbolic mod65 with key q and command exit
+	Found symbolic mod64 with key q and command restart
+03/18/2010 01:42:06 PM - ERROR: 
+03/18/2010 01:42:06 PM - ERROR: CONFIG: syntax error, unexpected <string>
+03/18/2010 01:42:06 PM - ERROR: CONFIG: in file "./config.test", line 157:
+03/18/2010 01:42:06 PM - ERROR: CONFIG:   workspace 1 output 0 #term
+03/18/2010 01:42:06 PM - ERROR: CONFIG:                       ^^^^^^
+03/18/2010 01:42:06 PM - ERROR: 
+03/18/2010 01:42:06 PM - ERROR: 
+03/18/2010 01:42:06 PM - ERROR: CONFIG: syntax error, unexpected <string>
+03/18/2010 01:42:06 PM - ERROR: CONFIG: in file "./config.test", line 158:
+03/18/2010 01:42:06 PM - ERROR: CONFIG:   workspace 2 output 0 #web
+03/18/2010 01:42:06 PM - ERROR: CONFIG:                       ^^^^^
+03/18/2010 01:42:06 PM - ERROR: 
+03/18/2010 01:42:06 PM - ERROR: 
+03/18/2010 01:42:06 PM - ERROR: CONFIG: syntax error, unexpected <string>
+03/18/2010 01:42:06 PM - ERROR: CONFIG: in file "./config.test", line 159:
+03/18/2010 01:42:06 PM - ERROR: CONFIG:   workspace 3 output 0 #float1
+03/18/2010 01:42:06 PM - ERROR: CONFIG:                       ^^^^^^^^
+03/18/2010 01:42:06 PM - ERROR: 
+assignment of xterm
+  to 1
+  floating = 0
+assignment of Navigator
+  to 2
+  floating = 0
+assignment of pidgin
+  to 8
+  floating = 0
+assignment of Mail
+  to 4
+  floating = 0
+assignment of Wfica
+  to 7
+  floating = 0
+assignment of emacs
+  to 5
+  floating = 0
+assignment of VCLSalFrame.DocumentWindow
+  to 6
+  floating = 0
+assignment of VCLSalFrame
+  to 6
+  floating = 0
+	Found symbolic mod64 with key F11 and command exec /usr/bin/xscreensaver-command -lock
+03/18/2010 01:42:06 PM - ERROR: ERROR: No screen at 400 x 300, starting on the first screen

@@ -1,0 +1,62 @@
+From a73894441d09f8ead18dacf7adcbb584d3517ab7 Mon Sep 17 00:00:00 2001
+From: Mateusz Loskot <mateusz@loskot.net>
+Date: Mon, 11 Jun 2012 00:32:30 +0100
+Subject: [PATCH] Moved translation of wireless status code to text from
+ multiple places into single BATT_STATUS_NAME macro. It
+ simplifies customisation of the hard-wired status text.
+
+---
+ src/print_battery_info.c |   16 ++++++----------
+ 1 file changed, 6 insertions(+), 10 deletions(-)
+
+diff --git a/src/print_battery_info.c b/src/print_battery_info.c
+index cc7c5fe..f6f238c 100644
+--- a/src/print_battery_info.c
++++ b/src/print_battery_info.c
+@@ -20,6 +20,9 @@
+ #include <machine/apmvar.h>
+ #endif
+ 
++#define BATT_STATUS_NAME(status) \
++    (status == CS_CHARGING ? "CHR" : \
++        (status == CS_DISCHARGING ? "BAT" : "FULL"))
+ /*
+  * Get battery information from /sys. Note that it uses the design capacity to
+  * calculate the percentage, not the last full capacity, so you can see how
+@@ -97,9 +100,7 @@ void print_battery_info(yajl_gen json_gen, char *buffer, int number, const char
+                 return;
+         }
+ 
+-        (void)snprintf(statusbuf, sizeof(statusbuf), "%s",
+-                        (status == CS_CHARGING ? "CHR" :
+-                         (status == CS_DISCHARGING ? "BAT" : "FULL")));
++        (void)snprintf(statusbuf, sizeof(statusbuf), "%s", BATT_STATUS_NAME(status));
+ 
+         (void)snprintf(percentagebuf, sizeof(percentagebuf), "%.02f%%",
+                        (((float)remaining / (float)full_design) * 100));
+@@ -167,9 +168,7 @@ void print_battery_info(yajl_gen json_gen, char *buffer, int number, const char
+ 
+         full_design = sysctl_rslt;
+ 
+-        (void)snprintf(statusbuf, sizeof(statusbuf), "%s",
+-                        (status == CS_CHARGING ? "CHR" :
+-                         (status == CS_DISCHARGING ? "BAT" : "FULL")));
++        (void)snprintf(statusbuf, sizeof(statusbuf), "%s", BATT_STATUS_NAME(status));
+ 
+         (void)snprintf(percentagebuf, sizeof(percentagebuf), "%02d%%",
+                        present_rate);
+@@ -221,10 +220,7 @@ void print_battery_info(yajl_gen json_gen, char *buffer, int number, const char
+ 		break;
+ 	}
+ 
+-	(void)snprintf(statusbuf, sizeof(statusbuf), "%s",
+-		       (ac_status == CS_CHARGING ? "CHR" :
+-			(ac_status == CS_DISCHARGING ? "BAT" : "FULL")));
+-
++	(void)snprintf(statusbuf, sizeof(statusbuf), "%s", BATT_STATUS_NAME(status));
+         (void)snprintf(percentagebuf, sizeof(percentagebuf), "%02d%%", apm_info.battery_life);
+ 
+ 	/* Can't give a meaningful value for remaining minutes if we're charging. */
+-- 
+1.7.10.4
+

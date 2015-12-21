@@ -1,0 +1,27 @@
+From a02e080ed9a69a161bdc874da49b249e69c32fa5 Mon Sep 17 00:00:00 2001
+From: Helgi Kristvin Sigurbjarnarson <helgikrs@gmail.com>
+Date: Mon, 1 Nov 2010 06:26:21 +0000
+Subject: [PATCH] Fix goto focus problem if the window is on another workspace.
+
+---
+ src/commands.c |    3 ++-
+ 1 files changed, 2 insertions(+), 1 deletions(-)
+
+diff --git a/src/commands.c b/src/commands.c
+index 18181a6..1549527 100644
+--- a/src/commands.c
++++ b/src/commands.c
+@@ -73,8 +73,9 @@ static void jump_to_mark(xcb_connection_t *conn, const char *mark) {
+                         if (current->mark == NULL || strcmp(current->mark, mark) != 0)
+                                 continue;
+ 
++                        if (!workspace_is_visible(current->workspace))
++                                workspace_show(conn, current->workspace->num + 1);
+                         set_focus(conn, current, true);
+-                        workspace_show(conn, current->workspace->num + 1);
+                         return;
+                 }
+ 
+-- 
+1.7.3.2
+

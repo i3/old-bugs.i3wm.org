@@ -1,0 +1,22 @@
+--- save-ws-1	2014-01-02 22:44:02.095927170 +0100
++++ save-ws-1-broken	2014-01-02 22:26:19.000000000 +0100
+@@ -25,6 +25,9 @@
+     "floating": "auto_off",
+     "layout": "splitv",
+     "percent": 0.883854166666667,
++    "swallows": [
++       {}
++    ],
+     "type": "con",
+     "nodes": [
+         {
+@@ -33,6 +36,9 @@
+             "floating": "auto_off",
+             "layout": "splitv",
+             "percent": 1,
++            "swallows": [
++               {}
++            ],
+             "type": "con",
+             "nodes": [
+                 {

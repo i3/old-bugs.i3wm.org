@@ -1,0 +1,859 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #864 (i3status unicode issue for output_format = "i3bar")
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/863" title="Ticket #863" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/864?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/864?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/864?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/865" title="Ticket #865" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="e7b2a6aa1bcd2f9a73b78afd";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/863" title="Ticket #863">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/865" title="Ticket #865">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-10-30T19%3A38%3A38%2B01%3A00&amp;precision=second" title="See timeline at 10/30/12 19:38:38">2 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2012-10-31T12%3A45%3A05%2B01%3A00&amp;precision=second" title="See timeline at 10/31/12 12:45:05">2 years ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2012-11-06T10%3A26%3A42%2B01%3A00&amp;precision=second" title="See timeline at 11/06/12 10:26:42">2 years ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/864" class="trac-id">#864</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=invalid">invalid</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">i3status unicode issue for output_format = "i3bar"</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">toby.junk@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.3">4.3</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.3 (2012-09-19, branch "tags/4.3") Â© 2009-2012 Michael Stapelberg and contributors
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+with i3status config<br />
+</p>
+<p>
+general {<br />
+</p>
+<blockquote>
+<p>
+output_format = "dzen2"<br />
+</p>
+</blockquote>
+<p>
+}<br />
+</p>
+<p>
+cpu_temperature 0 {<br />
+</p>
+<blockquote>
+<p>
+format = "T: %degrees °C"<br />
+</p>
+</blockquote>
+<p>
+}<br />
+</p>
+<p>
+works fine however<br />
+</p>
+<p>
+general {<br />
+</p>
+<blockquote>
+<p>
+output_format = "i3bar"<br />
+</p>
+</blockquote>
+<p>
+}<br />
+</p>
+<p>
+cpu_temperature 0 {<br />
+</p>
+<blockquote>
+<p>
+format = "T: %degrees °C"<br />
+</p>
+</blockquote>
+<p>
+}<br />
+</p>
+<p>
+fails<br />
+</p>
+<p>
+general {<br />
+</p>
+<blockquote>
+<p>
+output_format = "i3bar"<br />
+</p>
+</blockquote>
+<p>
+}<br />
+</p>
+<p>
+cpu_temperature 0 {<br />
+</p>
+<blockquote>
+<p>
+format = "T: %degrees oC"<br />
+</p>
+</blockquote>
+<p>
+}<br />
+</p>
+<p>
+works fine this implies it is a unicode issue<br />
+</p>
+<p>
+i3bar version 4.3 (2012-09-19, branch "tags/4.3") Â© 2010-2011 Axel Wagner and contributors<br />
+</p>
+<p>
+i3status 2.6 (2012-10-03) Â© 2008-2012 Michael Stapelberg and contributors<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(1)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/864/864.cfg.gz" title="View attachment">864.cfg.gz</a><a href="/report/raw-attachment/ticket/864/864.cfg.gz" class="trac-rawlink" title="Download">​</a>
+       (<span title="158 bytes">158 bytes</span>) -
+      added by <em>michael</em> <a class="timeline" href="/report/timeline?from=2012-10-30T22%3A58%3A13%2B01%3A00&amp;precision=second" title="See timeline at 10/30/12 22:58:13">2 years ago</a>.
+  </dt>
+              <dd>
+                i3status configfile with proper UTF-8
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/864/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(13)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1351625707456626">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-30T20%3A35%3A07%2B01%3A00&amp;precision=second" title="See timeline at 10/30/12 20:35:07">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Can you please be more specific about what you mean with "fails"?<br />
+</p>
+<p>
+Also, the wrong copyright messages suggest that your system is not properly setup to support UTF-8.<br />
+</p>
+<p>
+In general, i3 and all i3 utilities support UTF-8 just fine.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1351630450174929">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-30T21%3A54%3A10%2B01%3A00&amp;precision=second" title="See timeline at 10/30/12 21:54:10">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+sorry,<br />
+</p>
+<p>
+using config<br />
+</p>
+<pre class="wiki">general {
+        output_format = "i3bar"
+}
+order = "cpu_temperature 0"
+cpu_temperature 0 {
+        format = "T: %degrees oC"
+        path = "/sys/devices/platform/coretemp.0/temp2_input"
+}
+</pre><p>
+I get output of <tt>T: 62 oC</tt> as expected in the i3bar<br />
+</p>
+<p>
+config<br />
+</p>
+<pre class="wiki">general {
+        output_format = "i3bar"
+}
+order = "cpu_temperature 0"
+cpu_temperature 0 {
+        format = "T: %degrees °C"
+        path = "/sys/devices/platform/coretemp.0/temp2_input"
+}
+</pre><p>
+gives no output in the i3bar<br />
+</p>
+<p>
+config<br />
+</p>
+<pre class="wiki">general {
+        output_format = "dzen2"
+}
+order = "cpu_temperature 0"
+cpu_temperature 0 {
+        format = "T: %degrees °C"
+        path = "/sys/devices/platform/coretemp.0/temp2_input"
+}
+</pre><p>
+gives the correct output <tt>T: 62 °C</tt><br />
+</p>
+<p>
+The lack of unicode in my terminal is a separate issue :)<br />
+</p>
+<p>
+This is an issue as the full config I want to use includes colour etc<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1351634275614778">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-30T22%3A57%3A55%2B01%3A00&amp;precision=second" title="See timeline at 10/30/12 22:57:55">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Are you 100% sure that your i3status config file is saved properly in UTF-8? I have attached a gzipped version of your config to this ticket which you can download and use. With that configfile, i3status + i3bar works fine on my system.<br />
+</p>
+<p>
+In case this still does not solve the issue, please perform the following steps:<br />
+</p>
+<ol><li>In your i3 config, add <tt>verbose = yes</tt> to your bar-block
+</li><li>Follow <a class="ext-link" href="http://i3wm.org/docs/debugging-release-version.html"><span class="icon">​</span>http://i3wm.org/docs/debugging-release-version.html</a> to enable logging
+</li><li>Restart i3, then reproduce the problem.
+</li><li>Compress the logfile and attach it to this ticket.
+</li></ol>
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-30T22%3A58%3A13%2B01%3A00&amp;precision=second" title="See timeline at 10/30/12 22:58:13">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/864/864.cfg.gz"><em>864.cfg.gz</em></a><a href="/report/raw-attachment/ticket/864/864.cfg.gz" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+i3status configfile with proper UTF-8<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1351638190648070">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-31T00%3A03%3A10%2B01%3A00&amp;precision=second" title="See timeline at 10/31/12 00:03:10">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+the config you sent gives the same issue<br />
+</p>
+<p>
+log output contains repeated<br />
+</p>
+<pre class="wiki">[i3bar] Could not parse JSON input (code 2): ,[{"name":"cpu_temperature","instance":"/sys/devices/platform/coretemp.0/temp2_input","full_text":"T: 58 °C"}]
+</pre><p>
+let me know if you need more of the logs I'm currently running via startx on tty1 rather than the suggested i3 &gt; log but I could do that<br />
+</p>
+<p>
+It looks like the ° isn't being converted to \u000B0 but if I try to add that directly into in the config it the \ seems to get dropped so I couldn't test via that method.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1351669904665308">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-31T08%3A51%3A44%2B01%3A00&amp;precision=second" title="See timeline at 10/31/12 08:51:44">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Can you please apply the following change to i3bar/src/child.c, recompile, re-run and then attach the logfile?<br />
+</p>
+<pre class="wiki">--- i/i3bar/src/child.c
++++ w/i3bar/src/child.c
+@@ -226,6 +226,9 @@ static bool read_json_input(unsigned char *input, int length) {
+ #endif
+         fprintf(stderr, "[i3bar] Could not parse JSON input (code %d): %.*s\n",
+                 status, length, input);
++#if YAJL_MAJOR &gt;= 2
++        fprintf(stderr, "[i3bar] YAJL error is \"%s\"\n", yajl_get_error(parser, 0, NULL, 0));
++#endif
+     } else if (parser_context.has_urgent) {
+         has_urgent = true;
+     }
+</pre><p>
+Also, can you tell me which specific version of yajl you are using?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1351676137544606">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-31T10%3A35%3A37%2B01%3A00&amp;precision=second" title="See timeline at 10/31/12 10:35:37">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+applying your patch to branch next<br />
+</p>
+<pre class="wiki">[i3bar] Could not parse JSON input (code 2): ,[{"name":"cpu_temperature","instance":"/sys/devices/platform/coretemp.0/temp2_input","full_text":"T: 54 °C"}]
+
+[i3bar] YAJL error is "lexical error: invalid bytes in UTF8 string.
+"
+</pre><p>
+yajl 2.0.4-1<br />
+</p>
+<p>
+FWIW I'm on archlinux<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1351678500133843">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-31T11%3A15%3A00%2B01%3A00&amp;precision=second" title="See timeline at 10/31/12 11:15:00">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Ok,  The problem was with the encoding it was being treated as extended ascii (including that file you sent) I've managed to get it working with a ʁ so all should be good<br />
+</p>
+<p>
+sorry for the noise<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1351683905803180">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-31T12%3A45%3A05%2B01%3A00&amp;precision=second" title="See timeline at 10/31/12 12:45:05">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>invalid</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I’m not a "told you so" person, but that was what I suspected all along. In order to verify my suspicion, I tried to use a different/misconfigured locale setup myself, but I didn’t manage to reproduce it.<br />
+</p>
+<p>
+In order to avoid future confusion/ease future debugging, can you please tell me which locale setup you use so that I can try it for myself?<br />
+</p>
+<p>
+The contents of the LANG, LANGUAGE and LC_* environment variables are interesting to me:<br />
+</p>
+<pre class="wiki">env | grep '\(LC\|LANG\)'
+</pre><p>
+Thanks!<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1351687179320857">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:10" class="follow-up">↓ 10</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-31T13%3A39%3A39%2B01%3A00&amp;precision=second" title="See timeline at 10/31/12 13:39:39">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <pre class="wiki">env | grep '\(LC\|LANG\)'
+</pre><p>
+gives me nothing so I'm assuming it thinks I'm en_US despite being in the UK <tt>date +%x</tt> gives me a US style date <br />
+</p>
+<p>
+Saving utf8 in vim is more painful than it should be as it kept converting it back to ascii - not sure why the file you sent was also ascii<br />
+</p>
+<p>
+Thanks for i3 seems nice so far I've been using awesome for the last couple of years and i3 seems more clean/hackable - also the quick response is nice.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1352133846626156">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+        in reply to:
+    <a href="#comment:9">↑ 9</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-11-05T17%3A44%3A06%2B01%3A00&amp;precision=second" title="See timeline at 11/05/12 17:44:06">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/864#comment:9" title="Comment 9">anonymous</a>:<br />
+</p>
+<blockquote class="citation">
+<pre class="wiki">env | grep '\(LC\|LANG\)'
+</pre><p>
+gives me nothing so I'm assuming it thinks I'm en_US despite being in the UK <tt>date +%x</tt> gives me a US style date <br />
+</p>
+<p>
+Saving utf8 in vim is more painful than it should be as it kept converting it back to ascii - not sure why the file you sent was also ascii<br />
+</p>
+</blockquote>
+<p>
+So here’s my theory on what happened:<br />
+</p>
+<p>
+You opened the default i3status.conf, which does not contain any UTF-8 characters. Since your locale was not explicitly set to an UTF-8 locale, vim did not figure out that it should use UTF-8 (I have it force-enabled in my config). You then copied the configuration into the file, which was saved as ASCII.<br />
+</p>
+<p>
+To avoid this mistake for future users, I’ve added some UTF-8 character to the config file (as a comment), so that editors should detect the file as UTF-8 (as well as <tt>file(1)</tt>). And even in the unlikely event that the editor fails, users can still see the problem and fix the setup on their own.<br />
+</p>
+<p>
+See <a class="ext-link" href="http://code.stapelberg.de/git/i3status/commit/?id=beaaf4c742036e0f02fa9867e4cd44b13faac5a2"><span class="icon">​</span>http://code.stapelberg.de/git/i3status/commit/?id=beaaf4c742036e0f02fa9867e4cd44b13faac5a2</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1352140689158137">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-11-05T19%3A38%3A09%2B01%3A00&amp;precision=second" title="See timeline at 11/05/12 19:38:09">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Actually I just copied and pasted the sample config from <a class="ext-link" href="http://i3wm.org/i3status/manpage.html#_configuration"><span class="icon">​</span>http://i3wm.org/i3status/manpage.html#_configuration</a> and made a few minor edits.  Your commit still makes sense even if it wouldn't have solved my stupidity here.  Maybe just a note saying config must not contain extended ascii so either be basic ascii or utf-8.<br />
+</p>
+<p>
+Incidentally how do you prefer to receive patches?  There are a few bits of the documentation that could be improved eg color_separator does not work for i3bar output as not controlled by i3status, this is not apparent from the docs.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-12-1352194002673254">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-11-06T10%3A26%3A42%2B01%3A00&amp;precision=second" title="See timeline at 11/06/12 10:26:42">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Patches should be generated using git format-patch (anything else will not be merged) and sent to michael AT i3wm DOT org.<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/864?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/864?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/864?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

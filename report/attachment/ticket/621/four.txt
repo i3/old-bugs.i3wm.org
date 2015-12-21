@@ -1,0 +1,251 @@
+2012年01月30日 15时42分49秒 - _NET_WM_NAME changed to "Java - trunk/test/XXX.java - Eclipse "
+2012年01月30日 15时42分49秒 - src/assignments.c:run_assignments:18 - Checking if any assignments match this window
+2012年01月30日 15时42分49秒 - Checking window 0x03e000a3 (class Eclipse)
+2012年01月30日 15时42分49秒 - Regular expression "shutter" does not match "Eclipse"
+2012年01月30日 15时42分49秒 - Checking window 0x03e000a3 (class Eclipse)
+2012年01月30日 15时42分49秒 - Regular expression "twitter" does not match "Eclipse"
+2012年01月30日 15时42分49秒 - Checking window 0x03e000a3 (class Eclipse)
+2012年01月30日 15时42分49秒 - Regular expression "Pidgin" does not match "Eclipse"
+2012年01月30日 15时42分49秒 - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+2012年01月30日 15时42分49秒 - src/x.c:x_push_changes:813 - PUSHING CHANGES
+2012年01月30日 15时42分49秒 - src/x.c:x_push_changes:891 - ENDING CHANGES
+2012年01月30日 15时42分49秒 - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+2012年01月30日 15时42分49秒 - src/x.c:x_push_changes:813 - PUSHING CHANGES
+2012年01月30日 15时42分49秒 - src/x.c:x_push_changes:891 - ENDING CHANGES
+Cannot read temperature
+2012年01月30日 15时42分55秒 - src/main.c:xkb_got_event:136 - Handling XKB event
+2012年01月30日 15时42分55秒 - src/main.c:xkb_got_event:136 - Handling XKB event
+2012年01月30日 15时42分57秒 - src/main.c:xkb_got_event:136 - Handling XKB event
+Cannot read temperature
+2012年01月30日 15时42分59秒 - src/handlers.c:handle_enter_notify:172 - enter_notify for 0100006e, mode = 0, detail 4, serial 56328
+2012年01月30日 15时42分59秒 - src/handlers.c:handle_enter_notify:173 - coordinates 1335, 397
+2012年01月30日 15时42分59秒 - src/handlers.c:handle_unmap_notify_event:461 - UnmapNotify for 0x03ec9075 (received from 0x00000150), serial 56328
+2012年01月30日 15时42分59秒 - Not a managed window, ignoring UnmapNotify event
+2012年01月30日 15时42分59秒 - src/main.c:xkb_got_event:136 - Handling XKB event
+2012年01月30日 15时43分00秒 - src/main.c:xkb_got_event:136 - Handling XKB event
+2012年01月30日 15时43分01秒 - src/main.c:xkb_got_event:136 - Handling XKB event
+2012年01月30日 15时43分01秒 - src/handlers.c:handle_enter_notify:172 - enter_notify for 0100006e, mode = 0, detail 4, serial 56328
+2012年01月30日 15时43分01秒 - src/handlers.c:handle_enter_notify:173 - coordinates 1335, 397
+2012年01月30日 15时43分01秒 - src/handlers.c:handle_unmap_notify_event:461 - UnmapNotify for 0x03ec949b (received from 0x00000150), serial 56328
+2012年01月30日 15时43分01秒 - Not a managed window, ignoring UnmapNotify event
+2012年01月30日 15时43分03秒 - src/handlers.c:handle_configure_request:336 - window 0x03ec9746 wants to be at 1696x985 with 214x64
+2012年01月30日 15时43分03秒 - src/handlers.c:handle_configure_request:341 - Configure request for unmanaged window, can do that.
+2012年01月30日 15时43分03秒 - src/handlers.c:handle_configure_request:336 - window 0x03ec9746 wants to be at 1696x985 with 2x2
+2012年01月30日 15时43分03秒 - src/handlers.c:handle_configure_request:341 - Configure request for unmanaged window, can do that.
+2012年01月30日 15时43分03秒 - src/handlers.c:handle_configure_request:336 - window 0x03ec9746 wants to be at 0x0 with 2x2
+2012年01月30日 15时43分03秒 - src/handlers.c:handle_configure_request:341 - Configure request for unmanaged window, can do that.
+2012年01月30日 15时43分03秒 - src/handlers.c:handle_map_request:318 - window = 0x03ec9746, serial is 56328.
+2012年01月30日 15时43分03秒 - src/manage.c:manage_window:148 - Managing window 0x03ec9746
+2012年01月30日 15时43分03秒 - WM_CLASS changed to Eclipse (instance), Eclipse (class)
+2012年01月30日 15时43分03秒 - src/window.c:window_update_name_legacy:108 - WM_NAME not set (_NET_WM_NAME is what you want anyways).
+2012年01月30日 15时43分03秒 - src/window.c:window_update_name:56 - _NET_WM_NAME not specified, not changing
+2012年01月30日 15时43分03秒 - src/window.c:window_update_leader:166 - Client leader changed to 03e00001
+2012年01月30日 15时43分03秒 - src/window.c:window_update_transient_for:190 - Transient for changed to 03e000a3
+2012年01月30日 15时43分03秒 - src/window.c:window_update_strut_partial:203 - _NET_WM_STRUT_PARTIAL not set.
+2012年01月30日 15时43分03秒 - src/window.c:window_update_role:228 - WM_WINDOW_ROLE not set.
+2012年01月30日 15时43分03秒 - WM_HINTS.input changed to "1"
+2012年01月30日 15时43分03秒 - src/startup.c:startup_workspace_for_window:207 - No _NET_STARTUP_ID set on this window
+2012年01月30日 15时43分03秒 - src/startup.c:startup_workspace_for_window:213 - Checking leader window 0x03e00001
+2012年01月30日 15时43分03秒 - src/startup.c:startup_workspace_for_window:245 - WARNING: This sequence (ID ) was not found
+2012年01月30日 15时43分03秒 - src/manage.c:manage_window:178 - startup workspace = (null)
+2012年01月30日 15时43分03秒 - src/manage.c:manage_window:216 - Initial geometry: (1696, 985, 214, 64)
+2012年01月30日 15时43分03秒 - Checking window 0x03ec9746 (class Eclipse)
+2012年01月30日 15时43分03秒 - dock status does not match
+2012年01月30日 15时43分03秒 - Checking window 0x03ec9746 (class Eclipse)
+2012年01月30日 15时43分03秒 - dock status does not match
+2012年01月30日 15时43分03秒 - Checking window 0x03ec9746 (class Eclipse)
+2012年01月30日 15时43分03秒 - Regular expression "twitter" does not match "Eclipse"
+2012年01月30日 15时43分03秒 - Checking window 0x03ec9746 (class Eclipse)
+2012年01月30日 15时43分03秒 - Regular expression "Pidgin" does not match "Eclipse"
+2012年01月30日 15时43分03秒 - src/tree.c:tree_open_con:93 - con = 0x99378c8
+2012年01月30日 15时43分03秒 - src/con.c:con_new:43 - opening window 0
+2012年01月30日 15时43分03秒 - src/con.c:con_new:46 - color #ff0000
+2012年01月30日 15时43分03秒 - src/x.c:x_con_init:112 - adding new state for window id 0x01000123
+2012年01月30日 15时43分03秒 - src/con.c:con_attach:151 - Inserting con = 0x9938248 after last focused tiling con 0x9937f20
+2012年01月30日 15时43分03秒 - src/manage.c:manage_window:263 - new container = 0x9938248
+2012年01月30日 15时43分03秒 - src/x.c:x_reinit:129 - resetting state 0x9938348 to initial
+2012年01月30日 15时43分03秒 - src/manage.c:manage_window:280 - Not in fullscreen mode, focusing
+2012年01月30日 15时43分03秒 - workspace visible? fs = 0x99378c8, ws = 0x99378c8
+2012年01月30日 15时43分03秒 - src/con.c:con_focus:184 - con_focus = 0x9938248
+2012年01月30日 15时43分03秒 - src/con.c:con_focus:184 - con_focus = 0x99378c8
+2012年01月30日 15时43分03秒 - src/con.c:con_focus:184 - con_focus = 0x9928880
+2012年01月30日 15时43分03秒 - src/con.c:con_focus:184 - con_focus = 0x9928488
+2012年01月30日 15时43分03秒 - This window is transiert for another window, setting floating
+2012年01月30日 15时43分03秒 - src/manage.c:manage_window:345 - geometry = 214 x 64
+2012年01月30日 15时43分03秒 - src/con.c:con_is_floating:339 - checking if con 0x9938248 is floating
+2012年01月30日 15时43分03秒 - src/con.c:con_new:43 - opening window 1
+2012年01月30日 15时43分03秒 - src/con.c:con_new:46 - color #00FF00
+2012年01月30日 15时43分03秒 - src/x.c:x_con_init:112 - adding new state for window id 0x01000124
+2012年01月30日 15时43分03秒 - src/floating.c:floating_enable:108 - Original rect: (0, 0) with 0 x 0
+2012年01月30日 15时43分03秒 - src/floating.c:floating_enable:109 - Geometry = (1696, 985) with 214 x 64
+2012年01月30日 15时43分03秒 - src/randr.c:get_output_containing:84 - comparing x=1696 y=985 with x=0 and y=0 width 1920 height 1080
+2012年01月30日 15时43分03秒 - src/floating.c:floating_enable:168 - Floating rect: (1696, 985) with 218 x 86
+2012年01月30日 15时43分03秒 - src/floating.c:floating_enable:185 - Corrected y = 965 (deco_height = 20)
+2012年01月30日 15时43分03秒 - src/render.c:render_con:111 - Rendering node 0x9938398 / #00FF00 / layout 0 / children 1 / orient 0
+2012年01月30日 15时43分03秒 - src/render.c:render_con:356 - child at (1696, 985) with (218 x 66)
+2012年01月30日 15时43分03秒 - src/render.c:render_con:111 - Rendering node 0x9938248 / #ff0000 / layout 0 / children 0 / orient 0
+2012年01月30日 15时43分03秒 - src/render.c:render_con:180 - child will be at 2x0 with size 214x64
+2012年01月30日 15时43分03秒 - src/render.c:render_con:111 - Rendering node 0x9938248 / #ff0000 / layout 0 / children 0 / orient 0
+2012年01月30日 15时43分03秒 - src/render.c:render_con:180 - child will be at 2x0 with size 214x64
+2012年01月30日 15时43分03秒 - src/con.c:con_focus:184 - con_focus = 0x9938248
+2012年01月30日 15时43分03秒 - src/con.c:con_focus:184 - con_focus = 0x9938398
+2012年01月30日 15时43分03秒 - src/con.c:con_focus:184 - con_focus = 0x99378c8
+2012年01月30日 15时43分03秒 - src/con.c:con_focus:184 - con_focus = 0x9928880
+2012年01月30日 15时43分03秒 - src/con.c:con_focus:184 - con_focus = 0x9928488
+2012年01月30日 15时43分03秒 - src/randr.c:get_output_containing:84 - comparing x=1805 y=1008 with x=0 and y=0 width 1920 height 1080
+2012年01月30日 15时43分03秒 - src/floating.c:floating_maybe_reassign_ws:296 - still the same ws
+2012年01月30日 15时43分03秒 - src/randr.c:get_output_containing:84 - comparing x=1696 y=965 with x=0 and y=0 width 1920 height 1080
+2012年01月30日 15时43分03秒 - src/assignments.c:run_assignments:18 - Checking if any assignments match this window
+2012年01月30日 15时43分03秒 - Checking window 0x03ec9746 (class Eclipse)
+2012年01月30日 15时43分03秒 - Regular expression "shutter" does not match "Eclipse"
+2012年01月30日 15时43分03秒 - Checking window 0x03ec9746 (class Eclipse)
+2012年01月30日 15时43分03秒 - Regular expression "twitter" does not match "Eclipse"
+2012年01月30日 15时43分03秒 - Checking window 0x03ec9746 (class Eclipse)
+2012年01月30日 15时43分03秒 - Regular expression "Pidgin" does not match "Eclipse"
+2012年01月30日 15时43分03秒 - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+2012年01月30日 15时43分03秒 - src/render.c:render_con:111 - Rendering node 0x9927fa8 / root / layout 0 / children 1 / orient 0
+2012年01月30日 15时43分03秒 - src/render.c:render_con:111 - Rendering node 0x9928488 / DVI-0 / layout 4 / children 3 / orient 0
+2012年01月30日 15时43分03秒 - src/render.c:render_l_output:93 - child at (0, 0) with (1920 x 0)
+2012年01月30日 15时43分03秒 - src/render.c:render_con:111 - Rendering node 0x9928720 / topdock / layout 3 / children 0 / orient 2
+2012年01月30日 15时43分03秒 - src/render.c:render_l_output:93 - child at (0, 0) with (1920 x 1059)
+2012年01月30日 15时43分03秒 - src/render.c:render_con:111 - Rendering node 0x9928880 / content / layout 0 / children 4 / orient 0
+2012年01月30日 15时43分03秒 - src/render.c:render_con:111 - Rendering fullscreen node 0x99378c8 / 4 / layout 0 / children 1 / orient 1
+2012年01月30日 15时43分03秒 - src/render.c:render_con:356 - child at (0, 20) with (1920 x 1039)
+2012年01月30日 15时43分03秒 - src/render.c:render_con:111 - Rendering node 0x9937f20 / #00FF00 / layout 0 / children 0 / orient 0
+2012年01月30日 15时43分03秒 - src/render.c:render_con:180 - child will be at 2x0 with size 1916x1037
+2012年01月30日 15时43分03秒 - src/render.c:render_l_output:93 - child at (0, 1059) with (1920 x 21)
+2012年01月30日 15时43分03秒 - src/render.c:render_con:111 - Rendering node 0x99289e0 / bottomdock / layout 3 / children 1 / orient 2
+2012年01月30日 15时43分03秒 - src/render.c:render_con:356 - child at (0, 1059) with (1920 x 21)
+2012年01月30日 15时43分03秒 - src/render.c:render_con:111 - Rendering node 0x992e1b8 / #aa0000 / layout 0 / children 0 / orient 0
+2012年01月30日 15时43分03秒 - src/render.c:render_con:180 - child will be at 0x0 with size 1918x19
+2012年01月30日 15时43分03秒 - src/render.c:render_con:233 - Rendering floating windows:
+2012年01月30日 15时43分03秒 - src/render.c:render_con:262 - floating child at (1696,965) with 218 x 86
+2012年01月30日 15时43分03秒 - src/render.c:render_con:111 - Rendering node 0x9938398 / #00FF00 / layout 0 / children 1 / orient 0
+2012年01月30日 15时43分03秒 - src/render.c:render_con:356 - child at (1696, 985) with (218 x 66)
+2012年01月30日 15时43分03秒 - src/render.c:render_con:111 - Rendering node 0x9938248 / #ff0000 / layout 0 / children 0 / orient 0
+2012年01月30日 15时43分03秒 - src/render.c:render_con:180 - child will be at 2x0 with size 214x64
+2012年01月30日 15时43分03秒 - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+2012年01月30日 15时43分03秒 - src/x.c:x_push_changes:813 - PUSHING CHANGES
+2012年01月30日 15时43分03秒 - src/x.c:x_push_node:518 - pushing name [i3 con] floatingcon around 0x9938248 for con 0x9938398
+2012年01月30日 15时43分03秒 - src/x.c:x_push_node:611 - setting rect (1696, 965, 218, 20)
+2012年01月30日 15时43分03秒 - src/x.c:x_push_node:674 - mapping container 01000124 (serial 121906)
+2012年01月30日 15时43分03秒 - src/x.c:x_push_node:681 - Sending fake configure notify
+2012年01月30日 15时43分03秒 - src/x.c:x_push_node:518 - pushing name [i3 con] container around 0x9936a58 for con 0x9938248
+2012年01月30日 15时43分03秒 - src/x.c:x_push_node:611 - setting rect (1696, 985, 218, 66)
+2012年01月30日 15时43分03秒 - src/x.c:x_push_node:630 - setting window rect (2, 0, 214, 64)
+2012年01月30日 15时43分03秒 - src/x.c:x_push_node:660 - mapping child window (serial 121927)
+2012年01月30日 15时43分03秒 - src/x.c:x_push_node:674 - mapping container 01000123 (serial 121929)
+2012年01月30日 15时43分03秒 - src/x.c:x_push_node:681 - Sending fake configure notify
+2012年01月30日 15时43分03秒 - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (1698, 985, 214, 64)
+2012年01月30日 15时43分03秒 - src/x.c:x_push_changes:856 - Updating focus by sending WM_TAKE_FOCUS to window 0x03ec9746 (focused: 0x9938248 / #ff0000)
+2012年01月30日 15时43分03秒 - src/xcb.c:send_take_focus:119 - Sending WM_TAKE_FOCUS to the client
+2012年01月30日 15时43分03秒 - src/x.c:x_push_changes:859 - set_focus = 1
+2012年01月30日 15时43分03秒 - src/x.c:x_push_changes:863 - Updating focus (focused: 0x9938248 / #ff0000)
+2012年01月30日 15时43分03秒 - src/x.c:x_push_changes:891 - ENDING CHANGES
+2012年01月30日 15时43分03秒 - src/tree.c:tree_render:384 - -- END RENDERING --
+2012年01月30日 15时43分03秒 - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+2012年01月30日 15时43分03秒 - src/x.c:x_push_changes:813 - PUSHING CHANGES
+2012年01月30日 15时43分03秒 - src/x.c:x_push_changes:891 - ENDING CHANGES
+2012年01月30日 15时43分03秒 - src/handlers.c:handle_expose_event:617 - window = 01000124
+2012年01月30日 15时43分03秒 - src/handlers.c:handle_expose_event:617 - window = 01000123
+2012年01月30日 15时43分03秒 - ClientMessage for window 0x03ec9746
+2012年01月30日 15时43分03秒 - src/handlers.c:handle_client_message:689 - unhandled clientmessage
+Cannot read temperature
+2012年01月30日 15时43分05秒 - ClientMessage for window 0x03e000a3
+2012年01月30日 15时43分05秒 - src/handlers.c:handle_client_message:689 - unhandled clientmessage
+2012年01月30日 15时43分05秒 - src/handlers.c:handle_unmap_notify_event:461 - UnmapNotify for 0x03ec9746 (received from 0x03ec9746), serial 56439
+2012年01月30日 15时43分05秒 - src/tree.c:tree_close:143 - next = 0x9938398, focused = 0x9938248
+2012年01月30日 15时43分05秒 - src/tree.c:tree_close:145 - closing 0x9938248, kill_window = 0
+2012年01月30日 15时43分05秒 - src/con.c:con_is_floating:339 - checking if con 0x9938248 is floating
+2012年01月30日 15时43分05秒 - src/tree.c:tree_close:205 - Container was floating, killing floating container
+2012年01月30日 15时43分05秒 - src/con.c:con_next_focused:696 - selecting next for CT_FLOATING_CON
+2012年01月30日 15时43分05秒 - src/con.c:con_next_focused:698 - next = (nil)
+2012年01月30日 15时43分05秒 - src/con.c:con_next_focused:701 - using prev, next = (nil)
+2012年01月30日 15时43分05秒 - src/con.c:con_next_focused:706 - no more floating containers for next = 0x99378c8, restoring workspace focus
+2012年01月30日 15时43分05秒 - src/con.c:con_next_focused:710 - skipping container itself, we want the next client
+2012年01月30日 15时43分05秒 - src/tree.c:tree_close:143 - next = 0x9937f20, focused = 0x9938248
+2012年01月30日 15时43分05秒 - src/tree.c:tree_close:145 - closing 0x9938398, kill_window = 0
+2012年01月30日 15时43分05秒 - src/con.c:con_is_floating:339 - checking if con 0x9938398 is floating
+2012年01月30日 15时43分05秒 - src/tree.c:tree_close:234 - focusing 0x9937f20 / #00FF00
+2012年01月30日 15时43分05秒 - src/con.c:con_focus:184 - con_focus = 0x9937f20
+2012年01月30日 15时43分05秒 - src/con.c:con_focus:184 - con_focus = 0x99378c8
+2012年01月30日 15时43分05秒 - src/con.c:con_focus:184 - con_focus = 0x9928880
+2012年01月30日 15时43分05秒 - src/con.c:con_focus:184 - con_focus = 0x9928488
+2012年01月30日 15时43分05秒 - src/con.c:con_on_remove_child:1042 - on_remove_child
+2012年01月30日 15时43分05秒 - src/tree.c:tree_close:207 - parent container killed
+2012年01月30日 15时43分05秒 - src/tree.c:tree_close:228 - No next container, i will just exit now
+2012年01月30日 15时43分05秒 - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+2012年01月30日 15时43分05秒 - src/render.c:render_con:111 - Rendering node 0x9927fa8 / root / layout 0 / children 1 / orient 0
+2012年01月30日 15时43分05秒 - src/render.c:render_con:111 - Rendering node 0x9928488 / DVI-0 / layout 4 / children 3 / orient 0
+2012年01月30日 15时43分05秒 - src/render.c:render_l_output:93 - child at (0, 0) with (1920 x 0)
+2012年01月30日 15时43分05秒 - src/render.c:render_con:111 - Rendering node 0x9928720 / topdock / layout 3 / children 0 / orient 2
+2012年01月30日 15时43分05秒 - src/render.c:render_l_output:93 - child at (0, 0) with (1920 x 1059)
+2012年01月30日 15时43分05秒 - src/render.c:render_con:111 - Rendering node 0x9928880 / content / layout 0 / children 4 / orient 0
+2012年01月30日 15时43分05秒 - src/render.c:render_con:111 - Rendering fullscreen node 0x99378c8 / 4 / layout 0 / children 1 / orient 1
+2012年01月30日 15时43分05秒 - src/render.c:render_con:356 - child at (0, 20) with (1920 x 1039)
+2012年01月30日 15时43分05秒 - src/render.c:render_con:111 - Rendering node 0x9937f20 / #00FF00 / layout 0 / children 0 / orient 0
+2012年01月30日 15时43分05秒 - src/render.c:render_con:180 - child will be at 2x0 with size 1916x1037
+2012年01月30日 15时43分05秒 - src/render.c:render_l_output:93 - child at (0, 1059) with (1920 x 21)
+2012年01月30日 15时43分05秒 - src/render.c:render_con:111 - Rendering node 0x99289e0 / bottomdock / layout 3 / children 1 / orient 2
+2012年01月30日 15时43分05秒 - src/render.c:render_con:356 - child at (0, 1059) with (1920 x 21)
+2012年01月30日 15时43分05秒 - src/render.c:render_con:111 - Rendering node 0x992e1b8 / #aa0000 / layout 0 / children 0 / orient 0
+2012年01月30日 15时43分05秒 - src/render.c:render_con:180 - child will be at 0x0 with size 1918x19
+2012年01月30日 15时43分05秒 - src/render.c:render_con:233 - Rendering floating windows:
+2012年01月30日 15时43分05秒 - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+2012年01月30日 15时43分05秒 - src/x.c:x_push_changes:813 - PUSHING CHANGES
+2012年01月30日 15时43分05秒 - src/x.c:x_push_changes:856 - Updating focus by sending WM_TAKE_FOCUS to window 0x03e000a3 (focused: 0x9937f20 / #00FF00)
+2012年01月30日 15时43分05秒 - src/xcb.c:send_take_focus:119 - Sending WM_TAKE_FOCUS to the client
+2012年01月30日 15时43分05秒 - src/x.c:x_push_changes:859 - set_focus = 1
+2012年01月30日 15时43分05秒 - src/x.c:x_push_changes:863 - Updating focus (focused: 0x9937f20 / #00FF00)
+2012年01月30日 15时43分05秒 - src/x.c:x_push_changes:891 - ENDING CHANGES
+2012年01月30日 15时43分05秒 - src/tree.c:tree_render:384 - -- END RENDERING --
+2012年01月30日 15时43分05秒 - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+2012年01月30日 15时43分05秒 - src/x.c:x_push_changes:813 - PUSHING CHANGES
+2012年01月30日 15时43分05秒 - src/x.c:x_push_changes:891 - ENDING CHANGES
+2012年01月30日 15时43分05秒 - src/handlers.c:handle_unmap_notify_event:461 - UnmapNotify for 0x03ec9746 (received from 0x01000123), serial 56439
+2012年01月30日 15时43分05秒 - Not a managed window, ignoring UnmapNotify event
+2012年01月30日 15时43分05秒 - src/handlers.c:handle_expose_event:617 - window = 01000123
+2012年01月30日 15时43分05秒 - expose event for unknown window, ignoring
+2012年01月30日 15时43分05秒 - src/handlers.c:handle_unmap_notify_event:461 - UnmapNotify for 0x03ec9746 (received from 0x00000150), serial 56439
+2012年01月30日 15时43分05秒 - Not a managed window, ignoring UnmapNotify event
+2012年01月30日 15时43分05秒 - src/handlers.c:handle_unmap_notify_event:461 - UnmapNotify for 0x01000123 (received from 0x01000123), serial 56443
+2012年01月30日 15时43分05秒 - Not a managed window, ignoring UnmapNotify event
+2012年01月30日 15时43分05秒 - src/handlers.c:handle_destroy_notify_event:528 - destroy notify for 0x01000123, 0x01000123
+2012年01月30日 15时43分05秒 - src/handlers.c:handle_unmap_notify_event:461 - UnmapNotify for 0x01000123 (received from 0x01000123), serial 56443
+2012年01月30日 15时43分05秒 - Not a managed window, ignoring UnmapNotify event
+2012年01月30日 15时43分05秒 - src/handlers.c:handle_unmap_notify_event:461 - UnmapNotify for 0x01000124 (received from 0x01000124), serial 56446
+2012年01月30日 15时43分05秒 - Not a managed window, ignoring UnmapNotify event
+2012年01月30日 15时43分05秒 - src/handlers.c:handle_destroy_notify_event:528 - destroy notify for 0x01000124, 0x01000124
+2012年01月30日 15时43分05秒 - src/handlers.c:handle_unmap_notify_event:461 - UnmapNotify for 0x01000124 (received from 0x01000124), serial 56446
+2012年01月30日 15时43分05秒 - Not a managed window, ignoring UnmapNotify event
+2012年01月30日 15时43分05秒 - src/handlers.c:handle_destroy_notify_event:528 - destroy notify for 0x03ec9746, 0x03ec9746
+2012年01月30日 15时43分05秒 - src/handlers.c:handle_unmap_notify_event:461 - UnmapNotify for 0x03ec9746 (received from 0x03ec9746), serial 56481
+2012年01月30日 15时43分05秒 - Not a managed window, ignoring UnmapNotify event
+2012年01月30日 15时43分06秒 - src/main.c:xkb_got_event:136 - Handling XKB event
+2012年01月30日 15时43分07秒 - src/main.c:xkb_got_event:136 - Handling XKB event
+Cannot read temperature
+Cannot read temperature
+
+(gnome-settings-daemon:2416): power-plugin-WARNING **: IsInhibited failed: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.gnome.SessionManager was not provided by any .service files
+Cannot read temperature
+Cannot read temperature
+2012年01月30日 15时43分27秒 - src/main.c:xkb_got_event:136 - Handling XKB event
+2012年01月30日 15时43分28秒 - src/main.c:xkb_got_event:136 - Handling XKB event
+2012年01月30日 15时43分28秒 - src/handlers.c:handle_enter_notify:172 - enter_notify for 0100006e, mode = 0, detail 4, serial 56481
+2012年01月30日 15时43分28秒 - src/handlers.c:handle_enter_notify:173 - coordinates 1210, 358
+2012年01月30日 15时43分28秒 - src/handlers.c:handle_unmap_notify_event:461 - UnmapNotify for 0x03ec99c5 (received from 0x00000150), serial 56481
+2012年01月30日 15时43分28秒 - Not a managed window, ignoring UnmapNotify event
+2012年01月30日 15时43分28秒 - src/handlers.c:handle_unmap_notify_event:461 - UnmapNotify for 0x03ec9de8 (received from 0x00000150), serial 56481
+2012年01月30日 15时43分28秒 - Not a managed window, ignoring UnmapNotify event
+Cannot read temperature
+2012年01月30日 15时43分31秒 - src/main.c:xkb_got_event:136 - Handling XKB event
+2012年01月30日 15时43分31秒 - src/main.c:xkb_got_event:136 - Handling XKB event
+2012年01月30日 15时43分32秒 - src/handlers.c:handle_enter_notify:172 - enter_notify for 01000067, mode = 0, detail 3, serial 56481
+2012年01月30日 15时43分32秒 - src/handlers.c:handle_enter_notify:173 - coordinates 1031, 8
+2012年01月30日 15时43分32秒 - using child 0x9937f20 / #00FF00 instead!
+2012年01月30日 15时43分32秒 - src/handlers.c:handle_enter_notify:172 - enter_notify for 0100006e, mode = 0, detail 4, serial 56481
+2012年01月30日 15时43分32秒 - src/handlers.c:handle_enter_notify:173 - coordinates 966, 9
+2012年01月30日 15时43分33秒 - src/click.c:handle_button_press:284 - Button 16 pressed on window 0x03e000a3
+2012年01月30日 15时43分33秒 - src/click.c:handle_button_press:290 - floating_mod = 0, detail = 1
+2012年01月30日 15时43分33秒 - src/click.c:route_click:176 - --> click properties: mod = 0, destination = 2
+2012年01月30日 15时43分33秒 - src/click.c:route_click:177 - --> OUTCOME = 0x9937f20

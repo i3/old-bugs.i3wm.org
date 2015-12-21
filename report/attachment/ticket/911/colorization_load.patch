@@ -1,0 +1,106 @@
+From 47b758444f717295445327994d7fdfbe52622729 Mon Sep 17 00:00:00 2001
+From: Raphael Michel <webmaster@raphaelmichel.de>
+Date: Mon, 31 Dec 2012 18:13:36 +0100
+Subject: [PATCH] Add colorized output for load avg
+
+---
+ i3status.c         |    4 +++-
+ include/i3status.h |    2 +-
+ src/print_load.c   |   21 ++++++++++++++++++++-
+ 3 files changed, 24 insertions(+), 3 deletions(-)
+
+diff --git a/i3status.c b/i3status.c
+index 87a793b..d8c5fdc 100644
+--- a/i3status.c
++++ b/i3status.c
+@@ -250,6 +250,8 @@ int main(int argc, char *argv[]) {
+ 
+         cfg_opt_t load_opts[] = {
+                 CFG_STR("format", "%1min %5min %15min", CFGF_NONE),
++                CFG_INT("max_threshold", 5, CFGF_NONE),
++                CFG_CUSTOM_COLOR_OPTS,
+                 CFG_END()
+         };
+ 
+@@ -459,7 +461,7 @@ int main(int argc, char *argv[]) {
+ 
+                         CASE_SEC("load") {
+                                 SEC_OPEN_MAP("load");
+-                                print_load(json_gen, buffer, cfg_getstr(sec, "format"));
++                                print_load(json_gen, buffer, cfg_getstr(sec, "format"), cfg_getint(sec, "max_threshold"));
+                                 SEC_CLOSE_MAP;
+                         }
+ 
+diff --git a/include/i3status.h b/include/i3status.h
+index 09394bd..66afe5c 100644
+--- a/include/i3status.h
++++ b/include/i3status.h
+@@ -148,7 +148,7 @@ void print_run_watch(yajl_gen json_gen, char *buffer, const char *title, const c
+ void print_cpu_temperature_info(yajl_gen json_gen, char *buffer, int zone, const char *path, const char *format, int);
+ void print_cpu_usage(yajl_gen json_gen, char *buffer, const char *format);
+ void print_eth_info(yajl_gen json_gen, char *buffer, const char *interface, const char *format_up, const char *format_down);
+-void print_load(yajl_gen json_gen, char *buffer, const char *format);
++void print_load(yajl_gen json_gen, char *buffer, const char *format, int max_threshold);
+ void print_volume(yajl_gen json_gen, char *buffer, const char *fmt, const char *device, const char *mixer, int mixer_idx);
+ bool process_runs(const char *path);
+ 
+diff --git a/src/print_load.c b/src/print_load.c
+index 5281472..30d8d1c 100644
+--- a/src/print_load.c
++++ b/src/print_load.c
+@@ -6,13 +6,14 @@
+ #include <yajl/yajl_gen.h>
+ #include <yajl/yajl_version.h>
+ 
+-void print_load(yajl_gen json_gen, char *buffer, const char *format) {
++void print_load(yajl_gen json_gen, char *buffer, const char *format, int max_threshold) {
+         char *outwalk = buffer;
+         /* Get load */
+ 
+ #if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(linux) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__APPLE__) || defined(sun) || defined(__DragonFly__)
+         double loadavg[3];
+         const char *walk;
++        bool colorful_output;
+ 
+         if (getloadavg(loadavg, 3) == -1)
+                 goto error;
+@@ -24,18 +25,36 @@ void print_load(yajl_gen json_gen, char *buffer, const char *format) {
+                 }
+ 
+                 if (BEGINS_WITH(walk+1, "1min")) {
++                        if (loadavg[0] >= max_threshold){
++                                START_COLOR("color_bad");
++                                colorful_output = true;
++                        }
+                         outwalk += sprintf(outwalk, "%1.2f", loadavg[0]);
+                         walk += strlen("1min");
++                        if (colorful_output)
++                            END_COLOR;
+                 }
+ 
+                 if (BEGINS_WITH(walk+1, "5min")) {
++                        if(loadavg[1] >= max_threshold){
++                                START_COLOR("color_bad");
++                                colorful_output = true;
++                        }
+                         outwalk += sprintf(outwalk, "%1.2f", loadavg[1]);
+                         walk += strlen("5min");
++                        if (colorful_output)
++                                END_COLOR;
+                 }
+ 
+                 if (BEGINS_WITH(walk+1, "15min")) {
++                        if (loadavg[2] >= max_threshold){
++                                START_COLOR("color_bad");
++                                colorful_output = true;
++                        }
+                         outwalk += sprintf(outwalk, "%1.2f", loadavg[2]);
+                         walk += strlen("15min");
++                        if (colorful_output)
++                                END_COLOR;
+                 }
+         }
+ 
+-- 
+1.7.10.4
+

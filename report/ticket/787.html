@@ -1,0 +1,861 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #787 (some windows not managed by i3)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/786" title="Ticket #786" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/787?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/787?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/787?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/788" title="Ticket #788" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="6649e2c41032888232c24554";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/786" title="Ticket #786">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/788" title="Ticket #788">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-08-28T21%3A00%3A52%2B02%3A00&amp;precision=second" title="See timeline at 08/28/12 21:00:52">3 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2013-05-28T19%3A58%3A20%2B02%3A00&amp;precision=second" title="See timeline at 05/28/13 19:58:20">22 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/787" class="trac-id">#787</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">some windows not managed by i3</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable"><a href="/report/query?status=!closed&amp;reporter=jhnmlkvch9">jhnmlkvch9</a></td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.2">4.2</a>
+        </td>
+        <th id="h_keywords">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+              <a href="/report/query?status=!closed&amp;keywords=~error">error</a>, <a href="/report/query?status=!closed&amp;keywords=~unknown">unknown</a> <a href="/report/query?status=!closed&amp;keywords=~window">window</a>
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion" class="missing">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Linux">Linux</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+I've been using i3 for a long time in Ubuntu 10.04 LTS. Now moved to Ubuntu 12.04 LTS and installed i3 4.1.2. I use a software that works perfectly in i3 3.d-bf1-1. However in i3 4.1.2 the help window (activated by F1 key) of this program comes up without any window decorations. It sits on top of the other tiled windows blocking them. When I click on the help window, I get the following message in the terminal:<br />
+</p>
+<p>
+ERROR: Clicked into unknown window ?!<br />
+</p>
+<p>
+However if I open the help window first in Gnome and then replace metacity with i3, the window works fine.<br />
+ <br />
+Config file the default version.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(3)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/787/i3.log.gz" title="View attachment">i3.log.gz</a><a href="/report/raw-attachment/ticket/787/i3.log.gz" class="trac-rawlink" title="Download">​</a>
+       (<span title="26342 bytes">25.7 KB</span>) -
+      added by <em>jhnmlkvch9@…</em> <a class="timeline" href="/report/timeline?from=2012-08-28T21%3A01%3A34%2B02%3A00&amp;precision=second" title="See timeline at 08/28/12 21:01:34">3 years ago</a>.
+  </dt>
+              <dd>
+                i3 debug log
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/787/x11trace_i3_mathematica.log.bz2" title="View attachment">x11trace_i3_mathematica.log.bz2</a><a href="/report/raw-attachment/ticket/787/x11trace_i3_mathematica.log.bz2" class="trac-rawlink" title="Download">​</a>
+       (<span title="714808 bytes">698.1 KB</span>) -
+      added by <em>oblique</em> <a class="timeline" href="/report/timeline?from=2013-05-26T05%3A15%3A56%2B02%3A00&amp;precision=second" title="See timeline at 05/26/13 05:15:56">22 months ago</a>.
+  </dt>
+              <dd>
+                x11trace i3 log
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/787/x11trace_gnome_mathematica.log.bz2" title="View attachment">x11trace_gnome_mathematica.log.bz2</a><a href="/report/raw-attachment/ticket/787/x11trace_gnome_mathematica.log.bz2" class="trac-rawlink" title="Download">​</a>
+       (<span title="986521 bytes">963.4 KB</span>) -
+      added by <em>oblique</em> <a class="timeline" href="/report/timeline?from=2013-05-26T05%3A19%3A59%2B02%3A00&amp;precision=second" title="See timeline at 05/26/13 05:19:59">22 months ago</a>.
+  </dt>
+              <dd>
+                x11trace gnome3 log
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/787/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(16)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-08-28T21%3A01%3A34%2B02%3A00&amp;precision=second" title="See timeline at 08/28/12 21:01:34">3 years ago</a> by jhnmlkvch9@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/787/i3.log.gz"><em>i3.log.gz</em></a><a href="/report/raw-attachment/ticket/787/i3.log.gz" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+i3 debug log<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-1-1346706907643351">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:2" class="follow-up">↓ 2</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-03T23%3A15%3A07%2B02%3A00&amp;precision=second" title="See timeline at 09/03/12 23:15:07">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Unfortunately, the log itself doesn’t help me much in this case.<br />
+</p>
+<p>
+The issue seems relatively similar to <a class="closed ticket" href="/report/ticket/782" title="defect: urxvt borders lost and gimp toolbox windows stuck after restart (closed: fixed)">#782</a>.<br />
+</p>
+<p>
+Since I don’t currently have access to Mathematica (which I assume is the program you are talking about based on the log), it’ll take me a bit to make any progress on this issue.<br />
+</p>
+<p>
+If you want to help, using git bisect to figure out when exactly the issue was introduced would be very helpful. (google for "git bisect" if you’re not familiar with the term)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1346800682842164">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+        in reply to:
+    <a href="#comment:1">↑ 1</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:5" class="follow-up">↓ 5</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-05T01%3A18%3A02%2B02%3A00&amp;precision=second" title="See timeline at 09/05/12 01:18:02">3 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/787#comment:1" title="Comment 1">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Unfortunately, the log itself doesn’t help me much in this case.<br />
+</p>
+<p>
+The issue seems relatively similar to <a class="closed ticket" href="/report/ticket/782" title="defect: urxvt borders lost and gimp toolbox windows stuck after restart (closed: fixed)">#782</a>.<br />
+</p>
+<p>
+Since I don’t currently have access to Mathematica (which I assume is the program you are talking about based on the log), it’ll take me a bit to make any progress on this issue.<br />
+</p>
+<p>
+If you want to help, using git bisect to figure out when exactly the issue was introduced would be very helpful. (google for "git bisect" if you’re not familiar with the term)<br />
+</p>
+</blockquote>
+<p>
+Thanks Michael. The earliest version I can install on Ubuntu 12.04 has this problem. I'll be happy to try git bisect and try and catch which commit broke this, but is it possible for me to install older versions of i3 on Ubuntu 12.04?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1346852568212060">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:4" class="follow-up">↓ 4</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-05T15%3A42%3A48%2B02%3A00&amp;precision=second" title="See timeline at 09/05/12 15:42:48">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Yes, it is. The easiest way to do it should be:<br />
+</p>
+<pre class="wiki">$ sudo apt-get build-dep i3-wm
+$ git clone git://code.i3wm.org/i3
+$ cd i3
+$ git bisect start 4.1.2 3.d-bf1
+$ make
+$ sudo make install
+</pre><p>
+Then restart your X session, reproduce the problem, use either "git bisect bad" or "git bisect good", re-compile and install (<tt>make clean; make; sudo make install</tt>). Repeat.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1346859610980420">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+        in reply to:
+    <a href="#comment:3">↑ 3</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-05T17%3A40%3A10%2B02%3A00&amp;precision=second" title="See timeline at 09/05/12 17:40:10">3 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Thanks Michael. 4.1.2.3.d-bf1 is bad. However, I can't seem to go back from this version.<br />
+</p>
+<pre class="wiki">jhn@jhnmlkvchubu:~/Downloads/i3$ i3 --version
+i3 version tree-pr4-301-g2728c02 (2011-07-31, branch 2728c0246794df9eae0a12d77f32d7bd0031df6f) © 2009-2011 Michael Stapelberg and contributors
+jhn@jhnmlkvchubu:~/Downloads/i3$ git bisect bad
+Bisecting: 577 revisions left to test after this (roughly 9 steps)
+[0e8fdab30252e6829f627236342b9ee677a17fb0] disable sighandler for testsuite runs
+jhn@jhnmlkvchubu:~/Downloads/i3$ make
+YACC src/cfgparse.y
+In file included from include/all.h:40:0,
+                 from src/cfgparse.y:11:
+include/i3.h:12:30: fatal error: xcb/xcb_property.h: No such file or directory
+compilation terminated.
+make: *** [src/cfgparse.y.o] Error 1
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1346861097928465">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+        in reply to:
+    <a href="#comment:2">↑ 2</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-05T18%3A04%3A57%2B02%3A00&amp;precision=second" title="See timeline at 09/05/12 18:04:57">3 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/787#comment:2" title="Comment 2">anonymous</a>:<br />
+</p>
+<p>
+Even though I couldn't use git bisect I did go back to <a class="ext-link" href="http://i3wm.org/downloads/"><span class="icon">​</span>http://i3wm.org/downloads/</a> and tried to check where the breakage was.<br />
+</p>
+<p>
+3.e-bf3 works fine. The breakage happens starting with 4.0. I hope this is somewhat helpful.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1346862619457735">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-05T18%3A30%3A19%2B02%3A00&amp;precision=second" title="See timeline at 09/05/12 18:30:19">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+There was a space between 4.1.2 and 3.d-bf1 — the former is the bad version, the latter the good version.<br />
+</p>
+<p>
+As for the xcb_property.h error: The old code used the old xcb-util version (which had an API change). Unless you install the old libs you can’t build that (not sure if they’re easily installable).<br />
+</p>
+<p>
+Anyway, if breakage started with 4.0, then it means that the X11-related refactoring we did with 4.0 is probably the problem. This might be a conceptual problem and I need to look into that in depth when I get the chance to.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1357237482985928">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:8" class="follow-up">↓ 8</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-01-03T19%3A24%3A42%2B01%3A00&amp;precision=second" title="See timeline at 01/03/13 19:24:42">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I'm also hitting this bug. I wonder if it can be due to the window setting itself to an Iconic State (WM_HINTS(WM_HINTS): Initial state is Iconic State.) as described in <a class="ext-link" href="http://unix.stackexchange.com/questions/59395/change-zombie-window-x-properties-from-iconic-state-to-normal-state"><span class="icon">​</span>http://unix.stackexchange.com/questions/59395/change-zombie-window-x-properties-from-iconic-state-to-normal-state</a>?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1357294831631385">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+        in reply to:
+    <a href="#comment:7">↑ 7</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-01-04T11%3A20%3A31%2B01%3A00&amp;precision=second" title="See timeline at 01/04/13 11:20:31">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/787#comment:7" title="Comment 7">anonymous</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+I'm also hitting this bug. I wonder if it can be due to the window setting itself to an Iconic State (WM_HINTS(WM_HINTS): Initial state is Iconic State.) as described in <a class="ext-link" href="http://unix.stackexchange.com/questions/59395/change-zombie-window-x-properties-from-iconic-state-to-normal-state"><span class="icon">​</span>http://unix.stackexchange.com/questions/59395/change-zombie-window-x-properties-from-iconic-state-to-normal-state</a>?<br />
+</p>
+</blockquote>
+<p>
+i3 does not check WM_HINTS when deciding whether to manage a window or not.<br />
+</p>
+<p>
+See <a class="ext-link" href="http://code.stapelberg.de/git/i3/tree/src/manage.c#n71"><span class="icon">​</span>http://code.stapelberg.de/git/i3/tree/src/manage.c#n71</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1357310262030108">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-01-04T15%3A37%3A42%2B01%3A00&amp;precision=second" title="See timeline at 01/04/13 15:37:42">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Adding information to the report: by restarting i3 in place, it fetches the control of the window.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1361207198725210">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:11" class="follow-up">↓ 11</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-02-18T18%3A06%3A38%2B01%3A00&amp;precision=second" title="See timeline at 02/18/13 18:06:38">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+dwm 5.8 shows the same problem but wmii 3.6 behaves well (as does xmonad or awesome for that matter, but those would share very little with i3 I would guess).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1361228492385236">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+        in reply to:
+    <a href="#comment:10">↑ 10</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-02-19T00%3A01%3A32%2B01%3A00&amp;precision=second" title="See timeline at 02/19/13 00:01:32">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/787#comment:10" title="Comment 10">anonymous</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+dwm 5.8 shows the same problem but wmii 3.6 behaves well (as does xmonad or awesome for that matter, but those would share very little with i3 I would guess).<br />
+</p>
+</blockquote>
+<p>
+This is somewhat misleading. wmii does not share a single line of code with i3. Actually, i3 is closest to awesome because both use XCB as their X library, while xmonad, dwm and wmii use Xlib. Then again, awesome, dwm and XMonad are non-reparenting, while i3 and wmii are reparenting.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-12-1369517393583824">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-05-25T23%3A29%3A53%2B02%3A00&amp;precision=second" title="See timeline at 05/25/13 23:29:53">22 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+So, oblique sent <a class="ext-link" href="http://cr.i3wm.org/patch/151"><span class="icon">​</span>http://cr.i3wm.org/patch/151</a> which essentially ignores synthetic unmapnotify events entirely.<br />
+</p>
+<p>
+I am not convinced that this is the right approach, as other window managers (notably metacity) don’t seem to follow this path and it clearly violates the standard (ICCCM 4.1.4).<br />
+</p>
+<p>
+However, we now know what we are looking for — withdrawn state and unmapnotify events.<br />
+</p>
+<p>
+Since I still have no access to mathematica (and that won’t change), it would be helpful if somebody could xtrace an entire x11 session of<br />
+</p>
+<ol><li>gnome with mathematica, not exposing the symptom
+</li><li>i3 with mathematica, exposing the symptom
+</li></ol><p>
+To xtrace your session, first install xtrace (in Debian, x11trace in arch and possibly others), then use this in your ~/.xsession:<br />
+</p>
+<pre class="wiki">cd /tmp
+rm xsession.log
+export DISPLAY=:0
+xtrace -o xsession.log &amp;
+sleep 1
+export DISPLAY=:9
+cd
+exec i3
+</pre><p>
+Afterwards, save /tmp/xsession.log and modify to start gnome instead of i3.<br />
+</p>
+<p>
+Be aware that xtracing your entire session makes everything really slow.<br />
+</p>
+<p>
+Once you have the two log files, please bzip2 them and attach them here, upload them somewhere or email them to me directly.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-05-26T05%3A15%3A56%2B02%3A00&amp;precision=second" title="See timeline at 05/26/13 05:15:56">22 months ago</a> by oblique
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/787/x11trace_i3_mathematica.log.bz2"><em>x11trace_i3_mathematica.log.bz2</em></a><a href="/report/raw-attachment/ticket/787/x11trace_i3_mathematica.log.bz2" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+x11trace i3 log<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-05-26T05%3A19%3A59%2B02%3A00&amp;precision=second" title="See timeline at 05/26/13 05:19:59">22 months ago</a> by oblique
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/787/x11trace_gnome_mathematica.log.bz2"><em>x11trace_gnome_mathematica.log.bz2</em></a><a href="/report/raw-attachment/ticket/787/x11trace_gnome_mathematica.log.bz2" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+x11trace gnome3 log<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-13-1369763900125522">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:13" class="cnum">
+    <a href="#comment:13">comment:13</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-05-28T19%3A58%3A20%2B02%3A00&amp;precision=second" title="See timeline at 05/28/13 19:58:20">22 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This is fixed with <a class="ext-link" href="http://c.i3wm.org/62ef783"><span class="icon">​</span>http://c.i3wm.org/62ef783</a><br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/787?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/787?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/787?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

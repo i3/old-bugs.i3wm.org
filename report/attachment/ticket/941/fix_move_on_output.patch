@@ -1,0 +1,21 @@
+diff -r -u a/parser-specs/commands.spec b/parser-specs/commands.spec
+--- a/parser-specs/commands.spec	2012-12-11 18:08:17.000000000 -0500
++++ b/parser-specs/commands.spec	2013-01-28 22:52:50.776207898 -0500
+@@ -223,7 +223,7 @@
+       -> call cmd_rename_workspace($old_name, $new_name)
+ 
+ # move <direction> [<pixels> [px]]
+-# move [window|container] [to] workspace [<str>|next|prev|current]
++# move [window|container] [to] workspace [<str>|next|prev|current|next_on_output|prev_on_output]
+ # move [window|container] [to] output <str>
+ # move [window|container] [to] scratchpad
+ # move workspace to [output] <str>
+@@ -264,7 +264,7 @@
+ state MOVE_WORKSPACE:
+   'to'
+       -> MOVE_WORKSPACE_TO_OUTPUT
+-  workspace = 'next', 'prev', 'next_on_output', 'prev_on_output', 'current'
++  workspace = 'next_on_output', 'prev_on_output', 'next', 'prev', 'current'
+       -> call cmd_move_con_to_workspace($workspace)
+   'back_and_forth'
+       -> call cmd_move_con_to_workspace_back_and_forth()

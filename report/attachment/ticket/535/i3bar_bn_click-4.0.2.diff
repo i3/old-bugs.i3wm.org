@@ -1,0 +1,50 @@
+diff -ur old/i3bar/src/xcb.c new/i3bar/src/xcb.c
+--- old/i3bar/src/xcb.c	2011-10-01 17:22:46.000000000 -0700
++++ new/i3bar/src/xcb.c	2011-10-01 17:23:06.000000000 -0700
+@@ -11,6 +11,11 @@
+ #include <xcb/xcb.h>
+ #include <xcb/xproto.h>
+ #include <xcb/xcb_atom.h>
++
++#ifdef XCB_COMPAT
++#include "xcb_compat.h"
++#endif
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+diff -ur old/src/click.c new/src/click.c
+--- old/src/click.c	2011-10-01 17:16:18.000000000 -0700
++++ new/src/click.c	2011-10-01 17:17:06.000000000 -0700
+@@ -157,6 +157,12 @@
+     if (con->parent->type == CT_DOCKAREA)
+         goto done;
+ 
++    /* enable floating mode first if needed */
++    if (mod_pressed && event->detail == 1) {
++       floating_enable(con, false);
++//	tree_render();
++    }
++
+     /* get the floating con */
+     Con *floatingcon = con_inside_floating(con);
+     const bool proportional = (event->state & BIND_SHIFT);
+diff -ur old/src/render.c new/src/render.c
+--- old/src/render.c	2011-10-01 17:16:23.000000000 -0700
++++ new/src/render.c	2011-10-01 17:16:58.000000000 -0700
+@@ -167,6 +167,7 @@
+             DLOG("new_height = %f, new_width = %d\n", new_height, new_width);
+         }
+ 
++#if 0
+         if (con->height_increment > 1) {
+             int old_height = inset->height;
+             inset->height -= (inset->height - con->base_height) % con->height_increment;
+@@ -180,6 +181,7 @@
+             DLOG("Lost %d pixel due to client's width_increment (%d px, base_width = %d)\n",
+                 old_width - inset->width, con->width_increment, con->base_width);
+         }
++#endif 
+ 
+         DLOG("child will be at %dx%d with size %dx%d\n", inset->x, inset->y, inset->width, inset->height);
+     }

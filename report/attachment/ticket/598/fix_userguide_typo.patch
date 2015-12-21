@@ -1,0 +1,25 @@
+From d5d63bbf49d8e13141da523c2e673b0e6919ef6f Mon Sep 17 00:00:00 2001
+From: Miguel de Val-Borro <miguel.deval@gmail.com>
+Date: Fri, 23 Dec 2011 12:56:26 +0100
+Subject: [PATCH] Fix typo in keyboard binding example in the user guide
+
+---
+ docs/userguide |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/docs/userguide b/docs/userguide
+index be8335e..05c1522 100644
+--- a/docs/userguide
++++ b/docs/userguide
+@@ -323,7 +323,7 @@ bindcode [Modifiers+]keycode command
+ *Examples*:
+ --------------------------------
+ # Fullscreen
+-bindsym mod+f f
++bindsym mod+f fullscreen
+ 
+ # Restart
+ bindsym mod+Shift+r restart
+-- 
+1.7.3.4
+

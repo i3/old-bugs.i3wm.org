@@ -1,0 +1,40 @@
+From ff9e8ba75e24f8c6a64364e5d5a6c6bfd36f8266 Mon Sep 17 00:00:00 2001
+From: Tony Crisci <tony@dubstepdish.com>
+Date: Thu, 26 Dec 2013 00:30:21 -0500
+Subject: [PATCH] i3bar: Set `mapped' flag on trayclient creation
+
+---
+ i3bar/src/xcb.c | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+
+diff --git a/i3bar/src/xcb.c b/i3bar/src/xcb.c
+index d3dc948..8286103 100644
+--- a/i3bar/src/xcb.c
++++ b/i3bar/src/xcb.c
+@@ -603,17 +603,18 @@ static void handle_client_message(xcb_client_message_event_t* event) {
+              * exits/crashes. */
+             xcb_change_save_set(xcb_connection, XCB_SET_MODE_INSERT, client);
+ 
++            trayclient *tc = smalloc(sizeof(trayclient));
++            tc->win = client;
++            tc->xe_version = xe_version;
++            tc->mapped = false;
++            TAILQ_INSERT_TAIL(output->trayclients, tc, tailq);
++
+             if (map_it) {
+                 DLOG("Mapping dock client\n");
+                 xcb_map_window(xcb_connection, client);
+             } else {
+                 DLOG("Not mapping dock client yet\n");
+             }
+-            trayclient *tc = smalloc(sizeof(trayclient));
+-            tc->win = client;
+-            tc->xe_version = xe_version;
+-            TAILQ_INSERT_TAIL(output->trayclients, tc, tailq);
+-
+             /* Trigger an update to copy the statusline text to the appropriate
+              * position */
+             configure_trayclients();
+-- 
+1.8.5.2
+

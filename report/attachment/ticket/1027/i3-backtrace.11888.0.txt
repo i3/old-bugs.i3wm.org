@@ -1,0 +1,140 @@
+#0  0x00007f8c5081876e in waitpid () from /lib64/libpthread.so.0
+No symbol table info available.
+#1  0x00000000004315d3 in backtrace () at ../i3-4.5.1/src/sighandler.c:113
+        tmpdir = 0x449eee "/tmp"
+        pid_parent = 11888
+        filename = 0x1429b50 "/tmp/i3-backtrace.11888.0.txt"
+        suffix = 1
+        bt = {st_dev = 140240559193056, st_ino = 206158430240, st_nlink = 140736031849376, st_mode = 2838461152, st_uid = 32767, st_gid = 0, __pad0 = 0, st_rdev = 4497165, st_size = 4497616, st_blksize = 183, st_blocks = 20588720, st_atim = {tv_sec = 140240620181512, tv_nsec = 140240559193056}, st_mtim = {tv_sec = 140240659154632, tv_nsec = 21134512}, st_ctim = {tv_sec = 140240669835264, tv_nsec = 140736031849424}, __unused = {4504955, 4505344, 140240667831925}}
+        pid_gdb = 12009
+        __FUNCTION__ = "backtrace"
+        status = 0
+#2  0x0000000000431980 in sig_handle_key_press (ignored=0x0, conn=0x13a2870, event=0x142da00) at ../i3-4.5.1/src/sighandler.c:187
+        state = 0
+        sym = 98
+        __FUNCTION__ = "sig_handle_key_press"
+#3  0x0000000000431da7 in handle_signal (sig=6, info=0x7fffa92f7df0, data=0x7fffa92f7cc0) at ../i3-4.5.1/src/sighandler.c:303
+        type = 2
+        __FUNCTION__ = "handle_signal"
+        action = {__sigaction_handler = {sa_handler = 0x0, sa_sigaction = 0x0}, sa_mask = {__val = {140239272149003, 140736031851136, 140736031851240, 4484106, 140240619206814, 140736031849648, 11, 140243567116287, 140239272149003, 0, 140240622717824, 140240622727488, 140240622727488, 140736031851232, 140733193388043, 140240622816144}}, sa_flags = 11, sa_restorer = 0x0}
+        event = 0x142da00
+#4  <signal handler called>
+No symbol table info available.
+#5  0x00007f8c50497bd5 in raise () from /lib64/libc.so.6
+No symbol table info available.
+#6  0x00007f8c5049904b in abort () from /lib64/libc.so.6
+No symbol table info available.
+#7  0x00007f8c50490c7e in ?? () from /lib64/libc.so.6
+No symbol table info available.
+#8  0x00007f8c50490d22 in __assert_fail () from /lib64/libc.so.6
+No symbol table info available.
+#9  0x00000000004378a5 in con_fullscreen_permits_focusing (con=0x14271b0) at ../i3-4.5.1/src/con.c:1460
+        fs = 0x0
+        __PRETTY_FUNCTION__ = "con_fullscreen_permits_focusing"
+#10 0x0000000000412dcd in cmd_focus (current_match=0x6589c0 <current_match>, cmd_output=0x658a30 <subcommand_output>) at ../i3-4.5.1/src/commands.c:1420
+        ws = 0x1426fc0
+        currently_focused = 0x0
+        __FUNCTION__ = "cmd_focus"
+        __i3_scratch = 0x14201d0
+        count = 0
+        current = 0x1426ec0
+#11 0x0000000000425902 in GENERATED_call (call_identifier=71, result=0x658a30 <subcommand_output>) at include/GENERATED_command_call.h:574
+        __PRETTY_FUNCTION__ = "GENERATED_call"
+#12 0x0000000000425af4 in next_state (token=0x655270 <tokens_FOCUS+240>) at ../i3-4.5.1/src/commands_parser.c:192
+No locals.
+#13 0x0000000000425fd4 in parse_command (input=0x1425ff0 "[class=\"^Thunderbird$\"] focus") at ../i3-4.5.1/src/commands_parser.c:317
+        ptr = 0x655700 <tokens+576>
+        __FUNCTION__ = "parse_command"
+        walk = 0x142600d ""
+        len = 29
+        c = 10
+        token = 0x655270 <tokens_FOCUS+240>
+        token_handled = false
+#14 0x0000000000417c08 in handle_key_press (event=0x14279b0) at ../i3-4.5.1/src/key_press.c:116
+        key_release = false
+        __FUNCTION__ = "handle_key_press"
+        state_filtered = 64
+        bind = 0x1402ce0
+        command_copy = 0x1425ff0 "[class=\"^Thunderbird$\"] focus"
+        command_output = 0x13a2888
+        reply = 0x0
+        length = 0
+        handle = 0x0
+        state = yajl_status_ok
+#15 0x00000000004342fa in handle_event (type=2, event=0x14279b0) at ../i3-4.5.1/src/handlers.c:1041
+No locals.
+#16 0x00000000004219c8 in xcb_check_cb (loop=0x7f8c5138e360 <default_loop_struct>, w=0x13a20c0, revents=32768) at ../i3-4.5.1/src/main.c:136
+        type = 2
+        event = 0x14279b0
+        __FUNCTION__ = "xcb_check_cb"
+#17 0x00007f8c5118598e in ev_invoke_pending (loop=0x7f8c5138e360 <default_loop_struct>) at ev.c:2682
+        p = 0x14257b0
+        pri = 2
+#18 0x00007f8c51186837 in ev_run (loop=0x7f8c5138e360 <default_loop_struct>, flags=0) at ev.c:3082
+        __PRETTY_FUNCTION__ = "ev_run"
+#19 0x00000000004218b0 in ev_loop (loop=0x7f8c5138e360 <default_loop_struct>, flags=0) at /usr/include/ev.h:820
+No locals.
+#20 0x00000000004249b2 in main (argc=4, argv=0x7fffa92f9c78) at ../i3-4.5.1/src/main.c:854
+        i3_version = 0x444cd8 "4.5.1 (2013-03-18, branch \"tags/4.5.1\")"
+        override_configpath = 0x0
+        autostart = true
+        layout_path = 0x0
+        delete_layout_path = false
+        force_xinerama = false
+        fake_outputs = 0x0
+        disable_signalhandler = false
+        long_options = {{name = 0x446479 "no-autostart", has_arg = 0, flag = 0x0, val = 97}, {name = 0x446486 "config", has_arg = 1, flag = 0x0, val = 99}, {name = 0x44648d "version", has_arg = 0, flag = 0x0, val = 118}, {name = 0x446495 "moreversion", has_arg = 0, flag = 0x0, val = 109}, {name = 0x4464a1 "more-version", has_arg = 0, flag = 0x0, val = 109}, {name = 0x4464ae "more_version", has_arg = 0, flag = 0x0, val = 109}, {name = 0x4464bb "help", has_arg = 0, flag = 0x0, val = 104}, {name = 0x4464c0 "layout", has_arg = 1, flag = 0x0, val = 76}, {name = 0x444ff3 "restart", has_arg = 1, flag = 0x0, val = 0}, {name = 0x444e35 "force-xinerama", has_arg = 0, flag = 0x0, val = 0}, {name = 0x444e44 "force_xinerama", has_arg = 0, flag = 0x0, val = 0}, {name = 0x444f6f "disable-signalhandler", has_arg = 0, flag = 0x0, val = 0}, {name = 0x444fb2 "shmlog-size", has_arg = 1, flag = 0x0, val = 0}, {name = 0x444fbe "shmlog_size", has_arg = 1, flag = 0x0, val = 0}, {name = 0x444f85 "get-socketpath", has_arg = 0, flag = 0x0, val = 0}, {name = 0x444f94 "get_socketpath", has_arg = 0, flag = 0x0, val = 0}, {name = 0x445008 "fake_outputs", has_arg = 1, flag = 0x0, val = 0}, {name = 0x444ffb "fake-outputs", has_arg = 1, flag = 0x0, val = 0}, {name = 0x445038 "force-old-config-parser-v4.4-only", has_arg = 0, flag = 0x0, val = 0}, {name = 0x0, has_arg = 0, flag = 0x0, val = 0}}
+        option_index = 0
+        opt = -1
+        __FUNCTION__ = "main"
+        gcookie = {sequence = 5}
+        pointercookie = {sequence = 6}
+        cookie = {sequence = 17}
+        greply = 0x13a21b0
+        _NET_SUPPORTED_cookie = {sequence = 19}
+        _NET_SUPPORTING_WM_CHECK_cookie = {sequence = 20}
+        _NET_WM_NAME_cookie = {sequence = 21}
+        _NET_WM_STATE_FULLSCREEN_cookie = {sequence = 22}
+        _NET_WM_STATE_DEMANDS_ATTENTION_cookie = {sequence = 23}
+        _NET_WM_STATE_cookie = {sequence = 24}
+        _NET_WM_WINDOW_TYPE_cookie = {sequence = 25}
+        _NET_WM_WINDOW_TYPE_DOCK_cookie = {sequence = 26}
+        _NET_WM_WINDOW_TYPE_DIALOG_cookie = {sequence = 27}
+        _NET_WM_WINDOW_TYPE_UTILITY_cookie = {sequence = 28}
+        _NET_WM_WINDOW_TYPE_TOOLBAR_cookie = {sequence = 29}
+        _NET_WM_WINDOW_TYPE_SPLASH_cookie = {sequence = 30}
+        _NET_WM_DESKTOP_cookie = {sequence = 31}
+        _NET_WM_STRUT_PARTIAL_cookie = {sequence = 32}
+        _NET_CLIENT_LIST_STACKING_cookie = {sequence = 33}
+        _NET_CURRENT_DESKTOP_cookie = {sequence = 34}
+        _NET_ACTIVE_WINDOW_cookie = {sequence = 35}
+        _NET_WORKAREA_cookie = {sequence = 36}
+        _NET_STARTUP_ID_cookie = {sequence = 37}
+        WM_PROTOCOLS_cookie = {sequence = 38}
+        WM_DELETE_WINDOW_cookie = {sequence = 39}
+        UTF8_STRING_cookie = {sequence = 40}
+        WM_STATE_cookie = {sequence = 41}
+        WM_CLIENT_LEADER_cookie = {sequence = 42}
+        WM_TAKE_FOCUS_cookie = {sequence = 43}
+        WM_WINDOW_ROLE_cookie = {sequence = 44}
+        I3_SOCKET_PATH_cookie = {sequence = 45}
+        I3_CONFIG_PATH_cookie = {sequence = 46}
+        I3_SYNC_cookie = {sequence = 47}
+        I3_SHMLOG_PATH_cookie = {sequence = 48}
+        I3_PID_cookie = {sequence = 49}
+        needs_tree_init = true
+        pointerreply = 0x13a2180
+        output = 0x1420b20
+        ipc_socket = 9
+        xcb_watcher = 0x1420880
+        xkb = 0x1420840
+        xcb_check = 0x13a20c0
+        xcb_prepare = 0x14207b0
+        action = {__sigaction_handler = {sa_handler = 0x421cac <handle_signal>, sa_sigaction = 0x421cac <handle_signal>}, sa_mask = {__val = {0 <repeats 16 times>}}, sa_flags = -1073741820, sa_restorer = 0x7f8c50467a20}
+        exec_always = 0x0
+        barconfig = 0x0
+A debugging session is active.
+
+	Inferior 1 [process 11888] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]

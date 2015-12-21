@@ -1,0 +1,153 @@
+From af146e5858faef16d2bc6724813677714fbf0017 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Fernando=20Tarl=C3=A1=20Cardoso=20Lemos?= <fernandotcl@gmail.com>
+Date: Sun, 12 Sep 2010 02:54:55 -0300
+Subject: [PATCH] Support for custom bg colors for clients.
+
+---
+ include/config.h |    1 +
+ src/cfgparse.l   |    1 +
+ src/cfgparse.y   |   10 ++++++++++
+ src/config.c     |    1 +
+ src/handlers.c   |    4 ++--
+ src/layout.c     |   10 +++++-----
+ 6 files changed, 20 insertions(+), 7 deletions(-)
+
+diff --git a/include/config.h b/include/config.h
+index 0c790bf..a8c42fb 100644
+--- a/include/config.h
++++ b/include/config.h
+@@ -112,6 +112,7 @@ struct Config {
+ 
+         /* Color codes are stored here */
+         struct config_client {
++                uint32_t background;
+                 struct Colortriple focused;
+                 struct Colortriple focused_inactive;
+                 struct Colortriple unfocused;
+diff --git a/src/cfgparse.l b/src/cfgparse.l
+index 10a1307..0c0cee7 100644
+--- a/src/cfgparse.l
++++ b/src/cfgparse.l
+@@ -101,6 +101,7 @@ stack-limit                     { return TOKSTACKLIMIT; }
+ cols                            { yylval.number = STACK_LIMIT_COLS; return TOKSTACKLIMIT; }
+ rows                            { yylval.number = STACK_LIMIT_ROWS; return TOKSTACKLIMIT; }
+ exec                            { BEGIN(BIND_AWS_COND); return TOKEXEC; }
++client.background               { BEGIN(COLOR_COND); yylval.single_color = &config.client.background; return TOKSINGLECOLOR; }
+ client.focused                  { BEGIN(COLOR_COND); yylval.color = &config.client.focused; return TOKCOLOR; }
+ client.focused_inactive         { BEGIN(COLOR_COND); yylval.color = &config.client.focused_inactive; return TOKCOLOR; }
+ client.unfocused                { BEGIN(COLOR_COND); yylval.color = &config.client.unfocused; return TOKCOLOR; }
+diff --git a/src/cfgparse.y b/src/cfgparse.y
+index 3ba788a..58ff6e9 100644
+--- a/src/cfgparse.y
++++ b/src/cfgparse.y
+@@ -197,6 +197,7 @@ void parse_file(const char *f) {
+ %union {
+         int number;
+         char *string;
++        uint32_t *single_color;
+         struct Colortriple *color;
+         struct Assignment *assignment;
+         struct Binding *binding;
+@@ -225,6 +226,7 @@ void parse_file(const char *f) {
+ %token TOKSET
+ %token TOKIPCSOCKET "ipc_socket"
+ %token TOKEXEC "exec"
++%token TOKSINGLECOLOR
+ %token TOKCOLOR
+ %token TOKARROW "→"
+ %token TOKMODE "mode"
+@@ -255,6 +257,7 @@ line:
+         | assign
+         | ipcsocket
+         | exec
++        | single_color
+         | color
+         | terminal
+         | font
+@@ -573,6 +576,13 @@ font:
+         }
+         ;
+ 
++single_color:
++        TOKSINGLECOLOR WHITESPACE colorpixel
++        {
++                uint32_t *dest = $<single_color>1;
++                *dest = $<number>3;
++        }
++        ;
+ 
+ color:
+         TOKCOLOR WHITESPACE colorpixel WHITESPACE colorpixel WHITESPACE colorpixel
+diff --git a/src/config.c b/src/config.c
+index 972e376..0d08612 100644
+--- a/src/config.c
++++ b/src/config.c
+@@ -367,6 +367,7 @@ void load_configuration(xcb_connection_t *conn, const char *override_configpath,
+                 x.text = get_colorpixel(conn, ctext); \
+         } while (0)
+ 
++        config.client.background = get_colorpixel(conn, "#000000");
+         INIT_COLOR(config.client.focused, "#4c7899", "#285577", "#ffffff");
+         INIT_COLOR(config.client.focused_inactive, "#333333", "#5f676a", "#ffffff");
+         INIT_COLOR(config.client.unfocused, "#333333", "#222222", "#888888");
+diff --git a/src/handlers.c b/src/handlers.c
+index 31eeced..d531b95 100644
+--- a/src/handlers.c
++++ b/src/handlers.c
+@@ -817,8 +817,8 @@ int handle_expose_event(void *data, xcb_connection_t *conn, xcb_expose_event_t *
+                                         {client->rect.width-1, 0}};                       /* right upper edge */
+                 xcb_poly_line(conn, XCB_COORD_MODE_ORIGIN, client->frame, client->titlegc, 4, points);
+ 
+-                /* Draw a black background */
+-                xcb_change_gc_single(conn, client->titlegc, XCB_GC_FOREGROUND, get_colorpixel(conn, "#000000"));
++                /* Draw the background */
++                xcb_change_gc_single(conn, client->titlegc, XCB_GC_FOREGROUND, config.client.background);
+                 if (client->titlebar_position == TITLEBAR_OFF && !client->borderless) {
+                         xcb_rectangle_t crect = {1, 0, client->rect.width - (1 + 1), client->rect.height - 1};
+                         xcb_poly_fill_rectangle(conn, client->frame, client->titlegc, 1, &crect);
+diff --git a/src/layout.c b/src/layout.c
+index 3c7d2ff..0120425 100644
+--- a/src/layout.c
++++ b/src/layout.c
+@@ -135,7 +135,7 @@ void decorate_window(xcb_connection_t *conn, Client *client, xcb_drawable_t draw
+ 
+         /* Draw a rectangle in background color around the window */
+         if (client->borderless && mode == MODE_DEFAULT)
+-                xcb_change_gc_single(conn, gc, XCB_GC_FOREGROUND, get_colorpixel(conn, "#000000"));
++                xcb_change_gc_single(conn, gc, XCB_GC_FOREGROUND, config.client.background);
+         else xcb_change_gc_single(conn, gc, XCB_GC_FOREGROUND, color->background);
+ 
+         /* In stacking mode, we only render the rect for this specific decoration */
+@@ -151,9 +151,9 @@ void decorate_window(xcb_connection_t *conn, Client *client, xcb_drawable_t draw
+                 xcb_rectangle_t rect = {0, 0, client->rect.width, client->rect.height};
+                 xcb_poly_fill_rectangle(conn, drawable, gc, 1, &rect);
+ 
+-                /* Draw the inner background to have a black frame around clients (such as mplayer)
++                /* Draw the inner background to a frame around clients (such as mplayer)
+                    which cannot be resized exactly in our frames and therefore are centered */
+-                xcb_change_gc_single(conn, client->titlegc, XCB_GC_FOREGROUND, get_colorpixel(conn, "#000000"));
++                xcb_change_gc_single(conn, client->titlegc, XCB_GC_FOREGROUND, config.client.background);
+                 if (client->titlebar_position == TITLEBAR_OFF && client->borderless) {
+                         xcb_rectangle_t crect = {0, 0, client->rect.width, client->rect.height};
+                         xcb_poly_fill_rectangle(conn, client->frame, client->titlegc, 1, &crect);
+@@ -547,7 +547,7 @@ void render_container(xcb_connection_t *conn, Container *container) {
+                  * amount of windows */
+                 if (container->mode == MODE_STACK) {
+                         if (container->stack_limit == STACK_LIMIT_COLS && (current_col % 2) != 0) {
+-                                xcb_change_gc_single(conn, stack_win->pixmap.gc, XCB_GC_FOREGROUND, get_colorpixel(conn, "#000000"));
++                                xcb_change_gc_single(conn, stack_win->pixmap.gc, XCB_GC_FOREGROUND, config.client.background);
+ 
+                                 int offset_x = current_col * (stack_win->rect.width / container->stack_limit_value);
+                                 int offset_y = current_row * decoration_height;
+@@ -556,7 +556,7 @@ void render_container(xcb_connection_t *conn, Container *container) {
+                                                         offset_y + decoration_height };
+                                 xcb_poly_fill_rectangle(conn, stack_win->pixmap.id, stack_win->pixmap.gc, 1, &rect);
+                         } else if (container->stack_limit == STACK_LIMIT_ROWS && (current_row % 2) != 0) {
+-                                xcb_change_gc_single(conn, stack_win->pixmap.gc, XCB_GC_FOREGROUND, get_colorpixel(conn, "#000000"));
++                                xcb_change_gc_single(conn, stack_win->pixmap.gc, XCB_GC_FOREGROUND, config.client.background);
+ 
+                                 int offset_x = current_col * wrap;
+                                 int offset_y = current_row * decoration_height;
+-- 
+1.7.1
+

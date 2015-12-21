@@ -1,0 +1,1661 @@
+07/06/2010 06:52:26 AM - Enabling debug loglevel all
+07/06/2010 06:52:26 AM - i3 version f70530d (2010-07-03) starting
+07/06/2010 06:52:26 AM - src/config.c:parse_configuration:298 - Parsing configfile /home/sdunlop/.i3/config
+07/06/2010 06:52:26 AM - ERROR: The terminal option is DEPRECATED and has no effect. Please remove it from your configuration file.
+font -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso10646-*
+07/06/2010 06:52:26 AM - src/cfgparse.y:yyparse:366 - floating modifier = 64
+	Found binding mod64 with key 41 and command f
+	Found binding mod64 with key 39 and command s
+	Found binding mod64 with key 25 and command T
+	Found binding mod64 with key 26 and command d
+	Found binding mod64 with key 65 and command t
+	Found binding mod64 with key 28 and command focus ft
+	Found binding mod64 with key 43 and command h
+	Found binding mod64 with key 44 and command j
+	Found binding mod64 with key 45 and command k
+	Found binding mod64 with key 46 and command l
+	Found symbolic mod64 with key Left and command h
+	Found symbolic mod64 with key Down and command j
+	Found symbolic mod64 with key Up and command k
+	Found symbolic mod64 with key Right and command l
+	Found binding mod68 with key 43 and command sh
+	Found binding mod68 with key 44 and command sj
+	Found binding mod68 with key 45 and command sk
+	Found binding mod68 with key 46 and command sl
+	Found symbolic mod68 with key Left and command h
+	Found symbolic mod68 with key Down and command j
+	Found symbolic mod68 with key Up and command k
+	Found symbolic mod68 with key Right and command l
+	Found binding mod65 with key 43 and command mh
+	Found binding mod65 with key 44 and command mj
+	Found binding mod65 with key 45 and command mk
+	Found binding mod65 with key 46 and command ml
+	Found symbolic mod65 with key Left and command h
+	Found symbolic mod65 with key Down and command j
+	Found symbolic mod65 with key Up and command k
+	Found symbolic mod65 with key Right and command l
+	Found binding mod0 with key 67 and command 1
+	Found binding mod0 with key 68 and command 2
+	Found binding mod0 with key 69 and command 3
+	Found binding mod0 with key 70 and command 4
+	Found binding mod0 with key 71 and command 5
+	Found binding mod1 with key 67 and command m1
+	Found binding mod1 with key 68 and command m2
+	Found binding mod1 with key 69 and command m3
+	Found binding mod1 with key 70 and command m4
+	Found binding mod1 with key 71 and command m5
+	Found binding mod64 with key 36 and command exec $terminal
+	Found binding mod65 with key 24 and command kill
+	Found binding mod64 with key 27 and command exec gmrun
+	Found binding mod12 with key 27 and command reload
+	Found binding mod76 with key 27 and command restart
+assignment of gmrun
+  to 0
+  floating = 1
+assignment of pidgin
+  to 4
+  floating = 0
+assignment of quodlibet
+  to 4
+  floating = 0
+07/06/2010 06:52:26 AM - src/config.c:translate_keysyms:176 - Translated symbol "Left" to 1 keycode
+07/06/2010 06:52:26 AM - src/config.c:translate_keysyms:176 - Translated symbol "Down" to 1 keycode
+07/06/2010 06:52:26 AM - src/config.c:translate_keysyms:176 - Translated symbol "Up" to 1 keycode
+07/06/2010 06:52:26 AM - src/config.c:translate_keysyms:176 - Translated symbol "Right" to 1 keycode
+07/06/2010 06:52:26 AM - src/config.c:translate_keysyms:176 - Translated symbol "Left" to 1 keycode
+07/06/2010 06:52:26 AM - src/config.c:translate_keysyms:176 - Translated symbol "Down" to 1 keycode
+07/06/2010 06:52:26 AM - src/config.c:translate_keysyms:176 - Translated symbol "Up" to 1 keycode
+07/06/2010 06:52:26 AM - src/config.c:translate_keysyms:176 - Translated symbol "Right" to 1 keycode
+07/06/2010 06:52:26 AM - src/config.c:translate_keysyms:176 - Translated symbol "Left" to 1 keycode
+07/06/2010 06:52:26 AM - src/config.c:translate_keysyms:176 - Translated symbol "Down" to 1 keycode
+07/06/2010 06:52:26 AM - src/config.c:translate_keysyms:176 - Translated symbol "Up" to 1 keycode
+07/06/2010 06:52:26 AM - src/config.c:translate_keysyms:176 - Translated symbol "Right" to 1 keycode
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 41
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 39
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 25
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 26
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 65
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 28
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 43
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 44
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 45
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 46
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 113
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 116
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 111
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 114
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 43
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 44
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 45
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 46
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 113
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 116
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 111
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 114
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 43
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 44
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 45
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 46
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 113
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 116
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 111
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 114
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 67
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 68
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 69
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 70
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 71
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 67
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 68
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 69
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 70
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 71
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 36
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 24
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 27
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 27
+07/06/2010 06:52:26 AM - src/config.c:grab_keycode_for_binding:86 - Grabbing 27
+07/06/2010 06:52:26 AM - src/mainx.c:main:533 - Checking for XRandR...
+07/06/2010 06:52:26 AM - src/randr.c:handle_output:319 - found output with name VGA1
+07/06/2010 06:52:26 AM - src/randr.c:handle_output:319 - found output with name LVDS1
+07/06/2010 06:52:26 AM - src/randr.c:handle_output:319 - found output with name HDMI1
+07/06/2010 06:52:26 AM - src/randr.c:handle_output:353 - mode: 1920x1200+0+0
+07/06/2010 06:52:26 AM - src/randr.c:handle_output:319 - found output with name DP1
+07/06/2010 06:52:26 AM - src/randr.c:handle_output:319 - found output with name DP2
+07/06/2010 06:52:26 AM - src/randr.c:handle_output:319 - found output with name TV1
+07/06/2010 06:52:26 AM - src/randr.c:randr_query_outputs:437 - output 0x113fa40, position (0, 0), checking for clones
+07/06/2010 06:52:26 AM - src/ewmh.c:ewmh_update_workarea:77 - Got 1 workspaces
+07/06/2010 06:52:26 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 0: 0x0 with 0 x 0
+07/06/2010 06:52:26 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+07/06/2010 06:52:26 AM - src/workspace.c:workspace_initialize:288 - old_output = (nil), ws->output = 0x113fa40
+07/06/2010 06:52:26 AM - src/ewmh.c:ewmh_update_workarea:77 - Got 1 workspaces
+07/06/2010 06:52:26 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 0: 0x0 with 1920 x 1200
+07/06/2010 06:52:26 AM - src/randr.c:initialize_output:195 - initialized output at (0, 0) with 1920 x 1200
+07/06/2010 06:52:26 AM - src/randr.c:initialize_output:197 - assigning configured workspaces to this output...
+07/06/2010 06:52:26 AM - src/layout.c:render_workspace:726 - height is 1180
+07/06/2010 06:52:26 AM - src/layout.c:render_container:358 - height per client = 1180, rest = 0
+07/06/2010 06:52:26 AM - src/randr.c:get_output_containing:105 - comparing x=603 y=708 with x=0 and y=0 width 1920 height 1200
+07/06/2010 06:52:26 AM - src/mainx.c:main:558 - Starting on 0x110f480
+07/06/2010 06:52:26 AM - Managing window 0x01e00003
+07/06/2010 06:52:26 AM - src/manage.c:reparent_window:184 - x = 0, y = 1152, width = 1920, height = 28
+07/06/2010 06:52:26 AM - src/manage.c:reparent_window:274 - Window is a dock.
+07/06/2010 06:52:26 AM - src/randr.c:get_output_containing:105 - comparing x=0 y=1152 with x=0 and y=0 width 1920 height 1200
+07/06/2010 06:52:26 AM - src/manage.c:reparent_window:327 - the client wants to be 28 pixels high
+07/06/2010 06:52:26 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:26 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:26 AM - src/layout.c:render_bars:579 - client is at 0, should be at 1152
+07/06/2010 06:52:26 AM - src/layout.c:reposition_client:209 - frame 0x01000006 needs to be pushed to 0x1152
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:251 - frame 0x01000006 needs to be pushed to 0x1152
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:252 - resizing client 0x01000006 to 1920 x 28
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:326 - child will be at 0x0 with size 1920x28
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 01000006
+07/06/2010 06:52:26 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:26 AM - WM_CLASS changed to gnome-panel (instance), Gnome-panel (class)
+07/06/2010 06:52:26 AM - WM_NAME changed to "Bottom Expanded Edge Panel"
+07/06/2010 06:52:26 AM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME which is in UTF-8 encoding.
+07/06/2010 06:52:26 AM - src/handlers.c:handle_normal_hints:889 - Window: frame 0x01000006, child 0x01e00003
+07/06/2010 06:52:26 AM - src/handlers.c:handle_hints:1019 - Window: frame 0x01000006, child 0x01e00003
+07/06/2010 06:52:26 AM - Urgency flag changed to 0
+07/06/2010 06:52:26 AM - src/handlers.c:handle_clientleader_change:1093 - Client leader changed to 01e00001
+07/06/2010 06:52:26 AM - _NET_WM_NAME changed to "Bottom Expanded Edge Panel"
+07/06/2010 06:52:26 AM - Managing window 0x03400016
+07/06/2010 06:52:26 AM - src/manage.c:reparent_window:184 - x = 2, y = 18, width = 780, height = 1124
+07/06/2010 06:52:26 AM - src/handlers.c:handle_windowname_change:606 - _NET_WM_NAME not specified, not changing
+07/06/2010 06:52:26 AM - WM_NAME changed to "sdunlop@spike: /home/sdunlop"
+07/06/2010 06:52:26 AM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME which is in UTF-8 encoding.
+07/06/2010 06:52:26 AM - WM_CLASS changed to xterm (instance), XTerm (class)
+07/06/2010 06:52:26 AM - src/handlers.c:handle_clientleader_change:1093 - Client leader changed to 03400016
+07/06/2010 06:52:26 AM - src/manage.c:reparent_window:355 - client->leader is set (to 0x03400016)
+07/06/2010 06:52:26 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:26 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:251 - frame 0x0100000a needs to be pushed to 0x0
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:252 - resizing client 0x0100000a to 1920 x 1152
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 1914x1130
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:26 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:26 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:26 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:26 AM - WM_CLASS changed to xterm (instance), XTerm (class)
+07/06/2010 06:52:26 AM - WM_NAME changed to "sdunlop@spike: /home/sdunlop"
+07/06/2010 06:52:26 AM - src/handlers.c:handle_normal_hints:889 - Window: frame 0x0100000a, child 0x03400016
+07/06/2010 06:52:26 AM - src/handlers.c:handle_normal_hints:899 - Minimum size: 12 (width) x 18 (height)
+07/06/2010 06:52:26 AM - src/handlers.c:handle_normal_hints:916 - resize increments changed
+07/06/2010 06:52:26 AM - src/handlers.c:handle_normal_hints:937 - client's base_height changed to 4
+07/06/2010 06:52:26 AM - src/handlers.c:handle_normal_hints:938 - client's base_width changed to 4
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:251 - frame 0x0100000a needs to be pushed to 0x0
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:252 - resizing client 0x0100000a to 1920 x 1152
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:316 - Lost 6 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 1908x1124
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:26 AM - src/handlers.c:handle_hints:1019 - Window: frame 0x0100000a, child 0x03400016
+07/06/2010 06:52:26 AM - Urgency flag changed to 0
+07/06/2010 06:52:26 AM - src/handlers.c:handle_clientleader_change:1093 - Client leader changed to 03400016
+07/06/2010 06:52:26 AM - src/handlers.c:handle_windowname_change:606 - _NET_WM_NAME not specified, not changing
+07/06/2010 06:52:26 AM - Managing window 0x03200016
+07/06/2010 06:52:26 AM - src/manage.c:reparent_window:184 - x = 795, y = 18, width = 420, height = 1124
+07/06/2010 06:52:26 AM - src/handlers.c:handle_windowname_change:606 - _NET_WM_NAME not specified, not changing
+07/06/2010 06:52:26 AM - WM_NAME changed to "sdunlop@spike: /home/sdunlop/Work/Idioma"
+07/06/2010 06:52:26 AM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME which is in UTF-8 encoding.
+07/06/2010 06:52:26 AM - WM_CLASS changed to xterm (instance), XTerm (class)
+07/06/2010 06:52:26 AM - src/handlers.c:handle_clientleader_change:1093 - Client leader changed to 03200016
+07/06/2010 06:52:26 AM - src/manage.c:reparent_window:355 - client->leader is set (to 0x03200016)
+07/06/2010 06:52:26 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:26 AM - src/layout.c:render_container:358 - height per client = 576, rest = 0
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:251 - frame 0x0100000a needs to be pushed to 0x0
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:252 - resizing client 0x0100000a to 1920 x 576
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:316 - Lost 4 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 1908x550
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:251 - frame 0x0100000e needs to be pushed to 0x576
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:252 - resizing client 0x0100000e to 1920 x 576
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 1914x554
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:26 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:26 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:26 AM - src/layout.c:render_container:358 - height per client = 576, rest = 0
+07/06/2010 06:52:26 AM - WM_CLASS changed to xterm (instance), XTerm (class)
+07/06/2010 06:52:26 AM - WM_NAME changed to "sdunlop@spike: /home/sdunlop/Work/Idioma"
+07/06/2010 06:52:26 AM - src/handlers.c:handle_normal_hints:889 - Window: frame 0x0100000e, child 0x03200016
+07/06/2010 06:52:26 AM - src/handlers.c:handle_normal_hints:899 - Minimum size: 12 (width) x 18 (height)
+07/06/2010 06:52:26 AM - src/handlers.c:handle_normal_hints:916 - resize increments changed
+07/06/2010 06:52:26 AM - src/handlers.c:handle_normal_hints:937 - client's base_height changed to 4
+07/06/2010 06:52:26 AM - src/handlers.c:handle_normal_hints:938 - client's base_width changed to 4
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:251 - frame 0x0100000e needs to be pushed to 0x576
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:252 - resizing client 0x0100000e to 1920 x 576
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:316 - Lost 4 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 1908x550
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:26 AM - src/handlers.c:handle_hints:1019 - Window: frame 0x0100000e, child 0x03200016
+07/06/2010 06:52:26 AM - Urgency flag changed to 0
+07/06/2010 06:52:26 AM - src/handlers.c:handle_clientleader_change:1093 - Client leader changed to 03200016
+07/06/2010 06:52:26 AM - src/handlers.c:handle_windowname_change:606 - _NET_WM_NAME not specified, not changing
+07/06/2010 06:52:26 AM - Managing window 0x03a00016
+07/06/2010 06:52:26 AM - src/manage.c:reparent_window:184 - x = 1222, y = 18, width = 660, height = 1124
+07/06/2010 06:52:26 AM - src/handlers.c:handle_windowname_change:606 - _NET_WM_NAME not specified, not changing
+07/06/2010 06:52:26 AM - WM_NAME changed to "sdunlop@spike: /home/sdunlop/Work/Idioma"
+07/06/2010 06:52:26 AM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME which is in UTF-8 encoding.
+07/06/2010 06:52:26 AM - WM_CLASS changed to xterm (instance), XTerm (class)
+07/06/2010 06:52:26 AM - src/handlers.c:handle_clientleader_change:1093 - Client leader changed to 03a00016
+07/06/2010 06:52:26 AM - src/manage.c:reparent_window:355 - client->leader is set (to 0x03a00016)
+07/06/2010 06:52:26 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:26 AM - src/layout.c:render_container:358 - height per client = 384, rest = 0
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:251 - frame 0x0100000a needs to be pushed to 0x0
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:252 - resizing client 0x0100000a to 1920 x 384
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:316 - Lost 8 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 1908x354
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:251 - frame 0x0100000e needs to be pushed to 0x384
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:252 - resizing client 0x0100000e to 1920 x 384
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:316 - Lost 8 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 1908x354
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:251 - frame 0x01000012 needs to be pushed to 0x768
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:252 - resizing client 0x01000012 to 1920 x 384
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 1914x362
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:26 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:26 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:26 AM - src/layout.c:render_container:358 - height per client = 384, rest = 0
+07/06/2010 06:52:26 AM - WM_CLASS changed to xterm (instance), XTerm (class)
+07/06/2010 06:52:26 AM - WM_NAME changed to "sdunlop@spike: /home/sdunlop/Work/Idioma"
+07/06/2010 06:52:26 AM - src/handlers.c:handle_normal_hints:889 - Window: frame 0x01000012, child 0x03a00016
+07/06/2010 06:52:26 AM - src/handlers.c:handle_normal_hints:899 - Minimum size: 12 (width) x 18 (height)
+07/06/2010 06:52:26 AM - src/handlers.c:handle_normal_hints:916 - resize increments changed
+07/06/2010 06:52:26 AM - src/handlers.c:handle_normal_hints:937 - client's base_height changed to 4
+07/06/2010 06:52:26 AM - src/handlers.c:handle_normal_hints:938 - client's base_width changed to 4
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:251 - frame 0x01000012 needs to be pushed to 0x768
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:252 - resizing client 0x01000012 to 1920 x 384
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:316 - Lost 8 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:26 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 1908x354
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:26 AM - src/handlers.c:handle_hints:1019 - Window: frame 0x01000012, child 0x03a00016
+07/06/2010 06:52:26 AM - Urgency flag changed to 0
+07/06/2010 06:52:26 AM - src/handlers.c:handle_clientleader_change:1093 - Client leader changed to 03a00016
+07/06/2010 06:52:26 AM - src/handlers.c:handle_windowname_change:606 - _NET_WM_NAME not specified, not changing
+07/06/2010 06:52:26 AM - src/debug.c:format_event:227 - Error BadAccess on seqnum 35 (GrabKey).
+07/06/2010 06:52:26 AM - src/debug.c:format_event:227 - Error BadAccess on seqnum 36 (GrabKey).
+07/06/2010 06:52:26 AM - src/debug.c:format_event:227 - Error BadAccess on seqnum 37 (GrabKey).
+07/06/2010 06:52:26 AM - src/debug.c:format_event:227 - Error BadAccess on seqnum 162 (GrabKey).
+07/06/2010 06:52:26 AM - src/debug.c:format_event:227 - Error BadAccess on seqnum 163 (GrabKey).
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:26 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:26 AM - src/layout.c:render_container:358 - height per client = 384, rest = 0
+07/06/2010 06:52:26 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:26 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event ReparentNotify following seqnum 280.
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event ReparentNotify following seqnum 280.
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event MapNotify following seqnum 280.
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event MapNotify following seqnum 280.
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event MapNotify following seqnum 300.
+07/06/2010 06:52:26 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 00000115, mode = 0, detail 2, serial 323
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event ReparentNotify following seqnum 323.
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event ReparentNotify following seqnum 323.
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event MapNotify following seqnum 323.
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event MapNotify following seqnum 323.
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event MapNotify following seqnum 366.
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:26 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000a, mode = 0, detail 1, serial 366
+07/06/2010 06:52:26 AM - src/util.c:set_focus:261 - Window: frame 0x0100000a, child 0x03400016
+07/06/2010 06:52:26 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03400016, mode = 0, detail 1, serial 366
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event ReparentNotify following seqnum 414.
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event ReparentNotify following seqnum 414.
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event MapNotify following seqnum 414.
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event MapNotify following seqnum 414.
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:26 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 00000115, mode = 0, detail 2, serial 432
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event MapNotify following seqnum 474.
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:26 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000e, mode = 0, detail 1, serial 474
+07/06/2010 06:52:26 AM - src/util.c:set_focus:261 - Window: frame 0x0100000e, child 0x03200016
+07/06/2010 06:52:26 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03200016, mode = 0, detail 0, serial 474
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event ReparentNotify following seqnum 522.
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event ReparentNotify following seqnum 522.
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event MapNotify following seqnum 522.
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event MapNotify following seqnum 522.
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:26 AM - src/debug.c:format_event:235 - Event MapNotify following seqnum 599.
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:26 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:26 AM - auto-starting xrdb /home/sdunlop/.Xdefaults
+07/06/2010 06:52:28 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:28 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:28 AM - src/handlers.c:handle_key_press:91 - Keypress 46, state raw = 65
+07/06/2010 06:52:28 AM - src/handlers.c:handle_key_press:95 - (removed numlock, state = 65)
+07/06/2010 06:52:28 AM - src/handlers.c:handle_key_press:99 - (removed upper 8 bits, state = 65)
+07/06/2010 06:52:28 AM - src/handlers.c:handle_key_press:104 - (checked mode_switch, state 65)
+07/06/2010 06:52:28 AM - --- parsing command "ml" ---
+07/06/2010 06:52:28 AM - moving window to direction right
+07/06/2010 06:52:28 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:28 AM - src/layout.c:render_container:358 - height per client = 384, rest = 0
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:251 - frame 0x0100000a needs to be pushed to 0x0
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:252 - resizing client 0x0100000a to 960 x 384
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:316 - Lost 8 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 948x354
+07/06/2010 06:52:28 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:251 - frame 0x0100000e needs to be pushed to 0x384
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:252 - resizing client 0x0100000e to 960 x 384
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:316 - Lost 8 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 948x354
+07/06/2010 06:52:28 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:251 - frame 0x01000012 needs to be pushed to 0x768
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:252 - resizing client 0x01000012 to 960 x 384
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:316 - Lost 8 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 948x354
+07/06/2010 06:52:28 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:28 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:28 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:28 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:28 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:28 AM - src/table.c:cleanup_table:320 - cleanup_table()
+07/06/2010 06:52:28 AM - src/util.c:set_focus:261 - Window: frame 0x0100000e, child 0x03200016
+07/06/2010 06:52:28 AM - src/table.c:fix_colrowspan:385 - Fixing col/rowspan
+07/06/2010 06:52:28 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:28 AM - src/layout.c:render_container:358 - height per client = 576, rest = 0
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:251 - frame 0x0100000a needs to be pushed to 0x0
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:252 - resizing client 0x0100000a to 960 x 576
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:316 - Lost 4 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 948x550
+07/06/2010 06:52:28 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:251 - frame 0x01000012 needs to be pushed to 0x576
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:252 - resizing client 0x01000012 to 960 x 576
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:316 - Lost 4 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 948x550
+07/06/2010 06:52:28 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:28 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:28 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:251 - frame 0x0100000e needs to be pushed to 960x0
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:252 - resizing client 0x0100000e to 960 x 1152
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:316 - Lost 6 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:28 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 948x1124
+07/06/2010 06:52:28 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:28 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:28 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:28 AM - src/util.c:set_focus:261 - Window: frame 0x0100000e, child 0x03200016
+07/06/2010 06:52:28 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:28 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:28 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:28 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:28 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:28 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:28 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:28 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:28 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:28 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:28 AM - src/debug.c:format_event:235 - Event KeyRelease following seqnum 1070.
+07/06/2010 06:52:28 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:28 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:29 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03a00016, mode = 1, detail 2, serial 1070
+07/06/2010 06:52:29 AM - src/handlers.c:handle_enter_notify:176 - This was not a normal notify, ignoring
+07/06/2010 06:52:29 AM - src/click.c:handle_button_press:256 - Button 0 pressed
+07/06/2010 06:52:29 AM - src/util.c:set_focus:261 - Window: frame 0x01000012, child 0x03a00016
+07/06/2010 06:52:29 AM - src/click.c:handle_button_press:319 - press button on x=596, y=104
+07/06/2010 06:52:29 AM - src/click.c:handle_button_press:331 - event->event_x = 596, client->rect.width = 960
+07/06/2010 06:52:29 AM - src/click.c:handle_button_press:346 - client. done.
+07/06/2010 06:52:29 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:29 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:29 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:29 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:29 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:29 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:30 AM - src/handlers.c:handle_key_press:91 - Keypress 46, state raw = 65
+07/06/2010 06:52:30 AM - src/handlers.c:handle_key_press:95 - (removed numlock, state = 65)
+07/06/2010 06:52:30 AM - src/handlers.c:handle_key_press:99 - (removed upper 8 bits, state = 65)
+07/06/2010 06:52:30 AM - src/handlers.c:handle_key_press:104 - (checked mode_switch, state 65)
+07/06/2010 06:52:30 AM - --- parsing command "ml" ---
+07/06/2010 06:52:30 AM - moving window to direction right
+07/06/2010 06:52:30 AM - src/table.c:cleanup_table:320 - cleanup_table()
+07/06/2010 06:52:30 AM - src/util.c:set_focus:261 - Window: frame 0x01000012, child 0x03a00016
+07/06/2010 06:52:30 AM - src/table.c:fix_colrowspan:385 - Fixing col/rowspan
+07/06/2010 06:52:30 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:30 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:30 AM - src/layout.c:resize_client:251 - frame 0x0100000a needs to be pushed to 0x0
+07/06/2010 06:52:30 AM - src/layout.c:resize_client:252 - resizing client 0x0100000a to 960 x 1152
+07/06/2010 06:52:30 AM - src/layout.c:resize_client:316 - Lost 6 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:30 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:30 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 948x1124
+07/06/2010 06:52:30 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:30 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:30 AM - src/layout.c:render_container:358 - height per client = 576, rest = 0
+07/06/2010 06:52:30 AM - src/layout.c:resize_client:251 - frame 0x0100000e needs to be pushed to 960x0
+07/06/2010 06:52:30 AM - src/layout.c:resize_client:252 - resizing client 0x0100000e to 960 x 576
+07/06/2010 06:52:30 AM - src/layout.c:resize_client:316 - Lost 4 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:30 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:30 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 948x550
+07/06/2010 06:52:30 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:30 AM - src/layout.c:resize_client:251 - frame 0x01000012 needs to be pushed to 960x576
+07/06/2010 06:52:30 AM - src/layout.c:resize_client:252 - resizing client 0x01000012 to 960 x 576
+07/06/2010 06:52:30 AM - src/layout.c:resize_client:316 - Lost 4 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:30 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:30 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 948x550
+07/06/2010 06:52:30 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:30 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:30 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:30 AM - src/util.c:set_focus:261 - Window: frame 0x01000012, child 0x03a00016
+07/06/2010 06:52:30 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:30 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:30 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:30 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:30 AM - src/debug.c:format_event:235 - Event KeyRelease following seqnum 1231.
+07/06/2010 06:52:30 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:30 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:30 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000a, mode = 0, detail 2, serial 1231
+07/06/2010 06:52:30 AM - src/util.c:set_focus:261 - Window: frame 0x0100000a, child 0x03400016
+07/06/2010 06:52:30 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 01000012, mode = 0, detail 4, serial 1264
+07/06/2010 06:52:30 AM - src/util.c:set_focus:261 - Window: frame 0x01000012, child 0x03a00016
+07/06/2010 06:52:30 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03a00016, mode = 0, detail 4, serial 1264
+07/06/2010 06:52:31 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:31 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:32 AM - src/handlers.c:handle_key_press:91 - Keypress 46, state raw = 65
+07/06/2010 06:52:32 AM - src/handlers.c:handle_key_press:95 - (removed numlock, state = 65)
+07/06/2010 06:52:32 AM - src/handlers.c:handle_key_press:99 - (removed upper 8 bits, state = 65)
+07/06/2010 06:52:32 AM - src/handlers.c:handle_key_press:104 - (checked mode_switch, state 65)
+07/06/2010 06:52:32 AM - --- parsing command "ml" ---
+07/06/2010 06:52:32 AM - moving window to direction right
+07/06/2010 06:52:32 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:32 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:251 - frame 0x0100000a needs to be pushed to 0x0
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:252 - resizing client 0x0100000a to 640 x 1152
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:316 - Lost 6 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 628x1124
+07/06/2010 06:52:32 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:32 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:32 AM - src/layout.c:render_container:358 - height per client = 576, rest = 0
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:251 - frame 0x0100000e needs to be pushed to 640x0
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:252 - resizing client 0x0100000e to 640 x 576
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:316 - Lost 4 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 628x550
+07/06/2010 06:52:32 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:251 - frame 0x01000012 needs to be pushed to 640x576
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:252 - resizing client 0x01000012 to 640 x 576
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:316 - Lost 4 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 628x550
+07/06/2010 06:52:32 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:32 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:32 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:32 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:32 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:32 AM - src/table.c:cleanup_table:320 - cleanup_table()
+07/06/2010 06:52:32 AM - src/util.c:set_focus:261 - Window: frame 0x01000012, child 0x03a00016
+07/06/2010 06:52:32 AM - src/table.c:fix_colrowspan:385 - Fixing col/rowspan
+07/06/2010 06:52:32 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:32 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:32 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:32 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:251 - frame 0x0100000e needs to be pushed to 640x0
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:252 - resizing client 0x0100000e to 640 x 1152
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:316 - Lost 6 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 628x1124
+07/06/2010 06:52:32 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:32 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:32 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:251 - frame 0x01000012 needs to be pushed to 1280x0
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:252 - resizing client 0x01000012 to 640 x 1152
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:316 - Lost 6 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:323 - Lost 6 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:32 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 628x1124
+07/06/2010 06:52:32 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:32 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:32 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:32 AM - src/util.c:set_focus:261 - Window: frame 0x01000012, child 0x03a00016
+07/06/2010 06:52:32 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:32 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:32 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:32 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:32 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:32 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 00000115, mode = 0, detail 2, serial 1330
+07/06/2010 06:52:32 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:32 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:32 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:32 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:32 AM - src/debug.c:format_event:235 - Event KeyRelease following seqnum 1522.
+07/06/2010 06:52:32 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:32 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:32 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000e, mode = 0, detail 3, serial 1522
+07/06/2010 06:52:32 AM - src/util.c:set_focus:261 - Window: frame 0x0100000e, child 0x03200016
+07/06/2010 06:52:32 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03200016, mode = 0, detail 1, serial 1555
+07/06/2010 06:52:33 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000e, mode = 0, detail 2, serial 1555
+07/06/2010 06:52:33 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 01000012, mode = 0, detail 4, serial 1555
+07/06/2010 06:52:33 AM - src/util.c:set_focus:261 - Window: frame 0x01000012, child 0x03a00016
+07/06/2010 06:52:33 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03a00016, mode = 0, detail 4, serial 1555
+07/06/2010 06:52:39 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03a00016, mode = 0, detail 2, serial 1588
+07/06/2010 06:52:39 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 01000012, mode = 0, detail 2, serial 1588
+07/06/2010 06:52:39 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000e, mode = 0, detail 3, serial 1588
+07/06/2010 06:52:39 AM - src/util.c:set_focus:261 - Window: frame 0x0100000e, child 0x03200016
+07/06/2010 06:52:39 AM - src/click.c:handle_button_press:256 - Button 0 pressed
+07/06/2010 06:52:39 AM - src/util.c:set_focus:261 - Window: frame 0x0100000e, child 0x03200016
+07/06/2010 06:52:39 AM - src/click.c:handle_button_press:319 - press button on x=639, y=673
+07/06/2010 06:52:39 AM - src/click.c:handle_button_press:331 - event->event_x = 639, client->rect.width = 640
+07/06/2010 06:52:39 AM - src/click.c:handle_button_press:402 - column 1
+07/06/2010 06:52:39 AM - src/randr.c:get_output_containing:105 - comparing x=1279 y=673 with x=0 and y=0 width 1920 height 1200
+07/06/2010 06:52:39 AM - src/resize.c:resize_graphical_handler:93 - event->event_x = 639, event->root_x = 1279
+07/06/2010 06:52:39 AM - src/resize.c:resize_graphical_handler:95 - Screen dimensions: (0, 0) 1920 x 1200
+07/06/2010 06:52:39 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:39 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1278, y = 675
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1277, y = 675
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1274, y = 676
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1269, y = 677
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1261, y = 679
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1257, y = 679
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1247, y = 681
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1236, y = 683
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1228, y = 685
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1218, y = 687
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1207, y = 691
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1196, y = 693
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1187, y = 695
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1177, y = 697
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1168, y = 699
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1162, y = 701
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1156, y = 703
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1151, y = 703
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1146, y = 705
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1140, y = 707
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1139, y = 708
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1137, y = 708
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1136, y = 708
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1136, y = 709
+07/06/2010 06:52:40 AM - src/resize.c:resize_callback:50 - new x = 1135, y = 709
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.000000, unoccupied = 1279.999981
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.000000, unoccupied = 639.999962
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: -0.000057
+07/06/2010 06:52:40 AM - src/resize.c:resize_container:185 - 
+
+
+07/06/2010 06:52:40 AM - src/resize.c:resize_container:186 - old = 1920, new = 1280
+07/06/2010 06:52:40 AM - src/resize.c:resize_container:194 - old_unoccupied_x = 1920
+07/06/2010 06:52:40 AM - src/resize.c:resize_container:196 - Updating first (before = 0.000000)
+07/06/2010 06:52:40 AM - src/resize.c:resize_container:202 - second (before = 0.000000)
+07/06/2010 06:52:40 AM - src/resize.c:resize_container:207 - middle = 0.000000
+07/06/2010 06:52:40 AM - src/resize.c:resize_container:221 - Updating first (before = 0.000000)
+07/06/2010 06:52:40 AM - src/resize.c:resize_container:226 - first->width = 640, pixels = -144
+07/06/2010 06:52:40 AM - src/resize.c:resize_container:228 - -> 0.387500
+07/06/2010 06:52:40 AM - src/resize.c:resize_container:231 - Updating second (before = 0.000000)
+07/06/2010 06:52:40 AM - src/resize.c:resize_container:235 - middle = 0.500000
+07/06/2010 06:52:40 AM - src/resize.c:resize_container:236 - second->width = 640, pixels = -144
+07/06/2010 06:52:40 AM - src/resize.c:resize_container:238 - -> 0.612500
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:40 AM - src/resize.c:resize_container:240 - new unoccupied_x = 1279
+07/06/2010 06:52:40 AM - src/resize.c:resize_container:242 - 
+
+
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:resize_client:251 - frame 0x0100000e needs to be pushed to 640x0
+07/06/2010 06:52:40 AM - src/layout.c:resize_client:252 - resizing client 0x0100000e to 495 x 1152
+07/06/2010 06:52:40 AM - src/layout.c:resize_client:316 - Lost 6 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:40 AM - src/layout.c:resize_client:323 - Lost 5 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:40 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 484x1124
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:resize_client:251 - frame 0x01000012 needs to be pushed to 1135x0
+07/06/2010 06:52:40 AM - src/layout.c:resize_client:252 - resizing client 0x01000012 to 783 x 1152
+07/06/2010 06:52:40 AM - src/layout.c:resize_client:316 - Lost 6 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:40 AM - src/layout.c:resize_client:323 - Lost 5 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:40 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 772x1124
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:40 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:40 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:40 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:40 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:40 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000e, mode = 0, detail 4, serial 2442
+07/06/2010 06:52:40 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03200016, mode = 0, detail 4, serial 2442
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 00000115, mode = 0, detail 2, serial 2449
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:40 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:40 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03a00016, mode = 0, detail 0, serial 2552
+07/06/2010 06:52:40 AM - src/util.c:set_focus:261 - Window: frame 0x01000012, child 0x03a00016
+07/06/2010 06:52:40 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 01000012, mode = 0, detail 2, serial 2585
+07/06/2010 06:52:40 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000e, mode = 0, detail 3, serial 2585
+07/06/2010 06:52:40 AM - src/util.c:set_focus:261 - Window: frame 0x0100000e, child 0x03200016
+07/06/2010 06:52:40 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03200016, mode = 0, detail 1, serial 2618
+07/06/2010 06:52:40 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000e, mode = 0, detail 2, serial 2618
+07/06/2010 06:52:40 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000a, mode = 0, detail 3, serial 2618
+07/06/2010 06:52:40 AM - src/util.c:set_focus:261 - Window: frame 0x0100000a, child 0x03400016
+07/06/2010 06:52:40 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03400016, mode = 0, detail 1, serial 2651
+07/06/2010 06:52:41 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03400016, mode = 0, detail 2, serial 2651
+07/06/2010 06:52:41 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000a, mode = 0, detail 2, serial 2651
+07/06/2010 06:52:41 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000e, mode = 0, detail 3, serial 2651
+07/06/2010 06:52:41 AM - src/util.c:set_focus:261 - Window: frame 0x0100000e, child 0x03200016
+07/06/2010 06:52:41 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03200016, mode = 0, detail 0, serial 2684
+07/06/2010 06:52:41 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03200016, mode = 0, detail 2, serial 2684
+07/06/2010 06:52:41 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000e, mode = 0, detail 2, serial 2684
+07/06/2010 06:52:41 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000a, mode = 0, detail 3, serial 2684
+07/06/2010 06:52:41 AM - src/util.c:set_focus:261 - Window: frame 0x0100000a, child 0x03400016
+07/06/2010 06:52:42 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000e, mode = 0, detail 3, serial 2717
+07/06/2010 06:52:42 AM - src/util.c:set_focus:261 - Window: frame 0x0100000e, child 0x03200016
+07/06/2010 06:52:42 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03200016, mode = 0, detail 1, serial 2750
+07/06/2010 06:52:42 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03200016, mode = 1, detail 2, serial 2750
+07/06/2010 06:52:42 AM - src/handlers.c:handle_enter_notify:176 - This was not a normal notify, ignoring
+07/06/2010 06:52:42 AM - src/click.c:handle_button_press:256 - Button 0 pressed
+07/06/2010 06:52:42 AM - src/util.c:set_focus:261 - Window: frame 0x0100000e, child 0x03200016
+07/06/2010 06:52:42 AM - src/click.c:handle_button_press:319 - press button on x=10, y=623
+07/06/2010 06:52:42 AM - src/click.c:handle_button_press:331 - event->event_x = 10, client->rect.width = 495
+07/06/2010 06:52:42 AM - src/click.c:handle_button_press:346 - client. done.
+07/06/2010 06:52:42 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:43 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:43 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000a, mode = 0, detail 3, serial 2764
+07/06/2010 06:52:43 AM - src/util.c:set_focus:261 - Window: frame 0x0100000a, child 0x03400016
+07/06/2010 06:52:43 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03400016, mode = 0, detail 1, serial 2797
+07/06/2010 06:52:43 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03400016, mode = 0, detail 2, serial 2797
+07/06/2010 06:52:43 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000a, mode = 0, detail 2, serial 2797
+07/06/2010 06:52:44 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000e, mode = 0, detail 3, serial 2797
+07/06/2010 06:52:44 AM - src/util.c:set_focus:261 - Window: frame 0x0100000e, child 0x03200016
+07/06/2010 06:52:44 AM - src/click.c:handle_button_press:256 - Button 0 pressed
+07/06/2010 06:52:44 AM - src/util.c:set_focus:261 - Window: frame 0x0100000e, child 0x03200016
+07/06/2010 06:52:44 AM - src/click.c:handle_button_press:319 - press button on x=0, y=636
+07/06/2010 06:52:44 AM - src/click.c:handle_button_press:331 - event->event_x = 0, client->rect.width = 495
+07/06/2010 06:52:44 AM - src/randr.c:get_output_containing:105 - comparing x=640 y=636 with x=0 and y=0 width 1920 height 1200
+07/06/2010 06:52:44 AM - src/resize.c:resize_graphical_handler:93 - event->event_x = 0, event->root_x = 640
+07/06/2010 06:52:44 AM - src/resize.c:resize_graphical_handler:95 - Screen dimensions: (0, 0) 1920 x 1200
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 641, y = 636
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 644, y = 637
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 647, y = 637
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 649, y = 637
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 651, y = 637
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 653, y = 637
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 656, y = 637
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 660, y = 637
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 664, y = 638
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 668, y = 637
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 673, y = 637
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 681, y = 637
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 690, y = 636
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 697, y = 636
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 706, y = 636
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 713, y = 636
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 719, y = 637
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 724, y = 637
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 728, y = 637
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 732, y = 636
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 733, y = 636
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:44 AM - src/resize.c:resize_callback:50 - new x = 734, y = 636
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:44 AM - src/floating.c:drag_pointer:436 - Passing to original handler
+07/06/2010 06:52:44 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:44 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:44 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.387500, unoccupied = 1279.999981
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.612500, unoccupied = 1279.999981
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1279.999981
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:185 - 
+
+
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:186 - old = 1279, new = 1919
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:194 - old_unoccupied_x = 1279
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:196 - Updating first (before = 0.000000)
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:202 - second (before = 0.387500)
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:207 - middle = 0.000000
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:216 - Updating other column (1) (current width_factor = 0.387500)
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:218 - to 0.258266
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:216 - Updating other column (2) (current width_factor = 0.612500)
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:218 - to 0.408227
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:221 - Updating first (before = 0.000000)
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:226 - first->width = 1279, pixels = 94
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:228 - -> 0.358018
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:231 - Updating second (before = 0.258266)
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:235 - middle = 0.258266
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:236 - second->width = 495, pixels = 94
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:238 - -> 0.209222
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.358018, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.209222, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.408227, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1920.000000
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:240 - new unoccupied_x = 1920
+07/06/2010 06:52:45 AM - src/resize.c:resize_container:242 - 
+
+
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.358018, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.209222, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.408227, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:45 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:45 AM - src/layout.c:resize_client:251 - frame 0x0100000a needs to be pushed to 0x0
+07/06/2010 06:52:45 AM - src/layout.c:resize_client:252 - resizing client 0x0100000a to 687 x 1152
+07/06/2010 06:52:45 AM - src/layout.c:resize_client:316 - Lost 6 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:45 AM - src/layout.c:resize_client:323 - Lost 5 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:45 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 676x1124
+07/06/2010 06:52:45 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.358018, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.209222, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.408227, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:45 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:45 AM - src/layout.c:resize_client:251 - frame 0x0100000e needs to be pushed to 687x0
+07/06/2010 06:52:45 AM - src/layout.c:resize_client:252 - resizing client 0x0100000e to 401 x 1152
+07/06/2010 06:52:45 AM - src/layout.c:resize_client:316 - Lost 6 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:45 AM - src/layout.c:resize_client:323 - Lost 7 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:45 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 388x1124
+07/06/2010 06:52:45 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.358018, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.209222, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.408227, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:45 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:45 AM - src/layout.c:resize_client:251 - frame 0x01000012 needs to be pushed to 1088x0
+07/06/2010 06:52:45 AM - src/layout.c:resize_client:252 - resizing client 0x01000012 to 783 x 1152
+07/06/2010 06:52:45 AM - src/layout.c:resize_client:316 - Lost 6 pixel due to client's height_increment (14 px, base_height = 4)
+07/06/2010 06:52:45 AM - src/layout.c:resize_client:323 - Lost 5 pixel due to client's width_increment (8 px, base_width = 4)
+07/06/2010 06:52:45 AM - src/layout.c:resize_client:326 - child will be at 2x18 with size 772x1124
+07/06/2010 06:52:45 AM - src/handlers.c:handle_expose_event:775 - window = 01000012
+07/06/2010 06:52:45 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:45 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:45 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:45 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+07/06/2010 06:52:45 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:45 AM - src/handlers.c:handle_expose_event:775 - window = 01000001
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.358018, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.209222, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.408227, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:45 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.358018, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.209222, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.408227, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:45 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1920.000000, default_factor = 0.333333
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.358018, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[1] = 0.209222, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:47 - width_factor[2] = 0.408227, unoccupied = 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 1920.000000
+07/06/2010 06:52:45 AM - src/layout.c:render_workspace:726 - height is 1152
+07/06/2010 06:52:45 AM - src/layout.c:render_container:358 - height per client = 1152, rest = 0
+07/06/2010 06:52:45 AM - src/layout.c:render_bars:579 - client is at 1152, should be at 1152
+07/06/2010 06:52:45 AM - src/layout.c:render_bars:591 - desired_height = 28
+07/06/2010 06:52:45 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000e, mode = 0, detail 4, serial 3584
+07/06/2010 06:52:45 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03200016, mode = 0, detail 4, serial 3584
+07/06/2010 06:52:45 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:45 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:45 AM - src/handlers.c:handle_expose_event:775 - window = 0100000a
+07/06/2010 06:52:45 AM - src/handlers.c:handle_expose_event:775 - window = 0100000e
+07/06/2010 06:52:46 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 0100000a, mode = 0, detail 3, serial 3717
+07/06/2010 06:52:46 AM - src/util.c:set_focus:261 - Window: frame 0x0100000a, child 0x03400016
+07/06/2010 06:52:46 AM - src/handlers.c:handle_enter_notify:174 - enter_notify for 03400016, mode = 0, detail 1, serial 3750
+07/06/2010 06:52:48 AM - src/mainx.c:xkb_got_event:131 - Handling XKB event

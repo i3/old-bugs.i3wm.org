@@ -1,0 +1,1042 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #241 (i3 doesn't start on second X Server)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/240" title="Ticket #240" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/241?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/241?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/241?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/242" title="Ticket #242" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="69e3b99d791ad1a167eb211c";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/240" title="Ticket #240">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/242" title="Ticket #242">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2010-07-10T13%3A13%3A17%2B02%3A00&amp;precision=second" title="See timeline at 07/10/10 13:13:17">5 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2010-09-09T15%3A36%3A41%2B02%3A00&amp;precision=second" title="See timeline at 09/09/10 15:36:41">5 years ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2010-09-14T23%3A02%3A57%2B02%3A00&amp;precision=second" title="See timeline at 09/14/10 23:02:57">5 years ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/241" class="trac-id">#241</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">i3 doesn't start on second X Server</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable"><a href="/report/query?status=!closed&amp;reporter=quaec">quaec</a></td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=3.e">3.e</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion" class="missing">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Linux">Linux</a>
+        </td>
+    </tr><tr>
+        <th id="h_app">
+          X11 program:
+        </th>
+        <td headers="h_app">
+              Xorg 1.8.1-902-1
+        </td>
+        <th id="h_distri">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+              Arch Linux x86_64
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+<strong>1. Configuration</strong><br />
+I've got three monitors with two X servers:<br />
+</p>
+<pre class="wiki">.--------. .------------.
+|        | |            | .------.
+| :0.0   | |    :0.0    | | :0.1 |
+|        | |            | |      |
+'--------' '------------' '------'
+</pre><p>
+These are the lines from my .xinitrc where I start i3:<br />
+</p>
+<pre class="wiki">DISPLAY=:0.1 i3 -V -d all &gt;&gt;~/.i3/i3log2 2&gt;&amp;1 &amp;
+exec i3 -V -d all &gt;&gt;~/.i3/i3log 2&gt;&amp;1
+</pre><p>
+My xorg.conf is in the attachment and I'm using the nouveau driver.<br />
+</p>
+<p>
+I've installed i3 from the Arch Linux community repo. (i3-wm, version 3.e_bf1-1)<br />
+</p>
+<p>
+<br />
+<strong>2. Problem description</strong><br />
+</p>
+<p>
+When I try to start i3 on my second X server I get the follwing error and the window bar from the second i3 is displayed on my first monitor.<br />
+</p>
+<hr />
+<p>
+<strong>ERROR: ERROR: No screen at 1478 x 525, starting on the first screen</strong><br />
+</p>
+<hr />
+<p>
+(A detailed log is in the attachment)<br />
+</p>
+<p>
+This happens every time I try to start i3 on the second X server.<br />
+</p>
+<p>
+<br />
+<strong>3. Attachments</strong><br />
+</p>
+<p>
+<em>xorg.conf:</em> My current Xorg configuration<br />
+<em>i3.log:</em> Log file from i3 on screen :0.0<br />
+<em>i3_2.log:</em> Log file from i3 on screen :0.1<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(5)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/241/i3.log" title="View attachment">i3.log</a><a href="/report/raw-attachment/ticket/241/i3.log" class="trac-rawlink" title="Download">​</a>
+       (<span title="15341 bytes">15.0 KB</span>) -
+      added by <em>anonymous</em> <a class="timeline" href="/report/timeline?from=2010-07-10T13%3A13%3A48%2B02%3A00&amp;precision=second" title="See timeline at 07/10/10 13:13:48">5 years ago</a>.
+  </dt>
+              <dd>
+                Log from the first i3 on :0.0
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/241/i3_2.log" title="View attachment">i3_2.log</a><a href="/report/raw-attachment/ticket/241/i3_2.log" class="trac-rawlink" title="Download">​</a>
+       (<span title="12441 bytes">12.1 KB</span>) -
+      added by <em>anonymous</em> <a class="timeline" href="/report/timeline?from=2010-07-10T13%3A14%3A03%2B02%3A00&amp;precision=second" title="See timeline at 07/10/10 13:14:03">5 years ago</a>.
+  </dt>
+              <dd>
+                Log from the second i3 on :0.1
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/241/xorg.conf" title="View attachment">xorg.conf</a><a href="/report/raw-attachment/ticket/241/xorg.conf" class="trac-rawlink" title="Download">​</a>
+       (<span title="2736 bytes">2.7 KB</span>) -
+      added by <em>anonymous</em> <a class="timeline" href="/report/timeline?from=2010-07-10T13%3A14%3A21%2B02%3A00&amp;precision=second" title="See timeline at 07/10/10 13:14:21">5 years ago</a>.
+  </dt>
+              <dd>
+                My xorg.conf
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/241/2010-07-17-141457_2960x1050_scrot.png" title="View attachment">2010-07-17-141457_2960x1050_scrot.png</a><a href="/report/raw-attachment/ticket/241/2010-07-17-141457_2960x1050_scrot.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="41354 bytes">40.4 KB</span>) -
+      added by <em>quaec</em> <a class="timeline" href="/report/timeline?from=2010-07-17T14%3A22%3A22%2B02%3A00&amp;precision=second" title="See timeline at 07/17/10 14:22:22">5 years ago</a>.
+  </dt>
+              <dd>
+                Screenshot of two running i3 instances with workspace 9 on :0.1 (Three monitors: 1280x1024, 1680x1050, 1024x768)
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/241/.xinitrc" title="View attachment">.xinitrc</a><a href="/report/raw-attachment/ticket/241/.xinitrc" class="trac-rawlink" title="Download">​</a>
+       (<span title="370 bytes">370 bytes</span>) -
+      added by <em>quaec</em> <a class="timeline" href="/report/timeline?from=2010-07-17T14%3A23%3A34%2B02%3A00&amp;precision=second" title="See timeline at 07/17/10 14:23:34">5 years ago</a>.
+  </dt>
+              <dd>
+                My .xinitrc file from the last try
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/241/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(22)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-07-10T13%3A13%3A48%2B02%3A00&amp;precision=second" title="See timeline at 07/10/10 13:13:48">5 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/241/i3.log"><em>i3.log</em></a><a href="/report/raw-attachment/ticket/241/i3.log" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Log from the first i3 on :0.0<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-07-10T13%3A14%3A03%2B02%3A00&amp;precision=second" title="See timeline at 07/10/10 13:14:03">5 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/241/i3_2.log"><em>i3_2.log</em></a><a href="/report/raw-attachment/ticket/241/i3_2.log" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Log from the second i3 on :0.1<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-07-10T13%3A14%3A21%2B02%3A00&amp;precision=second" title="See timeline at 07/10/10 13:14:21">5 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/241/xorg.conf"><em>xorg.conf</em></a><a href="/report/raw-attachment/ticket/241/xorg.conf" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+My xorg.conf<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-1-1279199295000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:2" class="follow-up">↓ 2</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-07-15T15%3A08%3A15%2B02%3A00&amp;precision=second" title="See timeline at 07/15/10 15:08:15">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Are you sure about the :0.1 as specifier for your second X server? Because the dot separates screen numbers, so :0.1 is the second screen on your first X server. Did you try :1? <br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1279213194000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+        in reply to:
+    <a href="#comment:1">↑ 1</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-07-15T18%3A59%3A54%2B02%3A00&amp;precision=second" title="See timeline at 07/15/10 18:59:54">5 years ago</a> by quaec
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Hmm, I was wrong. It seems that I have two screens on three monitors. I am able to start applications (xterm etc.) on my third monitor via "<tt>DISPLAY=:0.1 xterm</tt>".<br />
+</p>
+<p>
+Starting a program on :1 doesn't work.<br />
+</p>
+<p>
+Thanks!<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1279250156000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:4" class="follow-up">↓ 4</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-07-16T05%3A15%3A56%2B02%3A00&amp;precision=second" title="See timeline at 07/16/10 05:15:56">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Can you please attach i3 using gdb (gdb $(which i3) -p &lt;pid of i3&gt;) and paste the result of "backtrace full"?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1279363012000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+        in reply to:
+    <a href="#comment:3">↑ 3</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-07-17T12%3A36%3A52%2B02%3A00&amp;precision=second" title="See timeline at 07/17/10 12:36:52">5 years ago</a> by quaec
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Here is the output. Sorry for the long response time.<br />
+</p>
+<pre class="wiki">log 1
+#######################################################
+
+#0  0x00007f4529bb9d83 in epoll_wait () from /lib/libc.so.6
+No symbol table info available.
+#1  0x00007f4529e4ca77 in epoll_poll () from /usr/lib/libev.so.3
+No symbol table info available.
+#2  0x00007f4529e4f0e5 in ev_loop () from /usr/lib/libev.so.3
+No symbol table info available.
+#3  0x0000000000412342 in main (argc=&lt;value optimized out&gt;, argv=&lt;value optimized out&gt;, env=&lt;value optimized out&gt;) at src/mainx.c:596
+        i = &lt;value optimized out&gt;
+        screens = 0
+        opt = &lt;value optimized out&gt;
+        override_configpath = &lt;value optimized out&gt;
+        autostart = true
+        only_check_config = &lt;value optimized out&gt;
+        force_xinerama = false
+        conn = 0xbc04c0
+        prophs = {head = 0xbc7aa0, def = {long_len = 0, handler = 0, data = 0x0}, evenths = 0x635fa0}
+        atom_cookies = {{sequence = 4}, {sequence = 6}, {sequence = 7}, {sequence = 5}, {sequence = 8}, {sequence = 9}, {sequence = 11},
+          {sequence = 12}, {sequence = 13}, {sequence = 14}, {sequence = 15}, {sequence = 10}, {sequence = 16}, {sequence = 17}, {
+            sequence = 18}, {sequence = 19}, {sequence = 20}, {sequence = 21}, {sequence = 22}, {sequence = 23}, {sequence = 24}}
+        long_options = {{name = 0x422fc1 "no-autostart", has_arg = 0, flag = 0x0, val = 97}, {name = 0x41fcb1 "config", has_arg = 1,
+            flag = 0x0, val = 99}, {name = 0x422fce "version", has_arg = 0, flag = 0x0, val = 118}, {name = 0x422fd6 "help",
+            has_arg = 0, flag = 0x0, val = 104}, {name = 0x422d52 "force-xinerama", has_arg = 0, flag = 0x0, val = 0}, {name = 0x0,
+            has_arg = 0, flag = 0x0, val = 0}}
+        option_index = 0
+        major = 1
+        minor = 0
+        error = 0
+        errBase = 156
+        loop = 0xbc8440
+        xkb = &lt;value optimized out&gt;
+        xcb_check = &lt;value optimized out&gt;
+        xcb_prepare = &lt;value optimized out&gt;
+        root_screen = &lt;value optimized out&gt;
+        mask = 2048
+        values = {5374032}
+        cookie = &lt;value optimized out&gt;
+        randr_base = 101
+        __FUNCTION__ = "main"
+        reply = 0xbed470
+        screen = &lt;value optimized out&gt;
+        exec = &lt;value optimized out&gt;
+
+log 2
+#######################################################
+
+#0  0x00007f57b32cad83 in epoll_wait () from /lib/libc.so.6
+No symbol table info available.
+#1  0x00007f57b355da77 in epoll_poll () from /usr/lib/libev.so.3
+No symbol table info available.
+#2  0x00007f57b35600e5 in ev_loop () from /usr/lib/libev.so.3
+No symbol table info available.
+#3  0x0000000000412342 in main (argc=&lt;value optimized out&gt;, argv=&lt;value optimized out&gt;, env=&lt;value optimized out&gt;) at src/mainx.c:596
+        i = &lt;value optimized out&gt;
+        screens = 1
+        opt = &lt;value optimized out&gt;
+        override_configpath = &lt;value optimized out&gt;
+        autostart = true
+        only_check_config = &lt;value optimized out&gt;
+        force_xinerama = false
+        conn = 0xa404c0
+        prophs = {head = 0xa47aa0, def = {long_len = 0, handler = 0, data = 0x0}, evenths = 0x635fa0}
+        atom_cookies = {{sequence = 4}, {sequence = 6}, {sequence = 7}, {sequence = 5}, {sequence = 8}, {sequence = 9}, {sequence = 11},
+          {sequence = 12}, {sequence = 13}, {sequence = 14}, {sequence = 15}, {sequence = 10}, {sequence = 16}, {sequence = 17}, {
+            sequence = 18}, {sequence = 19}, {sequence = 20}, {sequence = 21}, {sequence = 22}, {sequence = 23}, {sequence = 24}}
+        long_options = {{name = 0x422fc1 "no-autostart", has_arg = 0, flag = 0x0, val = 97}, {name = 0x41fcb1 "config", has_arg = 1,
+            flag = 0x0, val = 99}, {name = 0x422fce "version", has_arg = 0, flag = 0x0, val = 118}, {name = 0x422fd6 "help",
+            has_arg = 0, flag = 0x0, val = 104}, {name = 0x422d52 "force-xinerama", has_arg = 0, flag = 0x0, val = 0}, {name = 0x0,
+            has_arg = 0, flag = 0x0, val = 0}}
+        option_index = 0
+        major = 1
+        minor = 0
+        error = 0
+        errBase = 156
+        loop = 0xa48440
+        xkb = &lt;value optimized out&gt;
+        xcb_check = &lt;value optimized out&gt;
+        xcb_prepare = &lt;value optimized out&gt;
+        root_screen = &lt;value optimized out&gt;
+        mask = 2048
+        values = {5374032}
+        cookie = &lt;value optimized out&gt;
+        randr_base = 101
+        __FUNCTION__ = "main"
+        reply = 0xa6b6c0
+        screen = &lt;value optimized out&gt;
+        exec = &lt;value optimized out&gt;
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1279364057000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:6" class="follow-up">↓ 6</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-07-17T12%3A54%3A17%2B02%3A00&amp;precision=second" title="See timeline at 07/17/10 12:54:17">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Please try the following:<br />
+Modify the configuration file of the second i3 instance which you run on :0.1. Change the socket path to something else than in the first configuration, say /tmp/second.sock. Then start both i3 instances and run i3-msg -s /tmp/second.sock "9" on console. What happens? Do you see the "9" in the workspace bar? (may be a coordinate problem in i3 then)<br />
+</p>
+<p>
+Maybe you can also attach a screenshot of :0.0 and :0.1 and your complete .xsession.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1279369272000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+        in reply to:
+    <a href="#comment:5">↑ 5</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:7" class="follow-up">↓ 7</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-07-17T14%3A21%3A12%2B02%3A00&amp;precision=second" title="See timeline at 07/17/10 14:21:12">5 years ago</a> by quaec
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+When I run the command I get <tt>{"success":true}</tt> and the workspace of the second i3 instance changes to 9. (See the screenshot attached)<br />
+</p>
+<p>
+I attached also my .xinitrc, since I have no .xsession.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-07-17T14%3A22%3A22%2B02%3A00&amp;precision=second" title="See timeline at 07/17/10 14:22:22">5 years ago</a> by quaec
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/241/2010-07-17-141457_2960x1050_scrot.png"><em>2010-07-17-141457_2960x1050_scrot.png</em></a><a href="/report/raw-attachment/ticket/241/2010-07-17-141457_2960x1050_scrot.png" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Screenshot of two running i3 instances with workspace 9 on :0.1 (Three monitors: 1280x1024, 1680x1050, 1024x768)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-07-17T14%3A23%3A34%2B02%3A00&amp;precision=second" title="See timeline at 07/17/10 14:23:34">5 years ago</a> by quaec
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/241/.xinitrc"><em>.xinitrc</em></a><a href="/report/raw-attachment/ticket/241/.xinitrc" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+My .xinitrc file from the last try<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1279369562000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+        in reply to:
+    <a href="#comment:6">↑ 6</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-07-17T14%3A26%3A02%2B02%3A00&amp;precision=second" title="See timeline at 07/17/10 14:26:02">5 years ago</a> by quaec
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I haven't attached a screenshot of my third monitor since it's all black. (Tough I can move my mouse to it and I can start programs without window manager)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1279369999000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-07-17T14%3A33%3A19%2B02%3A00&amp;precision=second" title="See timeline at 07/17/10 14:33:19">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Can you please come to our IRC channel in order to do some more interactive debugging? It’s #i3 on irc.twice-irc.de<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1279374425000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-07-17T15%3A47%3A05%2B02%3A00&amp;precision=second" title="See timeline at 07/17/10 15:47:05">5 years ago</a> by quaec
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sure, I'll do that. Unfortunately I have no more time today, but I get in tomorrow. :/<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1279639094000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-07-20T17%3A18%3A14%2B02%3A00&amp;precision=second" title="See timeline at 07/20/10 17:18:14">5 years ago</a> by quaec
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sorry, I had no time on Sunday. Unfortunately I'm on holiday without access to my computer at the moment.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1279643654000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-07-20T18%3A34%3A14%2B02%3A00&amp;precision=second" title="See timeline at 07/20/10 18:34:14">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+"Unfortunately"? You seem to have strange priorities. Enjoy your holidays ;-).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-12-1283342861000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-09-01T14%3A07%3A41%2B02%3A00&amp;precision=second" title="See timeline at 09/01/10 14:07:41">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>accepted</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+After setting up a similar system (two graphics cards), I was able to reproduce your problem. The following patch was only tested for a short amount of time by me, so can you please see if it works for you? <a class="ext-link" href="http://t.zekjur.net/multi-head.patch"><span class="icon">​</span>http://t.zekjur.net/multi-head.patch</a><br />
+</p>
+<p>
+Thanks for confirming!<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-13-1283977770000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:13" class="cnum">
+    <a href="#comment:13">comment:13</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-09-08T22%3A29%3A30%2B02%3A00&amp;precision=second" title="See timeline at 09/08/10 22:29:30">5 years ago</a> by quaec
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I've briefly tested your patch.<br />
+Overall, it works. The third bar opens on the third monitor correctly. Unfortunately, the workspace number is "1" like at the first bar on monitor 1. So I have no way to change the focus to the third monitor. Or is there another way maybe?<br />
+</p>
+<p>
+Thanks. :)<br />
+</p>
+<p>
+p.s.: How can I uninstall the manual build program correctly? "make uninstall" doesn't work.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-14-1284015875000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:14" class="cnum">
+    <a href="#comment:14">comment:14</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-09-09T09%3A04%3A35%2B02%3A00&amp;precision=second" title="See timeline at 09/09/10 09:04:35">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+There are different tools like <a class="ext-link" href="http://tools.suckless.org/swarp"><span class="icon">​</span>http://tools.suckless.org/swarp</a> which can be used to warp the pointer to a different display (just call DISPLAY=:0.1 swarp or something like that).<br />
+</p>
+<p>
+You could also combine this with some additional bindings. For example, say you want the first row of your keyboard to act as additional workspaces on the other screen. In your i3 configuration (for both instances), bind the q, w, e, … keys. In the instance which runs *not* on the other screen, make them do DISPLAY=:0.1 swarp &amp;&amp; DISPLAY=:0.1 i3-msg '1', on the other one just bind them to '1', etc. Get the idea?<br />
+</p>
+<p>
+For the uninstall: nope, there is no uninstall target. You can just re-install the i3 from arch, it will replace all files (also, there are no differences in the file list, you won’t end up with unused files on your system).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-15-1284039401000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:15" class="cnum">
+    <a href="#comment:15">comment:15</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-09-09T15%3A36%3A41%2B02%3A00&amp;precision=second" title="See timeline at 09/09/10 15:36:41">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>accepted</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Patch is now merged in the master branch of i3, please update. Closing this bug now.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-16-1284494413000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:16" class="cnum">
+    <a href="#comment:16">comment:16</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-09-14T22%3A00%3A13%2B02%3A00&amp;precision=second" title="See timeline at 09/14/10 22:00:13">5 years ago</a> by quaec
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Ok, thanks!<br />
+</p>
+<p>
+So there is no way to use over two monitors "properly"? I mean that I have workspaces 1-3 on three monitors for example. Is there a technical thing that it can't work like that?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-17-1284498177000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:17" class="cnum">
+    <a href="#comment:17">comment:17</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-09-14T23%3A02%3A57%2B02%3A00&amp;precision=second" title="See timeline at 09/14/10 23:02:57">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Of course there is a way to use multiple monitors properly: Use XRandR :).<br />
+</p>
+<p>
+In your case you need to start two instances of i3. Those are independant of each other. The best way to fix this in your case would be to add multi-display-support to i3. However, since your setup is quite unusual, this does not have high priority for me at the moment (and not in foreseeable future either, probably).<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/241?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/241?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/241?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+From 0da2fb06dd8106c7881d52acaaba98e8be140d71 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Fernando=20Tarl=C3=A1=20Cardoso=20Lemos?= <fernandotcl@gmail.com>
+Date: Tue, 22 Jun 2010 21:55:59 -0300
+Subject: [PATCH] Added CPU frequency information.
+
+---
+ i3status.c                |    9 +++++++++
+ i3status.h                |    1 +
+ man/i3status.man          |   13 +++++++++++++
+ src/print_cpu_frequency.c |   44 ++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 67 insertions(+), 0 deletions(-)
+ create mode 100644 src/print_cpu_frequency.c
+
+diff --git a/i3status.c b/i3status.c
+index 9087d0c..f77c2b8 100644
+--- a/i3status.c
++++ b/i3status.c
+@@ -124,6 +124,11 @@ int main(int argc, char *argv[]) {
+                 CFG_END()
+         };
+ 
++        cfg_opt_t freq_opts[] = {
++                CFG_STR("format", "%frequency %unit", CFGF_NONE),
++                CFG_END()
++        };
++
+         cfg_opt_t disk_opts[] = {
+                 CFG_STR("format", "%free", CFGF_NONE),
+                 CFG_END()
+@@ -137,6 +142,7 @@ int main(int argc, char *argv[]) {
+                 CFG_SEC("ethernet", ethernet_opts, CFGF_TITLE | CFGF_MULTI),
+                 CFG_SEC("battery", battery_opts, CFGF_TITLE | CFGF_MULTI),
+                 CFG_SEC("cpu_temperature", temp_opts, CFGF_TITLE | CFGF_MULTI),
++                CFG_SEC("cpu_frequency", freq_opts, CFGF_TITLE | CFGF_MULTI),
+                 CFG_SEC("disk", disk_opts, CFGF_TITLE | CFGF_MULTI),
+                 CFG_SEC("ipv6", ipv6_opts, CFGF_NONE),
+                 CFG_SEC("time", time_opts, CFGF_NONE),
+@@ -234,6 +240,9 @@ int main(int argc, char *argv[]) {
+ 
+                         CASE_SEC_TITLE("cpu_temperature")
+                                 print_cpu_temperature_info(atoi(title), cfg_getstr(sec, "format"));
++
++                        CASE_SEC_TITLE("cpu_frequency")
++                                print_cpu_frequency_info(atoi(title), cfg_getstr(sec, "format"));
+                 }
+                 printf("\n");
+                 fflush(stdout);
+diff --git a/i3status.h b/i3status.h
+index 512b4ad..182fa20 100644
+--- a/i3status.h
++++ b/i3status.h
+@@ -67,6 +67,7 @@ const char *get_ip_addr();
+ void print_wireless_info(const char *interface, const char *format_up, const char *format_down);
+ void print_run_watch(const char *title, const char *pidfile, const char *format);
+ void print_cpu_temperature_info(int zone, const char *format);
++void print_cpu_frequency_info(int cpu_no, const char *format);
+ void print_eth_info(const char *interface, const char *format_up, const char *format_down);
+ void print_load();
+ bool process_runs(const char *path);
+diff --git a/man/i3status.man b/man/i3status.man
+index b7f362e..6326cd4 100644
+--- a/man/i3status.man
++++ b/man/i3status.man
+@@ -53,6 +53,7 @@ order += "wireless wlan0"
+ order += "ethernet eth0"
+ order += "battery 0"
+ order += "cpu_temperature 0"
++order += "cpu_frequency 0"
+ order += "load"
+ order += "time"
+ 
+@@ -90,6 +91,10 @@ cpu_temperature 0 {
+ 	format = "T: %degrees °C"
+ }
+ 
++cpu_frequency 0 {
++    format = "F: %frequency %unit"
++}
++
+ disk "/" {
+ 	format = "%free"
+ }
+@@ -180,6 +185,14 @@ Gets the temperature of the given thermal zone.
+ 
+ *Example format*: +T: %degrees °C+
+ 
++=== CPU-Frequency
++
++Gets the operating frequency of the given CPU.
++
++*Example order*: +cpu_frequency 0+
++
++*Example format*: +F: %format %unit+
++
+ === Load
+ 
+ Gets the system load (number of processes waiting for CPU time in the last
+diff --git a/src/print_cpu_frequency.c b/src/print_cpu_frequency.c
+new file mode 100644
+index 0000000..dc8a726
+--- /dev/null
++++ b/src/print_cpu_frequency.c
+@@ -0,0 +1,44 @@
++// vim:ts=8:expandtab
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++
++#include "i3status.h"
++
++void print_cpu_frequency_info(int cpu_no, const char *format) {
++        char filename[70];
++        snprintf(filename, 70, "/sys/devices/system/cpu/cpu%d/cpufreq/scaling_cur_freq", cpu_no);
++
++        char buf[20] = {0};
++        if (!slurp(filename, buf, sizeof(buf)))
++                die("Could not open scaling_cur_freq for the specified CPU\n");
++
++        buf[strlen(buf) - 1] = '\0';
++        int freq = atoi(buf);
++
++        const char *unit = "MHz";
++        int divisor = 1000;
++        if (freq >= 1000 * 1000) {
++                divisor = 1000 * 1000;
++                unit = "GHz";
++        }
++
++        const char *walk;
++        for (walk = format; *walk != '\0'; walk++) {
++                if (*walk != '%') {
++                        putchar(*walk);
++                        continue;
++                }
++
++                if (BEGINS_WITH(walk + 1, "frequency")) {
++                        printf("%.2f", (float)freq / divisor);
++                        walk += strlen("frequency");
++                }
++
++                if (BEGINS_WITH(walk + 1, "unit")) {
++                        printf(unit);
++                        walk += strlen("unit");
++                }
++        }
++
++}
+-- 
+1.7.1
+

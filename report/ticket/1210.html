@@ -1,0 +1,891 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1210 (Add an IPC "Command" Event (now "Binding" Event))
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1209" title="Ticket #1209" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1210?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1210?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1210?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1211" title="Ticket #1211" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="d9689695984fc795a4b05dfa";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1209" title="Ticket #1209">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1211" title="Ticket #1211">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2014-03-30T19%3A08%3A41%2B02%3A00&amp;precision=second" title="See timeline at 03/30/14 19:08:41">12 months ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2014-10-03T09%3A41%3A00%2B02%3A00&amp;precision=second" title="See timeline at 10/03/14 09:41:00">6 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1210" class="trac-id">#1210</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=enhancement">enhancement</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Add an IPC "Command" Event (now "Binding" Event)</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">tony@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=TonyC">TonyC</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=minor">minor</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version" class="missing">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version="></a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.7.2 (2014-01-23, branch "tags/4.7.2")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+This is a proposal for a new "Command" event that fires when a command is executed by a command binding or an ipc client. The event should be sent after the tree has completed rendering and should contain this information:<br />
+</p>
+<ul><li>Source (one of "keyboard", "mouse", "ipc")
+</li><li>Array of modifiers pressed (null if not a binding)
+</li><li>Keycode or mouse button (zero if not a binding)
+</li><li>Symbol (null if not a binding)
+</li><li>Command text
+</li><li>Error message (null if no error)
+</li></ul><p>
+This event could be used in a script for many purposes:<br />
+</p>
+<ul><li>Displaying a system notification when a command from a binding throws an error.
+</li><li>Custom handling of a key press that needs state, such as tracking the last workspace or window that was focused.
+</li><li>Testing i3bar
+</li></ul>
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(3)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/1210/0001-Add-barconfig-and-binding-event-support.patch" title="View attachment">0001-Add-barconfig-and-binding-event-support.patch</a><a href="/report/raw-attachment/ticket/1210/0001-Add-barconfig-and-binding-event-support.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="788 bytes">788 bytes</span>) -
+      added by <em>TonyC</em> <a class="timeline" href="/report/timeline?from=2014-05-02T05%3A06%3A16%2B02%3A00&amp;precision=second" title="See timeline at 05/02/14 05:06:16">11 months ago</a>.
+  </dt>
+              <dd>
+                patch to AnyEvent::I3 for the binding (and barconfig_update) event
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/1210/0001-Implement-the-ipc-binding-event.patch" title="View attachment">0001-Implement-the-ipc-binding-event.patch</a><a href="/report/raw-attachment/ticket/1210/0001-Implement-the-ipc-binding-event.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="8183 bytes">8.0 KB</span>) -
+      added by <em>TonyC</em> <a class="timeline" href="/report/timeline?from=2014-05-02T05%3A28%3A07%2B02%3A00&amp;precision=second" title="See timeline at 05/02/14 05:28:07">11 months ago</a>.
+  </dt>
+              <dd>
+                patch to implement the event
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/1210/0001-Implement-the-ipc-binding-event.2.patch" title="View attachment">0001-Implement-the-ipc-binding-event.2.patch</a><a href="/report/raw-attachment/ticket/1210/0001-Implement-the-ipc-binding-event.2.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="7790 bytes">7.6 KB</span>) -
+      added by <em>TonyC</em> <a class="timeline" href="/report/timeline?from=2014-07-22T13%3A48%3A27%2B02%3A00&amp;precision=second" title="See timeline at 07/22/14 13:48:27">8 months ago</a>.
+  </dt>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/1210/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(17)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1396199420948668">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-03-30T19%3A10%3A20%2B02%3A00&amp;precision=second" title="See timeline at 03/30/14 19:10:20">12 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-priority">
+      <strong class="trac-field-priority">Priority</strong>
+        changed from <em>major</em> to <em>minor</em>
+    </li><li class="trac-field-type">
+      <strong class="trac-field-type">Type</strong>
+        changed from <em>defect</em> to <em>enhancement</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I submitted this one.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1396295764092509">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-03-31T21%3A56%3A04%2B02%3A00&amp;precision=second" title="See timeline at 03/31/14 21:56:04">12 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I see where you are coming from. However, I think the proposal tries to do many things, and the command doesn’t seem to have clear boundaries.<br />
+</p>
+<p>
+Maybe it’d be better to introduce a smaller/more well-defined event that allows custom keybindings. Unless I misunderstand what you meant, that would still cover use-case 2 and 3, and I am not convinced that use-case 1 is worthwhile to have :).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1396983498399867">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-08T20%3A58%3A18%2B02%3A00&amp;precision=second" title="See timeline at 04/08/14 20:58:18">12 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>new</em>
+    </li><li class="trac-field-summary">
+      <strong class="trac-field-summary">Summary</strong>
+        changed from <em>Add an IPC "Command" Event</em> to <em>Add an IPC "Command" Event (now "Binding" Event)</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This proposal is now for a new "Binding" event that fires after a command is executed by a command binding. The event should be sent after the tree has completed rendering and should contain this information (basically the serialized Binding struct):<br />
+</p>
+<ul><li><tt>input_type</tt> (string): one of "keyboard" or "mouse"
+</li><li><tt>mods</tt> (array of int)
+</li><li><tt>input_code</tt> (int): the keycode or mouse button corresponding what is now called "keycode" on the binding struct
+</li><li><tt>symbol</tt> (string, allow null)
+</li><li><tt>command</tt> (string)
+</li></ul><p>
+This could be used in a script to execute actions on user input handled by the window manager in cases where it is useful to store state within the script. Possible use cases:<br />
+</p>
+<ul><li>Advanced history commands (browser-like back/forward)
+</li><li>Multi-keystroke commands
+</li></ul>
+    </div>
+  <div class="trac-lastedit ">
+    Last edited <a class="timeline" href="/report/timeline?from=2014-04-08T20%3A59%3A01%2B02%3A00&amp;precision=second" title="See timeline at 04/08/14 20:59:01">12 months ago</a>
+        by TonyC
+      (<a href="/report/ticket/1210?cversion=0&amp;cnum_hist=3#comment:3">previous</a>)
+      (<a href="/report/ticket/1210?action=comment-diff&amp;cnum=3&amp;version=1">diff</a>)
+  </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1397497213359121">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-14T19%3A40%3A13%2B02%3A00&amp;precision=second" title="See timeline at 04/14/14 19:40:13">12 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+What I don’t understand yet is what interface (if any) you are proposing, so let me make a proposal for that:<br />
+</p>
+<p>
+In addition to the fields you are proposing, add a “payload” field and introduce a new command “ipc_binding &lt;payload&gt;”. The name makes it clear that this binding is sent through the IPC interface and is thus consumed by external scripts/programs.<br />
+</p>
+<p>
+If you have better suggestions, shoot! :)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1397499148119513">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-14T20%3A12%3A28%2B02%3A00&amp;precision=second" title="See timeline at 04/14/14 20:12:28">12 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Finding some way to send a message to the script would be useful, but I haven't thought of the best way to do that yet.<br />
+</p>
+<p>
+To show an example of the interface, this is how someone would implement ZZ behavior from vim using the binding event:<br />
+</p>
+<p>
+first nop the binding for <tt>z</tt> with the config directive <tt>bindsym $mod+z nop</tt>.<br />
+</p>
+<p>
+Then use <tt>exec_always</tt> to start this script:<br />
+</p>
+<pre class="wiki">#!/usr/bin/env python3
+
+from gi.repository import i3ipc
+
+i3 = i3ipc.Connection()
+
+last_key = None
+
+def on_binding(i3, e):
+    if e.symbol == 'z' and last_key == 'z':
+        i3.command('exit')
+
+    last_key = e.symbol
+
+i3.on('binding', on_binding)
+i3.main()
+</pre>
+    </div>
+  <div class="trac-lastedit ">
+    Last edited <a class="timeline" href="/report/timeline?from=2014-04-14T20%3A13%3A13%2B02%3A00&amp;precision=second" title="See timeline at 04/14/14 20:13:13">12 months ago</a>
+        by TonyC
+      (<a href="/report/ticket/1210?cversion=0&amp;cnum_hist=5#comment:5">previous</a>)
+      (<a href="/report/ticket/1210?action=comment-diff&amp;cnum=5&amp;version=1">diff</a>)
+  </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1397580848456481">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-15T18%3A54%3A08%2B02%3A00&amp;precision=second" title="See timeline at 04/15/14 18:54:08">12 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Yeah, binding the key to “nop” is also the first thing that came to my mind, but I find it very unclean.<br />
+</p>
+<p>
+That’s why I suggested the ipc_binding command :).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1398313612549551">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-24T06%3A26%3A52%2B02%3A00&amp;precision=second" title="See timeline at 04/24/14 06:26:52">11 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-owner">
+      <strong class="trac-field-owner">Owner</strong>
+        changed from <em>michael</em> to <em>TonyC</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>assigned</em>
+    </li>
+  </ul>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-05-02T05%3A06%3A16%2B02%3A00&amp;precision=second" title="See timeline at 05/02/14 05:06:16">11 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1210/0001-Add-barconfig-and-binding-event-support.patch"><em>0001-Add-barconfig-and-binding-event-support.patch</em></a><a href="/report/raw-attachment/ticket/1210/0001-Add-barconfig-and-binding-event-support.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+patch to AnyEvent::I3 for the binding (and barconfig_update) event<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1399001138520039">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-05-02T05%3A25%3A38%2B02%3A00&amp;precision=second" title="See timeline at 05/02/14 05:25:38">11 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I've added an attachment for AnyEvent::I3 that is needed to run a testcase for the binding event.<br />
+</p>
+<p>
+I've also attached a patch for the actual implementation of the binding event.<br />
+</p>
+<p>
+However, the XTEST extension causes i3 to crash in the testing environment and I'm not exactly sure why. It seems to work find with manual testing.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-05-02T05%3A28%3A07%2B02%3A00&amp;precision=second" title="See timeline at 05/02/14 05:28:07">11 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1210/0001-Implement-the-ipc-binding-event.patch"><em>0001-Implement-the-ipc-binding-event.patch</em></a><a href="/report/raw-attachment/ticket/1210/0001-Implement-the-ipc-binding-event.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+patch to implement the event<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1399002073353002">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-05-02T05%3A41%3A13%2B02%3A00&amp;precision=second" title="See timeline at 05/02/14 05:41:13">11 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <pre class="wiki">==9991== Invalid read of size 1
+==9991==    at 0x40F64E: translate_keysyms (bindings.c:197)
+==9991==    by 0x408A3C: handle_mapping_notify (handlers.c:262)
+==9991==    by 0x40A8C1: handle_event (handlers.c:1146)
+==9991==    by 0x42CF22: xcb_check_cb (main.c:144)
+==9991==    by 0x70925E4: ev_invoke_pending (in /usr/lib/libev.so.4.0.0)''
+==9991==    by 0x7095776: ev_run (in /usr/lib/libev.so.4.0.0)
+==9991==    by 0x42CE0A: ev_loop (ev.h:826)
+==9991==    by 0x430324: main (main.c:913)
+==9991==  Address 0x22 is not stack'd, malloc'd or (recently) free'd
+</pre><p>
+I think the issue is that <tt>xcb_get_setup(conn)</tt> in <tt>src/bindings.c:197</tt> is returning NULL.<br />
+</p>
+<p>
+I really don't know what is going on here. Maybe a test for this is not practical right now.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1399126070127113">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-05-03T16%3A07%3A50%2B02%3A00&amp;precision=second" title="See timeline at 05/03/14 16:07:50">11 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+In the case where xcb_get_setup() returns 0 (which seems likely), the XCB connection has an error:<br />
+</p>
+<pre class="wiki">const xcb_setup_t *xcb_get_setup(xcb_connection_t *c)
+{
+    if(c-&gt;has_error)
+        return 0;
+    /* doesn't need locking because it's never written to. */
+    return c-&gt;setup;
+}
+</pre><p>
+Some further debugging would be appreciated. Also note that X11::Protocol is a new dependency for the test suite and I’d like to keep those at a minimum. So for prototyping, it’s fine, but eventually, I’d like to see XTEST support in X11::XCB (or in whatever we are using after we move away from X11::XCB, if we do that).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1402975670178218">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-17T05%3A27%3A50%2B02%3A00&amp;precision=second" title="See timeline at 06/17/14 05:27:50">10 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-version">
+      <strong class="trac-field-version">Version</strong>
+        <em>4.7.2</em> deleted
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-12-1406023621941365">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-22T12%3A07%3A01%2B02%3A00&amp;precision=second" title="See timeline at 07/22/14 12:07:01">8 months ago</a> by mrvmyr@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Is this still worked on?<br />
+</p>
+<p>
+I intended to suggest a command similar to this, which would take a string and send it as a custom event over i3s IPC, external applications could then subscribe to custom events and receive them.<br />
+</p>
+<p>
+It took me a bit to find out how these binding events would work.<br />
+For how I would use custom events (as a lightweight way to signal to i3 IPC scripts that already have an i3 connection open) these binding events seem very heavyweight.<br />
+</p>
+<p>
+AFAICS once subscribed to binding events an external application would receive every keypress event i3 processes?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-13-1406029668276771">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:13" class="cnum">
+    <a href="#comment:13">comment:13</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-22T13%3A47%3A48%2B02%3A00&amp;precision=second" title="See timeline at 07/22/14 13:47:48">8 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Custom events have been considered as an idea, but I don't think the ipc should necessarily be used as a communication bus. You would need to make a compelling case for something like that.<br />
+</p>
+<p>
+As for the "binding" event, you would get any binding that runs from some kind of user input.<br />
+</p>
+<p>
+The event is pretty much done except that I can't get the freaking testcase to work. I'll post the patch. If you can get the testcase to work, we'll put this into core.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-22T13%3A48%3A27%2B02%3A00&amp;precision=second" title="See timeline at 07/22/14 13:48:27">8 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1210/0001-Implement-the-ipc-binding-event.2.patch"><em>0001-Implement-the-ipc-binding-event.2.patch</em></a><a href="/report/raw-attachment/ticket/1210/0001-Implement-the-ipc-binding-event.2.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-14-1412322060699244">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:14" class="cnum">
+    <a href="#comment:14">comment:14</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-10-03T09%3A41%3A00%2B02%3A00&amp;precision=second" title="See timeline at 10/03/14 09:41:00">6 months ago</a> by Tony Crisci
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>assigned</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/fbaf0844"><span class="icon">​</span>http://c.i3wm.org/fbaf0844</a>:<br />
+</p>
+<pre class="wiki">Implement the ipc 'binding' event
+
+The binding event will be triggered when a binding is run as a result of
+some a user action. The binding event has the following properties:
+
+change: (str) Currently this will only be "run" but may be expanded in
+the future. Included for consistency with other events.
+
+binding: (map) the serialized binding
+
+The "binding" member will have these properties:
+
+input_type: (str) either "keyboard" or "mouse"
+
+input_code: (int) the xcb keycode of the keyboard binding if it was
+provided or the mouse button if it is a mouse binding.
+
+symbol: (str) the string representation of the input code
+
+command: (str) the bound command
+
+mods: (list of str) a list of the modifiers that were pressed as string
+symbols
+
+fixes #1210
+
+</pre>
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1210?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1210?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1210?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

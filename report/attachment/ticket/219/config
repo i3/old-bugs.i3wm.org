@@ -1,0 +1,124 @@
+# Theme
+set $font -*-fixed-*-*-*-*-*-*-*-*-*-*-*-*
+set $active_border #4c7899
+set $active_bg #285577
+set $active_fg #ffffff
+set $inactive_border #333333
+set $inactive_bg #222222
+set $inactive_fg #ffffff
+set $unfocused_fg #888888
+set $urgent_border #2f343a
+set $urgent_bg #900000
+set $urgent_fg #ffffff
+
+# Font and colors
+font $font
+client.focused $active_border $active_bg $active_fg
+client.focused_inactive $inactive_border $inactive_bg $inactive_fg
+client.unfocused $inactive_border $inactive_bg $unfocused_fg
+client.urgent $urgent_border $urgent_bg $urgent_fg
+bar.focused $active_border $active_bg $active_fg
+bar.unfocused $inactive_border $inactive_bg $inactive_fg
+bar.urgent $urgent_border $urgent_bg $urgent_fg
+
+# Floating modifier
+floating_modifier Mod1
+
+# Launch a new terminal
+bindsym Mod1+Return exec x-terminal-emulator &
+
+# Launch dmenu
+bindsym Mod1+r exec dmenu_run -nb '$inactive_bg' -nf '$inactive_fg' -sb '$active_bg' -sf '$active_fg' -fn '$font'
+
+# Kill client
+bindsym Mod1+Shift+q kill
+
+# Restart i3
+bindsym Mod1+Shift+r restart
+
+# Exit i3 (Mod1 + Shift + e)
+bindsym Mod1+Shift+e exit
+
+# Lock screen
+bindsym Mod1+F12 exec i3lock & sleep 1 && xset dpms force off &
+
+# Volume keys
+bind 121 exec volume toggle &
+bind 122 exec volume down &
+bind 123 exec volume up &
+
+# Monitor keys
+bindsym XF86Display exec toggle_vga &
+
+# MPD hotkeys
+bindsym Mod4+z exec mpc prev &
+bindsym Mod4+x exec mpc play &
+bindsym Mod4+c exec mpc toggle &
+bindsym Mod4+v exec mpc stop &
+bindsym Mod4+b exec mpc next &
+
+# Fullscreen, stabbed, stacked and default modes
+bindsym Mod1+f f
+bindsym Mod1+t T
+bindsym Mod1+s s
+bindsym Mod1+d d
+
+# Toggle tiling or floating mode for the current window (Mod1 + Shift + Space)
+bind Mod1+Shift+65 t
+
+# Switch between the tiling and floating layers (Mod1 + t)
+bindsym Mod1+Shift+t focus ft
+
+# Focus
+bindsym Mod1+Left h
+bindsym Mod1+Down j
+bindsym Mod1+Up k
+bindsym Mod1+Right l
+
+# Focus container
+bindsym Mod4+Left wch
+bindsym Mod4+Down wcj
+bindsym Mod4+Up wck
+bindsym Mod4+Right wcl
+
+# Snap
+bindsym Mod1+Control+Left sh
+bindsym Mod1+Control+Down sj
+bindsym Mod1+Control+Up sk
+bindsym Mod1+Control+Right sl
+
+# Move
+bindsym Mod1+Shift+Left mh
+bindsym Mod1+Shift+Down mj
+bindsym Mod1+Shift+Up mk
+bindsym Mod1+Shift+Right ml
+
+# Move container
+bindsym Mod4+Shift+Left wcmh
+bindsym Mod4+Shift+Down wcmj
+bindsym Mod4+Shift+Up wcmk
+bindsym Mod4+Shift+Right wcml
+
+# Workspaces
+bind Mod1+10 1
+bind Mod1+11 2
+bind Mod1+12 3
+bind Mod1+13 4
+bind Mod1+14 5
+bind Mod1+15 6
+bind Mod1+16 7
+bind Mod1+17 8
+bind Mod1+18 9
+bind Mod1+19 10
+
+# Move to workspace
+bind Mod1+Shift+10 m1
+bind Mod1+Shift+11 m2
+bind Mod1+Shift+12 m3
+bind Mod1+Shift+13 m4
+bind Mod1+Shift+14 m5
+bind Mod1+Shift+15 m6
+bind Mod1+Shift+16 m7
+bind Mod1+Shift+17 m8
+bind Mod1+Shift+18 m9
+bind Mod1+Shift+19 m10

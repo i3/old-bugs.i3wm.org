@@ -1,0 +1,13 @@
+diff --git a/i3-wsbar b/i3-wsbar
+index b1a50c4..fabb337 100755
+--- a/i3-wsbar
++++ b/i3-wsbar
+@@ -153,7 +153,7 @@ sub update_output {
+             ($bg, $fg) = qw(4c7899 ffffff) if $ws->{visible};
+             ($bg, $fg) = qw(900000 ffffff) if $ws->{urgent};
+ 
+-            my $cmd = q|i3-msg "| . $ws->{num} . q|"|;
++            my $cmd = q|i3-msg "workspace | . $ws->{num} . q|"|;
+             my $name = $ws->{name};
+ 
+             # Begin the clickable area

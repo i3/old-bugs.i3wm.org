@@ -1,0 +1,627 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #524 (focus parent; focus down/up on a stacked/tabbed container "activates" all clients which disables keyboard input)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/523" title="Ticket #523" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/524?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/524?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/524?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/525" title="Ticket #525" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="a98bef25218c1cfa8bf0c6d6";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/523" title="Ticket #523">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/525" title="Ticket #525">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2011-09-20T08%3A21%3A28%2B02%3A00&amp;precision=second" title="See timeline at 09/20/11 08:21:28">4 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2011-10-09T22%3A35%3A44%2B02%3A00&amp;precision=second" title="See timeline at 10/09/11 22:35:44">3 years ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/524" class="trac-id">#524</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=works_as_intended">works_as_intended</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">focus parent; focus down/up on a stacked/tabbed container "activates" all clients which disables keyboard input</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">mark.kusch@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.0">4.0</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.0.2-199-g3073fe0 (next)
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Linux">Linux</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+              Archlinux
+        </td>
+    </tr><tr>
+        <th id="h_ircnick">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+              kraM
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+Hi, <br />
+</p>
+<p>
+this is probably related to <a class="ext-link" href="http://bugs.i3wm.org/ticket/415"><span class="icon">​</span>http://bugs.i3wm.org/ticket/415</a>.<br />
+</p>
+<pre class="wiki">i3 --version
+i3 version 4.0.2-199-g3073fe0 (2011-09-19, branch "next") © 2009-2011 Michael Stapelberg and contributors
+</pre><p>
+I've bound <br />
+</p>
+<ul><li>bindcode $alt+54 focus parent; focus down
+</li><li>bindcode $alt+55 focus parent; focus up
+</li></ul><p>
+Pressing those keys while focussing a stacked or tabbed container shows all clients active (decoration bars) leading to i3 ignoring further keyboard input until one client has been selected using the mouse.<br />
+</p>
+<p>
+Find my i3 config attached.<br />
+</p>
+<p>
+From i3 log:<br />
+</p>
+<pre class="wiki">09/20/2011 08:14:50 AM - src/main.c:xkb_got_event:105 - Handling XKB event
+09/20/2011 08:14:51 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 10
+09/20/2011 08:14:51 AM - src/handlers.c:handle_key_press:83 - Keypress 55, state raw = 24
+09/20/2011 08:14:51 AM - src/handlers.c:handle_key_press:87 - (removed numlock, state = 8)
+09/20/2011 08:14:51 AM - src/handlers.c:handle_key_press:91 - (removed upper 8 bits, state = 8)
+09/20/2011 08:14:51 AM - src/handlers.c:handle_key_press:96 - (checked mode_switch, state 8)
+09/20/2011 08:14:51 AM - COMMAND: *focus parent; focus up*
+09/20/2011 08:14:51 AM - src/con.c:con_focus:182 - con_focus = 0x177f280
+09/20/2011 08:14:51 AM - src/con.c:con_focus:182 - con_focus = 0x1780250
+09/20/2011 08:14:51 AM - src/con.c:con_focus:182 - con_focus = 0x1780030
+09/20/2011 08:14:51 AM - src/con.c:con_focus:182 - con_focus = 0x177fbf0
+09/20/2011 08:14:51 AM - src/con.c:con_focus:182 - con_focus = 0x177f980
+09/20/2011 08:14:51 AM - src/con.c:con_focus:196 - con_focus done = 0x177f980
+09/20/2011 08:14:51 AM - src/con.c:con_focus:196 - con_focus done = 0x177fbf0
+09/20/2011 08:14:51 AM - src/con.c:con_focus:196 - con_focus done = 0x1780030
+09/20/2011 08:14:51 AM - src/con.c:con_focus:196 - con_focus done = 0x1780250
+09/20/2011 08:14:51 AM - src/con.c:con_focus:196 - con_focus done = 0x177f280
+09/20/2011 08:14:51 AM - src/tree.c:tree_render:363 - -- BEGIN RENDERING --
+09/20/2011 08:14:51 AM - src/render.c:render_con:109 - currently rendering node 0x177f980 / root / layout 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:111 - children: 1, orientation = 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:229 - Root node, rendering outputs
+09/20/2011 08:14:51 AM - src/render.c:render_con:109 - currently rendering node 0x177fbf0 / xroot-0 / layout 4
+09/20/2011 08:14:51 AM - src/render.c:render_con:111 - children: 3, orientation = 0
+09/20/2011 08:14:51 AM - src/render.c:render_l_output:22 - Available height: 1080
+09/20/2011 08:14:51 AM - src/render.c:render_l_output:64 - This dockarea's height: 0
+09/20/2011 08:14:51 AM - src/render.c:render_l_output:64 - This dockarea's height: 19
+09/20/2011 08:14:51 AM - src/render.c:render_l_output:69 - Remaining: 1061
+09/20/2011 08:14:51 AM - src/render.c:render_l_output:92 - child at (0, 0) with (1920 x 0)
+09/20/2011 08:14:51 AM - src/render.c:render_l_output:93 - x now 0, y now 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:109 - currently rendering node 0x177fe10 / topdock / layout 3
+09/20/2011 08:14:51 AM - src/render.c:render_con:111 - children: 0, orientation = 2
+09/20/2011 08:14:51 AM - src/render.c:render_con:365 - -- level up
+09/20/2011 08:14:51 AM - src/render.c:render_l_output:92 - child at (0, 0) with (1920 x 1061)
+09/20/2011 08:14:51 AM - src/render.c:render_l_output:93 - x now 0, y now 1061
+09/20/2011 08:14:51 AM - src/render.c:render_con:109 - currently rendering node 0x1780030 / content / layout 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:111 - children: 1, orientation = 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:193 - got fs node: 0x1780250
+09/20/2011 08:14:51 AM - src/render.c:render_con:109 - currently rendering node 0x1780250 / 1 / layout 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:111 - children: 2, orientation = 1
+09/20/2011 08:14:51 AM - src/render.c:render_con:326 - child at (0, 0) with (960 x 1061)
+09/20/2011 08:14:51 AM - src/render.c:render_con:327 - x now 960, y now 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:109 - currently rendering node 0x1780470 / tmux.1.[irssi] / layout 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:111 - children: 0, orientation = 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:142 - Starting with inset = (1, 1) 958 x 1059
+09/20/2011 08:14:51 AM - src/render.c:render_con:144 - X11 border: 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:174 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+09/20/2011 08:14:51 AM - src/render.c:render_con:181 - Lost 2 pixel due to client's width_increment (7 px, base_width = 4)
+09/20/2011 08:14:51 AM - src/render.c:render_con:184 - child will be at 1x1 with size 956x1054
+09/20/2011 08:14:51 AM - src/render.c:render_con:365 - -- level up
+09/20/2011 08:14:51 AM - src/render.c:render_con:326 - child at (960, 0) with (960 x 1061)
+09/20/2011 08:14:51 AM - src/render.c:render_con:327 - x now 1920, y now 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:109 - currently rendering node 0x177f280 / #aa00aa / layout 1
+09/20/2011 08:14:51 AM - src/render.c:render_con:111 - children: 2, orientation = 2
+09/20/2011 08:14:51 AM - src/render.c:render_con:274 - stacked con
+09/20/2011 08:14:51 AM - src/render.c:render_con:326 - child at (960, 36) with (960 x 1025)
+09/20/2011 08:14:51 AM - src/render.c:render_con:327 - x now 960, y now 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:109 - currently rendering node 0x1780600 / i3 - A better tiling and dynamic window manager - Pentadactyl / layout 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:111 - children: 0, orientation = 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:142 - Starting with inset = (2, 0) 956 x 1023
+09/20/2011 08:14:51 AM - src/render.c:render_con:144 - X11 border: 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:184 - child will be at 2x0 with size 956x1023
+09/20/2011 08:14:51 AM - src/render.c:render_con:365 - -- level up
+09/20/2011 08:14:51 AM - src/render.c:render_con:274 - stacked con
+09/20/2011 08:14:51 AM - src/render.c:render_con:326 - child at (960, 36) with (960 x 1025)
+09/20/2011 08:14:51 AM - src/render.c:render_con:327 - x now 960, y now 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:109 - currently rendering node 0x1780870 / noez • groover • /mnt/data/groover/arch/aur/i3-git / layout 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:111 - children: 0, orientation = 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:142 - Starting with inset = (2, 0) 956 x 1023
+09/20/2011 08:14:51 AM - src/render.c:render_con:144 - X11 border: 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:174 - Lost 11 pixel due to client's height_increment (14 px, base_height = 4)
+09/20/2011 08:14:51 AM - src/render.c:render_con:181 - Lost 0 pixel due to client's width_increment (7 px, base_width = 4)
+09/20/2011 08:14:51 AM - src/render.c:render_con:184 - child will be at 2x0 with size 956x1012
+09/20/2011 08:14:51 AM - src/render.c:render_con:365 - -- level up
+09/20/2011 08:14:51 AM - src/render.c:render_con:335 - stacked/tabbed, raising focused reverse
+09/20/2011 08:14:51 AM - src/render.c:render_con:338 - done
+09/20/2011 08:14:51 AM - src/render.c:render_con:340 - con 0x177f280 is stacking, raising 0x1780870
+09/20/2011 08:14:51 AM - src/render.c:render_con:109 - currently rendering node 0x1780870 / noez • groover • /mnt/data/groover/arch/aur/i3-git / layout 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:111 - children: 0, orientation = 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:142 - Starting with inset = (2, 0) 956 x 1023
+09/20/2011 08:14:51 AM - src/render.c:render_con:144 - X11 border: 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:174 - Lost 11 pixel due to client's height_increment (14 px, base_height = 4)
+09/20/2011 08:14:51 AM - src/render.c:render_con:181 - Lost 0 pixel due to client's width_increment (7 px, base_width = 4)
+09/20/2011 08:14:51 AM - src/render.c:render_con:184 - child will be at 2x0 with size 956x1012
+09/20/2011 08:14:51 AM - src/render.c:render_con:365 - -- level up
+09/20/2011 08:14:51 AM - src/render.c:render_con:365 - -- level up
+09/20/2011 08:14:51 AM - src/render.c:render_con:365 - -- level up
+09/20/2011 08:14:51 AM - src/render.c:render_l_output:92 - child at (0, 1061) with (1920 x 19)
+09/20/2011 08:14:51 AM - src/render.c:render_l_output:93 - x now 0, y now 1080
+09/20/2011 08:14:51 AM - src/render.c:render_con:109 - currently rendering node 0x1780a70 / bottomdock / layout 3
+09/20/2011 08:14:51 AM - src/render.c:render_con:111 - children: 1, orientation = 2
+09/20/2011 08:14:51 AM - src/render.c:render_con:312 - dockarea con
+09/20/2011 08:14:51 AM - src/render.c:render_con:326 - child at (0, 1061) with (1920 x 19)
+09/20/2011 08:14:51 AM - src/render.c:render_con:327 - x now 0, y now 1080
+09/20/2011 08:14:51 AM - src/render.c:render_con:109 - currently rendering node 0x1794c20 / #0000FF / layout 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:111 - children: 0, orientation = 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:142 - Starting with inset = (0, 0) 1920 x 19
+09/20/2011 08:14:51 AM - src/render.c:render_con:144 - X11 border: 1
+09/20/2011 08:14:51 AM - src/render.c:render_con:184 - child will be at 0x0 with size 1918x17
+09/20/2011 08:14:51 AM - src/render.c:render_con:365 - -- level up
+09/20/2011 08:14:51 AM - src/render.c:render_con:365 - -- level up
+09/20/2011 08:14:51 AM - src/render.c:render_con:365 - -- level up
+09/20/2011 08:14:51 AM - src/render.c:render_con:365 - -- level up
+09/20/2011 08:14:51 AM - src/x.c:x_push_changes:769 - -- PUSHING WINDOW STACK --
+09/20/2011 08:14:51 AM - src/x.c:x_push_changes:822 - 
+
+ PUSHING CHANGES
+
+09/20/2011 08:14:51 AM - src/x.c:x_push_node:542 - Unmapping container 0x177f980 because it does not contain anything.
+09/20/2011 08:14:51 AM - src/x.c:x_push_node:542 - Unmapping container 0x177fbf0 because it does not contain anything.
+09/20/2011 08:14:51 AM - src/x.c:x_push_node:542 - Unmapping container 0x1780030 because it does not contain anything.
+09/20/2011 08:14:51 AM - src/x.c:x_push_node:542 - Unmapping container 0x1780250 because it does not contain anything.
+09/20/2011 08:14:51 AM - src/x.c:x_push_node:542 - Unmapping container 0x177fe10 because it does not contain anything.
+09/20/2011 08:14:51 AM - src/x.c:x_push_node:542 - Unmapping container 0x1780a70 because it does not contain anything.
+09/20/2011 08:14:51 AM - src/x.c:x_draw_decoration:271 - decoration should be rendered for con 0x1780470
+09/20/2011 08:14:51 AM - src/x.c:x_draw_decoration:316 - CACHE HIT, copying existing pixmaps
+09/20/2011 08:14:51 AM - src/x.c:x_draw_decoration:271 - decoration should be rendered for con 0x1780600
+09/20/2011 08:14:51 AM - src/x.c:x_draw_decoration:321 - CACHE MISS
+09/20/2011 08:14:51 AM - src/x.c:x_draw_decoration:324 - Also invalidating cache of 0x1780870
+09/20/2011 08:14:51 AM - src/x.c:x_draw_decoration:451 - indent_level = 0, indent_mult = 0
+09/20/2011 08:14:51 AM - src/x.c:x_draw_decoration:271 - decoration should be rendered for con 0x1780870
+09/20/2011 08:14:51 AM - src/x.c:x_draw_decoration:321 - CACHE MISS
+09/20/2011 08:14:51 AM - src/x.c:x_draw_decoration:451 - indent_level = 0, indent_mult = 0
+09/20/2011 08:14:51 AM - src/x.c:x_draw_decoration:271 - decoration should be rendered for con 0x1794c20
+09/20/2011 08:14:51 AM - src/x.c:x_draw_decoration:316 - CACHE HIT, copying existing pixmaps
+09/20/2011 08:14:51 AM - src/x.c:x_push_changes:839 - focused_id = 0x0040003d, to_focus = 0x00600008
+09/20/2011 08:14:51 AM - src/x.c:x_push_changes:846 - Updating focus (focused: 0x177f280 / #aa00aa)
+09/20/2011 08:14:51 AM - src/x.c:x_push_changes:893 - 
+
+ ENDING CHANGES
+
+09/20/2011 08:14:51 AM - src/tree.c:tree_render:372 - -- END RENDERING --
+single command completely parsed, dropping state...
+09/20/2011 08:14:51 AM - Focusing up
+09/20/2011 08:14:51 AM - src/randr.c:get_output_containing:89 - comparing x=0 y=0 with x=0 and y=0 width 1920 height 1080
+09/20/2011 08:14:51 AM - src/tree.c:_tree_next:388 - Current output is xroot-0
+09/20/2011 08:14:51 AM - src/tree.c:tree_render:363 - -- BEGIN RENDERING --
+09/20/2011 08:14:51 AM - src/render.c:render_con:109 - currently rendering node 0x177f980 / root / layout 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:111 - children: 1, orientation = 0
+09/20/2011 08:14:51 AM - src/render.c:render_con:229 - Root node, rendering outputs
+09/20/2011 08:14:51 AM - src/render.c:render_con:109 - currently rendering node 0x177fbf0 / xroot-0 / layout 4
+09/20/2011 08:14:51 AM - src/render.c:render_con:111 - children: 3, orientation = 0
+09/20/2011 08:14:51 AM - src/render.c:render_l_output:22 - Available height: 1080
+09/20/2011 08:14:51 AM - src/render.c:render_l_output:64 - This dockarea's height: 0
+09/20/2011 08:14:51 AM - src/render.c:render_l_output:64 - This dockarea's height: 19
+09/20/2011 08:14:51 AM - src/render.c:render_l_output:69 - Remaining: 1061
+09/20/2011 08:14:51 AM - src/render.c:render_l_output:92 - child at (0, 0) with (1920 x 0)
+09/20/2011 08:14:51 AM - src/render.c:render_l_output:93 - x now 0, y now 0
+</pre>
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(1)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/524/config.v4" title="View attachment">config.v4</a><a href="/report/raw-attachment/ticket/524/config.v4" class="trac-rawlink" title="Download">​</a>
+       (<span title="4257 bytes">4.2 KB</span>) -
+      added by <em>mark.kusch@…</em> <a class="timeline" href="/report/timeline?from=2011-09-20T08%3A23%3A49%2B02%3A00&amp;precision=second" title="See timeline at 09/20/11 08:23:49">4 years ago</a>.
+  </dt>
+              <dd>
+                Complete i3 configuration in use
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/524/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(3)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-09-20T08%3A23%3A49%2B02%3A00&amp;precision=second" title="See timeline at 09/20/11 08:23:49">4 years ago</a> by mark.kusch@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/524/config.v4"><em>config.v4</em></a><a href="/report/raw-attachment/ticket/524/config.v4" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Complete i3 configuration in use<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-1-1316845544691889">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-09-24T08%3A25%3A44%2B02%3A00&amp;precision=second" title="See timeline at 09/24/11 08:25:44">4 years ago</a> by mark.kusch@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <pre class="wiki">diff --git a/src/con.c b/src/con.c
+index 8fbedd3..696f9ac 100644
+--- a/src/con.c
++++ b/src/con.c
+@@ -185,7 +185,7 @@ void con_focus(Con *con) {
+     /* 2: exchange the position of the container in focus stack of the parent all the way up */
+     TAILQ_REMOVE(&amp;(con-&gt;parent-&gt;focus_head), con, focused);
+     TAILQ_INSERT_HEAD(&amp;(con-&gt;parent-&gt;focus_head), con, focused);
+-    if (con-&gt;parent-&gt;parent != NULL)
++    if (con-&gt;parent-&gt;parent-&gt;parent != NULL)
+         con_focus(con-&gt;parent);
+ 
+     focused = con;
+</pre><p>
+SEEMS to fix the issue for <br />
+</p>
+<pre class="wiki">focus parent; focus up
+</pre><p>
+but not for any other possibility to trigger the bug. <br />
+This seems to be a bigger problem in con.c con_focus. <br />
+</p>
+<p>
+The bug can be triggered with any <br />
+</p>
+<pre class="wiki">focus parent; focus/move {left,down,up,right}
+</pre><p>
+command. <br />
+</p>
+<p>
+The problem is not reproducable with default configuration because there is no <br />
+</p>
+<pre class="wiki">focus parent; do_something
+</pre><p>
+configured.<br />
+</p>
+<p>
+I got those configuration commands from v3 to v4 migration through i3-migrate-config-to-v4 script, so I assume that this is not totaly wrong to use them.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1318192544848849">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-10-09T22%3A35%3A44%2B02%3A00&amp;precision=second" title="See timeline at 10/09/11 22:35:44">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>works_as_intended</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This is actually working as intended.<br />
+</p>
+<p>
+When you select a stacked/tabbed container (by using <tt>focus parent</tt>), the X11 input focus cannot be set on any specific client (after all, you selected all of them). Also, focus down/focus up probably does not work because you don’t actually have a container below the stacked container. <tt>focus left/right</tt> after <tt>focus parent</tt> works very well here (with two stacked containers next to each other).<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/524?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/524?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/524?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

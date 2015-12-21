@@ -1,0 +1,719 @@
+
+ PUSHING CHANGES
+
+24/01/2011 07:52:50 - src/x.c:x_push_node:385 - Pushing changes for node 0x8a6a450 / root
+24/01/2011 07:52:50 - src/x.c:x_push_node:409 - Unmapping container because it does not contain anything atm.
+24/01/2011 07:52:50 - src/x.c:x_push_node:385 - Pushing changes for node 0x8a6a6a8 / xinerama-0
+24/01/2011 07:52:50 - src/x.c:x_push_node:409 - Unmapping container because it does not contain anything atm.
+24/01/2011 07:52:50 - src/x.c:x_push_node:385 - Pushing changes for node 0x8a6a7e0 / 1
+24/01/2011 07:52:50 - src/x.c:x_push_node:385 - Pushing changes for node 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:50 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:50 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:50 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:50 - src/x.c:x_push_node:385 - Pushing changes for node 0x8aa55c8 / #ffff00
+24/01/2011 07:52:50 - src/x.c:x_push_node:385 - Pushing changes for node 0x8aa51a8 / #00ffff
+24/01/2011 07:52:50 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa51a8
+24/01/2011 07:52:50 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:50 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:50 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:50 - src/x.c:x_push_node:385 - Pushing changes for node 0x8aa57f8 / #aa0000
+24/01/2011 07:52:50 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa57f8
+24/01/2011 07:52:50 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:50 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:50 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:50 - src/x.c:x_push_changes:600 - focused_id = 0x01600006, to_focus = 0x01400006
+24/01/2011 07:52:50 - src/x.c:x_push_changes:605 - Updating focus (focused: 0x8aa51a8 / #00ffff)
+24/01/2011 07:52:50 - src/x.c:x_push_changes:612 - 
+
+ ENDING CHANGES
+
+24/01/2011 07:52:50 - src/x.c:x_push_node_unmaps:520 - Pushing changes (with unmaps) for node 0x8a6a450 / root
+24/01/2011 07:52:50 - src/x.c:x_push_node_unmaps:520 - Pushing changes (with unmaps) for node 0x8a6a6a8 / xinerama-0
+24/01/2011 07:52:50 - src/x.c:x_push_node_unmaps:520 - Pushing changes (with unmaps) for node 0x8a6a7e0 / 1
+24/01/2011 07:52:50 - src/x.c:x_push_node_unmaps:520 - Pushing changes (with unmaps) for node 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:50 - src/x.c:x_push_node_unmaps:520 - Pushing changes (with unmaps) for node 0x8aa55c8 / #ffff00
+24/01/2011 07:52:50 - src/x.c:x_push_node_unmaps:520 - Pushing changes (with unmaps) for node 0x8aa51a8 / #00ffff
+24/01/2011 07:52:50 - src/x.c:x_push_node_unmaps:520 - Pushing changes (with unmaps) for node 0x8aa57f8 / #aa0000
+24/01/2011 07:52:50 - src/x.c:x_push_changes:622 - old stack: 0x00800013
+24/01/2011 07:52:50 - src/x.c:x_push_changes:622 - old stack: 0x0080000d
+24/01/2011 07:52:50 - src/x.c:x_push_changes:622 - old stack: 0x00800010
+24/01/2011 07:52:50 - src/x.c:x_push_changes:622 - old stack: 0x0080000a
+24/01/2011 07:52:50 - src/x.c:x_push_changes:622 - old stack: 0x00800006
+24/01/2011 07:52:50 - src/x.c:x_push_changes:622 - old stack: 0x00800003
+24/01/2011 07:52:50 - src/x.c:x_push_changes:622 - old stack: 0x00800000
+24/01/2011 07:52:51 - src/click.c:handle_button_press:251 - Button 16 pressed on window 0x00800010
+24/01/2011 07:52:51 - src/click.c:handle_button_press:261 - border_click = 1, mod_pressed = 0
+24/01/2011 07:52:51 - src/click.c:handle_button_press:274 - clicked_into = 0x8aa51a8
+24/01/2011 07:52:51 - src/click.c:handle_button_press:279 - state = 16, floating_modifier = 8
+24/01/2011 07:52:51 - src/click.c:handle_button_press:285 - handling
+24/01/2011 07:52:51 - src/con.c:con_focus:159 - con_focus = 0x8aa51a8
+24/01/2011 07:52:51 - src/con.c:con_focus:159 - con_focus = 0x8aa55c8
+24/01/2011 07:52:51 - src/con.c:con_focus:159 - con_focus = 0x8a6a7e0
+24/01/2011 07:52:51 - src/con.c:con_focus:159 - con_focus = 0x8a6a6a8
+24/01/2011 07:52:51 - src/con.c:con_focus:173 - con_focus done = 0x8a6a6a8
+24/01/2011 07:52:51 - src/con.c:con_focus:173 - con_focus done = 0x8a6a7e0
+24/01/2011 07:52:51 - src/con.c:con_focus:173 - con_focus done = 0x8aa55c8
+24/01/2011 07:52:51 - src/con.c:con_focus:173 - con_focus done = 0x8aa51a8
+24/01/2011 07:52:51 - src/tree.c:tree_render:309 - -- BEGIN RENDERING --
+24/01/2011 07:52:51 - src/tree.c:tree_render:318 - output 0x8a6a6a8 / xinerama-0
+24/01/2011 07:52:51 - src/render.c:render_con:21 - currently rendering node 0x8a6a6a8 / xinerama-0 / layout 0
+24/01/2011 07:52:51 - src/render.c:render_con:23 - children: 1, orientation = 0
+24/01/2011 07:52:51 - src/render.c:render_con:100 - got fs node: 0x8a6a7e0
+24/01/2011 07:52:51 - src/x.c:x_raise_con:633 - raising in new stack: 0x8a6a7e0 / 1
+24/01/2011 07:52:51 - src/render.c:render_con:21 - currently rendering node 0x8a6a7e0 / 1 / layout 0
+24/01/2011 07:52:51 - src/render.c:render_con:23 - children: 2, orientation = 2
+24/01/2011 07:52:51 - src/render.c:render_con:151 - that child is a leaf node, subtracting deco
+24/01/2011 07:52:51 - src/render.c:render_con:203 - child at (0, 19) with (1920 x 521)
+24/01/2011 07:52:51 - src/render.c:render_con:204 - x now 0, y now 540
+24/01/2011 07:52:51 - src/x.c:x_raise_con:633 - raising in new stack: 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/render.c:render_con:21 - currently rendering node 0x8aa4b98 / #ff00ff / layout 0
+24/01/2011 07:52:51 - src/render.c:render_con:23 - children: 0, orientation = 0
+24/01/2011 07:52:51 - src/render.c:render_con:84 - Lost 11 pixel due to client's height_increment (14 px, base_height = 4)
+24/01/2011 07:52:51 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+24/01/2011 07:52:51 - src/render.c:render_con:94 - child will be at 2x0 with size 1916x508
+24/01/2011 07:52:51 - src/render.c:render_con:229 - -- level up
+24/01/2011 07:52:51 - src/render.c:render_con:203 - child at (0, 540) with (1920 x 540)
+24/01/2011 07:52:51 - src/render.c:render_con:204 - x now 0, y now 1080
+24/01/2011 07:52:51 - src/x.c:x_raise_con:633 - raising in new stack: 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/render.c:render_con:21 - currently rendering node 0x8aa55c8 / #ffff00 / layout 0
+24/01/2011 07:52:51 - src/render.c:render_con:23 - children: 2, orientation = 1
+24/01/2011 07:52:51 - src/render.c:render_con:151 - that child is a leaf node, subtracting deco
+24/01/2011 07:52:51 - src/render.c:render_con:203 - child at (0, 559) with (960 x 521)
+24/01/2011 07:52:51 - src/render.c:render_con:204 - x now 960, y now 540
+24/01/2011 07:52:51 - src/x.c:x_raise_con:633 - raising in new stack: 0x8aa51a8 / #00ffff
+24/01/2011 07:52:51 - src/render.c:render_con:21 - currently rendering node 0x8aa51a8 / #00ffff / layout 0
+24/01/2011 07:52:51 - src/render.c:render_con:23 - children: 0, orientation = 0
+24/01/2011 07:52:51 - src/render.c:render_con:84 - Lost 11 pixel due to client's height_increment (14 px, base_height = 4)
+24/01/2011 07:52:51 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+24/01/2011 07:52:51 - src/render.c:render_con:94 - child will be at 2x0 with size 956x508
+24/01/2011 07:52:51 - src/render.c:render_con:229 - -- level up
+24/01/2011 07:52:51 - src/render.c:render_con:151 - that child is a leaf node, subtracting deco
+24/01/2011 07:52:51 - src/render.c:render_con:203 - child at (960, 559) with (960 x 521)
+24/01/2011 07:52:51 - src/render.c:render_con:204 - x now 1920, y now 540
+24/01/2011 07:52:51 - src/x.c:x_raise_con:633 - raising in new stack: 0x8aa57f8 / #aa0000
+24/01/2011 07:52:51 - src/render.c:render_con:21 - currently rendering node 0x8aa57f8 / #aa0000 / layout 0
+24/01/2011 07:52:51 - src/render.c:render_con:23 - children: 0, orientation = 0
+24/01/2011 07:52:51 - src/render.c:render_con:84 - Lost 11 pixel due to client's height_increment (14 px, base_height = 4)
+24/01/2011 07:52:51 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+24/01/2011 07:52:51 - src/render.c:render_con:94 - child will be at 2x0 with size 956x508
+24/01/2011 07:52:51 - src/render.c:render_con:229 - -- level up
+24/01/2011 07:52:51 - src/render.c:render_con:229 - -- level up
+24/01/2011 07:52:51 - src/render.c:render_con:229 - -- level up
+24/01/2011 07:52:51 - src/x.c:x_push_changes:572 - -- PUSHING WINDOW STACK --
+24/01/2011 07:52:51 - src/x.c:x_push_changes:576 - stack: 0x00800000
+24/01/2011 07:52:51 - src/x.c:x_push_changes:576 - stack: 0x00800003
+24/01/2011 07:52:51 - src/x.c:x_push_changes:576 - stack: 0x00800006
+24/01/2011 07:52:51 - src/x.c:x_push_changes:576 - stack: 0x0080000a
+24/01/2011 07:52:51 - src/x.c:x_push_changes:576 - stack: 0x00800010
+24/01/2011 07:52:51 - src/x.c:x_push_changes:576 - stack: 0x0080000d
+24/01/2011 07:52:51 - src/x.c:x_push_changes:576 - stack: 0x00800013
+24/01/2011 07:52:51 - src/x.c:x_push_changes:593 - 
+
+ PUSHING CHANGES
+
+24/01/2011 07:52:51 - src/x.c:x_push_node:385 - Pushing changes for node 0x8a6a450 / root
+24/01/2011 07:52:51 - src/x.c:x_push_node:409 - Unmapping container because it does not contain anything atm.
+24/01/2011 07:52:51 - src/x.c:x_push_node:385 - Pushing changes for node 0x8a6a6a8 / xinerama-0
+24/01/2011 07:52:51 - src/x.c:x_push_node:409 - Unmapping container because it does not contain anything atm.
+24/01/2011 07:52:51 - src/x.c:x_push_node:385 - Pushing changes for node 0x8a6a7e0 / 1
+24/01/2011 07:52:51 - src/x.c:x_push_node:385 - Pushing changes for node 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/x.c:x_push_node:385 - Pushing changes for node 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/x.c:x_push_node:385 - Pushing changes for node 0x8aa51a8 / #00ffff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa51a8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/x.c:x_push_node:385 - Pushing changes for node 0x8aa57f8 / #aa0000
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa57f8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/x.c:x_push_changes:600 - focused_id = 0x01400006, to_focus = 0x01400006
+24/01/2011 07:52:51 - src/x.c:x_push_changes:612 - 
+
+ ENDING CHANGES
+
+24/01/2011 07:52:51 - src/x.c:x_push_node_unmaps:520 - Pushing changes (with unmaps) for node 0x8a6a450 / root
+24/01/2011 07:52:51 - src/x.c:x_push_node_unmaps:520 - Pushing changes (with unmaps) for node 0x8a6a6a8 / xinerama-0
+24/01/2011 07:52:51 - src/x.c:x_push_node_unmaps:520 - Pushing changes (with unmaps) for node 0x8a6a7e0 / 1
+24/01/2011 07:52:51 - src/x.c:x_push_node_unmaps:520 - Pushing changes (with unmaps) for node 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_push_node_unmaps:520 - Pushing changes (with unmaps) for node 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/x.c:x_push_node_unmaps:520 - Pushing changes (with unmaps) for node 0x8aa51a8 / #00ffff
+24/01/2011 07:52:51 - src/x.c:x_push_node_unmaps:520 - Pushing changes (with unmaps) for node 0x8aa57f8 / #aa0000
+24/01/2011 07:52:51 - src/x.c:x_push_changes:622 - old stack: 0x00800013
+24/01/2011 07:52:51 - src/x.c:x_push_changes:622 - old stack: 0x0080000d
+24/01/2011 07:52:51 - src/x.c:x_push_changes:622 - old stack: 0x00800010
+24/01/2011 07:52:51 - src/x.c:x_push_changes:622 - old stack: 0x0080000a
+24/01/2011 07:52:51 - src/x.c:x_push_changes:622 - old stack: 0x00800006
+24/01/2011 07:52:51 - src/x.c:x_push_changes:622 - old stack: 0x00800003
+24/01/2011 07:52:51 - src/x.c:x_push_changes:622 - old stack: 0x00800000
+24/01/2011 07:52:51 - src/tree.c:tree_render:322 - -- END RENDERING --
+24/01/2011 07:52:51 - src/click.c:handle_button_press:330 - BORDER x = 914, y = 10 for con 0x8aa55c8, window 0x00800010, border_click = 1, clicked_into = 0x8aa51a8
+24/01/2011 07:52:51 - src/click.c:handle_button_press:331 - checks for right >= 0
+24/01/2011 07:52:51 - src/click.c:handle_button_press:335 - BORDER top
+24/01/2011 07:52:51 - src/con.c:con_get_next:575 - con_get_next(way=p, orientation=2)
+24/01/2011 07:52:51 - src/con.c:con_get_next:579 - need to go one level further up
+24/01/2011 07:52:51 - src/con.c:con_get_next:600 - next = 0x8aa4b98
+24/01/2011 07:52:51 - src/resize.c:resize_graphical_handler:47 - resize handler
+24/01/2011 07:52:51 - src/resize.c:resize_graphical_handler:53 - x = 0, width = 1920
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 914, y = 551
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 00800010
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa51a8 / #00ffff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa51a8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa57f8 / #aa0000
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa57f8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 915, y = 552
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 00800010
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa51a8 / #00ffff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa51a8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa57f8 / #aa0000
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa57f8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 917, y = 552
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 918, y = 552
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 919, y = 552
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 920, y = 551
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 00800010
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa51a8 / #00ffff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa51a8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa57f8 / #aa0000
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa57f8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 921, y = 550
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 00800010
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa51a8 / #00ffff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa51a8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa57f8 / #aa0000
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa57f8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 923, y = 547
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 00800010
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa51a8 / #00ffff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa51a8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa57f8 / #aa0000
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa57f8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 923, y = 546
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 00800010
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa51a8 / #00ffff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa51a8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa57f8 / #aa0000
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa57f8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 924, y = 542
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 00800010
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa51a8 / #00ffff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa51a8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa57f8 / #aa0000
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa57f8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 924, y = 540
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 00800010
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa51a8 / #00ffff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa51a8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa57f8 / #aa0000
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa57f8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 924, y = 539
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 00800010
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa51a8 / #00ffff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa51a8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa57f8 / #aa0000
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa57f8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 925, y = 536
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 00800010
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa51a8 / #00ffff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa51a8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:622 - expose for con 0x8aa57f8 / #aa0000
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa57f8
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8aa55c8, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 1
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 925, y = 535
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 926, y = 534
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 926, y = 532
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 926, y = 531
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 928, y = 529
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 928, y = 527
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 928, y = 526
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 929, y = 524
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 929, y = 522
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 930, y = 520
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 930, y = 519
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 930, y = 517
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 931, y = 515
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 932, y = 514
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 933, y = 513
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 933, y = 512
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 934, y = 510
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 934, y = 509
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 934, y = 507
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 935, y = 506
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 936, y = 505
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 936, y = 504
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 936, y = 502
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 936, y = 501
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 936, y = 500
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 937, y = 499
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 938, y = 498
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_callback:25 - new x = 938, y = 497
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/floating.c:drag_pointer:372 - Passing to original handler
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:611 - window = 0080000a
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:244 - decoration should be rendered for con 0x8aa4b98
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:340 - il_parent = 0x8a6a7e0, layout = 0
+24/01/2011 07:52:51 - src/x.c:x_draw_decoration:349 - indent_level = 0, indent_mult = 0
+24/01/2011 07:52:51 - src/handlers.c:handle_expose_event:630 - expose for con 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/resize.c:resize_graphical_handler:108 - Done, pixels = -53
+24/01/2011 07:52:51 - src/resize.c:resize_graphical_handler:115 - percent = 0,500000
+24/01/2011 07:52:51 - src/resize.c:resize_graphical_handler:117 - original = 521
+24/01/2011 07:52:51 - src/resize.c:resize_graphical_handler:120 - difference = 0,050864
+24/01/2011 07:52:51 - src/resize.c:resize_graphical_handler:121 - new percent = 0,449136
+24/01/2011 07:52:51 - src/resize.c:resize_graphical_handler:130 - second->percent = 0,550864
+24/01/2011 07:52:51 - src/click.c:handle_button_press:370 - After resize handler, rendering
+24/01/2011 07:52:51 - src/tree.c:tree_render:309 - -- BEGIN RENDERING --
+24/01/2011 07:52:51 - src/tree.c:tree_render:318 - output 0x8a6a6a8 / xinerama-0
+24/01/2011 07:52:51 - src/render.c:render_con:21 - currently rendering node 0x8a6a6a8 / xinerama-0 / layout 0
+24/01/2011 07:52:51 - src/render.c:render_con:23 - children: 1, orientation = 0
+24/01/2011 07:52:51 - src/render.c:render_con:100 - got fs node: 0x8a6a7e0
+24/01/2011 07:52:51 - src/x.c:x_raise_con:633 - raising in new stack: 0x8a6a7e0 / 1
+24/01/2011 07:52:51 - src/render.c:render_con:21 - currently rendering node 0x8a6a7e0 / 1 / layout 0
+24/01/2011 07:52:51 - src/render.c:render_con:23 - children: 2, orientation = 2
+24/01/2011 07:52:51 - src/render.c:render_con:151 - that child is a leaf node, subtracting deco
+24/01/2011 07:52:51 - src/render.c:render_con:203 - child at (0, 19) with (1920 x 494)
+24/01/2011 07:52:51 - src/render.c:render_con:204 - x now 0, y now 513
+24/01/2011 07:52:51 - src/x.c:x_raise_con:633 - raising in new stack: 0x8aa4b98 / #ff00ff
+24/01/2011 07:52:51 - src/render.c:render_con:21 - currently rendering node 0x8aa4b98 / #ff00ff / layout 0
+24/01/2011 07:52:51 - src/render.c:render_con:23 - children: 0, orientation = 0
+24/01/2011 07:52:51 - src/render.c:render_con:84 - Lost 12 pixel due to client's height_increment (14 px, base_height = 4)
+24/01/2011 07:52:51 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+24/01/2011 07:52:51 - src/render.c:render_con:94 - child will be at 2x0 with size 1916x480
+24/01/2011 07:52:51 - src/render.c:render_con:229 - -- level up
+24/01/2011 07:52:51 - src/render.c:render_con:203 - child at (0, 513) with (1920 x 567)
+24/01/2011 07:52:51 - src/render.c:render_con:204 - x now 0, y now 1080
+24/01/2011 07:52:51 - src/x.c:x_raise_con:633 - raising in new stack: 0x8aa55c8 / #ffff00
+24/01/2011 07:52:51 - src/render.c:render_con:21 - currently rendering node 0x8aa55c8 / #ffff00 / layout 0
+24/01/2011 07:52:51 - src/render.c:render_con:23 - children: 2, orientation = 1
+urxvt: X connection to ':0' broken, unable to recover, exiting.
+XIO:  fatal IO error 11 (Resource temporarily unavailable) on X server ":0"
+      after 7 requests (7 known processed) with 0 events remaining.
+urxvt: X connection to ':0' broken, unable to recover, exiting.
+urxvt: X connection to ':0' broken, unable to recover, exiting.

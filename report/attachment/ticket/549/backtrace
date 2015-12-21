@@ -1,0 +1,38 @@
+(gdb) backtrace full
+#0  0xb77db424 in __kernel_vsyscall ()
+No symbol table info available.
+#1  0xb748d911 in *__GI_raise (sig=11) at ../nptl/sysdeps/unix/sysv/linux/raise.c:64
+        resultvar = <optimized out>
+        pid = -1218736140
+        selftid = 3466
+#2  0x0806d12f in ?? ()
+No symbol table info available.
+#3  <signal handler called>
+No symbol table info available.
+#4  0x0805d8b9 in ?? ()
+No symbol table info available.
+#5  0x0806da7c in ?? ()
+No symbol table info available.
+#6  0x08058eaa in ?? ()
+No symbol table info available.
+#7  0x080590e3 in ?? ()
+No symbol table info available.
+#8  0x08062896 in ?? ()
+No symbol table info available.
+#9  0x080662ed in ?? ()
+No symbol table info available.
+#10 0xb7607924 in ev_invoke_pending () from /usr/lib/libev.so.4
+No symbol table info available.
+#11 0xb760d12c in ev_run () from /usr/lib/libev.so.4
+No symbol table info available.
+#12 0x0804e9b7 in ?? ()
+No symbol table info available.
+#13 0xb7479e46 in __libc_start_main (main=0x804cec0, argc=4, ubp_av=0xbf8502d4, init=0x8075120, fini=0x8075110, rtld_fini=0xb77ea310, stack_end=0xbf8502cc)
+    at libc-start.c:228
+        result = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {-1218736140, 0, 0, -1081802072, -579709674, 1481253639}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x4,
+              0x804f1b4}, data = {prev = 0x0, cleanup = 0x0, canceltype = 4}}}
+        not_first_call = <optimized out>
+#14 0x0804f1d5 in ?? ()
+No symbol table info available.
+Backtrace stopped: Not enough registers or memory available to unwind further 

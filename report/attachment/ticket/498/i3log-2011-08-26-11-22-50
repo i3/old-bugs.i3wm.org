@@ -1,0 +1,1028 @@
+08/26/2011 11:22:50 AM - Enabling debug loglevel all
+08/26/2011 11:22:50 AM - i3 (tree) version 4.0.1 (2011-08-01, branch "next") starting
+08/26/2011 11:22:50 AM - src/config.c:parse_configuration:248 - Parsing configfile /home/abubel/.i3/config
+08/26/2011 11:22:50 AM - src/cfgparse.y:parse_file:368 - Got new variable $mod = Mod1
+deciding for version 4 due to this line: # i3 config file (v4)
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+08/26/2011 11:22:50 AM - src/cfgparse.y:yyparse:790 - floating modifier = 8
+	Found keysym binding mod8 with key Return and command exec /usr/bin/urxvt
+	Found keysym binding mod9 with key Q and command kill
+	Found keysym binding mod8 with key d and command exec /usr/bin/dmenu_run
+	Found keysym binding mod8 with key j and command focus left
+	Found keysym binding mod8 with key k and command focus down
+	Found keysym binding mod8 with key l and command focus up
+	Found keysym binding mod8 with key semicolon and command focus right
+	Found keysym binding mod8 with key Left and command focus left
+	Found keysym binding mod8 with key Down and command focus down
+	Found keysym binding mod8 with key Up and command focus up
+	Found keysym binding mod8 with key Right and command focus right
+	Found keysym binding mod9 with key J and command move left
+	Found keysym binding mod9 with key K and command move down
+	Found keysym binding mod9 with key L and command move up
+	Found keysym binding mod9 with key colon and command move right
+	Found keysym binding mod9 with key Left and command move left
+	Found keysym binding mod9 with key Down and command move down
+	Found keysym binding mod9 with key Up and command move up
+	Found keysym binding mod9 with key Right and command move right
+	Found keysym binding mod8 with key h and command split h
+	Found keysym binding mod8 with key v and command split v
+	Found keysym binding mod8 with key f and command fullscreen
+	Found keysym binding mod8 with key s and command layout stacking
+	Found keysym binding mod8 with key w and command layout tabbed
+	Found keysym binding mod8 with key e and command layout default
+	Found keysym binding mod9 with key space and command floating toggle
+	Found keysym binding mod8 with key space and command focus mode_toggle
+	Found keysym binding mod8 with key a and command focus parent
+	Found keysym binding mod8 with key 1 and command workspace 1
+	Found keysym binding mod8 with key 2 and command workspace 2
+	Found keysym binding mod8 with key 3 and command workspace 3
+	Found keysym binding mod8 with key 4 and command workspace 4
+	Found keysym binding mod8 with key 5 and command workspace 5
+	Found keysym binding mod8 with key 6 and command workspace 6
+	Found keysym binding mod8 with key 7 and command workspace 7
+	Found keysym binding mod8 with key 8 and command workspace 8
+	Found keysym binding mod8 with key 9 and command workspace 9
+	Found keysym binding mod8 with key 0 and command workspace 10
+	Found keysym binding mod9 with key exclam and command move workspace 1
+	Found keysym binding mod9 with key at and command move workspace 2
+	Found keysym binding mod9 with key numbersign and command move workspace 3
+	Found keysym binding mod9 with key dollar and command move workspace 4
+	Found keysym binding mod9 with key percent and command move workspace 5
+	Found keysym binding mod9 with key asciicircum and command move workspace 6
+	Found keysym binding mod9 with key ampersand and command move workspace 7
+	Found keysym binding mod9 with key asterisk and command move workspace 8
+	Found keysym binding mod9 with key parenleft and command move workspace 9
+	Found keysym binding mod9 with key parenright and command move workspace 10
+	Found keysym binding mod9 with key C and command reload
+	Found keysym binding mod9 with key R and command restart
+	Found keysym binding mod9 with key E and command exit
+08/26/2011 11:22:50 AM - src/cfgparse.y:yyparse:928 - Should assign workspace 1 to output VGA1
+08/26/2011 11:22:50 AM - src/cfgparse.y:yyparse:928 - Should assign workspace 2 to output VGA1
+08/26/2011 11:22:50 AM - src/cfgparse.y:yyparse:928 - Should assign workspace 3 to output VGA1
+08/26/2011 11:22:50 AM - src/cfgparse.y:yyparse:928 - Should assign workspace 4 to output VGA1
+08/26/2011 11:22:50 AM - src/cfgparse.y:yyparse:928 - Should assign workspace 5 to output VGA1
+08/26/2011 11:22:50 AM - src/cfgparse.y:yyparse:928 - Should assign workspace 5 to output DVI1
+08/26/2011 11:22:50 AM - src/cfgparse.y:yyparse:928 - Should assign workspace 6 to output DVI1
+08/26/2011 11:22:50 AM - src/cfgparse.y:yyparse:928 - Should assign workspace 7 to output DVI1
+08/26/2011 11:22:50 AM - src/cfgparse.y:yyparse:928 - Should assign workspace 8 to output DVI1
+08/26/2011 11:22:50 AM - src/cfgparse.y:yyparse:928 - Should assign workspace 9 to output DVI1
+	Found keysym binding mod0 with key j and command resize shrink left 10 px or 10 ppt
+	Found keysym binding mod1 with key J and command resize grow   left 10 px or 10 ppt
+	Found keysym binding mod0 with key k and command resize shrink down 10 px or 10 ppt
+	Found keysym binding mod1 with key K and command resize grow   down 10 px or 10 ppt
+	Found keysym binding mod0 with key l and command resize shrink up 10 px or 10 ppt
+	Found keysym binding mod1 with key L and command resize grow   up 10 px or 10 ppt
+	Found keysym binding mod0 with key semicolon and command resize shrink right 10 px or 10 ppt
+	Found keysym binding mod1 with key colon and command resize grow   right 10 px or 10 ppt
+	Found keysym binding mod0 with key Left and command resize shrink left 10 px or 10 ppt
+	Found keysym binding mod1 with key Left and command resize grow   left 10 px or 10 ppt
+	Found keysym binding mod0 with key Down and command resize shrink down 10 px or 10 ppt
+	Found keysym binding mod1 with key Down and command resize grow   down 10 px or 10 ppt
+	Found keysym binding mod0 with key Up and command resize shrink up 10 px or 10 ppt
+	Found keysym binding mod1 with key Up and command resize grow   up 10 px or 10 ppt
+	Found keysym binding mod0 with key Right and command resize shrink right 10 px or 10 ppt
+	Found keysym binding mod1 with key Right and command resize grow   right 10 px or 10 ppt
+	Found keysym binding mod0 with key Return and command mode "default"
+	Found keysym binding mod0 with key Escape and command mode "default"
+	 now in mode resize
+	 current bindings = 0x1b6e720
+got binding on mods 0, keycode 0, symbol j, command resize shrink left 10 px or 10 ppt
+got binding on mods 1, keycode 0, symbol J, command resize grow   left 10 px or 10 ppt
+got binding on mods 0, keycode 0, symbol k, command resize shrink down 10 px or 10 ppt
+got binding on mods 1, keycode 0, symbol K, command resize grow   down 10 px or 10 ppt
+got binding on mods 0, keycode 0, symbol l, command resize shrink up 10 px or 10 ppt
+got binding on mods 1, keycode 0, symbol L, command resize grow   up 10 px or 10 ppt
+got binding on mods 0, keycode 0, symbol semicolon, command resize shrink right 10 px or 10 ppt
+got binding on mods 1, keycode 0, symbol colon, command resize grow   right 10 px or 10 ppt
+got binding on mods 0, keycode 0, symbol Left, command resize shrink left 10 px or 10 ppt
+got binding on mods 1, keycode 0, symbol Left, command resize grow   left 10 px or 10 ppt
+got binding on mods 0, keycode 0, symbol Down, command resize shrink down 10 px or 10 ppt
+got binding on mods 1, keycode 0, symbol Down, command resize grow   down 10 px or 10 ppt
+got binding on mods 0, keycode 0, symbol Up, command resize shrink up 10 px or 10 ppt
+got binding on mods 1, keycode 0, symbol Up, command resize grow   up 10 px or 10 ppt
+got binding on mods 0, keycode 0, symbol Right, command resize shrink right 10 px or 10 ppt
+got binding on mods 1, keycode 0, symbol Right, command resize grow   right 10 px or 10 ppt
+got binding on mods 0, keycode 0, symbol Return, command mode "default"
+got binding on mods 0, keycode 0, symbol Escape, command mode "default"
+	Found keysym binding mod9 with key v and command exec /usr/bin/dmenu_run
+	Found keysym binding mod8 with key r and command mode "resize"
+08/26/2011 11:22:50 AM - src/main.c:main:315 - root geometry reply: (0, 0) 1680 x 1050
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "Return" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "Q" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "d" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "j" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "k" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "l" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "semicolon" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "Left" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "Down" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "Up" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "Right" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "J" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "K" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "L" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "colon" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "Left" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "Down" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "Up" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "Right" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "h" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "v" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "f" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "s" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "w" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "e" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "space" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "space" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "a" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "1" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "2" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "3" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "4" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "5" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "6" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "7" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "8" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "9" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "0" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "exclam" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "at" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "numbersign" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "dollar" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "percent" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "asciicircum" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "ampersand" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "asterisk" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "parenleft" to 4 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "parenright" to 4 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "C" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "R" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "E" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "v" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:translate_keysyms:118 - Translated symbol "r" to 1 keycode
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 36
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 24
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 40
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 44
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 45
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 46
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 47
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 113
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 116
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 111
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 114
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 44
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 45
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 46
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 47
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 113
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 116
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 111
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 114
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 43
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 55
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 41
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 39
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 25
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 26
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 65
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 65
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 38
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 10
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 11
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 12
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 13
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 14
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 15
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 16
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 17
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 18
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 19
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 10
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 11
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 12
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 13
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 14
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 15
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 16
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 17
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 187
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 187
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 187
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 187
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 188
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 188
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 188
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 188
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 54
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 27
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 26
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 55
+08/26/2011 11:22:50 AM - src/config.c:grab_keycode_for_binding:36 - Grabbing 27
+08/26/2011 11:22:50 AM - src/con.c:con_new:43 - opening window 0
+08/26/2011 11:22:50 AM - src/con.c:con_new:46 - color #ff0000
+08/26/2011 11:22:50 AM - src/x.c:x_con_init:95 - adding new state for window id 0x00800001
+08/26/2011 11:22:50 AM - src/main.c:main:428 - Checking for XRandR...
+08/26/2011 11:22:50 AM - src/randr.c:randr_query_outputs:572 - primary output is 00000000
+08/26/2011 11:22:50 AM - src/randr.c:handle_output:493 - found output with name VGA1
+08/26/2011 11:22:50 AM - src/randr.c:handle_output:529 - mode: 1280x1024+0+0
+08/26/2011 11:22:50 AM - src/randr.c:handle_output:493 - found output with name DVI1
+08/26/2011 11:22:50 AM - src/randr.c:handle_output:529 - mode: 1680x1050+0+0
+08/26/2011 11:22:50 AM - src/randr.c:randr_query_outputs:604 - output 0x1b77150 / VGA1, position (0, 0), checking for clones
+08/26/2011 11:22:50 AM - src/randr.c:randr_query_outputs:617 - output 0x1b77310 has the same position, his mode = 1680 x 1050
+08/26/2011 11:22:50 AM - src/randr.c:randr_query_outputs:628 - disabling output 0x1b77310 (DVI1)
+08/26/2011 11:22:50 AM - src/randr.c:randr_query_outputs:633 - new output mode 1280 x 1024, other mode 1280 x 1024
+08/26/2011 11:22:50 AM - src/randr.c:randr_query_outputs:643 - Need to initialize a Con for output VGA1
+08/26/2011 11:22:50 AM - src/randr.c:output_init_con:179 - init_con for output VGA1
+08/26/2011 11:22:50 AM - src/con.c:con_new:43 - opening window 1
+08/26/2011 11:22:50 AM - src/con.c:con_new:46 - color #00FF00
+08/26/2011 11:22:50 AM - src/x.c:x_con_init:95 - adding new state for window id 0x00800002
+08/26/2011 11:22:50 AM - src/randr.c:output_init_con:214 - Changing layout, adding top/bottom dockarea
+08/26/2011 11:22:50 AM - src/con.c:con_new:43 - opening window 2
+08/26/2011 11:22:50 AM - src/con.c:con_new:46 - color #0000FF
+08/26/2011 11:22:50 AM - src/x.c:x_con_init:95 - adding new state for window id 0x00800003
+08/26/2011 11:22:50 AM - src/randr.c:output_init_con:232 - attaching
+08/26/2011 11:22:50 AM - src/randr.c:output_init_con:237 - adding main content container
+08/26/2011 11:22:50 AM - src/con.c:con_new:43 - opening window 3
+08/26/2011 11:22:50 AM - src/con.c:con_new:46 - color #ff00ff
+08/26/2011 11:22:50 AM - src/x.c:x_con_init:95 - adding new state for window id 0x00800004
+08/26/2011 11:22:50 AM - src/con.c:con_new:43 - opening window 4
+08/26/2011 11:22:50 AM - src/con.c:con_new:46 - color #00ffff
+08/26/2011 11:22:50 AM - src/x.c:x_con_init:95 - adding new state for window id 0x00800005
+08/26/2011 11:22:50 AM - src/randr.c:output_init_con:266 - attaching
+08/26/2011 11:22:50 AM - src/randr.c:randr_query_outputs:643 - Need to initialize a Con for output DVI1
+08/26/2011 11:22:50 AM - src/randr.c:output_init_con:179 - init_con for output DVI1
+08/26/2011 11:22:50 AM - src/con.c:con_new:43 - opening window 5
+08/26/2011 11:22:50 AM - src/con.c:con_new:46 - color #ffff00
+08/26/2011 11:22:50 AM - src/x.c:x_con_init:95 - adding new state for window id 0x00800006
+08/26/2011 11:22:50 AM - src/con.c:con_attach:149 - Inserting con = 0x1b77c10 after last focused tiling con 0x1b77360
+08/26/2011 11:22:50 AM - src/randr.c:output_init_con:214 - Changing layout, adding top/bottom dockarea
+08/26/2011 11:22:50 AM - src/con.c:con_new:43 - opening window 6
+08/26/2011 11:22:50 AM - src/con.c:con_new:46 - color #aa0000
+08/26/2011 11:22:50 AM - src/x.c:x_con_init:95 - adding new state for window id 0x00800007
+08/26/2011 11:22:50 AM - src/randr.c:output_init_con:232 - attaching
+08/26/2011 11:22:50 AM - src/randr.c:output_init_con:237 - adding main content container
+08/26/2011 11:22:50 AM - src/con.c:con_new:43 - opening window 7
+08/26/2011 11:22:50 AM - src/con.c:con_new:46 - color #00aa00
+08/26/2011 11:22:50 AM - src/x.c:x_con_init:95 - adding new state for window id 0x00800008
+08/26/2011 11:22:50 AM - src/con.c:con_new:43 - opening window 8
+08/26/2011 11:22:50 AM - src/con.c:con_new:46 - color #0000aa
+08/26/2011 11:22:50 AM - src/x.c:x_con_init:95 - adding new state for window id 0x00800009
+08/26/2011 11:22:50 AM - src/randr.c:output_init_con:266 - attaching
+08/26/2011 11:22:50 AM - src/randr.c:randr_query_outputs:654 - Output DVI1 disabled, re-assigning workspaces/docks
+08/26/2011 11:22:50 AM - src/randr.c:randr_query_outputs:685 - re-attached all workspaces
+08/26/2011 11:22:50 AM - src/randr.c:randr_query_outputs:697 - Handling dock con 0x1b77e40
+08/26/2011 11:22:50 AM - src/randr.c:randr_query_outputs:697 - Handling dock con 0x1b782d0
+08/26/2011 11:22:50 AM - src/randr.c:randr_query_outputs:712 - destroying disappearing con 0x1b77c10
+08/26/2011 11:22:50 AM - src/con.c:con_next_focused:684 - Using first entry 0x1b77360
+08/26/2011 11:22:50 AM - src/tree.c:tree_close:131 - next = 0x1b77550, focused = (nil)
+08/26/2011 11:22:50 AM - src/tree.c:tree_close:133 - closing 0x1b77c10, kill_window = 0
+08/26/2011 11:22:50 AM - src/tree.c:tree_close:140 - killing child=0x1b77e40
+08/26/2011 11:22:50 AM - src/tree.c:tree_close:131 - next = 0x1b780a0, focused = (nil)
+08/26/2011 11:22:50 AM - src/tree.c:tree_close:133 - closing 0x1b77e40, kill_window = 0
+08/26/2011 11:22:50 AM - src/con.c:con_is_floating:338 - checking if con 0x1b77e40 is floating
+08/26/2011 11:22:50 AM - src/tree.c:tree_close:235 - not focusing, was not mapped
+08/26/2011 11:22:50 AM - src/tree.c:tree_close:140 - killing child=0x1b780a0
+08/26/2011 11:22:50 AM - src/tree.c:tree_close:131 - next = 0x1b782d0, focused = (nil)
+08/26/2011 11:22:50 AM - src/tree.c:tree_close:133 - closing 0x1b780a0, kill_window = 0
+08/26/2011 11:22:50 AM - src/con.c:con_is_floating:338 - checking if con 0x1b780a0 is floating
+08/26/2011 11:22:50 AM - src/tree.c:tree_close:235 - not focusing, was not mapped
+08/26/2011 11:22:50 AM - src/tree.c:tree_close:140 - killing child=0x1b782d0
+08/26/2011 11:22:50 AM - src/tree.c:tree_close:131 - next = 0x1b77c10, focused = (nil)
+08/26/2011 11:22:50 AM - src/tree.c:tree_close:133 - closing 0x1b782d0, kill_window = 0
+08/26/2011 11:22:50 AM - src/con.c:con_is_floating:338 - checking if con 0x1b782d0 is floating
+08/26/2011 11:22:50 AM - src/tree.c:tree_close:235 - not focusing, was not mapped
+08/26/2011 11:22:50 AM - src/con.c:con_is_floating:338 - checking if con 0x1b77c10 is floating
+08/26/2011 11:22:50 AM - src/tree.c:tree_close:235 - not focusing, was not mapped
+08/26/2011 11:22:50 AM - src/randr.c:randr_query_outputs:714 - Done. Should be fine now
+08/26/2011 11:22:50 AM - src/ewmh.c:ewmh_update_workarea:83 - Got 0 workspaces
+08/26/2011 11:22:50 AM - src/randr.c:randr_query_outputs:742 - Should add ws for output VGA1
+08/26/2011 11:22:50 AM - Initializing first assigned workspace "1" for output "VGA1"
+08/26/2011 11:22:50 AM - Creating new workspace "1"
+08/26/2011 11:22:50 AM - Found workspace assignment to output "VGA1"
+08/26/2011 11:22:50 AM - got output 0x1b77360 with content 0x1b77780
+08/26/2011 11:22:50 AM - src/con.c:con_new:43 - opening window 9
+08/26/2011 11:22:50 AM - src/con.c:con_new:46 - color #aa00aa
+08/26/2011 11:22:50 AM - src/x.c:x_con_init:95 - adding new state for window id 0x0080000a
+08/26/2011 11:22:50 AM - num = 1
+08/26/2011 11:22:50 AM - src/workspace.c:workspace_get:70 - Auto orientation. Output resolution set to (0,0), setting orientation to 1.
+08/26/2011 11:22:50 AM - src/con.c:con_attach:86 - it's a workspace. num = 1
+08/26/2011 11:22:50 AM - switching to 0x1b77e40
+08/26/2011 11:22:50 AM - src/con.c:con_focus:182 - con_focus = 0x1b77e40
+08/26/2011 11:22:50 AM - src/con.c:con_focus:182 - con_focus = 0x1b77780
+08/26/2011 11:22:50 AM - src/con.c:con_focus:182 - con_focus = 0x1b77360
+08/26/2011 11:22:50 AM - src/con.c:con_focus:196 - con_focus done = 0x1b77360
+08/26/2011 11:22:50 AM - src/con.c:con_focus:196 - con_focus done = 0x1b77780
+08/26/2011 11:22:50 AM - src/con.c:con_focus:196 - con_focus done = 0x1b77e40
+08/26/2011 11:22:50 AM - focused now = 0x1b77e40 / 1
+08/26/2011 11:22:50 AM - src/ewmh.c:ewmh_update_workarea:83 - Got 1 workspaces
+08/26/2011 11:22:50 AM - src/ewmh.c:ewmh_update_workarea:89 - storing 0: 0x0 with 0 x 0
+08/26/2011 11:22:50 AM - src/ewmh.c:ewmh_update_workarea:98 - re-using last_rect (0x0, 0, 0)
+08/26/2011 11:22:50 AM - src/tree.c:tree_render:362 - -- BEGIN RENDERING --
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b76b60 / root / layout 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 1, orientation = 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:229 - Root node, rendering outputs
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b77360 / VGA1 / layout 4
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 3, orientation = 0
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:22 - Available height: 1024
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:64 - This dockarea's height: 0
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:64 - This dockarea's height: 0
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:69 - Remaining: 1024
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:92 - child at (0, 0) with (1280 x 0)
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:93 - x now 0, y now 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b77550 / topdock / layout 3
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 0, orientation = 2
+08/26/2011 11:22:50 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:92 - child at (0, 0) with (1280 x 1024)
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:93 - x now 0, y now 1024
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b77780 / content / layout 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 1, orientation = 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:193 - got fs node: 0x1b77e40
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b77e40 / 1 / layout 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 0, orientation = 1
+08/26/2011 11:22:50 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:92 - child at (0, 1024) with (1280 x 0)
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:93 - x now 0, y now 1024
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b779b0 / bottomdock / layout 3
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 0, orientation = 2
+08/26/2011 11:22:50 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:50 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:50 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:747 - -- PUSHING WINDOW STACK --
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:764 - Stacking 0x00800002 above 0x00800001
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:764 - Stacking 0x00800003 above 0x00800002
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:764 - Stacking 0x00800004 above 0x00800003
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:764 - Stacking 0x0080000a above 0x00800004
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:764 - Stacking 0x00800005 above 0x0080000a
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:782 - 
+
+ PUSHING CHANGES
+
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b76b60 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:506 - pushing name [i3 con] output VGA1 for con 0x1b77360
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77360 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:506 - pushing name [i3 con] content VGA1 for con 0x1b77780
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77780 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:506 - pushing name [i3 con] workspace 1 for con 0x1b77e40
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77e40 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:506 - pushing name [i3 con] top dockarea VGA1 for con 0x1b77550
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77550 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:506 - pushing name [i3 con] bottom dockarea VGA1 for con 0x1b779b0
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b779b0 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:790 - focused_id = 0x00000000, to_focus = 0x0080000a
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:793 - Not updating focus (to 0x1b77e40 / 1), focused window is not mapped.
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:822 - Still no window focused, better set focus to the root window
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:828 - 
+
+ ENDING CHANGES
+
+08/26/2011 11:22:50 AM - src/tree.c:tree_render:371 - -- END RENDERING --
+08/26/2011 11:22:50 AM - src/tree.c:tree_render:362 - -- BEGIN RENDERING --
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b76b60 / root / layout 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 1, orientation = 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:229 - Root node, rendering outputs
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b77360 / VGA1 / layout 4
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 3, orientation = 0
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:22 - Available height: 1024
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:64 - This dockarea's height: 0
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:64 - This dockarea's height: 0
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:69 - Remaining: 1024
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:92 - child at (0, 0) with (1280 x 0)
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:93 - x now 0, y now 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b77550 / topdock / layout 3
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 0, orientation = 2
+08/26/2011 11:22:50 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:92 - child at (0, 0) with (1280 x 1024)
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:93 - x now 0, y now 1024
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b77780 / content / layout 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 1, orientation = 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:193 - got fs node: 0x1b77e40
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b77e40 / 1 / layout 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 0, orientation = 1
+08/26/2011 11:22:50 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:92 - child at (0, 1024) with (1280 x 0)
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:93 - x now 0, y now 1024
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b779b0 / bottomdock / layout 3
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 0, orientation = 2
+08/26/2011 11:22:50 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:50 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:50 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:747 - -- PUSHING WINDOW STACK --
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:782 - 
+
+ PUSHING CHANGES
+
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b76b60 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77360 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77780 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77e40 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77550 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b779b0 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:790 - focused_id = 0x000000b6, to_focus = 0x0080000a
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:793 - Not updating focus (to 0x1b77e40 / 1), focused window is not mapped.
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:822 - Still no window focused, better set focus to the root window
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:828 - 
+
+ ENDING CHANGES
+
+08/26/2011 11:22:50 AM - src/tree.c:tree_render:371 - -- END RENDERING --
+08/26/2011 11:22:50 AM - src/ipc.c:ipc_create_socket:697 - Creating IPC-socket at /tmp/i3-abubel/ipc-socket.1834
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:82 - ---> looking at window 0x00400001
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:104 - map_state unviewable
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:82 - ---> looking at window 0x00800001
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:104 - map_state unviewable
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:82 - ---> looking at window 0x00800002
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:104 - map_state unviewable
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:82 - ---> looking at window 0x00800003
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:104 - map_state unviewable
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:82 - ---> looking at window 0x00800004
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:104 - map_state unviewable
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:82 - ---> looking at window 0x0080000a
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:104 - map_state unviewable
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:82 - ---> looking at window 0x00800005
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:104 - map_state unviewable
+08/26/2011 11:22:50 AM - auto-starting xrdb ~/.Xdefaults
+08/26/2011 11:22:50 AM - executing: xrdb ~/.Xdefaults
+08/26/2011 11:22:50 AM - auto-starting i3bar -d
+08/26/2011 11:22:50 AM - executing: i3bar -d
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1066 - Property notify
+08/26/2011 11:22:50 AM - src/handlers.c:property_notify:984 - Unhandled property notify for atom 275 (0x00000113)
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1066 - Property notify
+08/26/2011 11:22:50 AM - src/handlers.c:property_notify:984 - Unhandled property notify for atom 276 (0x00000114)
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1066 - Property notify
+08/26/2011 11:22:50 AM - src/handlers.c:handle_destroy_notify_event:532 - destroy notify for 0x00800007, 0x00800007
+08/26/2011 11:22:50 AM - src/handlers.c:handle_unmap_notify_event:455 - UnmapNotify for 0x00800007 (received from 0x00800007), serial 247
+08/26/2011 11:22:50 AM - Not a managed window, ignoring UnmapNotify event
+08/26/2011 11:22:50 AM - ERROR: X11 Error received! sequence 0xf8, error_code = 4
+08/26/2011 11:22:50 AM - ERROR: X11 Error received! sequence 0xf9, error_code = 13
+08/26/2011 11:22:50 AM - src/handlers.c:handle_destroy_notify_event:532 - destroy notify for 0x00800008, 0x00800008
+08/26/2011 11:22:50 AM - src/handlers.c:handle_unmap_notify_event:455 - UnmapNotify for 0x00800008 (received from 0x00800008), serial 250
+08/26/2011 11:22:50 AM - Not a managed window, ignoring UnmapNotify event
+08/26/2011 11:22:50 AM - ERROR: X11 Error received! sequence 0xfb, error_code = 4
+08/26/2011 11:22:50 AM - ERROR: X11 Error received! sequence 0xfc, error_code = 13
+08/26/2011 11:22:50 AM - src/handlers.c:handle_destroy_notify_event:532 - destroy notify for 0x00800009, 0x00800009
+08/26/2011 11:22:50 AM - src/handlers.c:handle_unmap_notify_event:455 - UnmapNotify for 0x00800009 (received from 0x00800009), serial 253
+08/26/2011 11:22:50 AM - Not a managed window, ignoring UnmapNotify event
+08/26/2011 11:22:50 AM - ERROR: X11 Error received! sequence 0xfe, error_code = 4
+08/26/2011 11:22:50 AM - ERROR: X11 Error received! sequence 0xff, error_code = 13
+08/26/2011 11:22:50 AM - src/handlers.c:handle_destroy_notify_event:532 - destroy notify for 0x00800006, 0x00800006
+08/26/2011 11:22:50 AM - src/handlers.c:handle_unmap_notify_event:455 - UnmapNotify for 0x00800006 (received from 0x00800006), serial 256
+08/26/2011 11:22:50 AM - Not a managed window, ignoring UnmapNotify event
+08/26/2011 11:22:50 AM - ERROR: X11 Error received! sequence 0x101, error_code = 4
+08/26/2011 11:22:50 AM - ERROR: X11 Error received! sequence 0x102, error_code = 13
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1066 - Property notify
+08/26/2011 11:22:50 AM - src/handlers.c:property_notify:984 - Unhandled property notify for atom 290 (0x00000122)
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1066 - Property notify
+08/26/2011 11:22:50 AM - src/handlers.c:property_notify:984 - Unhandled property notify for atom 290 (0x00000122)
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1066 - Property notify
+08/26/2011 11:22:50 AM - src/handlers.c:property_notify:984 - Unhandled property notify for atom 288 (0x00000120)
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 22
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1066 - Property notify
+08/26/2011 11:22:50 AM - src/handlers.c:property_notify:984 - Unhandled property notify for atom 296 (0x00000128)
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1066 - Property notify
+08/26/2011 11:22:50 AM - src/handlers.c:property_notify:984 - Unhandled property notify for atom 297 (0x00000129)
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1066 - Property notify
+08/26/2011 11:22:50 AM - src/handlers.c:property_notify:984 - Unhandled property notify for atom 23 (0x00000017)
+08/26/2011 11:22:50 AM - src/ipc.c:ipc_new_client:678 - IPC: new client connected
+08/26/2011 11:22:50 AM - src/ipc.c:ipc_receive_message:622 - IPC: n = 67
+08/26/2011 11:22:50 AM - src/ipc.c:add_subscription:476 - should add subscription to extra 0x1b77d30, sub workspace
+08/26/2011 11:22:50 AM - src/ipc.c:add_subscription:486 - client is now subscribed to:
+08/26/2011 11:22:50 AM - src/ipc.c:add_subscription:488 - event workspace
+08/26/2011 11:22:50 AM - src/ipc.c:add_subscription:489 - (done)
+08/26/2011 11:22:50 AM - src/ipc.c:add_subscription:476 - should add subscription to extra 0x1b77d30, sub output
+08/26/2011 11:22:50 AM - src/ipc.c:add_subscription:486 - client is now subscribed to:
+08/26/2011 11:22:50 AM - src/ipc.c:add_subscription:488 - event workspace
+08/26/2011 11:22:50 AM - src/ipc.c:add_subscription:488 - event output
+08/26/2011 11:22:50 AM - src/ipc.c:add_subscription:489 - (done)
+08/26/2011 11:22:50 AM - src/ipc.c:ipc_receive_message:622 - IPC: n = 28
+08/26/2011 11:22:50 AM - src/ipc.c:ipc_receive_message:622 - IPC: n = 14
+08/26/2011 11:22:50 AM - workspace visible? fs = 0x1b77e40, ws = 0x1b77e40
+08/26/2011 11:22:50 AM - src/handlers.c:handle_map_request:296 - window = 0x00e00007, serial is 294.
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:82 - ---> looking at window 0x00e00007
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:110 - override_redirect is 0
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:150 - reparenting!
+08/26/2011 11:22:50 AM - src/window.c:window_update_class:17 - empty property, not updating
+08/26/2011 11:22:50 AM - src/window.c:window_update_name_legacy:106 - prop == NULL
+08/26/2011 11:22:50 AM - src/window.c:window_update_name:54 - _NET_WM_NAME not specified, not changing
+08/26/2011 11:22:50 AM - src/window.c:window_update_leader:152 - prop == NULL
+08/26/2011 11:22:50 AM - src/window.c:window_update_transient_for:176 - prop == NULL
+08/26/2011 11:22:50 AM - src/window.c:window_update_strut_partial:212 - Reserved pixels changed to: left = 0, right = 0, top = 0, bottom = 18
+08/26/2011 11:22:50 AM - This window is of type dock
+08/26/2011 11:22:50 AM - src/randr.c:get_output_containing:89 - comparing x=0 y=1006 with x=0 and y=0 width 1280 height 1024
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:186 - Starting search at output VGA1
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:195 - Bottom dock client
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:211 - Initial geometry: (0, 1006, 1280, 18)
+08/26/2011 11:22:50 AM - src/con.c:con_for_window:395 - searching con for window 0x1b76e60 starting at con 0x1b77360
+08/26/2011 11:22:50 AM - src/con.c:con_for_window:396 - class == (null)
+08/26/2011 11:22:50 AM - checking window 14680071 ((null))
+08/26/2011 11:22:50 AM - match->dock = 2, window->dock = 2
+08/26/2011 11:22:50 AM - dock status does not match
+08/26/2011 11:22:50 AM - src/con.c:con_for_window:395 - searching con for window 0x1b76e60 starting at con 0x1b77550
+08/26/2011 11:22:50 AM - src/con.c:con_for_window:396 - class == (null)
+08/26/2011 11:22:50 AM - src/con.c:con_for_window:395 - searching con for window 0x1b76e60 starting at con 0x1b77780
+08/26/2011 11:22:50 AM - src/con.c:con_for_window:396 - class == (null)
+08/26/2011 11:22:50 AM - src/con.c:con_for_window:395 - searching con for window 0x1b76e60 starting at con 0x1b77e40
+08/26/2011 11:22:50 AM - src/con.c:con_for_window:396 - class == (null)
+08/26/2011 11:22:50 AM - checking window 14680071 ((null))
+08/26/2011 11:22:50 AM - match->dock = 3, window->dock = 2
+08/26/2011 11:22:50 AM - dock status matches
+08/26/2011 11:22:50 AM - src/con.c:con_new:43 - opening window 0
+08/26/2011 11:22:50 AM - src/con.c:con_new:46 - color #ff0000
+08/26/2011 11:22:50 AM - src/x.c:x_con_init:95 - adding new state for window id 0x0080000b
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:249 - new container = 0x1b782b0
+08/26/2011 11:22:50 AM - src/x.c:x_reinit:112 - resetting state 0x1b77fb0 to initial
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:266 - Not in fullscreen mode, focusing
+08/26/2011 11:22:50 AM - src/manage.c:manage_window:269 - dock, not focusing
+08/26/2011 11:22:50 AM - src/assignments.c:run_assignments:16 - Checking assignments...
+08/26/2011 11:22:50 AM - src/tree.c:tree_render:362 - -- BEGIN RENDERING --
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b76b60 / root / layout 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 1, orientation = 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:229 - Root node, rendering outputs
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b77360 / VGA1 / layout 4
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 3, orientation = 0
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:22 - Available height: 1024
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:64 - This dockarea's height: 0
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:64 - This dockarea's height: 18
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:69 - Remaining: 1006
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:92 - child at (0, 0) with (1280 x 0)
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:93 - x now 0, y now 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b77550 / topdock / layout 3
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 0, orientation = 2
+08/26/2011 11:22:50 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:92 - child at (0, 0) with (1280 x 1006)
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:93 - x now 0, y now 1006
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b77780 / content / layout 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 1, orientation = 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:193 - got fs node: 0x1b77e40
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b77e40 / 1 / layout 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 0, orientation = 1
+08/26/2011 11:22:50 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:92 - child at (0, 1006) with (1280 x 18)
+08/26/2011 11:22:50 AM - src/render.c:render_l_output:93 - x now 0, y now 1024
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b779b0 / bottomdock / layout 3
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 1, orientation = 2
+08/26/2011 11:22:50 AM - src/render.c:render_con:312 - dockarea con
+08/26/2011 11:22:50 AM - src/render.c:render_con:326 - child at (0, 1006) with (1280 x 18)
+08/26/2011 11:22:50 AM - src/render.c:render_con:327 - x now 0, y now 1024
+08/26/2011 11:22:50 AM - src/render.c:render_con:109 - currently rendering node 0x1b782b0 / #ff0000 / layout 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:111 - children: 0, orientation = 0
+08/26/2011 11:22:50 AM - src/render.c:render_con:142 - Starting with inset = (0, 0) 1280 x 18
+08/26/2011 11:22:50 AM - src/render.c:render_con:144 - X11 border: 1
+08/26/2011 11:22:50 AM - src/render.c:render_con:184 - child will be at 0x0 with size 1278x16
+08/26/2011 11:22:50 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:50 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:50 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:50 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:747 - -- PUSHING WINDOW STACK --
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:782 - 
+
+ PUSHING CHANGES
+
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b76b60 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77360 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77780 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77e40 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77550 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b779b0 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:506 - pushing name [i3 con] container around 0x1b76e60 for con 0x1b782b0
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:574 - CACHE: creating new pixmap for con 0x1b782b0 (old: 0 x 0, new: 1280 x 18)
+08/26/2011 11:22:50 AM - src/x.c:x_draw_decoration:255 - decoration should be rendered for con 0x1b782b0
+08/26/2011 11:22:50 AM - src/x.c:x_draw_decoration:305 - CACHE MISS
+08/26/2011 11:22:50 AM - src/x.c:x_draw_decoration:377 - border style not BS_NORMAL, aborting rendering of decoration
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:604 - setting rect (0, 1006, 1280, 18)
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:623 - setting window rect (0, 0, 1278, 16)
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:653 - mapping child window (serial 326)
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:667 - mapping container 0080000b (serial 328)
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:674 - Sending fake configure notify
+08/26/2011 11:22:50 AM - src/xcb.c:fake_absolute_configure_notify:212 - fake rect = (0, 1006, 1278, 16)
+08/26/2011 11:22:50 AM - src/x.c:x_draw_decoration:255 - decoration should be rendered for con 0x1b782b0
+08/26/2011 11:22:50 AM - src/x.c:x_draw_decoration:300 - CACHE HIT, copying existing pixmaps
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:790 - focused_id = 0x000000b6, to_focus = 0x0080000a
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:793 - Not updating focus (to 0x1b77e40 / 1), focused window is not mapped.
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:822 - Still no window focused, better set focus to the root window
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:828 - 
+
+ ENDING CHANGES
+
+08/26/2011 11:22:50 AM - src/tree.c:tree_render:371 - -- END RENDERING --
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:747 - -- PUSHING WINDOW STACK --
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:782 - 
+
+ PUSHING CHANGES
+
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b76b60 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77360 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77780 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77e40 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77550 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b779b0 because it does not contain anything.
+08/26/2011 11:22:50 AM - src/x.c:x_draw_decoration:255 - decoration should be rendered for con 0x1b782b0
+08/26/2011 11:22:50 AM - src/x.c:x_draw_decoration:300 - CACHE HIT, copying existing pixmaps
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:790 - focused_id = 0x000000b6, to_focus = 0x0080000a
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:793 - Not updating focus (to 0x1b77e40 / 1), focused window is not mapped.
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:822 - Still no window focused, better set focus to the root window
+08/26/2011 11:22:50 AM - src/x.c:x_push_changes:828 - 
+
+ ENDING CHANGES
+
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 21
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 22
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 22
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 22
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1066 - Property notify
+08/26/2011 11:22:50 AM - src/handlers.c:property_notify:984 - Unhandled property notify for atom 294 (0x00000126)
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 19
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 19
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 19
+08/26/2011 11:22:50 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 22
+08/26/2011 11:22:52 AM - src/main.c:xkb_got_event:104 - Handling XKB event
+08/26/2011 11:22:52 AM - src/handlers.c:handle_key_press:84 - Keypress 36, state raw = 8
+08/26/2011 11:22:52 AM - src/handlers.c:handle_key_press:88 - (removed numlock, state = 8)
+08/26/2011 11:22:52 AM - src/handlers.c:handle_key_press:92 - (removed upper 8 bits, state = 8)
+08/26/2011 11:22:52 AM - src/handlers.c:handle_key_press:97 - (checked mode_switch, state 8)
+08/26/2011 11:22:52 AM - COMMAND: *exec /usr/bin/urxvt*
+should execute /usr/bin/urxvt
+08/26/2011 11:22:52 AM - executing: /usr/bin/urxvt
+single command completely parsed, dropping state...
+done, json output = (null)
+08/26/2011 11:22:52 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 3
+08/26/2011 11:22:52 AM - src/main.c:xkb_got_event:104 - Handling XKB event
+urxvt: perl extension 'mark-yank-urls' not found in perl library search path
+08/26/2011 11:22:53 AM - src/handlers.c:handle_map_request:296 - window = 0x00c00006, serial is 337.
+08/26/2011 11:22:53 AM - src/manage.c:manage_window:82 - ---> looking at window 0x00c00006
+08/26/2011 11:22:53 AM - src/manage.c:manage_window:110 - override_redirect is 0
+08/26/2011 11:22:53 AM - src/manage.c:manage_window:150 - reparenting!
+08/26/2011 11:22:53 AM - WM_CLASS changed to urxvt (instance), URxvt (class)
+08/26/2011 11:22:53 AM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+08/26/2011 11:22:53 AM - _NET_WM_NAME changed to "urxvt"
+08/26/2011 11:22:53 AM - src/window.c:window_update_leader:152 - prop == NULL
+08/26/2011 11:22:53 AM - src/window.c:window_update_transient_for:176 - prop == NULL
+08/26/2011 11:22:53 AM - src/window.c:window_update_strut_partial:200 - prop == NULL
+08/26/2011 11:22:53 AM - src/manage.c:manage_window:211 - Initial geometry: (0, 0, 562, 314)
+08/26/2011 11:22:53 AM - src/con.c:con_for_window:395 - searching con for window 0x1b76f80 starting at con 0x1b76b60
+08/26/2011 11:22:53 AM - src/con.c:con_for_window:396 - class == URxvt
+08/26/2011 11:22:53 AM - src/con.c:con_for_window:395 - searching con for window 0x1b76f80 starting at con 0x1b77360
+08/26/2011 11:22:53 AM - src/con.c:con_for_window:396 - class == URxvt
+08/26/2011 11:22:53 AM - checking window 12582918 (URxvt)
+08/26/2011 11:22:53 AM - match->dock = 2, window->dock = 0
+08/26/2011 11:22:53 AM - dock status does not match
+08/26/2011 11:22:53 AM - src/con.c:con_for_window:395 - searching con for window 0x1b76f80 starting at con 0x1b77550
+08/26/2011 11:22:53 AM - src/con.c:con_for_window:396 - class == URxvt
+08/26/2011 11:22:53 AM - src/con.c:con_for_window:395 - searching con for window 0x1b76f80 starting at con 0x1b77780
+08/26/2011 11:22:53 AM - src/con.c:con_for_window:396 - class == URxvt
+08/26/2011 11:22:53 AM - src/con.c:con_for_window:395 - searching con for window 0x1b76f80 starting at con 0x1b77e40
+08/26/2011 11:22:53 AM - src/con.c:con_for_window:396 - class == URxvt
+08/26/2011 11:22:53 AM - checking window 12582918 (URxvt)
+08/26/2011 11:22:53 AM - match->dock = 3, window->dock = 0
+08/26/2011 11:22:53 AM - dock status does not match
+08/26/2011 11:22:53 AM - src/con.c:con_for_window:395 - searching con for window 0x1b76f80 starting at con 0x1b779b0
+08/26/2011 11:22:53 AM - src/con.c:con_for_window:396 - class == URxvt
+08/26/2011 11:22:53 AM - src/con.c:con_for_window:395 - searching con for window 0x1b76f80 starting at con 0x1b782b0
+08/26/2011 11:22:53 AM - src/con.c:con_for_window:396 - class == URxvt
+08/26/2011 11:22:53 AM - src/tree.c:tree_open_con:88 - con = 0x1b77e40
+08/26/2011 11:22:53 AM - src/con.c:con_new:43 - opening window 1
+08/26/2011 11:22:53 AM - src/con.c:con_new:46 - color #00FF00
+08/26/2011 11:22:53 AM - src/x.c:x_con_init:95 - adding new state for window id 0x0080000e
+08/26/2011 11:22:53 AM - src/con.c:con_attach:133 - Parent is a workspace. Applying default layout...
+08/26/2011 11:22:53 AM - src/workspace.c:workspace_attach_to:337 - Attaching a window to workspace 0x1b77e40 / 1
+08/26/2011 11:22:53 AM - src/workspace.c:workspace_attach_to:340 - Default layout, just attaching it to the workspace itself.
+08/26/2011 11:22:53 AM - src/con.c:con_attach:142 - done
+08/26/2011 11:22:53 AM - src/manage.c:manage_window:249 - new container = 0x1b78620
+08/26/2011 11:22:53 AM - src/x.c:x_reinit:112 - resetting state 0x1b78790 to initial
+08/26/2011 11:22:53 AM - src/manage.c:manage_window:266 - Not in fullscreen mode, focusing
+08/26/2011 11:22:53 AM - src/con.c:con_focus:182 - con_focus = 0x1b78620
+08/26/2011 11:22:53 AM - src/con.c:con_focus:182 - con_focus = 0x1b77e40
+08/26/2011 11:22:53 AM - src/con.c:con_focus:182 - con_focus = 0x1b77780
+08/26/2011 11:22:53 AM - src/con.c:con_focus:182 - con_focus = 0x1b77360
+08/26/2011 11:22:53 AM - src/con.c:con_focus:196 - con_focus done = 0x1b77360
+08/26/2011 11:22:53 AM - src/con.c:con_focus:196 - con_focus done = 0x1b77780
+08/26/2011 11:22:53 AM - src/con.c:con_focus:196 - con_focus done = 0x1b77e40
+08/26/2011 11:22:53 AM - src/con.c:con_focus:196 - con_focus done = 0x1b78620
+08/26/2011 11:22:53 AM - src/assignments.c:run_assignments:16 - Checking assignments...
+08/26/2011 11:22:53 AM - src/tree.c:tree_render:362 - -- BEGIN RENDERING --
+08/26/2011 11:22:53 AM - src/render.c:render_con:109 - currently rendering node 0x1b76b60 / root / layout 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:111 - children: 1, orientation = 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:229 - Root node, rendering outputs
+08/26/2011 11:22:53 AM - src/render.c:render_con:109 - currently rendering node 0x1b77360 / VGA1 / layout 4
+08/26/2011 11:22:53 AM - src/render.c:render_con:111 - children: 3, orientation = 0
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:22 - Available height: 1024
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:64 - This dockarea's height: 0
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:64 - This dockarea's height: 18
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:69 - Remaining: 1006
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:92 - child at (0, 0) with (1280 x 0)
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:93 - x now 0, y now 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:109 - currently rendering node 0x1b77550 / topdock / layout 3
+08/26/2011 11:22:53 AM - src/render.c:render_con:111 - children: 0, orientation = 2
+08/26/2011 11:22:53 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:92 - child at (0, 0) with (1280 x 1006)
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:93 - x now 0, y now 1006
+08/26/2011 11:22:53 AM - src/render.c:render_con:109 - currently rendering node 0x1b77780 / content / layout 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:111 - children: 1, orientation = 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:193 - got fs node: 0x1b77e40
+08/26/2011 11:22:53 AM - src/render.c:render_con:109 - currently rendering node 0x1b77e40 / 1 / layout 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:111 - children: 1, orientation = 1
+08/26/2011 11:22:53 AM - src/render.c:render_con:259 - that child is a leaf node, subtracting deco
+08/26/2011 11:22:53 AM - src/render.c:render_con:326 - child at (0, 18) with (1280 x 988)
+08/26/2011 11:22:53 AM - src/render.c:render_con:327 - x now 1280, y now 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:109 - currently rendering node 0x1b78620 / #00FF00 / layout 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:111 - children: 0, orientation = 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:142 - Starting with inset = (2, 0) 1276 x 986
+08/26/2011 11:22:53 AM - src/render.c:render_con:144 - X11 border: 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:184 - child will be at 2x0 with size 1276x986
+08/26/2011 11:22:53 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:53 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:92 - child at (0, 1006) with (1280 x 18)
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:93 - x now 0, y now 1024
+08/26/2011 11:22:53 AM - src/render.c:render_con:109 - currently rendering node 0x1b779b0 / bottomdock / layout 3
+08/26/2011 11:22:53 AM - src/render.c:render_con:111 - children: 1, orientation = 2
+08/26/2011 11:22:53 AM - src/render.c:render_con:312 - dockarea con
+08/26/2011 11:22:53 AM - src/render.c:render_con:326 - child at (0, 1006) with (1280 x 18)
+08/26/2011 11:22:53 AM - src/render.c:render_con:327 - x now 0, y now 1024
+08/26/2011 11:22:53 AM - src/render.c:render_con:109 - currently rendering node 0x1b782b0 / #ff0000 / layout 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:111 - children: 0, orientation = 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:142 - Starting with inset = (0, 0) 1280 x 18
+08/26/2011 11:22:53 AM - src/render.c:render_con:144 - X11 border: 1
+08/26/2011 11:22:53 AM - src/render.c:render_con:184 - child will be at 0x0 with size 1278x16
+08/26/2011 11:22:53 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:53 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:53 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:53 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:53 AM - src/x.c:x_push_changes:747 - -- PUSHING WINDOW STACK --
+08/26/2011 11:22:53 AM - src/x.c:x_push_changes:764 - Stacking 0x0080000e above 0x0080000a
+08/26/2011 11:22:53 AM - src/x.c:x_push_changes:764 - Stacking 0x00800005 above 0x0080000e
+08/26/2011 11:22:53 AM - src/x.c:x_push_changes:764 - Stacking 0x0080000b above 0x00800005
+08/26/2011 11:22:53 AM - src/x.c:x_push_changes:782 - 
+
+ PUSHING CHANGES
+
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b76b60 because it does not contain anything.
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77360 because it does not contain anything.
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77780 because it does not contain anything.
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:574 - CACHE: creating new pixmap for con 0x1b77e40 (old: 0 x 0, new: 1280 x 18)
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:255 - decoration should be rendered for con 0x1b78620
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:267 - pixmap not yet created, not rendering
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:604 - setting rect (0, 0, 1280, 18)
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:667 - mapping container 0080000a (serial 368)
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:674 - Sending fake configure notify
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:506 - pushing name [i3 con] container around 0x1b76f80 for con 0x1b78620
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:574 - CACHE: creating new pixmap for con 0x1b78620 (old: 0 x 0, new: 1280 x 988)
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:255 - decoration should be rendered for con 0x1b78620
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:305 - CACHE MISS
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:426 - il_parent = 0x1b77e40, layout = 0
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:435 - indent_level = 0, indent_mult = 0
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:604 - setting rect (0, 18, 1280, 988)
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:623 - setting window rect (2, 0, 1276, 986)
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:653 - mapping child window (serial 389)
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:667 - mapping container 0080000e (serial 391)
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:674 - Sending fake configure notify
+08/26/2011 11:22:53 AM - src/xcb.c:fake_absolute_configure_notify:212 - fake rect = (2, 18, 1276, 986)
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77550 because it does not contain anything.
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b779b0 because it does not contain anything.
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:255 - decoration should be rendered for con 0x1b78620
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:300 - CACHE HIT, copying existing pixmaps
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:255 - decoration should be rendered for con 0x1b782b0
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:300 - CACHE HIT, copying existing pixmaps
+08/26/2011 11:22:53 AM - src/x.c:x_push_changes:790 - focused_id = 0x000000b6, to_focus = 0x00c00006
+08/26/2011 11:22:53 AM - src/x.c:x_push_changes:797 - Updating focus (focused: 0x1b78620 / #00FF00)
+08/26/2011 11:22:53 AM - src/x.c:x_push_changes:828 - 
+
+ ENDING CHANGES
+
+08/26/2011 11:22:53 AM - src/tree.c:tree_render:371 - -- END RENDERING --
+08/26/2011 11:22:53 AM - src/x.c:x_push_changes:747 - -- PUSHING WINDOW STACK --
+08/26/2011 11:22:53 AM - src/x.c:x_push_changes:782 - 
+
+ PUSHING CHANGES
+
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b76b60 because it does not contain anything.
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77360 because it does not contain anything.
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77780 because it does not contain anything.
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77550 because it does not contain anything.
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b779b0 because it does not contain anything.
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:255 - decoration should be rendered for con 0x1b78620
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:300 - CACHE HIT, copying existing pixmaps
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:255 - decoration should be rendered for con 0x1b782b0
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:300 - CACHE HIT, copying existing pixmaps
+08/26/2011 11:22:53 AM - src/x.c:x_push_changes:790 - focused_id = 0x00c00006, to_focus = 0x00c00006
+08/26/2011 11:22:53 AM - src/x.c:x_push_changes:828 - 
+
+ ENDING CHANGES
+
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 21
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 22
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 22
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 19
+08/26/2011 11:22:53 AM - src/handlers.c:handle_expose_event:606 - window = 0080000a
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:255 - decoration should be rendered for con 0x1b78620
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:300 - CACHE HIT, copying existing pixmaps
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 22
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 22
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 22
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1066 - Property notify
+08/26/2011 11:22:53 AM - src/handlers.c:property_notify:984 - Unhandled property notify for atom 294 (0x00000126)
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 19
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 19
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 19
+08/26/2011 11:22:53 AM - src/handlers.c:handle_expose_event:606 - window = 0080000e
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:255 - decoration should be rendered for con 0x1b78620
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:300 - CACHE HIT, copying existing pixmaps
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 22
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1066 - Property notify
+08/26/2011 11:22:53 AM - src/handlers.c:property_notify:984 - Unhandled property notify for atom 289 (0x00000121)
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1066 - Property notify
+08/26/2011 11:22:53 AM - src/handlers.c:handle_normal_hints:698 - Minimum size: 9 (width) x 15 (height)
+08/26/2011 11:22:53 AM - src/handlers.c:handle_normal_hints:715 - resize increments changed
+08/26/2011 11:22:53 AM - src/handlers.c:handle_normal_hints:736 - client's base_height changed to 2
+08/26/2011 11:22:53 AM - src/handlers.c:handle_normal_hints:737 - client's base_width changed to 2
+08/26/2011 11:22:53 AM - src/tree.c:tree_render:362 - -- BEGIN RENDERING --
+08/26/2011 11:22:53 AM - src/render.c:render_con:109 - currently rendering node 0x1b76b60 / root / layout 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:111 - children: 1, orientation = 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:229 - Root node, rendering outputs
+08/26/2011 11:22:53 AM - src/render.c:render_con:109 - currently rendering node 0x1b77360 / VGA1 / layout 4
+08/26/2011 11:22:53 AM - src/render.c:render_con:111 - children: 3, orientation = 0
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:22 - Available height: 1024
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:64 - This dockarea's height: 0
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:64 - This dockarea's height: 18
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:69 - Remaining: 1006
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:92 - child at (0, 0) with (1280 x 0)
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:93 - x now 0, y now 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:109 - currently rendering node 0x1b77550 / topdock / layout 3
+08/26/2011 11:22:53 AM - src/render.c:render_con:111 - children: 0, orientation = 2
+08/26/2011 11:22:53 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:92 - child at (0, 0) with (1280 x 1006)
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:93 - x now 0, y now 1006
+08/26/2011 11:22:53 AM - src/render.c:render_con:109 - currently rendering node 0x1b77780 / content / layout 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:111 - children: 1, orientation = 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:193 - got fs node: 0x1b77e40
+08/26/2011 11:22:53 AM - src/render.c:render_con:109 - currently rendering node 0x1b77e40 / 1 / layout 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:111 - children: 1, orientation = 1
+08/26/2011 11:22:53 AM - src/render.c:render_con:259 - that child is a leaf node, subtracting deco
+08/26/2011 11:22:53 AM - src/render.c:render_con:326 - child at (0, 18) with (1280 x 988)
+08/26/2011 11:22:53 AM - src/render.c:render_con:327 - x now 1280, y now 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:109 - currently rendering node 0x1b78620 / #00FF00 / layout 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:111 - children: 0, orientation = 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:142 - Starting with inset = (2, 0) 1276 x 986
+08/26/2011 11:22:53 AM - src/render.c:render_con:144 - X11 border: 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:174 - Lost 9 pixel due to client's height_increment (13 px, base_height = 2)
+08/26/2011 11:22:53 AM - src/render.c:render_con:181 - Lost 0 pixel due to client's width_increment (7 px, base_width = 2)
+08/26/2011 11:22:53 AM - src/render.c:render_con:184 - child will be at 2x0 with size 1276x977
+08/26/2011 11:22:53 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:53 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:92 - child at (0, 1006) with (1280 x 18)
+08/26/2011 11:22:53 AM - src/render.c:render_l_output:93 - x now 0, y now 1024
+08/26/2011 11:22:53 AM - src/render.c:render_con:109 - currently rendering node 0x1b779b0 / bottomdock / layout 3
+08/26/2011 11:22:53 AM - src/render.c:render_con:111 - children: 1, orientation = 2
+08/26/2011 11:22:53 AM - src/render.c:render_con:312 - dockarea con
+08/26/2011 11:22:53 AM - src/render.c:render_con:326 - child at (0, 1006) with (1280 x 18)
+08/26/2011 11:22:53 AM - src/render.c:render_con:327 - x now 0, y now 1024
+08/26/2011 11:22:53 AM - src/render.c:render_con:109 - currently rendering node 0x1b782b0 / #ff0000 / layout 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:111 - children: 0, orientation = 0
+08/26/2011 11:22:53 AM - src/render.c:render_con:142 - Starting with inset = (0, 0) 1280 x 18
+08/26/2011 11:22:53 AM - src/render.c:render_con:144 - X11 border: 1
+08/26/2011 11:22:53 AM - src/render.c:render_con:184 - child will be at 0x0 with size 1278x16
+08/26/2011 11:22:53 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:53 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:53 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:53 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:22:53 AM - src/x.c:x_push_changes:747 - -- PUSHING WINDOW STACK --
+08/26/2011 11:22:53 AM - src/x.c:x_push_changes:782 - 
+
+ PUSHING CHANGES
+
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b76b60 because it does not contain anything.
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77360 because it does not contain anything.
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77780 because it does not contain anything.
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:623 - setting window rect (2, 0, 1276, 977)
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:674 - Sending fake configure notify
+08/26/2011 11:22:53 AM - src/xcb.c:fake_absolute_configure_notify:212 - fake rect = (2, 18, 1276, 977)
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b77550 because it does not contain anything.
+08/26/2011 11:22:53 AM - src/x.c:x_push_node:526 - Unmapping container 0x1b779b0 because it does not contain anything.
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:255 - decoration should be rendered for con 0x1b78620
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:305 - CACHE MISS
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:426 - il_parent = 0x1b77e40, layout = 0
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:435 - indent_level = 0, indent_mult = 0
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:255 - decoration should be rendered for con 0x1b782b0
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:300 - CACHE HIT, copying existing pixmaps
+08/26/2011 11:22:53 AM - src/x.c:x_push_changes:790 - focused_id = 0x00c00006, to_focus = 0x00c00006
+08/26/2011 11:22:53 AM - src/x.c:x_push_changes:828 - 
+
+ ENDING CHANGES
+
+08/26/2011 11:22:53 AM - src/tree.c:tree_render:371 - -- END RENDERING --
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1066 - Property notify
+08/26/2011 11:22:53 AM - src/handlers.c:handle_normal_hints:698 - Minimum size: 9 (width) x 15 (height)
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 22
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 22
+08/26/2011 11:22:53 AM - src/handlers.c:handle_expose_event:606 - window = 0080000e
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:255 - decoration should be rendered for con 0x1b78620
+08/26/2011 11:22:53 AM - src/x.c:x_draw_decoration:300 - CACHE HIT, copying existing pixmaps
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1072 - Unhandled event of type 22
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1066 - Property notify
+08/26/2011 11:22:53 AM - src/handlers.c:handle_normal_hints:698 - Minimum size: 9 (width) x 15 (height)
+08/26/2011 11:22:53 AM - src/handlers.c:handle_event:1066 - Property notify
+08/26/2011 11:22:53 AM - src/handlers.c:handle_normal_hints:698 - Minimum size: 9 (width) x 15 (height)
+08/26/2011 11:23:01 AM - src/main.c:xkb_got_event:104 - Handling XKB event
+08/26/2011 11:23:01 AM - src/main.c:xkb_got_event:104 - Handling XKB event
+08/26/2011 11:23:03 AM - src/handlers.c:handle_expose_event:606 - window = 0080000e
+08/26/2011 11:23:03 AM - src/x.c:x_draw_decoration:255 - decoration should be rendered for con 0x1b78620
+08/26/2011 11:23:03 AM - src/x.c:x_draw_decoration:300 - CACHE HIT, copying existing pixmaps
+08/26/2011 11:23:03 AM - src/handlers.c:handle_expose_event:606 - window = 0080000a
+08/26/2011 11:23:03 AM - src/x.c:x_draw_decoration:255 - decoration should be rendered for con 0x1b78620
+08/26/2011 11:23:03 AM - src/x.c:x_draw_decoration:300 - CACHE HIT, copying existing pixmaps
+08/26/2011 11:23:03 AM - src/handlers.c:handle_screen_change:435 - RandR screen change
+08/26/2011 11:23:03 AM - src/randr.c:randr_query_outputs:572 - primary output is 00000000
+08/26/2011 11:23:03 AM - src/randr.c:handle_output:493 - found output with name VGA1
+08/26/2011 11:23:03 AM - src/randr.c:handle_output:529 - mode: 1280x1024+0+0
+08/26/2011 11:23:03 AM - src/randr.c:handle_output:493 - found output with name DVI1
+08/26/2011 11:23:03 AM - src/randr.c:handle_output:529 - mode: 1920x1080+1280+0
+08/26/2011 11:23:03 AM - src/randr.c:randr_query_outputs:604 - output 0x1b77150 / VGA1, position (0, 0), checking for clones
+08/26/2011 11:23:03 AM - src/randr.c:randr_query_outputs:604 - output 0x1b77310 / DVI1, position (1280, 0), checking for clones
+08/26/2011 11:23:03 AM - src/randr.c:randr_query_outputs:643 - Need to initialize a Con for output DVI1
+08/26/2011 11:23:03 AM - src/randr.c:output_init_con:179 - init_con for output DVI1
+08/26/2011 11:23:03 AM - src/con.c:con_new:43 - opening window 2
+08/26/2011 11:23:03 AM - src/con.c:con_new:46 - color #0000FF
+08/26/2011 11:23:03 AM - src/x.c:x_con_init:95 - adding new state for window id 0x00800013
+08/26/2011 11:23:03 AM - src/con.c:con_attach:149 - Inserting con = 0x1b82870 after last focused tiling con 0x1b77360
+08/26/2011 11:23:03 AM - src/randr.c:output_init_con:214 - Changing layout, adding top/bottom dockarea
+08/26/2011 11:23:03 AM - src/con.c:con_new:43 - opening window 3
+08/26/2011 11:23:03 AM - src/con.c:con_new:46 - color #ff00ff
+08/26/2011 11:23:03 AM - src/x.c:x_con_init:95 - adding new state for window id 0x00800014
+08/26/2011 11:23:03 AM - src/randr.c:output_init_con:232 - attaching
+08/26/2011 11:23:03 AM - src/randr.c:output_init_con:237 - adding main content container
+08/26/2011 11:23:03 AM - src/con.c:con_new:43 - opening window 4
+08/26/2011 11:23:03 AM - src/con.c:con_new:46 - color #00ffff
+08/26/2011 11:23:03 AM - src/x.c:x_con_init:95 - adding new state for window id 0x00800015
+08/26/2011 11:23:03 AM - src/con.c:con_new:43 - opening window 5
+08/26/2011 11:23:03 AM - src/con.c:con_new:46 - color #ffff00
+08/26/2011 11:23:03 AM - src/x.c:x_con_init:95 - adding new state for window id 0x00800016
+08/26/2011 11:23:03 AM - src/randr.c:output_init_con:266 - attaching
+08/26/2011 11:23:03 AM - src/ewmh.c:ewmh_update_workarea:83 - Got 1 workspaces
+08/26/2011 11:23:03 AM - src/ewmh.c:ewmh_update_workarea:89 - storing 0: 0x0 with 1280 x 1006
+08/26/2011 11:23:03 AM - src/randr.c:randr_query_outputs:742 - Should add ws for output DVI1
+08/26/2011 11:23:03 AM - Initializing first assigned workspace "5" for output "DVI1"
+08/26/2011 11:23:03 AM - Creating new workspace "5"
+08/26/2011 11:23:03 AM - Found workspace assignment to output "VGA1"
+08/26/2011 11:23:03 AM - got output 0x1b77360 with content 0x1b77780
+08/26/2011 11:23:03 AM - src/con.c:con_new:43 - opening window 6
+08/26/2011 11:23:03 AM - src/con.c:con_new:46 - color #aa0000
+08/26/2011 11:23:03 AM - src/x.c:x_con_init:95 - adding new state for window id 0x00800017
+08/26/2011 11:23:03 AM - num = 5
+08/26/2011 11:23:03 AM - src/workspace.c:workspace_get:70 - Auto orientation. Output resolution set to (0,0), setting orientation to 1.
+08/26/2011 11:23:03 AM - src/con.c:con_attach:86 - it's a workspace. num = 5
+08/26/2011 11:23:03 AM - switching to 0x1b83090
+08/26/2011 11:23:03 AM - src/con.c:con_focus:182 - con_focus = 0x1b83090
+08/26/2011 11:23:03 AM - src/con.c:con_focus:182 - con_focus = 0x1b77780
+08/26/2011 11:23:03 AM - src/con.c:con_focus:182 - con_focus = 0x1b77360
+08/26/2011 11:23:03 AM - src/con.c:con_focus:196 - con_focus done = 0x1b77360
+08/26/2011 11:23:03 AM - src/con.c:con_focus:196 - con_focus done = 0x1b77780
+08/26/2011 11:23:03 AM - src/con.c:con_focus:196 - con_focus done = 0x1b83090
+08/26/2011 11:23:03 AM - focused now = 0x1b83090 / 5
+08/26/2011 11:23:03 AM - src/ewmh.c:ewmh_update_workarea:83 - Got 2 workspaces
+08/26/2011 11:23:03 AM - src/ewmh.c:ewmh_update_workarea:89 - storing 0: 0x0 with 1280 x 1006
+08/26/2011 11:23:03 AM - src/ewmh.c:ewmh_update_workarea:89 - storing 1: 0x0 with 0 x 0
+08/26/2011 11:23:03 AM - src/ewmh.c:ewmh_update_workarea:98 - re-using last_rect (0x0, 1280, 1006)
+08/26/2011 11:23:03 AM - src/tree.c:tree_render:362 - -- BEGIN RENDERING --
+08/26/2011 11:23:03 AM - src/render.c:render_con:109 - currently rendering node 0x1b76b60 / root / layout 0
+08/26/2011 11:23:03 AM - src/render.c:render_con:111 - children: 2, orientation = 0
+08/26/2011 11:23:03 AM - src/render.c:render_con:229 - Root node, rendering outputs
+08/26/2011 11:23:03 AM - src/render.c:render_con:109 - currently rendering node 0x1b77360 / VGA1 / layout 4
+08/26/2011 11:23:03 AM - src/render.c:render_con:111 - children: 3, orientation = 0
+08/26/2011 11:23:03 AM - src/render.c:render_l_output:22 - Available height: 1024
+08/26/2011 11:23:03 AM - src/render.c:render_l_output:64 - This dockarea's height: 0
+08/26/2011 11:23:03 AM - src/render.c:render_l_output:64 - This dockarea's height: 18
+08/26/2011 11:23:03 AM - src/render.c:render_l_output:69 - Remaining: 1006
+08/26/2011 11:23:03 AM - src/render.c:render_l_output:92 - child at (0, 0) with (1280 x 0)
+08/26/2011 11:23:03 AM - src/render.c:render_l_output:93 - x now 0, y now 0
+08/26/2011 11:23:03 AM - src/render.c:render_con:109 - currently rendering node 0x1b77550 / topdock / layout 3
+08/26/2011 11:23:03 AM - src/render.c:render_con:111 - children: 0, orientation = 2
+08/26/2011 11:23:03 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:23:03 AM - src/render.c:render_l_output:92 - child at (0, 0) with (1280 x 1006)
+08/26/2011 11:23:03 AM - src/render.c:render_l_output:93 - x now 0, y now 1006
+08/26/2011 11:23:03 AM - src/render.c:render_con:109 - currently rendering node 0x1b77780 / content / layout 0
+08/26/2011 11:23:03 AM - src/render.c:render_con:111 - children: 2, orientation = 0
+08/26/2011 11:23:03 AM - src/render.c:render_con:193 - got fs node: 0x1b83090
+08/26/2011 11:23:03 AM - src/render.c:render_con:109 - currently rendering node 0x1b83090 / 5 / layout 0
+08/26/2011 11:23:03 AM - src/render.c:render_con:111 - children: 0, orientation = 1
+08/26/2011 11:23:03 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:23:03 AM - src/render.c:render_l_output:92 - child at (0, 1006) with (1280 x 18)
+08/26/2011 11:23:03 AM - src/render.c:render_l_output:93 - x now 0, y now 1024
+08/26/2011 11:23:03 AM - src/render.c:render_con:109 - currently rendering node 0x1b779b0 / bottomdock / layout 3
+08/26/2011 11:23:03 AM - src/render.c:render_con:111 - children: 1, orientation = 2
+08/26/2011 11:23:03 AM - src/render.c:render_con:312 - dockarea con
+08/26/2011 11:23:03 AM - src/render.c:render_con:326 - child at (0, 1006) with (1280 x 18)
+08/26/2011 11:23:03 AM - src/render.c:render_con:327 - x now 0, y now 1024
+08/26/2011 11:23:03 AM - src/render.c:render_con:109 - currently rendering node 0x1b782b0 / #ff0000 / layout 0
+08/26/2011 11:23:03 AM - src/render.c:render_con:111 - children: 0, orientation = 0
+08/26/2011 11:23:03 AM - src/render.c:render_con:142 - Starting with inset = (0, 0) 1280 x 18
+08/26/2011 11:23:03 AM - src/render.c:render_con:144 - X11 border: 1
+08/26/2011 11:23:03 AM - src/render.c:render_con:184 - child will be at 0x0 with size 1278x16
+08/26/2011 11:23:03 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:23:03 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:23:03 AM - src/render.c:render_con:365 - -- level up
+08/26/2011 11:23:03 AM - src/render.c:render_con:109 - currently rendering node 0x1b82870 / DVI1 / layout 4
+08/26/2011 11:23:03 AM - src/render.c:render_con:111 - children: 3, orientation = 0
+08/26/2011 11:23:03 AM - src/render.c:render_l_output:22 - Available height: 1080
+08/26/2011 11:23:03 AM - src/sighandler.c:handle_signal:150 - i3 crashed. SIG: 11
+08/26/2011 11:23:09 AM - src/sighandler.c:sig_handle_key_press:92 - User issued exit-command, raising error again.
+urxvt: X connection to ':0' broken, unable to recover, exiting.
+[src/ipc.c:172] ERROR: read() failed: Connection reset by peer

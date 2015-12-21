@@ -1,0 +1,811 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1296 (Systray is randomly killed while an i3 restart)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1295" title="Ticket #1295" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1296?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1296?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1296?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1297" title="Ticket #1297" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="6f43e459eab61c4b8e7c2587";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1295" title="Ticket #1295">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1297" title="Ticket #1297">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2014-06-25T11%3A05%3A15%2B02%3A00&amp;precision=second" title="See timeline at 06/25/14 11:05:15">9 months ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2014-07-24T10%3A12%3A02%2B02%3A00&amp;precision=second" title="See timeline at 07/24/14 10:12:02">8 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1296" class="trac-id">#1296</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Systray is randomly killed while an i3 restart</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">m@…</td>
+      <th id="h_owner" class="missing">Owned by:</th>
+      <td headers="h_owner"></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.8">4.8</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.8-43-gb91cd34 (2014-06-24, branch "next")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+When I restart i3, the system tray is randomly killed but still available. For example: when I launch nm-applet, it displays the systray icon but after a i3 restart nm-applet is killed. I have to relaunch it again.<br />
+</p>
+<p>
+I am running i3 version 4.8-43-gb91cd34 (2014-06-24, branch "next") and it worked on earlier git version (the one that introduced the layout saving). Unfortunately, I am unable to give you the exact version where the bug was introduced, but I think I have this issue since the beginning of the last week.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(4)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/1296/i3.log.bz2" title="View attachment">i3.log.bz2</a><a href="/report/raw-attachment/ticket/1296/i3.log.bz2" class="trac-rawlink" title="Download">​</a>
+       (<span title="29644 bytes">28.9 KB</span>) -
+      added by <em>i3-new-ticket</em> <a class="timeline" href="/report/timeline?from=2014-06-25T11%3A05%3A16%2B02%3A00&amp;precision=second" title="See timeline at 06/25/14 11:05:16">9 months ago</a>.
+  </dt>
+              <dd>
+                desc2
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/1296/strace.log" title="View attachment">strace.log</a><a href="/report/raw-attachment/ticket/1296/strace.log" class="trac-rawlink" title="Download">​</a>
+       (<span title="5601 bytes">5.5 KB</span>) -
+      added by <em>mikemintz@…</em> <a class="timeline" href="/report/timeline?from=2014-06-27T20%3A18%3A29%2B02%3A00&amp;precision=second" title="See timeline at 06/27/14 20:18:29">9 months ago</a>.
+  </dt>
+              <dd>
+                strace -f -o /tmp/strace.log -s 2048 -p $(pidof i3bar)
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/1296/i3bar.log" title="View attachment">i3bar.log</a><a href="/report/raw-attachment/ticket/1296/i3bar.log" class="trac-rawlink" title="Download">​</a>
+       (<span title="5743 bytes">5.6 KB</span>) -
+      added by <em>mikemintz@…</em> <a class="timeline" href="/report/timeline?from=2014-06-27T20%3A18%3A51%2B02%3A00&amp;precision=second" title="See timeline at 06/27/14 20:18:51">9 months ago</a>.
+  </dt>
+              <dd>
+                i3bar --bar_id=bar-0 &gt; /tmp/i3bar.log
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/1296/i3.log" title="View attachment">i3.log</a><a href="/report/raw-attachment/ticket/1296/i3.log" class="trac-rawlink" title="Download">​</a>
+       (<span title="407634 bytes">398.1 KB</span>) -
+      added by <em>mikemintz@…</em> <a class="timeline" href="/report/timeline?from=2014-06-28T20%3A23%3A54%2B02%3A00&amp;precision=second" title="See timeline at 06/28/14 20:23:54">9 months ago</a>.
+  </dt>
+              <dd>
+                exec i3 -V -d all &gt;&gt;/tmp/i3.log 2&gt;&amp;1
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/1296/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(15)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-25T11%3A05%3A16%2B02%3A00&amp;precision=second" title="See timeline at 06/25/14 11:05:16">9 months ago</a> by i3-new-ticket
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1296/i3.log.bz2"><em>i3.log.bz2</em></a><a href="/report/raw-attachment/ticket/1296/i3.log.bz2" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+desc2<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-1-1403711098427609">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+        in reply to:
+    <a href="#comment:description">↑ description</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-25T17%3A44%3A58%2B02%3A00&amp;precision=second" title="See timeline at 06/25/14 17:44:58">9 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="closed ticket" href="/report/ticket/1296" title="defect: Systray is randomly killed while an i3 restart (closed: fixed)">m@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+I am running i3 version 4.8-43-gb91cd34 (2014-06-24, branch "next") and it worked on earlier git version (the one that introduced the layout saving). Unfortunately, I am unable to give you the exact version where the bug was introduced, but I think I have this issue since the beginning of the last week.<br />
+</p>
+</blockquote>
+<p>
+Why are you unable to pinpoint the exact version? A git bisect would be a _huge_ help. Please have a look if you can do that.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1403720932464404">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-25T20%3A28%3A52%2B02%3A00&amp;precision=second" title="See timeline at 06/25/14 20:28:52">9 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Do you use multiple bar blocks in your config?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1403767803937511">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:5" class="follow-up">↓ 5</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-26T09%3A30%3A03%2B02%3A00&amp;precision=second" title="See timeline at 06/26/14 09:30:03">9 months ago</a> by mikemintz@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I have the same issue starting when I upgraded my package in arch linux from 4.7.2-1 to 4.8-2, which says 4.8 (2014-06-15, branch "4.8").<br />
+</p>
+<p>
+I did a git bisect and it outputted that the first bad commit was 94574db6f6d329797d7fa4e19f75645cd6cbae86 (cleanup temporary directory when restarting and not using XDG_RUNTIME_DIR fixes <a class="closed ticket" href="/report/ticket/1253" title="defect: Request - Please Move Directories Created From /tmp to $HOME (closed: invalid)">#1253</a>). This is my first time doing a git bisect, but I confirmed that that particular commit had the regression and the previous commit (6fe44d8584b27e1267f6c9ecc2f2f48b80050dc8) did not.<br />
+</p>
+<p>
+I only have one bar block in my config.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1403771882113035">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-26T10%3A38%3A02%2B02%3A00&amp;precision=second" title="See timeline at 06/26/14 10:38:02">9 months ago</a> by m@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I have only one bar block too in my config.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1403793614417830">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+        in reply to:
+    <a href="#comment:3">↑ 3</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-26T16%3A40%3A14%2B02%3A00&amp;precision=second" title="See timeline at 06/26/14 16:40:14">9 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1296#comment:3" title="Comment 3">mikemintz@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+I have the same issue starting when I upgraded my package in arch linux from 4.7.2-1 to 4.8-2, which says 4.8 (2014-06-15, branch "4.8").<br />
+</p>
+<p>
+I did a git bisect and it outputted that the first bad commit was 94574db6f6d329797d7fa4e19f75645cd6cbae86 (cleanup temporary directory when restarting and not using XDG_RUNTIME_DIR fixes <a class="closed ticket" href="/report/ticket/1253" title="defect: Request - Please Move Directories Created From /tmp to $HOME (closed: invalid)">#1253</a>). This is my first time doing a git bisect, but I confirmed that that particular commit had the regression and the previous commit (6fe44d8584b27e1267f6c9ecc2f2f48b80050dc8) did not.<br />
+</p>
+<p>
+I only have one bar block in my config.<br />
+</p>
+</blockquote>
+<p>
+Thanks, that helps a lot.<br />
+</p>
+<p>
+My suspicion is that the additional ipc_shutdown() call that was introduced in that commit is the culprit. I’ll have a look later (but could not reproduce it so far).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1403889258019876">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-27T19%3A14%3A18%2B02%3A00&amp;precision=second" title="See timeline at 06/27/14 19:14:18">9 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+So I tried to reproduce this, but couldn’t. Can you please run <tt>strace -f -o /tmp/strace.log -s 2048 -p $(pidof i3bar)</tt>, then restart i3, then attach /tmp/strace.log?<br />
+</p>
+<p>
+Also, can you please set the “verbose yes” option in your <tt>bar {}</tt> block, restart i3, run <tt>i3bar --bar_id=bar-0 &gt; /tmp/i3bar.log</tt> in a terminal, restart i3, then attach /tmp/i3bar.log?<br />
+</p>
+<p>
+My suspicion is that the ipc shutdown triggers the error handling path in the code somewhere, but I’m not sure where exactly. EOF when reading is already handled properly.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-27T20%3A18%3A29%2B02%3A00&amp;precision=second" title="See timeline at 06/27/14 20:18:29">9 months ago</a> by mikemintz@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1296/strace.log"><em>strace.log</em></a><a href="/report/raw-attachment/ticket/1296/strace.log" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+strace -f -o /tmp/strace.log -s 2048 -p $(pidof i3bar)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-27T20%3A18%3A51%2B02%3A00&amp;precision=second" title="See timeline at 06/27/14 20:18:51">9 months ago</a> by mikemintz@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1296/i3bar.log"><em>i3bar.log</em></a><a href="/report/raw-attachment/ticket/1296/i3bar.log" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+i3bar --bar_id=bar-0 &gt; /tmp/i3bar.log<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1403893549885091">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-27T20%3A25%3A49%2B02%3A00&amp;precision=second" title="See timeline at 06/27/14 20:25:49">9 months ago</a> by mikemintz@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I ran the strace and verbose i3bar commands and attached the output files. I don't know if I followed your instructions correctly since "restart i3" could either mean the i3 restart command or exit-then-startx. For strace, I did a clean startx, ran the strace command, and did the i3 restart command. For i3bar, I edited the config, did a clean startx, ran the i3bar command, and did the i3 restart command. The systray only appeared in the original i3bar, not in the new one that popped up when I ran the command (and the systray disappeared entirely after the i3 restart command).<br />
+</p>
+<p>
+This doesn't reproduce for me on every i3 restart: it is often fine on the first restart and then reproduces on the second restart. For the strace and i3bar, I only attached the logs from a time it reproduced on the first restart.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1403952881065275">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-28T12%3A54%3A41%2B02%3A00&amp;precision=second" title="See timeline at 06/28/14 12:54:41">9 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Hm, the logs actually show that i3bar is receiving an EOF and terminates cleanly, so my original suspicion was wrong.<br />
+</p>
+<p>
+Can you redirect the i3 stdout/stderr in your xsession to a file (<tt>exec i3 -V -d all &gt;&gt;/tmp/i3.log 2&gt;&amp;1</tt>, enable <tt>verbose yes</tt> in your bar block, run <tt>i3 restart</tt> and provide the output of that entire logfile? I.e. I want the logs of i3 and i3bar in a situation where you first run it, get a tray, restart it, tray is lost.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-28T20%3A23%3A54%2B02%3A00&amp;precision=second" title="See timeline at 06/28/14 20:23:54">9 months ago</a> by mikemintz@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1296/i3.log"><em>i3.log</em></a><a href="/report/raw-attachment/ticket/1296/i3.log" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+exec i3 -V -d all &gt;&gt;/tmp/i3.log 2&gt;&amp;1<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1403980084518183">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-28T20%3A28%3A04%2B02%3A00&amp;precision=second" title="See timeline at 06/28/14 20:28:04">9 months ago</a> by mikemintz@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I attached the log. You can see around 11:17:08 when I do i3 restart, redshift-gtk and dropbox (the two apps in my systray) both say <tt>Gdk-WARNING **: GdkWindow 0x1e00033 unexpectedly destroyed</tt>.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1404374035806088">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-03T09%3A53%3A55%2B02%3A00&amp;precision=second" title="See timeline at 07/03/14 09:53:55">9 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This is kind of a complicated bug it seems.<br />
+</p>
+<p>
+To reproduce:<br />
+</p>
+<ol><li>Open a GTK app with a tray client (the tray client must be mapped). I've tested this with transmission-gtk and dropboxd
+</li></ol><ol start="2"><li>Focus a floating window (any floating window).
+</li></ol><ol start="3"><li>Restart i3
+</li></ol><p>
+The GTK app will crash with an X11 error.<br />
+</p>
+<p>
+EDIT:<br />
+</p>
+<p>
+Disregard this. It just happens randomly and some chance situations made it seem like these steps could reproduce it.<br />
+</p>
+
+    </div>
+  <div class="trac-lastedit ">
+    Last edited <a class="timeline" href="/report/timeline?from=2014-07-03T11%3A15%3A04%2B02%3A00&amp;precision=second" title="See timeline at 07/03/14 11:15:04">9 months ago</a>
+        by TonyC
+      (<a href="/report/ticket/1296?cversion=0&amp;cnum_hist=10#comment:10">previous</a>)
+      (<a href="/report/ticket/1296?action=comment-diff&amp;cnum=10&amp;version=1">diff</a>)
+  </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1406189522697413">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-24T10%3A12%3A02%2B02%3A00&amp;precision=second" title="See timeline at 07/24/14 10:12:02">8 months ago</a> by Michael Stapelberg
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/4699c714"><span class="icon">​</span>http://c.i3wm.org/4699c714</a>:<br />
+</p>
+<pre class="wiki">Bugfix: add a sync call to i3bar to confirm reparents before exiting
+
+Without this call, sometimes the tray icon windows are reparented into
+i3’s container around the i3bar window, i.e. into the next remaining
+window in the window hierarchy. Since i3 then closes that container
+(since the i3bar window itself was closed), the tray window will also
+get closed. In general, this weird interaction (getting reparented and
+then closed) is not well received by tray icon providers :).
+
+closes: #1296
+
+</pre>
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1296?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1296?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1296?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

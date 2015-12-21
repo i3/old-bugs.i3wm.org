@@ -1,0 +1,1023 @@
+12/25/2013 11:58:05 AM - i3 4.7 (2013-12-22, branch "tags/4.7") starting
+12/25/2013 11:58:05 AM - Parsing configfile /home/carlos/.i3/config
+deciding for version 4 due to this line: bindsym $mod+h focus left
+12/25/2013 11:58:05 AM - [libi3] libi3/font.c Using Pango font Sans, size 8
+12/25/2013 11:58:05 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:58:05 AM - Used number 1 for workspace with name 1
+12/25/2013 11:58:05 AM - This is not an in-place restart, copying root window contents to a pixmap
+12/25/2013 11:58:05 AM - Starting bar process: i3bar --bar_id=bar-0 --socket="/run/user/1000/i3/ipc-socket.19724"
+12/25/2013 11:58:05 AM - executing: i3bar --bar_id=bar-0 --socket="/run/user/1000/i3/ipc-socket.19724"
+12/25/2013 11:58:05 AM - IPC: looking for config for bar ID "bar-0"
+12/25/2013 11:58:05 AM - workspace visible? fs = 0x9909da0, ws = 0x9909da0
+12/25/2013 11:58:05 AM - WM_CLASS changed to i3bar (instance), i3bar (class)
+12/25/2013 11:58:05 AM - WM_NAME changed to "i3bar for output LVDS1"
+12/25/2013 11:58:05 AM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+12/25/2013 11:58:05 AM - This window is of type dock
+12/25/2013 11:58:05 AM - Checking window 0x00800007 (class i3bar)
+12/25/2013 11:58:05 AM - dock status does not match
+12/25/2013 11:58:05 AM - Checking window 0x00800007 (class i3bar)
+12/25/2013 11:58:05 AM - dock status matches
+12/25/2013 11:58:05 AM - Urgency flag changed to 0
+12/25/2013 11:58:05 AM - ClientMessage for window 0x0000007d
+12/25/2013 11:58:10 AM - startup id = i3/xfce4-terminal/19724-0-localhost_TIME10955148
+12/25/2013 11:58:10 AM - executing: xfce4-terminal
+12/25/2013 11:58:10 AM - Not a managed window, ignoring UnmapNotify event
+12/25/2013 11:58:11 AM - ClientMessage for window 0x01400004
+12/25/2013 11:58:11 AM - WM_CLASS changed to xfce4-terminal (instance), Xfce4-terminal (class)
+12/25/2013 11:58:11 AM - WM_NAME changed to "Terminal"
+12/25/2013 11:58:11 AM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+12/25/2013 11:58:11 AM - _NET_WM_NAME changed to "Terminal"
+12/25/2013 11:58:11 AM - WM_WINDOW_ROLE changed to "xfce4-terminal-1387983491--1175243372"
+12/25/2013 11:58:11 AM - WM_HINTS.input changed to "1"
+12/25/2013 11:58:11 AM - Checking window 0x01400004 (class Xfce4-terminal)
+12/25/2013 11:58:11 AM - dock status does not match
+12/25/2013 11:58:11 AM - Checking window 0x01400004 (class Xfce4-terminal)
+12/25/2013 11:58:11 AM - dock status does not match
+12/25/2013 11:58:11 AM - workspace visible? fs = 0x9909da0, ws = 0x9909da0
+12/25/2013 11:58:11 AM - workspace visible? fs = 0x9909da0, ws = 0x9909da0
+12/25/2013 11:58:11 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+
+(xfce4-terminal:19841): GLib-WARNING **: (gerror.c:390):g_error_new_valist: runtime check failed: (domain != 0)
+Failed to connect to session manager: Failed to connect to the session manager: SESSION_MANAGER environment variable not defined
+12/25/2013 11:58:11 AM - _NET_WM_NAME changed to "Terminal - carlos@localhost:~"
+12/25/2013 11:58:11 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c Using Pango font DejaVu Sans Mono,Ionicons,FontAwesome, size 8
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1108] Calculated Font-height: 13
+[i3bar/src/xcb.c:1231] Setting bar_fg = #FFFFFF as _NET_SYSTEM_TRAY_COLORS
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:63] Parsing Outputs-JSON...
+[i3bar/src/ipc.c:65] Reconfiguring Windows...
+[i3bar/src/xcb.c:1375] Re-allocating statusline-buffer, statusline_width = 0, root_screen->width_in_pixels = 1024
+[i3bar/src/xcb.c:1427] Destroying window for output VGA1
+[i3bar/src/xcb.c:1432] Creating Window for output LVDS1
+[i3bar/src/xcb.c:1149] Initializing system tray functionality
+[i3bar/src/xcb.c:1231] Setting bar_fg = #FFFFFF as _NET_SYSTEM_TRAY_COLORS
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:54] Got Subscribe Reply: {"success":true}
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 7, glyphs: 1
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:385] Detecting input type based on buffer *{"version":1,"click_events":true}
+[
+*
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.12
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 11:58
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:475] _NET_SYSTEM_TRAY_OPCODE received
+[i3bar/src/xcb.c:518] xembed format = 32, len = 2
+[i3bar/src/xcb.c:520] xembed version = 1
+[i3bar/src/xcb.c:521] xembed flags = 0
+[i3bar/src/xcb.c:531] X window 00e00003 requested docking
+[i3bar/src/xcb.c:542] using output LVDS1
+[i3bar/src/xcb.c:610] Not mapping dock client yet
+[i3bar/src/xcb.c:455] Configuring tray window 00e00003 to x=1009
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:721] PropertyNotify
+[i3bar/src/xcb.c:721] PropertyNotify
+[i3bar/src/xcb.c:724] xembed_info updated
+[i3bar/src/xcb.c:763] xembed format = 32, len = 2
+[i3bar/src/xcb.c:765] xembed version = 1
+[i3bar/src/xcb.c:766] xembed flags = 1
+[i3bar/src/xcb.c:768] map-state now 1
+[i3bar/src/xcb.c:475] _NET_SY12/25/2013 11:58:52 AM - _NET_WM_NAME changed to "Terminal - carlos@localhost:~"
+12/25/2013 11:58:52 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:58:52 AM - Creating new workspace "2"
+12/25/2013 11:58:52 AM - got output 0x99098c8 with content 0x9909ad8
+12/25/2013 11:58:52 AM - num = 2
+12/25/2013 11:58:52 AM - focused now = 0x98fb790 / 2
+12/25/2013 11:58:52 AM - workspace visible? fs = 0x98fb790, ws = 0x9909da0
+12/25/2013 11:58:52 AM - workspace visible? fs = 0x98fb790, ws = 0x98fb790
+12/25/2013 11:58:52 AM - workspace visible? fs = 0x98fb790, ws = 0x9909da0
+12/25/2013 11:58:52 AM - workspace visible? fs = 0x98fb790, ws = 0x98fb790
+STEM_TRAY_OPCODE received
+[i3bar/src/xcb.c:518] xembed format = 32, len = 2
+[i3bar/src/xcb.c:520] xembed version = 1
+[i3bar/src/xcb.c:521] xembed flags = 0
+[i3bar/src/xcb.c:531] X window 0160005a requested docking
+[i3bar/src/xcb.c:542] using output LVDS1
+[i3bar/src/xcb.c:610] Not mapping dock client yet
+[i3bar/src/xcb.c:455] Configuring tray window 0160005a to x=1009
+[i3bar/src/xcb.c:455] Configuring tray window 00e00003 to x=994
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:721] PropertyNotify
+[i3bar/src/xcb.c:721] PropertyNotify
+[i3bar/src/xcb.c:724] xembed_info updated
+[i3bar/src/xcb.c:763] xembed format = 32, len = 2
+[i3bar/src/xcb.c:765] xembed version = 1
+[i3bar/src/xcb.c:766] xembed flags = 1
+[i3bar/src/xcb.c:768] map-state now 1
+[i3bar/src/xcb.c:721] PropertyNotify
+[i3bar/src/xcb.c:721] PropertyNotify
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.67
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 11:58
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.89
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 11:58
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:126] Got Workspace Event!
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:126] Got Workspace Event!
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-12/25/2013 11:58:52 AM - workspace visible? fs = 0x9909da0, ws = 0x98fb790
+12/25/2013 11:58:52 AM - Closing old workspace (0x98fb790 / 2), it is empty
+12/25/2013 11:58:52 AM - focused now = 0x990a878 / #ff0000
+12/25/2013 11:58:52 AM - workspace visible? fs = 0x9909da0, ws = 0x9909da0
+12/25/2013 11:58:52 AM - Not a managed window, ignoring UnmapNotify event
+12/25/2013 11:58:52 AM - workspace visible? fs = 0x9909da0, ws = 0x9909da0
+Data!
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 7, glyphs: 1
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 7, glyphs: 1
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1726] Drawing Button for WS 2 at x = 18, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 7, glyphs: 1
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 7, glyphs: 1
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1726] Drawing Button for WS 2 at x = 18, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:126] Got Workspace Event!
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:126] Got Workspace Event!
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 7, glyphs: 1
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 7, glyphs: 1
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.12/25/2013 11:58:58 AM - _NET_WM_NAME changed to "Terminal - carlos@localhost:~"
+12/25/2013 11:58:58 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:01 AM - startup id = i3/launch/19724-1-localhost_TIME11005787
+12/25/2013 11:59:01 AM - executing: launch
+12/25/2013 11:59:01 AM - Not a managed window, ignoring UnmapNotify event
+
+(process:19976): GLib-CRITICAL **: g_slice_set_config: assertion 'sys_page_size == 0' failed
+12/25/2013 11:59:04 AM - ClientMessage for window 0x01c0007f
+12/25/2013 11:59:04 AM - WM_CLASS changed to Navigator (instance), Firefox (class)
+12/25/2013 11:59:04 AM - WM_NAME changed to "Mozilla Firefox"
+12/25/2013 11:59:04 AM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+12/25/2013 11:59:04 AM - _NET_WM_NAME changed to "Mozilla Firefox"
+12/25/2013 11:59:04 AM - WM_WINDOW_ROLE changed to "browser"
+12/25/2013 11:59:04 AM - WM_HINTS.input changed to "1"
+12/25/2013 11:59:04 AM - Checking window 0x01c0007f (class Firefox)
+12/25/2013 11:59:04 AM - dock status does not match
+12/25/2013 11:59:04 AM - Checking window 0x01c0007f (class Firefox)
+12/25/2013 11:59:04 AM - dock status does not match
+12/25/2013 11:59:04 AM - workspace visible? fs = 0x9909da0, ws = 0x9909da0
+12/25/2013 11:59:04 AM - workspace visible? fs = 0x9909da0, ws = 0x9909da0
+12/25/2013 11:59:04 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:04 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:04 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:04 AM - WM_HINTS.input changed to "1"
+12/25/2013 11:59:05 AM - _NET_WM_NAME changed to "Mozilla Firefox Start Page - Mozilla Firefox"
+12/25/2013 11:59:05 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:06 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:06 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:06 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:06 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:06 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:06 AM - WM_HINTS.input changed to "1"
+12/25/2013 11:59:07 AM - _NET_WM_NAME changed to "Gmail - Mozilla Firefox"
+12/25/2013 11:59:07 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:15 AM - _NET_WM_NAME changed to "Re: i3-bugs #1138: Broken systray in 4.7 - carlosjosepita@gmail.com - Gmail - Mozilla Firefox"
+12/25/2013 11:59:15 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:25 AM - _NET_WM_NAME changed to "Mozilla Firefox"
+12/25/2013 11:59:25 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:26 AM - _NET_WM_NAME changed to "#1138 (Broken systray in 4.7) – i3 window manager - Mozilla Firefox"
+12/25/2013 11:59:26 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:29 AM - _NET_WM_NAME changed to "Re: i3-bugs #1138: Broken systray in 4.7 - carlosjosepita@gmail.com - Gmail - Mozilla Firefox"
+12/25/2013 11:59:29 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:29 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:29 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.71
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 11:59
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.73
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 11:59
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.73
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 11:59
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.58
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266]12/25/2013 11:59:41 AM - _NET_WM_NAME changed to "Terminal - .xinitrc (~) - VIM"
+12/25/2013 11:59:41 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:41 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:46 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:46 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:46 AM - WM_HINTS.input changed to "1"
+12/25/2013 11:59:48 AM - _NET_WM_NAME changed to "#1138 (Broken systray in 4.7) – i3 window manager - Mozilla Firefox"
+12/25/2013 11:59:48 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:57 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 11:59:57 AM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 12:00:01 PM - Not a managed window, ignoring UnmapNotify event
+12/25/2013 12:00:03 PM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 12:00:03 PM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 12:00:03 PM - WM_HINTS.input changed to "1"
+ color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 11:59
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.42
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:00
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.37
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:00
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.34
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:00
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.34
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:00
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.34
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:00
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.24
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:01
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.17
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:01
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.19
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:01
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.14
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:02
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.14
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:02
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.14
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:02
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.10
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:02
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.07
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:02
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.05
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:03
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.12
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:03
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.12
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:03
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.16
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:03
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.12
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:04
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.08
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:04
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.06
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:04
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.06
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/s12/25/2013 12:05:06 PM - _NET_WM_NAME changed to "Ticket #1138 – Attachment – i3 window manager - Mozilla Firefox"
+12/25/2013 12:05:06 PM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 12:05:09 PM - ClientMessage for window 0x01c04dea
+12/25/2013 12:05:09 PM - WM_CLASS changed to firefox (instance), Firefox (class)
+12/25/2013 12:05:09 PM - WM_NAME changed to "File Upload"
+12/25/2013 12:05:09 PM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+12/25/2013 12:05:09 PM - _NET_WM_NAME changed to "File Upload"
+12/25/2013 12:05:09 PM - WM_WINDOW_ROLE changed to "GtkFileChooserDialog"
+12/25/2013 12:05:09 PM - WM_HINTS.input changed to "1"
+12/25/2013 12:05:09 PM - Checking window 0x01c04dea (class Firefox)
+12/25/2013 12:05:09 PM - dock status does not match
+12/25/2013 12:05:09 PM - Checking window 0x01c04dea (class Firefox)
+12/25/2013 12:05:09 PM - dock status does not match
+12/25/2013 12:05:09 PM - workspace visible? fs = 0x9909da0, ws = 0x9909da0
+12/25/2013 12:05:09 PM - This window is a dialog window, setting floating
+12/25/2013 12:05:09 PM - This window is transient for another window, setting floating
+12/25/2013 12:05:09 PM - workspace visible? fs = 0x9909da0, ws = 0x9909da0
+12/25/2013 12:05:09 PM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 12:05:09 PM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 12:05:18 PM - [libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+12/25/2013 12:05:18 PM - Not a managed window, ignoring UnmapNotify event
+12/25/2013 12:05:18 PM - expose event for unknown window, ignoring
+12/25/2013 12:05:18 PM - Not a managed window, ignoring UnmapNotify event
+12/25/2013 12:05:18 PM - Not a managed window, ignoring UnmapNotify event
+12/25/2013 12:05:18 PM - Not a managed window, ignoring UnmapNotify event
+12/25/2013 12:05:18 PM - Not a managed window, ignoring UnmapNotify event
+12/25/2013 12:05:18 PM - Not a managed window, ignoring UnmapNotify event
+12/25/2013 12:05:18 PM - WM_HINTS.input changed to "1"
+rc/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:04
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.06
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:04
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.12
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:05
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/xcb.c:1674] Output VGA1 inactive, skipping...
+[i3bar/src/xcb.c:1695] Printing statusline!
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 7
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[i3bar/src/child.c:262] dumping statusline:
+[i3bar/src/child.c:265] full_text =  FULL 68.18%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  0.25
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text =  95%
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:265] full_text = 25 Dec 12:05
+[i3bar/src/child.c:266] color = (null)
+[i3bar/src/child.c:268] end of dump
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root window dictates 96.455696 DPI
+[libi3] libi3/font.c X11 root

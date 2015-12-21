@@ -1,0 +1,145 @@
+From d2a8385e26d640268378dbebc9e5e688ea4df30b Mon Sep 17 00:00:00 2001
+From: Yao Chunlin <chunlinyao@gmail.com>
+Date: Thu, 15 Mar 2012 15:53:42 +0800
+Subject: [PATCH] Add COMPOUND_TEXT support for WM_NAME
+
+libreoffice still use WM_NAME, Its title can not
+display unicode strings. use Xutf8TextPropertyToTextList
+to convert to utf8.
+---
+ include/all.h  |    1 +
+ include/data.h |    3 +++
+ include/util.h |    2 ++
+ src/util.c     |   23 +++++++++++++++++++++++
+ src/window.c   |   26 +++++++++++++++++++++++---
+ src/x.c        |    2 +-
+ 6 files changed, 53 insertions(+), 4 deletions(-)
+
+diff --git a/include/all.h b/include/all.h
+index 8ae4e0a..fe7a188 100644
+--- a/include/all.h
++++ b/include/all.h
+@@ -30,6 +30,7 @@
+ #include <math.h>
+ #include <limits.h>
+ 
++#include <X11/Xutil.h>
+ #include <xcb/xcb.h>
+ #include <xcb/xcb_aux.h>
+ #include <xcb/xcb_keysyms.h>
+diff --git a/include/data.h b/include/data.h
+index 10fc16d..ddd4c7f 100644
+--- a/include/data.h
++++ b/include/data.h
+@@ -290,6 +290,9 @@ struct Window {
+     /** Whether the application used _NET_WM_NAME */
+     bool uses_net_wm_name;
+ 
++    /** Converted compound text to ucs2 */
++    bool wm_name_cvt_to_ucs2;
++
+     /** Whether the application needs to receive WM_TAKE_FOCUS */
+     bool needs_take_focus;
+ 
+diff --git a/include/util.h b/include/util.h
+index 4a5920d..8e9b88b 100644
+--- a/include/util.h
++++ b/include/util.h
+@@ -100,6 +100,8 @@ void check_error(xcb_connection_t *conn, xcb_void_cookie_t cookie,
+  */
+ char *convert_utf8_to_ucs2(char *input, int *real_strlen);
+ 
++char *convert_ctext_to_utf8(char *input, int *real_strlen);
++
+ /**
+  * This function resolves ~ in pathnames.
+  * It may resolve wildcards in the first part of the path, but if no match
+diff --git a/src/util.c b/src/util.c
+index ba0b2c4..08eb595 100644
+--- a/src/util.c
++++ b/src/util.c
+@@ -166,6 +166,29 @@ char *convert_utf8_to_ucs2(char *input, int *real_strlen) {
+ }
+ 
+ /*
++ * Converts compound text to utf8
++ */
++char *convert_ctext_to_utf8(char *input, int *real_strlen) {
++    XTextProperty textprop;
++    textprop.encoding = XInternAtom(xlibdpy,"COMPOUND_TEXT",0);
++    textprop.format = 8;
++    textprop.value = (unsigned char *) input;
++    textprop.nitems = strlen(input);
++
++    char **list;
++    int count;
++    int ret = Xutf8TextPropertyToTextList(xlibdpy, &textprop, &list, &count);
++    if (ret == Success) {
++        char *utf8_string = strdup(*list);
++        *real_strlen = strlen(utf8_string);
++        XFreeStringList(list);
++        return utf8_string;
++    } else {
++        return NULL;
++    }
++}
++
++/*
+  * This function resolves ~ in pathnames.
+  * It may resolve wildcards in the first part of the path, but if no match
+  * or multiple matches are found, it just returns a copy of path as given.
+diff --git a/src/window.c b/src/window.c
+index e630e77..24150fc 100644
+--- a/src/window.c
++++ b/src/window.c
+@@ -129,11 +129,31 @@ void window_update_name_legacy(i3Window *win, xcb_get_property_reply_t *prop, bo
+     LOG("Using legacy window title. Note that in order to get Unicode window "
+         "titles in i3, the application has to set _NET_WM_NAME (UTF-8)\n");
+ 
++    int len;
++    char *utf8_name = convert_ctext_to_utf8(new_name, &len);
++    char *ucs2_name;
++    ucs2_name = NULL;
++    if (utf8_name == NULL) {
++        LOG("Could not convert WM_NAME to UTF-8, use origin value.\n");
++    } else {
++        ucs2_name = convert_utf8_to_ucs2(utf8_name, &len);
++        if (ucs2_name == NULL) {
++            LOG("Could not convert WM_NAME to UCS-2, use origin value\n");
++        }
++        free(utf8_name);
++    }
+     FREE(win->name_x);
+     FREE(win->name_json);
+-    win->name_x = new_name;
+-    win->name_json = sstrdup(new_name);
+-    win->name_len = strlen(new_name);
++    if (ucs2_name == NULL) {
++        win->name_x = new_name;
++        win->name_len = strlen(new_name);
++        win->name_json = sstrdup(new_name);
++    } else {
++        win->name_x = ucs2_name;
++        win->name_len = len;
++        win->name_json = new_name;
++        win->wm_name_cvt_to_ucs2 = true;
++    }
+     win->name_x_changed = true;
+ 
+     if (before_mgmt) {
+diff --git a/src/x.c b/src/x.c
+index 557a49d..3359a8f 100644
+--- a/src/x.c
++++ b/src/x.c
+@@ -447,7 +447,7 @@ void x_draw_decoration(Con *con) {
+     //DLOG("indent_level = %d, indent_mult = %d\n", indent_level, indent_mult);
+     int indent_px = (indent_level * 5) * indent_mult;
+ 
+-    if (win->uses_net_wm_name)
++    if (win->uses_net_wm_name || win->wm_name_cvt_to_ucs2)
+         xcb_image_text_16(
+             conn,
+             win->name_len,
+-- 
+1.7.9.2
+

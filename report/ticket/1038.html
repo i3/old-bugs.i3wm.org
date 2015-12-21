@@ -1,0 +1,1017 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1038 (Window menus either don't appear or appear on wrong monitor)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1037" title="Ticket #1037" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1038?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1038?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1038?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1039" title="Ticket #1039" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="fcbf4982b31be6c5455c4647";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1037" title="Ticket #1037">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1039" title="Ticket #1039">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2013-07-02T18%3A44%3A03%2B02%3A00&amp;precision=second" title="See timeline at 07/02/13 18:44:03">21 months ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2013-07-13T12%3A25%3A36%2B02%3A00&amp;precision=second" title="See timeline at 07/13/13 12:25:36">21 months ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2013-07-13T23%3A10%3A33%2B02%3A00&amp;precision=second" title="See timeline at 07/13/13 23:10:33">21 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1038" class="trac-id">#1038</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Window menus either don't appear or appear on wrong monitor</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">jhnmlkvch9@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.5.1">4.5.1</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.5.1-26-g8a7a80e (2013-06-29, branch "master")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+I'm using:<br />
+i3 version 4.5.1-26-g8a7a80e (2013-06-29, branch "master") © 2009-2013 Michael Stapelberg and contributors<br />
+</p>
+<p>
+I have a dual monitor setup. Window menus for some programs don't work when moved to the secondary monitor.<br />
+</p>
+<p>
+Example: Oracle VM <a class="forbidden wiki" title="no permission to view this wiki page">VirtualBox</a> is a popular virtualization program. When I start it and move the window to my secondary monitor, and click on File menu, the menu does not appear. When I move the window back to the primary monitor everything works fine.<br />
+</p>
+<p>
+For some programs, I've seen a similar behavior only, the menu appears on the primary monitor even when the window itself is on the secondary monitor.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(6)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/1038/i3.log.gz" title="View attachment">i3.log.gz</a><a href="/report/raw-attachment/ticket/1038/i3.log.gz" class="trac-rawlink" title="Download">​</a>
+       (<span title="49798 bytes">48.6 KB</span>) -
+      added by <em>i3-new-ticket</em> <a class="timeline" href="/report/timeline?from=2013-07-02T18%3A44%3A03%2B02%3A00&amp;precision=second" title="See timeline at 07/02/13 18:44:03">21 months ago</a>.
+  </dt>
+              <dd>
+                desc2
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/1038/xpropout.txt" title="View attachment">xpropout.txt</a><a href="/report/raw-attachment/ticket/1038/xpropout.txt" class="trac-rawlink" title="Download">​</a>
+       (<span title="33936 bytes">33.1 KB</span>) -
+      added by <em>anonymous</em> <a class="timeline" href="/report/timeline?from=2013-07-02T22%3A15%3A10%2B02%3A00&amp;precision=second" title="See timeline at 07/02/13 22:15:10">21 months ago</a>.
+  </dt>
+              <dd>
+                xprop -root output
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/1038/xpropout.2.txt" title="View attachment">xpropout.2.txt</a><a href="/report/raw-attachment/ticket/1038/xpropout.2.txt" class="trac-rawlink" title="Download">​</a>
+       (<span title="7411 bytes">7.2 KB</span>) -
+      added by <em>jhnmlkvch9@…</em> <a class="timeline" href="/report/timeline?from=2013-07-03T18%3A52%3A16%2B02%3A00&amp;precision=second" title="See timeline at 07/03/13 18:52:16">21 months ago</a>.
+  </dt>
+              <dd>
+                xprop -root output (with GDM)
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/1038/psauxf.txt" title="View attachment">psauxf.txt</a><a href="/report/raw-attachment/ticket/1038/psauxf.txt" class="trac-rawlink" title="Download">​</a>
+       (<span title="19082 bytes">18.6 KB</span>) -
+      added by <em>jhnmlkvch9@…</em> <a class="timeline" href="/report/timeline?from=2013-07-03T18%3A53%3A00%2B02%3A00&amp;precision=second" title="See timeline at 07/03/13 18:53:00">21 months ago</a>.
+  </dt>
+              <dd>
+                ps auxf output
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/1038/xpropout.3.txt" title="View attachment">xpropout.3.txt</a><a href="/report/raw-attachment/ticket/1038/xpropout.3.txt" class="trac-rawlink" title="Download">​</a>
+       (<span title="7545 bytes">7.4 KB</span>) -
+      added by <em>jhnmlkvch9@…</em> <a class="timeline" href="/report/timeline?from=2013-07-04T17%3A06%3A13%2B02%3A00&amp;precision=second" title="See timeline at 07/04/13 17:06:13">21 months ago</a>.
+  </dt>
+              <dd>
+                xpropout -root (gdm with _NET_WORKAREA fix)
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/1038/0001-set-the-_NET_WORKAREA-hint-test.patch" title="View attachment">0001-set-the-_NET_WORKAREA-hint-test.patch</a><a href="/report/raw-attachment/ticket/1038/0001-set-the-_NET_WORKAREA-hint-test.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="17490 bytes">17.1 KB</span>) -
+      added by <em>michael</em> <a class="timeline" href="/report/timeline?from=2013-07-13T12%3A11%3A44%2B02%3A00&amp;precision=second" title="See timeline at 07/13/13 12:11:44">21 months ago</a>.
+  </dt>
+              <dd>
+                non-working patch
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/1038/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(24)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-02T18%3A44%3A03%2B02%3A00&amp;precision=second" title="See timeline at 07/02/13 18:44:03">21 months ago</a> by i3-new-ticket
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1038/i3.log.gz"><em>i3.log.gz</em></a><a href="/report/raw-attachment/ticket/1038/i3.log.gz" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+desc2<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-1-1372794214831182">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-02T21%3A43%3A34%2B02%3A00&amp;precision=second" title="See timeline at 07/02/13 21:43:34">21 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+<a class="closed ticket" href="/report/ticket/1012" title="defect: qbittorrent options window appears on the wrong monitor (closed: invalid)">#1012</a> is related.<br />
+</p>
+<p>
+Which login manager do you use?<br />
+</p>
+<p>
+Can you append the output of <tt>xprop -root</tt> please?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-02T22%3A15%3A10%2B02%3A00&amp;precision=second" title="See timeline at 07/02/13 22:15:10">21 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1038/xpropout.txt"><em>xpropout.txt</em></a><a href="/report/raw-attachment/ticket/1038/xpropout.txt" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+xprop -root output<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1372796137494070">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-02T22%3A15%3A37%2B02%3A00&amp;precision=second" title="See timeline at 07/02/13 22:15:37">21 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I'm using lightdm.<br />
+</p>
+<p>
+I've attached output for xprop -root.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1372802672096863">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-03T00%3A04%3A32%2B02%3A00&amp;precision=second" title="See timeline at 07/03/13 00:04:32">21 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>bug_somewhere_else</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Yeah, LightDM sets the workarea. I think somebody should file a bug against LightDM.<br />
+</p>
+<p>
+Use e.g. GDM as a workaround.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1372806123814344">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-03T01%3A02%3A03%2B02%3A00&amp;precision=second" title="See timeline at 07/03/13 01:02:03">21 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I switched to GDM and reinstalled i3. That didn't seem to help. I can reproduce the same problem with GDM as well.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1372832978986233">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-03T08%3A29%3A38%2B02%3A00&amp;precision=second" title="See timeline at 07/03/13 08:29:38">21 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Can you attach the output of xprop -root when using GDM? Also, can you attach the ps auxf output?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-03T18%3A52%3A16%2B02%3A00&amp;precision=second" title="See timeline at 07/03/13 18:52:16">21 months ago</a> by jhnmlkvch9@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1038/xpropout.2.txt"><em>xpropout.2.txt</em></a><a href="/report/raw-attachment/ticket/1038/xpropout.2.txt" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+xprop -root output (with GDM)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-03T18%3A53%3A00%2B02%3A00&amp;precision=second" title="See timeline at 07/03/13 18:53:00">21 months ago</a> by jhnmlkvch9@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1038/psauxf.txt"><em>psauxf.txt</em></a><a href="/report/raw-attachment/ticket/1038/psauxf.txt" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+ps auxf output<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1372870423963575">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-03T18%3A53%3A43%2B02%3A00&amp;precision=second" title="See timeline at 07/03/13 18:53:43">21 months ago</a> by jhnmlkvch9@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I've attached requested outputs.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1372883425340887">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-03T22%3A30%3A25%2B02%3A00&amp;precision=second" title="See timeline at 07/03/13 22:30:25">21 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Hm, _NET_WORKAREA is still set on your system, even with gdm. I wonder where it comes from.<br />
+</p>
+<p>
+As a workaround, try adding this to your i3 config:<br />
+</p>
+<pre class="wiki">exec --no-startup-id xprop -remove _NET_WORKAREA -root
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1372907651675380">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-04T05%3A14%3A11%2B02%3A00&amp;precision=second" title="See timeline at 07/04/13 05:14:11">21 months ago</a> by jhnmlkvch9@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+ok. now that I've had more time to investigate, here is what I see. the workaround you suggested does not solve the problem.<br />
+</p>
+<p>
+I found the following workaround that does solve the problem. If I connect the external monitor at the login screen (works with both lightdm and gdm) and then start up i3, then the apps mentioned don't suffer from the lost menus. However if I start i3 with a single monitor and then connect the external monitor then this problem happens.<br />
+</p>
+<p>
+I can live with the workaround for now, but it kind of defeats the purpose of on the fly reconfiguration of workarea depending on the monitor configuration.<br />
+</p>
+<p>
+Hope this helps in tracking down the issue. Let me know if you need any logging data.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1372918140695552">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-04T08%3A09%3A00%2B02%3A00&amp;precision=second" title="See timeline at 07/04/13 08:09:00">21 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Given that <a class="closed ticket" href="/report/ticket/301" title="defect: QT-based apps don't display menu items when opened on second screen (closed: wontfix)">#301</a> was fixed by not setting _NET_WORKAREA at all, I am hesitant to set it again.<br />
+</p>
+<p>
+We’d need to coordinate with the reporter of <a class="closed ticket" href="/report/ticket/301" title="defect: QT-based apps don't display menu items when opened on second screen (closed: wontfix)">#301</a> at least.<br />
+</p>
+<p>
+What I don’t understand is why the suggested workaround does not work. Can you attach the output of xprop -root with the workaround?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1372950293445123">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-04T17%3A04%3A53%2B02%3A00&amp;precision=second" title="See timeline at 07/04/13 17:04:53">21 months ago</a> by jhnmlkvch9@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+ok, I may have messed something up. I tried putting the exec in the config this time at the top (not sure if this makes any difference) and it seems to work. Attached is xpropout -root output.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-04T17%3A06%3A13%2B02%3A00&amp;precision=second" title="See timeline at 07/04/13 17:06:13">21 months ago</a> by jhnmlkvch9@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1038/xpropout.3.txt"><em>xpropout.3.txt</em></a><a href="/report/raw-attachment/ticket/1038/xpropout.3.txt" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+xpropout -root (gdm with _NET_WORKAREA fix)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1373489499579527">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-10T22%3A51%3A39%2B02%3A00&amp;precision=second" title="See timeline at 07/10/13 22:51:39">21 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        <em>bug_somewhere_else</em> deleted
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>closed</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Just as a note:<br />
+</p>
+<p>
+With commit 372d47842e7d71fde0a194761bf77dceed6e724c, we should be able to restore _NET_WORKAREA handling without the workspace size kludge we used before. That commit allows us to use the invariant that every workspace will have a valid x/y/width/height at all times.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-12-1373491343713316">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-10T23%3A22%3A23%2B02%3A00&amp;precision=second" title="See timeline at 07/10/13 23:22:23">21 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>accepted</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I am working on adding a testcase and then setting _NET_WORKAREA properly. I hope to have a patch for testing within the next few days.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-13-1373709024112326">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:13" class="cnum">
+    <a href="#comment:13">comment:13</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-13T11%3A50%3A24%2B02%3A00&amp;precision=second" title="See timeline at 07/13/13 11:50:24">21 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+For the record:<br />
+</p>
+<p>
+KDE sets it up this way:<br />
+</p>
+<pre class="wiki">LVDS1 connected 1280x800+0+0 (normal left inverted right x axis y axis) 261mm x 163mm
+VGA1 connected 1600x1200+1280+200 (normal left inverted right x axis y axis) 367mm x 275mm
+
+_NET_WORKAREA(CARDINAL) = 0, 0, 2880, 1400, 0, 0, 2880, 1400
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-14-1373709170403142">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:14" class="cnum">
+    <a href="#comment:14">comment:14</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-13T11%3A52%3A50%2B02%3A00&amp;precision=second" title="See timeline at 07/13/13 11:52:50">21 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+GNOME also sets it to the bounding box of all monitors, but minus the space for panels:<br />
+</p>
+<pre class="wiki">LVDS1 connected 1280x800+0+0 (normal left inverted right x axis y axis) 261mm x 163mm
+VGA1 connected 1600x1200+1280+200 (normal left inverted right x axis y axis) 367mm x 275mm
+
+_NET_WORKAREA(CARDINAL) = 0, 27, 2880, 1373, 0, 27, 2880, 1373
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-15-1373710284292026">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:15" class="cnum">
+    <a href="#comment:15">comment:15</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-13T12%3A11%3A24%2B02%3A00&amp;precision=second" title="See timeline at 07/13/13 12:11:24">21 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I am attaching a patch I wrote for this just for the record. It does not make things better, as it exports workspaces in i3’s terminology, which does not (apparently) match what the wm-spec authors called desktops. Oh well.<br />
+</p>
+<p>
+We now have two options:<br />
+</p>
+<ol><li>Either set the _NET_WORKAREA to the bounding box, or to the bounding box minus dock clients (more complicated).
+</li><li>Actively delete the _NET_WORKAREA hint.
+</li></ol><p>
+I will go for the latter and we can revisit this decision in case there is some important breakage.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-13T12%3A11%3A44%2B02%3A00&amp;precision=second" title="See timeline at 07/13/13 12:11:44">21 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1038/0001-set-the-_NET_WORKAREA-hint-test.patch"><em>0001-set-the-_NET_WORKAREA-hint-test.patch</em></a><a href="/report/raw-attachment/ticket/1038/0001-set-the-_NET_WORKAREA-hint-test.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+non-working patch<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-16-1373711136471984">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:16" class="cnum">
+    <a href="#comment:16">comment:16</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-13T12%3A25%3A36%2B02%3A00&amp;precision=second" title="See timeline at 07/13/13 12:25:36">21 months ago</a> by Michael Stapelberg
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>accepted</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/eec80838"><span class="icon">​</span>http://c.i3wm.org/eec80838</a>:<br />
+</p>
+<pre class="wiki">actively delete _NET_WORKAREA on startup
+
+fixes #1038
+
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-17-1373737251165681">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:17" class="cnum">
+    <a href="#comment:17">comment:17</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:18" class="follow-up">↓ 18</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-13T19%3A40%3A51%2B02%3A00&amp;precision=second" title="See timeline at 07/13/13 19:40:51">21 months ago</a> by jhnmlkvch9@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+If I git the latest version, will I get this patch or do I need to apply this separately?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-18-1373749833192962">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:18" class="cnum">
+    <a href="#comment:18">comment:18</a>
+  </span>
+        in reply to:
+    <a href="#comment:17">↑ 17</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-13T23%3A10%3A33%2B02%3A00&amp;precision=second" title="See timeline at 07/13/13 23:10:33">21 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1038#comment:17" title="Comment 17">jhnmlkvch9@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+If I git the latest version, will I get this patch or do I need to apply this separately?<br />
+</p>
+</blockquote>
+<p>
+Use the “next” branch, then you’ll have it.<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1038?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1038?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1038?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

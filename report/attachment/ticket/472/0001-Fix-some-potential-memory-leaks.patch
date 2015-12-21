@@ -1,0 +1,92 @@
+From 47d389afa64f2fa97bf1d66d37eb6ff9428c06b9 Mon Sep 17 00:00:00 2001
+From: Peter Bui <pnutzh4x0r@gmail.com>
+Date: Mon, 8 Aug 2011 21:44:39 -0400
+Subject: [PATCH] Fix some potential memory leaks
+
+---
+ src/assignments.c |    4 +++-
+ src/cfgparse.y    |    1 +
+ src/config.c      |    1 +
+ src/handlers.c    |    3 ++-
+ src/ipc.c         |    5 ++++-
+ 5 files changed, 11 insertions(+), 3 deletions(-)
+
+diff --git a/src/assignments.c b/src/assignments.c
+index f171dc3..50f4852 100644
+--- a/src/assignments.c
++++ b/src/assignments.c
+@@ -39,7 +39,9 @@ void run_assignments(i3Window *window) {
+             DLOG("execute command %s\n", current->dest.command);
+             char *full_command;
+             asprintf(&full_command, "[id=\"%d\"] %s", window->id, current->dest.command);
+-            parse_cmd(full_command);
++            char *json_result = parse_cmd(full_command);
++            FREE(full_command);
++            FREE(json_result);
+         }
+ 
+         /* Store that we ran this assignment to not execute it again */
+diff --git a/src/cfgparse.y b/src/cfgparse.y
+index 59b22c6..abbe4da 100644
+--- a/src/cfgparse.y
++++ b/src/cfgparse.y
+@@ -1101,6 +1101,7 @@ colorpixel:
+         char *hex;
+         if (asprintf(&hex, "#%s", $2) == -1)
+             die("asprintf()");
++        free($2);
+         $$ = get_colorpixel(hex);
+         free(hex);
+     }
+diff --git a/src/config.c b/src/config.c
+index 24af35d..14fc6e0 100644
+--- a/src/config.c
++++ b/src/config.c
+@@ -193,6 +193,7 @@ static char *get_config_path(const char *override_configpath) {
+     config_path = resolve_tilde("~/.i3/config");
+     if (path_exists(config_path))
+         return config_path;
++    free(config_path);
+ 
+     /* 2: check for $XDG_CONFIG_HOME/i3/config */
+     if ((xdg_config_home = getenv("XDG_CONFIG_HOME")) == NULL)
+diff --git a/src/handlers.c b/src/handlers.c
+index 89a6bd0..b83ac83 100644
+--- a/src/handlers.c
++++ b/src/handlers.c
+@@ -112,7 +112,8 @@ static int handle_key_press(xcb_key_press_event_t *event) {
+         }
+     }
+ 
+-    parse_cmd(bind->command);
++    char *json_result = parse_cmd(bind->command);
++    free(json_result);
+     return 1;
+ }
+ 
+diff --git a/src/ipc.c b/src/ipc.c
+index b2cd482..d798ffa 100644
+--- a/src/ipc.c
++++ b/src/ipc.c
+@@ -147,7 +147,8 @@ IPC_HANDLER(command) {
+     char *command = scalloc(message_size + 1);
+     strncpy(command, (const char*)message, message_size);
+     LOG("IPC: received: *%s*\n", command);
+-    const char *reply = parse_cmd((const char*)command);
++    char *reply = parse_cmd((const char*)command);
++    char *save_reply = reply;
+     free(command);
+ 
+     /* If no reply was provided, we just use the default success message */
+@@ -155,6 +156,8 @@ IPC_HANDLER(command) {
+         reply = "{\"success\":true}";
+     ipc_send_message(fd, (const unsigned char*)reply,
+                      I3_IPC_REPLY_TYPE_COMMAND, strlen(reply));
++
++    FREE(save_reply);
+ }
+ 
+ static void dump_rect(yajl_gen gen, const char *name, Rect r) {
+-- 
+1.7.6
+

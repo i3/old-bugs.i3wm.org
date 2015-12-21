@@ -1,0 +1,30 @@
+From a2f99b3449b3983c4b37bb525755eda978560248 Mon Sep 17 00:00:00 2001
+From: Tony Crisci <tony@dubstepdish.com>
+Date: Wed, 23 Apr 2014 05:06:07 -0400
+Subject: [PATCH] Send verbose notification on json error
+
+---
+ i3bar/src/child.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/i3bar/src/child.c b/i3bar/src/child.c
+index 53aef2f..ecd858a 100644
+--- a/i3bar/src/child.c
++++ b/i3bar/src/child.c
+@@ -328,6 +328,13 @@ static bool read_json_input(unsigned char *input, int length) {
+ #endif
+         char *message = (char *)yajl_get_error(parser, 0, input, length);
+ 
++        char *verbose_message = (char *)yajl_get_error(parser, 1, input, length);
++        char *notify_cmd;
++        sasprintf(&notify_cmd, "notify-send 'Could not parse JSON' '%s'", verbose_message);
++        system(notify_cmd);
++        yajl_free_error(parser, (unsigned char*)verbose_message);
++        free(notify_cmd);
++
+         /* strip the newline yajl adds to the error message */
+         if (message[strlen(message) - 1] == '\n')
+             message[strlen(message) - 1] = '\0';
+-- 
+1.9.2
+

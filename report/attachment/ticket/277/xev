@@ -1,0 +1,21 @@
+KeyPress event, serial 27, synthetic NO, window 0x1600001,
+    root 0x1ad, subw 0x1600002, time 1450698, (28,23), root:(32,44),
+    state 0x10, keycode 64 (keysym 0xffe9, Alt_L), same_screen YES,
+    XLookupString gives 0 bytes: 
+    XmbLookupString gives 0 bytes: 
+    XFilterEvent returns: False
+
+KeyPress event, serial 27, synthetic NO, window 0x1600001,
+    root 0x1ad, subw 0x1600002, time 1452488, (28,23), root:(32,44),
+    state 0x18, keycode 52 (keysym 0x77, w), same_screen YES,
+    XLookupString gives 1 bytes: (77) "w"
+    XmbLookupString gives 1 bytes: (77) "w"
+    XFilterEvent returns: False
+
+KeyPress event, serial 27, synthetic NO, window 0x1600001,
+    root 0x1ad, subw 0x1600002, time 1548722, (36,53), root:(40,74),
+    state 0x10, keycode 25 (keysym 0x7a, z), same_screen YES,
+    XLookupString gives 1 bytes: (7a) "z"
+    XmbLookupString gives 1 bytes: (7a) "z"
+    XFilterEvent returns: False
+

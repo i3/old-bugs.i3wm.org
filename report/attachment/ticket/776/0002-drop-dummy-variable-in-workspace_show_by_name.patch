@@ -1,0 +1,27 @@
+From 94aae19665480bc0ff0b8a1f83606dd4c810c9c8 Mon Sep 17 00:00:00 2001
+From: chrysn <chrysn@fsfe.org>
+Date: Tue, 4 Sep 2012 18:28:36 +0200
+Subject: [PATCH 2/2] drop dummy variable in workspace_show_by_name
+
+workspace_get accepts NULL in place of a *bool as well.
+---
+ src/workspace.c |    3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/src/workspace.c b/src/workspace.c
+index c0edb3f..4dae9c2 100644
+--- a/src/workspace.c
++++ b/src/workspace.c
+@@ -384,8 +384,7 @@ void workspace_show(Con *workspace) {
+  */
+ void workspace_show_by_name(const char *num) {
+     Con *workspace;
+-    bool changed_num_workspaces;
+-    workspace = workspace_get(num, &changed_num_workspaces);
++    workspace = workspace_get(num, NULL);
+     _workspace_show(workspace);
+ }
+ 
+-- 
+1.7.10.4
+

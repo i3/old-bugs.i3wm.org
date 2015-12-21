@@ -1,0 +1,549 @@
+diff --git a/i3-migrate-config-to-v4 b/i3-migrate-config-to-v4
+index 5f20cba..5668653 100755
+--- a/i3-migrate-config-to-v4
++++ b/i3-migrate-config-to-v4
+@@ -16,159 +16,161 @@ use strict;
+ use warnings;
+ use Getopt::Long;
+ use v5.10;
++use feature qw(say switch);
+ 
+ # is this a version 3 config file? disables auto-detection
+ my $v3 = 0;
+-my $result = GetOptions('v3' => \$v3);
+-
+-# reads stdin
+-sub slurp {
+-    local $/;
+-    <>;
+-}
++my $result = GetOptions( 'v3' => \$v3 );
+ 
+ my @unchanged = qw(
+-    font
+-    set
+-    mode
+-    exec
+-    assign
+-    floating_modifier
+-    focus_follows_mouse
+-    ipc-socket
+-    ipc_socket
+-    client.focused
+-    client.focused_inactive
+-    client.unfocused
+-    client.urgent
+-    client.background
++  font
++  set
++  mode
++  exec
++  assign
++  floating_modifier
++  focus_follows_mouse
++  ipc-socket
++  ipc_socket
++  client.focused
++  client.focused_inactive
++  client.unfocused
++  client.urgent
++  client.background
+ );
+ 
+ my %workspace_names;
+ my $workspace_bar = 1;
+ 
+-my $input = slurp();
+-my @lines = split /\n/, $input;
+-
+-# remove whitespaces in the beginning of lines
+-@lines = map { s/^[ \t]*//g; $_ } @lines;
++my @lines = map { chomp; $_ } <>;
+ 
+ # Try to auto-detect if this is a v3 config file.
+ sub need_to_convert {
++
+     # If the user passed --v3, we need to convert in any case
+     return 1 if $v3;
+ 
++  LINE:
+     for my $line (@lines) {
++
+         # only v4 configfiles can use bindcode or workspace_layout
+-        return 0 if $line =~ /^bindcode/ ||
+-                    $line =~ /^workspace_layout/ ||
+-                    $line =~ /^force_focus_wrapping/;
++        return 0
++          if $line =~ m/\A(?:bindcode|workspace_layout|force_focus_wrapping)/;
+ 
+         # have a look at bindings
+-        next unless $line =~ /^bind/;
+-
+-        my ($statement, $key, $command) = ($line =~ /([a-zA-Z_-]+)[ \t]+([^ \t]+)[ \t]+(.*)/);
+-        return 0 if $command =~ /^layout/ ||
+-                    $command =~ /^floating/ ||
+-                    $command =~ /^workspace/ ||
+-                    $command =~ /^focus (left|right|up|down)/ ||
+-                    $command =~ /^border (normal|1pixel|none)/;
++        next LINE unless $line =~ m/\Abind/xms;
++
++        my ( $statement, $key, $command ) =
++          ( $line =~ /([a-zA-Z_-]+)\s+(\S+)\s+(.*)/ );
++        return 0
++          if $command =~
++m/\A(?:layout|floating|workspace|focus\s+(?:left|right|up|down)|border\s+(?:normal|1pixel|none))/xms;
+     }
+ 
+     return 1;
+ }
+ 
+-if (!need_to_convert()) {
++if ( !need_to_convert() ) {
++
+     # If this is already a v4 config file, we will spit out the lines
+     # and exit with return code 1
+-    print $input;
++    print join "\n", @lines;
+     exit 1;
+ }
+ 
++FIRST:
++
+ # first pass: get workspace names
+ for my $line (@lines) {
+-    next if $line =~ /^#/ || $line =~ /^$/;
++    next FIRST if $line =~ m/\A\s*[#$]/xms;
+ 
+-    my ($statement, $parameters) = ($line =~ /([a-zA-Z._-]+)(.*)/);
++    my ( $statement, $parameters ) = ( $line =~ m/\A\s*([-a-zA-Z._]+)(.*)/xms );
+ 
+     # skip everything but workspace lines
+-    next unless defined($statement) and $statement eq 'workspace';
++    next FIRST unless defined($statement) and $statement eq 'workspace';
+ 
+-    my ($number, $params) = ($parameters =~ /[ \t]+([0-9]+) (.+)/);
++    my ( $number, $params ) = ( $parameters =~ m/\s+(\d+)\s+(.+)/xms );
+ 
+     # save workspace name (unless the line is actually a workspace assignment)
+-    $workspace_names{$number} = $params unless $params =~ /^output/;
++    $workspace_names{$number} = $params unless $params =~ m/\Aoutput/xms;
+ }
+ 
++SECOND:
+ for my $line (@lines) {
++
+     # directly use comments and empty lines
+-    if ($line =~ /^#/ || $line =~ /^$/) {
+-        print "$line\n";
+-        next;
++    if ( $line =~ m/\A\s*[#$]/xms ) {
++        say $line;
++        next SECOND;
+     }
+ 
+-    my ($statement, $parameters) = ($line =~ /([a-zA-Z._-]+)(.*)/);
++    my ( $statement, $parameters ) = ( $line =~ m/([-a-zA-Z._]+)(.*)/xms );
+ 
+     # directly use lines which have not changed between 3.x and 4.x
+-    if (!defined($statement) || (lc $statement ~~ @unchanged)) {
+-        print "$line\n";
+-        next;
++    if ( !defined($statement) || ( lc $statement ~~ @unchanged ) ) {
++        say $line;
++        next SECOND;
+     }
+ 
+     # new_container changed only the statement name to workspace_layout
+-    if ($statement eq 'new_container') {
++    if ( $statement eq 'new_container' ) {
++
+         # TODO: new_container stack-limit
+-        print "workspace_layout$parameters\n";
+-        next;
++        say "workspace_layout$parameters";
++        next SECOND;
+     }
+ 
+     # workspace_bar is gone, you should use i3bar now
+-    if ($statement eq 'workspace_bar') {
+-        $workspace_bar = ($parameters =~ /[ \t+](yes|true|on|enable|active)/);
+-        print "# XXX: REMOVED workspace_bar line. There is no internal workspace bar in v4.\n";
+-        next;
++    if ( $statement eq 'workspace_bar' ) {
++        $workspace_bar =
++          ( $parameters =~ m/\s+(yes|true|on|enable|active)/xms );
++        say
++"# XXX: REMOVED workspace_bar line. There is no internal workspace bar in v4.";
++        next SECOND;
+     }
+ 
+     # new_window changed the parameters from bb to none etc.
+-    if ($statement eq 'new_window') {
+-        if ($parameters =~ /bb/) {
+-            print "new_window none\n";
+-        } elsif ($parameters =~ /bp/) {
+-            print "new_window 1pixel\n";
+-        } elsif ($parameters =~ /bn/) {
+-            print "new_window normal\n";
+-        } else {
+-            print "# XXX: Invalid parameter for new_window, not touching line:\n";
+-            print "$line\n";
++    if ( $statement eq 'new_window' ) {
++        given ($parameters) {
++            when (/bb/) { say "new_window none" }
++            when (/bp/) { say "new_window 1pixel" }
++            when (/bn/) { say "new_window normal" }
++            default {
++                say
++                  "# XXX: Invalid parameter for new_window, not touching line:";
++                say "$line";
++            }
+         }
+-        next;
++        next SECOND;
+     }
+ 
+     # bar colors are obsolete, need to be configured in i3bar
+-    if ($statement =~ /^bar\./) {
+-        print "# XXX: REMOVED $statement, configure i3bar instead.\n";
+-        print "# Old line: $line\n";
+-        next;
++    if ( $statement =~ m/\Abar\./xms ) {
++        say "# XXX: REMOVED $statement, configure i3bar instead.";
++        say "# Old line: $line";
++        next SECOND;
+     }
+ 
+-    # one form of this is still ok (workspace assignments), the other (named workspaces) isn’t
+-    if ($statement eq 'workspace') {
+-        my ($number, $params) = ($parameters =~ /[ \t]+([0-9]+) (.+)/);
+-        if ($params =~ /^output/) {
+-            print "$line\n";
+-            next;
+-        } else {
+-            print "# XXX: workspace name will end up in the corresponding bindings.\n";
+-            next;
++# one form of this is still ok (workspace assignments), the other (named workspaces) isn’t
++    if ( $statement eq 'workspace' ) {
++        my ( $number, $params ) = ( $parameters =~ m/\s+(\d+)\s+(.+)/xms );
++        if ( $params =~ m/\Aoutput/xms ) {
++            say "$line";
++            next SECOND;
++        }
++        else {
++            say
++"# XXX: workspace name will end up in the corresponding bindings.";
++            next SECOND;
+         }
+     }
+ 
+-    if ($statement eq 'bind' || $statement eq 'bindsym') {
++    if ( $statement eq 'bind' || $statement eq 'bindsym' ) {
+         convert_command($line);
+-        next;
++        next SECOND;
+     }
+ 
+-    print "# XXX: migration script could not handle line: $line\n";
++    say "# XXX: migration script could not handle line: $line";
+ }
+ 
+ #
+@@ -178,181 +180,204 @@ sub convert_command {
+     my ($line) = @_;
+ 
+     my @unchanged_cmds = qw(
+-        exec
+-        mark
+-        kill
+-        restart
+-        reload
+-        exit
+-        stack-limit
++      exec
++      mark
++      kill
++      restart
++      reload
++      exit
++      stack-limit
+     );
+ 
+-    my ($statement, $key, $command) = ($line =~ /([a-zA-Z_-]+)[ \t]+([^ \t]+)[ \t]+(.*)/);
++    my ( $indent, $statement, $key, $command ) =
++      ( $line =~ m/\A(\s*)([-a-zA-Z_]+)\s+(\S+)\s+(.*)/xms );
+ 
+     # turn 'bind' to 'bindcode'
+     $statement = 'bindcode' if $statement eq 'bind';
+ 
+     # check if it’s one of the unchanged commands
+-    my ($cmd) = ($command =~ /([a-zA-Z_-]+)/);
+-    if ($cmd ~~ @unchanged_cmds) {
+-        print "$statement $key $command\n";
++    my ($cmd) = ( $command =~ m/([-a-zA-Z_]+)/xms );
++    if ( $cmd ~~ @unchanged_cmds ) {
++        say "$indent$statement $key $command";
+         return;
+     }
+ 
+     # simple replacements
+     my @replace = (
+-        qr/^s/ => 'layout stacking',
+-        qr/^d/ => 'layout default',
+-        qr/^T/ => 'layout tabbed',
+-        qr/^f($|[^go])/ => 'fullscreen',
+-        qr/^fg/ => 'fullscreen global',
+-        qr/^t/ => 'floating toggle',
+-        qr/^h/ => 'focus left',
+-        qr/^j($|[^u])/ => 'focus down',
+-        qr/^k/ => 'focus up',
+-        qr/^l/ => 'focus right',
+-        qr/^mh/ => 'move left',
+-        qr/^mj/ => 'move down',
+-        qr/^mk/ => 'move up',
+-        qr/^ml/ => 'move right',
+-        qr/^bn/ => 'border normal',
+-        qr/^bp/ => 'border 1pixel',
+-        qr/^bb/ => 'border none',
+-        qr/^bt/ => 'border toggle',
+-        qr/^pw/ => 'workspace prev',
+-        qr/^nw/ => 'workspace next',
++        [ qr/^s/ => 'layout stacking' ],
++        [ qr/^d/ => 'layout default' ],
++        [ qr/^T/ => 'layout tabbed' ],
++        [ qr/^f($|[^go])/ => 'fullscreen' ],
++        [ qr/^fg/ => 'fullscreen global' ],
++        [ qr/^t/ => 'floating toggle' ],
++        [ qr/^h/ => 'focus left' ],
++        [ qr/^j($|[^u])/ => 'focus down' ],
++        [ qr/^k/ => 'focus up' ],
++        [ qr/^l/ => 'focus right' ],
++        [ qr/^mh/ => 'move left' ],
++        [ qr/^mj/ => 'move down' ],
++        [ qr/^mk/ => 'move up' ],
++        [ qr/^ml/ => 'move right' ],
++        [ qr/^bn/ => 'border normal' ],
++        [ qr/^bp/ => 'border 1pixel' ],
++        [ qr/^bb/ => 'border none' ],
++        [ qr/^bt/ => 'border toggle' ],
++        [ qr/^pw/ => 'workspace prev' ],
++        [ qr/^nw/ => 'workspace next' ],
+     );
+ 
+     my $replaced = 0;
+-    for (my $c = 0; $c < @replace; $c += 2) {
+-        if ($command =~ $replace[$c]) {
+-            $command = $replace[$c+1];
++  REPLACE:
++    for ( @replace ) {
++        my ( $r, $s ) = @$_;
++        if ( $command =~ $r ) {
++            $command  = $s;
+             $replaced = 1;
+-            last;
++            last REPLACE;
+         }
+     }
+ 
+     # goto command is now obsolete due to criteria + focus command
+-    if ($command =~ /^goto/) {
+-        my ($mark) = ($command =~ /^goto (.*)/);
+-        print qq|$statement $key [con_mark="$mark"] focus\n|;
++    if ( $command =~ m/\Agoto/xms ) {
++        my ($mark) = ( $command =~ m/\Agoto (.*)/xms );
++        say qq|$indent$statement $key [con_mark="$mark"] focus|;
+         return;
+     }
+ 
+     # the jump command is also obsolete due to criteria + focus
+-    if ($command =~ /^jump/) {
+-        my ($params) = ($command =~ /^jump (.*)/);
+-        if ($params =~ /^"/) {
++    if ( $command =~ m/\Ajump/xms ) {
++        my ($params) = ( $command =~ m/\Ajump (.*)/xms );
++        if ( $params =~ m/\A"/xms ) {
++
+             # jump ["]window class[/window title]["]
+-            ($params) = ($params =~ /^"([^"]+)"/);
++            ($params) = ( $params =~ m/\A"([^"]+?)"/xms );
+ 
+             # check if a window title was specified
+-            if ($params =~ m,/,) {
+-                my ($class, $title) = ($params =~ m,([^/]+)/(.+),);
+-                print qq|$statement $key [class="$class" title="$title"] focus\n|;
+-            } else {
+-                print qq|$statement $key [class="$params"] focus\n|;
++            if ( $params =~ m{/}xms ) {
++                my ( $class, $title ) = ( $params =~ m{([^/]+)/(.+)}xms );
++                say
++qq|$indent$statement $key [class="$class" title="$title"] focus|;
++            }
++            else {
++                say qq|$indent$statement $key [class="$params"] focus|;
+             }
+             return;
+-        } else {
++        }
++        else {
++
+             # jump <workspace> [ column row ]
+-            print "# XXX: jump workspace is obsolete in 4.x: $line\n";
++            say "# XXX: jump workspace is obsolete in 4.x: $line";
+             return;
+         }
+     }
+ 
+-    if (!$replaced && $command =~ /^focus/) {
+-        my ($what) = ($command =~ /^focus (.*)/);
+-        $what =~ s/[ \t]//g;
+-        if ($what eq 'ft') {
++    if ( !$replaced && $command =~ m/\Afocus/xms ) {
++        my ($what) = ( $command =~ m/\Afocus\s+(.*)/xms );
++        $what =~ s/\s+//g;
++        if ( $what eq 'ft' ) {
+             $what = 'mode_toggle';
+-        } elsif ($what eq 'floating' || $what eq 'tiling') {
++        }
++        elsif ( $what eq 'floating' || $what eq 'tiling' ) {
++
+             # those are unchanged
+-        } else {
+-            print "# XXX: focus <number> is obsolete in 4.x: $line\n";
++        }
++        else {
++            say "# XXX: focus <number> is obsolete in 4.x: $line";
+             return;
+         }
+-        print qq|$statement $key focus $what\n|;
++        say qq|$indent$statement $key focus $what|;
+         return;
+     }
+ 
+-    if ($command =~ /^mode/) {
+-        my ($parameters) = ($command =~ /^mode (.*)/);
+-        print qq|$statement $key mode "$parameters"\n|;
++    if ( $command =~ m/\Amode/xms ) {
++        my ($parameters) = ( $command =~ m/\Amode\s+(.*)/xms );
++        $parameters = qq("$parameters")
++          if $parameters and $parameters !~ m/\A".+"\z/xms;
++        say qq|$indent$statement $key mode $parameters|;
+         return;
+     }
+ 
+     # the parameters of the resize command have changed
+-    if ($command =~ /^resize/) {
++    if ( $command =~ m/\Aresize/xms ) {
++
+         # OLD: resize <left|right|top|bottom> [+|-]<pixels>\n")
+         # NEW: resize <grow|shrink> <direction> [<px> px] [or <ppt> ppt]
+-        my ($direction, $sign, $px) = ($command =~ /^resize (left|right|top|bottom) ([+-])([0-9]+)/);
++        my ( $direction, $sign, $px ) = ( $command =~
++              m/\Aresize\s+(left|right|top|bottom)\s+([-+]?)(\d+)/xms );
+         my $cmd = 'resize ';
+-        $cmd .= ($sign eq '+' ? 'grow' : 'shrink') . ' ';
++        $cmd .= ( $sign eq '+' ? 'grow' : 'shrink' ) . ' ';
+         $cmd .= "$direction ";
+         $cmd .= "$px px";
+-        print qq|$statement $key $cmd\n|;
++        say qq|$indent$statement $key $cmd|;
+         return;
+     }
+ 
+     # switch workspace
+-    if ($command =~ /^[0-9]+/) {
+-        my ($number) = ($command =~ /^([0-9]+)/);
+-        if (exists $workspace_names{$number}) {
+-            print qq|$statement $key workspace $workspace_names{$number}\n|;
++    if ( $command =~ m/\A\d+/xms ) {
++        my ($number) = ( $command =~ m/\A(\d+)/xms );
++        if ( exists $workspace_names{$number} ) {
++            say qq|$indent$statement $key workspace $workspace_names{$number}|;
+             return;
+-        } else {
+-            print qq|$statement $key workspace $number\n|;
++        }
++        else {
++            say qq|$indent$statement $key workspace $number|;
+             return;
+         }
+     }
+ 
+     # move to workspace
+-    if ($command =~ /^m[0-9]+/) {
+-        my ($number) = ($command =~ /^m([0-9]+)/);
+-        if (exists $workspace_names{$number}) {
+-            print qq|$statement $key move workspace $workspace_names{$number}\n|;
++    if ( $command =~ m/\Am\d+/xms ) {
++        my ($number) = ( $command =~ m/^m(\d+)/xms );
++        if ( exists $workspace_names{$number} ) {
++            say
++qq|$indent$statement $key move workspace $workspace_names{$number}|;
+             return;
+-        } else {
+-            print qq|$statement $key move workspace $number\n|;
++        }
++        else {
++            say qq|$indent$statement $key move workspace $number|;
+             return;
+         }
+     }
+ 
+     # With Container-commands are now obsolete due to different abstraction
+-    if ($command =~ /^wc/) {
+-        $command =~ s/^wc//g;
++    if ( $command =~ m/\Awc/xms ) {
++        $command =~ s/\Awc//gxms;
+         my $wc_replaced = 0;
+-        for (my $c = 0; $c < @replace; $c += 2) {
+-            if ($command =~ $replace[$c]) {
+-                $command = $replace[$c+1];
++      REPLACE2:
++        for ( @replace ) {
++            my ( $r, $s ) = @$_;
++            if ( $command =~ $r ) {
++                $command     = $s;
+                 $wc_replaced = 1;
+-                last;
++                last REPLACE2;
+             }
+         }
+-        if (!$wc_replaced) {
+-            print "# XXX: migration script could not handle command: $line\n";
+-        } else {
++
++        if ( !$wc_replaced ) {
++            say "# XXX: migration script could not handle command: $line";
++        }
++        else {
++
+             # NOTE: This is not 100% accurate, as it only works for one level
+             # of nested containers. As this is a common use case, we use 'focus
+             # parent; $command' nevertheless. For advanced use cases, the user
+             # has to modify his config.
+-            print "$statement $key focus parent; $command\n";
++            say "$indent$statement $key focus parent; $command";
+         }
+         return;
+     }
+ 
+     if ($replaced) {
+-        print "$statement $key $command\n";
+-    } else {
+-        print "# XXX: migration script could not handle command: $line\n";
++        say "$indent$statement $key $command";
++    }
++    else {
++        say "# XXX: migration script could not handle command: $line";
+     }
+ }
+ 
+-
+ # add an i3bar invocation automatically if no 'workspace_bar no' was found
+ if ($workspace_bar) {
+-    print "\n";
+-    print "# XXX: Automatically added a call to i3bar to provide a workspace bar\n";
+-    print "exec i3status | i3bar -d\n";
++    say '';
++    say "# XXX: Automatically added a call to i3bar to provide a workspace bar";
++    say "exec i3status | i3bar -d";
+ }

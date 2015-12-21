@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #60 (i3status: display the IPv6 address which has connectivity)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/59" title="Ticket #59" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/60?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/60?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/60?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/61" title="Ticket #61" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="8d94c722c994f7fb8d5513d2";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/59" title="Ticket #59">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/61" title="Ticket #61">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2009-06-16T15%3A58%3A24%2B02%3A00&amp;precision=second" title="See timeline at 06/16/09 15:58:24">6 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2009-07-23T23%3A44%3A46%2B02%3A00&amp;precision=second" title="See timeline at 07/23/09 23:44:46">6 years ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2009-09-18T23%3A22%3A15%2B02%3A00&amp;precision=second" title="See timeline at 09/18/09 23:22:15">6 years ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/60" class="trac-id">#60</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=enhancement">enhancement</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">i3status: display the IPv6 address which has connectivity</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable"><a href="/report/query?status=!closed&amp;reporter=anonymous">anonymous</a></td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=minor">minor</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version" class="missing">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version="></a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion" class="missing">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+Implement an option which shows the IPv6 address (and optionally the interface) with which sending an ICMP echo to a specified server is possible.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(9)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1248385486000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2009-07-23T23%3A44%3A46%2B02%3A00&amp;precision=second" title="See timeline at 07/23/09 23:44:46">6 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Implemented in revision 6fda988f360b3145d5772b6964f336dd652357ea<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1251569252000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+        in reply to:
+    <a href="#comment:2002">↑ 2002</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2009-08-29T20%3A07%3A32%2B02%3A00&amp;precision=second" title="See timeline at 08/29/09 20:07:32">6 years ago</a> by kpbdazi
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+6hjfrp  &lt;a href="<a class="ext-link" href="http://ergunhndjzrf.com/"><span class="icon">​</span>http://ergunhndjzrf.com/</a>"&gt;ergunhndjzrf&lt;/a&gt;, [url=<a class="ext-link" href="http://cfffeofknivj.com/]cfffeofknivj[/url"><span class="icon">​</span>http://cfffeofknivj.com/]cfffeofknivj[/url</a>], [link=<a class="ext-link" href="http://mduybvyxslus.com/]mduybvyxslus[/link"><span class="icon">​</span>http://mduybvyxslus.com/]mduybvyxslus[/link</a>], <a class="ext-link" href="http://hdukxjoooznf.com/"><span class="icon">​</span>http://hdukxjoooznf.com/</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1252413338000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2009-09-08T14%3A35%3A38%2B02%3A00&amp;precision=second" title="See timeline at 09/08/09 14:35:38">6 years ago</a> by jonn3
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Viagra. If you are a woman you should not buy Viagra because its safety is not yet established in women.; <a class="ext-link" href="http://www.thepartygirlsusa.com/Order__Doxycycline.php"><span class="icon">​</span>http://www.thepartygirlsusa.com/Order__Doxycycline.php</a> doxycycline 32344; <a class="ext-link" href="http://www.eradicateperplexity.com/carisoprodol-online.html"><span class="icon">​</span>http://www.eradicateperplexity.com/carisoprodol-online.html</a> carisoprodol azd; <a class="ext-link" href="http://www.eradicateperplexity.com/accutane-online.html"><span class="icon">​</span>http://www.eradicateperplexity.com/accutane-online.html</a> accutane =[[[; <a class="ext-link" href="http://www.thepartygirlsusa.com/Order__Tamiflu.php"><span class="icon">​</span>http://www.thepartygirlsusa.com/Order__Tamiflu.php</a> tamiflu xgd; <a class="ext-link" href="http://www.thepartygirlsusa.com/Order__Meridia.php"><span class="icon">​</span>http://www.thepartygirlsusa.com/Order__Meridia.php</a> meridia 558065; <a class="ext-link" href="http://www.thepartygirlsusa.com/Order__Acomplia.php"><span class="icon">​</span>http://www.thepartygirlsusa.com/Order__Acomplia.php</a> acomplia 9650; <br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1252425812000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2009-09-08T18%3A03%3A32%2B02%3A00&amp;precision=second" title="See timeline at 09/08/09 18:03:32">6 years ago</a> by jonn1
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+The first law of thermodynamics states that energy can neither be created nor destroyed.; <a class="ext-link" href="http://www.eradicateperplexity.com/amoxicillin-online.html"><span class="icon">​</span>http://www.eradicateperplexity.com/amoxicillin-online.html</a> amoxicillin :-); <a class="ext-link" href="http://www.eradicateperplexity.com/accutane-online.html"><span class="icon">​</span>http://www.eradicateperplexity.com/accutane-online.html</a> accutane bvmoag; <a class="ext-link" href="http://www.thepartygirlsusa.com/Order__Xanax.php"><span class="icon">​</span>http://www.thepartygirlsusa.com/Order__Xanax.php</a> xanax edm; <a class="ext-link" href="http://www.thepartygirlsusa.com/Order__Meridia.php"><span class="icon">​</span>http://www.thepartygirlsusa.com/Order__Meridia.php</a> meridia %-O; <a class="ext-link" href="http://www.eradicateperplexity.com/nexium-online.html"><span class="icon">​</span>http://www.eradicateperplexity.com/nexium-online.html</a> nexium onwce; <a class="ext-link" href="http://www.thepartygirlsusa.com/Order__Amoxicillin.php"><span class="icon">​</span>http://www.thepartygirlsusa.com/Order__Amoxicillin.php</a> amoxicillin zukbc; <br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1252438158000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2009-09-08T21%3A29%3A18%2B02%3A00&amp;precision=second" title="See timeline at 09/08/09 21:29:18">6 years ago</a> by jonn1
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Paraben free products are better and safer. Skin care products containing parabens have been found to be potentially dangerous to your health.; <a class="ext-link" href="http://www.eradicateperplexity.com/carisoprodol-online.html"><span class="icon">​</span>http://www.eradicateperplexity.com/carisoprodol-online.html</a> carisoprodol %-DDD; <a class="ext-link" href="http://www.thepartygirlsusa.com/Order__Doxycycline.php"><span class="icon">​</span>http://www.thepartygirlsusa.com/Order__Doxycycline.php</a> doxycycline %DD; <a class="ext-link" href="http://www.thepartygirlsusa.com/Order__Tamiflu.php"><span class="icon">​</span>http://www.thepartygirlsusa.com/Order__Tamiflu.php</a> tamiflu 006864; <a class="ext-link" href="http://www.thepartygirlsusa.com/Order__Meridia.php"><span class="icon">​</span>http://www.thepartygirlsusa.com/Order__Meridia.php</a> meridia 181784; <a class="ext-link" href="http://www.thepartygirlsusa.com/Order__Acomplia.php"><span class="icon">​</span>http://www.thepartygirlsusa.com/Order__Acomplia.php</a> acomplia :]; <a class="ext-link" href="http://www.thepartygirlsusa.com/Order__Amoxicillin.php"><span class="icon">​</span>http://www.thepartygirlsusa.com/Order__Amoxicillin.php</a> amoxicillin cxs; <br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1252751502000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2009-09-12T12%3A31%3A42%2B02%3A00&amp;precision=second" title="See timeline at 09/12/09 12:31:42">6 years ago</a> by jzwmfzm
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+58u7Jk  &lt;a href="<a class="ext-link" href="http://zlmlryshnung.com/"><span class="icon">​</span>http://zlmlryshnung.com/</a>"&gt;zlmlryshnung&lt;/a&gt;, [url=<a class="ext-link" href="http://mbboizuminhk.com/]mbboizuminhk[/url"><span class="icon">​</span>http://mbboizuminhk.com/]mbboizuminhk[/url</a>], [link=<a class="ext-link" href="http://vmaqzbdxvtax.com/]vmaqzbdxvtax[/link"><span class="icon">​</span>http://vmaqzbdxvtax.com/]vmaqzbdxvtax[/link</a>], <a class="ext-link" href="http://iqhixvizmljk.com/"><span class="icon">​</span>http://iqhixvizmljk.com/</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1253291558000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2009-09-18T18%3A32%3A38%2B02%3A00&amp;precision=second" title="See timeline at 09/18/09 18:32:38">6 years ago</a> by Aeylita
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+The slot machines are perhaps the most popular of all of the casino games. <a class="ext-link" href="http://www.maddonnasnashville.com/online_casino.php"><span class="icon">​</span>http://www.maddonnasnashville.com/online_casino.php</a> online casino &gt;:-PPP <a class="ext-link" href="http://www.maddonnasnashville.com/online_slots.php"><span class="icon">​</span>http://www.maddonnasnashville.com/online_slots.php</a> online slots %PPP <a class="ext-link" href="http://vegweb.com/index.php?action=profile;u=122080"><span class="icon">​</span>http://vegweb.com/index.php?action=profile;u=122080</a> buy cialis 96756 <a class="ext-link" href="http://blogs.technet.com/members/Get_multiple_AUTO_INSURANCE_quotes.aspx"><span class="icon">​</span>http://blogs.technet.com/members/Get_multiple_AUTO_INSURANCE_quotes.aspx</a> auto insurance 2969 <a class="ext-link" href="http://www.sims99.com/forum/member.php?u=9729"><span class="icon">​</span>http://www.sims99.com/forum/member.php?u=9729</a> health insurance zthpw <a class="ext-link" href="http://blogs.technet.com/members/WillianOaks.aspx"><span class="icon">​</span>http://blogs.technet.com/members/WillianOaks.aspx</a> buy cialis zkgnjk <br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1253300236000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2009-09-18T20%3A57%3A16%2B02%3A00&amp;precision=second" title="See timeline at 09/18/09 20:57:16">6 years ago</a> by ctgPi
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+The effect of this medication begins not later than in 30 minutes and is enough lasting more than 4 hours . <a class="ext-link" href="http://blenderartists.org/forum/member.php?u=54155"><span class="icon">​</span>http://blenderartists.org/forum/member.php?u=54155</a> buy viagra xvdr <a class="ext-link" href="http://vegweb.com/index.php?action=profile;u=122080"><span class="icon">​</span>http://vegweb.com/index.php?action=profile;u=122080</a> buy cialis irnmdj <a class="ext-link" href="http://www.endstoploss.com/blackjack.aspx"><span class="icon">​</span>http://www.endstoploss.com/blackjack.aspx</a> blackjack 569230 <a class="ext-link" href="http://www.extjs.com/forum/member.php?u=90120"><span class="icon">​</span>http://www.extjs.com/forum/member.php?u=90120</a> buy viagra 0702 <a class="ext-link" href="http://www.maddonnasnashville.com/blackjack.php"><span class="icon">​</span>http://www.maddonnasnashville.com/blackjack.php</a> blackjack ehbo <a class="ext-link" href="http://www.endstoploss.com/online-slots.aspx"><span class="icon">​</span>http://www.endstoploss.com/online-slots.aspx</a> online slots qxu <br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1253308935000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2009-09-18T23%3A22%3A15%2B02%3A00&amp;precision=second" title="See timeline at 09/18/09 23:22:15">6 years ago</a> by aQtheR
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Side effects include dry mouth constipation and insomnia. <a class="ext-link" href="http://blenderartists.org/forum/member.php?u=54155"><span class="icon">​</span>http://blenderartists.org/forum/member.php?u=54155</a> buy viagra ehtfbz <a class="ext-link" href="http://vegweb.com/index.php?action=profile;u=122206"><span class="icon">​</span>http://vegweb.com/index.php?action=profile;u=122206</a> cheap auto insurance :-OO <a class="ext-link" href="http://blogs.technet.com/members/Get_multiple_AUTO_INSURANCE_quotes.aspx"><span class="icon">​</span>http://blogs.technet.com/members/Get_multiple_AUTO_INSURANCE_quotes.aspx</a> auto insurance =DD <a class="ext-link" href="http://blogs.technet.com/members/WillianOaks.aspx"><span class="icon">​</span>http://blogs.technet.com/members/WillianOaks.aspx</a> buy cialis :D <a class="ext-link" href="http://blenderartists.org/forum/member.php?u=54228"><span class="icon">​</span>http://blenderartists.org/forum/member.php?u=54228</a> cheap health insurance xljoj <a class="ext-link" href="http://www.maddonnasnashville.com/blackjack.php"><span class="icon">​</span>http://www.maddonnasnashville.com/blackjack.php</a> blackjack vecjl <br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/60?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/60?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/60?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

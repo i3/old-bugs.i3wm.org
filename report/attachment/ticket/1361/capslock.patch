@@ -1,0 +1,80 @@
+diff --git a/i3lock.c b/i3lock.c
+index 64e4600..8945bd5 100644
+--- a/i3lock.c
++++ b/i3lock.c
+@@ -77,6 +77,8 @@ cairo_surface_t *img = NULL;
+ bool tile = false;
+ bool ignore_empty_password = false;
+ bool skip_repeated_empty_password = false;
++bool caps_locked = false;
++bool show_capslock = false;
+ 
+ /* isutf, u8_dec © 2005 Jeff Bezanson, public domain */
+ #define isutf(c) (((c) & 0xC0) != 0x80)
+@@ -442,6 +444,10 @@ static void process_xkb_event(xcb_generic_event_t *gevent) {
+                                   event->state_notify.baseGroup,
+                                   event->state_notify.latchedGroup,
+                                   event->state_notify.lockedGroup);
++            if (show_capslock && caps_locked != xkb_state_mod_name_is_active(xkb_state, XKB_MOD_NAME_CAPS, XKB_STATE_LOCKED)) {
++                caps_locked = !caps_locked;
++                redraw_screen();
++            }
+             break;
+     }
+ }
+@@ -678,13 +684,14 @@ int main(int argc, char *argv[]) {
+         {"ignore-empty-password", no_argument, NULL, 'e'},
+         {"inactivity-timeout", required_argument, NULL, 'I'},
+         {"show-failed-attempts", no_argument, NULL, 'f'},
++        {"show-capslock", no_argument, NULL, 'l'},
+         {NULL, no_argument, NULL, 0}
+     };
+ 
+     if ((username = getenv("USER")) == NULL)
+         errx(EXIT_FAILURE, "USER environment variable not set, please set it.\n");
+ 
+-    char *optstring = "hvnbdc:p:ui:teI:f";
++    char *optstring = "hvnbdc:p:ui:teI:fl";
+     while ((o = getopt_long(argc, argv, optstring, longopts, &optind)) != -1) {
+         switch (o) {
+         case 'v':
+@@ -745,9 +752,12 @@ int main(int argc, char *argv[]) {
+         case 'f':
+             show_failed_attempts = true;
+             break;
++        case 'l':
++            show_capslock = true;
++            break;
+         default:
+             errx(EXIT_FAILURE, "Syntax: i3lock [-v] [-n] [-b] [-d] [-c color] [-u] [-p win|default]"
+-            " [-i image.png] [-t] [-e] [-I] [-f]"
++            " [-i image.png] [-t] [-e] [-I] [-f] [-l]"
+             );
+         }
+     }
+diff --git a/unlock_indicator.c b/unlock_indicator.c
+index e543f96..a778d57 100644
+--- a/unlock_indicator.c
++++ b/unlock_indicator.c
+@@ -57,6 +57,11 @@ extern bool show_failed_attempts;
+ /* Number of failed unlock attempts. */
+ extern int failed_attempts;
+ 
++/* Whether capslock should be displayed. */
++extern bool show_capslock;
++/* capslock state. */
++extern bool caps_locked;
++
+ /*******************************************************************************
+  * Variables defined in xcb.c.
+  ******************************************************************************/
+@@ -158,6 +163,9 @@ xcb_pixmap_t draw_image(uint32_t *resolution) {
+                 break;
+             default:
+                 cairo_set_source_rgba(ctx, 0, 0, 0, 0.75);
++                if (show_capslock && caps_locked) {
++                    cairo_set_source_rgba(ctx, 250.0/255, 250.0/255, 0, 0.75);
++                }
+                 break;
+         }
+         cairo_fill_preserve(ctx);

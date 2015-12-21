@@ -1,0 +1,729 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #451 (In-place restart causes focussed window to disappear)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/450" title="Ticket #450" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/451?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/451?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/451?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/452" title="Ticket #452" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="cba46583da63e35940de9801";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/450" title="Ticket #450">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/452" title="Ticket #452">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2011-08-02T23%3A40%3A55%2B02%3A00&amp;precision=second" title="See timeline at 08/02/11 23:40:55">4 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2012-04-08T21%3A29%3A46%2B02%3A00&amp;precision=second" title="See timeline at 04/08/12 21:29:46">3 years ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/451" class="trac-id">#451</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=reporter_inactive">reporter_inactive</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">In-place restart causes focussed window to disappear</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">inxsible@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=inplace-restart">inplace-restart</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.0">4.0</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion" class="missing">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Linux">Linux</a>
+        </td>
+    </tr><tr>
+        <th id="h_app">
+          X11 program:
+        </th>
+        <td headers="h_app">
+              any
+        </td>
+        <th id="h_distri">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+              Arch Linux
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+Whenever you hit Ctrl+Shift+R, to do an in-place restart, the window under the mouse (whether focussed or not) disappears. The only way to reclaim that container is to use the WM kill (Alt+Shift+Q).<br />
+</p>
+<p>
+Note in the screenshot, the left container had a terminal, just before I did an in-place restart. Now all you can see is the wallpaper. Focussing that empty space and then using the kill (Alt+Shift+Q) reclaims the space back.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(5)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/451/2011-08-02-173818_1680x1050_scrot.png" title="View attachment">2011-08-02-173818_1680x1050_scrot.png</a><a href="/report/raw-attachment/ticket/451/2011-08-02-173818_1680x1050_scrot.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="554098 bytes">541.1 KB</span>) -
+      added by <em>Inxsible</em> <a class="timeline" href="/report/timeline?from=2011-08-02T23%3A43%3A01%2B02%3A00&amp;precision=second" title="See timeline at 08/02/11 23:43:01">4 years ago</a>.
+  </dt>
+              <dd>
+                urxvt window on left disappeared on in-place restart
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/451/i3log-2011-08-02-17-54-10" title="View attachment">i3log-2011-08-02-17-54-10</a><a href="/report/raw-attachment/ticket/451/i3log-2011-08-02-17-54-10" class="trac-rawlink" title="Download">​</a>
+       (<span title="888229 bytes">867.4 KB</span>) -
+      added by <em>inxsible@…</em> <a class="timeline" href="/report/timeline?from=2011-08-02T23%3A57%3A03%2B02%3A00&amp;precision=second" title="See timeline at 08/02/11 23:57:03">4 years ago</a>.
+  </dt>
+              <dd>
+                Here is the debug level log file
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/451/i3log-2011-08-03-22-20-46" title="View attachment">i3log-2011-08-03-22-20-46</a><a href="/report/raw-attachment/ticket/451/i3log-2011-08-03-22-20-46" class="trac-rawlink" title="Download">​</a>
+       (<span title="959603 bytes">937.1 KB</span>) -
+      added by <em>Inxsible</em> <a class="timeline" href="/report/timeline?from=2011-08-04T04%3A24%3A07%2B02%3A00&amp;precision=second" title="See timeline at 08/04/11 04:24:07">4 years ago</a>.
+  </dt>
+              <dd>
+                I couldn't reproduce it with the default config, but I attached the debug output nonetheless
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/451/config" title="View attachment">config</a><a href="/report/raw-attachment/ticket/451/config" class="trac-rawlink" title="Download">​</a>
+       (<span title="9385 bytes">9.2 KB</span>) -
+      added by <em>Inxsible</em> <a class="timeline" href="/report/timeline?from=2011-08-04T04%3A25%3A26%2B02%3A00&amp;precision=second" title="See timeline at 08/04/11 04:25:26">4 years ago</a>.
+  </dt>
+              <dd>
+                My config which produces the problem.
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/451/i3log-2011-08-28-14-39-31" title="View attachment">i3log-2011-08-28-14-39-31</a><a href="/report/raw-attachment/ticket/451/i3log-2011-08-28-14-39-31" class="trac-rawlink" title="Download">​</a>
+       (<span title="330583 bytes">322.8 KB</span>) -
+      added by <em>Inxsible</em> <a class="timeline" href="/report/timeline?from=2011-08-28T21%3A01%3A01%2B02%3A00&amp;precision=second" title="See timeline at 08/28/11 21:01:01">4 years ago</a>.
+  </dt>
+              <dd>
+                new log file
+              </dd>
+          </dl>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(14)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-08-02T23%3A43%3A01%2B02%3A00&amp;precision=second" title="See timeline at 08/02/11 23:43:01">4 years ago</a> by Inxsible
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/451/2011-08-02-173818_1680x1050_scrot.png"><em>2011-08-02-173818_1680x1050_scrot.png</em></a><a href="/report/raw-attachment/ticket/451/2011-08-02-173818_1680x1050_scrot.png" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+urxvt window on left disappeared on in-place restart<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-1-1312321453184759">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-08-02T23%3A44%3A13%2B02%3A00&amp;precision=second" title="See timeline at 08/02/11 23:44:13">4 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+This might be related to bug <a class="closed ticket" href="/report/ticket/450" title="defect: i3bar loses custom color when window opened in the background (closed: fixed)">#450</a>, as the i3bar loses the custom color during the in-place restart as well.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1312321510593545">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-08-02T23%3A45%3A10%2B02%3A00&amp;precision=second" title="See timeline at 08/02/11 23:45:10">4 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I don’t have that on my system. Are you using the default config? Can you provide us with a full debuglevel logfile please? See <a class="ext-link" href="http://i3wm.org/docs/4.0/debugging.html"><span class="icon">​</span>http://i3wm.org/docs/4.0/debugging.html</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-08-02T23%3A57%3A03%2B02%3A00&amp;precision=second" title="See timeline at 08/02/11 23:57:03">4 years ago</a> by inxsible@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/451/i3log-2011-08-02-17-54-10"><em>i3log-2011-08-02-17-54-10</em></a><a href="/report/raw-attachment/ticket/451/i3log-2011-08-02-17-54-10" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Here is the debug level log file<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1312415570137633">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-08-04T01%3A52%3A50%2B02%3A00&amp;precision=second" title="See timeline at 08/04/11 01:52:50">4 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I looked at that logfile. It seems you are using leafpad and urxvt to reproduce this bug. In line 3652, the leafpad window sends an <a class="forbidden wiki" title="no permission to view this wiki page">UnmapNotify</a> for a reason which I do not yet know ;).<br />
+</p>
+<p>
+I cannot reproduce this bug on my machine using a leafpad and urxvt window.<br />
+</p>
+<p>
+Can you reproduce this with the default config? Can you try it with two urxvt windows and attach the logfile?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-08-04T04%3A24%3A07%2B02%3A00&amp;precision=second" title="See timeline at 08/04/11 04:24:07">4 years ago</a> by Inxsible
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/451/i3log-2011-08-03-22-20-46"><em>i3log-2011-08-03-22-20-46</em></a><a href="/report/raw-attachment/ticket/451/i3log-2011-08-03-22-20-46" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I couldn't reproduce it with the default config, but I attached the debug output nonetheless<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-08-04T04%3A25%3A26%2B02%3A00&amp;precision=second" title="See timeline at 08/04/11 04:25:26">4 years ago</a> by Inxsible
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/451/config"><em>config</em></a><a href="/report/raw-attachment/ticket/451/config" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+My config which produces the problem.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1312424904646973">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-08-04T04%3A28%3A24%2B02%3A00&amp;precision=second" title="See timeline at 08/04/11 04:28:24">4 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I attached the debug log, even though I couldn't reproduce the bug with the default config. So maybe its just my config and this might not be a bug. I have also attached my config -- which does produce the bug. <br />
+</p>
+<p>
+Would you be so kind to tell me if there is any custom commands that I use that give me the issue? All the custom commands are at the bottom of the file. Meanwhile I'll try to comment each custom command and see if it is the problem.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1314220467199185">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-08-24T23%3A14%3A27%2B02%3A00&amp;precision=second" title="See timeline at 08/24/11 23:14:27">4 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Can you try if this is fixed with the latest git version (53cec79181b3aea09835e8e3348428dfdbea045a and newer) please?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1314315567361220">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-08-26T01%3A39%3A27%2B02%3A00&amp;precision=second" title="See timeline at 08/26/11 01:39:27">4 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-component">
+      <strong class="trac-field-component">Component</strong>
+        changed from <em>general</em> to <em>inplace-restart</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>new</em>
+    </li>
+  </ul>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-08-28T21%3A01%3A01%2B02%3A00&amp;precision=second" title="See timeline at 08/28/11 21:01:01">4 years ago</a> by Inxsible
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/451/i3log-2011-08-28-14-39-31"><em>i3log-2011-08-28-14-39-31</em></a><a href="/report/raw-attachment/ticket/451/i3log-2011-08-28-14-39-31" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+new log file<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1314558121083331">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-08-28T21%3A02%3A01%2B02%3A00&amp;precision=second" title="See timeline at 08/28/11 21:02:01">4 years ago</a> by Inxsible
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Tried the master branch, but the problem remains. I have attached the new log file. Hope that helps.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1322346891153970">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-11-26T23%3A34%3A51%2B01%3A00&amp;precision=second" title="See timeline at 11/26/11 23:34:51">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Sorry to bother you again about this, but can you please test this again using the latest version of the next branch and attach a logfile if it still happens?<br />
+</p>
+<p>
+By the way, did you try commenting out stuff in your config to see when it does not happen anymore? That would be helpful.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1333913386707546">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-04-08T21%3A29%3A46%2B02%3A00&amp;precision=second" title="See timeline at 04/08/12 21:29:46">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>reporter_inactive</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+No news for 4 months, closing this ticket.<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/451?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/451?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/451?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

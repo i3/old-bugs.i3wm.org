@@ -1,0 +1,1099 @@
+deciding for version 4 due to this line: bind Mod4+Shift+65 floating toggle
+	Found keycode binding mod64 with key 58 and command exec i3-msg mark q
+	Found keycode binding mod64 with key 49 and command exec i3-msg '[con_mark="q"] focus'
+no startup id
+no startup id
+no startup id
+	Found keycode binding mod64 with key 118 and command exec --no-startup-id sleep 1 && import screen.png
+	Found keycode binding mod64 with key 67 and command exec --no-startup-id setxkbmap us
+	Found keycode binding mod64 with key 68 and command exec --no-startup-id setxkbmap cg
+	Found keycode binding mod64 with key 69 and command exec --no-startup-id setxkbmap de
+	Found keycode binding mod64 with key 70 and command exec --no-startup-id setxkbmap rs
+	Found keycode binding mod64 with key 72 and command exec --no-startup-id i3lock
+	Found keycode binding mod64 with key 73 and command exec --no-startup-id xrandr -o normal
+	Found keycode binding mod64 with key 74 and command exec --no-startup-id xrandr -o inverted
+start
+criteria: class = (?i)firefox
+match specification finished
+match parsed
+	 should execute command border none for the criteria mentioned above
+start
+criteria: class = (?i)conkeror
+match specification finished
+match parsed
+	 should execute command border none for the criteria mentioned above
+start
+criteria: class = (?i)chromium
+match specification finished
+match parsed
+	 should execute command border none for the criteria mentioned above
+start
+criteria: class = (?i)opera
+match specification finished
+match parsed
+	 should execute command border none for the criteria mentioned above
+start
+criteria: class = (?i)xchat
+match specification finished
+match parsed
+	 should execute command border normal for the criteria mentioned above
+start
+criteria: class = (?i)thunderbird
+match specification finished
+match parsed
+	 should execute command border none for the criteria mentioned above
+start
+criteria: instance = (?i)windjview
+match specification finished
+match parsed
+	 should execute command border normal for the criteria mentioned above
+start
+criteria: instance = (?i)utorrent
+match specification finished
+match parsed
+	 should execute command border normal for the criteria mentioned above
+start
+criteria: instance = (?i)qbittorrent
+match specification finished
+match parsed
+	 should execute command border normal for the criteria mentioned above
+start
+criteria: instance = (?i)deluge
+match specification finished
+match parsed
+	 should execute command border normal for the criteria mentioned above
+start
+criteria: instance = (?i)goldendict
+match specification finished
+match parsed
+	 should execute command border none for the criteria mentioned above
+start
+criteria: class = (?i)bashrun
+match specification finished
+match parsed
+new assignment, using above criteria, to workspace ~
+start
+criteria: class = (?i)firefox
+match specification finished
+match parsed
+new assignment, using above criteria, to workspace 2
+start
+criteria: class = (?i)xchat
+match specification finished
+match parsed
+new assignment, using above criteria, to workspace 3
+start
+criteria: class = (?i)skype
+match specification finished
+match parsed
+new assignment, using above criteria, to workspace 3
+start
+criteria: class = (?i)thunderbird
+match specification finished
+match parsed
+new assignment, using above criteria, to workspace 3
+start
+criteria: class = (?i)qbittorrent
+match specification finished
+match parsed
+new assignment, using above criteria, to workspace 3
+start
+criteria: class = (?i)deluge
+match specification finished
+match parsed
+new assignment, using above criteria, to workspace 3
+start
+criteria: class = (?i)wine configuration
+match specification finished
+match parsed
+new assignment, using above criteria, to workspace ~
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+	Found keycode binding mod65 with key 65 and command floating toggle
+	Found keycode binding mod64 with key 30 and command focus parent
+	Found keycode binding mod64 with key 54 and command focus child
+	Found keycode binding mod64 with key 65 and command focus mode_toggle
+	Found keycode binding mod64 with key 57 and command border normal
+	Found keycode binding mod64 with key 56 and command border toggle
+	Found keycode binding mod64 with key 36 and command exec --no-startup-id /usr/bin/urxvtc
+	Found keycode binding mod64 with key 33 and command exec --no-startup-id /usr/bin/dmenu_run -nb '#333333' -sb '#DA6F00' -sf '#000000' -nf '#999999' -i -fn '-misc-fixed-medium-r-normal-*-15-*-75-*-c-*-iso10646-*'
+	Found keycode binding mod65 with key 33 and command exec /usr/bin/bashrun
+	Found keycode binding mod64 with key 34 and command workspace prev
+	Found keycode binding mod64 with key 35 and command workspace next
+	Found keycode binding mod65 with key 59 and command workspace prev
+	Found keycode binding mod65 with key 60 and command workspace next
+	Found keycode binding mod64 with key 60 and command workspace back_and_forth
+	Found keycode binding mod65 with key 35 and command move workspace next
+	Found keycode binding mod65 with key 34 and command move workspace prev
+	Found keycode binding mod64 with key 31 and command split h
+	Found keycode binding mod64 with key 55 and command split h
+	Found keycode binding mod64 with key 32 and command split v
+	Found keycode binding mod64 with key 41 and command fullscreen
+	Found keycode binding mod64 with key 39 and command layout stacking
+	Found keycode binding mod64 with key 28 and command layout tabbed
+	Found keycode binding mod64 with key 40 and command layout default
+	Found keycode binding mod65 with key 47 and command exec i3-input
+	Found keycode binding mod64 with key 9 and command kill
+	Found keycode binding mod65 with key 54 and command kill
+	Found keycode binding mod68 with key 27 and command restart
+	Found keycode binding mod65 with key 27 and command reload
+	Found keycode binding mod68 with key 22 and command exit
+	Found keycode binding mod64 with key 43 and command focus left
+	Found keycode binding mod64 with key 44 and command focus down
+	Found keycode binding mod64 with key 45 and command focus up
+	Found keycode binding mod64 with key 46 and command focus right
+	Found keysym binding mod64 with key Left and command focus left
+	Found keysym binding mod64 with key Down and command focus down
+	Found keysym binding mod64 with key Up and command focus up
+	Found keysym binding mod64 with key Right and command focus right
+	Found keycode binding mod65 with key 43 and command move left
+	Found keycode binding mod65 with key 44 and command move down
+	Found keycode binding mod65 with key 45 and command move up
+	Found keycode binding mod65 with key 46 and command move right
+	Found keysym binding mod65 with key Left and command move left
+	Found keysym binding mod65 with key Right and command move right
+	Found keysym binding mod65 with key Down and command move down
+	Found keysym binding mod65 with key Up and command move up
+	Found keysym binding mod64 with key 1 and command workspace 1
+	Found keysym binding mod64 with key 2 and command workspace 2
+	Found keysym binding mod64 with key 3 and command workspace 3
+	Found keysym binding mod64 with key 4 and command workspace 4
+	Found keysym binding mod64 with key 5 and command workspace 5
+	Found keysym binding mod64 with key 6 and command workspace 6
+	Found keysym binding mod64 with key 7 and command workspace 7
+	Found keysym binding mod64 with key 8 and command workspace 8
+	Found keysym binding mod64 with key 9 and command workspace 9
+	Found keysym binding mod64 with key 0 and command workspace 10
+	Found keysym binding mod65 with key 1 and command move workspace 1
+	Found keysym binding mod65 with key 2 and command move workspace 2
+	Found keysym binding mod65 with key 3 and command move workspace 3
+	Found keysym binding mod65 with key 4 and command move workspace 4
+	Found keysym binding mod65 with key 5 and command move workspace 5
+	Found keysym binding mod65 with key 6 and command move workspace 6
+	Found keysym binding mod65 with key 7 and command move workspace 7
+	Found keysym binding mod65 with key 8 and command move workspace 8
+	Found keysym binding mod65 with key 9 and command move workspace 9
+	Found keysym binding mod65 with key 0 and command move workspace 10
+	Found keycode binding mod1 with key 43 and command resize shrink right 10 px or 10 ppt
+	Found keycode binding mod1 with key 44 and command resize shrink up 10 px or 10 ppt
+	Found keycode binding mod1 with key 46 and command resize shrink left 10 px or 10 ppt
+	Found keycode binding mod1 with key 45 and command resize shrink down 10 px or 10 ppt
+	Found keycode binding mod0 with key 43 and command resize grow left 10 px or 10 ppt
+	Found keycode binding mod0 with key 44 and command resize grow down 10 px or 10 ppt
+	Found keycode binding mod0 with key 45 and command resize grow up 10 px or 10 ppt
+	Found keycode binding mod0 with key 46 and command resize grow right 10 px or 10 ppt
+	Found keycode binding mod5 with key 43 and command resize shrink right 20 px or 20 ppt
+	Found keycode binding mod5 with key 44 and command resize shrink up 20 px or 20 ppt
+	Found keycode binding mod5 with key 46 and command resize shrink left 20 px or 20 ppt
+	Found keycode binding mod5 with key 45 and command resize shrink down 20 px or 20 ppt
+	Found keycode binding mod4 with key 43 and command resize grow left 20 px or 20 ppt
+	Found keycode binding mod4 with key 44 and command resize grow down 20 px or 20 ppt
+	Found keycode binding mod4 with key 45 and command resize grow up 20 px or 20 ppt
+	Found keycode binding mod4 with key 46 and command resize grow right 20 px or 20 ppt
+	Found keycode binding mod65 with key 43 and command resize shrink right 30 px or 30 ppt
+	Found keycode binding mod65 with key 44 and command resize shrink up 30 px or 30 ppt
+	Found keycode binding mod65 with key 46 and command resize shrink left 30 px or 30 ppt
+	Found keycode binding mod65 with key 45 and command resize shrink down 30 px or 30 ppt
+	Found keycode binding mod64 with key 43 and command resize grow left 30 px or 30 ppt
+	Found keycode binding mod64 with key 44 and command resize grow down 30 px or 30 ppt
+	Found keycode binding mod64 with key 45 and command resize grow up 30 px or 30 ppt
+	Found keycode binding mod64 with key 46 and command resize grow right 30 px or 30 ppt
+	Found keycode binding mod0 with key 36 and command mode "default"
+	Found keycode binding mod0 with key 9 and command mode "default"
+	 now in mode resize
+	 current bindings = 0x84f3fb0
+got binding on mods 1, keycode 43, symbol (null), command resize shrink right 10 px or 10 ppt
+got binding on mods 1, keycode 44, symbol (null), command resize shrink up 10 px or 10 ppt
+got binding on mods 1, keycode 46, symbol (null), command resize shrink left 10 px or 10 ppt
+got binding on mods 1, keycode 45, symbol (null), command resize shrink down 10 px or 10 ppt
+got binding on mods 0, keycode 43, symbol (null), command resize grow left 10 px or 10 ppt
+got binding on mods 0, keycode 44, symbol (null), command resize grow down 10 px or 10 ppt
+got binding on mods 0, keycode 45, symbol (null), command resize grow up 10 px or 10 ppt
+got binding on mods 0, keycode 46, symbol (null), command resize grow right 10 px or 10 ppt
+got binding on mods 5, keycode 43, symbol (null), command resize shrink right 20 px or 20 ppt
+got binding on mods 5, keycode 44, symbol (null), command resize shrink up 20 px or 20 ppt
+got binding on mods 5, keycode 46, symbol (null), command resize shrink left 20 px or 20 ppt
+got binding on mods 5, keycode 45, symbol (null), command resize shrink down 20 px or 20 ppt
+got binding on mods 4, keycode 43, symbol (null), command resize grow left 20 px or 20 ppt
+got binding on mods 4, keycode 44, symbol (null), command resize grow down 20 px or 20 ppt
+got binding on mods 4, keycode 45, symbol (null), command resize grow up 20 px or 20 ppt
+got binding on mods 4, keycode 46, symbol (null), command resize grow right 20 px or 20 ppt
+got binding on mods 65, keycode 43, symbol (null), command resize shrink right 30 px or 30 ppt
+got binding on mods 65, keycode 44, symbol (null), command resize shrink up 30 px or 30 ppt
+got binding on mods 65, keycode 46, symbol (null), command resize shrink left 30 px or 30 ppt
+got binding on mods 65, keycode 45, symbol (null), command resize shrink down 30 px or 30 ppt
+got binding on mods 64, keycode 43, symbol (null), command resize grow left 30 px or 30 ppt
+got binding on mods 64, keycode 44, symbol (null), command resize grow down 30 px or 30 ppt
+got binding on mods 64, keycode 45, symbol (null), command resize grow up 30 px or 30 ppt
+got binding on mods 64, keycode 46, symbol (null), command resize grow right 30 px or 30 ppt
+got binding on mods 0, keycode 36, symbol (null), command mode "default"
+got binding on mods 0, keycode 9, symbol (null), command mode "default"
+	Found keycode binding mod64 with key 27 and command mode "resize"
+	Found keycode binding mod0 with key 43 and command focus left
+	Found keycode binding mod0 with key 44 and command focus down
+	Found keycode binding mod0 with key 45 and command focus up
+	Found keycode binding mod0 with key 46 and command focus right
+	Found keycode binding mod1 with key 43 and command move left
+	Found keycode binding mod1 with key 44 and command move down
+	Found keycode binding mod1 with key 45 and command move up
+	Found keycode binding mod1 with key 46 and command move right
+	Found keycode binding mod0 with key 10 and command workspace 1
+	Found keycode binding mod0 with key 11 and command workspace 2
+	Found keycode binding mod0 with key 12 and command workspace 3
+	Found keycode binding mod0 with key 13 and command workspace 4
+	Found keycode binding mod0 with key 14 and command workspace 5
+	Found keycode binding mod0 with key 15 and command workspace 6
+	Found keycode binding mod0 with key 16 and command workspace 7
+	Found keycode binding mod0 with key 17 and command workspace 8
+	Found keycode binding mod0 with key 18 and command workspace 9
+	Found keycode binding mod0 with key 19 and command workspace 10
+	Found keycode binding mod1 with key 10 and command move workspace 1
+	Found keycode binding mod1 with key 11 and command move workspace 2
+	Found keycode binding mod1 with key 12 and command move workspace 3
+	Found keycode binding mod1 with key 13 and command move workspace 4
+	Found keycode binding mod1 with key 14 and command move workspace 5
+	Found keycode binding mod1 with key 15 and command move workspace 6
+	Found keycode binding mod1 with key 16 and command move workspace 7
+	Found keycode binding mod1 with key 17 and command move workspace 8
+	Found keycode binding mod1 with key 18 and command move workspace 9
+	Found keycode binding mod1 with key 19 and command move workspace 10
+	Found keycode binding mod0 with key 65 and command focus mode_toggle
+	Found keycode binding mod1 with key 65 and command floating toggle
+	Found keycode binding mod0 with key 30 and command focus parent
+	Found keycode binding mod0 with key 54 and command focus child
+	Found keycode binding mod0 with key 56 and command border none
+	Found keycode binding mod0 with key 57 and command border normal
+	Found keycode binding mod0 with key 34 and command workspace next
+	Found keycode binding mod0 with key 35 and command workspace prev
+	Found keycode binding mod0 with key 39 and command layout stacking
+	Found keycode binding mod0 with key 40 and command layout default
+	Found keycode binding mod0 with key 39 and command layout stacking
+	Found keycode binding mod0 with key 28 and command layout tabbed
+	Found keycode binding mod0 with key 41 and command fullscreen
+	Found keycode binding mod1 with key 47 and command exec i3-input
+	Found keycode binding mod1 with key 54 and command kill
+	Found keycode binding mod4 with key 27 and command restart
+	Found keycode binding mod1 with key 27 and command reload
+	Found keycode binding mod4 with key 22 and command exit
+	Found keycode binding mod0 with key 36 and command mode "default"	
+	Found keycode binding mod0 with key 9 and command mode "default"	
+	 now in mode i3
+	 current bindings = 0x84f4858
+got binding on mods 0, keycode 43, symbol (null), command focus left
+got binding on mods 0, keycode 44, symbol (null), command focus down
+got binding on mods 0, keycode 45, symbol (null), command focus up
+got binding on mods 0, keycode 46, symbol (null), command focus right
+got binding on mods 1, keycode 43, symbol (null), command move left
+got binding on mods 1, keycode 44, symbol (null), command move down
+got binding on mods 1, keycode 45, symbol (null), command move up
+got binding on mods 1, keycode 46, symbol (null), command move right
+got binding on mods 0, keycode 10, symbol (null), command workspace 1
+got binding on mods 0, keycode 11, symbol (null), command workspace 2
+got binding on mods 0, keycode 12, symbol (null), command workspace 3
+got binding on mods 0, keycode 13, symbol (null), command workspace 4
+got binding on mods 0, keycode 14, symbol (null), command workspace 5
+got binding on mods 0, keycode 15, symbol (null), command workspace 6
+got binding on mods 0, keycode 16, symbol (null), command workspace 7
+got binding on mods 0, keycode 17, symbol (null), command workspace 8
+got binding on mods 0, keycode 18, symbol (null), command workspace 9
+got binding on mods 0, keycode 19, symbol (null), command workspace 10
+got binding on mods 1, keycode 10, symbol (null), command move workspace 1
+got binding on mods 1, keycode 11, symbol (null), command move workspace 2
+got binding on mods 1, keycode 12, symbol (null), command move workspace 3
+got binding on mods 1, keycode 13, symbol (null), command move workspace 4
+got binding on mods 1, keycode 14, symbol (null), command move workspace 5
+got binding on mods 1, keycode 15, symbol (null), command move workspace 6
+got binding on mods 1, keycode 16, symbol (null), command move workspace 7
+got binding on mods 1, keycode 17, symbol (null), command move workspace 8
+got binding on mods 1, keycode 18, symbol (null), command move workspace 9
+got binding on mods 1, keycode 19, symbol (null), command move workspace 10
+got binding on mods 0, keycode 65, symbol (null), command focus mode_toggle
+got binding on mods 1, keycode 65, symbol (null), command floating toggle
+got binding on mods 0, keycode 30, symbol (null), command focus parent
+got binding on mods 0, keycode 54, symbol (null), command focus child
+got binding on mods 0, keycode 56, symbol (null), command border none
+got binding on mods 0, keycode 57, symbol (null), command border normal
+got binding on mods 0, keycode 34, symbol (null), command workspace next
+got binding on mods 0, keycode 35, symbol (null), command workspace prev
+got binding on mods 0, keycode 39, symbol (null), command layout stacking
+got binding on mods 0, keycode 40, symbol (null), command layout default
+got binding on mods 0, keycode 39, symbol (null), command layout stacking
+got binding on mods 0, keycode 28, symbol (null), command layout tabbed
+got binding on mods 0, keycode 41, symbol (null), command fullscreen
+got binding on mods 1, keycode 47, symbol (null), command exec i3-input
+got binding on mods 1, keycode 54, symbol (null), command kill
+got binding on mods 4, keycode 27, symbol (null), command restart
+got binding on mods 1, keycode 27, symbol (null), command reload
+got binding on mods 4, keycode 22, symbol (null), command exit
+got binding on mods 0, keycode 36, symbol (null), command mode "default"	
+got binding on mods 0, keycode 9, symbol (null), command mode "default"	
+rxvt-unicode daemon listening on /home/aksr/.rxvt-unicode-lap.
+no startup id
+should execute /usr/bin/urxvtc, no_startup_id = 1
+single command completely parsed, dropping state...
+done, json output = (null)
+no startup id
+should execute /usr/bin/urxvtc, no_startup_id = 1
+single command completely parsed, dropping state...
+done, json output = (null)
+single command completely parsed, dropping state...
+done, json output = (null)
+single command completely parsed, dropping state...
+done, json output = (null)
+matching: 0x84f08e8 / #00aa00
+should toggle mode
+12/17/2011 07:52:13 PM - ERROR: No output found at destination coordinates, centering floating window on current ws
+single command completely parsed, dropping state...
+done, json output = (null)
+single command completely parsed, dropping state...
+done, json output = (null)
+single command completely parsed, dropping state...
+done, json output = (null)
+resizing in way 301, direction 292, px 10 or ppt 10
+written: 4032 of 4032
+layout: {"id":139323128,"type":0,"orientation":"none","percent":null,"urgent":false,"focused":false,"layout":"default","border":"1pixel","rect":{"x":0,"y":0,"width":1440,"height":900},"window_rect":{"x":0,"y":0,"width":0,"height":0},"geometry":{"x":0,"y":0,"width":0,"height":0},"name":"root","window":null,"nodes":[{"id":139393152,"type":1,"orientation":"none","percent":1,"urgent":false,"focused":false,"layout":"output","border":"1pixel","rect":{"x":0,"y":0,"width":1440,"height":900},"window_rect":{"x":0,"y":0,"width":0,"height":0},"geometry":{"x":0,"y":0,"width":0,"height":0},"name":"LVDS","window":null,"nodes":[{"id":139393408,"type":5,"orientation":"vertical","percent":null,"urgent":false,"focused":false,"layout":"dockarea","border":"1pixel","rect":{"x":0,"y":0,"width":1440,"height":0},"window_rect":{"x":0,"y":0,"width":0,"height":0},"geometry":{"x":0,"y":0,"width":0,"height":0},"name":"topdock","window":null,"nodes":[],"floating_nodes":[],"focus":[],"fullscreen_mode":0,"swallows":[{"dock":2,"insert_where":2}]},{"id":139393744,"type":2,"orientation":"none","percent":null,"urgent":false,"focused":false,"layout":"default","border":"1pixel","rect":{"x":0,"y":0,"width":1440,"height":900},"window_rect":{"x":0,"y":0,"width":0,"height":0},"geometry":{"x":0,"y":0,"width":0,"height":0},"name":"content","window":null,"nodes":[{"id":139395064,"type":4,"orientation":"vertical","percent":null,"urgent":false,"focused":false,"layout":"default","border":"1pixel","rect":{"x":0,"y":0,"width":1440,"height":900},"window_rect":{"x":0,"y":0,"width":0,"height":0},"geometry":{"x":0,"y":0,"width":0,"height":0},"name":"1","num":1,"window":null,"nodes":[],"floating_nodes":[{"id":139397688,"type":3,"orientation":"none","percent":null,"urgent":false,"focused":false,"layout":"default","border":"1pixel","rect":{"x":4294967210,"y":210,"width":1612,"height":480},"window_rect":{"x":0,"y":0,"width":0,"height":0},"geometry":{"x":0,"y":0,"width":0,"height":0},"name":"#aa00aa","window":null,"nodes":[{"id":139397352,"type":2,"orientation":"vertical","percent":1,"urgent":false,"focused":false,"layout":"stacked","border":"1pixel","rect":{"x":4294967210,"y":210,"width":1612,"height":480},"window_rect":{"x":0,"y":0,"width":0,"height":0},"geometry":{"x":0,"y":0,"width":0,"height":0},"name":"#00aa00","window":null,"nodes":[{"id":139397016,"type":2,"orientation":"none","percent":0.5,"urgent":false,"focused":true,"layout":"default","border":"1pixel","rect":{"x":4294967210,"y":246,"width":1612,"height":444},"window_rect":{"x":2,"y":0,"width":1604,"height":441},"geometry":{"x":0,"y":0,"width":804,"height":460},"name":"aksr@lap:~","window":14680070,"nodes":[],"floating_nodes":[],"focus":[],"fullscreen_mode":0,"swallows":[{"id":14680070}]},{"id":139398168,"type":2,"orientation":"none","percent":0.5,"urgent":false,"focused":false,"layout":"default","border":"1pixel","rect":{"x":4294967210,"y":246,"width":1612,"height":444},"window_rect":{"x":2,"y":0,"width":1604,"height":441},"geometry":{"x":0,"y":0,"width":804,"height":460},"name":"aksr@lap:~","window":14680080,"nodes":[],"floating_nodes":[],"focus":[],"fullscreen_mode":0,"swallows":[{"id":14680080}]}],"floating_nodes":[],"focus":[139397016,139398168],"fullscreen_mode":0,"swallows":[]}],"floating_nodes":[],"focus":[139397352],"fullscreen_mode":0,"swallows":[]}],"focus":[139397688],"fullscreen_mode":1,"swallows":[]}],"floating_nodes":[],"focus":[139395064],"fullscreen_mode":0,"swallows":[]},{"id":139394080,"type":5,"orientation":"vertical","percent":null,"urgent":false,"focused":false,"layout":"dockarea","border":"1pixel","rect":{"x":0,"y":900,"width":1440,"height":0},"window_rect":{"x":0,"y":0,"width":0,"height":0},"geometry":{"x":0,"y":0,"width":0,"height":0},"name":"bottomdock","window":null,"nodes":[],"floating_nodes":[],"focus":[],"fullscreen_mode":0,"swallows":[{"dock":3,"insert_where":2}]}],"floating_nodes":[],"focus":[139393744,139393408,139394080],"fullscreen_mode":0,"swallows":[]}],"floating_nodes":[],"focus":[139393152],"fullscreen_mode":0,"swallows":[]}
+deciding for version 4 due to this line: bind Mod4+Shift+65 floating toggle
+	Found keycode binding mod64 with key 58 and command exec i3-msg mark q
+	Found keycode binding mod64 with key 49 and command exec i3-msg '[con_mark="q"] focus'
+no startup id
+no startup id
+no startup id
+	Found keycode binding mod64 with key 118 and command exec --no-startup-id sleep 1 && import screen.png
+	Found keycode binding mod64 with key 67 and command exec --no-startup-id setxkbmap us
+	Found keycode binding mod64 with key 68 and command exec --no-startup-id setxkbmap cg
+	Found keycode binding mod64 with key 69 and command exec --no-startup-id setxkbmap de
+	Found keycode binding mod64 with key 70 and command exec --no-startup-id setxkbmap rs
+	Found keycode binding mod64 with key 72 and command exec --no-startup-id i3lock
+	Found keycode binding mod64 with key 73 and command exec --no-startup-id xrandr -o normal
+	Found keycode binding mod64 with key 74 and command exec --no-startup-id xrandr -o inverted
+start
+criteria: class = (?i)firefox
+match specification finished
+match parsed
+	 should execute command border none for the criteria mentioned above
+start
+criteria: class = (?i)conkeror
+match specification finished
+match parsed
+	 should execute command border none for the criteria mentioned above
+start
+criteria: class = (?i)chromium
+match specification finished
+match parsed
+	 should execute command border none for the criteria mentioned above
+start
+criteria: class = (?i)opera
+match specification finished
+match parsed
+	 should execute command border none for the criteria mentioned above
+start
+criteria: class = (?i)xchat
+match specification finished
+match parsed
+	 should execute command border normal for the criteria mentioned above
+start
+criteria: class = (?i)thunderbird
+match specification finished
+match parsed
+	 should execute command border none for the criteria mentioned above
+start
+criteria: instance = (?i)windjview
+match specification finished
+match parsed
+	 should execute command border normal for the criteria mentioned above
+start
+criteria: instance = (?i)utorrent
+match specification finished
+match parsed
+	 should execute command border normal for the criteria mentioned above
+start
+criteria: instance = (?i)qbittorrent
+match specification finished
+match parsed
+	 should execute command border normal for the criteria mentioned above
+start
+criteria: instance = (?i)deluge
+match specification finished
+match parsed
+	 should execute command border normal for the criteria mentioned above
+start
+criteria: instance = (?i)goldendict
+match specification finished
+match parsed
+	 should execute command border none for the criteria mentioned above
+start
+criteria: class = (?i)bashrun
+match specification finished
+match parsed
+new assignment, using above criteria, to workspace ~
+start
+criteria: class = (?i)firefox
+match specification finished
+match parsed
+new assignment, using above criteria, to workspace 2
+start
+criteria: class = (?i)xchat
+match specification finished
+match parsed
+new assignment, using above criteria, to workspace 3
+start
+criteria: class = (?i)skype
+match specification finished
+match parsed
+new assignment, using above criteria, to workspace 3
+start
+criteria: class = (?i)thunderbird
+match specification finished
+match parsed
+new assignment, using above criteria, to workspace 3
+start
+criteria: class = (?i)qbittorrent
+match specification finished
+match parsed
+new assignment, using above criteria, to workspace 3
+start
+criteria: class = (?i)deluge
+match specification finished
+match parsed
+new assignment, using above criteria, to workspace 3
+start
+criteria: class = (?i)wine configuration
+match specification finished
+match parsed
+new assignment, using above criteria, to workspace ~
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+	Found keycode binding mod65 with key 65 and command floating toggle
+	Found keycode binding mod64 with key 30 and command focus parent
+	Found keycode binding mod64 with key 54 and command focus child
+	Found keycode binding mod64 with key 65 and command focus mode_toggle
+	Found keycode binding mod64 with key 57 and command border normal
+	Found keycode binding mod64 with key 56 and command border toggle
+	Found keycode binding mod64 with key 36 and command exec --no-startup-id /usr/bin/urxvtc
+	Found keycode binding mod64 with key 33 and command exec --no-startup-id /usr/bin/dmenu_run -nb '#333333' -sb '#DA6F00' -sf '#000000' -nf '#999999' -i -fn '-misc-fixed-medium-r-normal-*-15-*-75-*-c-*-iso10646-*'
+	Found keycode binding mod65 with key 33 and command exec /usr/bin/bashrun
+	Found keycode binding mod64 with key 34 and command workspace prev
+	Found keycode binding mod64 with key 35 and command workspace next
+	Found keycode binding mod65 with key 59 and command workspace prev
+	Found keycode binding mod65 with key 60 and command workspace next
+	Found keycode binding mod64 with key 60 and command workspace back_and_forth
+	Found keycode binding mod65 with key 35 and command move workspace next
+	Found keycode binding mod65 with key 34 and command move workspace prev
+	Found keycode binding mod64 with key 31 and command split h
+	Found keycode binding mod64 with key 55 and command split h
+	Found keycode binding mod64 with key 32 and command split v
+	Found keycode binding mod64 with key 41 and command fullscreen
+	Found keycode binding mod64 with key 39 and command layout stacking
+	Found keycode binding mod64 with key 28 and command layout tabbed
+	Found keycode binding mod64 with key 40 and command layout default
+	Found keycode binding mod65 with key 47 and command exec i3-input
+	Found keycode binding mod64 with key 9 and command kill
+	Found keycode binding mod65 with key 54 and command kill
+	Found keycode binding mod68 with key 27 and command restart
+	Found keycode binding mod65 with key 27 and command reload
+	Found keycode binding mod68 with key 22 and command exit
+	Found keycode binding mod64 with key 43 and command focus left
+	Found keycode binding mod64 with key 44 and command focus down
+	Found keycode binding mod64 with key 45 and command focus up
+	Found keycode binding mod64 with key 46 and command focus right
+	Found keysym binding mod64 with key Left and command focus left
+	Found keysym binding mod64 with key Down and command focus down
+	Found keysym binding mod64 with key Up and command focus up
+	Found keysym binding mod64 with key Right and command focus right
+	Found keycode binding mod65 with key 43 and command move left
+	Found keycode binding mod65 with key 44 and command move down
+	Found keycode binding mod65 with key 45 and command move up
+	Found keycode binding mod65 with key 46 and command move right
+	Found keysym binding mod65 with key Left and command move left
+	Found keysym binding mod65 with key Right and command move right
+	Found keysym binding mod65 with key Down and command move down
+	Found keysym binding mod65 with key Up and command move up
+	Found keysym binding mod64 with key 1 and command workspace 1
+	Found keysym binding mod64 with key 2 and command workspace 2
+	Found keysym binding mod64 with key 3 and command workspace 3
+	Found keysym binding mod64 with key 4 and command workspace 4
+	Found keysym binding mod64 with key 5 and command workspace 5
+	Found keysym binding mod64 with key 6 and command workspace 6
+	Found keysym binding mod64 with key 7 and command workspace 7
+	Found keysym binding mod64 with key 8 and command workspace 8
+	Found keysym binding mod64 with key 9 and command workspace 9
+	Found keysym binding mod64 with key 0 and command workspace 10
+	Found keysym binding mod65 with key 1 and command move workspace 1
+	Found keysym binding mod65 with key 2 and command move workspace 2
+	Found keysym binding mod65 with key 3 and command move workspace 3
+	Found keysym binding mod65 with key 4 and command move workspace 4
+	Found keysym binding mod65 with key 5 and command move workspace 5
+	Found keysym binding mod65 with key 6 and command move workspace 6
+	Found keysym binding mod65 with key 7 and command move workspace 7
+	Found keysym binding mod65 with key 8 and command move workspace 8
+	Found keysym binding mod65 with key 9 and command move workspace 9
+	Found keysym binding mod65 with key 0 and command move workspace 10
+	Found keycode binding mod1 with key 43 and command resize shrink right 10 px or 10 ppt
+	Found keycode binding mod1 with key 44 and command resize shrink up 10 px or 10 ppt
+	Found keycode binding mod1 with key 46 and command resize shrink left 10 px or 10 ppt
+	Found keycode binding mod1 with key 45 and command resize shrink down 10 px or 10 ppt
+	Found keycode binding mod0 with key 43 and command resize grow left 10 px or 10 ppt
+	Found keycode binding mod0 with key 44 and command resize grow down 10 px or 10 ppt
+	Found keycode binding mod0 with key 45 and command resize grow up 10 px or 10 ppt
+	Found keycode binding mod0 with key 46 and command resize grow right 10 px or 10 ppt
+	Found keycode binding mod5 with key 43 and command resize shrink right 20 px or 20 ppt
+	Found keycode binding mod5 with key 44 and command resize shrink up 20 px or 20 ppt
+	Found keycode binding mod5 with key 46 and command resize shrink left 20 px or 20 ppt
+	Found keycode binding mod5 with key 45 and command resize shrink down 20 px or 20 ppt
+	Found keycode binding mod4 with key 43 and command resize grow left 20 px or 20 ppt
+	Found keycode binding mod4 with key 44 and command resize grow down 20 px or 20 ppt
+	Found keycode binding mod4 with key 45 and command resize grow up 20 px or 20 ppt
+	Found keycode binding mod4 with key 46 and command resize grow right 20 px or 20 ppt
+	Found keycode binding mod65 with key 43 and command resize shrink right 30 px or 30 ppt
+	Found keycode binding mod65 with key 44 and command resize shrink up 30 px or 30 ppt
+	Found keycode binding mod65 with key 46 and command resize shrink left 30 px or 30 ppt
+	Found keycode binding mod65 with key 45 and command resize shrink down 30 px or 30 ppt
+	Found keycode binding mod64 with key 43 and command resize grow left 30 px or 30 ppt
+	Found keycode binding mod64 with key 44 and command resize grow down 30 px or 30 ppt
+	Found keycode binding mod64 with key 45 and command resize grow up 30 px or 30 ppt
+	Found keycode binding mod64 with key 46 and command resize grow right 30 px or 30 ppt
+	Found keycode binding mod0 with key 36 and command mode "default"
+	Found keycode binding mod0 with key 9 and command mode "default"
+	 now in mode resize
+	 current bindings = 0x8f94fd0
+got binding on mods 1, keycode 43, symbol (null), command resize shrink right 10 px or 10 ppt
+got binding on mods 1, keycode 44, symbol (null), command resize shrink up 10 px or 10 ppt
+got binding on mods 1, keycode 46, symbol (null), command resize shrink left 10 px or 10 ppt
+got binding on mods 1, keycode 45, symbol (null), command resize shrink down 10 px or 10 ppt
+got binding on mods 0, keycode 43, symbol (null), command resize grow left 10 px or 10 ppt
+got binding on mods 0, keycode 44, symbol (null), command resize grow down 10 px or 10 ppt
+got binding on mods 0, keycode 45, symbol (null), command resize grow up 10 px or 10 ppt
+got binding on mods 0, keycode 46, symbol (null), command resize grow right 10 px or 10 ppt
+got binding on mods 5, keycode 43, symbol (null), command resize shrink right 20 px or 20 ppt
+got binding on mods 5, keycode 44, symbol (null), command resize shrink up 20 px or 20 ppt
+got binding on mods 5, keycode 46, symbol (null), command resize shrink left 20 px or 20 ppt
+got binding on mods 5, keycode 45, symbol (null), command resize shrink down 20 px or 20 ppt
+got binding on mods 4, keycode 43, symbol (null), command resize grow left 20 px or 20 ppt
+got binding on mods 4, keycode 44, symbol (null), command resize grow down 20 px or 20 ppt
+got binding on mods 4, keycode 45, symbol (null), command resize grow up 20 px or 20 ppt
+got binding on mods 4, keycode 46, symbol (null), command resize grow right 20 px or 20 ppt
+got binding on mods 65, keycode 43, symbol (null), command resize shrink right 30 px or 30 ppt
+got binding on mods 65, keycode 44, symbol (null), command resize shrink up 30 px or 30 ppt
+got binding on mods 65, keycode 46, symbol (null), command resize shrink left 30 px or 30 ppt
+got binding on mods 65, keycode 45, symbol (null), command resize shrink down 30 px or 30 ppt
+got binding on mods 64, keycode 43, symbol (null), command resize grow left 30 px or 30 ppt
+got binding on mods 64, keycode 44, symbol (null), command resize grow down 30 px or 30 ppt
+got binding on mods 64, keycode 45, symbol (null), command resize grow up 30 px or 30 ppt
+got binding on mods 64, keycode 46, symbol (null), command resize grow right 30 px or 30 ppt
+got binding on mods 0, keycode 36, symbol (null), command mode "default"
+got binding on mods 0, keycode 9, symbol (null), command mode "default"
+	Found keycode binding mod64 with key 27 and command mode "resize"
+	Found keycode binding mod0 with key 43 and command focus left
+	Found keycode binding mod0 with key 44 and command focus down
+	Found keycode binding mod0 with key 45 and command focus up
+	Found keycode binding mod0 with key 46 and command focus right
+	Found keycode binding mod1 with key 43 and command move left
+	Found keycode binding mod1 with key 44 and command move down
+	Found keycode binding mod1 with key 45 and command move up
+	Found keycode binding mod1 with key 46 and command move right
+	Found keycode binding mod0 with key 10 and command workspace 1
+	Found keycode binding mod0 with key 11 and command workspace 2
+	Found keycode binding mod0 with key 12 and command workspace 3
+	Found keycode binding mod0 with key 13 and command workspace 4
+	Found keycode binding mod0 with key 14 and command workspace 5
+	Found keycode binding mod0 with key 15 and command workspace 6
+	Found keycode binding mod0 with key 16 and command workspace 7
+	Found keycode binding mod0 with key 17 and command workspace 8
+	Found keycode binding mod0 with key 18 and command workspace 9
+	Found keycode binding mod0 with key 19 and command workspace 10
+	Found keycode binding mod1 with key 10 and command move workspace 1
+	Found keycode binding mod1 with key 11 and command move workspace 2
+	Found keycode binding mod1 with key 12 and command move workspace 3
+	Found keycode binding mod1 with key 13 and command move workspace 4
+	Found keycode binding mod1 with key 14 and command move workspace 5
+	Found keycode binding mod1 with key 15 and command move workspace 6
+	Found keycode binding mod1 with key 16 and command move workspace 7
+	Found keycode binding mod1 with key 17 and command move workspace 8
+	Found keycode binding mod1 with key 18 and command move workspace 9
+	Found keycode binding mod1 with key 19 and command move workspace 10
+	Found keycode binding mod0 with key 65 and command focus mode_toggle
+	Found keycode binding mod1 with key 65 and command floating toggle
+	Found keycode binding mod0 with key 30 and command focus parent
+	Found keycode binding mod0 with key 54 and command focus child
+	Found keycode binding mod0 with key 56 and command border none
+	Found keycode binding mod0 with key 57 and command border normal
+	Found keycode binding mod0 with key 34 and command workspace next
+	Found keycode binding mod0 with key 35 and command workspace prev
+	Found keycode binding mod0 with key 39 and command layout stacking
+	Found keycode binding mod0 with key 40 and command layout default
+	Found keycode binding mod0 with key 39 and command layout stacking
+	Found keycode binding mod0 with key 28 and command layout tabbed
+	Found keycode binding mod0 with key 41 and command fullscreen
+	Found keycode binding mod1 with key 47 and command exec i3-input
+	Found keycode binding mod1 with key 54 and command kill
+	Found keycode binding mod4 with key 27 and command restart
+	Found keycode binding mod1 with key 27 and command reload
+	Found keycode binding mod4 with key 22 and command exit
+	Found keycode binding mod0 with key 36 and command mode "default"	
+	Found keycode binding mod0 with key 9 and command mode "default"	
+	 now in mode i3
+	 current bindings = 0x8f95878
+got binding on mods 0, keycode 43, symbol (null), command focus left
+got binding on mods 0, keycode 44, symbol (null), command focus down
+got binding on mods 0, keycode 45, symbol (null), command focus up
+got binding on mods 0, keycode 46, symbol (null), command focus right
+got binding on mods 1, keycode 43, symbol (null), command move left
+got binding on mods 1, keycode 44, symbol (null), command move down
+got binding on mods 1, keycode 45, symbol (null), command move up
+got binding on mods 1, keycode 46, symbol (null), command move right
+got binding on mods 0, keycode 10, symbol (null), command workspace 1
+got binding on mods 0, keycode 11, symbol (null), command workspace 2
+got binding on mods 0, keycode 12, symbol (null), command workspace 3
+got binding on mods 0, keycode 13, symbol (null), command workspace 4
+got binding on mods 0, keycode 14, symbol (null), command workspace 5
+got binding on mods 0, keycode 15, symbol (null), command workspace 6
+got binding on mods 0, keycode 16, symbol (null), command workspace 7
+got binding on mods 0, keycode 17, symbol (null), command workspace 8
+got binding on mods 0, keycode 18, symbol (null), command workspace 9
+got binding on mods 0, keycode 19, symbol (null), command workspace 10
+got binding on mods 1, keycode 10, symbol (null), command move workspace 1
+got binding on mods 1, keycode 11, symbol (null), command move workspace 2
+got binding on mods 1, keycode 12, symbol (null), command move workspace 3
+got binding on mods 1, keycode 13, symbol (null), command move workspace 4
+got binding on mods 1, keycode 14, symbol (null), command move workspace 5
+got binding on mods 1, keycode 15, symbol (null), command move workspace 6
+got binding on mods 1, keycode 16, symbol (null), command move workspace 7
+got binding on mods 1, keycode 17, symbol (null), command move workspace 8
+got binding on mods 1, keycode 18, symbol (null), command move workspace 9
+got binding on mods 1, keycode 19, symbol (null), command move workspace 10
+got binding on mods 0, keycode 65, symbol (null), command focus mode_toggle
+got binding on mods 1, keycode 65, symbol (null), command floating toggle
+got binding on mods 0, keycode 30, symbol (null), command focus parent
+got binding on mods 0, keycode 54, symbol (null), command focus child
+got binding on mods 0, keycode 56, symbol (null), command border none
+got binding on mods 0, keycode 57, symbol (null), command border normal
+got binding on mods 0, keycode 34, symbol (null), command workspace next
+got binding on mods 0, keycode 35, symbol (null), command workspace prev
+got binding on mods 0, keycode 39, symbol (null), command layout stacking
+got binding on mods 0, keycode 40, symbol (null), command layout default
+got binding on mods 0, keycode 39, symbol (null), command layout stacking
+got binding on mods 0, keycode 28, symbol (null), command layout tabbed
+got binding on mods 0, keycode 41, symbol (null), command fullscreen
+got binding on mods 1, keycode 47, symbol (null), command exec i3-input
+got binding on mods 1, keycode 54, symbol (null), command kill
+got binding on mods 4, keycode 27, symbol (null), command restart
+got binding on mods 1, keycode 27, symbol (null), command reload
+got binding on mods 4, keycode 22, symbol (null), command exit
+got binding on mods 0, keycode 36, symbol (null), command mode "default"	
+got binding on mods 0, keycode 9, symbol (null), command mode "default"	
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 1440, 0)
+rect now: (0, 0, 1440, 900)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 1440, 0)
+rect now: (0, 0, 1440, 900)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 1440, 0)
+rect now: (0, 0, 1440, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 1440, 0)
+rect now: (0, 0, 1440, 900)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 1440, 0)
+rect now: (0, 0, 1440, 900)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (-86, 0, 0, 0)
+rect now: (-86, 210, 0, 0)
+rect now: (-86, 210, 1612, 0)
+rect now: (-86, 210, 1612, 480)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (-86, 0, 0, 0)
+rect now: (-86, 210, 0, 0)
+rect now: (-86, 210, 1612, 0)
+rect now: (-86, 210, 1612, 480)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (-86, 0, 0, 0)
+rect now: (-86, 246, 0, 0)
+rect now: (-86, 246, 1612, 0)
+rect now: (-86, 246, 1612, 444)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 1604, 0)
+rect now: (2, 0, 1604, 441)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 804, 0)
+rect now: (0, 0, 804, 460)
+rect now: (-86, 0, 0, 0)
+rect now: (-86, 246, 0, 0)
+rect now: (-86, 246, 1612, 0)
+rect now: (-86, 246, 1612, 444)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 1604, 0)
+rect now: (2, 0, 1604, 441)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 804, 0)
+rect now: (0, 0, 804, 460)
+rect now: (0, 0, 0, 0)
+rect now: (0, 900, 0, 0)
+rect now: (0, 900, 1440, 0)
+rect now: (0, 900, 1440, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+appended tree, using new root
+new root = 0x8f90a00
+out = 0x8f90bc8
+ws = 0x8f90d38
+killing!
+single command completely parsed, dropping state...
+done, json output = (null)
+killing!
+single command completely parsed, dropping state...
+done, json output = (null)
+12/17/2011 07:52:27 PM - ERROR: X11 Error received! sequence 0x289, error_code = 4
+12/17/2011 07:52:27 PM - ERROR: X11 Error received! sequence 0x28a, error_code = 13
+should switch to workspace 2
+single command completely parsed, dropping state...
+done, json output = (null)
+12/17/2011 07:52:27 PM - ERROR: X11 Error received! sequence 0x290, error_code = 4
+12/17/2011 07:52:27 PM - ERROR: X11 Error received! sequence 0x291, error_code = 13
+should switch to workspace 1
+single command completely parsed, dropping state...
+done, json output = (null)
+12/17/2011 07:52:27 PM - ERROR: X11 Error received! sequence 0x29b, error_code = 4
+12/17/2011 07:52:27 PM - ERROR: X11 Error received! sequence 0x29c, error_code = 13
+should switch to workspace 2
+single command completely parsed, dropping state...
+done, json output = (null)
+12/17/2011 07:52:28 PM - ERROR: X11 Error received! sequence 0x2a6, error_code = 4
+12/17/2011 07:52:28 PM - ERROR: X11 Error received! sequence 0x2a7, error_code = 13
+no startup id
+should execute /usr/bin/dmenu_run -nb '#333333' -sb '#DA6F00' -sf '#000000' -nf '#999999' -i -fn '-misc-fixed-medium-r-normal-*-15-*-75-*-c-*-iso10646-*', no_startup_id = 1
+single command completely parsed, dropping state...
+done, json output = (null)
+no startup id
+should execute /usr/bin/dmenu_run -nb '#333333' -sb '#DA6F00' -sf '#000000' -nf '#999999' -i -fn '-misc-fixed-medium-r-normal-*-15-*-75-*-c-*-iso10646-*', no_startup_id = 1
+single command completely parsed, dropping state...
+done, json output = (null)
+killing!
+single command completely parsed, dropping state...
+done, json output = (null)
+no startup id
+should execute /usr/bin/dmenu_run -nb '#333333' -sb '#DA6F00' -sf '#000000' -nf '#999999' -i -fn '-misc-fixed-medium-r-normal-*-15-*-75-*-c-*-iso10646-*', no_startup_id = 1
+single command completely parsed, dropping state...
+done, json output = (null)
+cannot grab keyboard
+dactyl: bootstrap: startup startup
+dactyl: bootstrap: init pentadactyl@dactyl.googlecode.com
+pentadactyl: bootstrap: init
+pentadactyl: [Begin base]
+pentadactyl: (End   base)
+pentadactyl: bootstrap: register: {16dc34f7-6d22-4aa4-a67f-2921fb5dcb69} @mozilla.org/commandlinehandler/general-startup;1?type=dactyl
+ACR (Component): component init
+pentadactyl: bootstrap: create module: @mozilla.org/commandlinehandler/general-startup;1?type=dactyl
+pentadactyl: require: loading config into command-line-handler
+pentadactyl: [Begin config]
+pentadactyl:   require: loading dom into config
+pentadactyl:   [Begin dom]
+pentadactyl:   (End   dom)
+pentadactyl:   require: loading io into config
+pentadactyl:   [Begin io]
+pentadactyl:     require: loading services into io
+pentadactyl:     [Begin services]
+pentadactyl:     (End   services)
+pentadactyl:   (End   io)
+pentadactyl:   require: loading protocol into config
+pentadactyl:   [Begin protocol]
+pentadactyl:     require: loading util into protocol
+pentadactyl:     [Begin util]
+pentadactyl:     (End   util)
+pentadactyl:   (End   protocol)
+pentadactyl:   require: loading template into config
+pentadactyl:   [Begin template]
+pentadactyl:   (End   template)
+pentadactyl:   require: loading storage into resource://dactyl-5a0pl6h71/base.jsm:128
+pentadactyl:   [Begin storage]
+pentadactyl:   (End   storage)
+pentadactyl: (End   config)
+pentadactyl: require: loading cache into resource://dactyl-5a0pl6h71/base.jsm:128
+pentadactyl: [Begin cache]
+pentadactyl: (End   cache)
+should switch to workspace 1
+single command completely parsed, dropping state...
+done, json output = (null)
+12/17/2011 05:52:32 PM - ERROR: X11 Error received! sequence 0x2b2, error_code = 4
+12/17/2011 05:52:32 PM - ERROR: X11 Error received! sequence 0x2b3, error_code = 13
+start
+criteria: window id = 16777335
+window id as int = 16777335
+match specification finished, matching...
+checking if con 0x8f7f748 / #ff0000 matches
+checking if con 0x8f90a00 / root matches
+checking if con 0x8f90bc8 / LVDS matches
+checking if con 0x8f90d38 / topdock matches
+checking if con 0x8f91020 / content matches
+checking if con 0x8f92188 / bottomdock matches
+checking if con 0x8f911f8 / 1 matches
+checking if con 0x8f915e8 / 2 matches
+checking if con 0x8fa6d20 / #aa0000 matches
+matches window!
+checking if con 0x8f91308 / #00aa00 matches
+matching: 0x8fa6d20 / #aa0000
+match parsed
+border style should be changed to 1
+matching: 0x8fa6d20 / #aa0000
+single command completely parsed, dropping state...
+done, json output = (null)
+pentadactyl: require: loading prefs into bootstrap
+pentadactyl: [Begin prefs]
+pentadactyl: (End   prefs)
+pentadactyl: require: loading main into bootstrap
+pentadactyl: [Begin main]
+pentadactyl:   require: loading overlay into main
+pentadactyl:   [Begin overlay]
+pentadactyl:   (End   overlay)
+pentadactyl:   require: loading highlight into resource://dactyl-5a0pl6h71/base.jsm:128
+pentadactyl:   [Begin highlight]
+pentadactyl:   (End   highlight)
+pentadactyl:   require: loading styles into resource://dactyl-5a0pl6h71/base.jsm:128
+pentadactyl:   [Begin styles]
+pentadactyl:   (End   styles)
+pentadactyl:   require: loading messages into resource://dactyl-5a0pl6h71/base.jsm:128
+pentadactyl:   [Begin messages]
+pentadactyl:   (End   messages)
+should switch to workspace 1
+This workspace is already focused.
+single command completely parsed, dropping state...
+done, json output = (null)
+pentadactyl:   require: loading addons into jsmodules
+pentadactyl:   [Begin addons]
+pentadactyl:   (End   addons)
+pentadactyl:   require: loading buffer into jsmodules
+pentadactyl:   [Begin buffer]
+pentadactyl:   (End   buffer)
+pentadactyl:   require: loading commands into jsmodules
+pentadactyl:   [Begin commands]
+pentadactyl:     require: loading contexts into commands
+pentadactyl:     [Begin contexts]
+pentadactyl:     (End   contexts)
+pentadactyl:   (End   commands)
+pentadactyl:   require: loading completion into jsmodules
+pentadactyl:   [Begin completion]
+pentadactyl:   (End   completion)
+pentadactyl:   require: loading downloads into jsmodules
+pentadactyl:   [Begin downloads]
+pentadactyl:   (End   downloads)
+pentadactyl:   require: loading finder into jsmodules
+pentadactyl:   [Begin finder]
+pentadactyl:   (End   finder)
+pentadactyl:   require: loading help into jsmodules
+pentadactyl:   [Begin help]
+pentadactyl:   (End   help)
+pentadactyl:   require: loading javascript into jsmodules
+pentadactyl:   [Begin javascript]
+pentadactyl:   (End   javascript)
+pentadactyl:   require: loading main into jsmodules
+pentadactyl:   require: loading options into jsmodules
+pentadactyl:   [Begin options]
+pentadactyl:   (End   options)
+pentadactyl:   require: loading sanitizer into jsmodules
+pentadactyl:   [Begin sanitizer]
+pentadactyl:   (End   sanitizer)
+pentadactyl:   Load: dactyl
+pentadactyl:     from: resource://dactyl-5a0pl6h71/main.jsm:315
+pentadactyl:   require: loading bookmarkcache into jsmodules
+pentadactyl:   [Begin bookmarkcache]
+pentadactyl:   (End   bookmarkcache)
+pentadactyl:   Load: statusline
+pentadactyl:     from: resource://dactyl-content/dactyl.js:1337
+pentadactyl:   Load: modes
+pentadactyl:     from: resource://dactyl-content/modes.js:511
+pentadactyl:   Load: tabs
+pentadactyl:     from: resource://dactyl-content/statusline.js:322
+should switch to workspace 2
+single command completely parsed, dropping state...
+done, json output = (null)
+12/17/2011 05:52:33 PM - ERROR: X11 Error received! sequence 0x2e6, error_code = 4
+12/17/2011 05:52:33 PM - ERROR: X11 Error received! sequence 0x2e7, error_code = 13
+pentadactyl:   Loaded in 169ms
+pentadactyl: (End   main)
+pentadactyl: Load: quickmarks
+pentadactyl:   from: resource://dactyl-content/statusline.js:222
+pentadactyl: sourcing /home/aksr/.pentadactylrc
+pentadactyl: Load: autocommands
+pentadactyl:   from: resource://dactyl-5a0pl6h71/highlight.jsm:299
+pentadactyl: sourcing /home/aksr/.pentadactyl/plugins/caret-hint.js
+pentadactyl: Load: hints
+pentadactyl:   from: file:///home/aksr/.pentadactyl/plugins/caret-hint.js:247
+pentadactyl: Load: events
+pentadactyl:   from: resource://dactyl-content/hints.js:737
+pentadactyl: Load: marks
+pentadactyl:   from: resource://dactyl-content/marks.js:316
+pentadactyl: Load: browser
+pentadactyl:   from: resource://dactyl-content/browser.js:188
+pentadactyl: done sourcing /home/aksr/.pentadactyl/plugins/caret-hint.js: 215ms
+pentadactyl: sourcing /home/aksr/.pentadactyl/plugins/flashblock-dev.js
+pentadactyl: done sourcing /home/aksr/.pentadactyl/plugins/flashblock-dev.js: 12ms
+pentadactyl: sourcing /home/aksr/.pentadactyl/plugins/search.js
+pentadactyl: done sourcing /home/aksr/.pentadactyl/plugins/search.js: 8ms
+matching: 0x8fa6d20 / #aa0000
+should toggle mode
+12/17/2011 05:52:34 PM - ERROR: No output found at destination coordinates, centering floating window on current ws
+single command completely parsed, dropping state...
+done, json output = (null)
+pentadactyl: Load: bookmarks
+pentadactyl:   from: resource://dactyl-content/bookmarks.js:639
+pentadactyl: Load: commandline
+pentadactyl:   from: resource://dactyl-content/dactyl.js:1332
+pentadactyl: Load: mow
+pentadactyl:   from: resource://dactyl-content/commandline.js:880
+pentadactyl: done sourcing /home/aksr/.pentadactylrc: 1457ms
+pentadactyl: Load: mappings
+pentadactyl:   from: resource://dactyl-content/events.js:799
+pentadactyl: Load: editor
+pentadactyl:   from: resource://dactyl-5a0pl6h71/buffer.jsm:1835
+matching: 0x8fa6d20 / #aa0000
+should toggle mode
+single command completely parsed, dropping state...
+done, json output = (null)
+matching: 0x8fa6d20 / #aa0000
+should toggle mode
+12/17/2011 05:52:36 PM - ERROR: No output found at destination coordinates, centering floating window on current ws
+single command completely parsed, dropping state...
+done, json output = (null)
+matching: 0x8fa6d20 / #aa0000
+should toggle mode
+single command completely parsed, dropping state...
+done, json output = (null)
+should switch to workspace 2
+This workspace is already focused.
+single command completely parsed, dropping state...
+done, json output = (null)
+should switch to workspace 3
+single command completely parsed, dropping state...
+done, json output = (null)
+should switch to workspace 2
+single command completely parsed, dropping state...
+done, json output = (null)
+12/17/2011 05:53:13 PM - ERROR: X11 Error received! sequence 0x131e, error_code = 4
+12/17/2011 05:53:13 PM - ERROR: X11 Error received! sequence 0x131f, error_code = 13
+should switch to workspace 1
+single command completely parsed, dropping state...
+done, json output = (null)
+should switch to workspace 3
+single command completely parsed, dropping state...
+done, json output = (null)
+12/17/2011 05:53:14 PM - ERROR: X11 Error received! sequence 0x1353, error_code = 4
+12/17/2011 05:53:14 PM - ERROR: X11 Error received! sequence 0x1354, error_code = 13
+should switch to workspace 2
+single command completely parsed, dropping state...
+done, json output = (null)
+12/17/2011 05:53:14 PM - ERROR: X11 Error received! sequence 0x135c, error_code = 4
+12/17/2011 05:53:14 PM - ERROR: X11 Error received! sequence 0x135d, error_code = 13
+should switch to workspace 1
+single command completely parsed, dropping state...
+done, json output = (null)
+should switch to workspace 2
+single command completely parsed, dropping state...
+done, json output = (null)
+12/17/2011 05:53:16 PM - ERROR: X11 Error received! sequence 0x138f, error_code = 4
+12/17/2011 05:53:16 PM - ERROR: X11 Error received! sequence 0x1390, error_code = 13
+should switch to workspace 1
+single command completely parsed, dropping state...
+done, json output = (null)
+should switch to workspace 2
+single command completely parsed, dropping state...
+done, json output = (null)
+12/17/2011 05:53:17 PM - ERROR: X11 Error received! sequence 0x13c2, error_code = 4
+12/17/2011 05:53:17 PM - ERROR: X11 Error received! sequence 0x13c3, error_code = 13
+should switch to workspace 3
+single command completely parsed, dropping state...
+done, json output = (null)
+should switch to workspace 2
+single command completely parsed, dropping state...
+done, json output = (null)
+12/17/2011 05:53:22 PM - ERROR: X11 Error received! sequence 0x141f, error_code = 4
+12/17/2011 05:53:22 PM - ERROR: X11 Error received! sequence 0x1420, error_code = 13
+start
+criteria: window id = 16797662
+window id as int = 16797662
+match specification finished, matching...
+checking if con 0x8f7f748 / #ff0000 matches
+checking if con 0x8f90a00 / root matches
+checking if con 0x8f90bc8 / LVDS matches
+checking if con 0x8f90d38 / topdock matches
+checking if con 0x8f91020 / content matches
+checking if con 0x8f92188 / bottomdock matches
+checking if con 0x8f915e8 / 2 matches
+checking if con 0x8fa6d20 / #aa0000 matches
+doesnt match
+checking if con 0x8fb2790 / #aa0000 matches
+matches window!
+checking if con 0x8fb2990 / #0000aa matches
+matching: 0x8fb2790 / #aa0000
+match parsed
+border style should be changed to 1
+matching: 0x8fb2790 / #aa0000
+single command completely parsed, dropping state...
+done, json output = (null)
+12/17/2011 05:53:56 PM - ERROR: X11 Error received! sequence 0x216e, error_code = 4
+12/17/2011 05:53:56 PM - ERROR: X11 Error received! sequence 0x216f, error_code = 13

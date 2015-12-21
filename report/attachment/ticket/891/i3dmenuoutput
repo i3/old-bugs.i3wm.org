@@ -1,0 +1,903 @@
+location */usr/share/applications/exo-preferred-applications.desktop*, name *Preferred Applications*, exec *exo-preferred-applications*
+adding /usr/share/applications/exo-preferred-applications.desktop to menu with name *Preferred Applications*
+adding /usr/share/applications/exo-preferred-applications.desktop to menu with cmd *exo-preferred-applications*
+location */usr/share/applications/leo.desktop*, name *Leo*, exec *leo*
+adding /usr/share/applications/leo.desktop to menu with name *Leo*
+location */usr/share/applications/razor-power.desktop*, name *Leave*, exec *razor-power*
+adding /usr/share/applications/razor-power.desktop to menu with name *Leave*
+adding /usr/share/applications/razor-power.desktop to menu with cmd *razor-power*
+location */home/sa1/.local/share/applications/wine-extension-png.desktop*, name *Wine Internet Explorer*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/vc2005express" wine start /ProgIDOpen pngfile %f*
+location */usr/share/applications/WorldOfGoo.desktop*, name *World of Goo*, exec */opt/WorldOfGoo/WorldOfGoo*
+adding /usr/share/applications/WorldOfGoo.desktop to menu with name *World of Goo*
+adding /usr/share/applications/WorldOfGoo.desktop to menu with cmd *WorldOfGoo*
+location */usr/share/applications/smuxi-frontend-gnome.desktop*, name *Smuxi*, exec *smuxi-frontend-gnome*
+adding /usr/share/applications/smuxi-frontend-gnome.desktop to menu with name *Smuxi*
+adding /usr/share/applications/smuxi-frontend-gnome.desktop to menu with cmd *smuxi-frontend-gnome*
+location */usr/local/share/applications/vmware-player.desktop*, name *VMware Player*, exec */usr/bin/vmplayer*
+adding /usr/local/share/applications/vmware-player.desktop to menu with name *VMware Player*
+adding /usr/local/share/applications/vmware-player.desktop to menu with cmd *vmplayer*
+location */usr/share/applications/dia.desktop*, name *Dia Diagram Editor*, exec *dia %F*
+adding /usr/share/applications/dia.desktop to menu with name *Dia Diagram Editor*
+adding /usr/share/applications/dia.desktop to menu with cmd *dia*
+location */usr/share/applications/gedit.desktop*, name *gedit*, exec *gedit %U*
+adding /usr/share/applications/gedit.desktop to menu with name *gedit*
+location */usr/share/applications/gnome-datetime-panel.desktop*, name *Date & Time*, exec *gnome-control-center datetime*
+adding /usr/share/applications/gnome-datetime-panel.desktop to menu with name *Date & Time*
+adding /usr/share/applications/gnome-datetime-panel.desktop to menu with cmd *gnome-control-center*
+location */usr/share/applications/cavestory+.desktop*, name *Cave Story+*, exec */usr/bin/cavestory+*
+adding /usr/share/applications/cavestory+.desktop to menu with name *Cave Story+*
+adding /usr/share/applications/cavestory+.desktop to menu with cmd *cavestory+*
+location */usr/share/applications/gnome-power-panel.desktop*, name *Power*, exec *gnome-control-center power*
+adding /usr/share/applications/gnome-power-panel.desktop to menu with name *Power*
+location */usr/share/applications/totem.desktop*, name *Videos*, exec *totem %U*
+adding /usr/share/applications/totem.desktop to menu with name *Videos*
+adding /usr/share/applications/totem.desktop to menu with cmd *totem*
+location */usr/share/applications/linguist.desktop*, name *Qt Linguist*, exec */usr/bin/linguist*
+adding /usr/share/applications/linguist.desktop to menu with name *Qt Linguist*
+adding /usr/share/applications/linguist.desktop to menu with cmd *linguist*
+location */usr/share/applications/electrum.desktop*, name *Electrum Bitcoin Wallet*, exec *electrum*
+adding /usr/share/applications/electrum.desktop to menu with name *Electrum Bitcoin Wallet*
+adding /usr/share/applications/electrum.desktop to menu with cmd *electrum*
+location */usr/share/applications/dropbox.desktop*, name *Dropbox*, exec *dropboxd*
+adding /usr/share/applications/dropbox.desktop to menu with name *Dropbox*
+adding /usr/share/applications/dropbox.desktop to menu with cmd *dropboxd*
+location */usr/share/applications/gcm-viewer.desktop*, name *Color Profile Viewer*, exec *gcm-viewer*
+location */usr/share/applications/machinarium.desktop*, name *Machinarium*, exec */usr/bin/machinarium*
+adding /usr/share/applications/machinarium.desktop to menu with name *Machinarium*
+location */usr/share/applications/urxvt-tabbed.desktop*, name *urxvt (tabbed)*, exec *urxvt-tabbed*
+adding /usr/share/applications/urxvt-tabbed.desktop to menu with name *urxvt (tabbed)*
+adding /usr/share/applications/urxvt-tabbed.desktop to menu with cmd *urxvt-tabbed*
+location */usr/share/applications/pavucontrol.desktop*, name *PulseAudio Volume Control*, exec *pavucontrol*
+adding /usr/share/applications/pavucontrol.desktop to menu with name *PulseAudio Volume Control*
+adding /usr/share/applications/pavucontrol.desktop to menu with cmd *pavucontrol*
+location */usr/share/applications/astromenace.desktop*, name *Astromenace*, exec *astromenace*
+adding /usr/share/applications/astromenace.desktop to menu with name *Astromenace*
+location */usr/share/applications/gcm-picker.desktop*, name *Color Picker*, exec *gcm-picker*
+location */usr/share/applications/filezilla.desktop*, name *FileZilla*, exec *filezilla*
+adding /usr/share/applications/filezilla.desktop to menu with name *FileZilla*
+location */usr/share/applications/gnome-network-panel.desktop*, name *Network*, exec *gnome-control-center network*
+adding /usr/share/applications/gnome-network-panel.desktop to menu with name *Network*
+location */usr/share/applications/dwarffortress-ih.desktop*, name *Dwarf Fortress IronHand*, exec *dwarffortress-ih*
+adding /usr/share/applications/dwarffortress-ih.desktop to menu with name *Dwarf Fortress IronHand*
+adding /usr/share/applications/dwarffortress-ih.desktop to menu with cmd *dwarffortress-ih*
+location */usr/share/applications/git-dag.desktop*, name *Git DAG*, exec *git-dag --prompt*
+adding /usr/share/applications/git-dag.desktop to menu with name *Git DAG*
+adding /usr/share/applications/git-dag.desktop to menu with cmd *git-dag*
+location */usr/share/applications/gdm3setup.desktop*, name *GDM3 Settings*, exec *gdm3setup.py*
+adding /usr/share/applications/gdm3setup.desktop to menu with name *GDM3 Settings*
+adding /usr/share/applications/gdm3setup.desktop to menu with cmd *gdm3setup.py*
+location */home/sa1/.local/share/applications/chrome-https___mail.google.com_mail_u_0.desktop*, name *GMail*, exec *chromium --app=https://mail.google.com/mail/u/0*
+adding /home/sa1/.local/share/applications/chrome-https___mail.google.com_mail_u_0.desktop to menu with name *GMail*
+adding /home/sa1/.local/share/applications/chrome-https___mail.google.com_mail_u_0.desktop to menu with cmd *chromium*
+location */home/sa1/.local/share/applications/wine/Programs/AutoHotkey/AutoHotkey.desktop*, name *AutoHotkey*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/autohotkey" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/sa1/.local/share/wineprefixes/autohotkey/dosdevices/c:/users/Public/Start\\ Menu/Programs/AutoHotkey/AutoHotkey.lnk*
+adding /home/sa1/.local/share/applications/wine/Programs/AutoHotkey/AutoHotkey.desktop to menu with name *AutoHotkey*
+adding /home/sa1/.local/share/applications/wine/Programs/AutoHotkey/AutoHotkey.desktop to menu with cmd *env*
+location */usr/share/applications/gsb.desktop*, name *Gratuitous Space Battles*, exec */usr/bin/gsb*
+adding /usr/share/applications/gsb.desktop to menu with name *Gratuitous Space Battles*
+adding /usr/share/applications/gsb.desktop to menu with cmd *gsb*
+location */usr/share/applications/firefox.desktop*, name *Firefox*, exec *firefox %u*
+adding /usr/share/applications/firefox.desktop to menu with name *Firefox*
+location */home/sa1/.local/share/applications/wine/Programs/AutoHotkey/AutoIt3 Window Spy.desktop*, name *AutoIt3 Window Spy*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/autohotkey" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/sa1/.local/share/wineprefixes/autohotkey/dosdevices/c:/users/Public/Start\\ Menu/Programs/AutoHotkey/AutoIt3\\ Window\\ Spy.lnk*
+adding /home/sa1/.local/share/applications/wine/Programs/AutoHotkey/AutoIt3 Window Spy.desktop to menu with name *AutoIt3 Window Spy*
+location */usr/share/applications/darwinia.desktop*, name *Darwinia*, exec */usr/bin/darwinia*
+adding /usr/share/applications/darwinia.desktop to menu with name *Darwinia*
+location */usr/share/applications/kleientertainment_com-shank_1.desktop*, name *Shank*, exec *"/usr/local/games/shank/bin/Shank"*
+adding /usr/share/applications/kleientertainment_com-shank_1.desktop to menu with name *Shank*
+adding /usr/share/applications/kleientertainment_com-shank_1.desktop to menu with cmd *Shank"*
+location */usr/share/applications/libreoffice-calc.desktop*, name *LibreOffice Calc*, exec *libreoffice --calc %U*
+adding /usr/share/applications/libreoffice-calc.desktop to menu with name *LibreOffice Calc*
+adding /usr/share/applications/libreoffice-calc.desktop to menu with cmd *libreoffice*
+location */usr/share/applications/xbmc.desktop*, name *XBMC Media Center*, exec *xbmc*
+adding /usr/share/applications/xbmc.desktop to menu with name *XBMC Media Center*
+adding /usr/share/applications/xbmc.desktop to menu with cmd *xbmc*
+location */usr/share/applications/evolution-calendar.desktop*, name *Evolution Calendar*, exec *evolution -c calendar*
+location */home/sa1/.local/share/applications/wine-extension-rtf.desktop*, name *wordpad*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/vc2005express" wine start /ProgIDOpen rtffile %f*
+location */usr/share/applications/Arch-Wiki.desktop*, name *Wiki*, exec *xdg-open https://wiki.archlinux.org*
+adding /usr/share/applications/Arch-Wiki.desktop to menu with name *Wiki*
+adding /usr/share/applications/Arch-Wiki.desktop to menu with cmd *xdg-open*
+location */home/sa1/.local/share/applications/wine/Programs/AutoHotkey/AutoHotkey Help File.desktop*, name *AutoHotkey Help File*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/autohotkey" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/sa1/.local/share/wineprefixes/autohotkey/dosdevices/c:/users/Public/Start\\ Menu/Programs/AutoHotkey/AutoHotkey\\ Help\\ File.lnk*
+adding /home/sa1/.local/share/applications/wine/Programs/AutoHotkey/AutoHotkey Help File.desktop to menu with name *AutoHotkey Help File*
+location */usr/share/applications/tightvnc.desktop*, name *TightVNC Viewer*, exec *vncviewer*
+adding /usr/share/applications/tightvnc.desktop to menu with name *TightVNC Viewer*
+adding /usr/share/applications/tightvnc.desktop to menu with cmd *vncviewer*
+location */usr/share/applications/yelp.desktop*, name *Help*, exec *yelp %u*
+adding /usr/share/applications/yelp.desktop to menu with name *Help*
+adding /usr/share/applications/yelp.desktop to menu with cmd *yelp*
+location */usr/share/applications/gnome-nettool.desktop*, name *Network Tools*, exec *gnome-nettool*
+adding /usr/share/applications/gnome-nettool.desktop to menu with name *Network Tools*
+adding /usr/share/applications/gnome-nettool.desktop to menu with cmd *gnome-nettool*
+location */usr/share/applications/policytool.desktop*, name *OpenJDK Policy Tool*, exec */usr/bin/policytool*
+adding /usr/share/applications/policytool.desktop to menu with name *OpenJDK Policy Tool*
+adding /usr/share/applications/policytool.desktop to menu with cmd *policytool*
+location */usr/share/applications/systemadm.desktop*, name *Services*, exec *systemadm*
+adding /usr/share/applications/systemadm.desktop to menu with name *Services*
+adding /usr/share/applications/systemadm.desktop to menu with cmd *systemadm*
+location */usr/share/applications/libreoffice-impress.desktop*, name *LibreOffice Impress*, exec *libreoffice --impress %U*
+adding /usr/share/applications/libreoffice-impress.desktop to menu with name *LibreOffice Impress*
+location */usr/share/applications/andyetitmoves.desktop*, name *And Yet It Moves*, exec *AndYetItMoves*
+adding /usr/share/applications/andyetitmoves.desktop to menu with name *And Yet It Moves*
+adding /usr/share/applications/andyetitmoves.desktop to menu with cmd *AndYetItMoves*
+location */home/sa1/.local/share/applications/wine/Programs/Mobipocket DRM Removal/Mobipocket DRM Removal.desktop*, name *Mobipocket DRM Removal*, exec *env WINEPREFIX="/home/sa1/.wine" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/sa1/.wine/dosdevices/c:/users/sa1/Start\\ Menu/Programs/Mobipocket\\ DRM\\ Removal/Mobipocket\\ DRM\\ Removal.lnk*
+adding /home/sa1/.local/share/applications/wine/Programs/Mobipocket DRM Removal/Mobipocket DRM Removal.desktop to menu with name *Mobipocket DRM Removal*
+location */usr/share/applications/xpdf.desktop*, name *Xpdf*, exec *xpdf*
+adding /usr/share/applications/xpdf.desktop to menu with name *Xpdf*
+location */usr/share/applications/cogs.desktop*, name *Cogs*, exec */opt/cogs/Cogs*
+adding /usr/share/applications/cogs.desktop to menu with name *Cogs*
+location */usr/share/applications/pidgin.desktop*, name *Pidgin Internet Messenger*, exec *pidgin*
+adding /usr/share/applications/pidgin.desktop to menu with name *Pidgin Internet Messenger*
+adding /usr/share/applications/pidgin.desktop to menu with cmd *pidgin*
+location */usr/share/applications/nautilus.desktop*, name *Files*, exec *nautilus %U*
+adding /usr/share/applications/nautilus.desktop to menu with name *Files*
+adding /usr/share/applications/nautilus.desktop to menu with cmd *nautilus*
+location */usr/local/share/applications/cxassoc-cxoffice-0:application_x-crossover-exe::run.desktop*, name *CrossOver (Run)*, exec */opt/cxoffice/support/desktopdata/cxoffice-0/cxassoc/Scripts/cxoffice-0:application_x-crossover-exe::run*
+location */usr/share/applications/eiskaltdcpp-qt.desktop*, name *EiskaltDC++ Qt*, exec *eiskaltdcpp-qt %U*
+adding /usr/share/applications/eiskaltdcpp-qt.desktop to menu with name *EiskaltDC++ Qt*
+adding /usr/share/applications/eiskaltdcpp-qt.desktop to menu with cmd *eiskaltdcpp-qt*
+location */usr/share/applications/gimp.desktop*, name *GNU Image Manipulation Program*, exec *gimp-2.8 %U*
+adding /usr/share/applications/gimp.desktop to menu with name *GNU Image Manipulation Program*
+adding /usr/share/applications/gimp.desktop to menu with cmd *gimp-2.8*
+location */usr/share/applications/calibre-ebook-viewer.desktop*, name *E-book Viewer*, exec *ebook-viewer %F*
+adding /usr/share/applications/calibre-ebook-viewer.desktop to menu with name *E-book Viewer*
+adding /usr/share/applications/calibre-ebook-viewer.desktop to menu with cmd *ebook-viewer*
+location */usr/share/applications/Arch-Donate.desktop*, name *Donate*, exec *xdg-open http://www.archlinux.org/donate/*
+adding /usr/share/applications/Arch-Donate.desktop to menu with name *Donate*
+location */usr/share/applications/subdownloader.desktop*, name *SubDownloader*, exec *subdownloader*
+adding /usr/share/applications/subdownloader.desktop to menu with name *SubDownloader*
+location */usr/share/applications/gnochm.desktop*, name *CHM Viewer*, exec *gnochm %F*
+adding /usr/share/applications/gnochm.desktop to menu with name *CHM Viewer*
+adding /usr/share/applications/gnochm.desktop to menu with cmd *gnochm*
+location */home/sa1/.local/share/applications/emacsclient.desktop*, name *Emacsclient*, exec *emacsclient -c %F*
+adding /home/sa1/.local/share/applications/emacsclient.desktop to menu with name *Emacsclient*
+location */usr/share/applications/lmms.desktop*, name *Linux MultiMedia Studio*, exec *lmms*
+adding /usr/share/applications/lmms.desktop to menu with name *Linux MultiMedia Studio*
+adding /usr/share/applications/lmms.desktop to menu with cmd *lmms*
+location */usr/share/applications/geeqie.desktop*, name *Geeqie*, exec *geeqie -r %F*
+adding /usr/share/applications/geeqie.desktop to menu with name *Geeqie*
+location */usr/share/applications/bluetooth-properties.desktop*, name *Bluetooth*, exec *gnome-control-center bluetooth*
+adding /usr/share/applications/bluetooth-properties.desktop to menu with name *Bluetooth*
+location */usr/share/applications/virtualbox.desktop*, name *Oracle VM VirtualBox*, exec *VirtualBox %U*
+adding /usr/share/applications/virtualbox.desktop to menu with name *Oracle VM VirtualBox*
+adding /usr/share/applications/virtualbox.desktop to menu with cmd *VirtualBox*
+location */home/sa1/.local/share/applications/chrome-https___irccloud.com_#!_irc.freenode.net_6667_%23klug-devel_1.desktop*, name *IRCCloud*, exec *chromium --app=https://irccloud.com/#!/irc.freenode.net:6667/%23klug-devel*
+adding /home/sa1/.local/share/applications/chrome-https___irccloud.com_#!_irc.freenode.net_6667_%23klug-devel_1.desktop to menu with name *IRCCloud*
+location */usr/share/applications/evolution.desktop*, name *Evolution*, exec *evolution %U*
+adding /usr/share/applications/evolution.desktop to menu with name *Evolution*
+location */usr/share/applications/epiphany.desktop*, name *Web*, exec *epiphany %U*
+adding /usr/share/applications/epiphany.desktop to menu with name *Web*
+adding /usr/share/applications/epiphany.desktop to menu with cmd *epiphany*
+location */usr/share/applications/dream-strobe.desktop*, name *Dream Strobe (10 Hz)*, exec *xterm -e /usr/bin/dream-strobe 10*
+location */usr/share/applications/vessel.desktop*, name *Vessel*, exec */opt/games/vessel/data/Vessel*
+adding /usr/share/applications/vessel.desktop to menu with name *Vessel*
+location */usr/share/applications/steelstorm-dedicated.desktop*, name *steelstorm-dedicated*, exec *steelstorm-dedicated*
+adding /usr/share/applications/steelstorm-dedicated.desktop to menu with name *steelstorm-dedicated*
+location */usr/share/applications/sublime-text.desktop*, name *Sublime Text*, exec *subl %U*
+adding /usr/share/applications/sublime-text.desktop to menu with name *Sublime Text*
+adding /usr/share/applications/sublime-text.desktop to menu with cmd *subl*
+location */usr/share/applications/gcm-import.desktop*, name *ICC Profile Installer*, exec */usr/bin/gcm-import %F*
+location */usr/share/applications/wesnoth_editor.desktop*, name *Battle for Wesnoth Map Editor*, exec *wesnoth -e*
+adding /usr/share/applications/wesnoth_editor.desktop to menu with name *Battle for Wesnoth Map Editor*
+adding /usr/share/applications/wesnoth_editor.desktop to menu with cmd *wesnoth*
+location */usr/share/applications/libreoffice-base.desktop*, name *LibreOffice Base*, exec *libreoffice --base %U*
+adding /usr/share/applications/libreoffice-base.desktop to menu with name *LibreOffice Base*
+location */usr/share/applications/love.desktop*, name *LÖVE*, exec */usr/bin/love*
+location */usr/share/applications/openbox.desktop*, name *Openbox*, exec *openbox*
+location */usr/share/applications/gnome-dictionary.desktop*, name *Dictionary*, exec *gnome-dictionary*
+adding /usr/share/applications/gnome-dictionary.desktop to menu with name *Dictionary*
+adding /usr/share/applications/gnome-dictionary.desktop to menu with cmd *gnome-dictionary*
+location */usr/share/applications/razor-config-desktop.desktop*, name *Razor Desktop Configurator*, exec *razor-config-desktop*
+adding /usr/share/applications/razor-config-desktop.desktop to menu with name *Razor Desktop Configurator*
+adding /usr/share/applications/razor-config-desktop.desktop to menu with cmd *razor-config-desktop*
+location */usr/share/applications/nikki.desktop*, name *Nikki and the robots*, exec *nikki*
+adding /usr/share/applications/nikki.desktop to menu with name *Nikki and the robots*
+adding /usr/share/applications/nikki.desktop to menu with cmd *nikki*
+location */usr/share/applications/gnome-disk-image-mounter.desktop*, name *Disk Image Mounter*, exec *gnome-disk-image-mounter %U*
+location */usr/share/applications/nautilus-autorun-software.desktop*, name *Run Software*, exec *nautilus-autorun-software %u*
+location */usr/share/applications/cups.desktop*, name *Manage Printing*, exec */usr/bin/xdg-open http://localhost:631/*
+adding /usr/share/applications/cups.desktop to menu with name *Manage Printing*
+location */usr/share/applications/wine.desktop*, name *Wine Windows Program Loader*, exec *wine start /unix %f*
+location */usr/share/applications/glade.desktop*, name *Glade*, exec *glade %F*
+adding /usr/share/applications/glade.desktop to menu with name *Glade*
+location */usr/share/applications/dconf-editor.desktop*, name *dconf Editor*, exec *dconf-editor*
+adding /usr/share/applications/dconf-editor.desktop to menu with name *dconf Editor*
+adding /usr/share/applications/dconf-editor.desktop to menu with cmd *dconf-editor*
+location */usr/share/applications/gnome-keyboard-panel.desktop*, name *Keyboard*, exec *gnome-control-center keyboard*
+adding /usr/share/applications/gnome-keyboard-panel.desktop to menu with name *Keyboard*
+location */usr/share/applications/htop.desktop*, name *Htop*, exec *htop*
+adding /usr/share/applications/htop.desktop to menu with name *Htop*
+location */usr/share/applications/exo-mail-reader.desktop*, name *Mail Reader*, exec *exo-open --launch MailReader %u*
+adding /usr/share/applications/exo-mail-reader.desktop to menu with name *Mail Reader*
+adding /usr/share/applications/exo-mail-reader.desktop to menu with cmd *exo-open*
+location */usr/share/applications/lxtask.desktop*, name *Task Manager*, exec *lxtask*
+adding /usr/share/applications/lxtask.desktop to menu with name *Task Manager*
+adding /usr/share/applications/lxtask.desktop to menu with cmd *lxtask*
+location */usr/share/applications/gnome-background-panel.desktop*, name *Background*, exec *gnome-control-center background*
+adding /usr/share/applications/gnome-background-panel.desktop to menu with name *Background*
+location */home/sa1/.local/share/applications/cxmenu-cxoffice-7630b18d-733a-4ca7-8b6c-56f7043551d9-3ii0rqp-Adobe+Reader+X.desktop*, name *Adobe Reader X*, exec *"/home/sa1/.cxoffice/Adobe Reader X/desktopdata/cxmenu/StartMenu.C^5E3A^5Fusers^5Fcrossover^5FStart^2BMenu/Programs/Adobe+Reader+X.lnk"*
+adding /home/sa1/.local/share/applications/cxmenu-cxoffice-7630b18d-733a-4ca7-8b6c-56f7043551d9-3ii0rqp-Adobe+Reader+X.desktop to menu with name *Adobe Reader X*
+adding /home/sa1/.local/share/applications/cxmenu-cxoffice-7630b18d-733a-4ca7-8b6c-56f7043551d9-3ii0rqp-Adobe+Reader+X.desktop to menu with cmd *Adobe*
+location */usr/local/share/applications/cxassoc-cxoffice-0:application_x-crossover-msi::install.desktop*, name *CrossOver (Install)*, exec */opt/cxoffice/support/desktopdata/cxoffice-0/cxassoc/Scripts/cxoffice-0:application_x-crossover-msi::install*
+location */usr/share/applications/foxitreader.desktop*, name *Foxit Reader*, exec *foxitreader %f*
+adding /usr/share/applications/foxitreader.desktop to menu with name *Foxit Reader*
+adding /usr/share/applications/foxitreader.desktop to menu with cmd *foxitreader*
+location */usr/share/applications/libreoffice-xsltfilter.desktop*, name *LibreOffice XSLT based filters*, exec *libreoffice %U*
+location */usr/share/applications/thunar-settings.desktop*, name *File Manager*, exec *thunar-settings*
+adding /usr/share/applications/thunar-settings.desktop to menu with name *File Manager*
+adding /usr/share/applications/thunar-settings.desktop to menu with cmd *thunar-settings*
+location */usr/share/applications/gnunet-setup.desktop*, name *GNUnet Setup*, exec *gnunet-setup*
+adding /usr/share/applications/gnunet-setup.desktop to menu with name *GNUnet Setup*
+adding /usr/share/applications/gnunet-setup.desktop to menu with cmd *gnunet-setup*
+location */usr/share/applications/session-properties.desktop*, name *Startup Applications*, exec *gnome-session-properties*
+location */usr/share/applications/Thunar.desktop*, name *Thunar File Manager*, exec *thunar %F*
+adding /usr/share/applications/Thunar.desktop to menu with name *Thunar File Manager*
+adding /usr/share/applications/Thunar.desktop to menu with cmd *thunar*
+location */usr/share/applications/mutter.desktop*, name *Mutter*, exec *mutter*
+location */usr/share/applications/gnash.desktop*, name *Gnash SWF Viewer*, exec *gnash-gtk-launcher %U*
+adding /usr/share/applications/gnash.desktop to menu with name *Gnash SWF Viewer*
+adding /usr/share/applications/gnash.desktop to menu with cmd *gnash-gtk-launcher*
+location */home/sa1/.local/share/applications/wine/Programs/Mobipocket DRM Removal/Uninstall.desktop*, name *Uninstall*, exec *env WINEPREFIX="/home/sa1/.wine" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/sa1/.wine/dosdevices/c:/users/sa1/Start\\ Menu/Programs/Mobipocket\\ DRM\\ Removal/Uninstall.lnk*
+adding /home/sa1/.local/share/applications/wine/Programs/Mobipocket DRM Removal/Uninstall.desktop to menu with name *Uninstall*
+location */usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Manage+Bottles.desktop*, name *Manage Bottles*, exec */opt/cxoffice/bin/cxsetup*
+adding /usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Manage+Bottles.desktop to menu with name *Manage Bottles*
+adding /usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Manage+Bottles.desktop to menu with cmd *cxsetup*
+location */usr/share/applications/exo-file-manager.desktop*, name *File Manager*, exec *exo-open --launch FileManager %u*
+adding /usr/share/applications/exo-file-manager.desktop to menu with name *File Manager (2)*
+location */usr/share/applications/darktable.desktop*, name *Darktable*, exec *darktable %U*
+adding /usr/share/applications/darktable.desktop to menu with name *Darktable*
+location */usr/share/applications/owncloud-client.desktop*, name *ownCloud 2012 client*, exec *owncloud %u*
+adding /usr/share/applications/owncloud-client.desktop to menu with name *ownCloud 2012 client*
+adding /usr/share/applications/owncloud-client.desktop to menu with cmd *owncloud*
+location */usr/share/applications/gstm.desktop*, name *gSTM*, exec *gstm*
+adding /usr/share/applications/gstm.desktop to menu with name *gSTM*
+location */usr/local/share/applications/jetbrains-pycharm.desktop*, name *PyCharm*, exec *"/opt/pycharm-eap/bin/pycharm.sh" %f*
+adding /usr/local/share/applications/jetbrains-pycharm.desktop to menu with name *PyCharm*
+adding /usr/local/share/applications/jetbrains-pycharm.desktop to menu with cmd *pycharm.sh"*
+location */usr/share/applications/gftp.desktop*, name *gFTP*, exec *gftp %u*
+adding /usr/share/applications/gftp.desktop to menu with name *gFTP*
+location */home/sa1/.local/share/applications/wine/Programs/Steam/Steam.desktop*, name *Steam*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/steam" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/sa1/.local/share/wineprefixes/steam/dosdevices/c:/users/Public/Start\\ Menu/Programs/Steam/Steam.lnk*
+adding /home/sa1/.local/share/applications/wine/Programs/Steam/Steam.desktop to menu with name *Steam*
+location */usr/share/applications/avahi-discover.desktop*, name *Avahi Zeroconf Browser*, exec */usr/bin/avahi-discover*
+adding /usr/share/applications/avahi-discover.desktop to menu with name *Avahi Zeroconf Browser*
+adding /usr/share/applications/avahi-discover.desktop to menu with cmd *avahi-discover*
+location */usr/share/applications/gmpc.desktop*, name *Gnome Music Player Client*, exec *gmpc*
+adding /usr/share/applications/gmpc.desktop to menu with name *Gnome Music Player Client*
+adding /usr/share/applications/gmpc.desktop to menu with cmd *gmpc*
+location */usr/share/applications/pavumeter.desktop*, name *PulseAudio Volume Meter (Playback)*, exec *pavumeter*
+adding /usr/share/applications/pavumeter.desktop to menu with name *PulseAudio Volume Meter (Playback)*
+adding /usr/share/applications/pavumeter.desktop to menu with cmd *pavumeter*
+location */usr/share/applications/rochard-hib.desktop*, name *Rochard*, exec */usr/bin/rochard*
+adding /usr/share/applications/rochard-hib.desktop to menu with name *Rochard*
+location */usr/share/applications/gconf-editor.desktop*, name *Configuration Editor*, exec *gconf-editor*
+adding /usr/share/applications/gconf-editor.desktop to menu with name *Configuration Editor*
+adding /usr/share/applications/gconf-editor.desktop to menu with cmd *gconf-editor*
+location */usr/local/share/applications/Torchlight.desktop*, name *Torchlight*, exec */usr/local/games/Torchlight/Torchlight.bin.x86_64*
+adding /usr/local/share/applications/Torchlight.desktop to menu with name *Torchlight*
+adding /usr/local/share/applications/Torchlight.desktop to menu with cmd *Torchlight.bin.x86_64*
+location */usr/share/applications/peazip.desktop*, name *PeaZip*, exec *peazip %F*
+adding /usr/share/applications/peazip.desktop to menu with name *PeaZip*
+location */usr/share/applications/gnunet-fs-gtk.desktop*, name *GNUnet Secured P2P*, exec *gnunet-fs-gtk*
+adding /usr/share/applications/gnunet-fs-gtk.desktop to menu with name *GNUnet Secured P2P*
+adding /usr/share/applications/gnunet-fs-gtk.desktop to menu with cmd *gnunet-fs-gtk*
+location */usr/share/applications/tint2conf.desktop*, name *Panel tint2*, exec *tint2conf*
+adding /usr/share/applications/tint2conf.desktop to menu with name *Panel tint2*
+adding /usr/share/applications/tint2conf.desktop to menu with cmd *tint2conf*
+location */usr/share/applications/sauerbraten.desktop*, name *Sauerbraten*, exec *sauerbraten-client %u*
+adding /usr/share/applications/sauerbraten.desktop to menu with name *Sauerbraten*
+adding /usr/share/applications/sauerbraten.desktop to menu with cmd *sauerbraten-client*
+location */usr/share/applications/avadon.desktop*, name *Avadon*, exec */usr/bin/avadon*
+adding /usr/share/applications/avadon.desktop to menu with name *Avadon*
+location */usr/share/applications/stellarium.desktop*, name *Stellarium nightsky renderer*, exec *stellarium*
+adding /usr/share/applications/stellarium.desktop to menu with name *Stellarium nightsky renderer*
+adding /usr/share/applications/stellarium.desktop to menu with cmd *stellarium*
+location */usr/share/applications/qv4l2.desktop*, name *QT V4L2 test Utility*, exec *qv4l2*
+adding /usr/share/applications/qv4l2.desktop to menu with name *QT V4L2 test Utility*
+adding /usr/share/applications/qv4l2.desktop to menu with cmd *qv4l2*
+location */usr/share/applications/nm-applet.desktop*, name *Network*, exec *nm-applet*
+location */usr/share/applications/conkeror.desktop*, name *Conkeror Web Browser*, exec *conkeror %u*
+adding /usr/share/applications/conkeror.desktop to menu with name *Conkeror Web Browser*
+adding /usr/share/applications/conkeror.desktop to menu with cmd *conkeror*
+location */usr/share/applications/gnome-search-tool.desktop*, name *Search for Files...*, exec *gnome-search-tool*
+adding /usr/share/applications/gnome-search-tool.desktop to menu with name *Search for Files...*
+adding /usr/share/applications/gnome-search-tool.desktop to menu with cmd *gnome-search-tool*
+location */usr/share/applications/hawkthorne.desktop*, name *Hawkthorne Journey*, exec */usr/bin/hawkthorne*
+adding /usr/share/applications/hawkthorne.desktop to menu with name *Hawkthorne Journey*
+adding /usr/share/applications/hawkthorne.desktop to menu with cmd *hawkthorne*
+location */usr/share/applications/clipit.desktop*, name *ClipIt*, exec *clipit*
+adding /usr/share/applications/clipit.desktop to menu with name *ClipIt*
+location */usr/share/applications/glsldevil.desktop*, name *glslDevil*, exec *glsldevil*
+adding /usr/share/applications/glsldevil.desktop to menu with name *glslDevil*
+location */usr/share/applications/steam.desktop*, name *Steam*, exec */usr/bin/steam %U*
+adding /usr/share/applications/steam.desktop to menu with name *Steam (2)*
+location */home/sa1/.local/share/applications/wine-extension-wri.desktop*, name *wordpad*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/vc2005express" wine start /ProgIDOpen wrifile %f*
+location */usr/share/applications/mundus.desktop*, name *Mundus*, exec *mundus*
+adding /usr/share/applications/mundus.desktop to menu with name *Mundus*
+location */usr/share/applications/calibre-lrfviewer.desktop*, name *LRF Viewer*, exec *lrfviewer %F*
+adding /usr/share/applications/calibre-lrfviewer.desktop to menu with name *LRF Viewer*
+adding /usr/share/applications/calibre-lrfviewer.desktop to menu with cmd *lrfviewer*
+location */usr/share/applications/xca.desktop*, name *XCA*, exec *xca %F*
+adding /usr/share/applications/xca.desktop to menu with name *XCA*
+location */usr/share/applications/CrayonPhysicsDeluxe.desktop*, name *Crayon Physics Deluxe*, exec *crayon*
+adding /usr/share/applications/CrayonPhysicsDeluxe.desktop to menu with name *Crayon Physics Deluxe*
+adding /usr/share/applications/CrayonPhysicsDeluxe.desktop to menu with cmd *crayon*
+location */usr/share/applications/eric4.desktop*, name *Eric 4*, exec *eric4*
+adding /usr/share/applications/eric4.desktop to menu with name *Eric 4*
+adding /usr/share/applications/eric4.desktop to menu with cmd *eric4*
+location */home/sa1/.local/share/applications/wine-extension-htm.desktop*, name *winebrowser*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/vc2005express" wine start /ProgIDOpen htmlfile %f*
+location */home/sa1/.local/share/applications/wine-extension-url.desktop*, name *rundll32*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/vc2005express" wine start /ProgIDOpen InternetShortcut %f*
+location */home/sa1/.local/share/applications/desura.desktop*, name *Desura*, exec */opt/desura/desura %U*
+adding /home/sa1/.local/share/applications/desura.desktop to menu with name *Desura*
+location */home/sa1/.local/share/applications/cxmenu-cxoffice-bf58707c-367c-4e3f-a5f2-e2876a73ed50-32n27s8-The+Elder+Scrolls+V+Skyrim.desktop*, name *The Elder Scrolls V Skyrim*, exec *"/home/sa1/.cxoffice/The Elder Scrolls V_ Skyrim/desktopdata/cxmenu/StartMenu.C^5E3A^5Fusers^5FPublic^5FStart^2BMenu/Programs/Razor+1911/The+Elder+Scrolls+V+Skyrim/The+Elder+Scrolls+V+Skyrim.lnk"*
+adding /home/sa1/.local/share/applications/cxmenu-cxoffice-bf58707c-367c-4e3f-a5f2-e2876a73ed50-32n27s8-The+Elder+Scrolls+V+Skyrim.desktop to menu with name *The Elder Scrolls V Skyrim*
+adding /home/sa1/.local/share/applications/cxmenu-cxoffice-bf58707c-367c-4e3f-a5f2-e2876a73ed50-32n27s8-The+Elder+Scrolls+V+Skyrim.desktop to menu with cmd *The*
+location */usr/local/share/applications/cxassoc-cxoffice-0:application_x-crossover-cxarchive::restore.desktop*, name *CrossOver (Restore)*, exec */opt/cxoffice/support/desktopdata/cxoffice-0/cxassoc/Scripts/cxoffice-0:application_x-crossover-cxarchive::restore*
+location */usr/share/applications/Arch-AUR.desktop*, name *AUR*, exec *xdg-open https://aur.archlinux.org*
+adding /usr/share/applications/Arch-AUR.desktop to menu with name *AUR*
+location */home/sa1/.local/share/applications/wine-extension-gif.desktop*, name *Wine Internet Explorer*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/vc2005express" wine start /ProgIDOpen giffile %f*
+location */usr/share/applications/eiskaltdcpp-gtk.desktop*, name *EiskaltDC++ Gtk*, exec *eiskaltdcpp-gtk %U*
+adding /usr/share/applications/eiskaltdcpp-gtk.desktop to menu with name *EiskaltDC++ Gtk*
+adding /usr/share/applications/eiskaltdcpp-gtk.desktop to menu with cmd *eiskaltdcpp-gtk*
+location */usr/share/applications/dustforce-hib.desktop*, name *Dustforce*, exec */usr/bin/dustforce*
+adding /usr/share/applications/dustforce-hib.desktop to menu with name *Dustforce*
+location */usr/share/applications/driconf.desktop*, name *DriConf*, exec *driconf*
+adding /usr/share/applications/driconf.desktop to menu with name *DriConf*
+location */usr/share/applications/urxvtc.desktop*, name *urxvt (client)*, exec *urxvtc*
+adding /usr/share/applications/urxvtc.desktop to menu with name *urxvt (client)*
+adding /usr/share/applications/urxvtc.desktop to menu with cmd *urxvtc*
+location */usr/share/applications/hammerfight.desktop*, name *Hammerfight*, exec */opt/hammerfight/Hammerfight*
+adding /usr/share/applications/hammerfight.desktop to menu with name *Hammerfight*
+location */usr/share/applications/clementine.desktop*, name *Clementine*, exec *clementine %U*
+adding /usr/share/applications/clementine.desktop to menu with name *Clementine*
+location */home/sa1/.local/share/applications/wine-extension-vbs.desktop*, name *A Wine application*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/kindle" wine start /ProgIDOpen VBSFile %f*
+location */usr/share/applications/kupfer.desktop*, name *Kupfer*, exec *kupfer %F*
+adding /usr/share/applications/kupfer.desktop to menu with name *Kupfer*
+location */usr/local/share/applications/cxassoc-cxoffice-0:application_x-crossover-lnk::run.desktop*, name *CrossOver (Run)*, exec */opt/cxoffice/support/desktopdata/cxoffice-0/cxassoc/Scripts/cxoffice-0:application_x-crossover-lnk::run*
+location */usr/share/applications/flash-player-properties.desktop*, name *Adobe Flash Player*, exec *flash-player-properties*
+adding /usr/share/applications/flash-player-properties.desktop to menu with name *Adobe Flash Player*
+adding /usr/share/applications/flash-player-properties.desktop to menu with cmd *flash-player-properties*
+location */usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Preferences.desktop*, name *Preferences*, exec */opt/cxoffice/bin/cxprefs*
+adding /usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Preferences.desktop to menu with name *Preferences*
+adding /usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Preferences.desktop to menu with cmd *cxprefs*
+location */home/sa1/.local/share/applications/wine/Programs/AutoHotkey/AutoScriptWriter (recorder).desktop*, name *AutoScriptWriter (recorder)*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/autohotkey" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/sa1/.local/share/wineprefixes/autohotkey/dosdevices/c:/users/Public/Start\\ Menu/Programs/AutoHotkey/AutoScriptWriter\\ \\(recorder\\).lnk*
+adding /home/sa1/.local/share/applications/wine/Programs/AutoHotkey/AutoScriptWriter (recorder).desktop to menu with name *AutoScriptWriter (recorder)*
+location */usr/share/applications/qtconfig.desktop*, name *Qt Config *, exec */usr/bin/qtconfig*
+location */usr/share/applications/snapshot-hib.desktop*, name *Snapshot*, exec */usr/bin/snapshot*
+adding /usr/share/applications/snapshot-hib.desktop to menu with name *Snapshot*
+location */home/sa1/.local/share/applications/wine-extension-jfif.desktop*, name *Wine Internet Explorer*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/vc2005express" wine start /ProgIDOpen pjpegfile %f*
+location */usr/share/applications/sound-juicer.desktop*, name *Sound Juicer*, exec *sound-juicer %u*
+adding /usr/share/applications/sound-juicer.desktop to menu with name *Sound Juicer*
+adding /usr/share/applications/sound-juicer.desktop to menu with cmd *sound-juicer*
+location */usr/share/applications/tilda.desktop*, name *Tilda*, exec *tilda*
+adding /usr/share/applications/tilda.desktop to menu with name *Tilda*
+location */usr/share/applications/xchm.desktop*, name *Xchm*, exec *xchm %f*
+adding /usr/share/applications/xchm.desktop to menu with name *Xchm*
+location */usr/share/applications/zenmap-root.desktop*, name *Zenmap (as root)*, exec */usr/share/zenmap/su-to-zenmap.sh %F*
+adding /usr/share/applications/zenmap-root.desktop to menu with name *Zenmap (as root)*
+adding /usr/share/applications/zenmap-root.desktop to menu with cmd *su-to-zenmap.sh*
+location */usr/share/applications/luminance-hdr.desktop*, name *Luminance HDR*, exec *luminance-hdr --gui %F*
+adding /usr/share/applications/luminance-hdr.desktop to menu with name *Luminance HDR*
+adding /usr/share/applications/luminance-hdr.desktop to menu with cmd *luminance-hdr*
+location */usr/share/applications/exo-terminal-emulator.desktop*, name *Terminal Emulator*, exec *exo-open --launch TerminalEmulator*
+adding /usr/share/applications/exo-terminal-emulator.desktop to menu with name *Terminal Emulator*
+location */usr/share/applications/hugin.desktop*, name *Hugin Panorama Creator*, exec *hugin*
+adding /usr/share/applications/hugin.desktop to menu with name *Hugin Panorama Creator*
+adding /usr/share/applications/hugin.desktop to menu with cmd *hugin*
+location */usr/share/applications/opera-browser.desktop*, name *Opera*, exec */usr/bin/opera %U*
+adding /usr/share/applications/opera-browser.desktop to menu with name *Opera*
+location */usr/share/applications/megaglest.desktop*, name *MegaGlest*, exec *megaglest*
+adding /usr/share/applications/megaglest.desktop to menu with name *MegaGlest*
+location */usr/share/applications/i3.desktop*, name *i3*, exec *i3*
+adding /usr/share/applications/i3.desktop to menu with name *i3*
+location */usr/share/applications/gnome-display-panel.desktop*, name *Displays*, exec *gnome-control-center display*
+adding /usr/share/applications/gnome-display-panel.desktop to menu with name *Displays*
+location */usr/share/applications/bluetooth-sendto.desktop*, name *Bluetooth Transfer*, exec *bluetooth-sendto*
+location */usr/share/applications/gnome-printers-panel.desktop*, name *Printers*, exec *gnome-control-center printers*
+adding /usr/share/applications/gnome-printers-panel.desktop to menu with name *Printers*
+location */usr/share/applications/lugaru.desktop*, name *Lugaru*, exec *lugaru*
+adding /usr/share/applications/lugaru.desktop to menu with name *Lugaru*
+location */usr/share/applications/Arch-Bugs.desktop*, name *Bugs*, exec *xdg-open https://bugs.archlinux.org*
+adding /usr/share/applications/Arch-Bugs.desktop to menu with name *Bugs*
+location */usr/share/applications/notification-daemon.desktop*, name *Notification Daemon*, exec */usr/lib/notification-daemon-1.0/notification-daemon*
+location */usr/share/applications/jconsole.desktop*, name *OpenJDK Monitoring & Management Console*, exec */usr/bin/jconsole*
+adding /usr/share/applications/jconsole.desktop to menu with name *OpenJDK Monitoring & Management Console*
+adding /usr/share/applications/jconsole.desktop to menu with cmd *jconsole*
+location */usr/share/applications/libreoffice-math.desktop*, name *LibreOffice Math*, exec *libreoffice --math %U*
+location */home/sa1/.local/share/applications/wine-extension-ahk.desktop*, name *AutoHotkey*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/autohotkey" wine start /ProgIDOpen AutoHotkeyScript %f*
+location */usr/share/applications/gnome-sound-panel.desktop*, name *Sound*, exec *gnome-control-center sound*
+adding /usr/share/applications/gnome-sound-panel.desktop to menu with name *Sound*
+location */home/sa1/.local/share/applications/userapp-Evolution-ZT7EGW.desktop*, name *Evolution*, exec *evolution --component=mail %u*
+location */usr/share/applications/gmenu-simple-editor.desktop*, name *Menu Editor*, exec *gmenu-simple-editor*
+location */usr/share/applications/0ad.desktop*, name *0 A.D.*, exec */usr/bin/0ad*
+adding /usr/share/applications/0ad.desktop to menu with name *0 A.D.*
+adding /usr/share/applications/0ad.desktop to menu with cmd *0ad*
+location */usr/share/applications/gnome-disks.desktop*, name *Disks*, exec *gnome-disks*
+adding /usr/share/applications/gnome-disks.desktop to menu with name *Disks*
+adding /usr/share/applications/gnome-disks.desktop to menu with cmd *gnome-disks*
+location */usr/share/applications/gstreamer-properties.desktop*, name *Multimedia Systems Selector*, exec *gstreamer-properties*
+location */usr/share/applications/obconf.desktop*, name *Openbox Configuration Manager*, exec *obconf %f*
+adding /usr/share/applications/obconf.desktop to menu with name *Openbox Configuration Manager*
+adding /usr/share/applications/obconf.desktop to menu with cmd *obconf*
+location */usr/share/applications/codelite.desktop*, name *CodeLite*, exec *codelite %f*
+adding /usr/share/applications/codelite.desktop to menu with name *CodeLite*
+location */usr/share/applications/www.octave.org-octave.desktop*, name *GNU Octave*, exec */usr/bin/octave*
+adding /usr/share/applications/www.octave.org-octave.desktop to menu with name *GNU Octave*
+adding /usr/share/applications/www.octave.org-octave.desktop to menu with cmd *octave*
+location */usr/share/applications/razor-config-session.desktop*, name *Razor Session Configurator*, exec *razor-config-session*
+adding /usr/share/applications/razor-config-session.desktop to menu with name *Razor Session Configurator*
+adding /usr/share/applications/razor-config-session.desktop to menu with cmd *razor-config-session*
+location */usr/share/applications/libreoffice-draw.desktop*, name *LibreOffice Draw*, exec *libreoffice --draw %U*
+adding /usr/share/applications/libreoffice-draw.desktop to menu with name *LibreOffice Draw*
+location */home/sa1/.local/share/applications/wine/Programs/Mobipocket DRM Removal/Readme.desktop*, name *Readme*, exec *env WINEPREFIX="/home/sa1/.wine" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/sa1/.wine/dosdevices/c:/users/sa1/Start\\ Menu/Programs/Mobipocket\\ DRM\\ Removal/Readme.lnk*
+adding /home/sa1/.local/share/applications/wine/Programs/Mobipocket DRM Removal/Readme.desktop to menu with name *Readme*
+location */usr/share/applications/dredmor.desktop*, name *Dungeons of Dredmor*, exec */opt/dredmor/Dredmor*
+adding /usr/share/applications/dredmor.desktop to menu with name *Dungeons of Dredmor*
+adding /usr/share/applications/dredmor.desktop to menu with cmd *Dredmor*
+location */usr/share/applications/designer.desktop*, name *Qt Designer*, exec */usr/bin/designer*
+adding /usr/share/applications/designer.desktop to menu with name *Qt Designer*
+adding /usr/share/applications/designer.desktop to menu with cmd *designer*
+location */usr/share/applications/vidalia.desktop*, name *Vidalia*, exec *vidalia*
+adding /usr/share/applications/vidalia.desktop to menu with name *Vidalia*
+location */usr/share/applications/wesnoth.desktop*, name *Battle for Wesnoth*, exec *wesnoth*
+adding /usr/share/applications/wesnoth.desktop to menu with name *Battle for Wesnoth*
+location */usr/share/applications/ninja-ide.desktop*, name *Ninja IDE*, exec *ninja-ide*
+adding /usr/share/applications/ninja-ide.desktop to menu with name *Ninja IDE*
+adding /usr/share/applications/ninja-ide.desktop to menu with cmd *ninja-ide*
+location */usr/share/applications/klavaro.desktop*, name *Klavaro*, exec *klavaro*
+adding /usr/share/applications/klavaro.desktop to menu with name *Klavaro*
+location */usr/share/applications/caribou.desktop*, name *Caribou*, exec *caribou*
+adding /usr/share/applications/caribou.desktop to menu with name *Caribou*
+location */usr/share/applications/7zFM.desktop*, name *7-Zip FM*, exec *7zFM*
+adding /usr/share/applications/7zFM.desktop to menu with name *7-Zip FM*
+adding /usr/share/applications/7zFM.desktop to menu with cmd *7zFM*
+location */usr/share/applications/metacity.desktop*, name *Metacity*, exec *metacity*
+location */usr/share/applications/epdfview.desktop*, name *ePDFViewer*, exec *epdfview %f*
+adding /usr/share/applications/epdfview.desktop to menu with name *ePDFViewer*
+adding /usr/share/applications/epdfview.desktop to menu with cmd *epdfview*
+location */usr/share/applications/Arch-SVN.desktop*, name *SVN*, exec *xdg-open http://projects.archlinux.org/svntogit/*
+adding /usr/share/applications/Arch-SVN.desktop to menu with name *SVN*
+location */usr/share/applications/CMake.desktop*, name *CMake*, exec *cmake-gui %f*
+adding /usr/share/applications/CMake.desktop to menu with name *CMake*
+adding /usr/share/applications/CMake.desktop to menu with cmd *cmake-gui*
+location */usr/share/applications/revenge.desktop*, name *Revenge Of The Titans*, exec *revenge*
+adding /usr/share/applications/revenge.desktop to menu with name *Revenge Of The Titans*
+adding /usr/share/applications/revenge.desktop to menu with cmd *revenge*
+location */usr/share/applications/xpad.desktop*, name *Xpad*, exec *xpad*
+adding /usr/share/applications/xpad.desktop to menu with name *Xpad*
+location */usr/share/applications/exo-web-browser.desktop*, name *Web Browser*, exec *exo-open --launch WebBrowser %u*
+adding /usr/share/applications/exo-web-browser.desktop to menu with name *Web Browser*
+location */usr/share/applications/lxappearance.desktop*, name *Customize Look and Feel*, exec *lxappearance*
+adding /usr/share/applications/lxappearance.desktop to menu with name *Customize Look and Feel*
+adding /usr/share/applications/lxappearance.desktop to menu with cmd *lxappearance*
+location */usr/share/applications/dwarffortress-phoebus.desktop*, name *Dwarf Fortress (Phoebus)*, exec *dwarffortress-phoebus*
+adding /usr/share/applications/dwarffortress-phoebus.desktop to menu with name *Dwarf Fortress (Phoebus)*
+adding /usr/share/applications/dwarffortress-phoebus.desktop to menu with cmd *dwarffortress-phoebus*
+location */usr/share/applications/braid.desktop*, name *Braid*, exec *"/opt/Braid/braid"*
+adding /usr/share/applications/braid.desktop to menu with name *Braid*
+adding /usr/share/applications/braid.desktop to menu with cmd *braid"*
+location */home/sa1/.local/share/applications/wine/Programs/DAZ 3D/Bryce Lightning/Bryce Lightning 7.0.desktop*, name *Bryce Lightning 7.0*, exec *env WINEPREFIX="/home/sa1/.wine" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/sa1/.wine/dosdevices/c:/users/Public/Start\\ Menu/Programs/DAZ\\ 3D/Bryce\\ Lightning/Bryce\\ Lightning\\ 7.0.lnk*
+adding /home/sa1/.local/share/applications/wine/Programs/DAZ 3D/Bryce Lightning/Bryce Lightning 7.0.desktop to menu with name *Bryce Lightning 7.0*
+location */usr/share/applications/closure-hib.desktop*, name *Closure*, exec */usr/bin/closure*
+adding /usr/share/applications/closure-hib.desktop to menu with name *Closure*
+location */usr/local/share/applications/cxassoc-cxoffice-0:application_x-crossover-exe::install.desktop*, name *CrossOver (Install)*, exec */opt/cxoffice/support/desktopdata/cxoffice-0/cxassoc/Scripts/cxoffice-0:application_x-crossover-exe::install*
+location */usr/share/applications/gnome-font-viewer.desktop*, name *Font Viewer*, exec *gnome-font-viewer %u*
+adding /usr/share/applications/gnome-font-viewer.desktop to menu with name *Font Viewer*
+adding /usr/share/applications/gnome-font-viewer.desktop to menu with cmd *gnome-font-viewer*
+location */usr/share/applications/geany.desktop*, name *Geany*, exec *geany %F*
+adding /usr/share/applications/geany.desktop to menu with name *Geany*
+location */usr/share/applications/qtoctave.desktop*, name *QtOctave*, exec *qtoctave*
+adding /usr/share/applications/qtoctave.desktop to menu with name *QtOctave*
+location */home/sa1/.local/share/applications/wine/Programs/AutoHotkey/Convert .ahk to .exe.desktop*, name *Convert .ahk to .exe*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/autohotkey" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/sa1/.local/share/wineprefixes/autohotkey/dosdevices/c:/users/Public/Start\\ Menu/Programs/AutoHotkey/Convert\\ .ahk\\ to\\ .exe.lnk*
+adding /home/sa1/.local/share/applications/wine/Programs/AutoHotkey/Convert .ahk to .exe.desktop to menu with name *Convert .ahk to .exe*
+location */usr/share/applications/chromium.desktop*, name *Chromium*, exec *chromium %U*
+adding /usr/share/applications/chromium.desktop to menu with name *Chromium*
+location */usr/share/applications/gnome-region-panel.desktop*, name *Region & Language*, exec *gnome-control-center region*
+adding /usr/share/applications/gnome-region-panel.desktop to menu with name *Region & Language*
+location */home/sa1/.local/share/applications/kloonigames-crayon.desktop*, name **, exec **
+location */usr/share/applications/gnome-color-panel.desktop*, name *Color*, exec *gnome-control-center color*
+adding /usr/share/applications/gnome-color-panel.desktop to menu with name *Color*
+location */usr/share/applications/dead-cyborg-episode1.desktop*, name *Dead Cyborg - Episode 1*, exec *dead-cyborg-episode1*
+adding /usr/share/applications/dead-cyborg-episode1.desktop to menu with name *Dead Cyborg - Episode 1*
+adding /usr/share/applications/dead-cyborg-episode1.desktop to menu with cmd *dead-cyborg-episode1*
+location */usr/share/applications/xonotic-sdl.desktop*, name *Xonotic (SDL)*, exec */usr/bin/xonotic-sdl*
+adding /usr/share/applications/xonotic-sdl.desktop to menu with name *Xonotic (SDL)*
+adding /usr/share/applications/xonotic-sdl.desktop to menu with cmd *xonotic-sdl*
+location */usr/share/applications/uplink.desktop*, name *Uplink*, exec */usr/bin/uplink*
+adding /usr/share/applications/uplink.desktop to menu with name *Uplink*
+location */home/sa1/.local/share/applications/userapp-Firefox-CPUH4V.desktop*, name *Firefox*, exec */usr/lib/firefox/firefox %u*
+location */home/sa1/.local/share/applications/xterm.desktop*, name *Urxvt*, exec *urxvt*
+adding /home/sa1/.local/share/applications/xterm.desktop to menu with name *Urxvt*
+location */usr/share/applications/torchlight-hib.desktop*, name *Torchlight*, exec */usr/bin/torchlight*
+adding /usr/share/applications/torchlight-hib.desktop to menu with name *Torchlight (2)*
+location */usr/share/applications/gkbd-keyboard-display.desktop*, name *Keyboard Layout*, exec *gkbd-keyboard-display*
+location */usr/share/applications/sparkleshare-invite-opener.desktop*, name *SparkleShareInviteOpener*, exec *sparkleshare open %U*
+location */usr/share/applications/javaws.desktop*, name *IcedTea Web Start*, exec */usr/lib/jvm/java-7-openjdk/bin/javaws %f*
+location */usr/share/applications/mplayer.desktop*, name *MPlayer*, exec *mplayer -really-quiet %F*
+location */usr/share/applications/dwarffortress.desktop*, name *Dwarf Fortress*, exec *dwarffortress*
+adding /usr/share/applications/dwarffortress.desktop to menu with name *Dwarf Fortress*
+adding /usr/share/applications/dwarffortress.desktop to menu with cmd *dwarffortress*
+location */home/sa1/.local/share/applications/desura-force.desktop*, name *Desura (Force Update)*, exec */opt/desura/desura -f*
+adding /home/sa1/.local/share/applications/desura-force.desktop to menu with name *Desura (Force Update)*
+location */usr/share/applications/geary.desktop*, name *Geary Mail*, exec *geary %U*
+adding /usr/share/applications/geary.desktop to menu with name *Geary Mail*
+adding /usr/share/applications/geary.desktop to menu with cmd *geary*
+location */usr/share/applications/fluid.desktop*, name *FLUID*, exec *fluid %F*
+adding /usr/share/applications/fluid.desktop to menu with name *FLUID*
+location */usr/share/applications/wireshark.desktop*, name *Wireshark*, exec *wireshark %f*
+adding /usr/share/applications/wireshark.desktop to menu with name *Wireshark*
+location */usr/share/applications/Arch-Forum.desktop*, name *Forum*, exec *xdg-open https://bbs.archlinux.org*
+adding /usr/share/applications/Arch-Forum.desktop to menu with name *Forum*
+location */usr/share/applications/zeroinstall-manage.desktop*, name *Manage Programs*, exec *0desktop --manage*
+adding /usr/share/applications/zeroinstall-manage.desktop to menu with name *Manage Programs*
+adding /usr/share/applications/zeroinstall-manage.desktop to menu with cmd *0desktop*
+location */usr/share/applications/vlc.desktop*, name *VLC media player*, exec */usr/bin/vlc %U*
+adding /usr/share/applications/vlc.desktop to menu with name *VLC media player*
+adding /usr/share/applications/vlc.desktop to menu with cmd *vlc*
+location */home/sa1/.local/share/applications/wine-extension-hlp.desktop*, name *winhlp32*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/vc2005express" wine start /ProgIDOpen hlpfile %f*
+location */usr/share/applications/Arch-Schwag.desktop*, name *Schwag*, exec *xdg-open http://www.zazzle.com/archlinux/*
+adding /usr/share/applications/Arch-Schwag.desktop to menu with name *Schwag*
+location */usr/share/applications/gnome-user-accounts-panel.desktop*, name *User Accounts*, exec *gnome-control-center user-accounts*
+adding /usr/share/applications/gnome-user-accounts-panel.desktop to menu with name *User Accounts*
+location */usr/share/applications/defcon.desktop*, name *Defcon*, exec */opt/defcon/defcon.bin*
+adding /usr/share/applications/defcon.desktop to menu with name *Defcon*
+adding /usr/share/applications/defcon.desktop to menu with cmd *defcon.bin*
+location */usr/share/applications/Thunar-bulk-rename.desktop*, name *Bulk Rename*, exec */usr/lib/Thunar/ThunarBulkRename %F*
+adding /usr/share/applications/Thunar-bulk-rename.desktop to menu with name *Bulk Rename*
+adding /usr/share/applications/Thunar-bulk-rename.desktop to menu with cmd *ThunarBulkRename*
+location */usr/share/applications/zenmap.desktop*, name *Zenmap*, exec *zenmap %F*
+adding /usr/share/applications/zenmap.desktop to menu with name *Zenmap*
+location */usr/share/applications/qtspim.desktop*, name *QtSpim*, exec */usr/bin/qtspim*
+adding /usr/share/applications/qtspim.desktop to menu with name *QtSpim*
+location */usr/share/applications/byobu.desktop*, name *Byobu Terminal*, exec *byobu-launcher*
+adding /usr/share/applications/byobu.desktop to menu with name *Byobu Terminal*
+adding /usr/share/applications/byobu.desktop to menu with cmd *byobu-launcher*
+location */home/sa1/.local/share/applications/userapp-feh-3BLEFW.desktop*, name *feh*, exec *feh %f*
+location */usr/share/applications/evince.desktop*, name *Document Viewer*, exec *evince %U*
+location */home/sa1/.local/share/applications/wine-extension-html.desktop*, name *winebrowser*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/vc2005express" wine start /ProgIDOpen htmlfile %f*
+location */usr/share/applications/nautilus-connect-server.desktop*, name *Connect to Server*, exec *nautilus-connect-server*
+location */usr/share/applications/pkgbrowser.desktop*, name *PkgBrowser*, exec *pkgbrowser*
+adding /usr/share/applications/pkgbrowser.desktop to menu with name *PkgBrowser*
+location */usr/share/applications/PTBatcherGUI.desktop*, name *Hugin Batch Processor*, exec *PTBatcherGUI %F*
+adding /usr/share/applications/PTBatcherGUI.desktop to menu with name *Hugin Batch Processor*
+adding /usr/share/applications/PTBatcherGUI.desktop to menu with cmd *PTBatcherGUI*
+location */usr/share/applications/gnome-sound-recorder.desktop*, name *Sound Recorder*, exec *gnome-sound-recorder*
+adding /usr/share/applications/gnome-sound-recorder.desktop to menu with name *Sound Recorder*
+adding /usr/share/applications/gnome-sound-recorder.desktop to menu with cmd *gnome-sound-recorder*
+location */usr/share/applications/thunderbird.desktop*, name *Thunderbird*, exec *thunderbird %u*
+adding /usr/share/applications/thunderbird.desktop to menu with name *Thunderbird*
+location */usr/share/applications/meld.desktop*, name *Meld*, exec *meld %F*
+adding /usr/share/applications/meld.desktop to menu with name *Meld*
+location */usr/share/applications/nightsky-game.desktop*, name *Night Sky*, exec */usr/bin/nightsky-game*
+adding /usr/share/applications/nightsky-game.desktop to menu with name *Night Sky*
+adding /usr/share/applications/nightsky-game.desktop to menu with cmd *nightsky-game*
+location */usr/share/applications/megaglest_editor.desktop*, name *MegaGlest Map Editor*, exec *megaglest_editor*
+adding /usr/share/applications/megaglest_editor.desktop to menu with name *MegaGlest Map Editor*
+adding /usr/share/applications/megaglest_editor.desktop to menu with cmd *megaglest_editor*
+location */usr/share/applications/gnome-system-log.desktop*, name *System Log*, exec *gnome-system-log*
+adding /usr/share/applications/gnome-system-log.desktop to menu with name *System Log*
+adding /usr/share/applications/gnome-system-log.desktop to menu with cmd *gnome-system-log*
+location */usr/share/applications/razor-config-qtconfig.desktop*, name *Qt Configuration*, exec *qtconfig*
+adding /usr/share/applications/razor-config-qtconfig.desktop to menu with name *Qt Configuration*
+adding /usr/share/applications/razor-config-qtconfig.desktop to menu with cmd *qtconfig*
+location */usr/share/applications/gprename.desktop*, name *GPRename*, exec *gprename*
+adding /usr/share/applications/gprename.desktop to menu with name *GPRename*
+location */usr/share/applications/gnome-mouse-panel.desktop*, name *Mouse & Touchpad*, exec *gnome-control-center mouse*
+adding /usr/share/applications/gnome-mouse-panel.desktop to menu with name *Mouse & Touchpad*
+location */usr/share/applications/shatter-hib.desktop*, name *Shatter*, exec */usr/bin/shatter*
+adding /usr/share/applications/shatter-hib.desktop to menu with name *Shatter*
+location */usr/share/applications/warsow.desktop*, name *Warsow*, exec *warsow*
+adding /usr/share/applications/warsow.desktop to menu with name *Warsow*
+location */usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Run+a+Windows+Command.desktop*, name *Run a Windows Command*, exec */opt/cxoffice/bin/cxrun*
+adding /usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Run+a+Windows+Command.desktop to menu with name *Run a Windows Command*
+adding /usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Run+a+Windows+Command.desktop to menu with cmd *cxrun*
+location */home/sa1/.local/share/applications/wine/Programs/AutoHotkey/Website.desktop*, name *Website*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/autohotkey" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/sa1/.local/share/wineprefixes/autohotkey/dosdevices/c:/users/Public/Start\\ Menu/Programs/AutoHotkey/Website.lnk*
+adding /home/sa1/.local/share/applications/wine/Programs/AutoHotkey/Website.desktop to menu with name *Website*
+location */usr/share/applications/drgeo2.desktop*, name *DrGeo*, exec *drgeo2*
+adding /usr/share/applications/drgeo2.desktop to menu with name *DrGeo*
+adding /usr/share/applications/drgeo2.desktop to menu with cmd *drgeo2*
+location */home/sa1/.local/share/applications/wine-extension-msp.desktop*, name *A Wine application*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/vc2005express" wine start /ProgIDOpen Msi.Patch %f*
+location */usr/share/applications/android-sdk.desktop*, name *Android SDK*, exec *android*
+adding /usr/share/applications/android-sdk.desktop to menu with name *Android SDK*
+adding /usr/share/applications/android-sdk.desktop to menu with cmd *android*
+location */usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Install+Windows+Software.desktop*, name *Install Windows Software*, exec */opt/cxoffice/bin/cxinstaller*
+adding /usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Install+Windows+Software.desktop to menu with name *Install Windows Software*
+adding /usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Install+Windows+Software.desktop to menu with cmd *cxinstaller*
+location */home/sa1/.local/share/applications/opera-next-browser.desktop*, name *Opera Next*, exec */home/sa1/.local/bin/opera-next %U*
+adding /home/sa1/.local/share/applications/opera-next-browser.desktop to menu with name *Opera Next*
+adding /home/sa1/.local/share/applications/opera-next-browser.desktop to menu with cmd *opera-next*
+location */usr/share/applications/brasero.desktop*, name *Brasero*, exec *brasero %U*
+adding /usr/share/applications/brasero.desktop to menu with name *Brasero*
+location */usr/share/applications/gpicview.desktop*, name *Image Viewer*, exec *gpicview %f*
+adding /usr/share/applications/gpicview.desktop to menu with name *Image Viewer*
+adding /usr/share/applications/gpicview.desktop to menu with cmd *gpicview*
+location */usr/share/applications/terminator.desktop*, name *Terminator*, exec *terminator*
+adding /usr/share/applications/terminator.desktop to menu with name *Terminator*
+location */usr/share/applications/umplayer_enqueue.desktop*, name *Enqueue in UMPlayer*, exec *umplayer -add-to-playlist %F*
+location */usr/share/applications/JAuth-0.desktop*, name *JAuth*, exec */bin/sh "/opt/JAuth/JAuth"*
+adding /usr/share/applications/JAuth-0.desktop to menu with name *JAuth*
+adding /usr/share/applications/JAuth-0.desktop to menu with cmd *sh*
+location */usr/share/applications/calibrate_lens_gui.desktop*, name *Hugin Calibrate Lens*, exec *calibrate_lens_gui*
+adding /usr/share/applications/calibrate_lens_gui.desktop to menu with name *Hugin Calibrate Lens*
+adding /usr/share/applications/calibrate_lens_gui.desktop to menu with cmd *calibrate_lens_gui*
+location */usr/share/applications/gnome-tweak-tool.desktop*, name *Tweak Tool*, exec *gnome-tweak-tool*
+adding /usr/share/applications/gnome-tweak-tool.desktop to menu with name *Tweak Tool*
+adding /usr/share/applications/gnome-tweak-tool.desktop to menu with cmd *gnome-tweak-tool*
+location */usr/share/applications/Thunar-folder-handler.desktop*, name *Open Folder with Thunar*, exec *thunar %F*
+location */usr/share/applications/smplayer_enqueue.desktop*, name *Enqueue in SMPlayer*, exec *smplayer -add-to-playlist %U*
+location */usr/share/applications/Arch-Documentation.desktop*, name *Documentation*, exec *xdg-open https://wiki.archlinux.org/index.php/Official_Arch_Linux_Install_Guide*
+adding /usr/share/applications/Arch-Documentation.desktop to menu with name *Documentation*
+location */usr/share/applications/aquaria.desktop*, name *Aquaria*, exec *aquaria*
+adding /usr/share/applications/aquaria.desktop to menu with name *Aquaria*
+location */usr/share/applications/sslrefbox.desktop*, name *SSLRefBox*, exec *sslrefbox*
+adding /usr/share/applications/sslrefbox.desktop to menu with name *SSLRefBox*
+location */usr/share/applications/gnome-universal-access-panel.desktop*, name *Universal Access*, exec *gnome-control-center universal-access*
+adding /usr/share/applications/gnome-universal-access-panel.desktop to menu with name *Universal Access*
+location */usr/share/applications/gnome-power-statistics.desktop*, name *Power Statistics*, exec *gnome-power-statistics*
+adding /usr/share/applications/gnome-power-statistics.desktop to menu with name *Power Statistics*
+adding /usr/share/applications/gnome-power-statistics.desktop to menu with cmd *gnome-power-statistics*
+location */usr/share/applications/supermeatboy.desktop*, name *Super Meat Boy*, exec */opt/games/supermeatboy/data/SuperMeatBoy*
+adding /usr/share/applications/supermeatboy.desktop to menu with name *Super Meat Boy*
+adding /usr/share/applications/supermeatboy.desktop to menu with cmd *SuperMeatBoy*
+location */usr/share/applications/truecrypt.desktop*, name *TrueCrypt*, exec *truecrypt*
+adding /usr/share/applications/truecrypt.desktop to menu with name *TrueCrypt*
+location */usr/share/applications/spaz-hib.desktop*, name *Space Pirates and Zombies*, exec */usr/bin/spaz*
+adding /usr/share/applications/spaz-hib.desktop to menu with name *Space Pirates and Zombies*
+adding /usr/share/applications/spaz-hib.desktop to menu with cmd *spaz*
+location */usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Uninstall+CrossOver+Linux.desktop*, name *Uninstall CrossOver Linux*, exec */opt/cxoffice/bin/cxuninstall*
+adding /usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Uninstall+CrossOver+Linux.desktop to menu with name *Uninstall CrossOver Linux*
+adding /usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Uninstall+CrossOver+Linux.desktop to menu with cmd *cxuninstall*
+location */home/sa1/.local/share/applications/wine-extension-chm.desktop*, name *hh*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/vc2005express" wine start /ProgIDOpen chm.file %f*
+location */usr/share/applications/gnome-online-accounts-panel.desktop*, name *Online Accounts*, exec *gnome-control-center online-accounts*
+adding /usr/share/applications/gnome-online-accounts-panel.desktop to menu with name *Online Accounts*
+location */usr/share/applications/razor-config-notificationd.desktop*, name *Razor Freedesktop Notifications Configuration*, exec *razor-config-notificationd*
+adding /usr/share/applications/razor-config-notificationd.desktop to menu with name *Razor Freedesktop Notifications Configuration*
+adding /usr/share/applications/razor-config-notificationd.desktop to menu with cmd *razor-config-notificationd*
+location */home/sa1/.local/share/applications/wine-extension-xml.desktop*, name *winebrowser*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/vc2005express" wine start /ProgIDOpen xmlfile %f*
+location */usr/share/applications/gcr-viewer.desktop*, name *View file*, exec */usr/bin/gcr-viewer*
+location */usr/share/applications/gksu-properties.desktop*, name *Privilege granting*, exec *gksu-properties*
+adding /usr/share/applications/gksu-properties.desktop to menu with name *Privilege granting*
+adding /usr/share/applications/gksu-properties.desktop to menu with cmd *gksu-properties*
+location */home/sa1/.local/share/applications/wine-extension-jpe.desktop*, name *Wine Internet Explorer*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/vc2005express" wine start /ProgIDOpen jpegfile %f*
+location */usr/share/applications/gnome-screenshot.desktop*, name *Screenshot*, exec *gnome-screenshot --interactive*
+adding /usr/share/applications/gnome-screenshot.desktop to menu with name *Screenshot*
+adding /usr/share/applications/gnome-screenshot.desktop to menu with cmd *gnome-screenshot*
+location */usr/share/applications/bvnc.desktop*, name *Avahi VNC Server Browser*, exec */usr/bin/bvnc*
+adding /usr/share/applications/bvnc.desktop to menu with name *Avahi VNC Server Browser*
+adding /usr/share/applications/bvnc.desktop to menu with cmd *bvnc*
+location */usr/share/applications/gnome-system-monitor.desktop*, name *System Monitor*, exec *gnome-system-monitor*
+adding /usr/share/applications/gnome-system-monitor.desktop to menu with name *System Monitor*
+adding /usr/share/applications/gnome-system-monitor.desktop to menu with cmd *gnome-system-monitor*
+location */usr/share/applications/steelstorm.desktop*, name *steelstorm ep. 2*, exec *steelstorm*
+adding /usr/share/applications/steelstorm.desktop to menu with name *steelstorm ep. 2*
+adding /usr/share/applications/steelstorm.desktop to menu with cmd *steelstorm*
+location */usr/share/applications/pympd.desktop*, name *pympd*, exec *pympd*
+adding /usr/share/applications/pympd.desktop to menu with name *pympd*
+location */usr/share/applications/gcr-prompter.desktop*, name *Access Prompt*, exec */usr/lib/gcr/gcr-prompter*
+location */usr/share/applications/Arch-Developers.desktop*, name *Developers*, exec *xdg-open http://www.archlinux.org/developers/*
+adding /usr/share/applications/Arch-Developers.desktop to menu with name *Developers*
+location */usr/share/applications/razor-config-mouse.desktop*, name *Razor Mouse Configurator*, exec *razor-config-mouse*
+adding /usr/share/applications/razor-config-mouse.desktop to menu with name *Razor Mouse Configurator*
+adding /usr/share/applications/razor-config-mouse.desktop to menu with cmd *razor-config-mouse*
+location */usr/share/applications/bluetooth-wizard.desktop*, name *Bluetooth Device Setup*, exec *bluetooth-wizard*
+location */usr/share/applications/linuxdcpp.desktop*, name *LinuxDC++*, exec *linuxdcpp*
+adding /usr/share/applications/linuxdcpp.desktop to menu with name *LinuxDC++*
+adding /usr/share/applications/linuxdcpp.desktop to menu with cmd *linuxdcpp*
+location */usr/share/applications/amnesia-tdd.desktop*, name *Amnesia: The Dark Descent*, exec *amnesia-tdd-launcher*
+adding /usr/share/applications/amnesia-tdd.desktop to menu with name *Amnesia: The Dark Descent*
+adding /usr/share/applications/amnesia-tdd.desktop to menu with cmd *amnesia-tdd-launcher*
+location */usr/share/applications/multiwinia.desktop*, name *Multiwinia*, exec */usr/bin/multiwinia*
+adding /usr/share/applications/multiwinia.desktop to menu with name *Multiwinia*
+location */usr/share/applications/gnome-shell.desktop*, name *GNOME Shell*, exec */usr/bin/gnome-shell*
+location */usr/share/applications/paprefs.desktop*, name *PulseAudio Preferences*, exec *paprefs*
+adding /usr/share/applications/paprefs.desktop to menu with name *PulseAudio Preferences*
+adding /usr/share/applications/paprefs.desktop to menu with cmd *paprefs*
+location */usr/share/applications/termite.desktop*, name *Termite*, exec *termite*
+adding /usr/share/applications/termite.desktop to menu with name *Termite*
+location */usr/share/applications/gnome-color-chooser.desktop*, name *GNOME Color Chooser*, exec *gnome-color-chooser*
+adding /usr/share/applications/gnome-color-chooser.desktop to menu with name *GNOME Color Chooser*
+adding /usr/share/applications/gnome-color-chooser.desktop to menu with cmd *gnome-color-chooser*
+location */usr/share/applications/openarena.desktop*, name *OpenArena*, exec *openarena*
+adding /usr/share/applications/openarena.desktop to menu with name *OpenArena*
+location */usr/share/applications/gnome-wacom-panel.desktop*, name *Wacom Tablet*, exec *gnome-control-center wacom*
+adding /usr/share/applications/gnome-wacom-panel.desktop to menu with name *Wacom Tablet*
+location */usr/share/applications/sonata.desktop*, name *Sonata*, exec *sonata*
+adding /usr/share/applications/sonata.desktop to menu with name *Sonata*
+location */usr/share/applications/cheese.desktop*, name *Cheese*, exec *cheese*
+adding /usr/share/applications/cheese.desktop to menu with name *Cheese*
+location */usr/share/applications/monodoc.desktop*, name *Mono Documentation*, exec */usr/bin/monodoc*
+adding /usr/share/applications/monodoc.desktop to menu with name *Mono Documentation*
+adding /usr/share/applications/monodoc.desktop to menu with cmd *monodoc*
+location */usr/share/applications/umplayer.desktop*, name *UMPlayer*, exec *umplayer %f*
+adding /usr/share/applications/umplayer.desktop to menu with name *UMPlayer*
+location */home/sa1/.local/share/applications/userapp-Thunderbird-U7126V.desktop*, name *Thunderbird*, exec */usr/lib/thunderbird/thunderbird %u*
+location */usr/share/applications/gnome-control-center.desktop*, name *System Settings*, exec *gnome-control-center --overview*
+adding /usr/share/applications/gnome-control-center.desktop to menu with name *System Settings*
+location */usr/share/applications/zeroinstall-add.desktop*, name *Add New Program*, exec *0desktop -- %u*
+adding /usr/share/applications/zeroinstall-add.desktop to menu with name *Add New Program*
+location */usr/share/applications/razor-config-appearance.desktop*, name *Razor Appearance Configuration*, exec *razor-config-appearance*
+adding /usr/share/applications/razor-config-appearance.desktop to menu with name *Razor Appearance Configuration*
+adding /usr/share/applications/razor-config-appearance.desktop to menu with cmd *razor-config-appearance*
+location */usr/share/applications/megaglest_g3dviewer.desktop*, name *MegaGlest Model Viewer*, exec *megaglest_g3dviewer*
+adding /usr/share/applications/megaglest_g3dviewer.desktop to menu with name *MegaGlest Model Viewer*
+adding /usr/share/applications/megaglest_g3dviewer.desktop to menu with cmd *megaglest_g3dviewer*
+location */usr/share/applications/brasero-nautilus.desktop*, name *CD/DVD Creator*, exec *nautilus --no-default-window --no-desktop burn:/// *
+location */usr/share/applications/gsharp.desktop*, name *gsharp*, exec */usr/bin/gsharp*
+adding /usr/share/applications/gsharp.desktop to menu with name *gsharp*
+location */usr/share/applications/gnome-panel.desktop*, name *Panel*, exec *gnome-panel*
+location */usr/share/applications/empathy.desktop*, name *Empathy*, exec *empathy*
+adding /usr/share/applications/empathy.desktop to menu with name *Empathy*
+location */home/sa1/.local/share/applications/wine/Programs/Steam/Steam Support Center.desktop*, name *Steam Support Center*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/steam" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/sa1/.local/share/wineprefixes/steam/dosdevices/c:/users/sa1/Start\\ Menu/Programs/Steam/Steam\\ Support\\ Center.lnk*
+adding /home/sa1/.local/share/applications/wine/Programs/Steam/Steam Support Center.desktop to menu with name *Steam Support Center*
+location */usr/share/applications/legend-of-grimrock.desktop*, name *Legend of Grimrock*, exec */usr/bin/legend-of-grimrock*
+adding /usr/share/applications/legend-of-grimrock.desktop to menu with name *Legend of Grimrock*
+adding /usr/share/applications/legend-of-grimrock.desktop to menu with cmd *legend-of-grimrock*
+location */usr/share/applications/gnome-screen-panel.desktop*, name *Brightness & Lock*, exec *gnome-control-center screen*
+adding /usr/share/applications/gnome-screen-panel.desktop to menu with name *Brightness & Lock*
+location */usr/share/applications/audacity.desktop*, name *Audacity*, exec *audacity %F*
+adding /usr/share/applications/audacity.desktop to menu with name *Audacity*
+location */home/sa1/.local/share/applications/wine-extension-ini.desktop*, name *notepad*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/vc2005express" wine start /ProgIDOpen inifile %f*
+location */usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Terminate+Windows+Applications.desktop*, name *Terminate Windows Applications*, exec */opt/cxoffice/bin/cxreset*
+adding /usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Terminate+Windows+Applications.desktop to menu with name *Terminate Windows Applications*
+adding /usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Terminate+Windows+Applications.desktop to menu with cmd *cxreset*
+location */usr/share/applications/libreoffice-startcenter.desktop*, name *LibreOffice *, exec *libreoffice %U*
+adding /usr/share/applications/libreoffice-startcenter.desktop to menu with name *LibreOffice *
+location */usr/share/applications/vvvvvv.desktop*, name *VVVVVV*, exec */usr/bin/vvvvvv*
+adding /usr/share/applications/vvvvvv.desktop to menu with name *VVVVVV*
+location */usr/share/applications/gparted.desktop*, name *GParted*, exec *gparted-pkexec*
+adding /usr/share/applications/gparted.desktop to menu with name *GParted*
+adding /usr/share/applications/gparted.desktop to menu with cmd *gparted-pkexec*
+location */usr/share/applications/sparkleshare.desktop*, name *SparkleShare*, exec *sparkleshare start*
+adding /usr/share/applications/sparkleshare.desktop to menu with name *SparkleShare*
+location */usr/share/applications/minitube.desktop*, name *Minitube*, exec *minitube*
+adding /usr/share/applications/minitube.desktop to menu with name *Minitube*
+location */usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Register+and+Unlock+this+Demo.desktop*, name *Register and Unlock this Demo*, exec */opt/cxoffice/bin/cxregister*
+adding /usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Register+and+Unlock+this+Demo.desktop to menu with name *Register and Unlock this Demo*
+adding /usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-Register+and+Unlock+this+Demo.desktop to menu with cmd *cxregister*
+location */usr/share/applications/pyrenamer.desktop*, name *pyRenamer*, exec */usr/bin/pyrenamer*
+adding /usr/share/applications/pyrenamer.desktop to menu with name *pyRenamer*
+location */usr/share/applications/pavumeter-record.desktop*, name *PulseAudio Volume Meter (Capture)*, exec *pavumeter --record*
+adding /usr/share/applications/pavumeter-record.desktop to menu with name *PulseAudio Volume Meter (Capture)*
+location */usr/share/applications/jamestown.desktop*, name *Jamestown*, exec *"/opt/jamestown/Jamestown"*
+adding /usr/share/applications/jamestown.desktop to menu with name *Jamestown*
+adding /usr/share/applications/jamestown.desktop to menu with cmd *Jamestown"*
+location */usr/share/applications/libreoffice-writer.desktop*, name *LibreOffice Writer*, exec *libreoffice --writer %U*
+adding /usr/share/applications/libreoffice-writer.desktop to menu with name *LibreOffice Writer*
+location */usr/share/applications/itweb-settings.desktop*, name *IcedTea Web Control Panel*, exec */usr/lib/jvm/java-7-openjdk/bin/itweb-settings*
+adding /usr/share/applications/itweb-settings.desktop to menu with name *IcedTea Web Control Panel*
+adding /usr/share/applications/itweb-settings.desktop to menu with cmd *itweb-settings*
+location */usr/share/applications/gcm-calibrate.desktop*, name *Color*, exec *gcm-calibrate*
+location */usr/share/applications/bssh.desktop*, name *Avahi SSH Server Browser*, exec */usr/bin/bssh*
+adding /usr/share/applications/bssh.desktop to menu with name *Avahi SSH Server Browser*
+adding /usr/share/applications/bssh.desktop to menu with cmd *bssh*
+location */usr/share/applications/termit.desktop*, name *Termit*, exec *termit*
+adding /usr/share/applications/termit.desktop to menu with name *Termit*
+location */usr/share/applications/gnome-mplayer.desktop*, name *GNOME MPlayer*, exec *gnome-mplayer %F*
+adding /usr/share/applications/gnome-mplayer.desktop to menu with name *GNOME MPlayer*
+adding /usr/share/applications/gnome-mplayer.desktop to menu with cmd *gnome-mplayer*
+location */usr/share/applications/lonesurvivor.desktop*, name *Lone Survivor*, exec */usr/bin/lonesurvivor*
+adding /usr/share/applications/lonesurvivor.desktop to menu with name *Lone Survivor*
+adding /usr/share/applications/lonesurvivor.desktop to menu with cmd *lonesurvivor*
+location */usr/share/applications/razor-config-autosuspend.desktop*, name *Razor Autosuspend Configuration*, exec *razor-config-autosuspend*
+adding /usr/share/applications/razor-config-autosuspend.desktop to menu with name *Razor Autosuspend Configuration*
+adding /usr/share/applications/razor-config-autosuspend.desktop to menu with cmd *razor-config-autosuspend*
+location */usr/share/applications/kupfer-exec.desktop*, name *Execute in Kupfer*, exec *kupfer-exec %F*
+location */home/sa1/.local/share/applications/wine/Programs/DAZ 3D/Bryce Lightning/Uninstall Bryce Lightning 7.0.desktop*, name *Uninstall Bryce Lightning 7.0*, exec *env WINEPREFIX="/home/sa1/.wine" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/sa1/.wine/dosdevices/c:/users/Public/Start\\ Menu/Programs/DAZ\\ 3D/Bryce\\ Lightning/Uninstall\\ Bryce\\ Lightning\\ 7.0.lnk*
+adding /home/sa1/.local/share/applications/wine/Programs/DAZ 3D/Bryce Lightning/Uninstall Bryce Lightning 7.0.desktop to menu with name *Uninstall Bryce Lightning 7.0*
+location */usr/share/applications/luakit.desktop*, name *Luakit*, exec *luakit %u*
+adding /usr/share/applications/luakit.desktop to menu with name *Luakit*
+location */usr/share/applications/gcalctool.desktop*, name *Calculator*, exec *gcalctool*
+adding /usr/share/applications/gcalctool.desktop to menu with name *Calculator*
+adding /usr/share/applications/gcalctool.desktop to menu with cmd *gcalctool*
+location */usr/share/applications/gnome-terminal.desktop*, name *Terminal*, exec *gnome-terminal*
+adding /usr/share/applications/gnome-terminal.desktop to menu with name *Terminal*
+adding /usr/share/applications/gnome-terminal.desktop to menu with cmd *gnome-terminal*
+location */usr/share/applications/vino-preferences.desktop*, name *Desktop Sharing*, exec *vino-preferences*
+adding /usr/share/applications/vino-preferences.desktop to menu with name *Desktop Sharing*
+adding /usr/share/applications/vino-preferences.desktop to menu with cmd *vino-preferences*
+location */home/sa1/.local/share/applications/wine-extension-txt.desktop*, name *notepad*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/vc2005express" wine start /ProgIDOpen txtfile %f*
+location */usr/share/applications/wizorb.desktop*, name *Wizorb*, exec *wizorb*
+adding /usr/share/applications/wizorb.desktop to menu with name *Wizorb*
+location */usr/share/applications/bastion.desktop*, name *Bastion*, exec */usr/bin/bastion*
+adding /usr/share/applications/bastion.desktop to menu with name *Bastion*
+location */usr/share/applications/assistant.desktop*, name *Qt Assistant*, exec */usr/bin/assistant*
+adding /usr/share/applications/assistant.desktop to menu with name *Qt Assistant*
+adding /usr/share/applications/assistant.desktop to menu with cmd *assistant*
+location */usr/share/applications/razor-config.desktop*, name *Razor Configuration Center*, exec *razor-config*
+adding /usr/share/applications/razor-config.desktop to menu with name *Razor Configuration Center*
+adding /usr/share/applications/razor-config.desktop to menu with cmd *razor-config*
+location */usr/share/applications/urxvt.desktop*, name *urxvt*, exec *urxvt*
+adding /usr/share/applications/urxvt.desktop to menu with name *urxvt*
+location */usr/share/applications/bitcoin.desktop*, name *Bitcoin*, exec */usr/bin/bitcoin-qt*
+adding /usr/share/applications/bitcoin.desktop to menu with name *Bitcoin*
+adding /usr/share/applications/bitcoin.desktop to menu with cmd *bitcoin-qt*
+location */usr/share/applications/razor-about.desktop*, name *About Razor*, exec *razor-about*
+adding /usr/share/applications/razor-about.desktop to menu with name *About Razor*
+adding /usr/share/applications/razor-about.desktop to menu with cmd *razor-about*
+location */usr/share/applications/gvim.desktop*, name *Vi IMproved*, exec *gvim -f %F*
+adding /usr/share/applications/gvim.desktop to menu with name *Vi IMproved*
+adding /usr/share/applications/gvim.desktop to menu with cmd *gvim*
+location */usr/share/applications/nm-connection-editor.desktop*, name *Network Connections*, exec *nm-connection-editor*
+adding /usr/share/applications/nm-connection-editor.desktop to menu with name *Network Connections*
+adding /usr/share/applications/nm-connection-editor.desktop to menu with cmd *nm-connection-editor*
+location */usr/share/applications/baobab.desktop*, name *Disk Usage Analyzer*, exec *baobab*
+adding /usr/share/applications/baobab.desktop to menu with name *Disk Usage Analyzer*
+adding /usr/share/applications/baobab.desktop to menu with cmd *baobab*
+location */usr/share/applications/xonotic-glx.desktop*, name *Xonotic (GLX)*, exec */usr/bin/xonotic-glx*
+adding /usr/share/applications/xonotic-glx.desktop to menu with name *Xonotic (GLX)*
+adding /usr/share/applications/xonotic-glx.desktop to menu with cmd *xonotic-glx*
+location */usr/share/applications/emacs.desktop*, name *Emacs*, exec *emacs %F*
+adding /usr/share/applications/emacs.desktop to menu with name *Emacs*
+location */usr/share/applications/xfce4-taskmanager.desktop*, name *Task Manager*, exec *xfce4-taskmanager*
+adding /usr/share/applications/xfce4-taskmanager.desktop to menu with name *Task Manager (2)*
+adding /usr/share/applications/xfce4-taskmanager.desktop to menu with cmd *xfce4-taskmanager*
+location */usr/share/applications/smplayer.desktop*, name *SMPlayer*, exec *smplayer %U*
+adding /usr/share/applications/smplayer.desktop to menu with name *SMPlayer*
+location */usr/share/applications/Arch-Homepage.desktop*, name *Homepage*, exec *xdg-open http://www.archlinux.org*
+adding /usr/share/applications/Arch-Homepage.desktop to menu with name *Homepage*
+location */usr/share/applications/pto_gen.desktop*, name *Hugin PTO generator*, exec *pto_gen %F*
+location */usr/share/applications/zenbound2.desktop*, name *Zen Bound® 2*, exec */opt/zenbound2/zenbound2*
+adding /usr/share/applications/zenbound2.desktop to menu with name *Zen Bound® 2*
+adding /usr/share/applications/zenbound2.desktop to menu with cmd *zenbound2*
+location */usr/share/applications/gnome-shell-extension-prefs.desktop*, name *GNOME Shell Extension Preferences*, exec */usr/bin/gnome-shell-extension-prefs %u*
+location */usr/share/applications/git-cola.desktop*, name *Cola Git GUI*, exec *git-cola --prompt*
+adding /usr/share/applications/git-cola.desktop to menu with name *Cola Git GUI*
+adding /usr/share/applications/git-cola.desktop to menu with cmd *git-cola*
+location */usr/share/applications/limbo.desktop*, name *Limbo*, exec */usr/bin/limbo*
+adding /usr/share/applications/limbo.desktop to menu with name *Limbo*
+location */usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-User+Documentation.desktop*, name *User Documentation*, exec */opt/cxoffice/bin/launchurl file:///opt/cxoffice/doc/en/index.html*
+adding /usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-User+Documentation.desktop to menu with name *User Documentation*
+adding /usr/local/share/applications/cxmenu-cxoffice-0-29ra4ke-User+Documentation.desktop to menu with cmd *launchurl*
+location */usr/share/applications/razor-config-globalkeyshortcuts.desktop*, name *Razor Shortcut Configuration*, exec *razor-config-globalkeyshortcuts*
+adding /usr/share/applications/razor-config-globalkeyshortcuts.desktop to menu with name *Razor Shortcut Configuration*
+adding /usr/share/applications/razor-config-globalkeyshortcuts.desktop to menu with cmd *razor-config-globalkeyshortcuts*
+location */usr/share/applications/eog.desktop*, name *Image Viewer*, exec *eog %U*
+adding /usr/share/applications/eog.desktop to menu with name *Image Viewer (2)*
+adding /usr/share/applications/eog.desktop to menu with cmd *eog*
+location */usr/share/applications/gucharmap.desktop*, name *Character Map*, exec *gucharmap*
+adding /usr/share/applications/gucharmap.desktop to menu with name *Character Map*
+adding /usr/share/applications/gucharmap.desktop to menu with cmd *gucharmap*
+location */usr/share/applications/qtcreator.desktop*, name *Qt Creator*, exec */usr/bin/qtcreator*
+adding /usr/share/applications/qtcreator.desktop to menu with name *Qt Creator*
+adding /usr/share/applications/qtcreator.desktop to menu with cmd *qtcreator*
+location */usr/share/applications/xarchiver.desktop*, name *Xarchiver*, exec *xarchiver*
+adding /usr/share/applications/xarchiver.desktop to menu with name *Xarchiver*
+location */usr/share/applications/seahorse.desktop*, name *Passwords and Keys*, exec */usr/bin/seahorse*
+adding /usr/share/applications/seahorse.desktop to menu with name *Passwords and Keys*
+adding /usr/share/applications/seahorse.desktop to menu with cmd *seahorse*
+location */usr/share/applications/pasystray.desktop*, name *PulseAudio System Tray*, exec *pasystray*
+adding /usr/share/applications/pasystray.desktop to menu with name *PulseAudio System Tray*
+adding /usr/share/applications/pasystray.desktop to menu with cmd *pasystray*
+location */usr/share/applications/tribler.desktop*, name *Tribler*, exec *tribler*
+adding /usr/share/applications/tribler.desktop to menu with name *Tribler*
+location */usr/share/applications/tuxpaint.desktop*, name *Tux Paint*, exec *tuxpaint*
+adding /usr/share/applications/tuxpaint.desktop to menu with name *Tux Paint*
+adding /usr/share/applications/tuxpaint.desktop to menu with cmd *tuxpaint*
+location */usr/share/applications/openarena-server.desktop*, name *OpenArena Server*, exec *openarena-server*
+adding /usr/share/applications/openarena-server.desktop to menu with name *OpenArena Server*
+adding /usr/share/applications/openarena-server.desktop to menu with cmd *openarena-server*
+location */usr/share/applications/deluge.desktop*, name *Deluge*, exec *deluge-gtk %U*
+adding /usr/share/applications/deluge.desktop to menu with name *Deluge*
+adding /usr/share/applications/deluge.desktop to menu with cmd *deluge-gtk*
+location */usr/share/applications/calibre-gui.desktop*, name *Calibre*, exec *calibre*
+adding /usr/share/applications/calibre-gui.desktop to menu with name *Calibre*
+location */usr/share/applications/skype.desktop*, name *Skype*, exec *skype %U*
+adding /usr/share/applications/skype.desktop to menu with name *Skype*
+location */usr/share/applications/gnome-contacts.desktop*, name *Contacts*, exec *gnome-contacts*
+adding /usr/share/applications/gnome-contacts.desktop to menu with name *Contacts*
+adding /usr/share/applications/gnome-contacts.desktop to menu with cmd *gnome-contacts*
+location */usr/share/applications/mirage.desktop*, name *Mirage*, exec *mirage %f*
+adding /usr/share/applications/mirage.desktop to menu with name *Mirage*
+location */usr/share/applications/xfce4-about.desktop*, name *About Xfce*, exec *xfce4-about*
+adding /usr/share/applications/xfce4-about.desktop to menu with name *About Xfce*
+adding /usr/share/applications/xfce4-about.desktop to menu with cmd *xfce4-about*
+location */usr/share/applications/gnome-info-panel.desktop*, name *Details*, exec *gnome-control-center info*
+adding /usr/share/applications/gnome-info-panel.desktop to menu with name *Details*
+location */usr/share/applications/xchat.desktop*, name *XChat IRC*, exec *xchat*
+adding /usr/share/applications/xchat.desktop to menu with name *XChat IRC*
+adding /usr/share/applications/xchat.desktop to menu with cmd *xchat*
+location */usr/share/applications/gendarme-wizard.desktop*, name *Gendarme*, exec */usr/bin/gendarme-wizard*
+adding /usr/share/applications/gendarme-wizard.desktop to menu with name *Gendarme*
+adding /usr/share/applications/gendarme-wizard.desktop to menu with cmd *gendarme-wizard*
+location */usr/share/applications/aumix.desktop*, name *GTK sound mixer*, exec */usr/bin/aumix*
+adding /usr/share/applications/aumix.desktop to menu with name *GTK sound mixer*
+adding /usr/share/applications/aumix.desktop to menu with cmd *aumix*
+location */home/sa1/.local/share/applications/wine/Programs/AutoHotkey/Extras.desktop*, name *Extras*, exec *env WINEPREFIX="/home/sa1/.local/share/wineprefixes/autohotkey" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/sa1/.local/share/wineprefixes/autohotkey/dosdevices/c:/users/Public/Start\\ Menu/Programs/AutoHotkey/Extras.lnk*
+adding /home/sa1/.local/share/applications/wine/Programs/AutoHotkey/Extras.desktop to menu with name *Extras*
+[{"success":true}]

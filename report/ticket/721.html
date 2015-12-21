@@ -1,0 +1,794 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #721 (i3bar should not output separator)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/720" title="Ticket #720" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/721?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/721?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/721?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/722" title="Ticket #722" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="2d5b1a893596b3b1fae75ccf";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/720" title="Ticket #720">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/722" title="Ticket #722">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-06-06T09%3A05%3A11%2B02%3A00&amp;precision=second" title="See timeline at 06/06/12 09:05:11">3 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2012-09-24T23%3A12%3A36%2B02%3A00&amp;precision=second" title="See timeline at 09/24/12 23:12:36">3 years ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/721" class="trac-id">#721</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=enhancement">enhancement</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=reporter_inactive">reporter_inactive</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">i3bar should not output separator</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">vadim.atlygin@…</td>
+      <th id="h_owner" class="missing">Owned by:</th>
+      <td headers="h_owner"></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=i3bar">i3bar</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.2">4.2</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              807d2288b6fb1001dff585cf74669171558fcf0a
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+              Ubuntu
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+Since I'm using conky as a replacement for i3status, I had to find some use for all that empty space in i3bar. I decided to output Emacs compilation status there. It works great except that I have all this | symbols all over my output. I think i3status should insert them instead, not i3bar.<br />
+</p>
+<p>
+Attached an image of how it looks.<br />
+</p>
+<p>
+<a style="padding:0; border:none" href="https://lh3.googleusercontent.com/-5GbRV522M3s/T88AYSSBcGI/AAAAAAAACp0/MLFZ-tMuC9w/s267/Emacs+compilation+status.png"><img src="https://lh3.googleusercontent.com/-5GbRV522M3s/T88AYSSBcGI/AAAAAAAACp0/MLFZ-tMuC9w/s267/Emacs+compilation+status.png" alt="https://lh3.googleusercontent.com/-5GbRV522M3s/T88AYSSBcGI/AAAAAAAACp0/MLFZ-tMuC9w/s267/Emacs+compilation+status.png" title="https://lh3.googleusercontent.com/-5GbRV522M3s/T88AYSSBcGI/AAAAAAAACp0/MLFZ-tMuC9w/s267/Emacs+compilation+status.png" /></a><br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(5)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/721/Emacs%20compilation%20status.png" title="View attachment">Emacs compilation status.png</a><a href="/report/raw-attachment/ticket/721/Emacs%20compilation%20status.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="885 bytes">885 bytes</span>) -
+      added by <em>vadim.atlygin@…</em> <a class="timeline" href="/report/timeline?from=2012-06-06T09%3A05%3A27%2B02%3A00&amp;precision=second" title="See timeline at 06/06/12 09:05:27">3 years ago</a>.
+  </dt>
+              <dd>
+                screenshot
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/721/0001-Send-separator-true-with-proper-color-as-separator-w.patch" title="View attachment">0001-Send-separator-true-with-proper-color-as-separator-w.patch</a><a href="/report/raw-attachment/ticket/721/0001-Send-separator-true-with-proper-color-as-separator-w.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="1993 bytes">1.9 KB</span>) -
+      added by <em>vadim.atlygin@…</em> <a class="timeline" href="/report/timeline?from=2012-06-08T14%3A00%3A43%2B02%3A00&amp;precision=second" title="See timeline at 06/08/12 14:00:43">3 years ago</a>.
+  </dt>
+              <dd>
+                patch for i3status
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/721/0001-Add-support-for-separator-true-blocks.patch" title="View attachment">0001-Add-support-for-separator-true-blocks.patch</a><a href="/report/raw-attachment/ticket/721/0001-Add-support-for-separator-true-blocks.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="5682 bytes">5.5 KB</span>) -
+      added by <em>vadim.atlygin@…</em> <a class="timeline" href="/report/timeline?from=2012-06-08T14%3A01%3A16%2B02%3A00&amp;precision=second" title="See timeline at 06/08/12 14:01:16">3 years ago</a>.
+  </dt>
+              <dd>
+                Patch for i3bar
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/721/0001-Add-support-for-separator-true-blocks.2.patch" title="View attachment">0001-Add-support-for-separator-true-blocks.2.patch</a><a href="/report/raw-attachment/ticket/721/0001-Add-support-for-separator-true-blocks.2.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="9459 bytes">9.2 KB</span>) -
+      added by <em>vadim.atlygin@…</em> <a class="timeline" href="/report/timeline?from=2012-06-11T02%3A48%3A54%2B02%3A00&amp;precision=second" title="See timeline at 06/11/12 02:48:54">3 years ago</a>.
+  </dt>
+              <dd>
+                Updated patch for i3bar
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/721/0001-Send-separator-true-with-proper-color-as-separator-w.2.patch" title="View attachment">0001-Send-separator-true-with-proper-color-as-separator-w.2.patch</a><a href="/report/raw-attachment/ticket/721/0001-Send-separator-true-with-proper-color-as-separator-w.2.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="2430 bytes">2.4 KB</span>) -
+      added by <em>vadim.atlygin@…</em> <a class="timeline" href="/report/timeline?from=2012-06-11T02%3A49%3A16%2B02%3A00&amp;precision=second" title="See timeline at 06/11/12 02:49:16">3 years ago</a>.
+  </dt>
+              <dd>
+                Updated patch for i3status
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/721/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(14)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-06-06T09%3A05%3A27%2B02%3A00&amp;precision=second" title="See timeline at 06/06/12 09:05:27">3 years ago</a> by vadim.atlygin@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/721/Emacs%20compilation%20status.png"><em>Emacs compilation status.png</em></a><a href="/report/raw-attachment/ticket/721/Emacs%20compilation%20status.png" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+screenshot<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-1-1338967141962823">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-06-06T09%3A19%3A01%2B02%3A00&amp;precision=second" title="See timeline at 06/06/12 09:19:01">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>wontfix</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I see where you’re coming from and I agree that in your situation this might be useful. However, since I don’t care about it, I won’t implement it. Patches welcome. Please reopen once you got a patch, feel free to ask questions in case you got any.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-06-08T14%3A00%3A43%2B02%3A00&amp;precision=second" title="See timeline at 06/08/12 14:00:43">3 years ago</a> by vadim.atlygin@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/721/0001-Send-separator-true-with-proper-color-as-separator-w.patch"><em>0001-Send-separator-true-with-proper-color-as-separator-w.patch</em></a><a href="/report/raw-attachment/ticket/721/0001-Send-separator-true-with-proper-color-as-separator-w.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+patch for i3status<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-06-08T14%3A01%3A16%2B02%3A00&amp;precision=second" title="See timeline at 06/08/12 14:01:16">3 years ago</a> by vadim.atlygin@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/721/0001-Add-support-for-separator-true-blocks.patch"><em>0001-Add-support-for-separator-true-blocks.patch</em></a><a href="/report/raw-attachment/ticket/721/0001-Add-support-for-separator-true-blocks.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Patch for i3bar<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1339156941083372">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-06-08T14%3A02%3A21%2B02%3A00&amp;precision=second" title="See timeline at 06/08/12 14:02:21">3 years ago</a> by vadim.atlygin@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        <em>wontfix</em> deleted
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>closed</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Patches attached.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1339325125615850">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:4" class="follow-up">↓ 4</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-06-10T12%3A45%3A25%2B02%3A00&amp;precision=second" title="See timeline at 06/10/12 12:45:25">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Thanks for your patches. IMO, it’d be much cleaner to not use a union in i3bar, but have a new boolean field.<br />
+</p>
+<p>
+Also, please update i3/docs/i3bar-protocol with your additions.<br />
+</p>
+<p>
+And, most importantly, what’s the update strategy here? How do you ensure that you can use the new i3bar with the old i3status and vice-versa and still get the same result?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1339330002690975">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+        in reply to:
+    <a href="#comment:3">↑ 3</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:5" class="follow-up">↓ 5</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-06-10T14%3A06%3A42%2B02%3A00&amp;precision=second" title="See timeline at 06/10/12 14:06:42">3 years ago</a> by vadim.atlygin@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/721#comment:3" title="Comment 3">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Thanks for your patches. IMO, it’d be much cleaner to not use a union in i3bar, but have a new boolean field.<br />
+</p>
+</blockquote>
+<p>
+Ok, I'll do that. Didn't want to change memory footprint.<br />
+</p>
+<blockquote class="citation">
+<p>
+Also, please update i3/docs/i3bar-protocol with your additions.<br />
+</p>
+</blockquote>
+<p>
+Ok.<br />
+</p>
+<blockquote class="citation">
+<p>
+And, most importantly, what’s the update strategy here? How do you ensure that you can use the new i3bar with the old i3status and vice-versa and still get the same result?<br />
+</p>
+</blockquote>
+<p>
+Tricky question. I think the easiest way is to change the version of i3bar protocol to 1.01 and let the i3bar recognize and deal with both 1.0 and 1.01 for a while. What do you think?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1339344421820833">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+        in reply to:
+    <a href="#comment:4">↑ 4</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-06-10T18%3A07%3A01%2B02%3A00&amp;precision=second" title="See timeline at 06/10/12 18:07:01">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/721#comment:4" title="Comment 4">vadim.atlygin@…</a>:<br />
+</p>
+<blockquote class="citation">
+<blockquote class="citation">
+<p>
+And, most importantly, what’s the update strategy here? How do you ensure that you can use the new i3bar with the old i3status and vice-versa and still get the same result?<br />
+</p>
+</blockquote>
+<p>
+Tricky question. I think the easiest way is to change the version of i3bar protocol to 1.01 and let the i3bar recognize and deal with both 1.0 and 1.01 for a while. What do you think?<br />
+</p>
+</blockquote>
+<p>
+The protocol version needs to be 2, not 1.01, since it’s an integer. I think this is the only sane option we have currently. Support for version 1 should still be there for at least one year’s worth of i3 major release (so, the 3 following major releases).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-06-11T02%3A48%3A54%2B02%3A00&amp;precision=second" title="See timeline at 06/11/12 02:48:54">3 years ago</a> by vadim.atlygin@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/721/0001-Add-support-for-separator-true-blocks.2.patch"><em>0001-Add-support-for-separator-true-blocks.2.patch</em></a><a href="/report/raw-attachment/ticket/721/0001-Add-support-for-separator-true-blocks.2.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Updated patch for i3bar<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-06-11T02%3A49%3A16%2B02%3A00&amp;precision=second" title="See timeline at 06/11/12 02:49:16">3 years ago</a> by vadim.atlygin@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/721/0001-Send-separator-true-with-proper-color-as-separator-w.2.patch"><em>0001-Send-separator-true-with-proper-color-as-separator-w.2.patch</em></a><a href="/report/raw-attachment/ticket/721/0001-Send-separator-true-with-proper-color-as-separator-w.2.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Updated patch for i3status<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1339375848003697">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-06-11T02%3A50%3A48%2B02%3A00&amp;precision=second" title="See timeline at 06/11/12 02:50:48">3 years ago</a> by vadim.atlygin@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Updated patches attached. Since JSON does not distinguish between integers and floats, I made new version 1.01 but I'll change it to 2 if you insist.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1340561587674819">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-06-24T20%3A13%3A07%2B02%3A00&amp;precision=second" title="See timeline at 06/24/12 20:13:07">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Hey,<br />
+</p>
+<p>
+thanks for updating the patches. Here are my comments:<br />
+</p>
+<ul><li>Yes, please change the version to "2". I want to have them as easy to use integers, not floats.
+</li><li>Please change "bucket" to "block" in your explanation of separator in docs/i3bar-protocol.
+</li><li>Please use /* and */ for comments, not <tt>//</tt> (line 156 of i3bar/src/child.c).
+</li><li>Please use values such as 1 and 2 for the <tt>version</tt> variable instead of 100.
+</li><li>The color we currently use for separators is <a class="missing ticket">#666666</a>, but you changed it to be <a class="missing ticket">#333333</a>. Please don’t do that :).
+</li><li>In the i3status patch, please use <tt>yajl_gen_bool(json_gen, true)</tt> instead of <tt>yajl_gen_bool(json_gen, 1)</tt>.
+</li></ul><p>
+Apart from these points, the patches look good.<br />
+</p>
+<p>
+Best regards,<br />
+Michael<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1342435193505421">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-07-16T12%3A39%3A53%2B02%3A00&amp;precision=second" title="See timeline at 07/16/12 12:39:53">3 years ago</a> by lkraav &lt;leho@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+following<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1348521156617761">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-24T23%3A12%3A36%2B02%3A00&amp;precision=second" title="See timeline at 09/24/12 23:12:36">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>reporter_inactive</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>closed</em>
+    </li>
+  </ul>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/721?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/721?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/721?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

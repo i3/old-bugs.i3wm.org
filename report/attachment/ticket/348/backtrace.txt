@@ -1,0 +1,116 @@
+#0  0x00007f25e5c6f655 in raise () from /lib/libc.so.6
+No symbol table info available.
+#1  0x0000000000428cda in sig_handle_key_press (ignored=0x0, conn=0xbaba80, event=0xc25640) at src/sighandler.c:98
+        state = 0
+        sym = 101
+        __FUNCTION__ = "sig_handle_key_press"
+#2  0x00007f25e7931c4b in xcb_event_wait_for_event_loop () from /usr/lib/libxcb-event.so.1
+No symbol table info available.
+#3  0x000000000042913b in handle_signal (sig=6, info=0x7ffff8896730, data=0x7ffff8896600) at src/sighandler.c:208
+        __FUNCTION__ = "handle_signal"
+        action = {__sigaction_handler = {sa_handler = 0, sa_sigaction = 0}, sa_mask = {__val = {139800748853152, 140737363143600, 4222429319, 
+              140737363143760, 139800745604622, 139800748853152, 139800748846016, 139801185484799, 0, 139800745728896, 139800748853152, 
+              139801185484799, 139800748853152, 140737363143696, 139800748853152, 140737363143712}}, sa_flags = -72537977, 
+          sa_restorer = 0x7ffff8896cc0}
+        sig_evenths = {event = {{handler = 0x428c5a <sig_handle_key_press>, data = 0x0}, {handler = 0, data = 0x0} <repeats 125 times>}, error = {{
+              handler = 0, data = 0x0} <repeats 256 times>}, c = 0xbaba80}
+        font = 0xbe1270
+        crash_text_num = 6
+        height = 91
+        text_len = 46
+        longest_text = 0xc255d0 ""
+        font_width = 322
+        width = 342
+        screen = 0x0
+        win = 8388654
+#4  <signal handler called>
+No symbol table info available.
+#5  0x00007f25e5c6f655 in raise () from /lib/libc.so.6
+No symbol table info available.
+#6  0x00007f25e5c70ad6 in abort () from /lib/libc.so.6
+No symbol table info available.
+#7  0x00007f25e5c68285 in __assert_fail () from /lib/libc.so.6
+No symbol table info available.
+#8  0x0000000000429c80 in output_get_content (output=0xc243d0) at src/output.c:19
+        child = 0x0
+        __PRETTY_FUNCTION__ = "output_get_content"
+#9  0x0000000000424e8f in con_next_focused (con=0xc23f10) at src/con.c:623
+        next = 0x41651a
+        __FUNCTION__ = "con_next_focused"
+#10 0x0000000000417349 in tree_close (con=0xc23f10, kill_window=false, dont_kill_parent=true) at src/tree.c:112
+        was_mapped = true
+---Type <return> to continue, or q <return> to quit---
+        parent = 0xc249e0
+        next = 0x79
+        __FUNCTION__ = "tree_close"
+        child = 0x7ffff8896d20
+#11 0x0000000000417408 in tree_close (con=0xc249e0, kill_window=false, dont_kill_parent=true) at src/tree.c:122
+        was_mapped = true
+        parent = 0xc243d0
+        next = 0xc243d0
+        __FUNCTION__ = "tree_close"
+        child = 0xc23f10
+#12 0x0000000000417408 in tree_close (con=0xc243d0, kill_window=false, dont_kill_parent=true) at src/tree.c:122
+        was_mapped = true
+        parent = 0xbe0ee0
+        next = 0xc23ad0
+        __FUNCTION__ = "tree_close"
+        child = 0xc249e0
+#13 0x0000000000422daa in randr_query_outputs () at src/randr.c:642
+        next = 0xc23ad0
+        current = 0xc24c30
+        old_content = 0xc247c0
+        first_content = 0xc07bc0
+        output = 0xbe12a0
+        other = 0x0
+        first = 0xbe13b0
+        pcookie = {sequence = 1008}
+        rcookie = {sequence = 1007}
+        res = 0xc25140
+        cts = 55386
+        randr_outputs = 0xc25168
+        __FUNCTION__ = "randr_query_outputs"
+        len = 3
+        ocookie = 0x7ffff8896e30
+#14 0x00000000004205bd in handle_screen_change (prophs=0x0, conn=0xbaba80, e=0xc241d0) at src/handlers.c:430
+        __FUNCTION__ = "handle_screen_change"
+#15 0x0000000000414583 in xcb_check_cb (loop=0xc086c0, w=0xbe1150, revents=32768) at src/main.c:69
+        event = 0xc241d0
+#16 0x00007f25e5fa0e01 in ev_invoke_pending () from /usr/lib/libev.so.4
+No symbol table info available.
+#17 0x00007f25e5fa4f50 in ev_run () from /usr/lib/libev.so.4
+No symbol table info available.
+#18 0x0000000000414350 in ev_loop (loop=0xc086c0, flags=0) at /usr/include/ev.h:807
+---Type <return> to continue, or q <return> to quit---
+No locals.
+#19 0x0000000000416176 in main (argc=6, argv=0x7ffff8897358) at src/main.c:518
+        screens = 0
+        override_configpath = 0xbab080 "/home/phnom/.config/i3/i3-tree.config"
+        autostart = true
+        layout_path = 0x0
+        delete_layout_path = false
+        only_check_config = false
+        force_xinerama = false
+        disable_signalhandler = false
+        atom_cookies = {{sequence = 3}, {sequence = 5}, {sequence = 6}, {sequence = 4}, {sequence = 7}, {sequence = 8}, {sequence = 10}, {
+            sequence = 11}, {sequence = 12}, {sequence = 13}, {sequence = 14}, {sequence = 9}, {sequence = 15}, {sequence = 16}, {sequence = 17}, {
+            sequence = 18}, {sequence = 19}, {sequence = 20}, {sequence = 21}, {sequence = 22}, {sequence = 23}}
+        long_options = {{name = 0x43e1b0 "no-autostart", has_arg = 0, flag = 0x0, val = 97}, {name = 0x43e1bd "config", has_arg = 1, flag = 0x0, 
+            val = 99}, {name = 0x43e1c4 "version", has_arg = 0, flag = 0x0, val = 118}, {name = 0x43e1cc "help", has_arg = 0, flag = 0x0, val = 104}, 
+          {name = 0x43e1d1 "layout", has_arg = 1, flag = 0x0, val = 76}, {name = 0x43d77d "restart", has_arg = 1, flag = 0x0, val = 0}, {
+            name = 0x43d63d "force-xinerama", has_arg = 0, flag = 0x0, val = 0}, {name = 0x43d767 "disable-signalhandler", has_arg = 0, flag = 0x0, 
+            val = 0}, {name = 0x0, has_arg = 0, flag = 0x0, val = 0}}
+        option_index = 0
+        opt = -1
+        root_screen = 0xbb0d04
+        mask = 2048
+        values = {5374032}
+        cookie = {sequence = 1}
+        needs_tree_init = true
+        randr_base = 101
+        __FUNCTION__ = "main"
+        loop = 0xc086c0
+        xcb_watcher = 0xbe1180
+        xkb = 0xbe11c0
+        xcb_check = 0xbe1150
+        xcb_prepare = 0xc08e70

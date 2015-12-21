@@ -1,0 +1,690 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #628 (Bells for scratchpad)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/627" title="Ticket #627" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/628?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/628?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/628?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/629" title="Ticket #629" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="59c2b3a3733be9637839d1c1";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/627" title="Ticket #627">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/629" title="Ticket #629">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-01-26T21%3A08%3A02%2B01%3A00&amp;precision=second" title="See timeline at 01/26/12 21:08:02">3 years ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2014-09-13T00%3A02%3A34%2B02%3A00&amp;precision=second" title="See timeline at 09/13/14 00:02:34">7 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/628" class="trac-id">#628</a>
+    <span class="trac-status">
+      <a href="/report/query?status=accepted">accepted</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=enhancement">enhancement</a>
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Bells for scratchpad</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable"><a href="/report/query?status=!closed&amp;reporter=anonymous">anonymous</a></td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=minor">minor</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=i3bar">i3bar</a>
+        </td>
+    </tr><tr>
+        <th id="h_version" class="missing">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version="></a>
+        </td>
+        <th id="h_keywords">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+              <a href="/report/query?status=!closed&amp;keywords=~scratchpad">scratchpad</a>, <a href="/report/query?status=!closed&amp;keywords=~bell">bell</a>, <a href="/report/query?status=!closed&amp;keywords=~bells">bells</a>
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              20120103-1
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+              antithesis3254
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+Normally, when a window rings a bell, the appropriate titlebar and workspace light up red to notify you, for example, about an instant message you have received. A window in scratchpad has no workspace and bells are thus not displayed.<br />
+</p>
+<p>
+You can reproduce this problem this way:<br />
+-Focus an IRC client<br />
+-$ i3-msg move scratchpad<br />
+-Have someone highlight you<br />
+-Notice you aren't notified of this<br />
+</p>
+<p>
+My suggestion is that, upon receiving a bell from a window in scratchpad, a workspace is created and has the process' class as name and red as background color. In fact, the workspace could be visible even when there is no bell (but with a regular background), for the sake of accessibility.<br />
+</p>
+<p>
+Just to be clear: according to this suggestion, every window in scratchpad would have its own workspace.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(11)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1332360705371289">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-03-21T21%3A11%3A45%2B01%3A00&amp;precision=second" title="See timeline at 03/21/12 21:11:45">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-owner">
+      <strong class="trac-field-owner">Owner</strong>
+        set to <em>michael</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>accepted</em>
+    </li><li class="trac-field-version">
+      <strong class="trac-field-version">Version</strong>
+        <em>4.1</em> deleted
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I think an easier way of implementing this is to just highlight a scratchpad indicator. We should probably also have a scratchpad indicator displaying the number of scratchpad windows anyways, so this needs to be considered.<br />
+</p>
+<p>
+It’s not that important right now, though, so I’m unsetting the version.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1385982603274098">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-02T12%3A10%3A03%2B01%3A00&amp;precision=second" title="See timeline at 12/02/13 12:10:03">16 months ago</a> by okraits &lt;okraits@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I start to work on this.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1407937828102485">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-13T15%3A50%3A28%2B02%3A00&amp;precision=second" title="See timeline at 08/13/14 15:50:28">8 months ago</a> by mattator@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Hi, this is also a feature that has become important for me. Did you manage to have some running code okraits ? <br />
+I am willing to help on this but I need directions for instance how the scratchpad indicator should look like. <br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1408016871638230">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-14T13%3A47%3A51%2B02%3A00&amp;precision=second" title="See timeline at 08/14/14 13:47:51">8 months ago</a> by okraits
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+No, i didn't have the time to work on this.<br />
+The final decision is up to Michael, but i think the scratchpad indicator could look similar to the resize indicator - of course with a different label :)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1408749354628802">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-23T01%3A15%3A54%2B02%3A00&amp;precision=second" title="See timeline at 08/23/14 01:15:54">7 months ago</a> by mattator@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I started looking into it and I here is how it looks:<br />
+</p>
+<ul><li>I can make i3bar subscribe to window events and display scratchpad windows with an urgency hint.
+</li><li>I can create an additionnal IPC message type *I3_IPC_MESSAGE_TYPE_GET_SCRATCHPAD* but that looks like a bit of work.
+</li></ul><p>
+I don't care about the number of windows in scratchpad so I would rather go for a presentation that adds a block for each window in the scratchpad with the urgency hint. The block text would be the first word of the title of the window. Upon click on such a block, it makes the scratchpad window appear and gives it focus. <br />
+</p>
+<p>
+What are your opinions ?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1408914195438282">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-24T23%3A03%3A15%2B02%3A00&amp;precision=second" title="See timeline at 08/24/14 23:03:15">7 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+For the record, on IRC we discussed:<br />
+</p>
+<ol><li>i3bar should display a single indicator when any scratchpad window becomes urgent, because i3bar displays workspaces, not single windows.
+</li><li>When clicking on that indicator, a command like “[urgent="latest" scratchpad] scratchpad show” should be sent (the scratchpad criterion is not currently implemented).
+</li></ol>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1408998972909369">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:8" class="follow-up">↓ 8</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-25T22%3A36%3A12%2B02%3A00&amp;precision=second" title="See timeline at 08/25/14 22:36:12">7 months ago</a> by mattato@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+How should I react on the window with urgency hint closing ? Is there any way to catch that event in order to remove the incriminated window from i3bar ?<br />
+</p>
+<p>
+I was also wondering if instead of sending '[urgent="latest" scratchpad] scratchpad show', I could not send a focus message with some window Id ? Maybe this feature should not be limited to scratchpad windows since when we click on a workspace with urgency it doesn't focus the *urgent* window, does it ? So there would be added value.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1409040415306060">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+        in reply to:
+    <a href="#comment:7">↑ 7</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-26T10%3A06%3A55%2B02%3A00&amp;precision=second" title="See timeline at 08/26/14 10:06:55">7 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/628#comment:7" title="Comment 7">mattato@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+How should I react on the window with urgency hint closing ? Is there any way to catch that event in order to remove the incriminated window from i3bar ?<br />
+</p>
+</blockquote>
+<p>
+You’ll get an event once there are no more urgent windows in the scratchpad:<br />
+</p>
+<pre class="wiki">        ipc_send_event("workspace", I3_IPC_EVENT_WORKSPACE, "{\"change\":\"urgent\"}");
+</pre><p>
+You probably need to extend that event to include the workspace name at least.<br />
+</p>
+<blockquote class="citation">
+<p>
+I was also wondering if instead of sending '[urgent="latest" scratchpad] scratchpad show', I could not send a focus message with some window Id ?<br />
+</p>
+</blockquote>
+<p>
+Theoretically you could, but then you’d need to keep track of which urgent window appeared when in order to provide the “urgent="latest"” part of that command, and that seems like unnecessary duplication of code.<br />
+</p>
+<blockquote class="citation">
+<p>
+Maybe this feature should not be limited to scratchpad windows since when we click on a workspace with urgency it doesn't focus the *urgent* window, does it ? So there would be added value.<br />
+</p>
+</blockquote>
+<p>
+I don’t think switching workspaces should focus the urgent window by default. For people who want that, there is the possibility to configure a keybinding which does that.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1410384454394364">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-09-10T23%3A27%3A34%2B02%3A00&amp;precision=second" title="See timeline at 09/10/14 23:27:34">7 months ago</a> by mattato@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+This is the json obtained after an i3-msg -t get_tree (values are consistent with the window event I receive from ipc-glib) after running "sleep 5; echo -e '\a'" and immediately hiding the scratchpad window. <br />
+</p>
+<pre class="wiki">{
+                      "id": 38746944,
+                      "type": "con",
+                      "orientation": "none",
+                      "scratchpad_state": "none",
+                      "percent": 1,
+                      "urgent": true,
+                      "focused": true,
+                      "layout": "splith",
+                      "workspace_layout": "default",
+                      "last_split_layout": "splith",
+                      "border": "normal",
+                      "current_border_width": 2,
+                      "rect": {
+                        "x": 404,
+                        "y": 136,
+                        "width": 792,
+                        "height": 646
+                      },
+                      "window_rect": {
+                        "x": 2,
+                        "y": 0,
+                        "width": 788,
+                        "height": 644
+                      },
+                      "geometry": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 734,
+                        "height": 388
+                      },
+                      "name": "\/home\/teto\/ns3-dev",
+                      "window": 4194331,
+                      "window_properties": {
+                        "class": "URxvt",
+                        "instance": "pad_flyingterminal",
+                        "title": "\/home\/teto\/ns3-dev",
+                        "transient_for": null
+                      },
+                      "nodes": [
+                        
+                      ],
+                      "floating_nodes": [
+                        
+                      ],
+                      "focus": [
+                        
+                      ],
+                      "fullscreen_mode": 0,
+                      "floating": "user_on",
+                      "swallows": [
+                        
+                      ]
+                    }
+
+</pre><p>
+I wonder why the type is "con" and not "floating_con". I haven't dug much in i3's code yet so I am not sure it's good. Reading the code documentation though, <br />
+</p>
+<pre class="wiki">        /* Not a scratchpad window. */
+        SCRATCHPAD_NONE = 0,
+
+        /* Just moved to scratchpad, not resized by the user yet.
+         * Window will be auto-centered and sized appropriately. */
+        SCRATCHPAD_FRESH = 1,
+</pre><p>
+I had the impression that scratchpad_state should be "fresh" since I hid the window just after running the command (so before the urgency hint gets set). Maybe this is a bug otherwise I have to rely on "floating": "user_on"" value to detect it is a floating window but I don't think this is peculiarly related to scratchpad windows so relying on it may trigger wrong notifications.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1410420066430366">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-09-11T09%3A21%3A06%2B02%3A00&amp;precision=second" title="See timeline at 09/11/14 09:21:06">7 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+You need to look at the parent container. Windows that are made floating are embedded in a new container of type floating_con.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1410559354009703">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-09-13T00%3A02%3A34%2B02%3A00&amp;precision=second" title="See timeline at 09/13/14 00:02:34">7 months ago</a> by mattator@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Indeed so when I receive a window event with urgency hint &amp; "floating": "user_on" , I should send a tree command to retrieve the parent of the container and check if the parent belongs to the scratchpad. Sounds like a lot of work.<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/628?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/628?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/628?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

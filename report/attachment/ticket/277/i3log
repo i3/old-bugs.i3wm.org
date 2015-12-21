@@ -1,0 +1,1811 @@
+11/12/2010 22:26:17 - ERROR: Using Xinerama instead of RandR. This option should be avoided at all cost because it does not refresh the list of screens, so you cannot configure displays at runtime. Please check if your driver really does not support RandR and disable this option as soon as you can.
+11/12/2010 22:26:17 - Enabling debug loglevel all
+11/12/2010 22:26:17 - i3 (tree) version tree-pr1-2-g41eb810 (2010-12-11, branch "tree") starting
+11/12/2010 22:26:17 - src/config.c:parse_configuration:282 - Parsing configfile /home/julien/.i3/config
+font -gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1
+11/12/2010 22:26:17 - src/cfgparse.y:yyparse:363 - floating modifier = 8
+	Found symbolic mod9 with key Return and command open
+	Found symbolic mod8 with key Return and command exec /usr/bin/urxvt
+	Found symbolic mod8 with key p and command exec /usr/bin/dmenu_run -i -b -nb '#000000' -nf '#888888' -sb '#285577' -sf '#ffffff' -fn '-gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso8859-1'
+	Found symbolic mod8 with key h and command split h
+	Found symbolic mod8 with key v and command split v
+	Found symbolic mod8 with key f and command fullscreen
+	Found symbolic mod8 with key s and command layout stacking
+	Found symbolic mod8 with key w and command layout tabbed
+	Found symbolic mod8 with key l and command layout default
+	Found symbolic mod9 with key space and command mode toggle
+	Found symbolic mod8 with key u and command level up
+	Found symbolic mod8 with key c and command kill
+	Found symbolic mod8 with key y and command restore /home/julien/.i3/layout.json
+	Found symbolic mod9 with key c and command restart
+	Found symbolic mod9 with key j and command reload
+	Found symbolic mod9 with key l and command exit
+	Found symbolic mod8 with key n and command prev h
+	Found symbolic mod8 with key r and command next v
+	Found symbolic mod8 with key t and command prev v
+	Found symbolic mod8 with key d and command next h
+	Found symbolic mod8 with key Left and command prev h
+	Found symbolic mod8 with key Right and command next h
+	Found symbolic mod8 with key Down and command next v
+	Found symbolic mod8 with key Up and command prev v
+	Found symbolic mod9 with key n and command move before h
+	Found symbolic mod9 with key r and command move before v
+	Found symbolic mod9 with key t and command move after v
+	Found symbolic mod9 with key d and command move after h
+	Found symbolic mod9 with key Left and command move before h
+	Found symbolic mod9 with key Right and command move after h
+	Found symbolic mod9 with key Down and command move before v
+	Found symbolic mod9 with key Up and command move after v
+	Found symbolic mod8 with key 1 and command workspace 1
+	Found symbolic mod8 with key 2 and command workspace 2
+	Found symbolic mod8 with key 3 and command workspace 3
+	Found symbolic mod8 with key 4 and command workspace 4
+	Found symbolic mod8 with key 5 and command workspace 5
+	Found symbolic mod8 with key 6 and command workspace 6
+	Found symbolic mod8 with key 7 and command workspace 7
+	Found symbolic mod8 with key 8 and command workspace 8
+	Found symbolic mod8 with key 9 and command workspace 9
+	Found symbolic mod8 with key 0 and command workspace 10
+	Found symbolic mod9 with key 1 and command move workspace 1
+	Found symbolic mod9 with key 2 and command move workspace 2
+	Found symbolic mod9 with key 3 and command move workspace 3
+	Found symbolic mod9 with key 4 and command move workspace 4
+	Found symbolic mod9 with key 5 and command move workspace 5
+	Found symbolic mod9 with key 6 and command move workspace 6
+	Found symbolic mod9 with key 7 and command move workspace 7
+	Found symbolic mod9 with key 8 and command move workspace 8
+	Found symbolic mod9 with key 9 and command move workspace 9
+	Found symbolic mod9 with key 0 and command move workspace 10
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "Return" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "Return" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "p" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "h" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "v" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "f" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "s" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "w" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "l" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "space" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "u" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "c" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "y" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "c" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "j" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "l" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "n" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "r" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "t" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "d" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "Left" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "Right" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "Down" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "Up" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "n" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "r" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "t" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "d" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "Left" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "Right" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "Down" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "Up" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "1" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "2" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "3" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "4" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "5" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "6" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "7" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "8" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "9" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "0" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "1" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "2" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "3" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "4" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "5" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "6" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "7" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "8" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "9" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:translate_keysyms:159 - Translated symbol "0" to 1 keycode
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 36
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 36
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 33
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 43
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 55
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 41
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 39
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 25
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 46
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 65
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 30
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 54
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 29
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 54
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 44
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 46
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 57
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 27
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 28
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 40
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 113
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 114
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 116
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 111
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 57
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 27
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 28
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 40
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 113
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 114
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 116
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 111
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 10
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 11
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 12
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 13
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 14
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 15
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 16
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 17
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 18
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 19
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 10
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 11
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 12
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 13
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 14
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 15
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 16
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 17
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 18
+11/12/2010 22:26:17 - src/config.c:grab_keycode_for_binding:77 - Grabbing 19
+11/12/2010 22:26:17 - src/xinerama.c:query_screens:63 - Created new Xinerama screen xinerama-0 (0x906b0d8)
+11/12/2010 22:26:17 - src/xinerama.c:query_screens:78 - found Xinerama screen: 1280 x 1024 at 0 x 0
+11/12/2010 22:26:17 - /home/julien/.i3/_restart.json does not exist, not restoring tree
+11/12/2010 22:26:17 - opening window 0
+11/12/2010 22:26:17 - color #ff0000
+11/12/2010 22:26:17 - adding new state for window id 0x00c00000
+11/12/2010 22:26:17 - opening window 1
+11/12/2010 22:26:17 - color #00FF00
+11/12/2010 22:26:17 - adding new state for window id 0x00c00003
+11/12/2010 22:26:17 - opening window 2
+11/12/2010 22:26:17 - color #0000FF
+11/12/2010 22:26:17 - adding new state for window id 0x00c00006
+11/12/2010 22:26:17 - src/con.c:con_attach:84 - it's a workspace. num = 1
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:17 - got fs node: 0x906b3c8
+11/12/2010 22:26:17 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 0, orientation = 1
+-- level up
+11/12/2010 22:26:17 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:17 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:17 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:17 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:17 - src/x.c:x_push_node:387 - pushing name [i3 con] output xinerama-0 for con 0x906b270
+11/12/2010 22:26:17 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:17 - setting rect (0, 0, 1280, 0)
+11/12/2010 22:26:17 - Sending fake configure notify
+11/12/2010 22:26:17 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:17 - src/x.c:x_push_node:387 - pushing name [i3 con] workspace 1 for con 0x906b3c8
+11/12/2010 22:26:17 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:17 - setting rect (0, 0, 1280, 0)
+11/12/2010 22:26:17 - Sending fake configure notify
+11/12/2010 22:26:17 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x906b3c8
+11/12/2010 22:26:17 - src/con.c:con_border_style:550 - this one is fullscreen! overriding BS_NONE
+11/12/2010 22:26:17 - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+11/12/2010 22:26:17 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:17 - stack: 0x00c00000
+11/12/2010 22:26:17 - Stacking 0x00c00003 above 0x00c00000
+11/12/2010 22:26:17 - stack: 0x00c00003
+11/12/2010 22:26:17 - Stacking 0x00c00006 above 0x00c00003
+11/12/2010 22:26:17 - stack: 0x00c00006
+11/12/2010 22:26:17 - src/x.c:x_push_changes:592 - focused_id = 0x00000000, to_focus = 0x00c00006
+11/12/2010 22:26:17 - src/x.c:x_push_changes:595 - Not updating focus (to 0x906b3c8 / 1), focused window is not mapped.
+11/12/2010 22:26:17 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:17 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:17 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:17 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:17 - old stack: 0x00c00006
+11/12/2010 22:26:17 - old stack: 0x00c00003
+11/12/2010 22:26:17 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:17 - src/ipc.c:ipc_create_socket:598 - Creating IPC-socket at /tmp/nestedcons
+---> looking at window 0x00400001
+11/12/2010 22:26:17 - map_state unviewable
+---> looking at window 0x00c00000
+11/12/2010 22:26:17 - map_state unviewable
+---> looking at window 0x00c00003
+11/12/2010 22:26:17 - map_state unviewable
+---> looking at window 0x00c00006
+11/12/2010 22:26:17 - map_state unviewable
+11/12/2010 22:26:20 - src/handlers.c:handle_key_press:68 - Keypress 36, state raw = 24
+11/12/2010 22:26:20 - src/handlers.c:handle_key_press:72 - (removed numlock, state = 8)
+11/12/2010 22:26:20 - src/handlers.c:handle_key_press:76 - (removed upper 8 bits, state = 8)
+11/12/2010 22:26:20 - src/handlers.c:handle_key_press:81 - (checked mode_switch, state 8)
+should execute /usr/bin/urxvt
+11/12/2010 22:26:20 - executing: /usr/bin/urxvt
+single command completely parsed, dropping state...
+done, json output = (null)
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:20 - got fs node: 0x906b3c8
+11/12/2010 22:26:20 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 0, orientation = 1
+-- level up
+11/12/2010 22:26:20 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:20 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:20 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:20 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:20 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:20 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:20 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x906b3c8
+11/12/2010 22:26:20 - src/con.c:con_border_style:550 - this one is fullscreen! overriding BS_NONE
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+11/12/2010 22:26:20 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:20 - stack: 0x00c00000
+11/12/2010 22:26:20 - stack: 0x00c00003
+11/12/2010 22:26:20 - stack: 0x00c00006
+11/12/2010 22:26:20 - src/x.c:x_push_changes:592 - focused_id = 0x00000000, to_focus = 0x00c00006
+11/12/2010 22:26:20 - src/x.c:x_push_changes:595 - Not updating focus (to 0x906b3c8 / 1), focused window is not mapped.
+11/12/2010 22:26:20 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:20 - old stack: 0x00c00006
+11/12/2010 22:26:20 - old stack: 0x00c00003
+11/12/2010 22:26:20 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:20 - src/handlers.c:handle_map_request:299 - window = 0x01000006, serial is 250.
+---> looking at window 0x01000006
+11/12/2010 22:26:20 - override_redirect is 0
+11/12/2010 22:26:20 - reparenting!
+11/12/2010 22:26:20 - WM_CLASS changed to urxvt (instance), URxvt (class)
+11/12/2010 22:26:20 - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+11/12/2010 22:26:20 - _NET_WM_NAME changed to "urxvt"
+11/12/2010 22:26:20 - src/window.c:window_update_leader:106 - prop == NULL
+11/12/2010 22:26:20 - src/window.c:window_update_transient_for:125 - prop == NULL
+11/12/2010 22:26:20 - searching con for window 0x909d508
+11/12/2010 22:26:20 - class == URxvt
+11/12/2010 22:26:20 - opening window 3
+11/12/2010 22:26:20 - color #ff00ff
+11/12/2010 22:26:20 - adding new state for window id 0x00c0000a
+11/12/2010 22:26:20 - src/manage.c:manage_window:184 - new container = 0x90a5610
+11/12/2010 22:26:20 - resetting state 0x90a56f0 to initial
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:20 - got fs node: 0x906b3c8
+11/12/2010 22:26:20 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 1, orientation = 1
+that child is a leaf node, subtracting deco
+child at (0, 19) with (1280 x 1005)
+x now 1280, y now 0
+11/12/2010 22:26:20 - raising in new stack: 0x90a5610 / #ff00ff
+currently rendering node 0x90a5610 / #ff00ff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:20 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x1003
+-- level up
+-- level up
+11/12/2010 22:26:20 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:20 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:20 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:20 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:20 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:20 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:20 - setting rect (0, 0, 1280, 19)
+11/12/2010 22:26:20 - mapping container (serial 273)
+11/12/2010 22:26:20 - Sending fake configure notify
+11/12/2010 22:26:20 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:20 - src/x.c:x_push_node:387 - pushing name [i3 con] container around 0x909d508 for con 0x90a5610
+11/12/2010 22:26:20 - setting rect (0, 19, 1280, 1005)
+11/12/2010 22:26:20 - setting window rect (2, 0, 1276, 1003)
+11/12/2010 22:26:20 - mapping child window (serial 278)
+11/12/2010 22:26:20 - mapping container (serial 279)
+11/12/2010 22:26:20 - Sending fake configure notify
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:20 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:20 - stack: 0x00c00000
+11/12/2010 22:26:20 - stack: 0x00c00003
+11/12/2010 22:26:20 - stack: 0x00c00006
+11/12/2010 22:26:20 - stack: 0x00c0000a
+11/12/2010 22:26:20 - src/x.c:x_push_changes:592 - focused_id = 0x00000000, to_focus = 0x01000006
+11/12/2010 22:26:20 - Updating focus (focused: 0x90a5610 / #ff00ff)
+11/12/2010 22:26:20 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:20 - old stack: 0x00c0000a
+11/12/2010 22:26:20 - old stack: 0x00c00006
+11/12/2010 22:26:20 - old stack: 0x00c00003
+11/12/2010 22:26:20 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:20 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:20 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:20 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:20 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:20 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:20 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:20 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:20 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:20 - stack: 0x00c00000
+11/12/2010 22:26:20 - stack: 0x00c00003
+11/12/2010 22:26:20 - stack: 0x00c00006
+11/12/2010 22:26:20 - stack: 0x00c0000a
+11/12/2010 22:26:20 - src/x.c:x_push_changes:592 - focused_id = 0x01000006, to_focus = 0x01000006
+11/12/2010 22:26:20 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:20 - old stack: 0x00c0000a
+11/12/2010 22:26:20 - old stack: 0x00c00006
+11/12/2010 22:26:20 - old stack: 0x00c00003
+11/12/2010 22:26:20 - old stack: 0x00c00000
+11/12/2010 22:26:20 - src/handlers.c:handle_expose_event:611 - window = 00c00006
+11/12/2010 22:26:20 - expose for con 0x90a5610 / #ff00ff
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:20 - expose for con 0x906b3c8 / 1
+11/12/2010 22:26:20 - src/handlers.c:handle_expose_event:611 - window = 00c0000a
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:20 - expose for con 0x90a5610 / #ff00ff
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:20 - src/handlers.c:handle_enter_notify:159 - enter_notify for 00c0000a, mode = 0, detail 1, serial 279
+11/12/2010 22:26:20 - src/handlers.c:handle_enter_notify:160 - coordinates 640, 493
+11/12/2010 22:26:20 - src/handlers.c:handle_enter_notify:159 - enter_notify for 01000006, mode = 0, detail 0, serial 279
+11/12/2010 22:26:20 - src/handlers.c:handle_enter_notify:160 - coordinates 638, 493
+11/12/2010 22:26:20 - src/handlers.c:handle_normal_hints:717 - Minimum size: 12 (width) x 18 (height)
+11/12/2010 22:26:20 - src/handlers.c:handle_normal_hints:734 - resize increments changed
+11/12/2010 22:26:20 - src/handlers.c:handle_normal_hints:755 - client's base_height changed to 4
+11/12/2010 22:26:20 - src/handlers.c:handle_normal_hints:756 - client's base_width changed to 4
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:20 - got fs node: 0x906b3c8
+11/12/2010 22:26:20 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 1, orientation = 1
+that child is a leaf node, subtracting deco
+child at (0, 19) with (1280 x 1005)
+x now 1280, y now 0
+11/12/2010 22:26:20 - raising in new stack: 0x90a5610 / #ff00ff
+currently rendering node 0x90a5610 / #ff00ff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:20 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:20 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:20 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+-- level up
+11/12/2010 22:26:20 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:20 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:20 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:20 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:20 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:20 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:20 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:20 - setting window rect (2, 0, 1276, 998)
+11/12/2010 22:26:20 - Sending fake configure notify
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:20 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:20 - stack: 0x00c00000
+11/12/2010 22:26:20 - stack: 0x00c00003
+11/12/2010 22:26:20 - stack: 0x00c00006
+11/12/2010 22:26:20 - stack: 0x00c0000a
+11/12/2010 22:26:20 - src/x.c:x_push_changes:592 - focused_id = 0x01000006, to_focus = 0x01000006
+11/12/2010 22:26:20 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:20 - old stack: 0x00c0000a
+11/12/2010 22:26:20 - old stack: 0x00c00006
+11/12/2010 22:26:20 - old stack: 0x00c00003
+11/12/2010 22:26:20 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:20 - src/handlers.c:handle_normal_hints:717 - Minimum size: 12 (width) x 18 (height)
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:20 - got fs node: 0x906b3c8
+11/12/2010 22:26:20 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 1, orientation = 1
+that child is a leaf node, subtracting deco
+child at (0, 19) with (1280 x 1005)
+x now 1280, y now 0
+11/12/2010 22:26:20 - raising in new stack: 0x90a5610 / #ff00ff
+currently rendering node 0x90a5610 / #ff00ff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:20 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:20 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:20 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+-- level up
+11/12/2010 22:26:20 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:20 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:20 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:20 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:20 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:20 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:20 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:20 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:20 - stack: 0x00c00000
+11/12/2010 22:26:20 - stack: 0x00c00003
+11/12/2010 22:26:20 - stack: 0x00c00006
+11/12/2010 22:26:20 - stack: 0x00c0000a
+11/12/2010 22:26:20 - src/x.c:x_push_changes:592 - focused_id = 0x01000006, to_focus = 0x01000006
+11/12/2010 22:26:20 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:20 - old stack: 0x00c0000a
+11/12/2010 22:26:20 - old stack: 0x00c00006
+11/12/2010 22:26:20 - old stack: 0x00c00003
+11/12/2010 22:26:20 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:20 - src/handlers.c:handle_expose_event:611 - window = 00c0000a
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:20 - expose for con 0x90a5610 / #ff00ff
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:20 - src/handlers.c:handle_normal_hints:717 - Minimum size: 12 (width) x 18 (height)
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:20 - got fs node: 0x906b3c8
+11/12/2010 22:26:20 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 1, orientation = 1
+that child is a leaf node, subtracting deco
+child at (0, 19) with (1280 x 1005)
+x now 1280, y now 0
+11/12/2010 22:26:20 - raising in new stack: 0x90a5610 / #ff00ff
+currently rendering node 0x90a5610 / #ff00ff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:20 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:20 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:20 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+-- level up
+11/12/2010 22:26:20 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:20 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:20 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:20 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:20 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:20 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:20 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:20 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:20 - stack: 0x00c00000
+11/12/2010 22:26:20 - stack: 0x00c00003
+11/12/2010 22:26:20 - stack: 0x00c00006
+11/12/2010 22:26:20 - stack: 0x00c0000a
+11/12/2010 22:26:20 - src/x.c:x_push_changes:592 - focused_id = 0x01000006, to_focus = 0x01000006
+11/12/2010 22:26:20 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:20 - old stack: 0x00c0000a
+11/12/2010 22:26:20 - old stack: 0x00c00006
+11/12/2010 22:26:20 - old stack: 0x00c00003
+11/12/2010 22:26:20 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:20 - src/handlers.c:handle_normal_hints:717 - Minimum size: 12 (width) x 18 (height)
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:20 - got fs node: 0x906b3c8
+11/12/2010 22:26:20 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 1, orientation = 1
+that child is a leaf node, subtracting deco
+child at (0, 19) with (1280 x 1005)
+x now 1280, y now 0
+11/12/2010 22:26:20 - raising in new stack: 0x90a5610 / #ff00ff
+currently rendering node 0x90a5610 / #ff00ff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:20 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:20 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:20 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+-- level up
+11/12/2010 22:26:20 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:20 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:20 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:20 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:20 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:20 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:20 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:20 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:20 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:20 - stack: 0x00c00000
+11/12/2010 22:26:20 - stack: 0x00c00003
+11/12/2010 22:26:20 - stack: 0x00c00006
+11/12/2010 22:26:20 - stack: 0x00c0000a
+11/12/2010 22:26:20 - src/x.c:x_push_changes:592 - focused_id = 0x01000006, to_focus = 0x01000006
+11/12/2010 22:26:20 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:20 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:20 - old stack: 0x00c0000a
+11/12/2010 22:26:20 - old stack: 0x00c00006
+11/12/2010 22:26:20 - old stack: 0x00c00003
+11/12/2010 22:26:20 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:21 - src/handlers.c:handle_key_press:68 - Keypress 36, state raw = 24
+11/12/2010 22:26:21 - src/handlers.c:handle_key_press:72 - (removed numlock, state = 8)
+11/12/2010 22:26:21 - src/handlers.c:handle_key_press:76 - (removed upper 8 bits, state = 8)
+11/12/2010 22:26:21 - src/handlers.c:handle_key_press:81 - (checked mode_switch, state 8)
+should execute /usr/bin/urxvt
+11/12/2010 22:26:21 - executing: /usr/bin/urxvt
+single command completely parsed, dropping state...
+done, json output = (null)
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:21 - got fs node: 0x906b3c8
+11/12/2010 22:26:21 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 1, orientation = 1
+that child is a leaf node, subtracting deco
+child at (0, 19) with (1280 x 1005)
+x now 1280, y now 0
+11/12/2010 22:26:21 - raising in new stack: 0x90a5610 / #ff00ff
+currently rendering node 0x90a5610 / #ff00ff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:21 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+-- level up
+11/12/2010 22:26:21 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:21 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:21 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:21 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:21 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:21 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:21 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:21 - stack: 0x00c00000
+11/12/2010 22:26:21 - stack: 0x00c00003
+11/12/2010 22:26:21 - stack: 0x00c00006
+11/12/2010 22:26:21 - stack: 0x00c0000a
+11/12/2010 22:26:21 - src/x.c:x_push_changes:592 - focused_id = 0x01000006, to_focus = 0x01000006
+11/12/2010 22:26:21 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - old stack: 0x00c0000a
+11/12/2010 22:26:21 - old stack: 0x00c00006
+11/12/2010 22:26:21 - old stack: 0x00c00003
+11/12/2010 22:26:21 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:21 - src/handlers.c:handle_map_request:299 - window = 0x01200006, serial is 407.
+---> looking at window 0x01200006
+11/12/2010 22:26:21 - override_redirect is 0
+11/12/2010 22:26:21 - reparenting!
+11/12/2010 22:26:21 - WM_CLASS changed to urxvt (instance), URxvt (class)
+11/12/2010 22:26:21 - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+11/12/2010 22:26:21 - _NET_WM_NAME changed to "urxvt"
+11/12/2010 22:26:21 - src/window.c:window_update_leader:106 - prop == NULL
+11/12/2010 22:26:21 - src/window.c:window_update_transient_for:125 - prop == NULL
+11/12/2010 22:26:21 - searching con for window 0x90a5838
+11/12/2010 22:26:21 - class == URxvt
+11/12/2010 22:26:21 - opening window 4
+11/12/2010 22:26:21 - color #00ffff
+11/12/2010 22:26:21 - adding new state for window id 0x00c0000d
+11/12/2010 22:26:21 - src/con.c:con_attach:126 - Inserting con = 0x90a5b48 after last focused tiling con 0x90a5610
+11/12/2010 22:26:21 - src/manage.c:manage_window:184 - new container = 0x90a5b48
+11/12/2010 22:26:21 - resetting state 0x90a5c28 to initial
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:21 - got fs node: 0x906b3c8
+11/12/2010 22:26:21 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 2, orientation = 1
+that child is a leaf node, subtracting deco
+child at (0, 19) with (640 x 1005)
+x now 640, y now 0
+11/12/2010 22:26:21 - raising in new stack: 0x90a5610 / #ff00ff
+currently rendering node 0x90a5610 / #ff00ff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:21 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:94 - child will be at 2x0 with size 636x998
+-- level up
+that child is a leaf node, subtracting deco
+child at (640, 19) with (640 x 1005)
+x now 1280, y now 0
+11/12/2010 22:26:21 - raising in new stack: 0x90a5b48 / #00ffff
+currently rendering node 0x90a5b48 / #00ffff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:21 - src/render.c:render_con:94 - child will be at 2x0 with size 636x1003
+-- level up
+-- level up
+11/12/2010 22:26:21 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:21 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:21 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:21 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:21 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:21 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:21 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - setting rect (0, 19, 640, 1005)
+11/12/2010 22:26:21 - setting window rect (2, 0, 636, 998)
+11/12/2010 22:26:21 - Sending fake configure notify
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - Pushing changes for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - src/x.c:x_push_node:387 - pushing name [i3 con] container around 0x90a5838 for con 0x90a5b48
+11/12/2010 22:26:21 - setting rect (640, 19, 640, 1005)
+11/12/2010 22:26:21 - setting window rect (2, 0, 636, 1003)
+11/12/2010 22:26:21 - mapping child window (serial 446)
+11/12/2010 22:26:21 - mapping container (serial 447)
+11/12/2010 22:26:21 - Sending fake configure notify
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:21 - stack: 0x00c00000
+11/12/2010 22:26:21 - stack: 0x00c00003
+11/12/2010 22:26:21 - stack: 0x00c00006
+11/12/2010 22:26:21 - stack: 0x00c0000a
+11/12/2010 22:26:21 - stack: 0x00c0000d
+11/12/2010 22:26:21 - src/x.c:x_push_changes:592 - focused_id = 0x01000006, to_focus = 0x01200006
+11/12/2010 22:26:21 - Updating focus (focused: 0x90a5b48 / #00ffff)
+11/12/2010 22:26:21 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - old stack: 0x00c0000d
+11/12/2010 22:26:21 - old stack: 0x00c0000a
+11/12/2010 22:26:21 - old stack: 0x00c00006
+11/12/2010 22:26:21 - old stack: 0x00c00003
+11/12/2010 22:26:21 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:21 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:21 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:21 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:21 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:21 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:21 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:21 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - Pushing changes for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:21 - stack: 0x00c00000
+11/12/2010 22:26:21 - stack: 0x00c00003
+11/12/2010 22:26:21 - stack: 0x00c00006
+11/12/2010 22:26:21 - stack: 0x00c0000a
+11/12/2010 22:26:21 - stack: 0x00c0000d
+11/12/2010 22:26:21 - src/x.c:x_push_changes:592 - focused_id = 0x01200006, to_focus = 0x01200006
+11/12/2010 22:26:21 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - old stack: 0x00c0000d
+11/12/2010 22:26:21 - old stack: 0x00c0000a
+11/12/2010 22:26:21 - old stack: 0x00c00006
+11/12/2010 22:26:21 - old stack: 0x00c00003
+11/12/2010 22:26:21 - old stack: 0x00c00000
+11/12/2010 22:26:21 - src/handlers.c:handle_expose_event:611 - window = 00c0000a
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - expose for con 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - expose for con 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - src/handlers.c:handle_enter_notify:159 - enter_notify for 000001ad, mode = 0, detail 2, serial 429
+11/12/2010 22:26:21 - src/handlers.c:handle_enter_notify:160 - coordinates 640, 512
+11/12/2010 22:26:21 - src/handlers.c:handle_expose_event:611 - window = 00c0000a
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - expose for con 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - expose for con 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - src/handlers.c:handle_expose_event:611 - window = 00c0000d
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - expose for con 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - expose for con 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - src/handlers.c:handle_enter_notify:159 - enter_notify for 00c0000d, mode = 0, detail 0, serial 447
+11/12/2010 22:26:21 - src/handlers.c:handle_enter_notify:160 - coordinates 0, 493
+11/12/2010 22:26:21 - src/handlers.c:handle_normal_hints:717 - Minimum size: 12 (width) x 18 (height)
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:21 - got fs node: 0x906b3c8
+11/12/2010 22:26:21 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 2, orientation = 1
+that child is a leaf node, subtracting deco
+child at (0, 19) with (640 x 1005)
+x now 640, y now 0
+11/12/2010 22:26:21 - raising in new stack: 0x90a5610 / #ff00ff
+currently rendering node 0x90a5610 / #ff00ff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:21 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:94 - child will be at 2x0 with size 636x998
+-- level up
+that child is a leaf node, subtracting deco
+child at (640, 19) with (640 x 1005)
+x now 1280, y now 0
+11/12/2010 22:26:21 - raising in new stack: 0x90a5b48 / #00ffff
+currently rendering node 0x90a5b48 / #00ffff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:21 - src/render.c:render_con:94 - child will be at 2x0 with size 636x1003
+-- level up
+-- level up
+11/12/2010 22:26:21 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:21 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:21 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:21 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:21 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:21 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:21 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - Pushing changes for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:21 - stack: 0x00c00000
+11/12/2010 22:26:21 - stack: 0x00c00003
+11/12/2010 22:26:21 - stack: 0x00c00006
+11/12/2010 22:26:21 - stack: 0x00c0000a
+11/12/2010 22:26:21 - stack: 0x00c0000d
+11/12/2010 22:26:21 - src/x.c:x_push_changes:592 - focused_id = 0x01200006, to_focus = 0x01200006
+11/12/2010 22:26:21 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - old stack: 0x00c0000d
+11/12/2010 22:26:21 - old stack: 0x00c0000a
+11/12/2010 22:26:21 - old stack: 0x00c00006
+11/12/2010 22:26:21 - old stack: 0x00c00003
+11/12/2010 22:26:21 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:21 - src/handlers.c:handle_normal_hints:717 - Minimum size: 12 (width) x 18 (height)
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:21 - got fs node: 0x906b3c8
+11/12/2010 22:26:21 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 2, orientation = 1
+that child is a leaf node, subtracting deco
+child at (0, 19) with (640 x 1005)
+x now 640, y now 0
+11/12/2010 22:26:21 - raising in new stack: 0x90a5610 / #ff00ff
+currently rendering node 0x90a5610 / #ff00ff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:21 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:94 - child will be at 2x0 with size 636x998
+-- level up
+that child is a leaf node, subtracting deco
+child at (640, 19) with (640 x 1005)
+x now 1280, y now 0
+11/12/2010 22:26:21 - raising in new stack: 0x90a5b48 / #00ffff
+currently rendering node 0x90a5b48 / #00ffff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:21 - src/render.c:render_con:94 - child will be at 2x0 with size 636x1003
+-- level up
+-- level up
+11/12/2010 22:26:21 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:21 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:21 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:21 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:21 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:21 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:21 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - Pushing changes for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:21 - stack: 0x00c00000
+11/12/2010 22:26:21 - stack: 0x00c00003
+11/12/2010 22:26:21 - stack: 0x00c00006
+11/12/2010 22:26:21 - stack: 0x00c0000a
+11/12/2010 22:26:21 - stack: 0x00c0000d
+11/12/2010 22:26:21 - src/x.c:x_push_changes:592 - focused_id = 0x01200006, to_focus = 0x01200006
+11/12/2010 22:26:21 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - old stack: 0x00c0000d
+11/12/2010 22:26:21 - old stack: 0x00c0000a
+11/12/2010 22:26:21 - old stack: 0x00c00006
+11/12/2010 22:26:21 - old stack: 0x00c00003
+11/12/2010 22:26:21 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:21 - src/handlers.c:handle_normal_hints:717 - Minimum size: 12 (width) x 18 (height)
+11/12/2010 22:26:21 - src/handlers.c:handle_normal_hints:734 - resize increments changed
+11/12/2010 22:26:21 - src/handlers.c:handle_normal_hints:755 - client's base_height changed to 4
+11/12/2010 22:26:21 - src/handlers.c:handle_normal_hints:756 - client's base_width changed to 4
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:21 - got fs node: 0x906b3c8
+11/12/2010 22:26:21 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 2, orientation = 1
+that child is a leaf node, subtracting deco
+child at (0, 19) with (640 x 1005)
+x now 640, y now 0
+11/12/2010 22:26:21 - raising in new stack: 0x90a5610 / #ff00ff
+currently rendering node 0x90a5610 / #ff00ff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:21 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:94 - child will be at 2x0 with size 636x998
+-- level up
+that child is a leaf node, subtracting deco
+child at (640, 19) with (640 x 1005)
+x now 1280, y now 0
+11/12/2010 22:26:21 - raising in new stack: 0x90a5b48 / #00ffff
+currently rendering node 0x90a5b48 / #00ffff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:21 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:94 - child will be at 2x0 with size 636x998
+-- level up
+-- level up
+11/12/2010 22:26:21 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:21 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:21 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:21 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:21 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:21 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:21 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - Pushing changes for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - setting window rect (2, 0, 636, 998)
+11/12/2010 22:26:21 - Sending fake configure notify
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:21 - stack: 0x00c00000
+11/12/2010 22:26:21 - stack: 0x00c00003
+11/12/2010 22:26:21 - stack: 0x00c00006
+11/12/2010 22:26:21 - stack: 0x00c0000a
+11/12/2010 22:26:21 - stack: 0x00c0000d
+11/12/2010 22:26:21 - src/x.c:x_push_changes:592 - focused_id = 0x01200006, to_focus = 0x01200006
+11/12/2010 22:26:21 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - old stack: 0x00c0000d
+11/12/2010 22:26:21 - old stack: 0x00c0000a
+11/12/2010 22:26:21 - old stack: 0x00c00006
+11/12/2010 22:26:21 - old stack: 0x00c00003
+11/12/2010 22:26:21 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:21 - src/handlers.c:handle_normal_hints:717 - Minimum size: 12 (width) x 18 (height)
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:21 - got fs node: 0x906b3c8
+11/12/2010 22:26:21 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 2, orientation = 1
+that child is a leaf node, subtracting deco
+child at (0, 19) with (640 x 1005)
+x now 640, y now 0
+11/12/2010 22:26:21 - raising in new stack: 0x90a5610 / #ff00ff
+currently rendering node 0x90a5610 / #ff00ff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:21 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:94 - child will be at 2x0 with size 636x998
+-- level up
+that child is a leaf node, subtracting deco
+child at (640, 19) with (640 x 1005)
+x now 1280, y now 0
+11/12/2010 22:26:21 - raising in new stack: 0x90a5b48 / #00ffff
+currently rendering node 0x90a5b48 / #00ffff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:21 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:94 - child will be at 2x0 with size 636x998
+-- level up
+-- level up
+11/12/2010 22:26:21 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:21 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:21 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:21 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:21 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:21 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:21 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - Pushing changes for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:21 - stack: 0x00c00000
+11/12/2010 22:26:21 - stack: 0x00c00003
+11/12/2010 22:26:21 - stack: 0x00c00006
+11/12/2010 22:26:21 - stack: 0x00c0000a
+11/12/2010 22:26:21 - stack: 0x00c0000d
+11/12/2010 22:26:21 - src/x.c:x_push_changes:592 - focused_id = 0x01200006, to_focus = 0x01200006
+11/12/2010 22:26:21 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - old stack: 0x00c0000d
+11/12/2010 22:26:21 - old stack: 0x00c0000a
+11/12/2010 22:26:21 - old stack: 0x00c00006
+11/12/2010 22:26:21 - old stack: 0x00c00003
+11/12/2010 22:26:21 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:21 - src/handlers.c:handle_expose_event:611 - window = 00c0000d
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - expose for con 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - expose for con 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - src/handlers.c:handle_normal_hints:717 - Minimum size: 12 (width) x 18 (height)
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:21 - got fs node: 0x906b3c8
+11/12/2010 22:26:21 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 2, orientation = 1
+that child is a leaf node, subtracting deco
+child at (0, 19) with (640 x 1005)
+x now 640, y now 0
+11/12/2010 22:26:21 - raising in new stack: 0x90a5610 / #ff00ff
+currently rendering node 0x90a5610 / #ff00ff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:21 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:94 - child will be at 2x0 with size 636x998
+-- level up
+that child is a leaf node, subtracting deco
+child at (640, 19) with (640 x 1005)
+x now 1280, y now 0
+11/12/2010 22:26:21 - raising in new stack: 0x90a5b48 / #00ffff
+currently rendering node 0x90a5b48 / #00ffff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:21 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:94 - child will be at 2x0 with size 636x998
+-- level up
+-- level up
+11/12/2010 22:26:21 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:21 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:21 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:21 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:21 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:21 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:21 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - Pushing changes for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:21 - stack: 0x00c00000
+11/12/2010 22:26:21 - stack: 0x00c00003
+11/12/2010 22:26:21 - stack: 0x00c00006
+11/12/2010 22:26:21 - stack: 0x00c0000a
+11/12/2010 22:26:21 - stack: 0x00c0000d
+11/12/2010 22:26:21 - src/x.c:x_push_changes:592 - focused_id = 0x01200006, to_focus = 0x01200006
+11/12/2010 22:26:21 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - old stack: 0x00c0000d
+11/12/2010 22:26:21 - old stack: 0x00c0000a
+11/12/2010 22:26:21 - old stack: 0x00c00006
+11/12/2010 22:26:21 - old stack: 0x00c00003
+11/12/2010 22:26:21 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:21 - src/handlers.c:handle_normal_hints:717 - Minimum size: 12 (width) x 18 (height)
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:21 - got fs node: 0x906b3c8
+11/12/2010 22:26:21 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 2, orientation = 1
+that child is a leaf node, subtracting deco
+child at (0, 19) with (640 x 1005)
+x now 640, y now 0
+11/12/2010 22:26:21 - raising in new stack: 0x90a5610 / #ff00ff
+currently rendering node 0x90a5610 / #ff00ff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:21 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:94 - child will be at 2x0 with size 636x998
+-- level up
+that child is a leaf node, subtracting deco
+child at (640, 19) with (640 x 1005)
+x now 1280, y now 0
+11/12/2010 22:26:21 - raising in new stack: 0x90a5b48 / #00ffff
+currently rendering node 0x90a5b48 / #00ffff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:21 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:21 - src/render.c:render_con:94 - child will be at 2x0 with size 636x998
+-- level up
+-- level up
+11/12/2010 22:26:21 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:21 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:21 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:21 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:21 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:21 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:21 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - Pushing changes for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:21 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 0
+11/12/2010 22:26:21 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:21 - stack: 0x00c00000
+11/12/2010 22:26:21 - stack: 0x00c00003
+11/12/2010 22:26:21 - stack: 0x00c00006
+11/12/2010 22:26:21 - stack: 0x00c0000a
+11/12/2010 22:26:21 - stack: 0x00c0000d
+11/12/2010 22:26:21 - src/x.c:x_push_changes:592 - focused_id = 0x01200006, to_focus = 0x01200006
+11/12/2010 22:26:21 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:21 - Pushing changes (with unmaps) for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:21 - old stack: 0x00c0000d
+11/12/2010 22:26:21 - old stack: 0x00c0000a
+11/12/2010 22:26:21 - old stack: 0x00c00006
+11/12/2010 22:26:21 - old stack: 0x00c00003
+11/12/2010 22:26:21 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:22 - src/handlers.c:handle_hints:818 - Ignoring urgency flag for current client
+11/12/2010 22:26:28 - src/handlers.c:handle_key_press:68 - Keypress 25, state raw = 24
+11/12/2010 22:26:28 - src/handlers.c:handle_key_press:72 - (removed numlock, state = 8)
+11/12/2010 22:26:28 - src/handlers.c:handle_key_press:76 - (removed upper 8 bits, state = 8)
+11/12/2010 22:26:28 - src/handlers.c:handle_key_press:81 - (checked mode_switch, state 8)
+changing layout to 2
+11/12/2010 22:26:28 - src/con.c:con_set_layout:572 - Creating new split container
+11/12/2010 22:26:28 - opening window 5
+11/12/2010 22:26:28 - color #ffff00
+11/12/2010 22:26:28 - adding new state for window id 0x00c00010
+11/12/2010 22:26:28 - src/con.c:con_set_layout:590 - Moving cons
+11/12/2010 22:26:28 - src/con.c:con_set_layout:599 - Attaching new split to ws
+single command completely parsed, dropping state...
+done, json output = (null)
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:28 - got fs node: 0x906b3c8
+11/12/2010 22:26:28 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 1, orientation = 1
+child at (0, 0) with (1280 x 1024)
+x now 1280, y now 0
+11/12/2010 22:26:28 - raising in new stack: 0x90a5f88 / #ffff00
+currently rendering node 0x90a5f88 / #ffff00 / layout 2
+children: 2, orientation = 1
+tabbed con
+child at (0, 19) with (1280 x 1005)
+x now 0, y now 0
+11/12/2010 22:26:28 - raising in new stack: 0x90a5610 / #ff00ff
+currently rendering node 0x90a5610 / #ff00ff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:28 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+tabbed con
+child at (0, 19) with (1280 x 1005)
+x now 0, y now 0
+11/12/2010 22:26:28 - raising in new stack: 0x90a5b48 / #00ffff
+currently rendering node 0x90a5b48 / #00ffff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:28 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+11/12/2010 22:26:28 - con 0x90a5f88 is stacking, raising 0x90a5b48
+11/12/2010 22:26:28 - raising in new stack: 0x90a5b48 / #00ffff
+currently rendering node 0x90a5b48 / #00ffff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:28 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+-- level up
+-- level up
+11/12/2010 22:26:28 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:28 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:28 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:28 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:28 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:28 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:28 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:28 - setting rect (0, 0, 1280, 0)
+11/12/2010 22:26:28 - Sending fake configure notify
+11/12/2010 22:26:28 - Pushing changes for node 0x90a5f88 / #ffff00
+11/12/2010 22:26:28 - setting rect (0, 0, 1280, 19)
+11/12/2010 22:26:28 - mapping container (serial 735)
+11/12/2010 22:26:28 - Sending fake configure notify
+11/12/2010 22:26:28 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:28 - setting rect (0, 19, 1280, 1005)
+11/12/2010 22:26:28 - setting window rect (2, 0, 1276, 998)
+11/12/2010 22:26:28 - Sending fake configure notify
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x90a5f88, layout = 2
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 1
+11/12/2010 22:26:28 - Pushing changes for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:28 - setting rect (0, 19, 1280, 1005)
+11/12/2010 22:26:28 - setting window rect (2, 0, 1276, 998)
+11/12/2010 22:26:28 - Sending fake configure notify
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x90a5f88, layout = 2
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 1
+11/12/2010 22:26:28 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:28 - stack: 0x00c00000
+11/12/2010 22:26:28 - stack: 0x00c00003
+11/12/2010 22:26:28 - stack: 0x00c00006
+11/12/2010 22:26:28 - Stacking 0x00c00010 above 0x00c00006
+11/12/2010 22:26:28 - stack: 0x00c00010
+11/12/2010 22:26:28 - Stacking 0x00c0000a above 0x00c00010
+11/12/2010 22:26:28 - stack: 0x00c0000a
+11/12/2010 22:26:28 - Stacking 0x00c0000d above 0x00c0000a
+11/12/2010 22:26:28 - stack: 0x00c0000d
+11/12/2010 22:26:28 - src/x.c:x_push_changes:592 - focused_id = 0x01200006, to_focus = 0x01200006
+11/12/2010 22:26:28 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:28 - unmapping container (serial 765)
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x90a5f88 / #ffff00
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:28 - old stack: 0x00c0000d
+11/12/2010 22:26:28 - old stack: 0x00c0000a
+11/12/2010 22:26:28 - old stack: 0x00c00010
+11/12/2010 22:26:28 - old stack: 0x00c00006
+11/12/2010 22:26:28 - old stack: 0x00c00003
+11/12/2010 22:26:28 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:28 - src/handlers.c:handle_expose_event:611 - window = 00c00010
+11/12/2010 22:26:28 - expose for con 0x90a5610 / #ff00ff
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x90a5f88, layout = 2
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 1
+11/12/2010 22:26:28 - expose for con 0x90a5b48 / #00ffff
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x90a5f88, layout = 2
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 1
+11/12/2010 22:26:28 - expose for con 0x90a5f88 / #ffff00
+11/12/2010 22:26:28 - src/handlers.c:handle_expose_event:611 - window = 00c0000a
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x90a5f88, layout = 2
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 1
+11/12/2010 22:26:28 - expose for con 0x90a5610 / #ff00ff
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x90a5f88, layout = 2
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 1
+11/12/2010 22:26:28 - expose for con 0x90a5b48 / #00ffff
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x90a5f88, layout = 2
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 1
+11/12/2010 22:26:28 - src/handlers.c:handle_expose_event:611 - window = 00c0000d
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x90a5f88, layout = 2
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 1
+11/12/2010 22:26:28 - expose for con 0x90a5610 / #ff00ff
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x90a5f88, layout = 2
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 1
+11/12/2010 22:26:28 - expose for con 0x90a5b48 / #00ffff
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x90a5f88, layout = 2
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 1
+11/12/2010 22:26:28 - src/handlers.c:handle_enter_notify:159 - enter_notify for 01200006, mode = 0, detail 0, serial 750
+11/12/2010 22:26:28 - src/handlers.c:handle_enter_notify:160 - coordinates 638, 493
+11/12/2010 22:26:28 - src/handlers.c:handle_unmap_notify_event:462 - UnmapNotify for 0x00c00006 (received from 0x00c00006), serial 765
+11/12/2010 22:26:28 - src/handlers.c:handle_unmap_notify_event:474 - ignore_unmap = 0 for frame of container 0x906b3c8
+11/12/2010 22:26:28 - src/handlers.c:handle_normal_hints:717 - Minimum size: 12 (width) x 18 (height)
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:28 - got fs node: 0x906b3c8
+11/12/2010 22:26:28 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 1, orientation = 1
+child at (0, 0) with (1280 x 1024)
+x now 1280, y now 0
+11/12/2010 22:26:28 - raising in new stack: 0x90a5f88 / #ffff00
+currently rendering node 0x90a5f88 / #ffff00 / layout 2
+children: 2, orientation = 1
+tabbed con
+child at (0, 19) with (1280 x 1005)
+x now 0, y now 0
+11/12/2010 22:26:28 - raising in new stack: 0x90a5610 / #ff00ff
+currently rendering node 0x90a5610 / #ff00ff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:28 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+tabbed con
+child at (0, 19) with (1280 x 1005)
+x now 0, y now 0
+11/12/2010 22:26:28 - raising in new stack: 0x90a5b48 / #00ffff
+currently rendering node 0x90a5b48 / #00ffff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:28 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+11/12/2010 22:26:28 - con 0x90a5f88 is stacking, raising 0x90a5b48
+11/12/2010 22:26:28 - raising in new stack: 0x90a5b48 / #00ffff
+currently rendering node 0x90a5b48 / #00ffff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:28 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+-- level up
+-- level up
+11/12/2010 22:26:28 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:28 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:28 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:28 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:28 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:28 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:28 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:28 - Pushing changes for node 0x90a5f88 / #ffff00
+11/12/2010 22:26:28 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x90a5f88, layout = 2
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 1
+11/12/2010 22:26:28 - Pushing changes for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x90a5f88, layout = 2
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 1
+11/12/2010 22:26:28 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:28 - stack: 0x00c00000
+11/12/2010 22:26:28 - stack: 0x00c00003
+11/12/2010 22:26:28 - stack: 0x00c00006
+11/12/2010 22:26:28 - stack: 0x00c00010
+11/12/2010 22:26:28 - stack: 0x00c0000a
+11/12/2010 22:26:28 - stack: 0x00c0000d
+11/12/2010 22:26:28 - src/x.c:x_push_changes:592 - focused_id = 0x01200006, to_focus = 0x01200006
+11/12/2010 22:26:28 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x90a5f88 / #ffff00
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:28 - old stack: 0x00c0000d
+11/12/2010 22:26:28 - old stack: 0x00c0000a
+11/12/2010 22:26:28 - old stack: 0x00c00010
+11/12/2010 22:26:28 - old stack: 0x00c00006
+11/12/2010 22:26:28 - old stack: 0x00c00003
+11/12/2010 22:26:28 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:28 - src/handlers.c:handle_normal_hints:717 - Minimum size: 12 (width) x 18 (height)
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:28 - got fs node: 0x906b3c8
+11/12/2010 22:26:28 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 1, orientation = 1
+child at (0, 0) with (1280 x 1024)
+x now 1280, y now 0
+11/12/2010 22:26:28 - raising in new stack: 0x90a5f88 / #ffff00
+currently rendering node 0x90a5f88 / #ffff00 / layout 2
+children: 2, orientation = 1
+tabbed con
+child at (0, 19) with (1280 x 1005)
+x now 0, y now 0
+11/12/2010 22:26:28 - raising in new stack: 0x90a5610 / #ff00ff
+currently rendering node 0x90a5610 / #ff00ff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:28 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+tabbed con
+child at (0, 19) with (1280 x 1005)
+x now 0, y now 0
+11/12/2010 22:26:28 - raising in new stack: 0x90a5b48 / #00ffff
+currently rendering node 0x90a5b48 / #00ffff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:28 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+11/12/2010 22:26:28 - con 0x90a5f88 is stacking, raising 0x90a5b48
+11/12/2010 22:26:28 - raising in new stack: 0x90a5b48 / #00ffff
+currently rendering node 0x90a5b48 / #00ffff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:28 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+-- level up
+-- level up
+11/12/2010 22:26:28 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:28 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:28 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:28 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:28 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:28 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:28 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:28 - Pushing changes for node 0x90a5f88 / #ffff00
+11/12/2010 22:26:28 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x90a5f88, layout = 2
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 1
+11/12/2010 22:26:28 - Pushing changes for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x90a5f88, layout = 2
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 1
+11/12/2010 22:26:28 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:28 - stack: 0x00c00000
+11/12/2010 22:26:28 - stack: 0x00c00003
+11/12/2010 22:26:28 - stack: 0x00c00006
+11/12/2010 22:26:28 - stack: 0x00c00010
+11/12/2010 22:26:28 - stack: 0x00c0000a
+11/12/2010 22:26:28 - stack: 0x00c0000d
+11/12/2010 22:26:28 - src/x.c:x_push_changes:592 - focused_id = 0x01200006, to_focus = 0x01200006
+11/12/2010 22:26:28 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x90a5f88 / #ffff00
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:28 - old stack: 0x00c0000d
+11/12/2010 22:26:28 - old stack: 0x00c0000a
+11/12/2010 22:26:28 - old stack: 0x00c00010
+11/12/2010 22:26:28 - old stack: 0x00c00006
+11/12/2010 22:26:28 - old stack: 0x00c00003
+11/12/2010 22:26:28 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:28 - src/handlers.c:handle_normal_hints:717 - Minimum size: 12 (width) x 18 (height)
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:28 - got fs node: 0x906b3c8
+11/12/2010 22:26:28 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 1, orientation = 1
+child at (0, 0) with (1280 x 1024)
+x now 1280, y now 0
+11/12/2010 22:26:28 - raising in new stack: 0x90a5f88 / #ffff00
+currently rendering node 0x90a5f88 / #ffff00 / layout 2
+children: 2, orientation = 1
+tabbed con
+child at (0, 19) with (1280 x 1005)
+x now 0, y now 0
+11/12/2010 22:26:28 - raising in new stack: 0x90a5610 / #ff00ff
+currently rendering node 0x90a5610 / #ff00ff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:28 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+tabbed con
+child at (0, 19) with (1280 x 1005)
+x now 0, y now 0
+11/12/2010 22:26:28 - raising in new stack: 0x90a5b48 / #00ffff
+currently rendering node 0x90a5b48 / #00ffff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:28 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+11/12/2010 22:26:28 - con 0x90a5f88 is stacking, raising 0x90a5b48
+11/12/2010 22:26:28 - raising in new stack: 0x90a5b48 / #00ffff
+currently rendering node 0x90a5b48 / #00ffff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:28 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+-- level up
+-- level up
+11/12/2010 22:26:28 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:28 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:28 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:28 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:28 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:28 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:28 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:28 - Pushing changes for node 0x90a5f88 / #ffff00
+11/12/2010 22:26:28 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x90a5f88, layout = 2
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 1
+11/12/2010 22:26:28 - Pushing changes for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x90a5f88, layout = 2
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 1
+11/12/2010 22:26:28 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:28 - stack: 0x00c00000
+11/12/2010 22:26:28 - stack: 0x00c00003
+11/12/2010 22:26:28 - stack: 0x00c00006
+11/12/2010 22:26:28 - stack: 0x00c00010
+11/12/2010 22:26:28 - stack: 0x00c0000a
+11/12/2010 22:26:28 - stack: 0x00c0000d
+11/12/2010 22:26:28 - src/x.c:x_push_changes:592 - focused_id = 0x01200006, to_focus = 0x01200006
+11/12/2010 22:26:28 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x90a5f88 / #ffff00
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:28 - old stack: 0x00c0000d
+11/12/2010 22:26:28 - old stack: 0x00c0000a
+11/12/2010 22:26:28 - old stack: 0x00c00010
+11/12/2010 22:26:28 - old stack: 0x00c00006
+11/12/2010 22:26:28 - old stack: 0x00c00003
+11/12/2010 22:26:28 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:28 - src/handlers.c:handle_normal_hints:717 - Minimum size: 12 (width) x 18 (height)
+-- BEGIN RENDERING --
+output 0x906b270 / xinerama-0
+currently rendering node 0x906b270 / xinerama-0 / layout 0
+children: 1, orientation = 0
+11/12/2010 22:26:28 - got fs node: 0x906b3c8
+11/12/2010 22:26:28 - raising in new stack: 0x906b3c8 / 1
+currently rendering node 0x906b3c8 / 1 / layout 0
+children: 1, orientation = 1
+child at (0, 0) with (1280 x 1024)
+x now 1280, y now 0
+11/12/2010 22:26:28 - raising in new stack: 0x90a5f88 / #ffff00
+currently rendering node 0x90a5f88 / #ffff00 / layout 2
+children: 2, orientation = 1
+tabbed con
+child at (0, 19) with (1280 x 1005)
+x now 0, y now 0
+11/12/2010 22:26:28 - raising in new stack: 0x90a5610 / #ff00ff
+currently rendering node 0x90a5610 / #ff00ff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:28 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+tabbed con
+child at (0, 19) with (1280 x 1005)
+x now 0, y now 0
+11/12/2010 22:26:28 - raising in new stack: 0x90a5b48 / #00ffff
+currently rendering node 0x90a5b48 / #00ffff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:28 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+11/12/2010 22:26:28 - con 0x90a5f88 is stacking, raising 0x90a5b48
+11/12/2010 22:26:28 - raising in new stack: 0x90a5b48 / #00ffff
+currently rendering node 0x90a5b48 / #00ffff / layout 0
+children: 0, orientation = 0
+11/12/2010 22:26:28 - src/render.c:render_con:84 - Lost 5 pixel due to client's height_increment (14 px, base_height = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (8 px, base_width = 4)
+11/12/2010 22:26:28 - src/render.c:render_con:94 - child will be at 2x0 with size 1276x998
+-- level up
+-- level up
+-- level up
+11/12/2010 22:26:28 - 
+
+ PUSHING CHANGES
+
+11/12/2010 22:26:28 - Pushing changes for node 0x906b148 / root
+11/12/2010 22:26:28 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:28 - Pushing changes for node 0x906b270 / xinerama-0
+11/12/2010 22:26:28 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:28 - Pushing changes for node 0x906b3c8 / 1
+11/12/2010 22:26:28 - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+11/12/2010 22:26:28 - Pushing changes for node 0x90a5f88 / #ffff00
+11/12/2010 22:26:28 - Pushing changes for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5610
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x90a5f88, layout = 2
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 1
+11/12/2010 22:26:28 - Pushing changes for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x90a5b48
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x90a5f88, layout = 2
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:338 - il_parent = 0x906b3c8, layout = 0
+11/12/2010 22:26:28 - src/x.c:x_draw_decoration:347 - indent_level = 0, indent_mult = 1
+11/12/2010 22:26:28 - -- PUSHING WINDOW STACK --
+11/12/2010 22:26:28 - stack: 0x00c00000
+11/12/2010 22:26:28 - stack: 0x00c00003
+11/12/2010 22:26:28 - stack: 0x00c00006
+11/12/2010 22:26:28 - stack: 0x00c00010
+11/12/2010 22:26:28 - stack: 0x00c0000a
+11/12/2010 22:26:28 - stack: 0x00c0000d
+11/12/2010 22:26:28 - src/x.c:x_push_changes:592 - focused_id = 0x01200006, to_focus = 0x01200006
+11/12/2010 22:26:28 - 
+
+ ENDING CHANGES
+
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x906b148 / root
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x906b270 / xinerama-0
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x906b3c8 / 1
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x90a5f88 / #ffff00
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x90a5610 / #ff00ff
+11/12/2010 22:26:28 - Pushing changes (with unmaps) for node 0x90a5b48 / #00ffff
+11/12/2010 22:26:28 - old stack: 0x00c0000d
+11/12/2010 22:26:28 - old stack: 0x00c0000a
+11/12/2010 22:26:28 - old stack: 0x00c00010
+11/12/2010 22:26:28 - old stack: 0x00c00006
+11/12/2010 22:26:28 - old stack: 0x00c00003
+11/12/2010 22:26:28 - old stack: 0x00c00000
+-- END RENDERING --
+11/12/2010 22:26:31 - src/handlers.c:handle_key_press:68 - Keypress 46, state raw = 25
+11/12/2010 22:26:31 - src/handlers.c:handle_key_press:72 - (removed numlock, state = 9)
+11/12/2010 22:26:31 - src/handlers.c:handle_key_press:76 - (removed upper 8 bits, state = 9)
+11/12/2010 22:26:31 - src/handlers.c:handle_key_press:81 - (checked mode_switch, state 9)
+exit, bye bye
+urxvt: X connection to ':0' broken, unable to recover, exiting.
+urxvt: X connection to ':0' broken, unable to recover, exiting.

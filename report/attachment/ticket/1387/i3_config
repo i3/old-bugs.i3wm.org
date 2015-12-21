@@ -1,0 +1,264 @@
+# --------------------------
+# Appearance
+# --------------------------
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+# font pango:DejaVu Sans Mono 10
+font pango:Oxygen 8
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# Composite manager
+exec --no-startup-id killall compton; sleep 1; compton -b --inactive-dim 0.5 --backend glx  --mark-ovredir-focused --mark-wmwin-focused --focus-exclude 'class_g="plasmashell"'
+
+# Border
+new_window pixel 3
+new_float normal 3
+
+
+# ----------------------------
+# Keyboard
+# ----------------------------
+set $mod Mod4
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# kill focused window
+bindsym $mod+q kill
+
+# change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# change output
+bindsym $mod+Control+Left move workspace to output left
+bindsym $mod+Control+Down move workspace to output down
+bindsym $mod+Control+Up move workspace to output up
+bindsym $mod+Control+Right move workspace to output right
+
+
+# move between two recent workspaces
+bindsym $mod+Escape workspace back_and_forth
+bindsym $mod+Shift+Escape move container to workspace back_and_forth
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+a layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+l floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+w focus mode_toggle
+
+# focus the parent container
+bindsym $mod+p focus parent
+
+# focus the child container
+bindsym $mod+c focus child
+
+# Focus last urgent window
+bindsym $mod+x [urgent=latest] focus
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Move floating window
+mode "moveit" {
+    bindsym Up move up 20px
+    bindsym Left move left 20px
+    bindsym Down move down 20px
+    bindsym Right move right 20px
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+m focus floating; mode "moveit"
+
+# switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# switch to next/prev workspace
+bindsym $mod+Prior workspace prev
+bindsym $mod+Next workspace next
+
+# move to next/prev workspace
+bindsym $mod+Shift+Prior move container to workspace prev
+bindsym $mod+Shift+Next move container to workspace next
+
+# Dashboard
+# NOT USING DASHBOARD RIGHT NOW
+# bindsym $mod+d exec --no-startup-id qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.toggleDashboard
+
+# Renaming
+bindsym $mod+n exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
+
+# Copy & Paste
+bindsym --release Mod1+w exec --no-startup-id key_copy
+bindsym --release Control+q exec --no-startup-id key_paste
+bindsym --release Control+Shift+q exec --no-startup-id key_paste_shift
+bindsym --release Control+w exec --no-startup-id key_cut
+bindsym --release Control+d exec --no-startup-id key_del
+
+
+# ----------------------------
+# Apps
+# ----------------------------
+
+# start dmenu (a program launcher)
+# NOT NEEDED SINCE WE ARE USING KRUNNER
+# bindsym $mod+e exec --no-startup-id i3-dmenu-desktop 
+
+# Start a terminal
+bindsym $mod+Return exec --no-startup-id konsole
+
+# Plasma
+# NOT NEEDED FOR PLASMA 5
+for_window [class="plasmashell"] floating enable
+
+# KRunner
+for_window [class="krunner"] exec xdotool search --class krunner windowmove x 0
+
+# Chrome
+bindsym $mod+backslash exec --no-startup-id google-chrome
+bindsym $mod+Shift+backslash exec --no-startup-id google-chrome  --incognito
+bindsym $mod+BackSpace exec --no-startup-id google-chrome
+bindsym $mod+Shift+BackSpace exec --no-startup-id google-chrome  --incognito
+for_window [class="Google-chrome" window_role="browser"] border none
+#for_window [class="Google-chrome" window_role="pop-up"] floating enable # Causes other chrome windows to become popups so disabled for now
+
+# Emacs
+for_window [title="emacs@czikus-laptop"] border none
+assign [class="Emacs"] 100:Emacs
+bindsym $mod+quoteleft workspace 100:Emacs; exec --no-startup-id run_emacs 
+bindsym $mod+Shift+quoteleft move container to workspace 100:Emacs
+
+# MC
+bindsym $mod+F1 workspace 101:F1:MC; exec --no-startup-id [ -z $(xdotool search --name "^mc1.*") ] && konsole -p tabtitle=mc1 -p RemoteTabTitleFormat="mc1 [%H]" -e bash -i -c mc
+bindsym $mod+Shift+F1 move container to workspace 101:F1:MC
+assign [title="mc1"] 101:F1:MC
+for_window [title="mc1"] border none
+bindsym $mod+F2 workspace 102:F2:MC; exec --no-startup-id [ -z $(xdotool search --name "^mc2.*") ] && konsole -p tabtitle=mc2 -p RemoteTabTitleFormat="mc2 [%H]" -e bash -i -c mc
+bindsym $mod+Shift+F2 move container to workspace 102:F2:MC
+assign [title="mc2"] 102:F2:MC
+for_window [title="mc2"] border none
+bindsym $mod+F3 workspace 103:F3:MC; exec --no-startup-id [ -z $(xdotool search --name "^mc3.*") ] && konsole -p tabtitle=mc3 -p RemoteTabTitleFormat="mc3 [%H]" -e bash -i -c mc
+bindsym $mod+Shift+F3 move container to workspace 103:F3:MC
+assign [title="mc3"] 103:F3:MC
+for_window [title="mc3"] border none
+
+# Spotify
+assign [instance="spotify"] 106:F6:Spotify
+bindsym $mod+F6 workspace 106:F6:Spotify; exec --no-startup-id [ -z $(xdotool search --classname 'spotify') ] && spotify
+bindsym $mod+Shift+F6 move container to workspace 106:F6:Spotify
+for_window [instance="spotify"] border none; floating disable; workspace 106:F6:Spotify; focus
+bindsym $mod+slash exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym $mod+period exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym $mod+comma exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+#bindsym XF86AudioStop exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
+
+
+# Google Drive
+bindsym $mod+F8 workspace 108:F8:Drive; exec --no-startup-id [ -z $(xdotool search --classname 'drive.google.com') ] && google-chrome --app='https://drive.google.com'
+bindsym $mod+Shift+F8 move container to workspace 108:F8:Drive
+for_window [instance="drive.google.com"] border none; floating disable
+assign [instance="drive.google.com"] 108:F8:Drive
+
+# Screenshot
+bindsym $mod+Print exec --no-startup-id /usr/bin/ksnapshot --region
+
+# ROS stuff
+assign [instance="rviz"] 8:8:RViz
+for_window [instance="rviz"] border none; floating disable; workspace 8:8:RViz; focus
+assign [instance="rqt"] 9:9:RQt
+for_window [instance="rqt"] border none; floating disable; workspace 9:9:RQt; focus
+assign [class="Blender"] 10:10:Blender
+for_window [class="Blender"] border none; floating disable; workspace 10:10:Blender; focus
+
+# Matlab
+assign [class="com-mathworks-util-PostVMInit"] 10:10:Matlab
+assign [class="MATLAB"] 10:10:Matlab
+for_window [class="com-mathworks-util-PostVMInit"] border none; floating disable; workspace 10:10:Matlab; focus
+for_window [class="MATLAB"] border none; workspace 10:10:Matlab; focus
+
+# MPlayer
+for_window [class="MPlayer"] floating enable
+
+# Dragbox
+for_window [class="Dragbox"] floating enable
+
+
+# --------------------------
+# Bar
+# --------------------------
+bar {
+#    status_command i3status --config ~/.i3/status
+    position top
+    tray_output none
+    strip_workspace_numbers yes
+}

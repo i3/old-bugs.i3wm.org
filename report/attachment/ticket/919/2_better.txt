@@ -1,0 +1,323 @@
+gdb $ bt full
+#0  0x0000000000411746 in con_get_fullscreen_con (con=0x0, fullscreen_mode=1) at ../i3-wm-4.4.1-0+g4.4-76/src/con.c:373
+        current = 0x0
+        child = 0x0
+        bfs_head = {
+          tqh_first = 0x0, 
+          tqh_last = 0x7fff4f4a4250
+        }
+        entry = 0x1c8ba30
+#1  0x000000000042d132 in render_l_output (con=0x1c96dc0) at ../i3-wm-4.4.1-0+g4.4-76/src/render.c:53
+        child = 0x0
+        dockchild = 0x0
+        x = 1920
+        y = 0
+        height = 1080
+        content = 0x1c971e0
+        __FUNCTION__ = "render_l_output"
+        __PRETTY_FUNCTION__ = "render_l_output"
+        ws = 0x0
+        fullscreen = 0x1c96dc0
+#2  0x000000000042dc60 in render_con (con=0x1c96dc0, render_fullscreen=false) at ../i3-wm-4.4.1-0+g4.4-76/src/render.c:231
+        children = 3
+        __FUNCTION__ = "render_con"
+        rect = {
+          x = 1920, 
+          y = 0, 
+          width = 1920, 
+          height = 1080
+        }
+        x = 1920
+        y = 0
+        i = 0
+        fullscreen = 0x0
+        deco_height = 18
+        sizes = 0x7fff4f4a42f8
+        __PRETTY_FUNCTION__ = "render_con"
+#3  0x000000000042dca2 in render_con (con=0x1c8c090, render_fullscreen=false) at ../i3-wm-4.4.1-0+g4.4-76/src/render.c:235
+        output = 0x1c96dc0
+        children = 3
+        __FUNCTION__ = "render_con"
+        rect = {
+          x = 0, 
+          y = 0, 
+          width = 1024, 
+          height = 768
+        }
+        x = 0
+        y = 0
+        i = 0
+        fullscreen = 0x0
+        deco_height = 18
+        sizes = 0x7fff4f4a4458
+        __PRETTY_FUNCTION__ = "render_con"
+#4  0x0000000000432b62 in tree_render () at ../i3-wm-4.4.1-0+g4.4-76/src/tree.c:493
+        __FUNCTION__ = "tree_render"
+#5  0x000000000042ccb8 in randr_query_outputs () at ../i3-wm-4.4.1-0+g4.4-76/src/randr.c:762
+        output = 0x0
+        other = 0x0
+        first = 0x7fa00340b8c6
+        pcookie = {
+          sequence = 475
+        }
+        rcookie = {
+          sequence = 474
+        }
+        res = 0x1c98090
+        cts = 295011332
+        randr_outputs = 0x1c980b8
+        __FUNCTION__ = "randr_query_outputs"
+        len = 7
+        ocookie = 0x7fff4f4a45c0
+#6  0x000000000042cd4d in randr_init (event_base=0x656140) at ../i3-wm-4.4.1-0+g4.4-76/src/randr.c:780
+        extreply = 0x1c6cf80
+#7  0x0000000000427450 in main (argc=4, argv=0x7fff4f4a5cb8) at ../i3-wm-4.4.1-0+g4.4-76/src/main.c:661
+        i3_version = 0x445dc8 "4.4-76-g527ec2a (2013-01-02, branch \"next\")"
+        override_configpath = 0x0
+        autostart = false
+        layout_path = 0x1c61a90 "\001"
+        delete_layout_path = true
+        force_xinerama = false
+---Type <return> to continue, or q <return> to quit---
+        fake_outputs = 0x0
+        disable_signalhandler = false
+        long_options = {{
+            name = 0x4474d1 "no-autostart", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 97
+          }, {
+            name = 0x4474de "config", 
+            has_arg = 1, 
+            flag = 0x0, 
+            val = 99
+          }, {
+            name = 0x4474e5 "version", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 118
+          }, {
+            name = 0x4474ed "moreversion", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 109
+          }, {
+            name = 0x4474f9 "more-version", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 109
+          }, {
+            name = 0x447506 "more_version", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 109
+          }, {
+            name = 0x447513 "help", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 104
+          }, {
+            name = 0x447518 "layout", 
+            has_arg = 1, 
+            flag = 0x0, 
+            val = 76
+          }, {
+            name = 0x4460eb "restart", 
+            has_arg = 1, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x445f31 "force-xinerama", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x445f40 "force_xinerama", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x446067 "disable-signalhandler", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x4460aa "shmlog-size", 
+            has_arg = 1, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x4460b6 "shmlog_size", 
+            has_arg = 1, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x44607d "get-socketpath", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x44608c "get_socketpath", 
+---Type <return> to continue, or q <return> to quit---
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x446100 "fake_outputs", 
+            has_arg = 1, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x4460f3 "fake-outputs", 
+            has_arg = 1, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x446130 "force-old-config-parser-v4.4-only", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x0, 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 0
+          }}
+        option_index = 8
+        opt = -1
+        __FUNCTION__ = "main"
+        gcookie = {
+          sequence = 5
+        }
+        pointercookie = {
+          sequence = 6
+        }
+        cookie = {
+          sequence = 9
+        }
+        greply = 0x1c61ba0
+        _NET_SUPPORTED_cookie = {
+          sequence = 11
+        }
+        _NET_SUPPORTING_WM_CHECK_cookie = {
+          sequence = 12
+        }
+        _NET_WM_NAME_cookie = {
+          sequence = 13
+        }
+        _NET_WM_STATE_FULLSCREEN_cookie = {
+          sequence = 14
+        }
+        _NET_WM_STATE_cookie = {
+          sequence = 15
+        }
+        _NET_WM_WINDOW_TYPE_cookie = {
+          sequence = 16
+        }
+        _NET_WM_WINDOW_TYPE_DOCK_cookie = {
+          sequence = 17
+        }
+        _NET_WM_WINDOW_TYPE_DIALOG_cookie = {
+          sequence = 18
+        }
+        _NET_WM_WINDOW_TYPE_UTILITY_cookie = {
+          sequence = 19
+        }
+        _NET_WM_WINDOW_TYPE_TOOLBAR_cookie = {
+          sequence = 20
+        }
+        _NET_WM_WINDOW_TYPE_SPLASH_cookie = {
+          sequence = 21
+        }
+        _NET_WM_DESKTOP_cookie = {
+          sequence = 22
+        }
+        _NET_WM_STRUT_PARTIAL_cookie = {
+          sequence = 23
+        }
+        _NET_CLIENT_LIST_STACKING_cookie = {
+          sequence = 24
+        }
+---Type <return> to continue, or q <return> to quit---
+        _NET_CURRENT_DESKTOP_cookie = {
+          sequence = 25
+        }
+        _NET_ACTIVE_WINDOW_cookie = {
+          sequence = 26
+        }
+        _NET_WORKAREA_cookie = {
+          sequence = 27
+        }
+        _NET_STARTUP_ID_cookie = {
+          sequence = 28
+        }
+        WM_PROTOCOLS_cookie = {
+          sequence = 29
+        }
+        WM_DELETE_WINDOW_cookie = {
+          sequence = 30
+        }
+        UTF8_STRING_cookie = {
+          sequence = 31
+        }
+        WM_STATE_cookie = {
+          sequence = 32
+        }
+        WM_CLIENT_LEADER_cookie = {
+          sequence = 33
+        }
+        WM_TAKE_FOCUS_cookie = {
+          sequence = 34
+        }
+        WM_WINDOW_ROLE_cookie = {
+          sequence = 35
+        }
+        I3_SOCKET_PATH_cookie = {
+          sequence = 36
+        }
+        I3_CONFIG_PATH_cookie = {
+          sequence = 37
+        }
+        I3_SYNC_cookie = {
+          sequence = 38
+        }
+        I3_SHMLOG_PATH_cookie = {
+          sequence = 39
+        }
+        I3_PID_cookie = {
+          sequence = 40
+        }
+        needs_tree_init = false
+        pointerreply = 0x7fa003a0ef88
+        output = 0x7fa003a0c9e8
+        ipc_socket = 32672
+        xcb_watcher = 0x7fa003a0ea90
+        xkb = 0x7fff4f4a4950
+        xcb_check = 0x0
+        xcb_prepare = 0x7fa0026a5038
+        action = {
+          __sigaction_handler = {
+            sa_handler = 0xffffffffffffffff, 
+            sa_sigaction = 0xffffffffffffffff
+          }, 
+          sa_mask = {
+            __val = {18446744073709551615, 140734523656944, 0, 140325212016680, 140325230424796, 140325232371096, 140325232372368, 
+              140325232396792, 140325232373760, 0, 140325232396792, 2, 140325212096467, 140734523657344, 18446355484769255424, 
+              18392708603073396736}
+          }, 
+          sa_flags = 60901880, 
+          sa_restorer = 0x1
+        }
+        exec_always = 0x7fa003a0e598
+        barconfig = 0x7fa003a149f8
+gdb $ 
+gdb $ 
+
+
+
+
+
+
+
+
+

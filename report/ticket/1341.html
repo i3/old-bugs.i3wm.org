@@ -1,0 +1,882 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1341 (Inconsistency in window frame offsetting)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1340" title="Ticket #1340" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1341?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1341?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1341?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1342" title="Ticket #1342" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="4b596f9f87eaf6b3fb6e6dd1";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1340" title="Ticket #1340">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1342" title="Ticket #1342">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2014-08-10T19%3A23%3A35%2B02%3A00&amp;precision=second" title="See timeline at 08/10/14 19:23:35">8 months ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2014-08-27T18%3A01%3A56%2B02%3A00&amp;precision=second" title="See timeline at 08/27/14 18:01:56">7 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1341" class="trac-id">#1341</a>
+    <span class="trac-status">
+      <a href="/report/query?status=infoneeded_new">infoneeded_new</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Inconsistency in window frame offsetting</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">lolilolicon@…</td>
+      <th id="h_owner" class="missing">Owned by:</th>
+      <td headers="h_owner"></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.8">4.8</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.8 (2014-06-15, branch "4.8")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+I notice the window frame in i3 is handled inconsistently between the left frame and the top (title bar) frame. For example, in my case, the title bar is 20 pixels in height, so if I run <tt>mpv --geometry +0+20 video.mkv</tt>, the window frame is placed with its left-top corner at <tt>(0, 0)</tt>; this is because i3 automatically shifts the mpv window 2 pixels (the size of the left frame/border) to the right, but does not automatically shift the mpv window down in the same manner. This results in unexpectedly that <tt>mpv --geometry +0+11</tt> will make i3 put the mpv window at the center of the screen, presumably because i3 calculates that the left-top corner of the frame would be at <tt>(0, -9)</tt> and decides to resort to putting it at the center of the screen.<br />
+</p>
+<p>
+The discussion above ignores the fact that the win_gravity of the mpv window is actually <tt>CenterGravity</tt>, not <tt>NorthWestGravity</tt>, which I <em>think</em> may change the expected resulting frame coordinates. (To be tested in Mutter when I get the chance).<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(11)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1407691614389391">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-10T19%3A26%3A54%2B02%3A00&amp;precision=second" title="See timeline at 08/10/14 19:26:54">8 months ago</a> by lolilolicon@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Ah, forgot to mention that my mpv windows all float!<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1408152137924501">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-16T03%3A22%3A17%2B02%3A00&amp;precision=second" title="See timeline at 08/16/14 03:22:17">8 months ago</a> by lolilolicon@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+A related / interesting thing about the title bar: if you run <tt>xwininfo</tt> and click on the title bar, it actually gets info for the title bar window! Its. own. window. That's something I didn't expect. Problem is, the coordinates are wrong. I split my workspace into three containers (left, center, right) and then split the left into two (top, bottom), when I click on the title bar of the left-bottom window, I get this from <tt>xwininfo</tt>:<br />
+</p>
+<pre class="wiki">xwininfo: Please select the window about which you
+          would like information by clicking the
+          mouse in that window.
+
+xwininfo: Window id: 0x400045 (has no name)
+
+  Absolute upper-left X:  0
+  Absolute upper-left Y:  0
+  Relative upper-left X:  0
+  Relative upper-left Y:  0
+  Width: 621
+  Height: 611
+  Depth: 24
+  Visual: 0x20
+  Visual Class: TrueColor
+  Border width: 0
+  Class: InputOutput
+  Colormap: 0x22 (installed)
+  Bit Gravity State: ForgetGravity
+  Window Gravity State: NorthWestGravity
+  Backing Store State: NotUseful
+  Save Under State: no
+  Map State: IsViewable
+  Override Redirect State: yes
+  Corners:  +0+0  -1299+0  -1299-589  +0-589
+  -geometry 621x611+0+0
+</pre><p>
+The <tt>Absolute upper-left Y</tt> is wrong.<tt>Relative upper-left Y</tt> is also wrong since its parent is the root window. Surely this is a bug?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1408153049126279">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:4" class="follow-up">↓ 4</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-16T03%3A37%3A29%2B02%3A00&amp;precision=second" title="See timeline at 08/16/14 03:37:29">8 months ago</a> by lolilolicon@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Interestingly, if I click on the left-top window title bar, I get the same window 0x400045 and the exact same output from <tt>xwininfo</tt> as the left-bottom window title bar. Hmm.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1408983307363715">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+        in reply to:
+    <a href="#comment:3">↑ 3</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-25T18%3A15%3A07%2B02%3A00&amp;precision=second" title="See timeline at 08/25/14 18:15:07">7 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1341#comment:3" title="Comment 3">lolilolicon@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Interestingly, if I click on the left-top window title bar, I get the same window 0x400045 and the exact same output from <tt>xwininfo</tt> as the left-bottom window title bar. Hmm.<br />
+</p>
+</blockquote>
+<p>
+That’s because you’re clicking into the split container, onto which the window decorations are rendered. Your comment 2 and 3 are all working as intended.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1408984669746341">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+        in reply to:
+    <a href="#comment:description">↑ description</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:6" class="follow-up">↓ 6</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-25T18%3A37%3A49%2B02%3A00&amp;precision=second" title="See timeline at 08/25/14 18:37:49">7 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="infoneeded_new ticket" href="/report/ticket/1341" title="defect: Inconsistency in window frame offsetting (infoneeded_new)">lolilolicon@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+I notice the window frame in i3 is handled inconsistently between the left frame and the top (title bar) frame. For example, in my case, the title bar is 20 pixels in height, so if I run <tt>mpv --geometry +0+20 video.mkv</tt>, the window frame is placed with its left-top corner at <tt>(0, 0)</tt>; this is because i3 automatically shifts the mpv window 2 pixels (the size of the left frame/border) to the right, but does not automatically shift the mpv window down in the same manner. This results in unexpectedly that <tt>mpv --geometry +0+11</tt> will make i3 put the mpv window at the center of the screen, presumably because i3 calculates that the left-top corner of the frame would be at <tt>(0, -9)</tt> and decides to resort to putting it at the center of the screen.<br />
+</p>
+</blockquote>
+<p>
+Hm. I’m open to convincing here, but I cannot find clear documentation on how window managers should interpret the geometry it gets from actual application window. The closest thing I can find is the X11 protocol documentation, which states:<br />
+</p>
+<pre class="wiki">This request returns the root and current geometry of the drawable.
+The depth is the number of bits per pixel for the object. The x, y,
+and border-width will always be zero for pixmaps. For a window, the
+x and y coordinates specify the upper-left outer corner of the window
+relative to its parent’s origin, and the width and height specify
+the inside size, not including the border.
+</pre><p>
+So, based on that, i3 is behaving correct with regards to the title bar (but incorrect with regards to the left/right/bottom? borders).<br />
+</p>
+<p>
+I’m more interested in what toolkits assume, though. Could you come up with sample applications in GTK and Qt that store their geometry and try to restore it on startup?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1408988117400380">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+        in reply to:
+    <a href="#comment:5">↑ 5</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:7" class="follow-up">↓ 7</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-25T19%3A35%3A17%2B02%3A00&amp;precision=second" title="See timeline at 08/25/14 19:35:17">7 months ago</a> by lolilolicon@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1341#comment:4" title="Comment 4">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+That’s because you’re clicking into the split container, onto which the window decorations are rendered. Your comment 2 and 3 are all working as intended.<br />
+</p>
+</blockquote>
+<p>
+I guess that's understandable, but it's a bit counter-intuitive, isn't it?<br />
+I wonder how one could find out the height of the title bar?<br />
+</p>
+<p>
+Replying to <a class="ticket" href="/report/ticket/1341#comment:5" title="Comment 5">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Hm. I’m open to convincing here, but I cannot find clear documentation on how window managers should interpret the geometry it gets from actual application window. The closest thing I can find is the X11 protocol documentation, which states:<br />
+</p>
+<pre class="wiki">This request returns the root and current geometry of the drawable.
+The depth is the number of bits per pixel for the object. The x, y,
+and border-width will always be zero for pixmaps. For a window, the
+x and y coordinates specify the upper-left outer corner of the window
+relative to its parent’s origin, and the width and height specify
+the inside size, not including the border.
+</pre><p>
+So, based on that, i3 is behaving correct with regards to the title bar (but incorrect with regards to the left/right/bottom? borders).<br />
+</p>
+</blockquote>
+<p>
+The documentation in your quote is about <tt>GetGeometry</tt>. I believe you should be looking at <tt>CreateWindow</tt>. This also concerns <tt>win-gravity</tt> (issue <a class="new ticket" href="/report/ticket/1335" title="defect: Respect win_gravity sizehint for floating windows (new)">#1335</a>).<br />
+</p>
+<blockquote class="citation">
+<p>
+I’m more interested in what toolkits assume, though. Could you come up with sample applications in GTK and Qt that store their geometry and try to restore it on startup?<br />
+</p>
+</blockquote>
+<p>
+Nope, I'm not familiar with that kind of behavior. But I think it's enough to use sxiv as an example. Here's basically how sxiv opens its window (<tt>window.c</tt> function <tt>win_open()</tt>):<br />
+</p>
+<pre class="wiki">win = XCreateWindow(display, root, x, y, w, h, 0, depth, InputOutput, visual, 0, NULL);
+...
+XSetWMNormalHints(display, win, &amp;sizehints);
+</pre><p>
+For the purpose of this bug, let's ignore the <tt>win_gravity</tt> bit and other hints set in <tt>sizehints</tt>, and treat <tt>win_gravity</tt> as the default <tt>NorthWest</tt>. The following discussion depends on this assumption.<br />
+</p>
+<p>
+I think the question here, is when an application requests the upper-left outer corner of its window to be put at <tt>(x,y)</tt>, where should the window manager place the <em>framed</em> window after it re-parents this window to the "frame window"? Should the upper-left outer corner of the "frame window" be placed at <tt>(x,y)</tt>, or should the upper-left outer corner of the <em>bare</em> application window be placed at <tt>(x,y)</tt>? I think the former is correct.<br />
+</p>
+<p>
+This also begs for a clear definition what the "frame window" is in i3. Currently it seems to be the visible frame excluding the title bar, which is counter-intuitive.<br />
+</p>
+<p>
+---<br />
+Related documentation:<br />
+</p>
+<p>
+The X11 protocol documentation says,<br />
+</p>
+<blockquote class="citation">
+<p>
+win-gravity defines how the window should be repositioned if the parent is resized<br />
+</p>
+</blockquote>
+<p>
+The "Window Geometry" section in the EWMH spec includes some clarification<br />
+</p>
+<blockquote class="citation">
+<p>
+When calculating the reference point at the time of initial placement, the Window Manager should take the initial window's size into consideration, as if it was the frame for this window.<br />
+</p>
+</blockquote>
+<p>
+The link: <a class="ext-link" href="http://standards.freedesktop.org/wm-spec/wm-spec-latest.html#idm140146176643024"><span class="icon">​</span>http://standards.freedesktop.org/wm-spec/wm-spec-latest.html#idm140146176643024</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1408989128939977">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+        in reply to:
+    <a href="#comment:6">↑ 6</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:8" class="follow-up">↓ 8</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-25T19%3A52%3A08%2B02%3A00&amp;precision=second" title="See timeline at 08/25/14 19:52:08">7 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1341#comment:6" title="Comment 6">lolilolicon@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/1341#comment:4" title="Comment 4">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+That’s because you’re clicking into the split container, onto which the window decorations are rendered. Your comment 2 and 3 are all working as intended.<br />
+</p>
+</blockquote>
+<p>
+I guess that's understandable, but it's a bit counter-intuitive, isn't it?<br />
+I wonder how one could find out the height of the title bar?<br />
+</p>
+</blockquote>
+<p>
+I don’t think the actual application should ever be interested in the height of the title bar.<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/1341#comment:5" title="Comment 5">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Hm. I’m open to convincing here, but I cannot find clear documentation on how window managers should interpret the geometry it gets from actual application window. The closest thing I can find is the X11 protocol documentation, which states:<br />
+</p>
+<pre class="wiki">This request returns the root and current geometry of the drawable.
+The depth is the number of bits per pixel for the object. The x, y,
+and border-width will always be zero for pixmaps. For a window, the
+x and y coordinates specify the upper-left outer corner of the window
+relative to its parent’s origin, and the width and height specify
+the inside size, not including the border.
+</pre><p>
+So, based on that, i3 is behaving correct with regards to the title bar (but incorrect with regards to the left/right/bottom? borders).<br />
+</p>
+</blockquote>
+<p>
+The documentation in your quote is about <tt>GetGeometry</tt>. I believe you should be looking at <tt>CreateWindow</tt>. This also concerns <tt>win-gravity</tt> (issue <a class="new ticket" href="/report/ticket/1335" title="defect: Respect win_gravity sizehint for floating windows (new)">#1335</a>).<br />
+</p>
+</blockquote>
+<p>
+The <a class="forbidden wiki" title="no permission to view this wiki page">CreateWindow</a> documentation is not any more helpful unfortunately:<br />
+</p>
+<pre class="wiki">The x and y coordinates for the window are relative to the parent’s
+origin and specify the position of the upper-left outer corner of
+the window (not the origin).
+</pre><blockquote class="citation">
+<blockquote class="citation">
+<p>
+I’m more interested in what toolkits assume, though. Could you come up with sample applications in GTK and Qt that store their geometry and try to restore it on startup?<br />
+</p>
+</blockquote>
+<p>
+Nope, I'm not familiar with that kind of behavior. But I think it's enough to use sxiv as an example. Here's basically how sxiv opens its window (<tt>window.c</tt> function <tt>win_open()</tt>):<br />
+</p>
+</blockquote>
+<p>
+I don’t think it’s enough. Having these examples with the two most popular toolkits would make for a much more convincing case.<br />
+</p>
+<blockquote class="citation">
+<p>
+I think the question here, is when an application requests the upper-left outer corner of its window to be put at <tt>(x,y)</tt>, where should the window manager place the <em>framed</em> window after it re-parents this window to the "frame window"? Should the upper-left outer corner of the "frame window" be placed at <tt>(x,y)</tt>, or should the upper-left outer corner of the <em>bare</em> application window be placed at <tt>(x,y)</tt>? I think the former is correct.<br />
+</p>
+</blockquote>
+<p>
+I agree with the question, but I’m still not sure about which possibility is correct.<br />
+</p>
+<blockquote class="citation">
+<p>
+This also begs for a clear definition what the "frame window" is in i3. Currently it seems to be the visible frame excluding the title bar, which is counter-intuitive.<br />
+</p>
+</blockquote>
+<p>
+i3 doesn’t really use frame windows in the conventional sense.<br />
+</p>
+<blockquote class="citation">
+<p>
+The "Window Geometry" section in the EWMH spec includes some clarification<br />
+</p>
+<blockquote class="citation">
+<p>
+When calculating the reference point at the time of initial placement, the Window Manager should take the initial window's size into consideration, as if it was the frame for this window.<br />
+</p>
+</blockquote>
+</blockquote>
+<p>
+That’s a good bit of information, but I don’t find it very clear :|. I.e., does it mean that when I request a 200x300 px window at (0, 0), should the window manager assume that 200x300 px is widthxheight _including_ the borders? In that case, how would an application open a window that has at least 200x300 px? It cannot know the border width/height beforehand. (In general we want applications to not care about window sizes and just scale, but that’s not the point here.)<br />
+</p>
+<p>
+Perhaps you could send an email request for clarification on the wm-spec mailing list where these standards are discussed?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1408998016703815">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+        in reply to:
+    <a href="#comment:7">↑ 7</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-25T22%3A20%3A16%2B02%3A00&amp;precision=second" title="See timeline at 08/25/14 22:20:16">7 months ago</a> by lolilolicon@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1341#comment:7" title="Comment 7">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+I don’t think the actual application should ever be interested in the height of the title bar.<br />
+</p>
+</blockquote>
+<p>
+Unless the title bar is not included in the frame...<br />
+Firstly, applications do care about the window frame, as evidenced by Gimp (see below).<br />
+Secondly, since i3 does not support <tt>_NET_FRAME_EXTENTS</tt>, I'd like <tt>xwininfo -frame</tt> to get the geometry of the frame window correctly, that is, including the title bar.<br />
+</p>
+<blockquote class="citation">
+<p>
+Having these examples with the two most popular toolkits would make for a much more convincing case.<br />
+</p>
+</blockquote>
+<p>
+OK, Gimp is a very good example.<br />
+First, Gimp is able to restore the position for the Toolbox window perfectly in <em>most</em> cases.<br />
+</p>
+<p>
+BUT there is a slim window in which i3 will force center the Toolbox window when Gimp is restarted. You can reproduce this by moving the Toolbox window so that <em>some</em> but <em>not all</em> of its title bar is off-screen, then restart Gimp.<br />
+Assuming you're not using the single-window mode, on exit, the position of the Toolbox window will be recorded in <tt>~/.gimp-2.8/sessionrc</tt>, something like this:<br />
+</p>
+<pre class="wiki">(session-info "toplevel"
+    (factory-entry "gimp-toolbox-window")
+    (position 0 10)
+    (size 200 800)
+    (open-on-exit)
+</pre><p>
+In i3, the <tt>position</tt> parameters Gimp calculates are the coordinates of the upper-left corner of the visible frame excluding the title bar, with negative values corrected to <tt>0</tt>. See, since the frame Gimp gets does not include the title bar, it's oblivious about the fact that half of the title bar is off-screen and happily records its y coordinate as <tt>10</tt>. When Gimp is restarted, this Toolbox window will be force centered.<br />
+This gets us back to the definition of the frame window in i3.<br />
+</p>
+<p>
+So are you convinced we have a bug here now?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1409040401270850">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-26T10%3A06%3A41%2B02%3A00&amp;precision=second" title="See timeline at 08/26/14 10:06:41">7 months ago</a> by lolilolicon@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I just want to add that, considering i3's support for tab and cascade layouts for tiled windows, it makes sense the title bar is ignored. So I understand that if anything shall be done to fix this bug for floating windows, the code probably will need to make a special case for floating windows, which is not something anyone wants to do to their own code. At least we have had some discussion here; whatever is to be done is up to you developers' choice :)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1409124002761729">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:11" class="follow-up">↓ 11</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-27T09%3A20%3A02%2B02%3A00&amp;precision=second" title="See timeline at 08/27/14 09:20:02">7 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+(not a full answer, but interesting excerpt from #xcb with psychon (awesome)):<br />
+</p>
+<pre class="wiki">08:40  psychon&gt; sECuRE_: the window gravity field in ICCCM's WM_NORMAL_HINTS
+08:41  psychon&gt; sECuRE_: it definitely does specify how the WM should treat geometry from ConfigureRequests with respect to window decoration, I think it also applies to the initial geometry
+08:47  sECuRE_&gt; psychon: ah, right, but that only specifies the reference point, not whether the given geometry is to be interpreted as including the decoration or without
+08:49  psychon&gt; oh, well, I think the size is always the size just for the window excluding decorations
+08:49  psychon&gt; why would something want to specify the size including decorations (except for fullscreen / maximized)?
+09:18  sECuRE_&gt; psychon: agreed, that’s what i thought as well
+09:19  psychon&gt; fun fact: awesome pretty much doesn't handle this at all
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1409155316293510">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+        in reply to:
+    <a href="#comment:10">↑ 10</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-27T18%3A01%3A56%2B02%3A00&amp;precision=second" title="See timeline at 08/27/14 18:01:56">7 months ago</a> by lolilolicon@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1341#comment:10" title="Comment 10">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+(not a full answer, but interesting excerpt from #xcb with psychon (awesome)):<br />
+</p>
+<pre class="wiki">08:40  psychon&gt; sECuRE_: the window gravity field in ICCCM's WM_NORMAL_HINTS
+08:41  psychon&gt; sECuRE_: it definitely does specify how the WM should treat geometry from ConfigureRequests with respect to window decoration, I think it also applies to the initial geometry
+08:47  sECuRE_&gt; psychon: ah, right, but that only specifies the reference point, not whether the given geometry is to be interpreted as including the decoration or without
+08:49  psychon&gt; oh, well, I think the size is always the size just for the window excluding decorations
+08:49  psychon&gt; why would something want to specify the size including decorations (except for fullscreen / maximized)?
+09:18  sECuRE_&gt; psychon: agreed, that’s what i thought as well
+09:19  psychon&gt; fun fact: awesome pretty much doesn't handle this at all
+</pre></blockquote>
+<p>
+We all agree that the <em>size</em> of the client window should just be as requested by the client. This following quote from the EWMH spec,<br />
+</p>
+<blockquote class="citation">
+<p>
+When calculating the reference point at the time of initial placement, the Window Manager should take the initial window's size into consideration, as if it was the frame for this window.<br />
+</p>
+</blockquote>
+<p>
+its use of the word "size" and general phrasing makes it somewhat confusing. I think what it means by "size" is all of the client window's geometry parameters: <tt>x</tt>, <tt>y</tt>, <tt>width</tt>, <tt>height</tt>, <tt>bw</tt>.<br />
+</p>
+<p>
+At initial placement, the window manager "takes the initial window's size into consideration", i.e. uses the client window's geometry parameters, to calculate the reference point:<br />
+</p>
+<ol><li>According to the second table in that section, a client window with <a class="forbidden wiki" title="no permission to view this wiki page">NorthWestGravity</a> will produce a reference point at <tt>(x-bw,  y-bw)</tt>.
+</li><li>According to the first table in that section, the reference point of a client window with <a class="forbidden wiki" title="no permission to view this wiki page">NorthWestGravity</a> is "the left top corner of the frame window".
+</li><li>As a result, "the left top corner of the frame window" will be placed at <tt>(x-bw, y-bw)</tt>.
+</li></ol><p>
+Do you agree with this interpretation?<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1341?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1341?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1341?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

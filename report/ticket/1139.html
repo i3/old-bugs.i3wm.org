@@ -1,0 +1,667 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1139 (Bad i3bar vertical alignment/height when using iconic fonts)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1138" title="Ticket #1138" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1139?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1139?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1139?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1140" title="Ticket #1140" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="5ec459ebfd7b39c6f8fa3586";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1138" title="Ticket #1138">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1140" title="Ticket #1140">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2013-12-25T00%3A11%3A54%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 00:11:54">15 months ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2013-12-25T07%3A40%3A51%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 07:40:51">15 months ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2013-12-26T21%3A54%3A37%2B01%3A00&amp;precision=second" title="See timeline at 12/26/13 21:54:37">15 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1139" class="trac-id">#1139</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=works_as_intended">works_as_intended</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Bad i3bar vertical alignment/height when using iconic fonts</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">carlosjosepita@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.7">4.7</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.7 (2013-12-22, branch "tags/4.7")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+The first screenshot (<a class="ext-link" href="http://postimg.org/image/4aaum54n3/7eb21bea/"><span class="icon">​</span>http://postimg.org/image/4aaum54n3/7eb21bea/</a>) is for<br />
+</p>
+<pre class="wiki">bar {
+  status_command h2status
+  font pango:DejaVu Sans Mono 8, FontAwesome 8
+}
+</pre><p>
+The second one (<a class="ext-link" href="http://postimg.org/gallery/22sr3j3s/22de8b61/"><span class="icon">​</span>http://postimg.org/gallery/22sr3j3s/22de8b61/</a>) is for<br />
+</p>
+<pre class="wiki">bar {
+  status_command h2status
+  font pango:DejaVu Sans Mono 8
+}
+</pre><p>
+with all iconic fonts removed.<br />
+</p>
+<p>
+Notice the different size of the tray icons and vertical alignment of the workspace numbers.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(10)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1387927023458564">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-25T00%3A17%3A03%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 00:17:03">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sorry, the second link contains two screenshots. Just look at the second screenshot, ignore the first one.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1387928850481115">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-25T00%3A47%3A30%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 00:47:30">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+One workaround is to define an alias in fonts.conf with the correct fallback font:<br />
+</p>
+<pre class="wiki">  &lt;alias&gt;
+    &lt;family&gt;Status&lt;/family&gt;
+    &lt;prefer&gt;
+      &lt;family&gt;DejaVu Sans Mono&lt;/family&gt;
+      &lt;family&gt;FontAwesome&lt;/family&gt;
+    &lt;/prefer&gt;
+  &lt;/alias&gt;
+</pre><p>
+Then in .i3/config you can configure "pango:Status 8" for the i3bar and it will look good (as in the second screenshot).<br />
+</p>
+<p>
+So it's not clear what the pango sequence "font pango:DejaVu Sans Mono 8, <a class="forbidden wiki" title="no permission to view this wiki page">FontAwesome</a> 8" is expected to do in .i3/config as its behavior is different to the behavior of the same fallback sequence when defined in fonts.conf. <br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1387942217037108">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-25T04%3A30%3A17%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 04:30:17">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sorry, my bad, the pango font descriptor string should have been "pango:DejaVu Sans Mono, <a class="forbidden wiki" title="no permission to view this wiki page">FontAwesome</a> 8", with only one size at the end and not one after each family. Please close this ticket.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1387953651278118">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-25T07%3A40%3A51%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 07:40:51">15 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>works_as_intended</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Thanks for explaining, closing as requested.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1387978135912651">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:6" class="follow-up">↓ 6</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-25T14%3A28%3A55%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 14:28:55">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I've added some tips for using iconic fonts with the i3 status bar and also packaged the ionicons set for arch linux. Maybe you want to link this info from some FAQ or howto:<br />
+</p>
+<p>
+<a class="ext-link" href="https://wiki.archlinux.org/index.php/I3#Iconic_fonts_in_the_status_bar"><span class="icon">​</span>https://wiki.archlinux.org/index.php/I3#Iconic_fonts_in_the_status_bar</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1387989439874488">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+        in reply to:
+    <a href="#comment:5">↑ 5</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-25T17%3A37%3A19%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 17:37:19">15 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1139#comment:5" title="Comment 5">anonymous</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+I've added some tips for using iconic fonts with the i3 status bar and also packaged the ionicons set for arch linux. Maybe you want to link this info from some FAQ or howto:<br />
+</p>
+<p>
+<a class="ext-link" href="https://wiki.archlinux.org/index.php/I3#Iconic_fonts_in_the_status_bar"><span class="icon">​</span>https://wiki.archlinux.org/index.php/I3#Iconic_fonts_in_the_status_bar</a><br />
+</p>
+</blockquote>
+<p>
+Feel free to either:<br />
+</p>
+<p>
+a) ask a question and answer it yourself with that information and/or a pointer to the wiki entry at <a class="ext-link" href="https://faq.i3wm.org/"><span class="icon">​</span>https://faq.i3wm.org/</a><br />
+</p>
+<p>
+b) Write this up and send it as a markdown file to michael@… for inclusion in the user-contributed documentation section of our website.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1387990786002076">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-25T17%3A59%3A46%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 17:59:46">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I don't have enough karma to write links in <a class="ext-link" href="https://faq.i3wm.org"><span class="icon">​</span>https://faq.i3wm.org</a>.<br />
+</p>
+<p>
+Could you just answer this:<br />
+</p>
+<p>
+<a class="ext-link" href="https://faq.i3wm.org/question/3097/how-do-i-add-icons-to-the-status-bar/"><span class="icon">​</span>https://faq.i3wm.org/question/3097/how-do-i-add-icons-to-the-status-bar/</a><br />
+</p>
+<p>
+with this? (and thank you!):<br />
+</p>
+<p>
+You can use one of the impressive iconic true type font sets that are around the web to get nice looking monochromatic icons in your i3 status bar without having to patch it at all.<br />
+</p>
+<p>
+For Arch users there are detailed instructions [here](<a class="ext-link" href="https://wiki.archlinux.org/index.php/I3#Iconic_fonts_in_the_status_bar"><span class="icon">​</span>https://wiki.archlinux.org/index.php/I3#Iconic_fonts_in_the_status_bar</a>). For users of other distros it's as simple as getting the correct ttf files (you can easily figure out how to do that by looking at the PKGBUILD files for Arch) and putting them under /usr/share/fonts/TTF. From that point on everything stated for Arch applies ditto to any distro.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1387992459052989">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-25T18%3A27%3A39%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 18:27:39">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Ok, forget about it, I've just pasted the link as preformatted text so you don't have to write that for me. I see other people are resorting to similar workarounds so I guess it's all right. Once I have enough karma I will edit the answer, anyway.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1388086401773748">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:10" class="follow-up">↓ 10</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-26T20%3A33%3A21%2B01%3A00&amp;precision=second" title="See timeline at 12/26/13 20:33:21">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Michael, just to discard i3 being the culprit, I would like you to confirm this is pango responsibility: the order of the families matters in terms of the alignment problem described above. For example, this<br />
+</p>
+<blockquote>
+<p>
+bar {<br />
+</p>
+<blockquote>
+<p>
+font pango:DejaVu Sans, <a class="forbidden wiki" title="no permission to view this wiki page">FontAwesome</a>, Ionicons 8<br />
+</p>
+</blockquote>
+<p>
+}<br />
+</p>
+</blockquote>
+<p>
+looks well (systray icons are of the correct size, pipe separators and text are vertically aligned in a consistent way, etc). But this<br />
+</p>
+<blockquote>
+<p>
+bar {<br />
+</p>
+<blockquote>
+<p>
+font pango:FontAwesome, Ionicons, <a class="forbidden wiki" title="no permission to view this wiki page">DejaVu</a> Sans 8<br />
+</p>
+</blockquote>
+<p>
+}<br />
+</p>
+</blockquote>
+<p>
+looks wrong as in the ugly screenshot above.<br />
+</p>
+<p>
+Is i3 parsing these strings someway or are they passed directly to pango?<br />
+</p>
+<p>
+Also, from the examples in the documentation it isn't clear to me whether multiple font directives are allowed or not (it's not clear if the different directives belong to the same example or not). The problem with misinterpretation here is that, as shown above, multiple directives wreak havoc with alignment.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1388091277936320">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+        in reply to:
+    <a href="#comment:9">↑ 9</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-26T21%3A54%3A37%2B01%3A00&amp;precision=second" title="See timeline at 12/26/13 21:54:37">15 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1139#comment:9" title="Comment 9">anonymous</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Is i3 parsing these strings someway or are they passed directly to pango?<br />
+</p>
+</blockquote>
+<p>
+We pass them on to Pango directly:<br />
+</p>
+<p>
+<a class="ext-link" href="http://code.stapelberg.de/git/i3/tree/libi3/font.c?h=next#n171"><span class="icon">​</span>http://code.stapelberg.de/git/i3/tree/libi3/font.c?h=next#n171</a> (see als load_pango_font in the same file)<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1139?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1139?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1139?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

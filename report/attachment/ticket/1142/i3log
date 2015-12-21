@@ -1,0 +1,2022 @@
+12/27/2013 02:53:08 PM - ERROR: Using Xinerama instead of RandR. This option should be avoided at all cost because it does not refresh the list of screens, so you cannot configure displays at runtime. Please check if your driver really does not support RandR and disable this option as soon as you can.
+12/27/2013 02:53:08 PM - i3 4.7 (2013-12-22, branch "tags/4.7") starting
+12/27/2013 02:53:08 PM - Parsing configfile /home/alex/.i3/config
+deciding for version 4 due to this line: bindsym $win+h focus left
+12/27/2013 02:53:08 PM - [libi3] libi3/font.c Using Pango font Droid Sans Mono, size 8
+12/27/2013 02:53:08 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:53:08 PM - Used number 1 for workspace with name 1
+12/27/2013 02:53:08 PM - Used number 2 for workspace with name 2
+12/27/2013 02:53:08 PM - This is not an in-place restart, copying root window contents to a pixmap
+12/27/2013 02:53:08 PM - auto-starting ~/.i3/autostart.sh
+12/27/2013 02:53:08 PM - executing: ~/.i3/autostart.sh
+12/27/2013 02:53:08 PM - Starting bar process: i3bar --bar_id=bar-0 --socket="/home/alex/.i3/i3-ipc.sock"
+12/27/2013 02:53:08 PM - executing: i3bar --bar_id=bar-0 --socket="/home/alex/.i3/i3-ipc.sock"
+12/27/2013 02:53:08 PM - IPC: looking for config for bar ID "bar-0"
+12/27/2013 02:53:08 PM - workspace visible? fs = 0xb7ee30, ws = 0xb7ee30
+12/27/2013 02:53:08 PM - workspace visible? fs = 0xb7fa50, ws = 0xb7fa50
+12/27/2013 02:53:08 PM - WM_CLASS changed to i3bar (instance), i3bar (class)
+12/27/2013 02:53:08 PM - WM_NAME changed to "i3bar for output xinerama-1"
+12/27/2013 02:53:08 PM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+12/27/2013 02:53:08 PM - This window is of type dock
+12/27/2013 02:53:08 PM - Checking window 0x00800007 (class i3bar)
+12/27/2013 02:53:08 PM - dock status matches
+12/27/2013 02:53:08 PM - Checking window 0x00800007 (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "(?i)spotify" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x00800007 (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "(?i)spotify" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x00800007 (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "^Gajim$" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x00800007 (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "^Skype$" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x00800007 (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "Cairo-Clock$" does not match "i3bar for output xinerama-1"
+12/27/2013 02:53:08 PM - Checking window 0x00800007 (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "^Nitrogen$" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x00800007 (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "Chromium" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x00800007 (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "^Steam$" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x00800007 (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "^guake$" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x00800007 (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression " - Chromium$" does not match "i3bar for output xinerama-1"
+12/27/2013 02:53:08 PM - Checking window 0x00800007 (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "^Firefox$" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x00800007 (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "^Skype$" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x00800007 (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "^Steam$" does not match "i3bar"
+12/27/2013 02:53:08 PM - Urgency flag changed to 0
+12/27/2013 02:53:08 PM - ClientMessage for window 0x0000029a
+12/27/2013 02:53:08 PM - WM_CLASS changed to i3bar (instance), i3bar (class)
+12/27/2013 02:53:08 PM - WM_NAME changed to "i3bar for output xinerama-0"
+12/27/2013 02:53:08 PM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+12/27/2013 02:53:08 PM - This window is of type dock
+12/27/2013 02:53:08 PM - Checking window 0x0080000b (class i3bar)
+12/27/2013 02:53:08 PM - dock status matches
+12/27/2013 02:53:08 PM - Checking window 0x0080000b (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "(?i)spotify" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x0080000b (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "(?i)spotify" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x0080000b (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "^Gajim$" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x0080000b (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "^Skype$" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x0080000b (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "Cairo-Clock$" does not match "i3bar for output xinerama-0"
+12/27/2013 02:53:08 PM - Checking window 0x0080000b (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "^Nitrogen$" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x0080000b (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "Chromium" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x0080000b (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "^Steam$" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x0080000b (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "^guake$" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x0080000b (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression " - Chromium$" does not match "i3bar for output xinerama-0"
+12/27/2013 02:53:08 PM - Checking window 0x0080000b (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "^Firefox$" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x0080000b (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "^Skype$" does not match "i3bar"
+12/27/2013 02:53:08 PM - Checking window 0x0080000b (class i3bar)
+12/27/2013 02:53:08 PM - Regular expression "^Steam$" does not match "i3bar"
+12/27/2013 02:53:08 PM - Urgency flag changed to 0
+/home/alex/.i3/autostart.sh: 6: /home/alex/.i3/autostart.sh: ⋅: not found
+/home/alex/.i3/autostart.sh: 7: /home/alex/.i3/autostart.sh: ⋅: not found
+
+(parcellite:26996): Gtk-WARNING **: Unable to locate theme engine in module_path: "pixmap",
+/usr/lib/python2.7/dist-packages/gtk_redshift/statusicon.py:63: GtkWarning: Unable to locate theme engine in module_path: "pixmap",
+  status_icon = gtk.StatusIcon()
+/usr/lib/python2.7/dist-packages/guake/simplegladeapp.py:351: GtkWarning: Unable to locate theme engine in module_path: "pixmap",
+  return gtk.glade.XML(glade_path, root, domain)
+[libi3] libi3/font.c Using Pango font Droid Sans Mono, size 8
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/$[ used in numeric lt (<) (did you mean $] ?) at /usr/share/perl5/XML/Twig.pm line 7286.
+$[ used in numeric lt (<) (did you mean $] ?) at /usr/share/perl5/XML/Twig.pm line 7292.
+$[ used in numeric lt (<) (did you mean $] ?) at /usr/share/perl5/XML/Twig.pm line 7304.
+
+(nitrogen:27001): Gtk-WARNING **: Unable to locate theme engine in module_path: "pixmap",
+loading icon 'notification-/usr/share/pixmaps/guake/guake-notification.png' caused error: 'Icon 'notification-/usr/share/pixmaps/guake/guake-notification.png' not present in theme'
+** (notify-osd:26988): WARNING **: dnd_is_screensaver_active(): Got error "The name org.gnome.ScreenSaver was not provided by any .service files"
+
+12/27/2013 02:53:08 PM - ClientMessage for window 0x01e00004
+defined(@array) is deprecated at /usr/bin/shutter line 3701.
+	(Maybe you should just omit the defined()?)
+defined(@array) is deprecated at /usr/bin/shutter line 3707.
+	(Maybe you should just omit the defined()?)
+WARNING: gnome-web-photo is missing --> screenshots of websites will be disabled!
+
+WARNING: Net::DBus::GLib is missing --> Ubuntu One support will be disabled!
+
+WARNING: Image::ExifTool is missing --> Writing Exif information will be disabled!
+
+Gtk-WARNING **: Unable to locate theme engine in module_path: "pixmap", at /usr/bin/shutter line 191.
+ERROR: unknown command or filename ---min_at_startup 
+
+Usage:
+    shutter [options]
+
+Options:
+    Example 1
+            shutter -a -p=myprofile --min_at_startup
+
+    Example 2
+            shutter -s=100,100,300,300 -e
+
+    Example 3
+            shutter --window=.*firefox.*
+
+    Example 4
+            shutter --web=http://shutter-project.org/ -e
+
+  Capture Mode Options:
+    -s, --select=[X,Y,WIDTH,HEIGHT]
+            Capture an area of the screen. Providing X,Y,WIDTH,HEIGHT is
+            optional.
+
+    -f, --full
+            Capture the entire screen.
+
+    -w, --window=[NAME_PATTERN]
+            Select a window to capture. Providing a NAME_PATTERN (Perl-style
+            regex) ist optional.
+
+    -a, --active
+            Capture the current active window.
+
+    --section
+            Capture a section. You will be able to select any child window
+            by moving the mouse over it.
+
+    -m, --menu
+            Capture a menu.
+
+    -t, --tooltip
+            Capture a tooltip.
+
+    --web=[URL]
+            Capture a webpage. Providing an URL ist optional.
+
+    -r, --redo
+            Redo last screenshot.
+
+  Settings Options:
+    -p, --profile=NAME
+            Load a specific profile on startup.
+
+    -o, --output=FILENAME
+            Specify a filename to save the screenshot to (overwrites any
+            profile-related setting).
+
+            Supported image formats: You can save to any popular image
+            format (e.g. jpeg, png, gif, bmp). Additionally it is possible
+            to save to pdf, ps or svg.
+
+            Please note: There are several wildcards available, like
+
+             %Y = year
+             %m = month
+             %d = day
+             %T = time
+             $w = width
+             $h = height
+             $name = multi-purpose (e.g. window title)
+             $nb_name = like $name but without blanks in resulting strings
+             $profile = name of current profile
+             $R = random char (e.g. $RRRR = ag4r)
+             %NN = counter
+
+            The string is interpretted by strftime. See "man strftime" for
+            more examples.
+
+            As an example: shutter -f -e -o './%y-%m-%d_$w_$h.png' would
+            create a file named '11-10-28_1280_800.png' in the current
+            directory.
+
+    -d, --delay=SECONDS
+            Wait n seconds before taking a screenshot.
+
+    -c, --include_cursor
+            Include cursor when taking a screenshot.
+
+    -C, --remove_cursor
+            Remove cursor when taking a screenshot.
+
+  Application Options:
+    -h, --help
+            Prints a brief help message and exits.
+
+    -v, --version
+            Prints version information.
+
+    -d, --debug
+            Prints a lot of debugging information to STDOUT.
+
+    --clear_cache
+            Clears cache, e.g. installed plugins, at startup.
+
+    --min_at_startup
+            Starts Shutter minimized to tray.
+
+    --disable_systray
+            Disables systray icon.
+
+    -e, --exit_after_capture
+            Exit after the first capture has been made. This is useful when
+            using Shutter in scripts.
+
+    -n, --no_session
+            Do not add the screenshot to the session. This is useful when
+            using Shutter in scripts.
+
+
+(nitrogen:27001): Gtk-WARNING **: Unable to locate theme engine in module_path: "pixmap",
+12/27/2013 02:53:19 PM - Not a managed window, ignoring UnmapNotify event
+12/27/2013 02:53:19 PM - startup id = i3/urxvt/26968-0-neptun_TIME8965334
+12/27/2013 02:53:19 PM - executing: urxvt
+12/27/2013 02:53:19 PM - Not a managed window, ignoring UnmapNotify event
+12/27/2013 02:53:19 PM - WM_CLASS changed to urxvt (instance), URxvt (class)
+12/27/2013 02:53:19 PM - WM_NAME changed to "urxvt"
+12/27/2013 02:53:19 PM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+12/27/2013 02:53:19 PM - _NET_WM_NAME changed to "urxvt"
+12/27/2013 02:53:19 PM - WM_HINTS.input changed to "1"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - dock status does not match
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - dock status does not match
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - dock status does not match
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - dock status does not match
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression " - Chromium$" does not match "urxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^Firefox$" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:53:19 PM - workspace visible? fs = 0xb7ee30, ws = 0xb7ee30
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^Gajim$" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "Cairo-Clock$" does not match "urxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^Nitrogen$" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "Chromium" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^guake$" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression " - Chromium$" does not match "urxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^Firefox$" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:53:19 PM - workspace visible? fs = 0xb7ee30, ws = 0xb7ee30
+12/27/2013 02:53:19 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:53:19 PM - _NET_WM_NAME changed to "alex@neptun: ~"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^Gajim$" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "Cairo-Clock$" does not match "alex@neptun: ~"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^Nitrogen$" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "Chromium" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^guake$" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression " - Chromium$" does not match "alex@neptun: ~"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^Firefox$" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:53:19 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:19 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:53:19 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root 12/27/2013 02:53:30 PM - _NET_WM_NAME changed to "xrandr --rotate left"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "^Gajim$" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "Cairo-Clock$" does not match "xrandr --rotate left"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "^Nitrogen$" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "Chromium" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "^guake$" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression " - Chromium$" does not match "xrandr --rotate left"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "^Firefox$" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:53:30 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:53:30 PM - _NET_WM_NAME changed to "alex@neptun: ~"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "^Gajim$" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "Cairo-Clock$" does not match "alex@neptun: ~"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "^Nitrogen$" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "Chromium" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "^guake$" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression " - Chromium$" does not match "alex@neptun: ~"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "^Firefox$" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:53:30 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:30 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:53:30 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:53:40 PM - _NET_WM_NAME changed to "xrandr --output DVI-I-1 --rotate left"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "^Gajim$" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "Cairo-Clock$" does not match "xrandr --output DVI-I-1 --rotate left"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "^Nitrogen$" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "Chromium" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "^guake$" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression " - Chromium$" does not match "xrandr --output DVI-I-1 --rotate left"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "^Firefox$" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:53:40 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:53:40 PM - _NET_WM_NAME changed to "alex@neptun: ~"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "^Gajim$" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "Cairo-Clock$" does not match "alex@neptun: ~"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "^Nitrogen$" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "Chromium" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "^guake$" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression " - Chromium$" does not match "alex@neptun: ~"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "^Firefox$" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:53:40 PM - Checking window 0x01600007 (class URxvt)
+12/27/2013 02:53:40 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:53:40 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:53:46 PM - workspace visible? fs = 0xb7fa50, ws = 0xb7fa50
+12/27/2013 02:53:46 PM - focused now = 0xb7fa50 / 2
+12/27/2013 02:53:46 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:53:46 PM - workspace visible? fs = 0xb7ee30, ws = 0xb7ee30
+12/27/2013 02:53:46 PM - workspace visible? fs = 0xb7fa50, ws = 0xb7fa50
+12/27/2013 02:53:47 PM - focused now = 0xb7c8e0 / #aa0000
+12/27/2013 02:53:47 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:53:47 PM - workspace visible? fs = 0xb7ee30, ws = 0xb7ee30
+12/27/2013 02:53:47 PM - workspace visible? fs = 0xb7fa50, ws = 0xb7fa50
+12/27/2013 02:53:48 PM - workspace visible? fs = 0xb7fa50, ws = 0xb7fa50
+12/27/2013 02:53:48 PM - focused now = 0xb7fa50 / 2
+12/27/2013 02:53:48 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:53:48 PM - workspace visible? fs = 0xb7ee30, ws = 0xb7ee30
+12/27/2013 02:53:48 PM - workspace visible? fs = 0xb7fa50, ws = 0xb7fa50
+window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 12/27/2013 02:53:48 PM - focused now = 0xb7c8e0 / #aa0000
+12/27/2013 02:53:48 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:53:48 PM - workspace visible? fs = 0xb7ee30, ws = 0xb7ee30
+12/27/2013 02:53:48 PM - workspace visible? fs = 0xb7fa50, ws = 0xb7fa50
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:54 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - ERROR: ERROR: No such screen
+12/27/2013 02:53:55 PM - workspace visible? fs = 0xb7fa50, ws = 0xb7fa50
+12/27/2013 02:53:55 PM - focused now = 0xb7fa50 / 2
+12/27/2013 02:53:55 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:53:55 PM - workspace visible? fs = 0xb7ee30, ws = 0xb7ee30
+12/27/2013 02:53:55 PM - workspace visible? fs = 0xb7fa50, ws = 0xb7fa50
+12/27/2013 02:53:58 PM - startup id = i3/~|.i3|dmenu.sh/26968-1-neptun_TIME9004348
+12/27/2013 02:53:58 PM - executing: ~/.i3/dmenu.sh
+12/27/2013 02:53:58 PM - Not a managed window, ignoring UnmapNotify event
+
+(process:27350): GLib-CRITICAL **: g_slice_set_config: assertion `sys_page_size == 0' failed
+
+(firefox:27350): Gtk-WARNING **: Unable to locate theme engine in module_path: "pixmap",
+FoxyProxy settingsDir: /home/alex/.mozilla/firefox/8gz3uiqw.default/foxyproxy.xml
+12/27/2013 02:54:03 PM - startup id = i3/urxvt/26968-2-neptun_TIME9009284
+12/27/2013 02:54:03 PM - executing: urxvt
+12/27/2013 02:54:03 PM - Not a managed window, ignoring UnmapNotify event
+12/27/2013 02:54:03 PM - ClientMessage for window 0x02600094
+12/27/2013 02:54:03 PM - WM_CLASS changed to Navigator (instance), Iceweasel (class)
+12/27/2013 02:54:03 PM - WM_NAME changed to "Iceweasel"
+12/27/2013 02:54:03 PM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+12/27/2013 02:54:03 PM - _NET_WM_NAME changed to "Iceweasel"
+12/27/2013 02:54:03 PM - WM_WINDOW_ROLE changed to "browser"
+12/27/2013 02:54:03 PM - WM_HINTS.input changed to "1"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - dock status does not match
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - dock status does not match
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - dock status does not match
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - dock status does not match
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression " - Chromium$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^Firefox$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^Skype$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^Steam$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - workspace visible? fs = 0xb7fa50, ws = 0xb7fa50
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "(?i)spotify" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "(?i)spotify" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^Gajim$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^Skype$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "Cairo-Clock$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^Nitrogen$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "Chromium" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^Steam$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^guake$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression " - Chromium$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^Firefox$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^Skype$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^Steam$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - workspace visible? fs = 0xb7fa50, ws = 0xb7fa50
+12/27/2013 02:54:03 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:54:03 PM - WM_CLASS changed to urxvt (instance), URxvt (class)
+12/27/2013 02:54:03 PM - WM_NAME changed to "urxvt"
+12/27/2013 02:54:03 PM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+12/27/2013 02:54:03 PM - _NET_WM_NAME changed to "urxvt"
+12/27/2013 02:54:03 PM - WM_HINTS.input changed to "1"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - dock status does not match
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - dock status does not match
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - dock status does not match
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - dock status does not match
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression " - Chromium$" does not match "urxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^Firefox$" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:54:03 PM - workspace visible? fs = 0xb7fa50, ws = 0xb7fa50
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^Gajim$" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "Cairo-Clock$" does not match "urxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^Nitrogen$" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "Chromium" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^guake$" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression " - Chromium$" does not match "urxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^Firefox$" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:54:03 PM - workspace visible? fs = 0xb7fa50, ws = 0xb7fa50
+12/27/2013 02:54:03 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:54:03 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:54:03 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:54:03 PM - _NET_WM_NAME changed to "alex@neptun: ~"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^Gajim$" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "Cairo-Clock$" does not match "alex@neptun: ~"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^Nitrogen$" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "Chromium" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^guake$" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression " - Chromium$" does not match "alex@neptun: ~"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^Firefox$" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:54:03 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:03 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:54:03 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:54:03 PM - WM_HINTS.input changed to "1"
+12/27/2013 02:54:03 PM - Urgency flag changed to 0
+12/27/2013 02:54:03 PM - _NET_WM_NAME changed to "Vimperator"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "(?i)spotify" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "(?i)spotify" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^Gajim$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^Skype$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "Cairo-Clock$" does not match "Vimperator"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^Nitrogen$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "Chromium" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^Steam$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^guake$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression " - Chromium$" does not match "Vimperator"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^Firefox$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^Skype$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:03 PM - Regular expression "^Steam$" does not match "Iceweasel"
+12/27/2013 02:54:03 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:54:03 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:54:03 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:54:03 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:54:03 PM - WM_HINTS.input changed to "1"
+12/27/2013 02:54:04 PM - _NET_WM_NAME changed to "Restore Session - Vimperator"
+12/27/2013 02:54:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:04 PM - Regular expression "(?i)spotify" does not match "Iceweasel"
+12/27/2013 02:54:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:04 PM - Regular expression "(?i)spotify" does not match "Iceweasel"
+12/27/2013 02:54:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:04 PM - Regular expression "^Gajim$" does not match "Iceweasel"
+12/27/2013 02:54:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:04 PM - Regular expression "^Skype$" does not match "Iceweasel"
+12/27/2013 02:54:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:04 PM - Regular expression "Cairo-Clock$" does not match "Restore Session - Vimperator"
+12/27/2013 02:54:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:04 PM - Regular expression "^Nitrogen$" does not match "Iceweasel"
+12/27/2013 02:54:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:04 PM - Regular expression "Chromium" does not match "Iceweasel"
+12/27/2013 02:54:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:04 PM - Regular expression "^Steam$" does not match "Iceweasel"
+12/27/2013 02:54:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:04 PM - Regular expression "^guake$" does not match "Iceweasel"
+12/27/2013 02:54:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:04 PM - Regular expression " - Chromium$" does not match "Restore Session - Vimperator"
+12/27/2013 02:54:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:04 PM - Regular expression "^Firefox$" does not match "Iceweasel"
+12/27/2013 02:54:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:04 PM - Regular expression "^Skype$" does not match "Iceweasel"
+12/27/2013 02:54:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:54:04 PM - Regular expression "^Steam$" does not match "Iceweasel"
+12/27/2013 02:54:04 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:54:04 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+Gtk-Message: (for origin information, set GTK_DEBUG): failed to retrieve property `GtkRange::activate-slider' of type `gboolean' from rc file value "((GString*) 0x7f9179ee07a0)" of type `GString'
+87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[l12/27/2013 02:54:06 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:54:06 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:54:08 PM - WM_HINTS.input changed to "1"
+12/27/2013 02:54:10 PM - _NET_WM_NAME changed to "less .i3/i3k"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "^Gajim$" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "Cairo-Clock$" does not match "less .i3/i3k"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "^Nitrogen$" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "Chromium" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "^guake$" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression " - Chromium$" does not match "less .i3/i3k"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "^Firefox$" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:54:10 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:54:10 PM - _NET_WM_NAME changed to "alex@neptun: ~"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "^Gajim$" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "Cairo-Clock$" does not match "alex@neptun: ~"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "^Nitrogen$" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "Chromium" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "^guake$" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression " - Chromium$" does not match "alex@neptun: ~"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "^Firefox$" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:54:10 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:10 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:54:10 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:54:11 PM - ClientMessage for window 0x026003f0
+12/27/2013 02:54:12 PM - _NET_WM_NAME changed to "less .i3/i3log"
+12/27/2013 02:54:12 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:12 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:54:12 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:12 PM - Regular expression "(?i)spotify" does not match "URxvt"
+12/27/2013 02:54:12 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:12 PM - Regular expression "^Gajim$" does not match "URxvt"
+12/27/2013 02:54:12 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:12 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:54:12 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:12 PM - Regular expression "Cairo-Clock$" does not match "less .i3/i3log"
+12/27/2013 02:54:12 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:12 PM - Regular expression "^Nitrogen$" does not match "URxvt"
+12/27/2013 02:54:12 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:12 PM - Regular expression "Chromium" does not match "URxvt"
+12/27/2013 02:54:12 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:12 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:54:12 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:12 PM - Regular expression "^guake$" does not match "URxvt"
+12/27/2013 02:54:12 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:12 PM - Regular expression " - Chromium$" does not match "less .i3/i3log"
+12/27/2013 02:54:12 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:12 PM - Regular expression "^Firefox$" does not match "URxvt"
+12/27/2013 02:54:12 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:12 PM - Regular expression "^Skype$" does not match "URxvt"
+12/27/2013 02:54:12 PM - Checking window 0x01a00007 (class URxvt)
+12/27/2013 02:54:12 PM - Regular expression "^Steam$" does not match "URxvt"
+12/27/2013 02:54:12 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:54:15 PM - Not a managed window, ignoring UnmapNotify event
+ibi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font12/27/2013 02:54:58 PM - Not a managed window, ignoring UnmapNotify event
+12/27/2013 02:55:03 PM - Not a managed window, ignoring UnmapNotify event
+.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.012/27/2013 02:55:51 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:55:51 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:55:51 PM - WM_HINTS.input changed to "1"
+12/27/2013 02:55:51 PM - Urgency flag changed to 0
+12/27/2013 02:55:51 PM - WM_HINTS.input changed to "1"
+12/27/2013 02:55:55 PM - _NET_WM_NAME changed to "Vimperator"
+12/27/2013 02:55:55 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:55:55 PM - Regular expression "(?i)spotify" does not match "Iceweasel"
+12/27/2013 02:55:55 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:55:55 PM - Regular expression "(?i)spotify" does not match "Iceweasel"
+12/27/2013 02:55:55 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:55:55 PM - Regular expression "^Gajim$" does not match "Iceweasel"
+12/27/2013 02:55:55 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:55:55 PM - Regular expression "^Skype$" does not match "Iceweasel"
+12/27/2013 02:55:55 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:55:55 PM - Regular expression "Cairo-Clock$" does not match "Vimperator"
+12/27/2013 02:55:55 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:55:55 PM - Regular expression "^Nitrogen$" does not match "Iceweasel"
+12/27/2013 02:55:55 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:55:55 PM - Regular expression "Chromium" does not match "Iceweasel"
+12/27/2013 02:55:55 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:55:55 PM - Regular expression "^Steam$" does not match "Iceweasel"
+12/27/2013 02:55:55 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:55:55 PM - Regular expression "^guake$" does not match "Iceweasel"
+12/27/2013 02:55:55 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:55:55 PM - Regular expression " - Chromium$" does not match "Vimperator"
+12/27/2013 02:55:55 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:55:55 PM - Regular expression "^Firefox$" does not match "Iceweasel"
+12/27/2013 02:55:55 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:55:55 PM - Regular expression "^Skype$" does not match "Iceweasel"
+12/27/2013 02:55:55 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:55:55 PM - Regular expression "^Steam$" does not match "Iceweasel"
+12/27/2013 02:55:55 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:55:55 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:55:55 PM - ClientMessage for window 0x02600b4e
+12/27/2013 02:55:59 PM - Not a managed window, ignoring UnmapNotify event
+12/27/2013 02:56:00 PM - _NET_WM_NAME changed to "#1142 (xrandr --rotate left makes tiling work incorrectly) – i3 window manager - Vimperator"
+12/27/2013 02:56:00 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:00 PM - Regular expression "(?i)spotify" does not match "Iceweasel"
+12/27/2013 02:56:00 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:00 PM - Regular expression "(?i)spotify" does not match "Iceweasel"
+12/27/2013 02:56:00 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:00 PM - Regular expression "^Gajim$" does not match "Iceweasel"
+12/27/2013 02:56:00 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:00 PM - Regular expression "^Skype$" does not match "Iceweasel"
+12/27/2013 02:56:00 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:00 PM - Regular expression "Cairo-Clock$" does not match "#1142 (xrandr --rotate left makes tiling work incorrectly) – i3 window manager - Vimperator"
+12/27/2013 02:56:00 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:00 PM - Regular expression "^Nitrogen$" does not match "Iceweasel"
+12/27/2013 02:56:00 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:00 PM - Regular expression "Chromium" does not match "Iceweasel"
+12/27/2013 02:56:00 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:00 PM - Regular expression "^Steam$" does not match "Iceweasel"
+12/27/2013 02:56:00 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:00 PM - Regular expression "^guake$" does not match "Iceweasel"
+12/27/2013 02:56:00 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:00 PM - Regular expression " - Chromium$" does not match "#1142 (xrandr --rotate left makes tiling work incorrectly) – i3 window manager - Vimperator"
+12/27/2013 02:56:00 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:00 PM - Regular expression "^Firefox$" does not match "Iceweasel"
+12/27/2013 02:56:00 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:00 PM - Regular expression "^Skype$" does not match "Iceweasel"
+12/27/2013 02:56:00 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:00 PM - Regular expression "^Steam$" does not match "Iceweasel"
+12/27/2013 02:56:00 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:56:00 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:56:04 PM - _NET_WM_NAME changed to "Ticket #1142 – Attachment – i3 window manager - Vimperator"
+12/27/2013 02:56:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:04 PM - Regular expression "(?i)spotify" does not match "Iceweasel"
+12/27/2013 02:56:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:04 PM - Regular expression "(?i)spotify" does not match "Iceweasel"
+12/27/2013 02:56:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:04 PM - Regular expression "^Gajim$" does not match "Iceweasel"
+12/27/2013 02:56:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:04 PM - Regular expression "^Skype$" does not match "Iceweasel"
+12/27/2013 02:56:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:04 PM - Regular expression "Cairo-Clock$" does not match "Ticket #1142 – Attachment – i3 window manager - Vimperator"
+12/27/2013 02:56:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:04 PM - Regular expression "^Nitrogen$" does not match "Iceweasel"
+12/27/2013 02:56:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:04 PM - Regular expression "Chromium" does not match "Iceweasel"
+12/27/2013 02:56:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:04 PM - Regular expression "^Steam$" does not match "Iceweasel"
+12/27/2013 02:56:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:04 PM - Regular expression "^guake$" does not match "Iceweasel"
+12/27/2013 02:56:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:04 PM - Regular expression " - Chromium$" does not match "Ticket #1142 – Attachment – i3 window manager - Vimperator"
+12/27/2013 02:56:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:04 PM - Regular expression "^Firefox$" does not match "Iceweasel"
+12/27/2013 02:56:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:04 PM - Regular expression "^Skype$" does not match "Iceweasel"
+12/27/2013 02:56:04 PM - Checking window 0x02600094 (class Iceweasel)
+12/27/2013 02:56:04 PM - Regular expression "^Steam$" does not match "Iceweasel"
+12/27/2013 02:56:04 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:56:04 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:56:09 PM - ClientMessage for window 0x02604647
+12/27/2013 02:56:11 PM - ClientMessage for window 0x02604794
+12/27/2013 02:56:11 PM - WM_CLASS changed to firefox (instance), Iceweasel (class)
+12/27/2013 02:56:11 PM - WM_NAME changed to "File Upload"
+12/27/2013 02:56:11 PM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+12/27/2013 02:56:11 PM - _NET_WM_NAME changed to "File Upload"
+12/27/2013 02:56:11 PM - WM_WINDOW_ROLE changed to "GtkFileChooserDialog"
+12/27/2013 02:56:11 PM - WM_HINTS.input changed to "1"
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - dock status does not match
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - dock status does not match
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - dock status does not match
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - dock status does not match
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - Regular expression " - Chromium$" does not match "File Upload"
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - Regular expression "^Firefox$" does not match "Iceweasel"
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - Regular expression "^Skype$" does not match "Iceweasel"
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - Regular expression "^Steam$" does not match "Iceweasel"
+12/27/2013 02:56:11 PM - workspace visible? fs = 0xb7fa50, ws = 0xb7fa50
+12/27/2013 02:56:11 PM - This window is a dialog window, setting floating
+12/27/2013 02:56:11 PM - This window is transient for another window, setting floating
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - Regular expression "(?i)spotify" does not match "Iceweasel"
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - Regular expression "(?i)spotify" does not match "Iceweasel"
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - Regular expression "^Gajim$" does not match "Iceweasel"
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - Regular expression "^Skype$" does not match "Iceweasel"
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - Regular expression "Cairo-Clock$" does not match "File Upload"
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - Regular expression "^Nitrogen$" does not match "Iceweasel"
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - Regular expression "Chromium" does not match "Iceweasel"
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - Regular expression "^Steam$" does not match "Iceweasel"
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - Regular expression "^guake$" does not match "Iceweasel"
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - Regular expression " - Chromium$" does not match "File Upload"
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - Regular expression "^Firefox$" does not match "Iceweasel"
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - Regular expression "^Skype$" does not match "Iceweasel"
+12/27/2013 02:56:11 PM - Checking window 0x02604794 (class Iceweasel)
+12/27/2013 02:56:11 PM - Regular expression "^Steam$" does not match "Iceweasel"
+12/27/2013 02:56:11 PM - workspace visible? fs = 0xb7fa50, ws = 0xb7fa50
+12/27/2013 02:56:11 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:56:11 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:56:11 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:56:13 PM - Not a managed window, ignoring UnmapNotify event
+12/27/2013 02:56:23 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:56:23 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:56:23 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:56:23 PM - [libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+12/27/2013 02:56:23 PM - Not a managed window, ignoring UnmapNotify event
+12/27/2013 02:56:23 PM - expose event for unknown window, ignoring
+12/27/2013 02:56:23 PM - Not a managed window, ignoring UnmapNotify event
+12/27/2013 02:56:23 PM - Not a managed window, ignoring UnmapNotify event
+12/27/2013 02:56:23 PM - Not a managed window, ignoring UnmapNotify event
+12/27/2013 02:56:23 PM - Not a managed window, ignoring UnmapNotify event
+12/27/2013 02:56:23 PM - Not a managed window, ignoring UnmapNotify event
+12/27/2013 02:56:23 PM - WM_HINTS.input changed to "1"
+85714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3] libi3/font.c X11 root window dictates 87.085714 DPI
+[libi3

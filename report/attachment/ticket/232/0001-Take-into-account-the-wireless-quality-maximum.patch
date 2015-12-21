@@ -1,0 +1,103 @@
+From 78ef6a83e0356204dca26df7892d26720fdeae23 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Fernando=20Tarl=C3=A1=20Cardoso=20Lemos?= <fernandotcl@gmail.com>
+Date: Sun, 20 Jun 2010 15:05:33 -0300
+Subject: [PATCH] Take into account the wireless quality maximum.
+
+---
+ src/print_wireless_info.c |   63 +++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 49 insertions(+), 14 deletions(-)
+
+diff --git a/src/print_wireless_info.c b/src/print_wireless_info.c
+index 968ff66..e5d38fb 100644
+--- a/src/print_wireless_info.c
++++ b/src/print_wireless_info.c
+@@ -11,23 +11,50 @@
+ 
+ #include "i3status.h"
+ 
+-static const char *get_wireless_essid(const char *interface) {
+-        static char part[512];
+ #ifdef LINUX
+-        int skfd;
+-        if ((skfd = iw_sockets_open()) < 0) {
+-                perror("socket");
+-                exit(-1);
++static int skfd = -1;
++
++static int open_skfd() {
++    if (skfd == -1) {
++        skfd = iw_sockets_open();
++        if (skfd < 0) {
++            perror("iw_sockets_open");
++            return 0;
+         }
+-        struct wireless_config wcfg;
++    }
++    return -1;
++}
++
++static void close_skfd() {
++    if (skfd != -1) {
++        close(skfd);
++        skfd = -1;
++    }
++}
++#endif
++
++const char *get_wireless_essid(const char *interface) {
++    static char part[512];
++    part[0] = '\0';
++#ifdef LINUX
++    if (open_skfd()) {
++        wireless_config wcfg;
+         if (iw_get_basic_config(skfd, interface, &wcfg) >= 0)
+-                snprintf(part, sizeof(part), "%s", wcfg.essid);
+-        else part[0] = '\0';
+-        (void)close(skfd);
+-#else
+-        part[0] = '\0';
++            snprintf(part, sizeof(part), "%s", wcfg.essid);
++    }
+ #endif
+-        return part;
++    return part;
++}
++
++int get_wireless_quality_max(const char *interface) {
++#ifdef LINUX
++    if (open_skfd()) {
++        iwrange range;
++        if (iw_get_range_info(skfd, interface, &range) >= 0)
++            return range.max_qual.qual;
++    }
++#endif
++    return 0;
+ }
+ 
+ /*
+@@ -72,7 +99,11 @@ void print_wireless_info(const char *interface, const char *format_up, const cha
+                 }
+ 
+                 if (BEGINS_WITH(walk+1, "quality")) {
+-                        (void)printf("%03d%%", quality);
++                        int max_qual = get_wireless_quality_max(interface);
++                        if (max_qual && max_qual >= quality)
++                                printf("%d/%d", quality, max_qual);
++                        else
++                                printf("%d", quality);
+                         walk += strlen("quality");
+                 }
+ 
+@@ -90,5 +121,9 @@ void print_wireless_info(const char *interface, const char *format_up, const cha
+                 }
+         }
+ 
++#ifdef LINUX
++        close_skfd();
++#endif
++
+         (void)printf("%s", endcolor());
+ }
+-- 
+1.7.1
+

@@ -1,0 +1,176 @@
+# vim: set ts=2 sw=2 sts=2:
+
+
+set $i3term term
+ipc-socket ~/.i3/ipc.sock
+
+# colors
+
+# dark blue'n'gray theme
+#client.focused              #111111 #445566 #dcedfc
+#client.focused_inactive     #111111 #222333 #666666
+#client.unfocused            #111111 #111111 #666666
+#client.urgent               #111111 #feac1d #111111
+
+# brown'n'brown theme
+client.focused              #101011 #3a2411 #e7e7d7
+client.focused_inactive     #101011 #241911 #664626
+client.unfocused            #101011 #191411 #664626
+client.urgent               #101011 #e7e7d7 #882411
+
+
+# ISO 10646 = Unicode
+set $font -misc-fixed-medium-r-normal-*-12-120-75-75-C-70-iso10646-1
+font $font
+
+
+# modifier
+set $alt Mod1
+set $win Mod4
+set $ctrl Control
+set $shift Shift
+
+
+# drag floating windows to their wanted position
+floating_modifier $alt
+
+
+#default_orientation <horizontal|vertical|auto>
+default_orientation auto
+
+#workspace_layout <default|stacking|tabbed>
+workspace_layout default
+
+#new_window <normal|1pixel|none>
+new_window 1pixel
+
+
+# Switch orientation mode
+# vertical ($win+$ctrl+h)
+bindcode $win+$ctrl+44 split v
+
+# horizontal ($win+$ctrl+l)
+bindcode $win+$ctrl+48 split h
+
+
+# Switch Container mode
+# fullscreen ($ctrl+enter)
+bindcode $ctrl+36 fullscreen
+
+# stacking ($win+s)
+bindcode $win+47 layout stacking
+# tabbed ($win+t)
+bindcode $win+45 layout tabbed
+# default ($win+d)
+bindcode $win+43 layout default
+
+
+# Toggle tiling/floating of the current window ($win+space)
+bindcode $win+65 floating toggle
+
+# Switch focussing floating or tiling layer ($win+f)
+bindcode $win+29 focus mode_toggle
+
+
+# Focus ($win+h|j|k|l)
+bindcode $win+44 focus left
+bindcode $win+54 focus down
+bindcode $win+55 focus up
+bindcode $win+48 focus right
+
+
+# Focus Container ($alt+h|j|k|l)
+bindcode $alt+44 focus parent; focus left
+bindcode $alt+54 focus parent; focus down
+bindcode $alt+55 focus parent; focus up
+bindcode $alt+48 focus parent; focus right
+
+
+# Move ($win+$shift+h|j|k|l)
+bindcode $win+$shift+44 move left
+bindcode $win+$shift+54 move down
+bindcode $win+$shift+55 move up
+bindcode $win+$shift+48 move right
+
+
+# Move Container ($alt+$shift+h|j|k|l)
+bindcode $alt+$shift+44 focus parent; move left
+bindcode $alt+$shift+54 focus parent; move down
+bindcode $alt+$shift+55 focus parent; move up
+bindcode $alt+$shift+48 focus parent; move right
+
+
+# Workspaces ($win+1...10)
+bindcode $win+10 workspace 1
+bindcode $win+11 workspace 2
+bindcode $win+12 workspace 3
+bindcode $win+13 workspace 4
+bindcode $win+14 workspace 5
+bindcode $win+15 workspace 6
+bindcode $win+16 workspace 7
+bindcode $win+17 workspace 8
+bindcode $win+18 workspace 9
+bindcode $win+19 workspace 10
+
+# Move to Workspaces ($win+$shift+1...10)
+bindcode $win+$shift+10 move workspace 1
+bindcode $win+$shift+11 move workspace 2
+bindcode $win+$shift+12 move workspace 3
+bindcode $win+$shift+13 move workspace 4
+bindcode $win+$shift+14 move workspace 5
+bindcode $win+$shift+15 move workspace 6
+bindcode $win+$shift+16 move workspace 7
+bindcode $win+$shift+17 move workspace 8
+bindcode $win+$shift+18 move workspace 9
+bindcode $win+$shift+19 move workspace 10
+
+
+mode "resize" {
+  # h
+  bindcode 44 resize grow left
+  bindcode $shift+44 resize shrink left
+  # l
+  bindcode 48 resize grow right
+  bindcode $shift+48 resize shrink right
+  # j
+  bindcode 54 resize grow down
+  bindcode $shift+54 resize shrink down
+  # k
+  bindcode 55 resize grow up
+  bindcode $shift+55 resize shrink up
+
+  # back to normal: (Esc|Enter)
+  bindcode 9 mode "default"
+  bindcode 36 mode "default"
+}
+# enter resize mode
+bindcode $win+$shift+32 mode "resize"
+
+
+# start a new terminal ($win+Enter)
+bindcode $win+36 exec $i3term
+
+# kill the current client ($alt+~)
+bindcode $alt+49 kill
+
+# start a launcher like dmenu ($win+r)
+bindcode $win+32 exec groomenu
+
+
+# exit i3 ($crtl+$alt+q)
+bindcode $ctrl+$alt+53 exit
+
+# restart i3 inplace ($ctrl+$alt+r)
+bindcode $ctrl+$alt+32 restart
+
+
+# set window specific options 
+# -- xprop | awk /WM_CLASS/'{print $3, $4}'
+for_window [class="feh" instance="feh"] floating enable
+for_window [class="MPlayer"] floating enable
+# TODO for_window [class="rdesktop" instance="rdesktop"] floating enable
+for_window [class="Ts3client_linux_amd64" instance="ts3client_linux_amd64"] floating enable
+
+
+# workspace bar
+exec_always i3bar-conky

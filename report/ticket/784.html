@@ -1,0 +1,730 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #784 (bring open scratchpad window to the current workspace)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/783" title="Ticket #783" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/784?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/784?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/784?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/785" title="Ticket #785" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="7bd290487f87dc405e3e8b2e";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/783" title="Ticket #783">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/785" title="Ticket #785">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-08-23T19%3A07%3A52%2B02%3A00&amp;precision=second" title="See timeline at 08/23/12 19:07:52">3 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2012-12-24T19%3A26%3A04%2B01%3A00&amp;precision=second" title="See timeline at 12/24/12 19:26:04">2 years ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2012-12-26T20%3A54%3A52%2B01%3A00&amp;precision=second" title="See timeline at 12/26/12 20:54:52">2 years ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/784" class="trac-id">#784</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=enhancement">enhancement</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">bring open scratchpad window to the current workspace</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">i3-bugs@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=minor">minor</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=feature-request">feature-request</a>
+        </td>
+    </tr><tr>
+        <th id="h_version" class="missing">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version="></a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion" class="missing">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Linux">Linux</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+when a scratchpad window is opened it won't open on another workspace. you have to go to the workspace where this window is open, put it into background and open it on the new workspace.<br />
+</p>
+<p>
+this limits usability especially with multiple monitors and workspaces where the workflow is interrupted and search for the window begins.<br />
+</p>
+<p>
+the requested functionality is:<br />
+if a scratchpad window is left on a different workspace and a scratchpad show is called it would bring this window to the current workspace. if it is not opened it would work as usual.<br />
+</p>
+<p>
+thanks<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(3)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/784/784.patch" title="View attachment">784.patch</a><a href="/report/raw-attachment/ticket/784/784.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="2726 bytes">2.7 KB</span>) -
+      added by <em>Marcos Moyano &lt;marcos@…&gt;</em> <a class="timeline" href="/report/timeline?from=2012-10-02T17%3A03%3A23%2B02%3A00&amp;precision=second" title="See timeline at 10/02/12 17:03:23">2 years ago</a>.
+  </dt>
+              <dd>
+                Implement bring open scratchpad window to the current
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/784/0001-Feature-request-784.patch" title="View attachment">0001-Feature-request-784.patch</a><a href="/report/raw-attachment/ticket/784/0001-Feature-request-784.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="6901 bytes">6.7 KB</span>) -
+      added by <em>Marcos Moyano &lt;marcos@…&gt;</em> <a class="timeline" href="/report/timeline?from=2012-12-20T21%3A11%3A23%2B01%3A00&amp;precision=second" title="See timeline at 12/20/12 21:11:23">2 years ago</a>.
+  </dt>
+              <dd>
+                New patch based on Michael's comments.
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/784/0001-Feature-request-784.2.patch" title="View attachment">0001-Feature-request-784.2.patch</a><a href="/report/raw-attachment/ticket/784/0001-Feature-request-784.2.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="6902 bytes">6.7 KB</span>) -
+      added by <em>Marcos Moyano &lt;marcos@…&gt;</em> <a class="timeline" href="/report/timeline?from=2012-12-20T21%3A13%3A46%2B01%3A00&amp;precision=second" title="See timeline at 12/20/12 21:13:46">2 years ago</a>.
+  </dt>
+              <dd>
+                Same patch with a typo fix
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/784/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(13)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1345747454573504">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-08-23T20%3A44%3A14%2B02%3A00&amp;precision=second" title="See timeline at 08/23/12 20:44:14">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>accepted</em>
+    </li><li class="trac-field-version">
+      <strong class="trac-field-version">Version</strong>
+        <em>4.2</em> deleted
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Unsetting version since it’s a feature request.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1347222507474570">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:3" class="follow-up">↓ 3</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-09T22%3A28%3A27%2B02%3A00&amp;precision=second" title="See timeline at 09/09/12 22:28:27">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Of course, this behavior should only be triggered when the scratchpad is empty.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1347274672637149">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+        in reply to:
+    <a href="#comment:2">↑ 2</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:4" class="follow-up">↓ 4</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-10T12%3A57%3A52%2B02%3A00&amp;precision=second" title="See timeline at 09/10/12 12:57:52">3 years ago</a> by martin
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/784#comment:2" title="Comment 2">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Of course, this behavior should only be triggered when the scratchpad is empty.<br />
+</p>
+</blockquote>
+<p>
+You mean because this way you cannot have more then one scratchpad window opened at the same time?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1347279809450008">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+        in reply to:
+    <a href="#comment:3">↑ 3</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-10T14%3A23%3A29%2B02%3A00&amp;precision=second" title="See timeline at 09/10/12 14:23:29">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/784#comment:3" title="Comment 3">martin</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/784#comment:2" title="Comment 2">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Of course, this behavior should only be triggered when the scratchpad is empty.<br />
+</p>
+</blockquote>
+<p>
+You mean because this way you cannot have more then one scratchpad window opened at the same time?<br />
+</p>
+</blockquote>
+<p>
+Yes.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-02T17%3A03%3A23%2B02%3A00&amp;precision=second" title="See timeline at 10/02/12 17:03:23">2 years ago</a> by Marcos Moyano &lt;marcos@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/784/784.patch"><em>784.patch</em></a><a href="/report/raw-attachment/ticket/784/784.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Implement bring open scratchpad window to the current<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1350229441228562">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-14T17%3A44%3A01%2B02%3A00&amp;precision=second" title="See timeline at 10/14/12 17:44:01">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Marcos: I have entirely missed your patch because trac does not generate emails when you just attach a file: <a class="ext-link" href="http://trac.edgewall.org/ticket/2259"><span class="icon">​</span>http://trac.edgewall.org/ticket/2259</a>. Please also send a short message in the future.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1351098430244331">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-24T19%3A07%3A10%2B02%3A00&amp;precision=second" title="See timeline at 10/24/12 19:07:10">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>accepted</em> to <em>infoneeded</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Marcos: I finally had time to review your scratchpad patch. Here are my comments:<br />
+</p>
+<ol><li>Please rename is_scratchpad_empty to scratchpad_is_empty for consistency with the existing code base.
+</li><li>Please use spaces after if (in line 103 of src/scratchpad.c)
+</li><li>You have a typo in line 109: s/scatchad/scratchpad/
+</li><li>Instead of an explicit return false/return true, please use <tt>return TAILQ_EMPTY(&amp;(__i3_scratch-&gt;floating_head));</tt>
+</li><li>When there are multiple scratchpad windows, your patch will move them all to the current workspace! I think this is not intended, so please add a break or return in the loop body.
+</li><li>When searching for scratchpad windows, you don’t check whether the scratchpad window is already on the current workspace. This might have bad side-effects, but should also be avoided for usability purposes.
+</li><li>Did you ensure the testsuite still works okay with your modifications? If so, can you add a testcase for the new behavior please? See <a class="ext-link" href="http://build.i3wm.org/docs/testsuite.html"><span class="icon">​</span>http://build.i3wm.org/docs/testsuite.html</a>
+</li></ol>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1356008403943482">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-12-20T14%3A00%3A03%2B01%3A00&amp;precision=second" title="See timeline at 12/20/12 14:00:03">2 years ago</a> by Marcos Moyano &lt;marcos@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I never received an email about your reply. I'll get on it. Thx for the feedback and sorry for the delay.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-12-20T21%3A11%3A23%2B01%3A00&amp;precision=second" title="See timeline at 12/20/12 21:11:23">2 years ago</a> by Marcos Moyano &lt;marcos@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/784/0001-Feature-request-784.patch"><em>0001-Feature-request-784.patch</em></a><a href="/report/raw-attachment/ticket/784/0001-Feature-request-784.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+New patch based on Michael's comments.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-12-20T21%3A13%3A46%2B01%3A00&amp;precision=second" title="See timeline at 12/20/12 21:13:46">2 years ago</a> by Marcos Moyano &lt;marcos@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/784/0001-Feature-request-784.2.patch"><em>0001-Feature-request-784.2.patch</em></a><a href="/report/raw-attachment/ticket/784/0001-Feature-request-784.2.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Same patch with a typo fix<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1356373564380540">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-12-24T19%3A26%3A04%2B01%3A00&amp;precision=second" title="See timeline at 12/24/12 19:26:04">2 years ago</a> by Simon Elsbrock
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/0045cfa6"><span class="icon">​</span>http://c.i3wm.org/0045cfa6</a>:<br />
+</p>
+<pre class="wiki">move visible scratchpad window to focused workspace
+
+If there is a visible scratchpad on another (non-internal) workspace,
+bring it to the focused workspace instead of doing nothing.
+
+closes #784
+
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1356373691676362">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-12-24T19%3A28%3A11%2B01%3A00&amp;precision=second" title="See timeline at 12/24/12 19:28:11">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Hey Marcos,<br />
+</p>
+<p>
+thanks for updating your patch. I have a few comments:<br />
+</p>
+<ol><li>Thinking about it, your helper function <tt>scratchpad_is_empty</tt> could probably start out as static because it is only used within scratchpad.c. This would allow the compiler to generate more efficient code (inlining) and linking would be faster due to fewer symbols.
+</li></ol><ol start="2"><li>In your test, you use <tt>select</tt> to realize a timeout. This is not okay. The tests have to run as fast as possible, otherwise people are discouraged from testing very often (and they should). Even small delays such as 0.3s are too much. Furthermore, and this is more important, a delay is a bad workaround for an actual problem that needs to be solved.
+</li></ol><ol start="3"><li>The use-case of matching a scratchpad window using criteria is broken with your patch. Unfortunately, it turns out that the testcase for it does not show the problem. I therefore extracted it to a separate file in this commit and it breaks with your changes: <a class="ext-link" href="http://code.stapelberg.de/git/i3/commit/?id=061d90f"><span class="icon">​</span>http://code.stapelberg.de/git/i3/commit/?id=061d90f</a>
+</li></ol><p>
+In the meantime, Simon Elsbrock has also submitted a patch for this issue which looks a tiny bit simpler (but works in the same way essentially) and doesn’t have the issue I talked about above. I therefore merged it. I suppose it was inspired by your work, given how similar the implementations look. Please don’t interpret this as somebody else stealing your fame, I value your work on this and hope that you make the most out of the comments I am providing :-).<br />
+</p>
+<p>
+Thanks again,<br />
+Michael<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1356551692140450">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-12-26T20%3A54%3A52%2B01%3A00&amp;precision=second" title="See timeline at 12/26/12 20:54:52">2 years ago</a> by Marcos Moyano &lt;marcos@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+This is not a competition. We are all trying to make i3 better. As long as the feature gets in, I don't care who's code is it. If Simon's code is better, then better for i3 :)<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/784?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/784?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/784?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

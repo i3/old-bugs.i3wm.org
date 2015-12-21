@@ -1,0 +1,47 @@
+Only in i3-build: i3
+Only in i3-build/i3-input: i3-input
+Only in i3-build/i3-msg: i3-msg
+Only in i3-build/man: i3.1
+Only in i3-build/man: i3-msg.1
+Only in i3-build/src: cfgparse.output
+diff -crB i3/src/config.c i3-build/src/config.c
+*** i3/src/config.c	2010-03-02 23:39:03.610350968 +0300
+--- i3-build/src/config.c	2010-03-06 22:18:58.777503459 +0300
+***************
+*** 70,86 ****
+  
+  static void grab_keycode_for_binding(xcb_connection_t *conn, Binding *bind, uint32_t keycode) {
+          DLOG("Grabbing %d\n", keycode);
+!         if ((bind->mods & BIND_MODE_SWITCH) != 0)
+!                 xcb_grab_key(conn, 0, root, 0, keycode,
+!                         XCB_GRAB_MODE_SYNC, XCB_GRAB_MODE_SYNC);
+!         else {
+!                 /* Grab the key in all combinations */
+!                 #define GRAB_KEY(modifier) xcb_grab_key(conn, 0, root, modifier, keycode, \
+!                                                         XCB_GRAB_MODE_SYNC, XCB_GRAB_MODE_ASYNC)
+!                 GRAB_KEY(bind->mods);
+!                 GRAB_KEY(bind->mods | xcb_numlock_mask);
+!                 GRAB_KEY(bind->mods | xcb_numlock_mask | XCB_MOD_MASK_LOCK);
+!         }
+  }
+  
+  /*
+--- 70,87 ----
+  
+  static void grab_keycode_for_binding(xcb_connection_t *conn, Binding *bind, uint32_t keycode) {
+          DLOG("Grabbing %d\n", keycode);
+! 
+!         /* Remove Mode_switch modifier for binding */
+!         uint32_t modifiers = bind->mods &~ BIND_MODE_SWITCH;
+! 
+!         /* Grab the key in all combinations */
+!         #define GRAB_KEY(modifier) xcb_grab_key(conn, 0, root, modifier, keycode, \
+!                                                XCB_GRAB_MODE_SYNC, XCB_GRAB_MODE_ASYNC)
+! 
+!         GRAB_KEY(modifiers);
+!         GRAB_KEY(modifiers | xcb_numlock_mask);
+!         GRAB_KEY(modifiers | XCB_MOD_MASK_LOCK);
+!         GRAB_KEY(modifiers | xcb_numlock_mask | XCB_MOD_MASK_LOCK);
+  }
+  
+  /*

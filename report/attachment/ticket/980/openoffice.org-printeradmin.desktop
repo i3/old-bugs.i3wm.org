@@ -1,0 +1,130 @@
+###############################################################
+#  
+#  Licensed to the Apache Software Foundation (ASF) under one
+#  or more contributor license agreements.  See the NOTICE file
+#  distributed with this work for additional information
+#  regarding copyright ownership.  The ASF licenses this file
+#  to you under the Apache License, Version 2.0 (the
+#  "License"); you may not use this file except in compliance
+#  with the License.  You may obtain a copy of the License at
+#  
+#    http://www.apache.org/licenses/LICENSE-2.0
+#  
+#  Unless required by applicable law or agreed to in writing,
+#  software distributed under the License is distributed on an
+#  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#  KIND, either express or implied.  See the License for the
+#  specific language governing permissions and limitations
+#  under the License.
+#  
+###############################################################
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Icon=openofficeorg3-printeradmin
+Type=Application
+Categories=Office;X-Red-Hat-Base;X-SuSE-Core-Office;
+Exec=ooffice-printeradmin
+Name=OpenOffice.org 3.4.1 Printer Administration
+Name[en]=OpenOffice.org 3.4.1 Printer Administration
+Name[af]=OpenOffice.org 3.4.1-drukkeradministrasie
+Name[ar]=إدارة طابعات OpenOffice.org 3.4.1
+Name[as]=OpenOffice.org 3.4.1 মুদ্ৰক প্ৰশাসন
+Name[ast]=Alministración de la imprentadora de OpenOffice.org 3.4.1
+Name[be_BY]=Кіраванне прынтэрам OpenOffice.org 3.4.1
+Name[bg]=Администриране на принтера за OpenOffice.org 3.4.1
+Name[bn]=OpenOffice.org 3.4.1 প্রিন্টার অ্যাডমিনিস্ট্রেশন
+Name[bo]=OpenOffice.org 3.4.1པར་འཁོར་དོ་དམ།
+Name[br]=Ardoadur moullerezed OpenOffice.org 3.4.1
+Name[brx]=OpenOffice.org 3.4.1 साफायग्रा खुंथाय
+Name[bs]=OpenOffice.org 3.4.1 administracija štampača
+Name[ca]=Administració d'impressió de l'OpenOffice.org 3.4.1
+Name[ca_XV]=Administració d'impressió de l'OpenOffice.org 3.4.1
+Name[cs]=Administrace tiskáren OpenOffice.org 3.4.1
+Name[cy]=Gweinyddu Argraffu OpenOffice.org 3.4.1
+Name[da]=OpenOffice.org 3.4.1-printeradministration
+Name[de]=OpenOffice.org 3.4.1 Druckerverwaltung
+Name[dgo]=OpenOffice.org 3.4.1 छापक  प्रशासन
+Name[dz]=OpenOffice.org 3.4.1 དཔར་འཕྲུལ་ བདག་སྐྱོང་།
+Name[el]=Διαχείριση εκτυπωτή OpenOffice.org 3.4.1
+Name[en_GB]=OpenOffice.org 3.4.1 Printer Administration
+Name[en_ZA]=OpenOffice.org 3.4.1 Printer Administration
+Name[eo]=OpenOffice.org 3.4.1 presila administrado
+Name[es]=Administración de la impresora de OpenOffice.org 3.4.1 
+Name[et]=OpenOffice.org 3.4.1-i printerite haldamine
+Name[eu]=OpenOffice.org 3.4.1 inprimagailu-administrazioa
+Name[fa]=مدیریت چاپگر OpenOffice.org 3.4.1
+Name[fi]=OpenOffice.org 3.4.1 - Tulostimen hallinta
+Name[fr]=Gestion des imprimantes de OpenOffice.org 3.4.1
+Name[ga]=Riarachán na bPrintéirí OpenOffice.org 3.4.1
+Name[gd]=Clò-bhualadair Rianachd
+Name[gl]=Administración da impresora de OpenOffice.org 3.4.1
+Name[gu]=OpenOffice.org 3.4.1  પ્રિન્ટર સંચાલન
+Name[he]=ניהול מדפסות ‏‪OpenOffice.org 3.4.1‬‏‏
+Name[hr]=OpenOffice.org 3.4.1 aAdministracija pisača
+Name[hu]=OpenOffice.org 3.4.1 Nyomtatókezelés
+Name[id]=Administrasi Pencetak OpenOffice.org 3.4.1
+Name[is]=OpenOffice.org 3.4.1 prentarastjórnun
+Name[it]=OpenOffice.org 3.4.1 Gestione stampanti
+Name[ja]=OpenOffice.org 3.4.1 プリンタの管理
+Name[ka]=OpenOffice.org 3.4.1 პრინტერის ადმინისტრაცია
+Name[kk]=OpenOffice.org 3.4.1 Баспаны басқару
+Name[km]=ការ​គ្រប់គ្រង​ម៉ាស៊ីន​បោះពុម្ព​ OpenOffice.org 3.4.1
+Name[kn]=OpenOffice.org 3.4.1 ಮುದ್ರಕ ನಿರ್ವಹಣೆ
+Name[ko]=OpenOffice.org 3.4.1 프린터 관리
+Name[kok]=OpenOffice.org 3.4.1 मुद्रक प्रशासन
+Name[ku]=OpenOffice.org 3.4.1 Rêvebiriya Çapgerê
+Name[lt]=„OpenOffice.org 3.4.1“ spausdintuvo tvarkymas
+Name[lv]=OpenOffice.org 3.4.1 Printera administrēšana
+Name[mai]=OpenOffice.org 3.4.1 मुद्रक प्रशासन
+Name[mk]=Администрирање на печатачи во OpenOffice.org 3.4.1
+Name[ml]=OpenOffice.org 3.4.1 പ്രിന്റര്‍ അഡ്മിനിസ്ട്രേഷന്‍
+Name[mn]=OpenOffice.org 3.4.1 Хэвлэгчийн удирдлага
+Name[mni]=OpenOffice.org 3.4.1 প্রিন্তরগী ৱায়েন থৌদা
+Name[mr]=OpenOffice.org 3.4.1 मुद्रक प्रशासन
+Name[my]=OpenOffice.org 3.4.1 ပရင်တာ စီမံခန့်ခွဲမှု
+Name[nb]=OpenOffice.org 3.4.1-skriveradministrasjon
+Name[ne]=OpenOffice.org 3.4.1 मुद्रक प्रशासन
+Name[nl]=OpenOffice.org 3.4.1-printerbeheer
+Name[nn]=OpenOffice.org 3.4.1-skrivaradministrasjon
+Name[nr]=OpenOffice.org 3.4.1-drukkeradministrasie
+Name[nso]=OpenOffice.org 3.4.1-drukkeradministrasie
+Name[oc]=Gestion de las estampadoiras de OpenOffice.org 3.4.1
+Name[om]=Bulchiinsa Maxxansaa OpenOffice.org 3.4.1
+Name[or]=OpenOffice.org 3.4.1 ପ୍ରିଣ୍ଟର ପ୍ରଶାସନ
+Name[pa_IN]=OpenOffice.org 3.4.1 ਪਰਿੰਟਰ ਐਡਮਿਨਸਟੇਟਰ
+Name[pl]=OpenOffice.org 3.4.1 - Zarządzanie drukarką
+Name[pt]=OpenOffice.org 3.4.1 - Administração de impressoras
+Name[pt_BR]=Administrador de impressoras do OpenOffice.org 3.4.1
+Name[ro]=Administrare imprimantă OpenOffice.org 3.4.1
+Name[ru]=OpenOffice.org 3.4.1 Управление принтером
+Name[rw]=Ubugenzuzi bwa Mucapyi OpenOffice.org 3.4.1
+Name[sa_IN]=OpenOffice.org 3.4.1 मुद्रकप्रशासनम्
+Name[sat]=OpenOffice.org 3.4.1 छापा सासोनिक्
+Name[sd]=OpenOffice.org 3.4.1  پرنٽر جو انتظام 
+Name[sh]=OpenOffice.org 3.4.1 podešavanje štampača
+Name[si]=OpenOffice.org 3.4.1 මුද්‍රණ පරිපාලක
+Name[sk]=Správa tlačiarní OpenOffice.org 3.4.1
+Name[sl]=Nastavitve tiskalnika OpenOffice.org 3.4.1
+Name[sq]=OpenOffice.org 3.4.1 Administrim i shtypësit
+Name[sr]=OpenOffice.org 3.4.1 подешавање штампача
+Name[ss]=OpenOffice.org 3.4.1-drukkeradministrasie
+Name[st]=OpenOffice.org 3.4.1-drukkeradministrasie
+Name[sv]=OpenOffice.org 3.4.1 skrivaradministration
+Name[sw_TZ]=OpenOffice.org 3.4.1 Utawala wa Printa
+Name[ta]=OpenOffice.org 3.4.1 அச்சுப்பொறி நிர்வாகம்
+Name[te]=ముద్రణా యంత్రం యోక్క OpenOffice.org 3.4.1 నిర్వహించు.
+Name[tg]=Идоракунии чопкунаки OpenOffice.org 3.4.1
+Name[th]=ตัวบริหารจัดการเครื่องพิมพ์ OpenOffice.org 3.4.1 
+Name[tn]=OpenOffice.org 3.4.1-drukkeradministrasie
+Name[tr]=OpenOffice.org 3.4.1 Yazıcı Yönetimi
+Name[ts]=OpenOffice.org 3.4.1-drukkeradministrasie
+Name[ug]=OpenOffice.org 3.4.1 پرىنتېر باشقۇرۇش
+Name[uk]=Налаштування принтера OpenOffice.org 3.4.1
+Name[uz]=OpenOffice.org 3.4.1 printerni boshqarish
+Name[ve]=OpenOffice.org 3.4.1-drukkeradministrasie
+Name[vi]=Quản trị máy in OpenOffice.org 3.4.1
+Name[xh]=OpenOffice.org 3.4.1-drukkeradministrasie
+Name[zh_CN]=OpenOffice.org 3.4.1 打印机管理
+Name[zh_TW]=OpenOffice.org 3.4.1 印表機管理
+Name[zu]=OpenOffice.org 3.4.1-drukkeradministrasie

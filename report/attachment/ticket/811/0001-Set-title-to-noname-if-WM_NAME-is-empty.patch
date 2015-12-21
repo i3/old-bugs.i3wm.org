@@ -1,0 +1,41 @@
+From 38dbd7f685261f2d65bed066b51d5a7af4a37061 Mon Sep 17 00:00:00 2001
+From: Sascha Kruse <knopwob@googlemail.com>
+Date: Sun, 23 Sep 2012 05:53:55 +0200
+Subject: [PATCH] Set title to "noname" if WM_NAME is empty
+
+---
+ src/x.c | 17 +++++++++++------
+ 1 file changed, 11 insertions(+), 6 deletions(-)
+
+diff --git a/src/x.c b/src/x.c
+index 0be83ad..371cb49 100644
+--- a/src/x.c
++++ b/src/x.c
+@@ -482,13 +482,18 @@ void x_draw_decoration(Con *con) {
+ 
+     struct Window *win = con->window;
+     if (win == NULL || win->name == NULL) {
+-        /* we have a split container which gets a representation
+-         * of its children as title
+-         */
+         char *title;
+-        char *tree = con_get_tree_representation(con);
+-        sasprintf(&title, "i3: %s", tree);
+-        free(tree);
++        if (win == NULL) {
++            /* we have a split container which gets a representation
++             * of its children as title
++             */
++            char *tree = con_get_tree_representation(con);
++            sasprintf(&title, "i3: %s", tree);
++            free(tree);
++        } else {
++            assert(win->name == NULL);
++            title = strdup("noname");
++        }
+ 
+         draw_text_ascii(title,
+                 parent->pixmap, parent->pm_gc,
+-- 
+1.7.12.1
+

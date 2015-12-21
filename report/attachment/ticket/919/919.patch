@@ -1,0 +1,15 @@
+diff --git i/src/render.c w/src/render.c
+index 476d1ca..3fb4d79 100644
+--- i/src/render.c
++++ w/src/render.c
+@@ -50,6 +50,10 @@ static void render_l_output(Con *con) {
+      * and take the short-cut to render it directly (the user does not want to
+      * see the dockareas in that case) */
+     Con *ws = con_get_fullscreen_con(content, CF_OUTPUT);
++    if (!ws) {
++        DLOG("Skipping this output because it is currently being destroyed.\n");
++        return;
++    }
+     Con *fullscreen = con_get_fullscreen_con(ws, CF_OUTPUT);
+     if (fullscreen) {
+         fullscreen->rect = con->rect;

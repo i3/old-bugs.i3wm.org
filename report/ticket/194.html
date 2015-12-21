@@ -1,0 +1,662 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #194 (i3 does not start)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/193" title="Ticket #193" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/194?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/194?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/194?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/195" title="Ticket #195" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="fb1edc454b240dc4a01374b6";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/193" title="Ticket #193">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/195" title="Ticket #195">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2010-03-14T18%3A28%3A44%2B01%3A00&amp;precision=second" title="See timeline at 03/14/10 18:28:44">5 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2010-03-28T22%3A17%3A35%2B02%3A00&amp;precision=second" title="See timeline at 03/28/10 22:17:35">5 years ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/194" class="trac-id">#194</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=invalid">invalid</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">i3 does not start</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable"><a href="/report/query?status=!closed&amp;reporter=anonymous">anonymous</a></td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=blocker">blocker</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=3.d">3.d</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion" class="missing">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Linux">Linux</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+              Arch Linux (2.6.32-ARCH)
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+I'm evaluating i3-3.d (on an Arch Linux system) as a replacement for wmii. i3 is started through SLiM. The SLiM background remains after i3 starts. I can see the task bar, but cannot execute any actions (open a terminal, close i3, etc.). I was able to see the welcome message. wmii works fine on the same system.<br />
+i3 reports the errors shown below. The full log is attached. Any help is appreciated.<br />
+</p>
+<p>
+03/14/2010 01:15:25 PM - src/commands.c:parse_command:865 - --- parsing command "exec /usr/bin/dmenu_run" ---<br />
+03/14/2010 01:15:25 PM - src/commands.c:parse_command:878 - starting "/usr/bin/dmenu_run"<br />
+/usr/bin/dmenu_path: line 17: cd: /usr/bin/perlbin/site: No such file or directory<br />
+03/14/2010 01:15:30 PM - src/xinerama.c:get_screen_containing:78 - comparing x=640 y=400 with x=0 and y=0 width 1280 height 800<br />
+03/14/2010 01:15:30 PM - src/xinerama.c:get_screen_containing:78 - comparing x=638 y=400 with x=0 and y=0 width 1280 height 800<br />
+03/14/2010 01:15:31 PM - src/xinerama.c:get_screen_containing:78 - comparing x=634 y=401 with x=0 and y=0 width 1280 height 800<br />
+03/14/2010 01:15:44 PM - src/mainx.c:xkb_got_event:123 - got xkb event, yay<br />
+XIO:  fatal IO error 11 (Resource temporarily unavailable) on X server ":0.0"<br />
+</p>
+<blockquote>
+<p>
+after 8 requests (8 known processed) with 0 events remaining.<br />
+</p>
+</blockquote>
+<p>
+XIO:  fatal IO error 11 (Resource temporarily unavailable) on X server ":0.0"<br />
+</p>
+<blockquote>
+<p>
+after 972 requests (972 known processed) with 0 events remaining.<br />
+</p>
+</blockquote>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(1)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/194/i3log-" title="View attachment">i3log-</a><a href="/report/raw-attachment/ticket/194/i3log-" class="trac-rawlink" title="Download">​</a>
+       (<span title="17438 bytes">17.0 KB</span>) -
+      added by <em>anonymous</em> <a class="timeline" href="/report/timeline?from=2010-03-14T18%3A29%3A04%2B01%3A00&amp;precision=second" title="See timeline at 03/14/10 18:29:04">5 years ago</a>.
+  </dt>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/194/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(10)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-03-14T18%3A29%3A04%2B01%3A00&amp;precision=second" title="See timeline at 03/14/10 18:29:04">5 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/194/i3log-"><em>i3log-</em></a><a href="/report/raw-attachment/ticket/194/i3log-" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-1-1268587917000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:2" class="follow-up">↓ 2</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-03-14T18%3A31%3A57%2B01%3A00&amp;precision=second" title="See timeline at 03/14/10 18:31:57">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Please see <a class="ext-link" href="http://i3.zekjur.net/docs/debugging.html"><span class="icon">​</span>http://i3.zekjur.net/docs/debugging.html</a> and enable core-dumps. Then please post the backtrace here.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1268590257000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+        in reply to:
+    <a href="#comment:1">↑ 1</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-03-14T19%3A10%3A57%2B01%3A00&amp;precision=second" title="See timeline at 03/14/10 19:10:57">5 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+It doesn't crash, so a core dump would not be generated. i3 is (or at least appears) hung. To get out of it, I switch to tty1 and kill X.<br />
+</p>
+<p>
+Replying to <a class="ticket" href="/report/ticket/194#comment:1" title="Comment 1">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Please see <a class="ext-link" href="http://i3.zekjur.net/docs/debugging.html"><span class="icon">​</span>http://i3.zekjur.net/docs/debugging.html</a> and enable core-dumps. Then please post the backtrace here.<br />
+</p>
+</blockquote>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1268601063000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-03-14T22%3A11%3A03%2B01%3A00&amp;precision=second" title="See timeline at 03/14/10 22:11:03">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sounds like an endless loop when receiving XKB events. Can you install xtrace and run i3 through it to see what’s happening on the wire? Get xtrace from <a class="ext-link" href="http://xtrace.alioth.debian.org/"><span class="icon">​</span>http://xtrace.alioth.debian.org/</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1268762421000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:5" class="follow-up">↓ 5</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-03-16T19%3A00%3A21%2B01%3A00&amp;precision=second" title="See timeline at 03/16/10 19:00:21">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Hm, I am seeing a similar thing when resuming from suspend to ram. Seems to be related to RandR, according to the X backtraces. Can you enable core-dumps for X and see if it dumps core? On my system, I added ulimit -c unlimited to /etc/init.d/xdm and found core-dumps in /etc/X11 afterwards.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1269188826000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+        in reply to:
+    <a href="#comment:4">↑ 4</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:6" class="follow-up">↓ 6</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-03-21T17%3A27%3A06%2B01%3A00&amp;precision=second" title="See timeline at 03/21/10 17:27:06">5 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/194#comment:4" title="Comment 4">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Hm, I am seeing a similar thing when resuming from suspend to ram. Seems to be related to RandR, according to the X backtraces. Can you enable core-dumps for X and see if it dumps core? On my system, I added ulimit -c unlimited to /etc/init.d/xdm and found core-dumps in /etc/X11 afterwards.<br />
+</p>
+</blockquote>
+<p>
+I enabled core dumps for the system, but didn't see any being generated. Figured the next best thing would be to dump core of i3 and X while they are in the hung state. I can't attach the dumps because they are 2MB (i3) and 20MB (X) in size. Let me know if there's some other way I can get those to you.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1269189194000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+        in reply to:
+    <a href="#comment:5">↑ 5</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-03-21T17%3A33%3A14%2B01%3A00&amp;precision=second" title="See timeline at 03/21/10 17:33:14">5 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/194#comment:5" title="Comment 5">anonymous</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/194#comment:4" title="Comment 4">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Hm, I am seeing a similar thing when resuming from suspend to ram. Seems to be related to RandR, according to the X backtraces. Can you enable core-dumps for X and see if it dumps core? On my system, I added ulimit -c unlimited to /etc/init.d/xdm and found core-dumps in /etc/X11 afterwards.<br />
+</p>
+</blockquote>
+<p>
+I enabled core dumps for the system, but didn't see any being generated. Figured the next best thing would be to dump core of i3 and X while they are in the hung state. I can't attach the dumps because they are 2MB (i3) and 20MB (X) in size. Let me know if there's some other way I can get those to you.<br />
+</p>
+</blockquote>
+<p>
+Adding backtraces ...<br />
+I3 backtrace<br />
+Thread 1 (Thread 12133):<br />
+<a class="missing ticket">#0</a>  0xb7800424 in <span class="underline">kernel_vsyscall ()<br />
+<a class="closed ticket" href="/report/ticket/1" title="task: Design a logo/favicon (closed: fixed)">#1</a>  0xb75f9928 in </span>epoll_wait_nocancel () from /lib/libc.so.6<br />
+<a class="closed ticket" href="/report/ticket/2" title="defect: focus problems with firefox (or other gtk apps?) and right-clicking (closed: worksforme)">#2</a>  0xb7676ebc in epoll_poll () from /usr/lib/libev.so.3<br />
+<a class="closed ticket" href="/report/ticket/3" title="task: Implement automatic snapping (closed: wontfix)">#3</a>  0xb76795bc in ev_loop () from /usr/lib/libev.so.3<br />
+<a class="closed ticket" href="/report/ticket/4" title="defect: Customly resized containers don’t re-distribute free space when cells ... (closed: fixed)">#4</a>  0x0805881c in main (argc=1, argv=0xbfc266f4, env=0xbfc266fc) at src/mainx.c:480<br />
+</p>
+<p>
+X backtrace<br />
+Thread 1 (Thread 12118):<br />
+<a class="missing ticket">#0</a>  0xb7837424 in <span class="underline">kernel_vsyscall ()<br />
+<a class="closed ticket" href="/report/ticket/1" title="task: Design a logo/favicon (closed: fixed)">#1</a>  0xb751ff0d in </span>_newselect_nocancel () from /lib/libc.so.6<br />
+<a class="closed ticket" href="/report/ticket/2" title="defect: focus problems with firefox (or other gtk apps?) and right-clicking (closed: worksforme)">#2</a>  0x0809b247 in <a class="forbidden wiki" title="no permission to view this wiki page">WaitForSomething</a> ()<br />
+<a class="closed ticket" href="/report/ticket/3" title="task: Implement automatic snapping (closed: wontfix)">#3</a>  0x08088050 in ?? ()<br />
+<a class="closed ticket" href="/report/ticket/4" title="defect: Customly resized containers don’t re-distribute free space when cells ... (closed: fixed)">#4</a>  0x08062685 in _start ()<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1269267302000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:8" class="follow-up">↓ 8</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-03-22T15%3A15%3A02%2B01%3A00&amp;precision=second" title="See timeline at 03/22/10 15:15:02">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+hm - looks normal so far. No idea yet on how to further debug this.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1269794626000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+        in reply to:
+    <a href="#comment:7">↑ 7</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-03-28T18%3A43%3A46%2B02%3A00&amp;precision=second" title="See timeline at 03/28/10 18:43:46">5 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Everything is working. It was all a user error on my part.<br />
+(1) When starting i3 from SLiM it keeps SLiM's background. I'm guessing this is expected, but it confused me because wmii switches to a black background.<br />
+(2) I set 'terminal' in .i3/config to /usr/bin/xterm, but as it turns out that's not enough. '$term' is not actually being used anywhere in the configuration file (bug?). 'Mod1+36' is bound to /usr/bin/urxvt, which I don't have.<br />
+(3) i3 starts the application menu through Mod1+v and not Mod1+p (as in wmii).<br />
+</p>
+<p>
+After seeing (1), not being able to bring up a terminal because of (2) and not being able to start other applications becaue of (3), I assumed i3 is hung. Sorry for the false alarm.<br />
+</p>
+<p>
+Anyway, i3 is great. I configured it as my default WM. :)<br />
+</p>
+<p>
+Replying to <a class="ticket" href="/report/ticket/194#comment:7" title="Comment 7">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+hm - looks normal so far. No idea yet on how to further debug this.<br />
+</p>
+</blockquote>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1269807455000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-03-28T22%3A17%3A35%2B02%3A00&amp;precision=second" title="See timeline at 03/28/10 22:17:35">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>invalid</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Thanks for your update.<br />
+</p>
+<p>
+1) yes, i3 does not touch your background in any way.<br />
+2) the terminal option is deprecated. your distribution should either have urxvt as a dependency or replace urxvt with a terminal emulator that is available (like /usr/bin/x-terminal-emulator on debian).<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/194?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/194?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/194?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

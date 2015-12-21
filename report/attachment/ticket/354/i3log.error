@@ -1,0 +1,1037 @@
+03/19/2011 12:17:57 PM - Autostart disabled using -a
+03/19/2011 12:17:57 PM - Enabling debug loglevel all
+03/19/2011 12:17:57 PM - i3 (tree) version tree-pr2-34-gfd7e4b0 (2011-03-18, branch "tree") starting
+03/19/2011 12:17:57 PM - src/config.c:parse_configuration:248 - Parsing configfile /home/fernando/.config/i3/config
+03/19/2011 12:17:57 PM - src/cfgparse.y:parse_file:100 - Got new variable $font = -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
+03/19/2011 12:17:57 PM - src/cfgparse.y:parse_file:100 - Got new variable $client_bg = #000000
+03/19/2011 12:17:57 PM - src/cfgparse.y:parse_file:100 - Got new variable $active_border = #222222
+03/19/2011 12:17:57 PM - src/cfgparse.y:parse_file:100 - Got new variable $active_bg = #222222
+03/19/2011 12:17:57 PM - src/cfgparse.y:parse_file:100 - Got new variable $active_fg = #ffffff
+03/19/2011 12:17:57 PM - src/cfgparse.y:parse_file:100 - Got new variable $inactive_border = #111111
+03/19/2011 12:17:57 PM - src/cfgparse.y:parse_file:100 - Got new variable $inactive_bg = #111111
+03/19/2011 12:17:57 PM - src/cfgparse.y:parse_file:100 - Got new variable $inactive_fg = #888888
+03/19/2011 12:17:57 PM - src/cfgparse.y:parse_file:100 - Got new variable $unfocused_fg = #888888
+03/19/2011 12:17:57 PM - src/cfgparse.y:parse_file:100 - Got new variable $urgent_border = #cccccc
+03/19/2011 12:17:57 PM - src/cfgparse.y:parse_file:100 - Got new variable $urgent_bg = #cccccc
+03/19/2011 12:17:57 PM - src/cfgparse.y:parse_file:100 - Got new variable $urgent_fg = #333333
+03/19/2011 12:17:57 PM - src/cfgparse.y:parse_file:100 - Got new variable $mpc = mpc -h ~/.mpd/socket
+font -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
+03/19/2011 12:17:57 PM - src/cfgparse.y:yyparse:473 - focus follows mouse = 0
+	Found symbolic mod8 with key Return and command exec x-terminal-emulator
+	Found symbolic mod8 with key r and command exec dmenu_run -nb '#000000' -nf '#888888' -sb '#222222' -sf '#ffffff' -fn '-*-terminus-*-*-*-*-*-*-*-*-*-*-*-*'
+	Found symbolic mod9 with key q and command kill
+	Found symbolic mod9 with key r and command restart
+	Found symbolic mod9 with key l and command reload
+	Found symbolic mod9 with key e and command exit
+	Found symbolic mod8 with key F12 and command exec i3lock & sleep 1 && xset dpms force off
+	Found binding mod0 with key 121 and command exec volume toggle
+	Found binding mod0 with key 122 and command exec volume down
+	Found binding mod0 with key 123 and command exec volume up
+	Found symbolic mod0 with key XF86Display and command exec toggle-vga
+	Found symbolic mod64 with key z and command exec mpc -h ~/.mpd/socket prev
+	Found symbolic mod64 with key x and command exec mpc -h ~/.mpd/socket play
+	Found symbolic mod64 with key c and command exec mpc -h ~/.mpd/socket toggle
+	Found symbolic mod64 with key v and command exec mpc -h ~/.mpd/socket stop
+	Found symbolic mod64 with key b and command exec mpc -h ~/.mpd/socket next
+	Found symbolic mod8 with key f and command fullscreen
+	Found symbolic mod8 with key t and command layout tabbed
+	Found symbolic mod8 with key s and command layout stacking
+	Found symbolic mod8 with key d and command layout default
+	Found symbolic mod9 with key space and command mode toggle
+	Found symbolic mod8 with key u and command level up
+	Found symbolic mod8 with key d and command level down
+	Found symbolic mod8 with key h and command split h
+	Found symbolic mod8 with key v and command split v
+	Found symbolic mod8 with key Left and command prev h
+	Found symbolic mod8 with key Right and command next h
+	Found symbolic mod8 with key Up and command prev v
+	Found symbolic mod8 with key Down and command next v
+	Found symbolic mod9 with key Left and command move left
+	Found symbolic mod9 with key Right and command move right
+	Found symbolic mod9 with key Up and command move up
+	Found symbolic mod9 with key Down and command move down
+	Found binding mod8 with key 10 and command workspace 1
+	Found binding mod8 with key 11 and command workspace 2
+	Found binding mod8 with key 12 and command workspace 3
+	Found binding mod8 with key 13 and command workspace 4
+	Found binding mod8 with key 14 and command workspace 5
+	Found binding mod8 with key 15 and command workspace 6
+	Found binding mod8 with key 16 and command workspace 7
+	Found binding mod8 with key 17 and command workspace 8
+	Found binding mod8 with key 18 and command workspace 9
+	Found binding mod8 with key 19 and command workspace 10
+	Found binding mod9 with key 10 and command move workspace 1
+	Found binding mod9 with key 11 and command move workspace 2
+	Found binding mod9 with key 12 and command move workspace 3
+	Found binding mod9 with key 13 and command move workspace 4
+	Found binding mod9 with key 14 and command move workspace 5
+	Found binding mod9 with key 15 and command move workspace 6
+	Found binding mod9 with key 16 and command move workspace 7
+	Found binding mod9 with key 17 and command move workspace 8
+	Found binding mod9 with key 18 and command move workspace 9
+	Found binding mod9 with key 19 and command move workspace 10
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "Return" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "r" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "q" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "r" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "l" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "e" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "F12" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "XF86Display" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "z" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "x" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "c" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "v" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "b" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "f" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "t" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "s" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "d" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "space" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "u" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "d" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "h" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "v" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "Left" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "Right" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "Up" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "Down" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "Left" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "Right" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "Up" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:translate_keysyms:118 - Translated symbol "Down" to 1 keycode
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 36
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 27
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 24
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 27
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 46
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 26
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 96
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 121
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 122
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 123
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 235
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 52
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 53
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 54
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 55
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 56
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 41
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 28
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 39
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 40
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 65
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 30
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 40
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 43
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 55
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 113
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 114
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 111
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 116
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 113
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 114
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 111
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 116
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 10
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 11
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 12
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 13
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 14
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 15
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 16
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 17
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 18
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 19
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 10
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 11
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 12
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 13
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 14
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 15
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 16
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 17
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 18
+03/19/2011 12:17:57 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 19
+03/19/2011 12:17:57 PM - src/con.c:con_new:42 - opening window 0
+03/19/2011 12:17:57 PM - src/con.c:con_new:45 - color #ff0000
+03/19/2011 12:17:57 PM - src/x.c:x_con_init:96 - adding new state for window id 0x00a00001
+03/19/2011 12:17:57 PM - src/main.c:main:374 - Checking for XRandR...
+03/19/2011 12:17:57 PM - src/randr.c:randr_query_outputs:571 - primary output is 00000000
+03/19/2011 12:17:57 PM - src/randr.c:handle_output:492 - found output with name LVDS1
+03/19/2011 12:17:57 PM - src/randr.c:handle_output:528 - mode: 1366x768+0+0
+03/19/2011 12:17:57 PM - src/randr.c:handle_output:492 - found output with name VGA1
+03/19/2011 12:17:57 PM - src/randr.c:handle_output:492 - found output with name DP1
+03/19/2011 12:17:57 PM - src/randr.c:randr_query_outputs:603 - output 0x9ee0a0 / LVDS1, position (0, 0), checking for clones
+03/19/2011 12:17:57 PM - src/randr.c:randr_query_outputs:687 - Need to initialize a Con for output LVDS1
+03/19/2011 12:17:57 PM - src/randr.c:output_init_con:234 - init_con for output LVDS1
+03/19/2011 12:17:57 PM - src/con.c:con_new:42 - opening window 1
+03/19/2011 12:17:57 PM - src/con.c:con_new:45 - color #00FF00
+03/19/2011 12:17:57 PM - src/x.c:x_con_init:96 - adding new state for window id 0x00a00004
+03/19/2011 12:17:57 PM - src/randr.c:output_init_con:268 - Changing layout, adding top/bottom dockarea
+03/19/2011 12:17:57 PM - src/con.c:con_new:42 - opening window 2
+03/19/2011 12:17:57 PM - src/con.c:con_new:45 - color #0000FF
+03/19/2011 12:17:57 PM - src/x.c:x_con_init:96 - adding new state for window id 0x00a00007
+03/19/2011 12:17:57 PM - src/randr.c:output_init_con:285 - attaching
+03/19/2011 12:17:57 PM - src/randr.c:output_init_con:290 - adding main content container
+03/19/2011 12:17:57 PM - src/con.c:con_new:42 - opening window 3
+03/19/2011 12:17:57 PM - src/con.c:con_new:45 - color #ff00ff
+03/19/2011 12:17:57 PM - src/x.c:x_con_init:96 - adding new state for window id 0x00a0000a
+03/19/2011 12:17:57 PM - src/con.c:con_new:42 - opening window 4
+03/19/2011 12:17:57 PM - src/con.c:con_new:45 - color #00ffff
+03/19/2011 12:17:57 PM - src/x.c:x_con_init:96 - adding new state for window id 0x00a0000d
+03/19/2011 12:17:57 PM - src/randr.c:output_init_con:317 - attaching
+03/19/2011 12:17:57 PM - src/randr.c:output_init_con:320 - Now adding a workspace
+03/19/2011 12:17:57 PM - src/con.c:con_new:42 - opening window 5
+03/19/2011 12:17:57 PM - src/con.c:con_new:45 - color #ffff00
+03/19/2011 12:17:57 PM - src/x.c:x_con_init:96 - adding new state for window id 0x00a00010
+03/19/2011 12:17:57 PM - src/randr.c:output_init_con:327 - Getting next unused workspace
+03/19/2011 12:17:57 PM - src/randr.c:output_init_con:354 - result for ws 1 / 1: exists = 0
+03/19/2011 12:17:57 PM - src/con.c:con_attach:87 - it's a workspace. num = 1
+03/19/2011 12:17:57 PM - src/randr.c:output_init_con:370 - Auto orientation. Workspace size set to (1366,768), setting orientation to 1.
+03/19/2011 12:17:57 PM - src/con.c:con_focus:163 - con_focus = 0x9f04b0
+03/19/2011 12:17:57 PM - src/con.c:con_focus:163 - con_focus = 0x9efff0
+03/19/2011 12:17:57 PM - src/con.c:con_focus:163 - con_focus = 0x9efc40
+03/19/2011 12:17:57 PM - src/con.c:con_focus:177 - con_focus done = 0x9efc40
+03/19/2011 12:17:57 PM - src/con.c:con_focus:177 - con_focus done = 0x9efff0
+03/19/2011 12:17:57 PM - src/con.c:con_focus:177 - con_focus done = 0x9f04b0
+03/19/2011 12:17:57 PM - src/ewmh.c:ewmh_update_workarea:83 - Got 1 workspaces
+03/19/2011 12:17:57 PM - src/ewmh.c:ewmh_update_workarea:89 - storing 0: 0x0 with 0 x 0
+03/19/2011 12:17:57 PM - src/ewmh.c:ewmh_update_workarea:98 - re-using last_rect (0x0, 0, 0)
+03/19/2011 12:17:57 PM - src/tree.c:tree_render:320 - -- BEGIN RENDERING --
+03/19/2011 12:17:57 PM - src/tree.c:tree_render:329 - output 0x9efc40 / LVDS1
+03/19/2011 12:17:57 PM - src/render.c:render_con:109 - currently rendering node 0x9efc40 / LVDS1 / layout 4
+03/19/2011 12:17:57 PM - src/render.c:render_con:111 - children: 3, orientation = 0
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:22 - Available height: 768
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:64 - This dockarea's height: 0
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:64 - This dockarea's height: 0
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:69 - Remaining: 768
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:92 - child at (0, 0) with (1366 x 0)
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:93 - x now 0, y now 0
+03/19/2011 12:17:57 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9efda0 / topdock /  / xid 00a00007
+03/19/2011 12:17:57 PM - src/render.c:render_con:109 - currently rendering node 0x9efda0 / topdock / layout 3
+03/19/2011 12:17:57 PM - src/render.c:render_con:111 - children: 0, orientation = 2
+03/19/2011 12:17:57 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:92 - child at (0, 0) with (1366 x 768)
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:93 - x now 0, y now 768
+03/19/2011 12:17:57 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9efff0 / content /  / xid 00a0000a
+03/19/2011 12:17:57 PM - src/render.c:render_con:109 - currently rendering node 0x9efff0 / content / layout 0
+03/19/2011 12:17:57 PM - src/render.c:render_con:111 - children: 1, orientation = 0
+03/19/2011 12:17:57 PM - src/render.c:render_con:189 - got fs node: 0x9f04b0
+03/19/2011 12:17:57 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9f04b0 / 1 /  / xid 00a00010
+03/19/2011 12:17:57 PM - src/render.c:render_con:109 - currently rendering node 0x9f04b0 / 1 / layout 0
+03/19/2011 12:17:57 PM - src/render.c:render_con:111 - children: 0, orientation = 1
+03/19/2011 12:17:57 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:92 - child at (0, 768) with (1366 x 0)
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:93 - x now 0, y now 768
+03/19/2011 12:17:57 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9f0230 / bottomdock /  / xid 00a0000d
+03/19/2011 12:17:57 PM - src/render.c:render_con:109 - currently rendering node 0x9f0230 / bottomdock / layout 3
+03/19/2011 12:17:57 PM - src/render.c:render_con:111 - children: 0, orientation = 2
+03/19/2011 12:17:57 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:17:57 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:596 - -- PUSHING WINDOW STACK --
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:597 - Disabling EnterNotify
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:602 - Done, EnterNotify disabled
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:606 - stack: 0x00a00001
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:612 - Stacking 0x00a00004 above 0x00a00001
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:606 - stack: 0x00a00004
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:612 - Stacking 0x00a00007 above 0x00a00004
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:606 - stack: 0x00a00007
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:612 - Stacking 0x00a0000a above 0x00a00007
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:606 - stack: 0x00a0000a
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:612 - Stacking 0x00a00010 above 0x00a0000a
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:606 - stack: 0x00a00010
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:612 - Stacking 0x00a0000d above 0x00a00010
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:606 - stack: 0x00a0000d
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:622 - Re-enabling EnterNotify
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:627 - Done, EnterNotify re-enabled
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:629 - 
+
+ PUSHING CHANGES
+
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9edc30 / root
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efc40 / LVDS1
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:413 - pushing name [i3 con] output LVDS1 for con 0x9efc40
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:468 - setting rect (0, 0, 1366, 0)
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:516 - Sending fake configure notify
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efda0 / topdock
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:413 - pushing name [i3 con] top dockarea LVDS1 for con 0x9efda0
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:468 - setting rect (0, 0, 1366, 0)
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:516 - Sending fake configure notify
+03/19/2011 12:17:57 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9efda0
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efff0 / content
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:413 - pushing name [i3 con] content LVDS1 for con 0x9efff0
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:468 - setting rect (0, 0, 1366, 0)
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:516 - Sending fake configure notify
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9f04b0 / 1
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:413 - pushing name [i3 con] workspace 1 for con 0x9f04b0
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:468 - setting rect (0, 0, 1366, 0)
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:516 - Sending fake configure notify
+03/19/2011 12:17:57 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9f04b0
+03/19/2011 12:17:57 PM - src/con.c:con_border_style:758 - this one is fullscreen! overriding BS_NONE
+03/19/2011 12:17:57 PM - src/x.c:x_draw_decoration:316 - border style not BS_NORMAL, aborting rendering of decoration
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9f0230 / bottomdock
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:413 - pushing name [i3 con] bottom dockarea LVDS1 for con 0x9f0230
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:468 - setting rect (0, 768, 1366, 0)
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:516 - Sending fake configure notify
+03/19/2011 12:17:57 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9f0230
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:636 - focused_id = 0x00000000, to_focus = 0x00a00010
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:639 - Not updating focus (to 0x9f04b0 / 1), focused window is not mapped.
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:655 - 
+
+ ENDING CHANGES
+
+03/19/2011 12:17:57 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9edc30 / root
+03/19/2011 12:17:57 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efc40 / LVDS1
+03/19/2011 12:17:57 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efda0 / topdock
+03/19/2011 12:17:57 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efff0 / content
+03/19/2011 12:17:57 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9f04b0 / 1
+03/19/2011 12:17:57 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9f0230 / bottomdock
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:665 - old stack: 0x00a0000d
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00010
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:665 - old stack: 0x00a0000a
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00007
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00004
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00001
+03/19/2011 12:17:57 PM - src/tree.c:tree_render:333 - -- END RENDERING --
+03/19/2011 12:17:57 PM - src/tree.c:tree_render:320 - -- BEGIN RENDERING --
+03/19/2011 12:17:57 PM - src/tree.c:tree_render:329 - output 0x9efc40 / LVDS1
+03/19/2011 12:17:57 PM - src/render.c:render_con:109 - currently rendering node 0x9efc40 / LVDS1 / layout 4
+03/19/2011 12:17:57 PM - src/render.c:render_con:111 - children: 3, orientation = 0
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:22 - Available height: 768
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:64 - This dockarea's height: 0
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:64 - This dockarea's height: 0
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:69 - Remaining: 768
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:92 - child at (0, 0) with (1366 x 0)
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:93 - x now 0, y now 0
+03/19/2011 12:17:57 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9efda0 / topdock /  / xid 00a00007
+03/19/2011 12:17:57 PM - src/render.c:render_con:109 - currently rendering node 0x9efda0 / topdock / layout 3
+03/19/2011 12:17:57 PM - src/render.c:render_con:111 - children: 0, orientation = 2
+03/19/2011 12:17:57 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:92 - child at (0, 0) with (1366 x 768)
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:93 - x now 0, y now 768
+03/19/2011 12:17:57 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9efff0 / content /  / xid 00a0000a
+03/19/2011 12:17:57 PM - src/render.c:render_con:109 - currently rendering node 0x9efff0 / content / layout 0
+03/19/2011 12:17:57 PM - src/render.c:render_con:111 - children: 1, orientation = 0
+03/19/2011 12:17:57 PM - src/render.c:render_con:189 - got fs node: 0x9f04b0
+03/19/2011 12:17:57 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9f04b0 / 1 /  / xid 00a00010
+03/19/2011 12:17:57 PM - src/render.c:render_con:109 - currently rendering node 0x9f04b0 / 1 / layout 0
+03/19/2011 12:17:57 PM - src/render.c:render_con:111 - children: 0, orientation = 1
+03/19/2011 12:17:57 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:92 - child at (0, 768) with (1366 x 0)
+03/19/2011 12:17:57 PM - src/render.c:render_l_output:93 - x now 0, y now 768
+03/19/2011 12:17:57 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9f0230 / bottomdock /  / xid 00a0000d
+03/19/2011 12:17:57 PM - src/render.c:render_con:109 - currently rendering node 0x9f0230 / bottomdock / layout 3
+03/19/2011 12:17:57 PM - src/render.c:render_con:111 - children: 0, orientation = 2
+03/19/2011 12:17:57 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:17:57 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:596 - -- PUSHING WINDOW STACK --
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:597 - Disabling EnterNotify
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:602 - Done, EnterNotify disabled
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:606 - stack: 0x00a00001
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:606 - stack: 0x00a00004
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:606 - stack: 0x00a00007
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:606 - stack: 0x00a0000a
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:606 - stack: 0x00a00010
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:606 - stack: 0x00a0000d
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:622 - Re-enabling EnterNotify
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:627 - Done, EnterNotify re-enabled
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:629 - 
+
+ PUSHING CHANGES
+
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9edc30 / root
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efc40 / LVDS1
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efda0 / topdock
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:57 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9efda0
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efff0 / content
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9f04b0 / 1
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:57 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9f04b0
+03/19/2011 12:17:57 PM - src/con.c:con_border_style:758 - this one is fullscreen! overriding BS_NONE
+03/19/2011 12:17:57 PM - src/x.c:x_draw_decoration:316 - border style not BS_NORMAL, aborting rendering of decoration
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9f0230 / bottomdock
+03/19/2011 12:17:57 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:57 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9f0230
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:636 - focused_id = 0x00000000, to_focus = 0x00a00010
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:639 - Not updating focus (to 0x9f04b0 / 1), focused window is not mapped.
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:655 - 
+
+ ENDING CHANGES
+
+03/19/2011 12:17:57 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9edc30 / root
+03/19/2011 12:17:57 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efc40 / LVDS1
+03/19/2011 12:17:57 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efda0 / topdock
+03/19/2011 12:17:57 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efff0 / content
+03/19/2011 12:17:57 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9f04b0 / 1
+03/19/2011 12:17:57 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9f0230 / bottomdock
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:665 - old stack: 0x00a0000d
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00010
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:665 - old stack: 0x00a0000a
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00007
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00004
+03/19/2011 12:17:57 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00001
+03/19/2011 12:17:57 PM - src/tree.c:tree_render:333 - -- END RENDERING --
+03/19/2011 12:17:57 PM - src/ipc.c:ipc_create_socket:630 - Creating IPC-socket at /home/fernando/.local/i3/socket
+03/19/2011 12:17:57 PM - src/manage.c:manage_window:82 - ---> looking at window 0x00400001
+03/19/2011 12:17:57 PM - src/manage.c:manage_window:99 - map_state unviewable
+03/19/2011 12:17:57 PM - src/manage.c:manage_window:82 - ---> looking at window 0x00a00001
+03/19/2011 12:17:57 PM - src/manage.c:manage_window:99 - map_state unviewable
+03/19/2011 12:17:57 PM - src/manage.c:manage_window:82 - ---> looking at window 0x00a00004
+03/19/2011 12:17:57 PM - src/manage.c:manage_window:99 - map_state unviewable
+03/19/2011 12:17:57 PM - src/manage.c:manage_window:82 - ---> looking at window 0x00a00007
+03/19/2011 12:17:57 PM - src/manage.c:manage_window:99 - map_state unviewable
+03/19/2011 12:17:57 PM - src/manage.c:manage_window:82 - ---> looking at window 0x00a0000a
+03/19/2011 12:17:57 PM - src/manage.c:manage_window:99 - map_state unviewable
+03/19/2011 12:17:57 PM - src/manage.c:manage_window:82 - ---> looking at window 0x00a00010
+03/19/2011 12:17:57 PM - src/manage.c:manage_window:99 - map_state unviewable
+03/19/2011 12:17:57 PM - src/manage.c:manage_window:82 - ---> looking at window 0x00a0000d
+03/19/2011 12:17:57 PM - src/manage.c:manage_window:99 - map_state unviewable
+03/19/2011 12:17:57 PM - src/handlers.c:handle_event:133 - Property notify
+03/19/2011 12:17:57 PM - src/handlers.c:property_notify:190 - Unhandled property notify for atom 315 (0x0000013b)
+03/19/2011 12:17:57 PM - src/handlers.c:handle_event:133 - Property notify
+03/19/2011 12:17:57 PM - src/handlers.c:property_notify:190 - Unhandled property notify for atom 316 (0x0000013c)
+03/19/2011 12:17:57 PM - src/handlers.c:handle_event:133 - Property notify
+03/19/2011 12:17:57 PM - src/handlers.c:handle_event:133 - Property notify
+03/19/2011 12:17:57 PM - src/handlers.c:property_notify:190 - Unhandled property notify for atom 334 (0x0000014e)
+03/19/2011 12:17:57 PM - ERROR: X11 Error received! sequence fb
+03/19/2011 12:17:57 PM - ERROR: X11 Error received! sequence fd
+03/19/2011 12:17:57 PM - ERROR: X11 Error received! sequence 10b
+03/19/2011 12:17:57 PM - ERROR: X11 Error received! sequence 10d
+03/19/2011 12:17:57 PM - ERROR: X11 Error received! sequence 111
+03/19/2011 12:17:58 PM - src/main.c:xkb_got_event:87 - Handling XKB event
+03/19/2011 12:17:59 PM - src/handlers.c:handle_key_press:210 - Keypress 36, state raw = 8
+03/19/2011 12:17:59 PM - src/handlers.c:handle_key_press:214 - (removed numlock, state = 8)
+03/19/2011 12:17:59 PM - src/handlers.c:handle_key_press:218 - (removed upper 8 bits, state = 8)
+03/19/2011 12:17:59 PM - src/handlers.c:handle_key_press:223 - (checked mode_switch, state 8)
+should execute x-terminal-emulator
+03/19/2011 12:17:59 PM - executing: x-terminal-emulator
+single command completely parsed, dropping state...
+done, json output = (null)
+03/19/2011 12:17:59 PM - src/tree.c:tree_render:320 - -- BEGIN RENDERING --
+03/19/2011 12:17:59 PM - src/tree.c:tree_render:329 - output 0x9efc40 / LVDS1
+03/19/2011 12:17:59 PM - src/render.c:render_con:109 - currently rendering node 0x9efc40 / LVDS1 / layout 4
+03/19/2011 12:17:59 PM - src/render.c:render_con:111 - children: 3, orientation = 0
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:22 - Available height: 768
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:64 - This dockarea's height: 0
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:64 - This dockarea's height: 0
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:69 - Remaining: 768
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:92 - child at (0, 0) with (1366 x 0)
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:93 - x now 0, y now 0
+03/19/2011 12:17:59 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9efda0 / topdock /  / xid 00a00007
+03/19/2011 12:17:59 PM - src/render.c:render_con:109 - currently rendering node 0x9efda0 / topdock / layout 3
+03/19/2011 12:17:59 PM - src/render.c:render_con:111 - children: 0, orientation = 2
+03/19/2011 12:17:59 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:92 - child at (0, 0) with (1366 x 768)
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:93 - x now 0, y now 768
+03/19/2011 12:17:59 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9efff0 / content /  / xid 00a0000a
+03/19/2011 12:17:59 PM - src/render.c:render_con:109 - currently rendering node 0x9efff0 / content / layout 0
+03/19/2011 12:17:59 PM - src/render.c:render_con:111 - children: 1, orientation = 0
+03/19/2011 12:17:59 PM - src/render.c:render_con:189 - got fs node: 0x9f04b0
+03/19/2011 12:17:59 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9f04b0 / 1 /  / xid 00a00010
+03/19/2011 12:17:59 PM - src/render.c:render_con:109 - currently rendering node 0x9f04b0 / 1 / layout 0
+03/19/2011 12:17:59 PM - src/render.c:render_con:111 - children: 0, orientation = 1
+03/19/2011 12:17:59 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:92 - child at (0, 768) with (1366 x 0)
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:93 - x now 0, y now 768
+03/19/2011 12:17:59 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9f0230 / bottomdock /  / xid 00a0000d
+03/19/2011 12:17:59 PM - src/render.c:render_con:109 - currently rendering node 0x9f0230 / bottomdock / layout 3
+03/19/2011 12:17:59 PM - src/render.c:render_con:111 - children: 0, orientation = 2
+03/19/2011 12:17:59 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:17:59 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:596 - -- PUSHING WINDOW STACK --
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:597 - Disabling EnterNotify
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:602 - Done, EnterNotify disabled
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00001
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00004
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00007
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a0000a
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00010
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a0000d
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:622 - Re-enabling EnterNotify
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:627 - Done, EnterNotify re-enabled
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:629 - 
+
+ PUSHING CHANGES
+
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9edc30 / root
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efc40 / LVDS1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efda0 / topdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9efda0
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efff0 / content
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9f04b0 / 1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9f04b0
+03/19/2011 12:17:59 PM - src/con.c:con_border_style:758 - this one is fullscreen! overriding BS_NONE
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:316 - border style not BS_NORMAL, aborting rendering of decoration
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9f0230 / bottomdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9f0230
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:636 - focused_id = 0x00000000, to_focus = 0x00a00010
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:639 - Not updating focus (to 0x9f04b0 / 1), focused window is not mapped.
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:655 - 
+
+ ENDING CHANGES
+
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9edc30 / root
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efc40 / LVDS1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efda0 / topdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efff0 / content
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9f04b0 / 1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9f0230 / bottomdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a0000d
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00010
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a0000a
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00007
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00004
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00001
+03/19/2011 12:17:59 PM - src/tree.c:tree_render:333 - -- END RENDERING --
+03/19/2011 12:17:59 PM - src/handlers.c:handle_configure_request:445 - window 0x00e00004 wants to be at 0x0 with 562x362
+03/19/2011 12:17:59 PM - src/handlers.c:handle_configure_request:450 - Configure request for unmanaged window, can do that.
+03/19/2011 12:17:59 PM - src/handlers.c:handle_map_request:427 - window = 0x00e00004, serial is 378.
+03/19/2011 12:17:59 PM - src/manage.c:manage_window:82 - ---> looking at window 0x00e00004
+03/19/2011 12:17:59 PM - src/manage.c:manage_window:104 - override_redirect is 0
+03/19/2011 12:17:59 PM - src/manage.c:manage_window:132 - reparenting!
+03/19/2011 12:17:59 PM - WM_CLASS changed to x-terminal-emulator (instance), X-terminal-emulator (class)
+03/19/2011 12:17:59 PM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+03/19/2011 12:17:59 PM - _NET_WM_NAME changed to "sakura"
+03/19/2011 12:17:59 PM - src/window.c:window_update_leader:123 - Client leader changed to 00e00001
+03/19/2011 12:17:59 PM - src/window.c:window_update_transient_for:134 - prop == NULL
+03/19/2011 12:17:59 PM - src/window.c:window_update_strut_partial:153 - prop == NULL
+03/19/2011 12:17:59 PM - src/manage.c:manage_window:195 - Initial geometry: (0, 0, 562, 362)
+03/19/2011 12:17:59 PM - src/con.c:con_for_window:376 - searching con for window 0x9f10c0 starting at con 0x9edc30
+03/19/2011 12:17:59 PM - src/con.c:con_for_window:377 - class == X-terminal-emulator
+03/19/2011 12:17:59 PM - src/con.c:con_for_window:376 - searching con for window 0x9f10c0 starting at con 0x9efc40
+03/19/2011 12:17:59 PM - src/con.c:con_for_window:377 - class == X-terminal-emulator
+03/19/2011 12:17:59 PM - match->dock = 2, window->dock = 0
+03/19/2011 12:17:59 PM - window 14680068 (X-terminal-emulator) could not be matched
+03/19/2011 12:17:59 PM - src/con.c:con_for_window:376 - searching con for window 0x9f10c0 starting at con 0x9efda0
+03/19/2011 12:17:59 PM - src/con.c:con_for_window:377 - class == X-terminal-emulator
+03/19/2011 12:17:59 PM - src/con.c:con_for_window:376 - searching con for window 0x9f10c0 starting at con 0x9efff0
+03/19/2011 12:17:59 PM - src/con.c:con_for_window:377 - class == X-terminal-emulator
+03/19/2011 12:17:59 PM - src/con.c:con_for_window:376 - searching con for window 0x9f10c0 starting at con 0x9f04b0
+03/19/2011 12:17:59 PM - src/con.c:con_for_window:377 - class == X-terminal-emulator
+03/19/2011 12:17:59 PM - match->dock = 3, window->dock = 0
+03/19/2011 12:17:59 PM - window 14680068 (X-terminal-emulator) could not be matched
+03/19/2011 12:17:59 PM - src/con.c:con_for_window:376 - searching con for window 0x9f10c0 starting at con 0x9f0230
+03/19/2011 12:17:59 PM - src/con.c:con_for_window:377 - class == X-terminal-emulator
+03/19/2011 12:17:59 PM - src/tree.c:tree_open_con:72 - con = 0x9f04b0
+03/19/2011 12:17:59 PM - src/con.c:con_new:42 - opening window 6
+03/19/2011 12:17:59 PM - src/con.c:con_new:45 - color #aa0000
+03/19/2011 12:17:59 PM - src/x.c:x_con_init:96 - adding new state for window id 0x00a00013
+03/19/2011 12:17:59 PM - src/manage.c:manage_window:232 - new container = 0xa09810
+03/19/2011 12:17:59 PM - src/x.c:x_reinit:113 - resetting state 0xa09970 to initial
+03/19/2011 12:17:59 PM - src/manage.c:manage_window:247 - Not in fullscreen mode, focusing
+03/19/2011 12:17:59 PM - src/con.c:con_focus:163 - con_focus = 0xa09810
+03/19/2011 12:17:59 PM - src/con.c:con_focus:163 - con_focus = 0x9f04b0
+03/19/2011 12:17:59 PM - src/con.c:con_focus:163 - con_focus = 0x9efff0
+03/19/2011 12:17:59 PM - src/con.c:con_focus:163 - con_focus = 0x9efc40
+03/19/2011 12:17:59 PM - src/con.c:con_focus:177 - con_focus done = 0x9efc40
+03/19/2011 12:17:59 PM - src/con.c:con_focus:177 - con_focus done = 0x9efff0
+03/19/2011 12:17:59 PM - src/con.c:con_focus:177 - con_focus done = 0x9f04b0
+03/19/2011 12:17:59 PM - src/con.c:con_focus:177 - con_focus done = 0xa09810
+03/19/2011 12:17:59 PM - src/tree.c:tree_render:320 - -- BEGIN RENDERING --
+03/19/2011 12:17:59 PM - src/tree.c:tree_render:329 - output 0x9efc40 / LVDS1
+03/19/2011 12:17:59 PM - src/render.c:render_con:109 - currently rendering node 0x9efc40 / LVDS1 / layout 4
+03/19/2011 12:17:59 PM - src/render.c:render_con:111 - children: 3, orientation = 0
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:22 - Available height: 768
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:64 - This dockarea's height: 0
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:64 - This dockarea's height: 0
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:69 - Remaining: 768
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:92 - child at (0, 0) with (1366 x 0)
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:93 - x now 0, y now 0
+03/19/2011 12:17:59 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9efda0 / topdock /  / xid 00a00007
+03/19/2011 12:17:59 PM - src/render.c:render_con:109 - currently rendering node 0x9efda0 / topdock / layout 3
+03/19/2011 12:17:59 PM - src/render.c:render_con:111 - children: 0, orientation = 2
+03/19/2011 12:17:59 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:92 - child at (0, 0) with (1366 x 768)
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:93 - x now 0, y now 768
+03/19/2011 12:17:59 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9efff0 / content /  / xid 00a0000a
+03/19/2011 12:17:59 PM - src/render.c:render_con:109 - currently rendering node 0x9efff0 / content / layout 0
+03/19/2011 12:17:59 PM - src/render.c:render_con:111 - children: 1, orientation = 0
+03/19/2011 12:17:59 PM - src/render.c:render_con:189 - got fs node: 0x9f04b0
+03/19/2011 12:17:59 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9f04b0 / 1 /  / xid 00a00010
+03/19/2011 12:17:59 PM - src/render.c:render_con:109 - currently rendering node 0x9f04b0 / 1 / layout 0
+03/19/2011 12:17:59 PM - src/render.c:render_con:111 - children: 1, orientation = 1
+03/19/2011 12:17:59 PM - src/render.c:render_con:249 - that child is a leaf node, subtracting deco
+03/19/2011 12:17:59 PM - src/render.c:render_con:316 - child at (0, 17) with (1366 x 751)
+03/19/2011 12:17:59 PM - src/render.c:render_con:317 - x now 1366, y now 0
+03/19/2011 12:17:59 PM - src/x.c:x_raise_con:677 - raising in new stack: 0xa09810 / #aa0000 / sakura / xid 00a00013
+03/19/2011 12:17:59 PM - src/render.c:render_con:109 - currently rendering node 0xa09810 / #aa0000 / layout 0
+03/19/2011 12:17:59 PM - src/render.c:render_con:111 - children: 0, orientation = 0
+03/19/2011 12:17:59 PM - src/render.c:render_con:143 - X11 border: 0
+03/19/2011 12:17:59 PM - src/render.c:render_con:183 - child will be at 2x0 with size 1362x749
+03/19/2011 12:17:59 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:17:59 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:92 - child at (0, 768) with (1366 x 0)
+03/19/2011 12:17:59 PM - src/render.c:render_l_output:93 - x now 0, y now 768
+03/19/2011 12:17:59 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9f0230 / bottomdock /  / xid 00a0000d
+03/19/2011 12:17:59 PM - src/render.c:render_con:109 - currently rendering node 0x9f0230 / bottomdock / layout 3
+03/19/2011 12:17:59 PM - src/render.c:render_con:111 - children: 0, orientation = 2
+03/19/2011 12:17:59 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:17:59 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:596 - -- PUSHING WINDOW STACK --
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:597 - Disabling EnterNotify
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:602 - Done, EnterNotify disabled
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00001
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00004
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00007
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a0000a
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00010
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:612 - Stacking 0x00a00013 above 0x00a00010
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00013
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:612 - Stacking 0x00a0000d above 0x00a00013
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a0000d
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:622 - Re-enabling EnterNotify
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:627 - Done, EnterNotify re-enabled
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:629 - 
+
+ PUSHING CHANGES
+
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9edc30 / root
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efc40 / LVDS1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efda0 / topdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9efda0
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efff0 / content
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9f04b0 / 1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:468 - setting rect (0, 0, 1366, 17)
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:509 - mapping container (serial 431)
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:516 - Sending fake configure notify
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0xa09810 / #aa0000
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:413 - pushing name [i3 con] container around 0x9f10c0 for con 0xa09810
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:468 - setting rect (0, 17, 1366, 751)
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:478 - setting window rect (2, 0, 1362, 749)
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:502 - mapping child window (serial 436)
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:509 - mapping container (serial 437)
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:516 - Sending fake configure notify
+03/19/2011 12:17:59 PM - src/xcb.c:fake_absolute_configure_notify:204 - fake rect = (2, 17, 1362, 749)
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0xa09810
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:364 - il_parent = 0x9f04b0, layout = 0
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:373 - indent_level = 0, indent_mult = 0
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9f0230 / bottomdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9f0230
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:636 - focused_id = 0x00000000, to_focus = 0x00e00004
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:641 - Updating focus (focused: 0xa09810 / #aa0000)
+03/19/2011 12:17:59 PM - src/xcb.c:send_take_focus:225 - Sending WM_TAKE_FOCUS to the client
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:655 - 
+
+ ENDING CHANGES
+
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9edc30 / root
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efc40 / LVDS1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efda0 / topdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efff0 / content
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9f04b0 / 1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0xa09810 / #aa0000
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9f0230 / bottomdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a0000d
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00013
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00010
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a0000a
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00007
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00004
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00001
+03/19/2011 12:17:59 PM - src/tree.c:tree_render:333 - -- END RENDERING --
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:596 - -- PUSHING WINDOW STACK --
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:597 - Disabling EnterNotify
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:602 - Done, EnterNotify disabled
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00001
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00004
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00007
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a0000a
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00010
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00013
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a0000d
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:622 - Re-enabling EnterNotify
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:627 - Done, EnterNotify re-enabled
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:629 - 
+
+ PUSHING CHANGES
+
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9edc30 / root
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efc40 / LVDS1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efda0 / topdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9efda0
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efff0 / content
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9f04b0 / 1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0xa09810 / #aa0000
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0xa09810
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:364 - il_parent = 0x9f04b0, layout = 0
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:373 - indent_level = 0, indent_mult = 0
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9f0230 / bottomdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9f0230
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:636 - focused_id = 0x00e00004, to_focus = 0x00e00004
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:655 - 
+
+ ENDING CHANGES
+
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9edc30 / root
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efc40 / LVDS1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efda0 / topdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efff0 / content
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9f04b0 / 1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0xa09810 / #aa0000
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9f0230 / bottomdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a0000d
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00013
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00010
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a0000a
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00007
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00004
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00001
+03/19/2011 12:17:59 PM - src/handlers.c:handle_event:139 - Unhandled event of type 21
+03/19/2011 12:17:59 PM - src/handlers.c:handle_event:139 - Unhandled event of type 22
+03/19/2011 12:17:59 PM - src/handlers.c:handle_event:139 - Unhandled event of type 19
+03/19/2011 12:17:59 PM - src/handlers.c:handle_expose_event:738 - window = 00a00010
+03/19/2011 12:17:59 PM - src/handlers.c:handle_expose_event:749 - expose for con 0xa09810 / #aa0000
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0xa09810
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:364 - il_parent = 0x9f04b0, layout = 0
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:373 - indent_level = 0, indent_mult = 0
+03/19/2011 12:17:59 PM - src/handlers.c:handle_expose_event:757 - expose for con 0x9f04b0 / 1
+03/19/2011 12:17:59 PM - src/handlers.c:handle_event:139 - Unhandled event of type 22
+03/19/2011 12:17:59 PM - src/handlers.c:handle_event:139 - Unhandled event of type 22
+03/19/2011 12:17:59 PM - src/handlers.c:handle_event:139 - Unhandled event of type 22
+03/19/2011 12:17:59 PM - src/handlers.c:handle_event:133 - Property notify
+03/19/2011 12:17:59 PM - src/handlers.c:property_notify:190 - Unhandled property notify for atom 331 (0x0000014b)
+03/19/2011 12:17:59 PM - src/handlers.c:handle_event:139 - Unhandled event of type 19
+03/19/2011 12:17:59 PM - src/handlers.c:handle_event:139 - Unhandled event of type 19
+03/19/2011 12:17:59 PM - src/handlers.c:handle_event:139 - Unhandled event of type 19
+03/19/2011 12:17:59 PM - src/handlers.c:handle_expose_event:738 - window = 00a00013
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0xa09810
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:364 - il_parent = 0x9f04b0, layout = 0
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:373 - indent_level = 0, indent_mult = 0
+03/19/2011 12:17:59 PM - src/handlers.c:handle_expose_event:757 - expose for con 0xa09810 / #aa0000
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0xa09810
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:364 - il_parent = 0x9f04b0, layout = 0
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:373 - indent_level = 0, indent_mult = 0
+03/19/2011 12:17:59 PM - src/handlers.c:handle_enter_notify:288 - enter_notify for 00a00013, mode = 0, detail 1, serial 437
+03/19/2011 12:17:59 PM - src/handlers.c:handle_enter_notify:289 - coordinates 683, 367
+03/19/2011 12:17:59 PM - src/handlers.c:handle_event:139 - Unhandled event of type 22
+03/19/2011 12:17:59 PM - src/handlers.c:handle_event:133 - Property notify
+03/19/2011 12:17:59 PM - src/handlers.c:property_notify:190 - Unhandled property notify for atom 333 (0x0000014d)
+03/19/2011 12:17:59 PM - src/handlers.c:handle_event:133 - Property notify
+03/19/2011 12:17:59 PM - _NET_WM_NAME changed to "fernando@vostro: ~ - sakura"
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:596 - -- PUSHING WINDOW STACK --
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:597 - Disabling EnterNotify
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:602 - Done, EnterNotify disabled
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00001
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00004
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00007
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a0000a
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00010
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00013
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a0000d
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:622 - Re-enabling EnterNotify
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:627 - Done, EnterNotify re-enabled
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:629 - 
+
+ PUSHING CHANGES
+
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9edc30 / root
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efc40 / LVDS1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efda0 / topdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9efda0
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efff0 / content
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9f04b0 / 1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0xa09810 / #aa0000
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0xa09810
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:364 - il_parent = 0x9f04b0, layout = 0
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:373 - indent_level = 0, indent_mult = 0
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9f0230 / bottomdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9f0230
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:636 - focused_id = 0x00e00004, to_focus = 0x00e00004
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:655 - 
+
+ ENDING CHANGES
+
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9edc30 / root
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efc40 / LVDS1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efda0 / topdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efff0 / content
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9f04b0 / 1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0xa09810 / #aa0000
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9f0230 / bottomdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a0000d
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00013
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00010
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a0000a
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00007
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00004
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00001
+03/19/2011 12:17:59 PM - src/handlers.c:handle_event:133 - Property notify
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:596 - -- PUSHING WINDOW STACK --
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:597 - Disabling EnterNotify
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:602 - Done, EnterNotify disabled
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00001
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00004
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00007
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a0000a
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00010
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a00013
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:606 - stack: 0x00a0000d
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:622 - Re-enabling EnterNotify
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:627 - Done, EnterNotify re-enabled
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:629 - 
+
+ PUSHING CHANGES
+
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9edc30 / root
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efc40 / LVDS1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efda0 / topdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9efda0
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efff0 / content
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9f04b0 / 1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0xa09810 / #aa0000
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0xa09810
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:364 - il_parent = 0x9f04b0, layout = 0
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:373 - indent_level = 0, indent_mult = 0
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9f0230 / bottomdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:17:59 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9f0230
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:636 - focused_id = 0x00e00004, to_focus = 0x00e00004
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:655 - 
+
+ ENDING CHANGES
+
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9edc30 / root
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efc40 / LVDS1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efda0 / topdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efff0 / content
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9f04b0 / 1
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0xa09810 / #aa0000
+03/19/2011 12:17:59 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9f0230 / bottomdock
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a0000d
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00013
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00010
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a0000a
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00007
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00004
+03/19/2011 12:17:59 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00001
+03/19/2011 12:17:59 PM - src/handlers.c:handle_event:133 - Property notify
+03/19/2011 12:17:59 PM - src/handlers.c:property_notify:190 - Unhandled property notify for atom 343 (0x00000157)
+03/19/2011 12:17:59 PM - src/handlers.c:handle_event:133 - Property notify
+03/19/2011 12:17:59 PM - src/handlers.c:property_notify:190 - Unhandled property notify for atom 37 (0x00000025)
+03/19/2011 12:17:59 PM - src/handlers.c:handle_configure_request:445 - window 0x00e00004 wants to be at 2x0 with 1360x737
+03/19/2011 12:17:59 PM - src/handlers.c:handle_configure_request:476 - Configure request!
+03/19/2011 12:17:59 PM - src/con.c:con_is_floating:319 - checking if con 0xa09810 is floating
+03/19/2011 12:17:59 PM - src/xcb.c:fake_absolute_configure_notify:204 - fake rect = (2, 17, 1362, 749)
+03/19/2011 12:17:59 PM - src/handlers.c:handle_event:139 - Unhandled event of type 22
+03/19/2011 12:17:59 PM - src/handlers.c:handle_event:139 - Unhandled event of type 3
+03/19/2011 12:18:01 PM - src/main.c:xkb_got_event:87 - Handling XKB event
+03/19/2011 12:18:01 PM - src/main.c:xkb_got_event:87 - Handling XKB event
+03/19/2011 12:18:01 PM - src/handlers.c:handle_event:133 - Property notify
+03/19/2011 12:18:01 PM - src/handlers.c:property_notify:190 - Unhandled property notify for atom 357 (0x00000165)
+03/19/2011 12:18:01 PM - src/handlers.c:handle_event:133 - Property notify
+03/19/2011 12:18:01 PM - src/handlers.c:property_notify:190 - Unhandled property notify for atom 357 (0x00000165)
+03/19/2011 12:18:01 PM - src/handlers.c:handle_unmap_notify_event:589 - UnmapNotify for 0x00e00004 (received from 0x00e00004), serial 654
+03/19/2011 12:18:01 PM - src/tree.c:tree_close:113 - next = 0x9f04b0, focused = 0xa09810
+03/19/2011 12:18:01 PM - src/tree.c:tree_close:115 - closing 0xa09810, kill_window = 0
+03/19/2011 12:18:01 PM - src/con.c:con_is_floating:319 - checking if con 0xa09810 is floating
+03/19/2011 12:18:01 PM - src/tree.c:tree_close:182 - focusing 0x9f04b0 / 1
+03/19/2011 12:18:01 PM - src/con.c:con_focus:163 - con_focus = 0x9f04b0
+03/19/2011 12:18:01 PM - src/con.c:con_focus:163 - con_focus = 0x9efff0
+03/19/2011 12:18:01 PM - src/con.c:con_focus:163 - con_focus = 0x9efc40
+03/19/2011 12:18:01 PM - src/con.c:con_focus:177 - con_focus done = 0x9efc40
+03/19/2011 12:18:01 PM - src/con.c:con_focus:177 - con_focus done = 0x9efff0
+03/19/2011 12:18:01 PM - src/con.c:con_focus:177 - con_focus done = 0x9f04b0
+03/19/2011 12:18:01 PM - src/con.c:con_on_remove_child:838 - on_remove_child
+03/19/2011 12:18:01 PM - src/con.c:con_on_remove_child:846 - not handling, type = 4
+03/19/2011 12:18:01 PM - src/tree.c:tree_render:320 - -- BEGIN RENDERING --
+03/19/2011 12:18:01 PM - src/tree.c:tree_render:329 - output 0x9efc40 / LVDS1
+03/19/2011 12:18:01 PM - src/render.c:render_con:109 - currently rendering node 0x9efc40 / LVDS1 / layout 4
+03/19/2011 12:18:01 PM - src/render.c:render_con:111 - children: 3, orientation = 0
+03/19/2011 12:18:01 PM - src/render.c:render_l_output:22 - Available height: 768
+03/19/2011 12:18:01 PM - src/render.c:render_l_output:64 - This dockarea's height: 0
+03/19/2011 12:18:01 PM - src/render.c:render_l_output:64 - This dockarea's height: 0
+03/19/2011 12:18:01 PM - src/render.c:render_l_output:69 - Remaining: 768
+03/19/2011 12:18:01 PM - src/render.c:render_l_output:92 - child at (0, 0) with (1366 x 0)
+03/19/2011 12:18:01 PM - src/render.c:render_l_output:93 - x now 0, y now 0
+03/19/2011 12:18:01 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9efda0 / topdock /  / xid 00a00007
+03/19/2011 12:18:01 PM - src/render.c:render_con:109 - currently rendering node 0x9efda0 / topdock / layout 3
+03/19/2011 12:18:01 PM - src/render.c:render_con:111 - children: 0, orientation = 2
+03/19/2011 12:18:01 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:18:01 PM - src/render.c:render_l_output:92 - child at (0, 0) with (1366 x 768)
+03/19/2011 12:18:01 PM - src/render.c:render_l_output:93 - x now 0, y now 768
+03/19/2011 12:18:01 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9efff0 / content /  / xid 00a0000a
+03/19/2011 12:18:01 PM - src/render.c:render_con:109 - currently rendering node 0x9efff0 / content / layout 0
+03/19/2011 12:18:01 PM - src/render.c:render_con:111 - children: 1, orientation = 0
+03/19/2011 12:18:01 PM - src/render.c:render_con:189 - got fs node: 0x9f04b0
+03/19/2011 12:18:01 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9f04b0 / 1 /  / xid 00a00010
+03/19/2011 12:18:01 PM - src/render.c:render_con:109 - currently rendering node 0x9f04b0 / 1 / layout 0
+03/19/2011 12:18:01 PM - src/render.c:render_con:111 - children: 0, orientation = 1
+03/19/2011 12:18:01 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:18:01 PM - src/render.c:render_l_output:92 - child at (0, 768) with (1366 x 0)
+03/19/2011 12:18:01 PM - src/render.c:render_l_output:93 - x now 0, y now 768
+03/19/2011 12:18:01 PM - src/x.c:x_raise_con:677 - raising in new stack: 0x9f0230 / bottomdock /  / xid 00a0000d
+03/19/2011 12:18:01 PM - src/render.c:render_con:109 - currently rendering node 0x9f0230 / bottomdock / layout 3
+03/19/2011 12:18:01 PM - src/render.c:render_con:111 - children: 0, orientation = 2
+03/19/2011 12:18:01 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:18:01 PM - src/render.c:render_con:348 - -- level up
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:596 - -- PUSHING WINDOW STACK --
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:597 - Disabling EnterNotify
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:602 - Done, EnterNotify disabled
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:606 - stack: 0x00a00001
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:606 - stack: 0x00a00004
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:606 - stack: 0x00a00007
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:606 - stack: 0x00a0000a
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:606 - stack: 0x00a00010
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:606 - stack: 0x00a0000d
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:622 - Re-enabling EnterNotify
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:627 - Done, EnterNotify re-enabled
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:629 - 
+
+ PUSHING CHANGES
+
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9edc30 / root
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efc40 / LVDS1
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efda0 / topdock
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:18:01 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9efda0
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efff0 / content
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9f04b0 / 1
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:468 - setting rect (0, 0, 1366, 0)
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:516 - Sending fake configure notify
+03/19/2011 12:18:01 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9f04b0
+03/19/2011 12:18:01 PM - src/con.c:con_border_style:758 - this one is fullscreen! overriding BS_NONE
+03/19/2011 12:18:01 PM - src/x.c:x_draw_decoration:316 - border style not BS_NORMAL, aborting rendering of decoration
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9f0230 / bottomdock
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:18:01 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9f0230
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:636 - focused_id = 0x00000000, to_focus = 0x00a00010
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:639 - Not updating focus (to 0x9f04b0 / 1), focused window is not mapped.
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:655 - 
+
+ ENDING CHANGES
+
+03/19/2011 12:18:01 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9edc30 / root
+03/19/2011 12:18:01 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efc40 / LVDS1
+03/19/2011 12:18:01 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efda0 / topdock
+03/19/2011 12:18:01 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efff0 / content
+03/19/2011 12:18:01 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9f04b0 / 1
+03/19/2011 12:18:01 PM - src/x.c:x_push_node_unmaps:561 - unmapping container (serial 696)
+03/19/2011 12:18:01 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9f0230 / bottomdock
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:665 - old stack: 0x00a0000d
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00010
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:665 - old stack: 0x00a0000a
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00007
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00004
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00001
+03/19/2011 12:18:01 PM - src/tree.c:tree_render:333 - -- END RENDERING --
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:596 - -- PUSHING WINDOW STACK --
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:597 - Disabling EnterNotify
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:602 - Done, EnterNotify disabled
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:606 - stack: 0x00a00001
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:606 - stack: 0x00a00004
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:606 - stack: 0x00a00007
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:606 - stack: 0x00a0000a
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:606 - stack: 0x00a00010
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:606 - stack: 0x00a0000d
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:622 - Re-enabling EnterNotify
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:627 - Done, EnterNotify re-enabled
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:629 - 
+
+ PUSHING CHANGES
+
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9edc30 / root
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efc40 / LVDS1
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efda0 / topdock
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:18:01 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9efda0
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9efff0 / content
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9f04b0 / 1
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:18:01 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9f04b0
+03/19/2011 12:18:01 PM - src/con.c:con_border_style:758 - this one is fullscreen! overriding BS_NONE
+03/19/2011 12:18:01 PM - src/x.c:x_draw_decoration:316 - border style not BS_NORMAL, aborting rendering of decoration
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:409 - Pushing changes for node 0x9f0230 / bottomdock
+03/19/2011 12:18:01 PM - src/x.c:x_push_node:433 - Unmapping container because it does not contain anything atm.
+03/19/2011 12:18:01 PM - src/x.c:x_draw_decoration:245 - decoration should be rendered for con 0x9f0230
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:636 - focused_id = 0x00000000, to_focus = 0x00a00010
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:639 - Not updating focus (to 0x9f04b0 / 1), focused window is not mapped.
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:655 - 
+
+ ENDING CHANGES
+
+03/19/2011 12:18:01 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9edc30 / root
+03/19/2011 12:18:01 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efc40 / LVDS1
+03/19/2011 12:18:01 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efda0 / topdock
+03/19/2011 12:18:01 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9efff0 / content
+03/19/2011 12:18:01 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9f04b0 / 1
+03/19/2011 12:18:01 PM - src/x.c:x_push_node_unmaps:544 - Pushing changes (with unmaps) for node 0x9f0230 / bottomdock
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:665 - old stack: 0x00a0000d
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00010
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:665 - old stack: 0x00a0000a
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00007
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00004
+03/19/2011 12:18:01 PM - src/x.c:x_push_changes:665 - old stack: 0x00a00001
+03/19/2011 12:18:01 PM - src/handlers.c:handle_unmap_notify_event:589 - UnmapNotify for 0x00e00004 (received from 0x00a00013), serial 654
+03/19/2011 12:18:01 PM - Not a managed window, ignoring UnmapNotify event
+03/19/2011 12:18:01 PM - src/handlers.c:handle_expose_event:738 - window = 00a00013
+03/19/2011 12:18:01 PM - expose event for unknown window, ignoring
+03/19/2011 12:18:01 PM - src/handlers.c:handle_enter_notify:288 - enter_notify for 00a00013, mode = 0, detail 2, serial 654
+03/19/2011 12:18:01 PM - src/handlers.c:handle_enter_notify:289 - coordinates 683, 367
+03/19/2011 12:18:01 PM - src/handlers.c:handle_enter_notify:308 - Getting screen at 683 x 384
+03/19/2011 12:18:01 PM - src/handlers.c:handle_destroy_notify_event:666 - destroy notify for 0x00e00004, 0x00e00004
+03/19/2011 12:18:01 PM - src/handlers.c:handle_unmap_notify_event:589 - UnmapNotify for 0x00e00004 (received from 0x00e00004), serial 654
+03/19/2011 12:18:01 PM - Not a managed window, ignoring UnmapNotify event
+03/19/2011 12:18:01 PM - src/handlers.c:handle_destroy_notify_event:666 - destroy notify for 0x00a00013, 0x00e00004
+03/19/2011 12:18:01 PM - src/handlers.c:handle_unmap_notify_event:589 - UnmapNotify for 0x00e00004 (received from 0x00a00013), serial 654
+03/19/2011 12:18:01 PM - Not a managed window, ignoring UnmapNotify event
+03/19/2011 12:18:01 PM - ERROR: X11 Error received! sequence 28f
+03/19/2011 12:18:01 PM - src/handlers.c:handle_unmap_notify_event:589 - UnmapNotify for 0x00a00013 (received from 0x00a00013), serial 656
+03/19/2011 12:18:01 PM - Not a managed window, ignoring UnmapNotify event
+03/19/2011 12:18:01 PM - src/handlers.c:handle_enter_notify:288 - enter_notify for 00000105, mode = 0, detail 2, serial 656
+03/19/2011 12:18:01 PM - src/handlers.c:handle_enter_notify:289 - coordinates 683, 384
+03/19/2011 12:18:01 PM - src/handlers.c:handle_enter_notify:308 - Getting screen at 683 x 384
+03/19/2011 12:18:01 PM - src/handlers.c:handle_destroy_notify_event:666 - destroy notify for 0x00a00013, 0x00a00013
+03/19/2011 12:18:01 PM - src/handlers.c:handle_unmap_notify_event:589 - UnmapNotify for 0x00a00013 (received from 0x00a00013), serial 656
+03/19/2011 12:18:01 PM - Not a managed window, ignoring UnmapNotify event
+03/19/2011 12:18:01 PM - ERROR: X11 Error received! sequence 2a9
+03/19/2011 12:18:01 PM - src/handlers.c:handle_unmap_notify_event:589 - UnmapNotify for 0x00a00010 (received from 0x00a00010), serial 696
+03/19/2011 12:18:01 PM - src/handlers.c:handle_unmap_notify_event:601 - ignore_unmap = 0 for frame of container 0x9f04b0
+03/19/2011 12:18:01 PM - src/main.c:xkb_got_event:87 - Handling XKB event
+03/19/2011 12:18:02 PM - src/main.c:xkb_got_event:87 - Handling XKB event
+03/19/2011 12:18:07 PM - src/main.c:xkb_got_event:87 - Handling XKB event
+03/19/2011 12:18:08 PM - src/main.c:xkb_got_event:87 - Handling XKB event
+03/19/2011 12:18:11 PM - src/main.c:xkb_got_event:87 - Handling XKB event
+03/19/2011 12:18:11 PM - src/main.c:xkb_got_event:87 - Handling XKB event

@@ -1,0 +1,2060 @@
+25.01.2012 15:26:30 - CORE DUMPS: You are running a development version of i3, so coredumps were automatically enabled (ulimit -c unlimited).
+25.01.2012 15:26:30 - CORE DUMPS: Your current working directory is "/home/raphael".
+25.01.2012 15:26:30 - CORE DUMPS: Your core_pattern is: core
+25.01.2012 15:26:30 - i3 (tree) version 4.1.1-224-g0c742f5 (2012-01-23, branch "next") starting
+25.01.2012 15:26:30 - Parsing configfile /home/raphael/.i3/config
+25.01.2012 15:26:30 - src/cfgparse.y:yyparse:1283 - floating modifier = 64
+25.01.2012 15:26:30 - src/cfgparse.y:yyparse:1071 - should add status command i3status
+25.01.2012 15:26:30 - src/cfgparse.y:yyparse:1122 - mode 0
+25.01.2012 15:26:30 - src/cfgparse.y:yyparse:1109 - position 0
+25.01.2012 15:26:30 - src/main.c:main:532 - root geometry reply: (0, 0) 1024 x 600
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "Return" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "q" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "c" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "r" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "j" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "k" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "l" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "semicolon" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "Left" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "Down" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "Up" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "Right" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "j" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "k" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "l" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "semicolon" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "Left" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "Down" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "Up" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "Right" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "h" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "v" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "f" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "s" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "w" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "e" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "space" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "space" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "a" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "1" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "2" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "3" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "4" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "5" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "6" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "7" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "8" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "9" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "0" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "1" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "2" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "3" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "4" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "5" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "6" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "7" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "8" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "9" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "0" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "r" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "e" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "minus" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:translate_keysyms:125 - Translated symbol "minus" to 1 keycode
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 36
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 24
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 54
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 44
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 45
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 46
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 59
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 113
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 116
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 111
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 114
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 44
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 45
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 46
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 59
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 113
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 116
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 111
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 114
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 43
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 55
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 41
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 39
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 25
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 26
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 65
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 65
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 38
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 10
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 11
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 12
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 13
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 14
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 17
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 10
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 11
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 12
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 13
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 14
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 17
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 26
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 61
+25.01.2012 15:26:30 - src/config.c:grab_keycode_for_binding:32 - Grabbing 61
+25.01.2012 15:26:30 - src/con.c:con_new:43 - opening window 0
+25.01.2012 15:26:30 - src/con.c:con_new:46 - color #ff0000
+25.01.2012 15:26:30 - src/x.c:x_con_init:112 - adding new state for window id 0x00e00002
+25.01.2012 15:26:30 - src/con.c:con_new:43 - opening window 1
+25.01.2012 15:26:30 - src/con.c:con_new:46 - color #00FF00
+25.01.2012 15:26:30 - src/x.c:x_con_init:112 - adding new state for window id 0x00e00003
+25.01.2012 15:26:30 - src/tree.c:_create___i3:37 - adding main content container
+25.01.2012 15:26:30 - src/con.c:con_new:43 - opening window 2
+25.01.2012 15:26:30 - src/con.c:con_new:46 - color #0000FF
+25.01.2012 15:26:30 - src/x.c:x_con_init:112 - adding new state for window id 0x00e00004
+25.01.2012 15:26:30 - src/con.c:con_new:43 - opening window 3
+25.01.2012 15:26:30 - src/con.c:con_new:46 - color #ff00ff
+25.01.2012 15:26:30 - src/x.c:x_con_init:112 - adding new state for window id 0x00e00005
+25.01.2012 15:26:30 - src/con.c:con_attach:86 - it's a workspace. num = -1
+25.01.2012 15:26:30 - src/main.c:main:631 - Checking for XRandR...
+25.01.2012 15:26:30 - src/randr.c:randr_query_outputs:659 - primary output is 00000000
+25.01.2012 15:26:30 - src/randr.c:handle_output:580 - found output with name LVDS1
+25.01.2012 15:26:30 - src/randr.c:handle_output:616 - mode: 1024x600+0+0
+25.01.2012 15:26:30 - src/randr.c:handle_output:580 - found output with name VGA1
+25.01.2012 15:26:30 - src/randr.c:randr_query_outputs:691 - output 0x9b1f070 / LVDS1, position (0, 0), checking for clones
+25.01.2012 15:26:30 - src/randr.c:randr_query_outputs:730 - Need to initialize a Con for output LVDS1
+25.01.2012 15:26:30 - src/randr.c:output_init_con:220 - init_con for output LVDS1
+25.01.2012 15:26:30 - src/con.c:con_new:43 - opening window 4
+25.01.2012 15:26:30 - src/con.c:con_new:46 - color #00ffff
+25.01.2012 15:26:30 - src/x.c:x_con_init:112 - adding new state for window id 0x00e00006
+25.01.2012 15:26:30 - src/con.c:con_attach:151 - Inserting con = 0x9b1f0a0 after last focused tiling con 0x9b09be8
+25.01.2012 15:26:30 - src/randr.c:output_init_con:255 - Changing layout, adding top/bottom dockarea
+25.01.2012 15:26:30 - src/con.c:con_new:43 - opening window 5
+25.01.2012 15:26:30 - src/con.c:con_new:46 - color #ffff00
+25.01.2012 15:26:30 - src/x.c:x_con_init:112 - adding new state for window id 0x00e00007
+25.01.2012 15:26:30 - src/randr.c:output_init_con:273 - attaching
+25.01.2012 15:26:30 - src/randr.c:output_init_con:278 - adding main content container
+25.01.2012 15:26:30 - src/con.c:con_new:43 - opening window 6
+25.01.2012 15:26:30 - src/con.c:con_new:46 - color #aa0000
+25.01.2012 15:26:30 - src/x.c:x_con_init:112 - adding new state for window id 0x00e00008
+25.01.2012 15:26:30 - src/con.c:con_new:43 - opening window 7
+25.01.2012 15:26:30 - src/con.c:con_new:46 - color #00aa00
+25.01.2012 15:26:30 - src/x.c:x_con_init:112 - adding new state for window id 0x00e00009
+25.01.2012 15:26:30 - src/randr.c:output_init_con:307 - attaching
+25.01.2012 15:26:30 - src/randr.c:randr_query_outputs:828 - Should add ws for output LVDS1
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:406 - Now adding a workspace
+25.01.2012 15:26:30 - src/con.c:con_new:43 - opening window 8
+25.01.2012 15:26:30 - src/con.c:con_new:46 - color #0000aa
+25.01.2012 15:26:30 - src/x.c:x_con_init:112 - adding new state for window id 0x00e0000a
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command exec urxvt -bg black -fg white
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command kill
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command kill
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command exec dmenu_run #bashrun2 # dmenu_run
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command focus left
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command focus down
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command focus up
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command focus right
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command focus left
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command focus down
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command focus up
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command focus right
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command move left
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command move down
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command move up
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command move right
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command move left
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command move down
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command move up
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command move right
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command split h
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command split v
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command fullscreen
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command layout stacking
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command layout tabbed
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command layout default
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command floating toggle
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command focus mode_toggle
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command focus parent
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:417 - binding with command workspace 1
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:421 - relevant command = workspace 1
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:440 - trying name *1*
+25.01.2012 15:26:30 - Used number 1 for workspace with name 1
+25.01.2012 15:26:30 - src/con.c:con_attach:86 - it's a workspace. num = 1
+25.01.2012 15:26:30 - src/randr.c:init_ws_for_output:496 - Auto orientation. Workspace size set to (1024,600), setting orientation to 1.
+25.01.2012 15:26:30 - src/con.c:con_focus:184 - con_focus = 0x9b1f720
+25.01.2012 15:26:30 - src/con.c:con_focus:184 - con_focus = 0x9b1f390
+25.01.2012 15:26:30 - src/con.c:con_focus:184 - con_focus = 0x9b1f0a0
+25.01.2012 15:26:30 - src/tree.c:tree_render:434 - -- BEGIN RENDERING --
+25.01.2012 15:26:30 - src/render.c:render_con:111 - Rendering node 0x9b09a80 / root / layout 0 / children 2 / orient 0
+25.01.2012 15:26:30 - src/render.c:render_con:111 - Rendering node 0x9b09be8 / __i3 / layout 4 / children 1 / orient 0
+25.01.2012 15:26:30 - src/render.c:render_con:111 - Rendering node 0x9b1f0a0 / LVDS1 / layout 4 / children 3 / orient 0
+25.01.2012 15:26:30 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 0)
+25.01.2012 15:26:30 - src/render.c:render_con:111 - Rendering node 0x9b1f1f8 / topdock / layout 3 / children 0 / orient 2
+25.01.2012 15:26:30 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 600)
+25.01.2012 15:26:30 - src/render.c:render_con:111 - Rendering node 0x9b1f390 / content / layout 0 / children 1 / orient 0
+25.01.2012 15:26:30 - src/render.c:render_con:111 - Rendering fullscreen node 0x9b1f720 / 1 / layout 0 / children 0 / orient 1
+25.01.2012 15:26:30 - src/render.c:render_l_output:93 - child at (0, 600) with (1024 x 0)
+25.01.2012 15:26:30 - src/render.c:render_con:111 - Rendering node 0x9b1f4e8 / bottomdock / layout 3 / children 0 / orient 2
+25.01.2012 15:26:30 - src/render.c:render_con:247 - Rendering floating windows:
+25.01.2012 15:26:30 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:26:30 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:26:30 - src/x.c:x_push_node:533 - pushing name [i3 con] output LVDS1 for con 0x9b1f0a0
+25.01.2012 15:26:30 - src/x.c:x_push_node:533 - pushing name [i3 con] content LVDS1 for con 0x9b1f390
+25.01.2012 15:26:30 - src/x.c:x_push_node:533 - pushing name [i3 con] workspace 1 for con 0x9b1f720
+25.01.2012 15:26:30 - src/x.c:x_push_node:533 - pushing name [i3 con] top dockarea LVDS1 for con 0x9b1f1f8
+25.01.2012 15:26:30 - src/x.c:x_push_node:533 - pushing name [i3 con] bottom dockarea LVDS1 for con 0x9b1f4e8
+25.01.2012 15:26:30 - src/x.c:x_push_node:533 - pushing name [i3 con] pseudo-output __i3 for con 0x9b09be8
+25.01.2012 15:26:30 - src/x.c:x_push_node:533 - pushing name [i3 con] content __i3 for con 0x9b1cee8
+25.01.2012 15:26:30 - src/x.c:x_push_node:533 - pushing name [i3 con] workspace __i3_scratch for con 0x9b1d060
+25.01.2012 15:26:30 - src/x.c:x_push_changes:863 - Not updating focus (to 0x9b1f720 / 1), focused window is not mapped.
+25.01.2012 15:26:30 - src/x.c:x_push_changes:900 - Still no window focused, better set focus to the root window
+25.01.2012 15:26:30 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:26:30 - src/tree.c:tree_render:443 - -- END RENDERING --
+25.01.2012 15:26:30 - src/main.c:main:641 - Pointer at 512, 300
+25.01.2012 15:26:30 - src/randr.c:get_output_containing:84 - comparing x=512 y=300 with x=0 and y=0 width 1024 height 600
+25.01.2012 15:26:30 - src/con.c:con_focus:184 - con_focus = 0x9b1f720
+25.01.2012 15:26:30 - src/con.c:con_focus:184 - con_focus = 0x9b1f390
+25.01.2012 15:26:30 - src/con.c:con_focus:184 - con_focus = 0x9b1f0a0
+25.01.2012 15:26:30 - src/tree.c:tree_render:434 - -- BEGIN RENDERING --
+25.01.2012 15:26:30 - src/render.c:render_con:111 - Rendering node 0x9b09a80 / root / layout 0 / children 2 / orient 0
+25.01.2012 15:26:30 - src/render.c:render_con:111 - Rendering node 0x9b09be8 / __i3 / layout 4 / children 1 / orient 0
+25.01.2012 15:26:30 - src/render.c:render_con:111 - Rendering node 0x9b1f0a0 / LVDS1 / layout 4 / children 3 / orient 0
+25.01.2012 15:26:30 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 0)
+25.01.2012 15:26:30 - src/render.c:render_con:111 - Rendering node 0x9b1f1f8 / topdock / layout 3 / children 0 / orient 2
+25.01.2012 15:26:30 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 600)
+25.01.2012 15:26:30 - src/render.c:render_con:111 - Rendering node 0x9b1f390 / content / layout 0 / children 1 / orient 0
+25.01.2012 15:26:30 - src/render.c:render_con:111 - Rendering fullscreen node 0x9b1f720 / 1 / layout 0 / children 0 / orient 1
+25.01.2012 15:26:30 - src/render.c:render_l_output:93 - child at (0, 600) with (1024 x 0)
+25.01.2012 15:26:30 - src/render.c:render_con:111 - Rendering node 0x9b1f4e8 / bottomdock / layout 3 / children 0 / orient 2
+25.01.2012 15:26:30 - src/render.c:render_con:247 - Rendering floating windows:
+25.01.2012 15:26:30 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:26:30 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:26:30 - src/x.c:x_push_changes:863 - Not updating focus (to 0x9b1f720 / 1), focused window is not mapped.
+25.01.2012 15:26:30 - src/x.c:x_push_changes:900 - Still no window focused, better set focus to the root window
+25.01.2012 15:26:30 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:26:30 - src/tree.c:tree_render:443 - -- END RENDERING --
+25.01.2012 15:26:30 - src/ipc.c:ipc_create_socket:921 - Creating IPC-socket at /tmp/i3-raphael.KVq5fF/ipc-socket.25188
+25.01.2012 15:26:30 - src/main.c:main:672 - socket activation: no sockets passed
+25.01.2012 15:26:30 - auto-starting display -window root Bilder/28c3-grey.png &
+25.01.2012 15:26:30 - startup id = i3/display/25188-0-localhorst_TIME0
+25.01.2012 15:26:30 - executing: display -window root Bilder/28c3-grey.png &
+25.01.2012 15:26:30 - auto-starting gnome-power-manager &
+25.01.2012 15:26:30 - startup id = i3/gnome-power-manager/25188-1-localhorst_TIME0
+25.01.2012 15:26:30 - executing: gnome-power-manager &
+25.01.2012 15:26:30 - auto-starting nm-applet --sm-disable &
+25.01.2012 15:26:30 - startup id = i3/nm-applet/25188-2-localhorst_TIME0
+25.01.2012 15:26:30 - executing: nm-applet --sm-disable &
+25.01.2012 15:26:30 - auto-starting ibus-daemon -d -x -r &
+25.01.2012 15:26:30 - startup id = i3/ibus-daemon/25188-3-localhorst_TIME0
+25.01.2012 15:26:30 - executing: ibus-daemon -d -x -r &
+25.01.2012 15:26:30 - auto-starting gnome-settings-daemon &
+25.01.2012 15:26:30 - startup id = i3/gnome-settings-daemon/25188-4-localhorst_TIME0
+25.01.2012 15:26:30 - executing: gnome-settings-daemon &
+25.01.2012 15:26:30 - Starting bar process: i3bar --bar_id=bar-xrkqud --socket="/tmp/i3-raphael.KVq5fF/ipc-socket.25188"
+25.01.2012 15:26:30 - executing: i3bar --bar_id=bar-xrkqud --socket="/tmp/i3-raphael.KVq5fF/ipc-socket.25188"
+25.01.2012 15:26:30 - src/handlers.c:handle_destroy_notify_event:530 - destroy notify for 0x00e0000b, 0x00e0000b
+25.01.2012 15:26:30 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x00e0000b (received from 0x00e0000b), serial 285
+25.01.2012 15:26:30 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:26:30 - src/handlers.c:handle_destroy_notify_event:530 - destroy notify for 0x00e0000c, 0x00e0000c
+25.01.2012 15:26:30 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x00e0000c (received from 0x00e0000c), serial 293
+25.01.2012 15:26:30 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:26:30 - src/handlers.c:handle_destroy_notify_event:530 - destroy notify for 0x00e0000d, 0x00e0000d
+25.01.2012 15:26:30 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x00e0000d (received from 0x00e0000d), serial 300
+25.01.2012 15:26:30 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:26:30 - src/handlers.c:handle_destroy_notify_event:530 - destroy notify for 0x00e0000e, 0x00e0000e
+25.01.2012 15:26:30 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x00e0000e (received from 0x00e0000e), serial 307
+25.01.2012 15:26:30 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:26:30 - src/handlers.c:handle_destroy_notify_event:530 - destroy notify for 0x00e0000f, 0x00e0000f
+25.01.2012 15:26:30 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x00e0000f (received from 0x00e0000f), serial 315
+25.01.2012 15:26:30 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:26:30 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:26:30 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:26:31 - src/ipc.c:ipc_new_client:902 - IPC: new client connected on fd 12
+25.01.2012 15:26:31 - src/ipc.c:ipc_receive_message:843 - IPC: n = 24
+25.01.2012 15:26:31 - IPC: looking for config for bar ID "bar-xrkqud"
+25.01.2012 15:26:31 - src/ipc.c:ipc_receive_message:843 - IPC: n = 14
+25.01.2012 15:26:31 - src/ipc.c:ipc_receive_message:843 - IPC: n = 39
+25.01.2012 15:26:31 - src/ipc.c:add_subscription:695 - should add subscription to extra 0x9b1efb8, sub workspace
+25.01.2012 15:26:31 - src/ipc.c:add_subscription:705 - client is now subscribed to:
+25.01.2012 15:26:31 - src/ipc.c:add_subscription:707 - event workspace
+25.01.2012 15:26:31 - src/ipc.c:add_subscription:708 - (done)
+25.01.2012 15:26:31 - src/ipc.c:add_subscription:695 - should add subscription to extra 0x9b1efb8, sub output
+25.01.2012 15:26:31 - src/ipc.c:add_subscription:705 - client is now subscribed to:
+25.01.2012 15:26:31 - src/ipc.c:add_subscription:707 - event workspace
+25.01.2012 15:26:31 - src/ipc.c:add_subscription:707 - event output
+25.01.2012 15:26:31 - src/ipc.c:add_subscription:708 - (done)
+25.01.2012 15:26:31 - src/ipc.c:ipc_receive_message:843 - IPC: n = 14
+25.01.2012 15:26:31 - workspace visible? fs = 0x9b1f720, ws = 0x9b1f720
+25.01.2012 15:26:31 - src/handlers.c:handle_map_request:318 - window = 0x01200007, serial is 316.
+25.01.2012 15:26:31 - src/manage.c:manage_window:148 - Managing window 0x01200007
+25.01.2012 15:26:31 - WM_CLASS changed to i3bar (instance), i3bar (class)
+25.01.2012 15:26:31 - WM_NAME changed to "i3bar for output LVDS1"
+25.01.2012 15:26:31 - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+25.01.2012 15:26:31 - src/window.c:window_update_name:56 - _NET_WM_NAME not specified, not changing
+25.01.2012 15:26:31 - src/window.c:window_update_leader:155 - CLIENT_LEADER not set.
+25.01.2012 15:26:31 - src/window.c:window_update_transient_for:179 - TRANSIENT_FOR not set.
+25.01.2012 15:26:31 - src/window.c:window_update_strut_partial:215 - Reserved pixels changed to: left = 0, right = 0, top = 0, bottom = 19
+25.01.2012 15:26:31 - src/window.c:window_update_role:228 - WM_WINDOW_ROLE not set.
+25.01.2012 15:26:31 - src/window.c:window_update_hints:261 - WM_HINTS not set.
+25.01.2012 15:26:31 - src/startup.c:startup_workspace_for_window:217 - No _NET_STARTUP_ID set on this window
+25.01.2012 15:26:31 - src/manage.c:manage_window:178 - startup workspace = (null)
+25.01.2012 15:26:31 - This window is of type dock
+25.01.2012 15:26:31 - src/randr.c:get_output_containing:84 - comparing x=0 y=581 with x=0 and y=0 width 1024 height 600
+25.01.2012 15:26:31 - src/manage.c:manage_window:191 - Starting search at output LVDS1
+25.01.2012 15:26:31 - src/manage.c:manage_window:200 - Bottom dock client
+25.01.2012 15:26:31 - src/manage.c:manage_window:216 - Initial geometry: (0, 581, 1024, 19)
+25.01.2012 15:26:31 - Checking window 0x01200007 (class i3bar)
+25.01.2012 15:26:31 - dock status does not match
+25.01.2012 15:26:31 - Checking window 0x01200007 (class i3bar)
+25.01.2012 15:26:31 - dock status matches
+25.01.2012 15:26:31 - src/con.c:con_new:43 - opening window 9
+25.01.2012 15:26:31 - src/con.c:con_new:46 - color #aa00aa
+25.01.2012 15:26:31 - src/x.c:x_con_init:112 - adding new state for window id 0x00e00010
+25.01.2012 15:26:31 - src/manage.c:manage_window:263 - new container = 0x9b20cd8
+25.01.2012 15:26:31 - src/x.c:x_reinit:129 - resetting state 0x9b205a8 to initial
+25.01.2012 15:26:31 - src/manage.c:manage_window:280 - Not in fullscreen mode, focusing
+25.01.2012 15:26:31 - src/manage.c:manage_window:293 - dock, not focusing
+25.01.2012 15:26:31 - src/assignments.c:run_assignments:18 - Checking if any assignments match this window
+25.01.2012 15:26:31 - Checking window 0x01200007 (class i3bar)
+25.01.2012 15:26:31 - Regular expression "Pidgin" does not match "i3bar"
+25.01.2012 15:26:31 - Checking window 0x01200007 (class i3bar)
+25.01.2012 15:26:31 - Regular expression "Skype" does not match "i3bar"
+25.01.2012 15:26:31 - Checking window 0x01200007 (class i3bar)
+25.01.2012 15:26:31 - Regular expression "Tilda" does not match "i3bar"
+25.01.2012 15:26:31 - Checking window 0x01200007 (class i3bar)
+25.01.2012 15:26:31 - Regular expression "Tilda" does not match "i3bar"
+25.01.2012 15:26:31 - Checking window 0x01200007 (class i3bar)
+25.01.2012 15:26:31 - Regular expression "XTerm" does not match "i3bar"
+25.01.2012 15:26:31 - Checking window 0x01200007 (class i3bar)
+25.01.2012 15:26:31 - Regular expression "XTerm" does not match "i3bar"
+25.01.2012 15:26:31 - src/tree.c:tree_render:434 - -- BEGIN RENDERING --
+25.01.2012 15:26:31 - src/render.c:render_con:111 - Rendering node 0x9b09a80 / root / layout 0 / children 2 / orient 0
+25.01.2012 15:26:31 - src/render.c:render_con:111 - Rendering node 0x9b09be8 / __i3 / layout 4 / children 1 / orient 0
+25.01.2012 15:26:31 - src/render.c:render_con:111 - Rendering node 0x9b1f0a0 / LVDS1 / layout 4 / children 3 / orient 0
+25.01.2012 15:26:31 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 0)
+25.01.2012 15:26:31 - src/render.c:render_con:111 - Rendering node 0x9b1f1f8 / topdock / layout 3 / children 0 / orient 2
+25.01.2012 15:26:31 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 581)
+25.01.2012 15:26:31 - src/render.c:render_con:111 - Rendering node 0x9b1f390 / content / layout 0 / children 1 / orient 0
+25.01.2012 15:26:31 - src/render.c:render_con:111 - Rendering fullscreen node 0x9b1f720 / 1 / layout 0 / children 0 / orient 1
+25.01.2012 15:26:31 - src/render.c:render_l_output:93 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:26:31 - src/render.c:render_con:111 - Rendering node 0x9b1f4e8 / bottomdock / layout 3 / children 1 / orient 2
+25.01.2012 15:26:31 - src/render.c:render_con:372 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:26:31 - src/render.c:render_con:111 - Rendering node 0x9b20cd8 / #aa00aa / layout 0 / children 0 / orient 0
+25.01.2012 15:26:31 - src/render.c:render_con:189 - child will be at 0x0 with size 1022x17
+25.01.2012 15:26:31 - src/render.c:render_con:247 - Rendering floating windows:
+25.01.2012 15:26:31 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:26:31 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:26:31 - src/x.c:x_push_node:533 - pushing name [i3 con] container around 0x9b207e8 for con 0x9b20cd8
+25.01.2012 15:26:31 - src/x.c:x_push_node:626 - setting rect (0, 581, 1024, 19)
+25.01.2012 15:26:31 - src/x.c:x_push_node:645 - setting window rect (0, 0, 1022, 17)
+25.01.2012 15:26:31 - src/x.c:x_push_node:675 - mapping child window (serial 351)
+25.01.2012 15:26:31 - src/x.c:x_push_node:689 - mapping container 00e00010 (serial 353)
+25.01.2012 15:26:31 - src/x.c:x_push_node:696 - Sending fake configure notify
+25.01.2012 15:26:31 - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (0, 581, 1022, 17)
+25.01.2012 15:26:31 - src/x.c:x_push_changes:863 - Not updating focus (to 0x9b1f720 / 1), focused window is not mapped.
+25.01.2012 15:26:31 - src/x.c:x_push_changes:900 - Still no window focused, better set focus to the root window
+25.01.2012 15:26:31 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:26:31 - src/tree.c:tree_render:443 - -- END RENDERING --
+25.01.2012 15:26:31 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:26:31 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:26:31 - src/x.c:x_push_changes:863 - Not updating focus (to 0x9b1f720 / 1), focused window is not mapped.
+25.01.2012 15:26:31 - src/x.c:x_push_changes:900 - Still no window focused, better set focus to the root window
+25.01.2012 15:26:31 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:26:31 - ClientMessage for window 0x000000aa
+25.01.2012 15:26:31 - src/handlers.c:handle_client_message:691 - unhandled clientmessage
+25.01.2012 15:26:31 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:26:31 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x01400003 (received from 0x000000aa), serial 363
+25.01.2012 15:26:31 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:26:31 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:26:32 - src/handlers.c:handle_key_press:89 - Keypress 36, state raw = 64
+25.01.2012 15:26:32 - src/handlers.c:handle_key_press:93 - (removed numlock, state = 64)
+25.01.2012 15:26:32 - src/handlers.c:handle_key_press:97 - (removed upper 8 bits, state = 64)
+25.01.2012 15:26:32 - src/handlers.c:handle_key_press:102 - (checked mode_switch, state 64)
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:199 - new parser handling: exec urxvt -bg black -fg white
+25.01.2012 15:26:32 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5640
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:221 - remaining input = exec urxvt -bg black -fg white
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:227 - trying token 0 = end
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:287 - checking for the end token.
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:227 - trying token 1 = '[
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:227 - trying token 2 = 'move
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:227 - trying token 3 = 'exec
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:221 - remaining input = urxvt -bg black -fg white
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:227 - trying token 0 = '--no-startup-id
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:227 - trying token 1 = string
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:246 - parsing this as a string
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:275 - str is "urxvt -bg black -fg white"
+25.01.2012 15:26:32 - src/commands_parser.c:next_state:185 - should call stuff, yay. call_id = 37
+25.01.2012 15:26:32 - src/commands_parser.c:get_string:102 - Getting string command from stack...
+25.01.2012 15:26:32 - src/commands_parser.c:get_string:102 - Getting string nosn from stack...
+25.01.2012 15:26:32 - src/commands.c:cmd_MIGRATION_save_new_parameters:114 - saving parameters.
+25.01.2012 15:26:32 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = cmd_exec
+25.01.2012 15:26:32 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = (null)
+25.01.2012 15:26:32 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = urxvt -bg black -fg white
+25.01.2012 15:26:32 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:221 - remaining input = 
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:227 - trying token 0 = end
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:287 - checking for the end token.
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:289 - yes, indeed. end
+25.01.2012 15:26:32 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:26:32 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5640
+25.01.2012 15:26:32 - src/commands_parser.c:parse_command:364 - json_output = (null)
+25.01.2012 15:26:32 - COMMAND: *exec urxvt -bg black -fg white*
+25.01.2012 15:26:32 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5540
+25.01.2012 15:26:32 - src/commands.c:cmd_MIGRATION_save_old_parameters:137 - saving new parameters.
+25.01.2012 15:26:32 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = cmd_exec
+25.01.2012 15:26:32 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = (null)
+25.01.2012 15:26:32 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = urxvt -bg black -fg white
+25.01.2012 15:26:32 - src/commands.c:cmd_exec:968 - should execute urxvt -bg black -fg white, no_startup_id = 0
+25.01.2012 15:26:32 - startup id = i3/urxvt/25188-5-localhorst_TIME1239316
+25.01.2012 15:26:32 - executing: urxvt -bg black -fg white
+25.01.2012 15:26:32 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5540
+25.01.2012 15:26:32 - src/commands.c:cmd_MIGRATION_validate:263 - validating the different stacks now
+25.01.2012 15:26:32 - src/commands.c:cmd_MIGRATION_validate:276 - parameter count matching, comparing one by one...
+25.01.2012 15:26:32 - src/commands.c:cmd_MIGRATION_validate:313 - OK
+25.01.2012 15:26:32 - src/handlers.c:handle_destroy_notify_event:530 - destroy notify for 0x00e00013, 0x00e00013
+25.01.2012 15:26:32 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x00e00013 (received from 0x00e00013), serial 370
+25.01.2012 15:26:32 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:26:32 - ClientMessage for window 0x000000aa
+25.01.2012 15:26:32 - src/handlers.c:handle_client_message:691 - unhandled clientmessage
+25.01.2012 15:26:32 - src/handlers.c:handle_map_request:318 - window = 0x01c0000b, serial is 370.
+25.01.2012 15:26:32 - src/manage.c:manage_window:148 - Managing window 0x01c0000b
+25.01.2012 15:26:32 - WM_CLASS changed to urxvt (instance), URxvt (class)
+25.01.2012 15:26:32 - WM_NAME changed to "urxvt"
+25.01.2012 15:26:32 - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+25.01.2012 15:26:32 - _NET_WM_NAME changed to "urxvt"
+25.01.2012 15:26:32 - src/window.c:window_update_leader:155 - CLIENT_LEADER not set.
+25.01.2012 15:26:32 - src/window.c:window_update_transient_for:179 - TRANSIENT_FOR not set.
+25.01.2012 15:26:32 - src/window.c:window_update_strut_partial:203 - _NET_WM_STRUT_PARTIAL not set.
+25.01.2012 15:26:32 - src/window.c:window_update_role:228 - WM_WINDOW_ROLE not set.
+25.01.2012 15:26:32 - WM_HINTS.input changed to "1"
+25.01.2012 15:26:32 - src/startup.c:startup_workspace_for_window:217 - No _NET_STARTUP_ID set on this window
+25.01.2012 15:26:32 - src/manage.c:manage_window:178 - startup workspace = (null)
+25.01.2012 15:26:32 - src/manage.c:manage_window:216 - Initial geometry: (0, 0, 496, 316)
+25.01.2012 15:26:32 - Checking window 0x01c0000b (class URxvt)
+25.01.2012 15:26:32 - dock status does not match
+25.01.2012 15:26:32 - Checking window 0x01c0000b (class URxvt)
+25.01.2012 15:26:32 - dock status does not match
+25.01.2012 15:26:32 - Checking window 0x01c0000b (class URxvt)
+25.01.2012 15:26:32 - Regular expression "Pidgin" does not match "URxvt"
+25.01.2012 15:26:32 - Checking window 0x01c0000b (class URxvt)
+25.01.2012 15:26:32 - Regular expression "Skype" does not match "URxvt"
+25.01.2012 15:26:32 - src/tree.c:tree_open_con:147 - con = 0x9b1f720
+25.01.2012 15:26:32 - src/con.c:con_new:43 - opening window 0
+25.01.2012 15:26:32 - src/con.c:con_new:46 - color #ff0000
+25.01.2012 15:26:32 - src/x.c:x_con_init:112 - adding new state for window id 0x00e00014
+25.01.2012 15:26:32 - src/manage.c:manage_window:263 - new container = 0x9b29440
+25.01.2012 15:26:32 - src/x.c:x_reinit:129 - resetting state 0x9b29548 to initial
+25.01.2012 15:26:32 - src/manage.c:manage_window:280 - Not in fullscreen mode, focusing
+25.01.2012 15:26:32 - workspace visible? fs = 0x9b1f720, ws = 0x9b1f720
+25.01.2012 15:26:32 - src/con.c:con_focus:184 - con_focus = 0x9b29440
+25.01.2012 15:26:32 - src/con.c:con_focus:184 - con_focus = 0x9b1f720
+25.01.2012 15:26:32 - src/con.c:con_focus:184 - con_focus = 0x9b1f390
+25.01.2012 15:26:32 - src/con.c:con_focus:184 - con_focus = 0x9b1f0a0
+25.01.2012 15:26:32 - src/assignments.c:run_assignments:18 - Checking if any assignments match this window
+25.01.2012 15:26:32 - Checking window 0x01c0000b (class URxvt)
+25.01.2012 15:26:32 - Regular expression "Pidgin" does not match "URxvt"
+25.01.2012 15:26:32 - Checking window 0x01c0000b (class URxvt)
+25.01.2012 15:26:32 - Regular expression "Skype" does not match "URxvt"
+25.01.2012 15:26:32 - Checking window 0x01c0000b (class URxvt)
+25.01.2012 15:26:32 - Regular expression "Tilda" does not match "URxvt"
+25.01.2012 15:26:32 - Checking window 0x01c0000b (class URxvt)
+25.01.2012 15:26:32 - Regular expression "Tilda" does not match "URxvt"
+25.01.2012 15:26:32 - Checking window 0x01c0000b (class URxvt)
+25.01.2012 15:26:32 - Regular expression "XTerm" does not match "URxvt"
+25.01.2012 15:26:32 - Checking window 0x01c0000b (class URxvt)
+25.01.2012 15:26:32 - Regular expression "XTerm" does not match "URxvt"
+25.01.2012 15:26:32 - src/tree.c:tree_render:434 - -- BEGIN RENDERING --
+25.01.2012 15:26:32 - src/render.c:render_con:111 - Rendering node 0x9b09a80 / root / layout 0 / children 2 / orient 0
+25.01.2012 15:26:32 - src/render.c:render_con:111 - Rendering node 0x9b09be8 / __i3 / layout 4 / children 1 / orient 0
+25.01.2012 15:26:32 - src/render.c:render_con:111 - Rendering node 0x9b1f0a0 / LVDS1 / layout 4 / children 3 / orient 0
+25.01.2012 15:26:32 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 0)
+25.01.2012 15:26:32 - src/render.c:render_con:111 - Rendering node 0x9b1f1f8 / topdock / layout 3 / children 0 / orient 2
+25.01.2012 15:26:32 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 581)
+25.01.2012 15:26:32 - src/render.c:render_con:111 - Rendering node 0x9b1f390 / content / layout 0 / children 1 / orient 0
+25.01.2012 15:26:32 - src/render.c:render_con:111 - Rendering fullscreen node 0x9b1f720 / 1 / layout 0 / children 1 / orient 1
+25.01.2012 15:26:32 - src/render.c:render_con:372 - child at (0, 18) with (1024 x 563)
+25.01.2012 15:26:32 - src/render.c:render_con:111 - Rendering node 0x9b29440 / #ff0000 / layout 0 / children 0 / orient 0
+25.01.2012 15:26:32 - src/render.c:render_con:189 - child will be at 2x0 with size 1020x561
+25.01.2012 15:26:32 - src/render.c:render_l_output:93 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:26:32 - src/render.c:render_con:111 - Rendering node 0x9b1f4e8 / bottomdock / layout 3 / children 1 / orient 2
+25.01.2012 15:26:32 - src/render.c:render_con:372 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:26:32 - src/render.c:render_con:111 - Rendering node 0x9b20cd8 / #aa00aa / layout 0 / children 0 / orient 0
+25.01.2012 15:26:32 - src/render.c:render_con:189 - child will be at 0x0 with size 1022x17
+25.01.2012 15:26:32 - src/render.c:render_con:247 - Rendering floating windows:
+25.01.2012 15:26:32 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:26:32 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:26:32 - src/x.c:x_push_node:626 - setting rect (0, 0, 1024, 18)
+25.01.2012 15:26:32 - src/x.c:x_push_node:689 - mapping container 00e0000a (serial 404)
+25.01.2012 15:26:32 - src/x.c:x_push_node:696 - Sending fake configure notify
+25.01.2012 15:26:32 - src/x.c:x_push_node:533 - pushing name [i3 con] container around 0x9b211d8 for con 0x9b29440
+25.01.2012 15:26:32 - src/x.c:x_push_node:626 - setting rect (0, 18, 1024, 563)
+25.01.2012 15:26:32 - src/x.c:x_push_node:645 - setting window rect (2, 0, 1020, 561)
+25.01.2012 15:26:32 - src/x.c:x_push_node:675 - mapping child window (serial 431)
+25.01.2012 15:26:32 - src/x.c:x_push_node:689 - mapping container 00e00014 (serial 433)
+25.01.2012 15:26:32 - src/x.c:x_push_node:696 - Sending fake configure notify
+25.01.2012 15:26:32 - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (2, 18, 1020, 561)
+25.01.2012 15:26:32 - src/x.c:x_push_changes:878 - Updating focus (focused: 0x9b29440 / #ff0000)
+25.01.2012 15:26:32 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:26:32 - src/tree.c:tree_render:443 - -- END RENDERING --
+25.01.2012 15:26:32 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:26:32 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:26:32 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:26:32 - src/handlers.c:handle_expose_event:614 - window = 00e0000a
+25.01.2012 15:26:32 - src/handlers.c:handle_expose_event:614 - window = 00e00014
+25.01.2012 15:26:32 - src/handlers.c:handle_expose_event:614 - window = 00e00014
+25.01.2012 15:26:32 - src/handlers.c:handle_expose_event:614 - window = 00e00014
+25.01.2012 15:26:32 - src/handlers.c:handle_normal_hints:733 - Minimum size: 22 (width) x 17 (height)
+25.01.2012 15:26:32 - src/handlers.c:handle_normal_hints:750 - resize increments changed
+25.01.2012 15:26:32 - src/handlers.c:handle_normal_hints:771 - client's base_height changed to 4
+25.01.2012 15:26:32 - src/handlers.c:handle_normal_hints:772 - client's base_width changed to 16
+25.01.2012 15:26:32 - src/tree.c:tree_render:434 - -- BEGIN RENDERING --
+25.01.2012 15:26:32 - src/render.c:render_con:111 - Rendering node 0x9b09a80 / root / layout 0 / children 2 / orient 0
+25.01.2012 15:26:32 - src/render.c:render_con:111 - Rendering node 0x9b09be8 / __i3 / layout 4 / children 1 / orient 0
+25.01.2012 15:26:32 - src/render.c:render_con:111 - Rendering node 0x9b1f0a0 / LVDS1 / layout 4 / children 3 / orient 0
+25.01.2012 15:26:32 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 0)
+25.01.2012 15:26:32 - src/render.c:render_con:111 - Rendering node 0x9b1f1f8 / topdock / layout 3 / children 0 / orient 2
+25.01.2012 15:26:32 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 581)
+25.01.2012 15:26:32 - src/render.c:render_con:111 - Rendering node 0x9b1f390 / content / layout 0 / children 1 / orient 0
+25.01.2012 15:26:32 - src/render.c:render_con:111 - Rendering fullscreen node 0x9b1f720 / 1 / layout 0 / children 1 / orient 1
+25.01.2012 15:26:32 - src/render.c:render_con:372 - child at (0, 18) with (1024 x 563)
+25.01.2012 15:26:32 - src/render.c:render_con:111 - Rendering node 0x9b29440 / #ff0000 / layout 0 / children 0 / orient 0
+25.01.2012 15:26:32 - src/render.c:render_con:179 - Lost 11 pixel due to client's height_increment (13 px, base_height = 4)
+25.01.2012 15:26:32 - src/render.c:render_con:186 - Lost 2 pixel due to client's width_increment (6 px, base_width = 16)
+25.01.2012 15:26:32 - src/render.c:render_con:189 - child will be at 2x0 with size 1018x550
+25.01.2012 15:26:32 - src/render.c:render_l_output:93 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:26:32 - src/render.c:render_con:111 - Rendering node 0x9b1f4e8 / bottomdock / layout 3 / children 1 / orient 2
+25.01.2012 15:26:32 - src/render.c:render_con:372 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:26:32 - src/render.c:render_con:111 - Rendering node 0x9b20cd8 / #aa00aa / layout 0 / children 0 / orient 0
+25.01.2012 15:26:32 - src/render.c:render_con:189 - child will be at 0x0 with size 1022x17
+25.01.2012 15:26:32 - src/render.c:render_con:247 - Rendering floating windows:
+25.01.2012 15:26:32 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:26:32 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:26:32 - src/x.c:x_push_node:645 - setting window rect (2, 0, 1018, 550)
+25.01.2012 15:26:32 - src/x.c:x_push_node:696 - Sending fake configure notify
+25.01.2012 15:26:32 - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (2, 18, 1018, 550)
+25.01.2012 15:26:32 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:26:32 - src/tree.c:tree_render:443 - -- END RENDERING --
+25.01.2012 15:26:32 - src/handlers.c:handle_normal_hints:733 - Minimum size: 22 (width) x 17 (height)
+25.01.2012 15:26:32 - src/handlers.c:handle_normal_hints:733 - Minimum size: 22 (width) x 17 (height)
+25.01.2012 15:26:32 - src/handlers.c:handle_normal_hints:733 - Minimum size: 22 (width) x 17 (height)
+25.01.2012 15:26:33 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:26:35 - src/startup.c:startup_monitor_event:181 - startup sequence i3/ibus-daemon/25188-3-localhorst_TIME0 completed
+25.01.2012 15:26:35 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x01600003 (received from 0x000000aa), serial 490
+25.01.2012 15:26:35 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:26:36 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x01e00003 (received from 0x000000aa), serial 490
+25.01.2012 15:26:36 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:26:36 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x01e00003 (received from 0x000000aa), serial 490
+25.01.2012 15:26:36 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:26:37 - src/handlers.c:handle_mapping_notify:297 - Received mapping_notify for keyboard or modifier mapping, re-grabbing keys
+25.01.2012 15:26:37 - src/config.c:ungrab_all_keys:27 - Ungrabbing all keys
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "Return" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "q" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "c" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "r" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "j" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "k" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "l" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "semicolon" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "Left" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "Down" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "Up" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "Right" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "j" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "k" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "l" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "semicolon" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "Left" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "Down" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "Up" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "Right" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "h" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "v" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "f" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "s" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "w" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "e" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "space" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "space" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "a" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "1" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "2" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "3" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "4" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "5" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "6" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "7" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "8" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "9" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "0" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "1" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "2" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "3" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "4" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "5" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "6" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "7" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "8" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "9" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "0" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "r" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "e" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "minus" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "minus" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 36
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 24
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 54
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 44
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 45
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 46
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 59
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 113
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 116
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 111
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 114
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 44
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 45
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 46
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 59
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 113
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 116
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 111
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 114
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 43
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 55
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 41
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 39
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 25
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 26
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 65
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 65
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 38
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 10
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 11
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 12
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 13
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 14
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 17
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 10
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 11
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 12
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 13
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 14
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 17
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 26
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 61
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 61
+25.01.2012 15:26:37 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:26:37 - src/main.c:xkb_got_event:192 - Keyboard mapping changed, updating keybindings
+25.01.2012 15:26:37 - src/config.c:ungrab_all_keys:27 - Ungrabbing all keys
+25.01.2012 15:26:37 - src/main.c:xkb_got_event:199 - Re-grabbing...
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "Return" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "q" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "c" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "r" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "j" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "k" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "l" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "semicolon" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "Left" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "Down" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "Up" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "Right" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "j" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "k" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "l" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "semicolon" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "Left" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "Down" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "Up" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "Right" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "h" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "v" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "f" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "s" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "w" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "e" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "space" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "space" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "a" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "1" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "2" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "3" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "4" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "5" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "6" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "7" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "8" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "9" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "0" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "1" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "2" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "3" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "4" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "5" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "6" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "7" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "8" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "9" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "0" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "r" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "e" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "minus" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:translate_keysyms:125 - Translated symbol "minus" to 1 keycode
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 36
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 24
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 54
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 44
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 45
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 46
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 59
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 113
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 116
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 111
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 114
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 44
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 45
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 46
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 59
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 113
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 116
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 111
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 114
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 43
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 55
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 41
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 39
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 25
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 26
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 65
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 65
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 38
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 10
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 11
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 12
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 13
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 14
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 17
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 10
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 11
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 12
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 13
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 14
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 17
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 26
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 61
+25.01.2012 15:26:37 - src/config.c:grab_keycode_for_binding:32 - Grabbing 61
+25.01.2012 15:26:37 - src/main.c:xkb_got_event:202 - Done
+25.01.2012 15:26:37 - ClientMessage for window 0x000000aa
+25.01.2012 15:26:37 - src/handlers.c:handle_client_message:691 - unhandled clientmessage
+25.01.2012 15:26:48 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:26:48 - src/handlers.c:handle_key_press:89 - Keypress 36, state raw = 64
+25.01.2012 15:26:48 - src/handlers.c:handle_key_press:93 - (removed numlock, state = 64)
+25.01.2012 15:26:48 - src/handlers.c:handle_key_press:97 - (removed upper 8 bits, state = 64)
+25.01.2012 15:26:48 - src/handlers.c:handle_key_press:102 - (checked mode_switch, state 64)
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:199 - new parser handling: exec urxvt -bg black -fg white
+25.01.2012 15:26:48 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5640
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:221 - remaining input = exec urxvt -bg black -fg white
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:227 - trying token 0 = end
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:287 - checking for the end token.
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:227 - trying token 1 = '[
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:227 - trying token 2 = 'move
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:227 - trying token 3 = 'exec
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:221 - remaining input = urxvt -bg black -fg white
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:227 - trying token 0 = '--no-startup-id
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:227 - trying token 1 = string
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:246 - parsing this as a string
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:275 - str is "urxvt -bg black -fg white"
+25.01.2012 15:26:48 - src/commands_parser.c:next_state:185 - should call stuff, yay. call_id = 37
+25.01.2012 15:26:48 - src/commands_parser.c:get_string:102 - Getting string command from stack...
+25.01.2012 15:26:48 - src/commands_parser.c:get_string:102 - Getting string nosn from stack...
+25.01.2012 15:26:48 - src/commands.c:cmd_MIGRATION_save_new_parameters:114 - saving parameters.
+25.01.2012 15:26:48 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = cmd_exec
+25.01.2012 15:26:48 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = (null)
+25.01.2012 15:26:48 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = urxvt -bg black -fg white
+25.01.2012 15:26:48 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:221 - remaining input = 
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:227 - trying token 0 = end
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:287 - checking for the end token.
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:289 - yes, indeed. end
+25.01.2012 15:26:48 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:26:48 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5640
+25.01.2012 15:26:48 - src/commands_parser.c:parse_command:364 - json_output = (null)
+25.01.2012 15:26:48 - COMMAND: *exec urxvt -bg black -fg white*
+25.01.2012 15:26:48 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5540
+25.01.2012 15:26:48 - src/commands.c:cmd_MIGRATION_save_old_parameters:137 - saving new parameters.
+25.01.2012 15:26:48 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = cmd_exec
+25.01.2012 15:26:48 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = (null)
+25.01.2012 15:26:48 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = urxvt -bg black -fg white
+25.01.2012 15:26:48 - src/commands.c:cmd_exec:968 - should execute urxvt -bg black -fg white, no_startup_id = 0
+25.01.2012 15:26:48 - startup id = i3/urxvt/25188-6-localhorst_TIME1255607
+25.01.2012 15:26:48 - executing: urxvt -bg black -fg white
+25.01.2012 15:26:48 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5540
+25.01.2012 15:26:48 - src/commands.c:cmd_MIGRATION_validate:263 - validating the different stacks now
+25.01.2012 15:26:48 - src/commands.c:cmd_MIGRATION_validate:276 - parameter count matching, comparing one by one...
+25.01.2012 15:26:48 - src/commands.c:cmd_MIGRATION_validate:313 - OK
+25.01.2012 15:26:48 - src/handlers.c:handle_destroy_notify_event:530 - destroy notify for 0x00e00019, 0x00e00019
+25.01.2012 15:26:48 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x00e00019 (received from 0x00e00019), serial 821
+25.01.2012 15:26:48 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:26:48 - src/handlers.c:handle_focus_in:925 - focus change in, for window 0x01c0000b
+25.01.2012 15:26:48 - src/handlers.c:handle_focus_in:929 - That is con 0x9b29440 / #ff0000
+25.01.2012 15:26:48 - src/handlers.c:handle_focus_in:933 - FocusIn event for grab/ungrab, ignoring
+25.01.2012 15:26:48 - src/handlers.c:handle_map_request:318 - window = 0x0260000b, serial is 821.
+25.01.2012 15:26:48 - src/manage.c:manage_window:148 - Managing window 0x0260000b
+25.01.2012 15:26:48 - WM_CLASS changed to urxvt (instance), URxvt (class)
+25.01.2012 15:26:48 - WM_NAME changed to "urxvt"
+25.01.2012 15:26:48 - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+25.01.2012 15:26:48 - _NET_WM_NAME changed to "urxvt"
+25.01.2012 15:26:48 - src/window.c:window_update_leader:155 - CLIENT_LEADER not set.
+25.01.2012 15:26:48 - src/window.c:window_update_transient_for:179 - TRANSIENT_FOR not set.
+25.01.2012 15:26:48 - src/window.c:window_update_strut_partial:203 - _NET_WM_STRUT_PARTIAL not set.
+25.01.2012 15:26:48 - src/window.c:window_update_role:228 - WM_WINDOW_ROLE not set.
+25.01.2012 15:26:48 - WM_HINTS.input changed to "1"
+25.01.2012 15:26:48 - src/startup.c:startup_workspace_for_window:217 - No _NET_STARTUP_ID set on this window
+25.01.2012 15:26:48 - src/manage.c:manage_window:178 - startup workspace = (null)
+25.01.2012 15:26:48 - src/manage.c:manage_window:216 - Initial geometry: (0, 0, 496, 316)
+25.01.2012 15:26:48 - Checking window 0x0260000b (class URxvt)
+25.01.2012 15:26:48 - dock status does not match
+25.01.2012 15:26:48 - Checking window 0x0260000b (class URxvt)
+25.01.2012 15:26:48 - dock status does not match
+25.01.2012 15:26:48 - Checking window 0x0260000b (class URxvt)
+25.01.2012 15:26:48 - Regular expression "Pidgin" does not match "URxvt"
+25.01.2012 15:26:48 - Checking window 0x0260000b (class URxvt)
+25.01.2012 15:26:48 - Regular expression "Skype" does not match "URxvt"
+25.01.2012 15:26:48 - src/tree.c:tree_open_con:147 - con = 0x9b1f720
+25.01.2012 15:26:48 - src/con.c:con_new:43 - opening window 1
+25.01.2012 15:26:48 - src/con.c:con_new:46 - color #00FF00
+25.01.2012 15:26:48 - src/x.c:x_con_init:112 - adding new state for window id 0x00e0001a
+25.01.2012 15:26:48 - src/con.c:con_attach:151 - Inserting con = 0x9b1dae0 after last focused tiling con 0x9b29440
+25.01.2012 15:26:48 - src/manage.c:manage_window:263 - new container = 0x9b1dae0
+25.01.2012 15:26:48 - src/x.c:x_reinit:129 - resetting state 0x9b1dbe8 to initial
+25.01.2012 15:26:48 - src/manage.c:manage_window:280 - Not in fullscreen mode, focusing
+25.01.2012 15:26:48 - workspace visible? fs = 0x9b1f720, ws = 0x9b1f720
+25.01.2012 15:26:48 - src/con.c:con_focus:184 - con_focus = 0x9b1dae0
+25.01.2012 15:26:48 - src/con.c:con_focus:184 - con_focus = 0x9b1f720
+25.01.2012 15:26:48 - src/con.c:con_focus:184 - con_focus = 0x9b1f390
+25.01.2012 15:26:48 - src/con.c:con_focus:184 - con_focus = 0x9b1f0a0
+25.01.2012 15:26:48 - src/assignments.c:run_assignments:18 - Checking if any assignments match this window
+25.01.2012 15:26:48 - Checking window 0x0260000b (class URxvt)
+25.01.2012 15:26:48 - Regular expression "Pidgin" does not match "URxvt"
+25.01.2012 15:26:48 - Checking window 0x0260000b (class URxvt)
+25.01.2012 15:26:48 - Regular expression "Skype" does not match "URxvt"
+25.01.2012 15:26:48 - Checking window 0x0260000b (class URxvt)
+25.01.2012 15:26:48 - Regular expression "Tilda" does not match "URxvt"
+25.01.2012 15:26:48 - Checking window 0x0260000b (class URxvt)
+25.01.2012 15:26:48 - Regular expression "Tilda" does not match "URxvt"
+25.01.2012 15:26:48 - Checking window 0x0260000b (class URxvt)
+25.01.2012 15:26:48 - Regular expression "XTerm" does not match "URxvt"
+25.01.2012 15:26:48 - Checking window 0x0260000b (class URxvt)
+25.01.2012 15:26:48 - Regular expression "XTerm" does not match "URxvt"
+25.01.2012 15:26:48 - src/tree.c:tree_render:434 - -- BEGIN RENDERING --
+25.01.2012 15:26:48 - src/render.c:render_con:111 - Rendering node 0x9b09a80 / root / layout 0 / children 2 / orient 0
+25.01.2012 15:26:48 - src/render.c:render_con:111 - Rendering node 0x9b09be8 / __i3 / layout 4 / children 1 / orient 0
+25.01.2012 15:26:48 - src/render.c:render_con:111 - Rendering node 0x9b1f0a0 / LVDS1 / layout 4 / children 3 / orient 0
+25.01.2012 15:26:48 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 0)
+25.01.2012 15:26:48 - src/render.c:render_con:111 - Rendering node 0x9b1f1f8 / topdock / layout 3 / children 0 / orient 2
+25.01.2012 15:26:48 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 581)
+25.01.2012 15:26:48 - src/render.c:render_con:111 - Rendering node 0x9b1f390 / content / layout 0 / children 1 / orient 0
+25.01.2012 15:26:48 - src/render.c:render_con:111 - Rendering fullscreen node 0x9b1f720 / 1 / layout 0 / children 2 / orient 1
+25.01.2012 15:26:48 - src/render.c:render_con:372 - child at (0, 18) with (512 x 563)
+25.01.2012 15:26:48 - src/render.c:render_con:111 - Rendering node 0x9b29440 / #ff0000 / layout 0 / children 0 / orient 0
+25.01.2012 15:26:48 - src/render.c:render_con:179 - Lost 11 pixel due to client's height_increment (13 px, base_height = 4)
+25.01.2012 15:26:48 - src/render.c:render_con:186 - Lost 0 pixel due to client's width_increment (6 px, base_width = 16)
+25.01.2012 15:26:48 - src/render.c:render_con:189 - child will be at 2x0 with size 508x550
+25.01.2012 15:26:48 - src/render.c:render_con:372 - child at (512, 18) with (512 x 563)
+25.01.2012 15:26:48 - src/render.c:render_con:111 - Rendering node 0x9b1dae0 / #00FF00 / layout 0 / children 0 / orient 0
+25.01.2012 15:26:48 - src/render.c:render_con:189 - child will be at 2x0 with size 508x561
+25.01.2012 15:26:48 - src/render.c:render_l_output:93 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:26:48 - src/render.c:render_con:111 - Rendering node 0x9b1f4e8 / bottomdock / layout 3 / children 1 / orient 2
+25.01.2012 15:26:48 - src/render.c:render_con:372 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:26:48 - src/render.c:render_con:111 - Rendering node 0x9b20cd8 / #aa00aa / layout 0 / children 0 / orient 0
+25.01.2012 15:26:48 - src/render.c:render_con:189 - child will be at 0x0 with size 1022x17
+25.01.2012 15:26:48 - src/render.c:render_con:247 - Rendering floating windows:
+25.01.2012 15:26:48 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:26:48 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:26:48 - src/x.c:x_push_node:533 - pushing name [i3 con] container around 0x9b1d8d8 for con 0x9b1dae0
+25.01.2012 15:26:48 - src/x.c:x_push_node:626 - setting rect (512, 18, 512, 563)
+25.01.2012 15:26:48 - src/x.c:x_push_node:645 - setting window rect (2, 0, 508, 561)
+25.01.2012 15:26:48 - src/x.c:x_push_node:675 - mapping child window (serial 875)
+25.01.2012 15:26:48 - src/x.c:x_push_node:689 - mapping container 00e0001a (serial 877)
+25.01.2012 15:26:48 - src/x.c:x_push_node:696 - Sending fake configure notify
+25.01.2012 15:26:48 - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (514, 18, 508, 561)
+25.01.2012 15:26:48 - src/x.c:x_push_node:626 - setting rect (0, 18, 512, 563)
+25.01.2012 15:26:48 - src/x.c:x_push_node:645 - setting window rect (2, 0, 508, 550)
+25.01.2012 15:26:48 - src/x.c:x_push_node:696 - Sending fake configure notify
+25.01.2012 15:26:48 - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (2, 18, 508, 550)
+25.01.2012 15:26:48 - src/x.c:x_push_changes:878 - Updating focus (focused: 0x9b1dae0 / #00FF00)
+25.01.2012 15:26:48 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:26:48 - src/tree.c:tree_render:443 - -- END RENDERING --
+25.01.2012 15:26:48 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:26:48 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:26:48 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:26:48 - src/handlers.c:handle_expose_event:614 - window = 00e0001a
+25.01.2012 15:26:48 - src/handlers.c:handle_expose_event:614 - window = 00e0001a
+25.01.2012 15:26:48 - src/handlers.c:handle_expose_event:614 - window = 00e0001a
+25.01.2012 15:26:48 - src/handlers.c:handle_normal_hints:733 - Minimum size: 22 (width) x 17 (height)
+25.01.2012 15:26:48 - src/handlers.c:handle_normal_hints:733 - Minimum size: 22 (width) x 17 (height)
+25.01.2012 15:26:48 - src/handlers.c:handle_normal_hints:733 - Minimum size: 22 (width) x 17 (height)
+25.01.2012 15:26:48 - src/handlers.c:handle_normal_hints:750 - resize increments changed
+25.01.2012 15:26:48 - src/handlers.c:handle_normal_hints:771 - client's base_height changed to 4
+25.01.2012 15:26:48 - src/handlers.c:handle_normal_hints:772 - client's base_width changed to 16
+25.01.2012 15:26:48 - src/tree.c:tree_render:434 - -- BEGIN RENDERING --
+25.01.2012 15:26:48 - src/render.c:render_con:111 - Rendering node 0x9b09a80 / root / layout 0 / children 2 / orient 0
+25.01.2012 15:26:48 - src/render.c:render_con:111 - Rendering node 0x9b09be8 / __i3 / layout 4 / children 1 / orient 0
+25.01.2012 15:26:48 - src/render.c:render_con:111 - Rendering node 0x9b1f0a0 / LVDS1 / layout 4 / children 3 / orient 0
+25.01.2012 15:26:48 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 0)
+25.01.2012 15:26:48 - src/render.c:render_con:111 - Rendering node 0x9b1f1f8 / topdock / layout 3 / children 0 / orient 2
+25.01.2012 15:26:48 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 581)
+25.01.2012 15:26:48 - src/render.c:render_con:111 - Rendering node 0x9b1f390 / content / layout 0 / children 1 / orient 0
+25.01.2012 15:26:48 - src/render.c:render_con:111 - Rendering fullscreen node 0x9b1f720 / 1 / layout 0 / children 2 / orient 1
+25.01.2012 15:26:48 - src/render.c:render_con:372 - child at (0, 18) with (512 x 563)
+25.01.2012 15:26:48 - src/render.c:render_con:111 - Rendering node 0x9b29440 / #ff0000 / layout 0 / children 0 / orient 0
+25.01.2012 15:26:48 - src/render.c:render_con:179 - Lost 11 pixel due to client's height_increment (13 px, base_height = 4)
+25.01.2012 15:26:48 - src/render.c:render_con:186 - Lost 0 pixel due to client's width_increment (6 px, base_width = 16)
+25.01.2012 15:26:48 - src/render.c:render_con:189 - child will be at 2x0 with size 508x550
+25.01.2012 15:26:49 - src/render.c:render_con:372 - child at (512, 18) with (512 x 563)
+25.01.2012 15:26:49 - src/render.c:render_con:111 - Rendering node 0x9b1dae0 / #00FF00 / layout 0 / children 0 / orient 0
+25.01.2012 15:26:49 - src/render.c:render_con:179 - Lost 11 pixel due to client's height_increment (13 px, base_height = 4)
+25.01.2012 15:26:49 - src/render.c:render_con:186 - Lost 0 pixel due to client's width_increment (6 px, base_width = 16)
+25.01.2012 15:26:49 - src/render.c:render_con:189 - child will be at 2x0 with size 508x550
+25.01.2012 15:26:49 - src/render.c:render_l_output:93 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:26:49 - src/render.c:render_con:111 - Rendering node 0x9b1f4e8 / bottomdock / layout 3 / children 1 / orient 2
+25.01.2012 15:26:49 - src/render.c:render_con:372 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:26:49 - src/render.c:render_con:111 - Rendering node 0x9b20cd8 / #aa00aa / layout 0 / children 0 / orient 0
+25.01.2012 15:26:49 - src/render.c:render_con:189 - child will be at 0x0 with size 1022x17
+25.01.2012 15:26:49 - src/render.c:render_con:247 - Rendering floating windows:
+25.01.2012 15:26:49 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:26:49 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:26:49 - src/x.c:x_push_node:645 - setting window rect (2, 0, 508, 550)
+25.01.2012 15:26:49 - src/x.c:x_push_node:696 - Sending fake configure notify
+25.01.2012 15:26:49 - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (514, 18, 508, 550)
+25.01.2012 15:26:49 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:26:49 - src/tree.c:tree_render:443 - -- END RENDERING --
+25.01.2012 15:26:49 - src/handlers.c:handle_normal_hints:733 - Minimum size: 22 (width) x 17 (height)
+25.01.2012 15:26:49 - src/handlers.c:handle_normal_hints:733 - Minimum size: 22 (width) x 17 (height)
+25.01.2012 15:26:49 - src/handlers.c:handle_normal_hints:733 - Minimum size: 22 (width) x 17 (height)
+25.01.2012 15:26:49 - src/handlers.c:handle_key_press:89 - Keypress 113, state raw = 64
+25.01.2012 15:26:49 - src/handlers.c:handle_key_press:93 - (removed numlock, state = 64)
+25.01.2012 15:26:49 - src/handlers.c:handle_key_press:97 - (removed upper 8 bits, state = 64)
+25.01.2012 15:26:49 - src/handlers.c:handle_key_press:102 - (checked mode_switch, state 64)
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:199 - new parser handling: focus left
+25.01.2012 15:26:49 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5640
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:221 - remaining input = focus left
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:227 - trying token 0 = end
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:287 - checking for the end token.
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:227 - trying token 1 = '[
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:227 - trying token 2 = 'move
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:227 - trying token 3 = 'exec
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:227 - trying token 4 = 'exit
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:227 - trying token 5 = 'restart
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:227 - trying token 6 = 'reload
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:227 - trying token 7 = 'border
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:227 - trying token 8 = 'layout
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:227 - trying token 9 = 'append_layout
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:227 - trying token 10 = 'workspace
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:227 - trying token 11 = 'focus
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:221 - remaining input = left
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:227 - trying token 0 = 'left
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:26:49 - src/commands_parser.c:next_state:185 - should call stuff, yay. call_id = 38
+25.01.2012 15:26:49 - src/commands_parser.c:get_string:102 - Getting string direction from stack...
+25.01.2012 15:26:49 - src/commands.c:cmd_MIGRATION_save_new_parameters:114 - saving parameters.
+25.01.2012 15:26:49 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = cmd_focus_direction
+25.01.2012 15:26:49 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = left
+25.01.2012 15:26:49 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:221 - remaining input = 
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:227 - trying token 0 = end
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:287 - checking for the end token.
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:289 - yes, indeed. end
+25.01.2012 15:26:49 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:26:49 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5640
+25.01.2012 15:26:49 - src/commands_parser.c:parse_command:364 - json_output = (null)
+25.01.2012 15:26:49 - COMMAND: *focus left*
+25.01.2012 15:26:49 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5540
+25.01.2012 15:26:49 - src/commands.c:cmd_MIGRATION_save_old_parameters:137 - saving new parameters.
+25.01.2012 15:26:49 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = cmd_focus_direction
+25.01.2012 15:26:49 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = left
+25.01.2012 15:26:49 - src/commands.c:cmd_focus_direction:984 - direction = *left*
+25.01.2012 15:26:49 - src/con.c:con_focus:184 - con_focus = 0x9b29440
+25.01.2012 15:26:49 - src/con.c:con_focus:184 - con_focus = 0x9b1f720
+25.01.2012 15:26:49 - src/con.c:con_focus:184 - con_focus = 0x9b1f390
+25.01.2012 15:26:49 - src/con.c:con_focus:184 - con_focus = 0x9b1f0a0
+25.01.2012 15:26:49 - src/tree.c:tree_render:434 - -- BEGIN RENDERING --
+25.01.2012 15:26:49 - src/render.c:render_con:111 - Rendering node 0x9b09a80 / root / layout 0 / children 2 / orient 0
+25.01.2012 15:26:49 - src/render.c:render_con:111 - Rendering node 0x9b09be8 / __i3 / layout 4 / children 1 / orient 0
+25.01.2012 15:26:49 - src/render.c:render_con:111 - Rendering node 0x9b1f0a0 / LVDS1 / layout 4 / children 3 / orient 0
+25.01.2012 15:26:49 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 0)
+25.01.2012 15:26:49 - src/render.c:render_con:111 - Rendering node 0x9b1f1f8 / topdock / layout 3 / children 0 / orient 2
+25.01.2012 15:26:49 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 581)
+25.01.2012 15:26:49 - src/render.c:render_con:111 - Rendering node 0x9b1f390 / content / layout 0 / children 1 / orient 0
+25.01.2012 15:26:49 - src/render.c:render_con:111 - Rendering fullscreen node 0x9b1f720 / 1 / layout 0 / children 2 / orient 1
+25.01.2012 15:26:49 - src/render.c:render_con:372 - child at (0, 18) with (512 x 563)
+25.01.2012 15:26:49 - src/render.c:render_con:111 - Rendering node 0x9b29440 / #ff0000 / layout 0 / children 0 / orient 0
+25.01.2012 15:26:49 - src/render.c:render_con:179 - Lost 11 pixel due to client's height_increment (13 px, base_height = 4)
+25.01.2012 15:26:49 - src/render.c:render_con:186 - Lost 0 pixel due to client's width_increment (6 px, base_width = 16)
+25.01.2012 15:26:49 - src/render.c:render_con:189 - child will be at 2x0 with size 508x550
+25.01.2012 15:26:49 - src/render.c:render_con:372 - child at (512, 18) with (512 x 563)
+25.01.2012 15:26:49 - src/render.c:render_con:111 - Rendering node 0x9b1dae0 / #00FF00 / layout 0 / children 0 / orient 0
+25.01.2012 15:26:49 - src/render.c:render_con:179 - Lost 11 pixel due to client's height_increment (13 px, base_height = 4)
+25.01.2012 15:26:49 - src/render.c:render_con:186 - Lost 0 pixel due to client's width_increment (6 px, base_width = 16)
+25.01.2012 15:26:49 - src/render.c:render_con:189 - child will be at 2x0 with size 508x550
+25.01.2012 15:26:49 - src/render.c:render_l_output:93 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:26:49 - src/render.c:render_con:111 - Rendering node 0x9b1f4e8 / bottomdock / layout 3 / children 1 / orient 2
+25.01.2012 15:26:49 - src/render.c:render_con:372 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:26:49 - src/render.c:render_con:111 - Rendering node 0x9b20cd8 / #aa00aa / layout 0 / children 0 / orient 0
+25.01.2012 15:26:49 - src/render.c:render_con:189 - child will be at 0x0 with size 1022x17
+25.01.2012 15:26:49 - src/render.c:render_con:247 - Rendering floating windows:
+25.01.2012 15:26:49 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:26:49 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:26:49 - src/x.c:x_push_changes:878 - Updating focus (focused: 0x9b29440 / #ff0000)
+25.01.2012 15:26:49 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:26:49 - src/tree.c:tree_render:443 - -- END RENDERING --
+25.01.2012 15:26:49 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5540
+25.01.2012 15:26:49 - src/commands.c:cmd_MIGRATION_validate:263 - validating the different stacks now
+25.01.2012 15:26:49 - src/commands.c:cmd_MIGRATION_validate:276 - parameter count matching, comparing one by one...
+25.01.2012 15:26:49 - src/commands.c:cmd_MIGRATION_validate:313 - OK
+25.01.2012 15:26:49 - src/handlers.c:handle_focus_in:925 - focus change in, for window 0x01c0000b
+25.01.2012 15:26:49 - src/handlers.c:handle_focus_in:929 - That is con 0x9b29440 / #ff0000
+25.01.2012 15:26:49 - src/handlers.c:handle_focus_in:933 - FocusIn event for grab/ungrab, ignoring
+25.01.2012 15:26:49 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:26:51 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:26:52 - src/handlers.c:handle_key_press:89 - Keypress 114, state raw = 64
+25.01.2012 15:26:52 - src/handlers.c:handle_key_press:93 - (removed numlock, state = 64)
+25.01.2012 15:26:52 - src/handlers.c:handle_key_press:97 - (removed upper 8 bits, state = 64)
+25.01.2012 15:26:52 - src/handlers.c:handle_key_press:102 - (checked mode_switch, state 64)
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:199 - new parser handling: focus right
+25.01.2012 15:26:52 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5640
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:221 - remaining input = focus right
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:227 - trying token 0 = end
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:287 - checking for the end token.
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:227 - trying token 1 = '[
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:227 - trying token 2 = 'move
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:227 - trying token 3 = 'exec
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:227 - trying token 4 = 'exit
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:227 - trying token 5 = 'restart
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:227 - trying token 6 = 'reload
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:227 - trying token 7 = 'border
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:227 - trying token 8 = 'layout
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:227 - trying token 9 = 'append_layout
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:227 - trying token 10 = 'workspace
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:227 - trying token 11 = 'focus
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:221 - remaining input = right
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:227 - trying token 0 = 'left
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:227 - trying token 1 = 'right
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:26:52 - src/commands_parser.c:next_state:185 - should call stuff, yay. call_id = 39
+25.01.2012 15:26:52 - src/commands_parser.c:get_string:102 - Getting string direction from stack...
+25.01.2012 15:26:52 - src/commands.c:cmd_MIGRATION_save_new_parameters:114 - saving parameters.
+25.01.2012 15:26:52 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = cmd_focus_direction
+25.01.2012 15:26:52 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = right
+25.01.2012 15:26:52 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:221 - remaining input = 
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:227 - trying token 0 = end
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:287 - checking for the end token.
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:289 - yes, indeed. end
+25.01.2012 15:26:52 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:26:52 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5640
+25.01.2012 15:26:52 - src/commands_parser.c:parse_command:364 - json_output = (null)
+25.01.2012 15:26:52 - COMMAND: *focus right*
+25.01.2012 15:26:52 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5540
+25.01.2012 15:26:52 - src/commands.c:cmd_MIGRATION_save_old_parameters:137 - saving new parameters.
+25.01.2012 15:26:52 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = cmd_focus_direction
+25.01.2012 15:26:52 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = right
+25.01.2012 15:26:52 - src/commands.c:cmd_focus_direction:984 - direction = *right*
+25.01.2012 15:26:52 - src/con.c:con_focus:184 - con_focus = 0x9b1dae0
+25.01.2012 15:26:52 - src/con.c:con_focus:184 - con_focus = 0x9b1f720
+25.01.2012 15:26:52 - src/con.c:con_focus:184 - con_focus = 0x9b1f390
+25.01.2012 15:26:52 - src/con.c:con_focus:184 - con_focus = 0x9b1f0a0
+25.01.2012 15:26:52 - src/tree.c:tree_render:434 - -- BEGIN RENDERING --
+25.01.2012 15:26:52 - src/render.c:render_con:111 - Rendering node 0x9b09a80 / root / layout 0 / children 2 / orient 0
+25.01.2012 15:26:52 - src/render.c:render_con:111 - Rendering node 0x9b09be8 / __i3 / layout 4 / children 1 / orient 0
+25.01.2012 15:26:52 - src/render.c:render_con:111 - Rendering node 0x9b1f0a0 / LVDS1 / layout 4 / children 3 / orient 0
+25.01.2012 15:26:52 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 0)
+25.01.2012 15:26:52 - src/render.c:render_con:111 - Rendering node 0x9b1f1f8 / topdock / layout 3 / children 0 / orient 2
+25.01.2012 15:26:52 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 581)
+25.01.2012 15:26:52 - src/render.c:render_con:111 - Rendering node 0x9b1f390 / content / layout 0 / children 1 / orient 0
+25.01.2012 15:26:52 - src/render.c:render_con:111 - Rendering fullscreen node 0x9b1f720 / 1 / layout 0 / children 2 / orient 1
+25.01.2012 15:26:52 - src/render.c:render_con:372 - child at (0, 18) with (512 x 563)
+25.01.2012 15:26:52 - src/render.c:render_con:111 - Rendering node 0x9b29440 / #ff0000 / layout 0 / children 0 / orient 0
+25.01.2012 15:26:52 - src/render.c:render_con:179 - Lost 11 pixel due to client's height_increment (13 px, base_height = 4)
+25.01.2012 15:26:52 - src/render.c:render_con:186 - Lost 0 pixel due to client's width_increment (6 px, base_width = 16)
+25.01.2012 15:26:52 - src/render.c:render_con:189 - child will be at 2x0 with size 508x550
+25.01.2012 15:26:52 - src/render.c:render_con:372 - child at (512, 18) with (512 x 563)
+25.01.2012 15:26:52 - src/render.c:render_con:111 - Rendering node 0x9b1dae0 / #00FF00 / layout 0 / children 0 / orient 0
+25.01.2012 15:26:52 - src/render.c:render_con:179 - Lost 11 pixel due to client's height_increment (13 px, base_height = 4)
+25.01.2012 15:26:52 - src/render.c:render_con:186 - Lost 0 pixel due to client's width_increment (6 px, base_width = 16)
+25.01.2012 15:26:52 - src/render.c:render_con:189 - child will be at 2x0 with size 508x550
+25.01.2012 15:26:52 - src/render.c:render_l_output:93 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:26:52 - src/render.c:render_con:111 - Rendering node 0x9b1f4e8 / bottomdock / layout 3 / children 1 / orient 2
+25.01.2012 15:26:52 - src/render.c:render_con:372 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:26:52 - src/render.c:render_con:111 - Rendering node 0x9b20cd8 / #aa00aa / layout 0 / children 0 / orient 0
+25.01.2012 15:26:52 - src/render.c:render_con:189 - child will be at 0x0 with size 1022x17
+25.01.2012 15:26:52 - src/render.c:render_con:247 - Rendering floating windows:
+25.01.2012 15:26:52 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:26:52 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:26:52 - src/x.c:x_push_changes:878 - Updating focus (focused: 0x9b1dae0 / #00FF00)
+25.01.2012 15:26:52 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:26:52 - src/tree.c:tree_render:443 - -- END RENDERING --
+25.01.2012 15:26:52 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5540
+25.01.2012 15:26:52 - src/commands.c:cmd_MIGRATION_validate:263 - validating the different stacks now
+25.01.2012 15:26:52 - src/commands.c:cmd_MIGRATION_validate:276 - parameter count matching, comparing one by one...
+25.01.2012 15:26:52 - src/commands.c:cmd_MIGRATION_validate:313 - OK
+25.01.2012 15:26:52 - src/handlers.c:handle_focus_in:925 - focus change in, for window 0x0260000b
+25.01.2012 15:26:52 - src/handlers.c:handle_focus_in:929 - That is con 0x9b1dae0 / #00FF00
+25.01.2012 15:26:52 - src/handlers.c:handle_focus_in:933 - FocusIn event for grab/ungrab, ignoring
+25.01.2012 15:26:52 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:26:53 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:26:53 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x0260000b (received from 0x0260000b), serial 1066
+25.01.2012 15:26:53 - src/tree.c:tree_close:197 - next = 0x9b29440, focused = 0x9b1dae0
+25.01.2012 15:26:53 - src/tree.c:tree_close:199 - closing 0x9b1dae0, kill_window = 0
+25.01.2012 15:26:53 - src/con.c:con_is_floating:339 - checking if con 0x9b1dae0 is floating
+25.01.2012 15:26:53 - src/tree.c:tree_close:288 - focusing 0x9b29440 / #ff0000
+25.01.2012 15:26:53 - src/con.c:con_focus:184 - con_focus = 0x9b29440
+25.01.2012 15:26:53 - src/con.c:con_focus:184 - con_focus = 0x9b1f720
+25.01.2012 15:26:53 - src/con.c:con_focus:184 - con_focus = 0x9b1f390
+25.01.2012 15:26:53 - src/con.c:con_focus:184 - con_focus = 0x9b1f0a0
+25.01.2012 15:26:53 - src/con.c:con_on_remove_child:1044 - on_remove_child
+25.01.2012 15:26:53 - src/tree.c:tree_render:434 - -- BEGIN RENDERING --
+25.01.2012 15:26:53 - src/render.c:render_con:111 - Rendering node 0x9b09a80 / root / layout 0 / children 2 / orient 0
+25.01.2012 15:26:53 - src/render.c:render_con:111 - Rendering node 0x9b09be8 / __i3 / layout 4 / children 1 / orient 0
+25.01.2012 15:26:53 - src/render.c:render_con:111 - Rendering node 0x9b1f0a0 / LVDS1 / layout 4 / children 3 / orient 0
+25.01.2012 15:26:53 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 0)
+25.01.2012 15:26:53 - src/render.c:render_con:111 - Rendering node 0x9b1f1f8 / topdock / layout 3 / children 0 / orient 2
+25.01.2012 15:26:53 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 581)
+25.01.2012 15:26:53 - src/render.c:render_con:111 - Rendering node 0x9b1f390 / content / layout 0 / children 1 / orient 0
+25.01.2012 15:26:53 - src/render.c:render_con:111 - Rendering fullscreen node 0x9b1f720 / 1 / layout 0 / children 1 / orient 1
+25.01.2012 15:26:53 - src/render.c:render_con:372 - child at (0, 18) with (1024 x 563)
+25.01.2012 15:26:53 - src/render.c:render_con:111 - Rendering node 0x9b29440 / #ff0000 / layout 0 / children 0 / orient 0
+25.01.2012 15:26:53 - src/render.c:render_con:179 - Lost 11 pixel due to client's height_increment (13 px, base_height = 4)
+25.01.2012 15:26:53 - src/render.c:render_con:186 - Lost 2 pixel due to client's width_increment (6 px, base_width = 16)
+25.01.2012 15:26:53 - src/render.c:render_con:189 - child will be at 2x0 with size 1018x550
+25.01.2012 15:26:53 - src/render.c:render_l_output:93 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:26:53 - src/render.c:render_con:111 - Rendering node 0x9b1f4e8 / bottomdock / layout 3 / children 1 / orient 2
+25.01.2012 15:26:53 - src/render.c:render_con:372 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:26:53 - src/render.c:render_con:111 - Rendering node 0x9b20cd8 / #aa00aa / layout 0 / children 0 / orient 0
+25.01.2012 15:26:53 - src/render.c:render_con:189 - child will be at 0x0 with size 1022x17
+25.01.2012 15:26:53 - src/render.c:render_con:247 - Rendering floating windows:
+25.01.2012 15:26:53 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:26:53 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:26:53 - src/x.c:x_push_node:626 - setting rect (0, 18, 1024, 563)
+25.01.2012 15:26:53 - src/x.c:x_push_node:645 - setting window rect (2, 0, 1018, 550)
+25.01.2012 15:26:53 - src/x.c:x_push_node:696 - Sending fake configure notify
+25.01.2012 15:26:53 - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (2, 18, 1018, 550)
+25.01.2012 15:26:53 - src/x.c:x_push_changes:878 - Updating focus (focused: 0x9b29440 / #ff0000)
+25.01.2012 15:26:53 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:26:53 - src/tree.c:tree_render:443 - -- END RENDERING --
+25.01.2012 15:26:53 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:26:53 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:26:53 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:26:53 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x0260000b (received from 0x00e0001a), serial 1066
+25.01.2012 15:26:53 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:26:53 - src/handlers.c:handle_expose_event:614 - window = 00e0001a
+25.01.2012 15:26:53 - expose event for unknown window, ignoring
+25.01.2012 15:26:53 - src/handlers.c:handle_destroy_notify_event:530 - destroy notify for 0x0260000b, 0x0260000b
+25.01.2012 15:26:53 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x0260000b (received from 0x0260000b), serial 1066
+25.01.2012 15:26:53 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:26:53 - src/handlers.c:handle_destroy_notify_event:530 - destroy notify for 0x00e0001a, 0x0260000b
+25.01.2012 15:26:53 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x0260000b (received from 0x00e0001a), serial 1066
+25.01.2012 15:26:53 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:26:53 - src/main.c:xcb_check_cb:118 - Expected X11 Error received for sequence 42c
+25.01.2012 15:26:53 - src/main.c:xcb_check_cb:118 - Expected X11 Error received for sequence 42d
+25.01.2012 15:26:53 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x00e0001a (received from 0x00e0001a), serial 1070
+25.01.2012 15:26:53 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:26:53 - src/handlers.c:handle_enter_notify:172 - enter_notify for 000000aa, mode = 0, detail 2, serial 1070
+25.01.2012 15:26:53 - src/handlers.c:handle_enter_notify:173 - coordinates 512, 300
+25.01.2012 15:26:53 - src/handlers.c:handle_enter_notify:194 - Getting screen at 512 x 300
+25.01.2012 15:26:53 - src/randr.c:get_output_containing:84 - comparing x=512 y=300 with x=0 and y=0 width 1024 height 600
+25.01.2012 15:26:53 - src/workspace.c:_workspace_show:205 - Not switching, already there.
+25.01.2012 15:26:53 - src/con.c:con_focus:184 - con_focus = 0x9b29440
+25.01.2012 15:26:53 - src/con.c:con_focus:184 - con_focus = 0x9b1f720
+25.01.2012 15:26:53 - src/con.c:con_focus:184 - con_focus = 0x9b1f390
+25.01.2012 15:26:53 - src/con.c:con_focus:184 - con_focus = 0x9b1f0a0
+25.01.2012 15:26:53 - src/handlers.c:handle_destroy_notify_event:530 - destroy notify for 0x00e0001a, 0x00e0001a
+25.01.2012 15:26:53 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x00e0001a (received from 0x00e0001a), serial 1070
+25.01.2012 15:26:53 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:26:53 - src/handlers.c:handle_normal_hints:733 - Minimum size: 22 (width) x 17 (height)
+25.01.2012 15:26:53 - src/handlers.c:handle_normal_hints:733 - Minimum size: 22 (width) x 17 (height)
+25.01.2012 15:26:53 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:26:53 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:26:53 - src/handlers.c:handle_key_press:89 - Keypress 27, state raw = 64
+25.01.2012 15:26:53 - src/handlers.c:handle_key_press:93 - (removed numlock, state = 64)
+25.01.2012 15:26:53 - src/handlers.c:handle_key_press:97 - (removed upper 8 bits, state = 64)
+25.01.2012 15:26:53 - src/handlers.c:handle_key_press:102 - (checked mode_switch, state 64)
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:199 - new parser handling: exec dmenu_run #bashrun2 # dmenu_run
+25.01.2012 15:26:53 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5640
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:221 - remaining input = exec dmenu_run #bashrun2 # dmenu_run
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:227 - trying token 0 = end
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:287 - checking for the end token.
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:227 - trying token 1 = '[
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:227 - trying token 2 = 'move
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:227 - trying token 3 = 'exec
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:221 - remaining input = dmenu_run #bashrun2 # dmenu_run
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:227 - trying token 0 = '--no-startup-id
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:227 - trying token 1 = string
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:246 - parsing this as a string
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:275 - str is "dmenu_run #bashrun2 # dmenu_run"
+25.01.2012 15:26:53 - src/commands_parser.c:next_state:185 - should call stuff, yay. call_id = 37
+25.01.2012 15:26:53 - src/commands_parser.c:get_string:102 - Getting string command from stack...
+25.01.2012 15:26:53 - src/commands_parser.c:get_string:102 - Getting string nosn from stack...
+25.01.2012 15:26:53 - src/commands.c:cmd_MIGRATION_save_new_parameters:114 - saving parameters.
+25.01.2012 15:26:53 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = cmd_exec
+25.01.2012 15:26:53 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = (null)
+25.01.2012 15:26:53 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = dmenu_run #bashrun2 # dmenu_run
+25.01.2012 15:26:53 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:221 - remaining input = 
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:227 - trying token 0 = end
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:287 - checking for the end token.
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:289 - yes, indeed. end
+25.01.2012 15:26:53 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:26:53 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5640
+25.01.2012 15:26:53 - src/commands_parser.c:parse_command:364 - json_output = (null)
+25.01.2012 15:26:53 - COMMAND: *exec dmenu_run #bashrun2 # dmenu_run*
+25.01.2012 15:26:53 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5540
+25.01.2012 15:26:53 - src/commands.c:cmd_MIGRATION_save_old_parameters:137 - saving new parameters.
+25.01.2012 15:26:53 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = cmd_exec
+25.01.2012 15:26:53 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = (null)
+25.01.2012 15:26:53 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = dmenu_run #bashrun2 # dmenu_run
+25.01.2012 15:26:53 - src/commands.c:cmd_exec:968 - should execute dmenu_run #bashrun2 # dmenu_run, no_startup_id = 0
+25.01.2012 15:26:53 - startup id = i3/dmenu_run/25188-7-localhorst_TIME1260764
+25.01.2012 15:26:53 - executing: dmenu_run #bashrun2 # dmenu_run
+25.01.2012 15:26:53 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5540
+25.01.2012 15:26:53 - src/commands.c:cmd_MIGRATION_validate:263 - validating the different stacks now
+25.01.2012 15:26:53 - src/commands.c:cmd_MIGRATION_validate:276 - parameter count matching, comparing one by one...
+25.01.2012 15:26:53 - src/commands.c:cmd_MIGRATION_validate:313 - OK
+25.01.2012 15:26:53 - src/handlers.c:handle_destroy_notify_event:530 - destroy notify for 0x00e0001d, 0x00e0001d
+25.01.2012 15:26:53 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x00e0001d (received from 0x00e0001d), serial 1129
+25.01.2012 15:26:53 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:26:53 - src/handlers.c:handle_focus_in:925 - focus change in, for window 0x01c0000b
+25.01.2012 15:26:53 - src/handlers.c:handle_focus_in:929 - That is con 0x9b29440 / #ff0000
+25.01.2012 15:26:53 - src/handlers.c:handle_focus_in:933 - FocusIn event for grab/ungrab, ignoring
+25.01.2012 15:26:54 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:26:58 - src/handlers.c:handle_focus_in:925 - focus change in, for window 0x01c0000b
+25.01.2012 15:26:58 - src/handlers.c:handle_focus_in:929 - That is con 0x9b29440 / #ff0000
+25.01.2012 15:26:58 - src/handlers.c:handle_focus_in:933 - FocusIn event for grab/ungrab, ignoring
+25.01.2012 15:26:58 - src/handlers.c:handle_expose_event:614 - window = 00e0000a
+25.01.2012 15:27:00 - src/handlers.c:handle_configure_request:338 - window 0x02600024 wants to be at 0x0 with 10x17
+25.01.2012 15:27:00 - src/handlers.c:handle_configure_request:343 - Configure request for unmanaged window, can do that.
+25.01.2012 15:27:00 - src/handlers.c:handle_configure_request:338 - window 0x02600024 wants to be at 0x0 with 244x17
+25.01.2012 15:27:00 - src/handlers.c:handle_configure_request:343 - Configure request for unmanaged window, can do that.
+25.01.2012 15:27:01 - src/handlers.c:handle_map_request:318 - window = 0x02600024, serial is 1132.
+25.01.2012 15:27:01 - src/manage.c:manage_window:148 - Managing window 0x02600024
+25.01.2012 15:27:01 - WM_CLASS changed to bashrun2-run-dialog (instance), XTerm (class)
+25.01.2012 15:27:01 - WM_NAME changed to "bash"
+25.01.2012 15:27:01 - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+25.01.2012 15:27:01 - src/window.c:window_update_name:56 - _NET_WM_NAME not specified, not changing
+25.01.2012 15:27:01 - src/window.c:window_update_leader:166 - Client leader changed to 02600024
+25.01.2012 15:27:01 - src/window.c:window_update_transient_for:179 - TRANSIENT_FOR not set.
+25.01.2012 15:27:01 - src/window.c:window_update_strut_partial:203 - _NET_WM_STRUT_PARTIAL not set.
+25.01.2012 15:27:01 - src/window.c:window_update_role:228 - WM_WINDOW_ROLE not set.
+25.01.2012 15:27:01 - WM_HINTS.input changed to "1"
+25.01.2012 15:27:01 - src/startup.c:startup_workspace_for_window:217 - No _NET_STARTUP_ID set on this window
+25.01.2012 15:27:01 - src/startup.c:startup_workspace_for_window:223 - Checking leader window 0x02600024
+25.01.2012 15:27:01 - src/startup.c:startup_workspace_for_window:227 - No _NET_STARTUP_ID set on the leader either
+25.01.2012 15:27:01 - src/manage.c:manage_window:178 - startup workspace = (null)
+25.01.2012 15:27:01 - src/manage.c:manage_window:216 - Initial geometry: (0, 0, 244, 17)
+25.01.2012 15:27:01 - Checking window 0x02600024 (class XTerm)
+25.01.2012 15:27:01 - dock status does not match
+25.01.2012 15:27:01 - Checking window 0x02600024 (class XTerm)
+25.01.2012 15:27:01 - dock status does not match
+25.01.2012 15:27:01 - Checking window 0x02600024 (class XTerm)
+25.01.2012 15:27:01 - Regular expression "Pidgin" does not match "XTerm"
+25.01.2012 15:27:01 - Checking window 0x02600024 (class XTerm)
+25.01.2012 15:27:01 - Regular expression "Skype" does not match "XTerm"
+25.01.2012 15:27:01 - src/tree.c:tree_open_con:147 - con = 0x9b1f720
+25.01.2012 15:27:01 - src/con.c:con_new:43 - opening window 2
+25.01.2012 15:27:01 - src/con.c:con_new:46 - color #0000FF
+25.01.2012 15:27:01 - src/x.c:x_con_init:112 - adding new state for window id 0x00e0001e
+25.01.2012 15:27:01 - src/con.c:con_attach:151 - Inserting con = 0x9b1e7d0 after last focused tiling con 0x9b29440
+25.01.2012 15:27:01 - src/manage.c:manage_window:263 - new container = 0x9b1e7d0
+25.01.2012 15:27:01 - src/x.c:x_reinit:129 - resetting state 0x9b1e8d8 to initial
+25.01.2012 15:27:01 - src/manage.c:manage_window:280 - Not in fullscreen mode, focusing
+25.01.2012 15:27:01 - workspace visible? fs = 0x9b1f720, ws = 0x9b1f720
+25.01.2012 15:27:01 - src/con.c:con_focus:184 - con_focus = 0x9b1e7d0
+25.01.2012 15:27:01 - src/con.c:con_focus:184 - con_focus = 0x9b1f720
+25.01.2012 15:27:01 - src/con.c:con_focus:184 - con_focus = 0x9b1f390
+25.01.2012 15:27:01 - src/con.c:con_focus:184 - con_focus = 0x9b1f0a0
+25.01.2012 15:27:01 - src/assignments.c:run_assignments:18 - Checking if any assignments match this window
+25.01.2012 15:27:01 - Checking window 0x02600024 (class XTerm)
+25.01.2012 15:27:01 - Regular expression "Pidgin" does not match "XTerm"
+25.01.2012 15:27:01 - Checking window 0x02600024 (class XTerm)
+25.01.2012 15:27:01 - Regular expression "Skype" does not match "XTerm"
+25.01.2012 15:27:01 - Checking window 0x02600024 (class XTerm)
+25.01.2012 15:27:01 - Regular expression "Tilda" does not match "XTerm"
+25.01.2012 15:27:01 - Checking window 0x02600024 (class XTerm)
+25.01.2012 15:27:01 - Regular expression "Tilda" does not match "XTerm"
+25.01.2012 15:27:01 - Checking window 0x02600024 (class XTerm)
+25.01.2012 15:27:01 - Regular expression "XTerm" matches "XTerm"
+25.01.2012 15:27:01 - window class matches (XTerm)
+25.01.2012 15:27:01 - src/assignments.c:run_assignments:39 - matching assignment, would do:
+25.01.2012 15:27:01 - src/assignments.c:run_assignments:41 - execute command border none
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:199 - new parser handling: [id="39845924"] border none
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5640
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:221 - remaining input = [id="39845924"] border none
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 0 = end
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:287 - checking for the end token.
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 1 = '[
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:27:01 - src/commands_parser.c:next_state:185 - should call stuff, yay. call_id = 55
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5640
+25.01.2012 15:27:01 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:221 - remaining input = id="39845924"] border none
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 0 = 'class
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 1 = 'instance
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 2 = 'window_role
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 3 = 'con_id
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 4 = 'id
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:221 - remaining input = ="39845924"] border none
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 0 = '=
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:221 - remaining input = "39845924"] border none
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 0 = word
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:246 - parsing this as a string
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:275 - str is "39845924"
+25.01.2012 15:27:01 - src/commands_parser.c:next_state:185 - should call stuff, yay. call_id = 25
+25.01.2012 15:27:01 - src/commands_parser.c:get_string:102 - Getting string cvalue from stack...
+25.01.2012 15:27:01 - src/commands_parser.c:get_string:102 - Getting string ctype from stack...
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_new_parameters:114 - saving parameters.
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = cmd_criteria_add
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_add:407 - ctype=*id*, cvalue=*39845924*
+25.01.2012 15:27:01 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:221 - remaining input = ] border none
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 0 = 'class
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 1 = 'instance
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 2 = 'window_role
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 3 = 'con_id
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 4 = 'id
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 5 = 'con_mark
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 6 = 'title
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 7 = ']
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:27:01 - src/commands_parser.c:next_state:185 - should call stuff, yay. call_id = 6
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_new_parameters:114 - saving parameters.
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = cmd_criteria_match_windows
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:356 - match specification finished, matching...
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b09a80 / root matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b09be8 / __i3 matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1cee8 / content matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1d060 / __i3_scratch matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f0a0 / LVDS1 matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f1f8 / topdock matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f390 / content matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f4e8 / bottomdock matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f720 / 1 matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b20cd8 / #aa00aa matches
+25.01.2012 15:27:01 - Checking window 0x01200007 (class i3bar)
+25.01.2012 15:27:01 - window id does not match
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:385 - doesnt match
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b29440 / #ff0000 matches
+25.01.2012 15:27:01 - Checking window 0x01c0000b (class URxvt)
+25.01.2012 15:27:01 - window id does not match
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:385 - doesnt match
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1e7d0 / #0000FF matches
+25.01.2012 15:27:01 - Checking window 0x02600024 (class XTerm)
+25.01.2012 15:27:01 - match made by window id (39845924)
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:382 - matches window!
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:392 - matching: 0x9b1e7d0 / #0000FF
+25.01.2012 15:27:01 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:221 - remaining input = border none
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 0 = end
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:287 - checking for the end token.
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 1 = '[
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 2 = 'move
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 3 = 'exec
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 4 = 'exit
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 5 = 'restart
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 6 = 'reload
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 7 = 'border
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:221 - remaining input = none
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 0 = 'normal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 1 = 'none
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:27:01 - src/commands_parser.c:next_state:185 - should call stuff, yay. call_id = 10
+25.01.2012 15:27:01 - src/commands_parser.c:get_string:102 - Getting string border_style from stack...
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_new_parameters:114 - saving parameters.
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = cmd_border
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = none
+25.01.2012 15:27:01 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:221 - remaining input = 
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 0 = end
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:287 - checking for the end token.
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:289 - yes, indeed. end
+25.01.2012 15:27:01 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5640
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:364 - json_output = (null)
+25.01.2012 15:27:01 - COMMAND: *[id="39845924"] border none*
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5540
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_old_parameters:137 - saving new parameters.
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = cmd_criteria_add
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_add:407 - ctype=*id*, cvalue=*39845924*
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_old_parameters:137 - saving new parameters.
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = cmd_criteria_match_windows
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:356 - match specification finished, matching...
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b09a80 / root matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b09be8 / __i3 matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1cee8 / content matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1d060 / __i3_scratch matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f0a0 / LVDS1 matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f1f8 / topdock matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f390 / content matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f4e8 / bottomdock matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f720 / 1 matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b20cd8 / #aa00aa matches
+25.01.2012 15:27:01 - Checking window 0x01200007 (class i3bar)
+25.01.2012 15:27:01 - window id does not match
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:385 - doesnt match
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b29440 / #ff0000 matches
+25.01.2012 15:27:01 - Checking window 0x01c0000b (class URxvt)
+25.01.2012 15:27:01 - window id does not match
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:385 - doesnt match
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1e7d0 / #0000FF matches
+25.01.2012 15:27:01 - Checking window 0x02600024 (class XTerm)
+25.01.2012 15:27:01 - match made by window id (39845924)
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:382 - matches window!
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:392 - matching: 0x9b1e7d0 / #0000FF
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_old_parameters:137 - saving new parameters.
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = cmd_border
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = none
+25.01.2012 15:27:01 - src/commands.c:cmd_border:638 - border style should be changed to none
+25.01.2012 15:27:01 - src/commands.c:cmd_border:644 - matching: 0x9b1e7d0 / #0000FF
+25.01.2012 15:27:01 - src/con.c:con_is_floating:339 - checking if con 0x9b1e7d0 is floating
+25.01.2012 15:27:01 - src/tree.c:tree_render:434 - -- BEGIN RENDERING --
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b09a80 / root / layout 0 / children 2 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b09be8 / __i3 / layout 4 / children 1 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1f0a0 / LVDS1 / layout 4 / children 3 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 0)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1f1f8 / topdock / layout 3 / children 0 / orient 2
+25.01.2012 15:27:01 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 581)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1f390 / content / layout 0 / children 1 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering fullscreen node 0x9b1f720 / 1 / layout 0 / children 2 / orient 1
+25.01.2012 15:27:01 - src/render.c:render_con:372 - child at (0, 18) with (512 x 563)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b29440 / #ff0000 / layout 0 / children 0 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:179 - Lost 11 pixel due to client's height_increment (13 px, base_height = 4)
+25.01.2012 15:27:01 - src/render.c:render_con:186 - Lost 0 pixel due to client's width_increment (6 px, base_width = 16)
+25.01.2012 15:27:01 - src/render.c:render_con:189 - child will be at 2x0 with size 508x550
+25.01.2012 15:27:01 - src/render.c:render_con:372 - child at (512, 0) with (512 x 581)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1e7d0 / #0000FF / layout 0 / children 0 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:189 - child will be at 0x0 with size 510x579
+25.01.2012 15:27:01 - src/render.c:render_l_output:93 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1f4e8 / bottomdock / layout 3 / children 1 / orient 2
+25.01.2012 15:27:01 - src/render.c:render_con:372 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b20cd8 / #aa00aa / layout 0 / children 0 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:189 - child will be at 0x0 with size 1022x17
+25.01.2012 15:27:01 - src/render.c:render_con:247 - Rendering floating windows:
+25.01.2012 15:27:01 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:27:01 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:27:01 - src/x.c:x_push_node:533 - pushing name [i3 con] container around 0x9b1e5a0 for con 0x9b1e7d0
+25.01.2012 15:27:01 - src/x.c:x_push_node:626 - setting rect (512, 0, 512, 581)
+25.01.2012 15:27:01 - src/x.c:x_push_node:645 - setting window rect (0, 0, 510, 579)
+25.01.2012 15:27:01 - src/x.c:x_push_node:675 - mapping child window (serial 1175)
+25.01.2012 15:27:01 - src/x.c:x_push_node:689 - mapping container 00e0001e (serial 1177)
+25.01.2012 15:27:01 - src/x.c:x_push_node:696 - Sending fake configure notify
+25.01.2012 15:27:01 - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (512, 0, 510, 579)
+25.01.2012 15:27:01 - src/x.c:x_push_node:626 - setting rect (0, 18, 512, 563)
+25.01.2012 15:27:01 - src/x.c:x_push_node:645 - setting window rect (2, 0, 508, 550)
+25.01.2012 15:27:01 - src/x.c:x_push_node:696 - Sending fake configure notify
+25.01.2012 15:27:01 - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (2, 18, 508, 550)
+25.01.2012 15:27:01 - src/x.c:x_push_changes:878 - Updating focus (focused: 0x9b1e7d0 / #0000FF)
+25.01.2012 15:27:01 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:27:01 - src/tree.c:tree_render:443 - -- END RENDERING --
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5540
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_validate:263 - validating the different stacks now
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_validate:276 - parameter count matching, comparing one by one...
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_validate:313 - OK
+25.01.2012 15:27:01 - Checking window 0x02600024 (class XTerm)
+25.01.2012 15:27:01 - Regular expression "XTerm" matches "XTerm"
+25.01.2012 15:27:01 - window class matches (XTerm)
+25.01.2012 15:27:01 - src/assignments.c:run_assignments:39 - matching assignment, would do:
+25.01.2012 15:27:01 - src/assignments.c:run_assignments:41 - execute command floating enable
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:199 - new parser handling: [id="39845924"] floating enable
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5640
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:221 - remaining input = [id="39845924"] floating enable
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 0 = end
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:287 - checking for the end token.
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 1 = '[
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:27:01 - src/commands_parser.c:next_state:185 - should call stuff, yay. call_id = 55
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5640
+25.01.2012 15:27:01 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:221 - remaining input = id="39845924"] floating enable
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 0 = 'class
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 1 = 'instance
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 2 = 'window_role
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 3 = 'con_id
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 4 = 'id
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:221 - remaining input = ="39845924"] floating enable
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 0 = '=
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:221 - remaining input = "39845924"] floating enable
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 0 = word
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:246 - parsing this as a string
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:275 - str is "39845924"
+25.01.2012 15:27:01 - src/commands_parser.c:next_state:185 - should call stuff, yay. call_id = 25
+25.01.2012 15:27:01 - src/commands_parser.c:get_string:102 - Getting string cvalue from stack...
+25.01.2012 15:27:01 - src/commands_parser.c:get_string:102 - Getting string ctype from stack...
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_new_parameters:114 - saving parameters.
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = cmd_criteria_add
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_add:407 - ctype=*id*, cvalue=*39845924*
+25.01.2012 15:27:01 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:221 - remaining input = ] floating enable
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 0 = 'class
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 1 = 'instance
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 2 = 'window_role
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 3 = 'con_id
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 4 = 'id
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 5 = 'con_mark
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 6 = 'title
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 7 = ']
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:27:01 - src/commands_parser.c:next_state:185 - should call stuff, yay. call_id = 6
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_new_parameters:114 - saving parameters.
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = cmd_criteria_match_windows
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:356 - match specification finished, matching...
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b09a80 / root matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b09be8 / __i3 matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1cee8 / content matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1d060 / __i3_scratch matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f0a0 / LVDS1 matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f1f8 / topdock matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f390 / content matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f4e8 / bottomdock matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f720 / 1 matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b20cd8 / #aa00aa matches
+25.01.2012 15:27:01 - Checking window 0x01200007 (class i3bar)
+25.01.2012 15:27:01 - window id does not match
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:385 - doesnt match
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b29440 / #ff0000 matches
+25.01.2012 15:27:01 - Checking window 0x01c0000b (class URxvt)
+25.01.2012 15:27:01 - window id does not match
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:385 - doesnt match
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1e7d0 / #0000FF matches
+25.01.2012 15:27:01 - Checking window 0x02600024 (class XTerm)
+25.01.2012 15:27:01 - match made by window id (39845924)
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:382 - matches window!
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:392 - matching: 0x9b1e7d0 / #0000FF
+25.01.2012 15:27:01 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:221 - remaining input = floating enable
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 0 = end
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:287 - checking for the end token.
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 1 = '[
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 2 = 'move
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 3 = 'exec
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 4 = 'exit
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 5 = 'restart
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 6 = 'reload
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 7 = 'border
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 8 = 'layout
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 9 = 'append_layout
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 10 = 'workspace
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 11 = 'focus
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 12 = 'kill
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 13 = 'open
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 14 = 'fullscreen
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 15 = 'split
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 16 = 'floating
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:221 - remaining input = enable
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 0 = 'enable
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:27:01 - src/commands_parser.c:next_state:185 - should call stuff, yay. call_id = 26
+25.01.2012 15:27:01 - src/commands_parser.c:get_string:102 - Getting string floating from stack...
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_new_parameters:114 - saving parameters.
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = cmd_floating
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = enable
+25.01.2012 15:27:01 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:221 - remaining input = 
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:227 - trying token 0 = end
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:287 - checking for the end token.
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:289 - yes, indeed. end
+25.01.2012 15:27:01 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5640
+25.01.2012 15:27:01 - src/commands_parser.c:parse_command:364 - json_output = (null)
+25.01.2012 15:27:01 - COMMAND: *[id="39845924"] floating enable*
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5540
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_old_parameters:137 - saving new parameters.
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = cmd_criteria_add
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_add:407 - ctype=*id*, cvalue=*39845924*
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_old_parameters:137 - saving new parameters.
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = cmd_criteria_match_windows
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:356 - match specification finished, matching...
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b09a80 / root matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b09be8 / __i3 matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1cee8 / content matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1d060 / __i3_scratch matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f0a0 / LVDS1 matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f1f8 / topdock matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f390 / content matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f4e8 / bottomdock matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1f720 / 1 matches
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b20cd8 / #aa00aa matches
+25.01.2012 15:27:01 - Checking window 0x01200007 (class i3bar)
+25.01.2012 15:27:01 - window id does not match
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:385 - doesnt match
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b29440 / #ff0000 matches
+25.01.2012 15:27:01 - Checking window 0x01c0000b (class URxvt)
+25.01.2012 15:27:01 - window id does not match
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:385 - doesnt match
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:368 - checking if con 0x9b1e7d0 / #0000FF matches
+25.01.2012 15:27:01 - Checking window 0x02600024 (class XTerm)
+25.01.2012 15:27:01 - match made by window id (39845924)
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:382 - matches window!
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_match_windows:392 - matching: 0x9b1e7d0 / #0000FF
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_old_parameters:137 - saving new parameters.
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = cmd_floating
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = enable
+25.01.2012 15:27:01 - src/commands.c:cmd_floating:844 - floating_mode=enable
+25.01.2012 15:27:01 - src/commands.c:cmd_floating:849 - matching: 0x9b1e7d0 / #0000FF
+25.01.2012 15:27:01 - src/commands.c:cmd_floating:854 - should switch mode to enable
+25.01.2012 15:27:01 - src/con.c:con_is_floating:339 - checking if con 0x9b1e7d0 is floating
+25.01.2012 15:27:01 - src/con.c:con_new:43 - opening window 3
+25.01.2012 15:27:01 - src/con.c:con_new:46 - color #ff00ff
+25.01.2012 15:27:01 - src/x.c:x_con_init:112 - adding new state for window id 0x00e00021
+25.01.2012 15:27:01 - src/floating.c:floating_enable:108 - Original rect: (512, 0) with 512 x 581
+25.01.2012 15:27:01 - src/floating.c:floating_enable:109 - Geometry = (0, 0) with 244 x 17
+25.01.2012 15:27:01 - src/floating.c:floating_enable:143 - Centering above leader
+25.01.2012 15:27:01 - src/randr.c:get_output_containing:84 - comparing x=643 y=254 with x=0 and y=0 width 1024 height 600
+25.01.2012 15:27:01 - src/floating.c:floating_enable:168 - Floating rect: (643, 254) with 250 x 72
+25.01.2012 15:27:01 - src/floating.c:floating_enable:185 - Corrected y = 254 (deco_height = 0)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b2bd78 / #ff00ff / layout 0 / children 1 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:372 - child at (643, 254) with (250 x 72)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1e7d0 / #0000FF / layout 0 / children 0 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:189 - child will be at 0x0 with size 248x70
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1e7d0 / #0000FF / layout 0 / children 0 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:189 - child will be at 0x0 with size 248x70
+25.01.2012 15:27:01 - src/con.c:con_focus:184 - con_focus = 0x9b1e7d0
+25.01.2012 15:27:01 - src/con.c:con_focus:184 - con_focus = 0x9b2bd78
+25.01.2012 15:27:01 - src/con.c:con_focus:184 - con_focus = 0x9b1f720
+25.01.2012 15:27:01 - src/con.c:con_focus:184 - con_focus = 0x9b1f390
+25.01.2012 15:27:01 - src/con.c:con_focus:184 - con_focus = 0x9b1f0a0
+25.01.2012 15:27:01 - src/randr.c:get_output_containing:84 - comparing x=768 y=290 with x=0 and y=0 width 1024 height 600
+25.01.2012 15:27:01 - src/floating.c:floating_maybe_reassign_ws:296 - still the same ws
+25.01.2012 15:27:01 - src/randr.c:get_output_containing:84 - comparing x=643 y=254 with x=0 and y=0 width 1024 height 600
+25.01.2012 15:27:01 - src/tree.c:tree_render:434 - -- BEGIN RENDERING --
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b09a80 / root / layout 0 / children 2 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b09be8 / __i3 / layout 4 / children 1 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1f0a0 / LVDS1 / layout 4 / children 3 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 0)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1f1f8 / topdock / layout 3 / children 0 / orient 2
+25.01.2012 15:27:01 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 581)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1f390 / content / layout 0 / children 1 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering fullscreen node 0x9b1f720 / 1 / layout 0 / children 1 / orient 1
+25.01.2012 15:27:01 - src/render.c:render_con:372 - child at (0, 18) with (1024 x 563)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b29440 / #ff0000 / layout 0 / children 0 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:179 - Lost 11 pixel due to client's height_increment (13 px, base_height = 4)
+25.01.2012 15:27:01 - src/render.c:render_con:186 - Lost 2 pixel due to client's width_increment (6 px, base_width = 16)
+25.01.2012 15:27:01 - src/render.c:render_con:189 - child will be at 2x0 with size 1018x550
+25.01.2012 15:27:01 - src/render.c:render_l_output:93 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1f4e8 / bottomdock / layout 3 / children 1 / orient 2
+25.01.2012 15:27:01 - src/render.c:render_con:372 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b20cd8 / #aa00aa / layout 0 / children 0 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:189 - child will be at 0x0 with size 1022x17
+25.01.2012 15:27:01 - src/render.c:render_con:247 - Rendering floating windows:
+25.01.2012 15:27:01 - src/render.c:render_con:278 - floating child at (643,254) with 250 x 72
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b2bd78 / #ff00ff / layout 0 / children 1 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:372 - child at (643, 254) with (250 x 72)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1e7d0 / #0000FF / layout 0 / children 0 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:189 - child will be at 0x0 with size 248x70
+25.01.2012 15:27:01 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:27:01 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:27:01 - src/x.c:x_push_node:533 - pushing name [i3 con] floatingcon around 0x9b1e7d0 for con 0x9b2bd78
+25.01.2012 15:27:01 - src/x.c:x_push_node:626 - setting rect (643, 254, 250, 72)
+25.01.2012 15:27:01 - src/x.c:x_push_node:645 - setting window rect (0, 0, 248, 70)
+25.01.2012 15:27:01 - src/x.c:x_push_node:696 - Sending fake configure notify
+25.01.2012 15:27:01 - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (643, 254, 248, 70)
+25.01.2012 15:27:01 - src/x.c:x_push_node:626 - setting rect (0, 18, 1024, 563)
+25.01.2012 15:27:01 - src/x.c:x_push_node:645 - setting window rect (2, 0, 1018, 550)
+25.01.2012 15:27:01 - src/x.c:x_push_node:696 - Sending fake configure notify
+25.01.2012 15:27:01 - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (2, 18, 1018, 550)
+25.01.2012 15:27:01 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:27:01 - src/tree.c:tree_render:443 - -- END RENDERING --
+25.01.2012 15:27:01 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5540
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_validate:263 - validating the different stacks now
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_validate:276 - parameter count matching, comparing one by one...
+25.01.2012 15:27:01 - src/commands.c:cmd_MIGRATION_validate:313 - OK
+25.01.2012 15:27:01 - src/tree.c:tree_render:434 - -- BEGIN RENDERING --
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b09a80 / root / layout 0 / children 2 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b09be8 / __i3 / layout 4 / children 1 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1f0a0 / LVDS1 / layout 4 / children 3 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 0)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1f1f8 / topdock / layout 3 / children 0 / orient 2
+25.01.2012 15:27:01 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 581)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1f390 / content / layout 0 / children 1 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering fullscreen node 0x9b1f720 / 1 / layout 0 / children 1 / orient 1
+25.01.2012 15:27:01 - src/render.c:render_con:372 - child at (0, 18) with (1024 x 563)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b29440 / #ff0000 / layout 0 / children 0 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:179 - Lost 11 pixel due to client's height_increment (13 px, base_height = 4)
+25.01.2012 15:27:01 - src/render.c:render_con:186 - Lost 2 pixel due to client's width_increment (6 px, base_width = 16)
+25.01.2012 15:27:01 - src/render.c:render_con:189 - child will be at 2x0 with size 1018x550
+25.01.2012 15:27:01 - src/render.c:render_l_output:93 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1f4e8 / bottomdock / layout 3 / children 1 / orient 2
+25.01.2012 15:27:01 - src/render.c:render_con:372 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b20cd8 / #aa00aa / layout 0 / children 0 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:189 - child will be at 0x0 with size 1022x17
+25.01.2012 15:27:01 - src/render.c:render_con:247 - Rendering floating windows:
+25.01.2012 15:27:01 - src/render.c:render_con:278 - floating child at (643,254) with 250 x 72
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b2bd78 / #ff00ff / layout 0 / children 1 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:372 - child at (643, 254) with (250 x 72)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1e7d0 / #0000FF / layout 0 / children 0 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:189 - child will be at 0x0 with size 248x70
+25.01.2012 15:27:01 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:27:01 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:27:01 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:27:01 - src/tree.c:tree_render:443 - -- END RENDERING --
+25.01.2012 15:27:01 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:27:01 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:27:01 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:27:01 - ClientMessage for window 0x02600024
+25.01.2012 15:27:01 - src/handlers.c:handle_client_message:691 - unhandled clientmessage
+25.01.2012 15:27:01 - src/handlers.c:handle_configure_request:338 - window 0x02600024 wants to be at 0x0 with 244x17
+25.01.2012 15:27:01 - src/handlers.c:handle_configure_request:369 - Configure request!
+25.01.2012 15:27:01 - src/con.c:con_is_floating:339 - checking if con 0x9b1e7d0 is floating
+25.01.2012 15:27:01 - src/handlers.c:handle_configure_request:405 - Container is a floating leaf node, will do that.
+25.01.2012 15:27:01 - src/randr.c:get_output_containing:84 - comparing x=768 y=290 with x=0 and y=0 width 1024 height 600
+25.01.2012 15:27:01 - src/randr.c:get_output_containing:84 - comparing x=768 y=290 with x=0 and y=0 width 1024 height 600
+25.01.2012 15:27:01 - src/floating.c:floating_maybe_reassign_ws:296 - still the same ws
+25.01.2012 15:27:01 - src/tree.c:tree_render:434 - -- BEGIN RENDERING --
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b09a80 / root / layout 0 / children 2 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b09be8 / __i3 / layout 4 / children 1 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1f0a0 / LVDS1 / layout 4 / children 3 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 0)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1f1f8 / topdock / layout 3 / children 0 / orient 2
+25.01.2012 15:27:01 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 581)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1f390 / content / layout 0 / children 1 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering fullscreen node 0x9b1f720 / 1 / layout 0 / children 1 / orient 1
+25.01.2012 15:27:01 - src/render.c:render_con:372 - child at (0, 18) with (1024 x 563)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b29440 / #ff0000 / layout 0 / children 0 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:179 - Lost 11 pixel due to client's height_increment (13 px, base_height = 4)
+25.01.2012 15:27:01 - src/render.c:render_con:186 - Lost 2 pixel due to client's width_increment (6 px, base_width = 16)
+25.01.2012 15:27:01 - src/render.c:render_con:189 - child will be at 2x0 with size 1018x550
+25.01.2012 15:27:01 - src/render.c:render_l_output:93 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1f4e8 / bottomdock / layout 3 / children 1 / orient 2
+25.01.2012 15:27:01 - src/render.c:render_con:372 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b20cd8 / #aa00aa / layout 0 / children 0 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:189 - child will be at 0x0 with size 1022x17
+25.01.2012 15:27:01 - src/render.c:render_con:247 - Rendering floating windows:
+25.01.2012 15:27:01 - src/render.c:render_con:278 - floating child at (643,254) with 250 x 72
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b2bd78 / #ff00ff / layout 0 / children 1 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:372 - child at (643, 254) with (250 x 72)
+25.01.2012 15:27:01 - src/render.c:render_con:111 - Rendering node 0x9b1e7d0 / #0000FF / layout 0 / children 0 / orient 0
+25.01.2012 15:27:01 - src/render.c:render_con:189 - child will be at 0x0 with size 248x70
+25.01.2012 15:27:01 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:27:01 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:27:01 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:27:01 - src/tree.c:tree_render:443 - -- END RENDERING --
+25.01.2012 15:27:01 - ClientMessage for window 0x02600024
+25.01.2012 15:27:01 - src/handlers.c:handle_client_message:691 - unhandled clientmessage
+25.01.2012 15:27:01 - src/handlers.c:handle_enter_notify:172 - enter_notify for 000000aa, mode = 0, detail 2, serial 1237
+25.01.2012 15:27:01 - src/handlers.c:handle_enter_notify:173 - coordinates 512, 300
+25.01.2012 15:27:01 - src/handlers.c:handle_enter_notify:181 - Event ignored
+25.01.2012 15:27:01 - src/handlers.c:handle_normal_hints:733 - Minimum size: 22 (width) x 17 (height)
+25.01.2012 15:27:01 - src/handlers.c:handle_normal_hints:733 - Minimum size: 22 (width) x 17 (height)
+25.01.2012 15:27:01 - src/handlers.c:handle_normal_hints:733 - Minimum size: 22 (width) x 17 (height)
+25.01.2012 15:27:01 - src/handlers.c:handle_normal_hints:733 - Minimum size: 22 (width) x 17 (height)
+25.01.2012 15:27:04 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:27:04 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:27:05 - src/handlers.c:handle_focus_in:925 - focus change in, for window 0x01c0000b
+25.01.2012 15:27:05 - src/handlers.c:handle_focus_in:929 - That is con 0x9b29440 / #ff0000
+25.01.2012 15:27:05 - src/handlers.c:handle_focus_in:933 - FocusIn event for grab/ungrab, ignoring
+25.01.2012 15:27:05 - src/handlers.c:handle_key_press:89 - Keypress 54, state raw = 65
+25.01.2012 15:27:05 - src/handlers.c:handle_key_press:93 - (removed numlock, state = 65)
+25.01.2012 15:27:05 - src/handlers.c:handle_key_press:97 - (removed upper 8 bits, state = 65)
+25.01.2012 15:27:05 - src/handlers.c:handle_key_press:102 - (checked mode_switch, state 65)
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:199 - new parser handling: kill
+25.01.2012 15:27:05 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5640
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:221 - remaining input = kill
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:227 - trying token 0 = end
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:287 - checking for the end token.
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:227 - trying token 1 = '[
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:227 - trying token 2 = 'move
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:227 - trying token 3 = 'exec
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:227 - trying token 4 = 'exit
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:227 - trying token 5 = 'restart
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:227 - trying token 6 = 'reload
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:227 - trying token 7 = 'border
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:227 - trying token 8 = 'layout
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:227 - trying token 9 = 'append_layout
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:227 - trying token 10 = 'workspace
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:227 - trying token 11 = 'focus
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:227 - trying token 12 = 'kill
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:233 - found literal, moving to next state
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:221 - remaining input = 
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:227 - trying token 0 = 'window
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:227 - trying token 1 = 'client
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:231 - literal
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:227 - trying token 2 = end
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:287 - checking for the end token.
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:289 - yes, indeed. end
+25.01.2012 15:27:05 - src/commands_parser.c:next_state:185 - should call stuff, yay. call_id = 36
+25.01.2012 15:27:05 - src/commands_parser.c:get_string:102 - Getting string kill_mode from stack...
+25.01.2012 15:27:05 - src/commands.c:cmd_MIGRATION_save_new_parameters:114 - saving parameters.
+25.01.2012 15:27:05 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = cmd_kill
+25.01.2012 15:27:05 - src/commands.c:cmd_MIGRATION_save_new_parameters:124 - parameter = window
+25.01.2012 15:27:05 - src/commands_parser.c:clear_stack:113 - clearing stack.
+25.01.2012 15:27:05 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5640
+25.01.2012 15:27:05 - src/commands_parser.c:parse_command:364 - json_output = (null)
+25.01.2012 15:27:05 - COMMAND: *kill*
+25.01.2012 15:27:05 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5540
+25.01.2012 15:27:05 - src/commands.c:cmd_MIGRATION_save_old_parameters:137 - saving new parameters.
+25.01.2012 15:27:05 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = cmd_kill
+25.01.2012 15:27:05 - src/commands.c:cmd_MIGRATION_save_old_parameters:147 - parameter = window
+25.01.2012 15:27:05 - src/commands.c:cmd_kill:936 - kill_mode=window
+25.01.2012 15:27:05 - src/tree.c:tree_close:197 - next = 0x9b2bd78, focused = 0x9b1e7d0
+25.01.2012 15:27:05 - src/tree.c:tree_close:199 - closing 0x9b1e7d0, kill_window = 1
+25.01.2012 15:27:05 - Sending WM_DELETE to the client
+25.01.2012 15:27:05 - src/tree.c:tree_render:434 - -- BEGIN RENDERING --
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering node 0x9b09a80 / root / layout 0 / children 2 / orient 0
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering node 0x9b09be8 / __i3 / layout 4 / children 1 / orient 0
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering node 0x9b1f0a0 / LVDS1 / layout 4 / children 3 / orient 0
+25.01.2012 15:27:05 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 0)
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering node 0x9b1f1f8 / topdock / layout 3 / children 0 / orient 2
+25.01.2012 15:27:05 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 581)
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering node 0x9b1f390 / content / layout 0 / children 1 / orient 0
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering fullscreen node 0x9b1f720 / 1 / layout 0 / children 1 / orient 1
+25.01.2012 15:27:05 - src/render.c:render_con:372 - child at (0, 18) with (1024 x 563)
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering node 0x9b29440 / #ff0000 / layout 0 / children 0 / orient 0
+25.01.2012 15:27:05 - src/render.c:render_con:179 - Lost 11 pixel due to client's height_increment (13 px, base_height = 4)
+25.01.2012 15:27:05 - src/render.c:render_con:186 - Lost 2 pixel due to client's width_increment (6 px, base_width = 16)
+25.01.2012 15:27:05 - src/render.c:render_con:189 - child will be at 2x0 with size 1018x550
+25.01.2012 15:27:05 - src/render.c:render_l_output:93 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering node 0x9b1f4e8 / bottomdock / layout 3 / children 1 / orient 2
+25.01.2012 15:27:05 - src/render.c:render_con:372 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering node 0x9b20cd8 / #aa00aa / layout 0 / children 0 / orient 0
+25.01.2012 15:27:05 - src/render.c:render_con:189 - child will be at 0x0 with size 1022x17
+25.01.2012 15:27:05 - src/render.c:render_con:247 - Rendering floating windows:
+25.01.2012 15:27:05 - src/render.c:render_con:278 - floating child at (643,254) with 250 x 72
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering node 0x9b2bd78 / #ff00ff / layout 0 / children 1 / orient 0
+25.01.2012 15:27:05 - src/render.c:render_con:372 - child at (643, 254) with (250 x 72)
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering node 0x9b1e7d0 / #0000FF / layout 0 / children 0 / orient 0
+25.01.2012 15:27:05 - src/render.c:render_con:189 - child will be at 0x0 with size 248x70
+25.01.2012 15:27:05 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:27:05 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:27:05 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:27:05 - src/tree.c:tree_render:443 - -- END RENDERING --
+25.01.2012 15:27:05 - src/commands.c:cmd_criteria_init:331 - Initializing criteria, current_match = 0x80b5540
+25.01.2012 15:27:05 - src/commands.c:cmd_MIGRATION_validate:263 - validating the different stacks now
+25.01.2012 15:27:05 - src/commands.c:cmd_MIGRATION_validate:276 - parameter count matching, comparing one by one...
+25.01.2012 15:27:05 - src/commands.c:cmd_MIGRATION_validate:313 - OK
+25.01.2012 15:27:05 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x02600024 (received from 0x02600024), serial 1327
+25.01.2012 15:27:05 - src/tree.c:tree_close:197 - next = 0x9b2bd78, focused = 0x9b1e7d0
+25.01.2012 15:27:05 - src/tree.c:tree_close:199 - closing 0x9b1e7d0, kill_window = 0
+25.01.2012 15:27:05 - src/con.c:con_is_floating:339 - checking if con 0x9b1e7d0 is floating
+25.01.2012 15:27:05 - src/tree.c:tree_close:259 - Container was floating, killing floating container
+25.01.2012 15:27:05 - src/con.c:con_next_focused:698 - selecting next for CT_FLOATING_CON
+25.01.2012 15:27:05 - src/con.c:con_next_focused:700 - next = (nil)
+25.01.2012 15:27:05 - src/con.c:con_next_focused:703 - using prev, next = (nil)
+25.01.2012 15:27:05 - src/con.c:con_next_focused:708 - no more floating containers for next = 0x9b1f720, restoring workspace focus
+25.01.2012 15:27:05 - src/con.c:con_next_focused:712 - skipping container itself, we want the next client
+25.01.2012 15:27:05 - src/tree.c:tree_close:197 - next = 0x9b29440, focused = 0x9b1e7d0
+25.01.2012 15:27:05 - src/tree.c:tree_close:199 - closing 0x9b2bd78, kill_window = 0
+25.01.2012 15:27:05 - src/con.c:con_is_floating:339 - checking if con 0x9b2bd78 is floating
+25.01.2012 15:27:05 - src/tree.c:tree_close:302 - not focusing, was not mapped
+25.01.2012 15:27:05 - src/con.c:con_on_remove_child:1044 - on_remove_child
+25.01.2012 15:27:05 - src/tree.c:tree_close:261 - parent container killed
+25.01.2012 15:27:05 - src/tree.c:tree_close:263 - This is the focused container, i need to find another one to focus. I start looking at ws = 0x9b1f720
+25.01.2012 15:27:05 - src/tree.c:tree_close:268 - Alright, focusing 0x9b29440
+25.01.2012 15:27:05 - src/tree.c:tree_close:288 - focusing 0x9b29440 / #ff0000
+25.01.2012 15:27:05 - src/con.c:con_focus:184 - con_focus = 0x9b29440
+25.01.2012 15:27:05 - src/con.c:con_focus:184 - con_focus = 0x9b1f720
+25.01.2012 15:27:05 - src/con.c:con_focus:184 - con_focus = 0x9b1f390
+25.01.2012 15:27:05 - src/con.c:con_focus:184 - con_focus = 0x9b1f0a0
+25.01.2012 15:27:05 - src/tree.c:tree_render:434 - -- BEGIN RENDERING --
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering node 0x9b09a80 / root / layout 0 / children 2 / orient 0
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering node 0x9b09be8 / __i3 / layout 4 / children 1 / orient 0
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering node 0x9b1f0a0 / LVDS1 / layout 4 / children 3 / orient 0
+25.01.2012 15:27:05 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 0)
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering node 0x9b1f1f8 / topdock / layout 3 / children 0 / orient 2
+25.01.2012 15:27:05 - src/render.c:render_l_output:93 - child at (0, 0) with (1024 x 581)
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering node 0x9b1f390 / content / layout 0 / children 1 / orient 0
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering fullscreen node 0x9b1f720 / 1 / layout 0 / children 1 / orient 1
+25.01.2012 15:27:05 - src/render.c:render_con:372 - child at (0, 18) with (1024 x 563)
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering node 0x9b29440 / #ff0000 / layout 0 / children 0 / orient 0
+25.01.2012 15:27:05 - src/render.c:render_con:179 - Lost 11 pixel due to client's height_increment (13 px, base_height = 4)
+25.01.2012 15:27:05 - src/render.c:render_con:186 - Lost 2 pixel due to client's width_increment (6 px, base_width = 16)
+25.01.2012 15:27:05 - src/render.c:render_con:189 - child will be at 2x0 with size 1018x550
+25.01.2012 15:27:05 - src/render.c:render_l_output:93 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering node 0x9b1f4e8 / bottomdock / layout 3 / children 1 / orient 2
+25.01.2012 15:27:05 - src/render.c:render_con:372 - child at (0, 581) with (1024 x 19)
+25.01.2012 15:27:05 - src/render.c:render_con:111 - Rendering node 0x9b20cd8 / #aa00aa / layout 0 / children 0 / orient 0
+25.01.2012 15:27:05 - src/render.c:render_con:189 - child will be at 0x0 with size 1022x17
+25.01.2012 15:27:05 - src/render.c:render_con:247 - Rendering floating windows:
+25.01.2012 15:27:05 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:27:05 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:27:05 - src/x.c:x_push_changes:878 - Updating focus (focused: 0x9b29440 / #ff0000)
+25.01.2012 15:27:05 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:27:05 - src/tree.c:tree_render:443 - -- END RENDERING --
+25.01.2012 15:27:05 - src/x.c:x_push_changes:775 - -- PUSHING WINDOW STACK --
+25.01.2012 15:27:05 - src/x.c:x_push_changes:828 - PUSHING CHANGES
+25.01.2012 15:27:05 - src/x.c:x_push_changes:906 - ENDING CHANGES
+25.01.2012 15:27:05 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x02600024 (received from 0x00e0001e), serial 1327
+25.01.2012 15:27:05 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:27:05 - src/handlers.c:handle_expose_event:614 - window = 00e0001e
+25.01.2012 15:27:05 - expose event for unknown window, ignoring
+25.01.2012 15:27:05 - src/handlers.c:handle_destroy_notify_event:530 - destroy notify for 0x02600024, 0x02600024
+25.01.2012 15:27:05 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x02600024 (received from 0x02600024), serial 1327
+25.01.2012 15:27:05 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:27:05 - src/handlers.c:handle_destroy_notify_event:530 - destroy notify for 0x00e0001e, 0x02600024
+25.01.2012 15:27:05 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x02600024 (received from 0x00e0001e), serial 1327
+25.01.2012 15:27:05 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:27:05 - src/main.c:xcb_check_cb:118 - Expected X11 Error received for sequence 531
+25.01.2012 15:27:05 - src/main.c:xcb_check_cb:118 - Expected X11 Error received for sequence 532
+25.01.2012 15:27:05 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x00e0001e (received from 0x00e0001e), serial 1331
+25.01.2012 15:27:05 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:27:05 - src/handlers.c:handle_destroy_notify_event:530 - destroy notify for 0x00e0001e, 0x00e0001e
+25.01.2012 15:27:05 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x00e0001e (received from 0x00e0001e), serial 1331
+25.01.2012 15:27:05 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:27:05 - src/handlers.c:handle_destroy_notify_event:530 - destroy notify for 0x00e00021, 0x00e00021
+25.01.2012 15:27:05 - src/handlers.c:handle_unmap_notify_event:463 - UnmapNotify for 0x00e00021 (received from 0x00e00021), serial 1334
+25.01.2012 15:27:05 - Not a managed window, ignoring UnmapNotify event
+25.01.2012 15:27:05 - ERROR: X11 Error received! sequence 0x537, error_code = 4
+25.01.2012 15:27:05 - ERROR: X11 Error received! sequence 0x538, error_code = 13
+25.01.2012 15:27:05 - src/handlers.c:handle_focus_in:925 - focus change in, for window 0x01c0000b
+25.01.2012 15:27:05 - src/handlers.c:handle_focus_in:929 - That is con 0x9b29440 / #ff0000
+25.01.2012 15:27:05 - src/handlers.c:handle_focus_in:933 - FocusIn event for grab/ungrab, ignoring
+25.01.2012 15:27:05 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:27:05 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:27:07 - src/main.c:xkb_got_event:144 - Handling XKB event
+25.01.2012 15:27:08 - src/main.c:xkb_got_event:144 - Handling XKB event

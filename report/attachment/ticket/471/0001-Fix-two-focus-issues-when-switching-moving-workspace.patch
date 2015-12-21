@@ -1,0 +1,65 @@
+From 8b4fa1d69580fd35adf251fbaf293b9b374a3f12 Mon Sep 17 00:00:00 2001
+From: Peter Bui <pnutzh4x0r@gmail.com>
+Date: Mon, 8 Aug 2011 17:55:37 -0400
+Subject: [PATCH] Fix two focus issues when switching/moving workspaces
+
+1. Fix focus when switching to same workspace.
+
+If we have a single window on a workspace and we switch to the same
+worksapce, focus_next will be the workspace container, rather than the
+current window, so simply call con_descend_focused to ensure we set the
+focus to a window.
+
+2. Fix focus when moving a container to a visible workspace.
+
+Call workspace_show before we attaching to new visible workspace, so we
+don't get in the weird situation where target workspace has focused
+window, but it isn't considered focused.
+---
+ src/con.c |   16 ++++++++++++++--
+ 1 files changed, 14 insertions(+), 2 deletions(-)
+
+diff --git a/src/con.c b/src/con.c
+index b8b652b..188c827 100644
+--- a/src/con.c
++++ b/src/con.c
+@@ -584,6 +584,14 @@ void con_move_to_workspace(Con *con, Con *workspace) {
+         DLOG("This is a floating window, using workspace %p / %s\n", ws, ws->name);
+         next = ws;
+     }
++    
++    /* If moving to a visible workspace, call show so it can be considered
++     * focused.  Must do before attaching because workspace_show checks to see
++     * if focused container is in it's area. */
++    if (source_output != dest_output &&
++        workspace_is_visible(workspace)) {
++        workspace_show(workspace->name);
++    }
+ 
+     DLOG("Re-attaching container to %p / %s\n", next, next->name);
+     /* 5: re-attach the con to the parent of this focused container */
+@@ -597,7 +605,7 @@ void con_move_to_workspace(Con *con, Con *workspace) {
+     con_fix_percent(next);
+ 
+     /* 7: focus the con on the target workspace (the X focus is only updated by
+-     * calling tree_render(), so for the "real" focus this is a no-op) */
++     * calling tree_render(), so for the "real" focus this is a no-op). */ 
+     con_focus(con);
+ 
+     /* 8: when moving to a visible workspace on a different output, we keep the
+@@ -607,7 +615,11 @@ void con_move_to_workspace(Con *con, Con *workspace) {
+         workspace_is_visible(workspace)) {
+         DLOG("Moved to a different output, focusing target\n");
+     } else {
+-        con_focus(focus_next);
++        /* Descend focus stack in case focus_next is a workspace which can
++         * occur if we move to the same workspace.  Also show current workspace
++         * to ensure it is focused. */
++        workspace_show(con_get_workspace(focus_next)->name);
++        con_focus(con_descend_focused(focus_next));
+     }
+ 
+     CALL(parent, on_remove_child);
+-- 
+1.7.6
+

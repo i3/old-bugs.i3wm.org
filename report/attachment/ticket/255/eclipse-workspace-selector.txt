@@ -1,0 +1,23 @@
+xwininfo: Window id: 0x280003e "Workspace Launcher "
+
+  Absolute upper-left X:  2825
+  Absolute upper-left Y:  235
+  Relative upper-left X:  2
+  Relative upper-left Y:  14
+  Width: 619
+  Height: 291
+  Depth: 24
+  Visual: 0x21
+  Visual Class: TrueColor
+  Border width: 0
+  Class: InputOutput
+  Colormap: 0x20 (installed)
+  Bit Gravity State: NorthWestGravity
+  Window Gravity State: NorthWestGravity
+  Backing Store State: NotUseful
+  Save Under State: no
+  Map State: IsViewable
+  Override Redirect State: no
+  Corners:  +2825+235  -524+235  -524-674  +2825-674
+  -geometry 619x291+2823+221
+

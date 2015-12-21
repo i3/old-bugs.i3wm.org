@@ -1,0 +1,128 @@
+09/25/2010 09:18:05 PM - src/handlers.c:handle_unmap_notify_event:471 - event->window = 01000010, event->event = 00a00013
+09/25/2010 09:18:05 PM - src/handlers.c:handle_unmap_notify_event:472 - UnmapNotify for 0x01000010 (received from 0x00a00013)
+09/25/2010 09:18:05 PM - src/client.c:client_remove_from_container:49 - Unmapping stack window
+09/25/2010 09:18:05 PM - src/handlers.c:handle_unmap_notify_event:520 - child of 0x00a00013.
+09/25/2010 09:18:05 PM - src/table.c:cleanup_table:320 - cleanup_table()
+09/25/2010 09:18:05 PM - src/table.c:fix_colrowspan:385 - Fixing col/rowspan
+09/25/2010 09:18:05 PM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1366.000000, default_factor = 1.000000
+09/25/2010 09:18:05 PM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1366.000000
+09/25/2010 09:18:05 PM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 0.000000
+09/25/2010 09:18:05 PM - src/layout.c:get_unoccupied_y:63 - get_unoccupied_y(), starting with 754.000000, default_factor = 1.000000
+09/25/2010 09:18:05 PM - src/layout.c:get_unoccupied_y:66 - height_factor[0] = 0.000000, unoccupied = 754.000000
+09/25/2010 09:18:05 PM - src/layout.c:get_unoccupied_y:71 - unoccupied space: 0.000000
+09/25/2010 09:18:05 PM - src/layout.c:render_workspace:761 - height is 754
+09/25/2010 09:18:05 PM - src/layout.c:render_container:405 - not remapping stackwin, height = 0, num_clients = 0
+09/25/2010 09:18:05 PM - src/layout.c:render_container:410 - tabbed mode, setting num_clients = 1
+09/25/2010 09:18:05 PM - src/layout.c:render_bars:580 - client is at 754, should be at 754
+09/25/2010 09:18:05 PM - src/layout.c:render_bars:592 - desired_height = 14
+09/25/2010 09:18:05 PM - src/handlers.c:handle_unmap_notify_event:568 - Restoring focus to root screen
+09/25/2010 09:18:05 PM - src/handlers.c:handle_expose_event:775 - window = 00a00013
+09/25/2010 09:18:05 PM - src/handlers.c:handle_enter_notify:174 - enter_notify for 00a00013, mode = 0, detail 2, serial 945
+09/25/2010 09:18:05 PM - src/handlers.c:handle_destroy_notify_event:587 - destroy notify for 0x01000010, 0x01000010
+09/25/2010 09:18:05 PM - src/handlers.c:handle_unmap_notify_event:471 - event->window = 01000010, event->event = 01000010
+09/25/2010 09:18:05 PM - src/handlers.c:handle_unmap_notify_event:472 - UnmapNotify for 0x01000010 (received from 0x01000010)
+09/25/2010 09:18:05 PM - src/handlers.c:handle_unmap_notify_event:474 - not a managed window. Ignoring.
+09/25/2010 09:18:05 PM - src/handlers.c:handle_destroy_notify_event:587 - destroy notify for 0x00a00013, 0x01000010
+09/25/2010 09:18:05 PM - src/handlers.c:handle_unmap_notify_event:471 - event->window = 01000010, event->event = 00a00013
+09/25/2010 09:18:05 PM - src/handlers.c:handle_unmap_notify_event:472 - UnmapNotify for 0x01000010 (received from 0x00a00013)
+09/25/2010 09:18:05 PM - src/handlers.c:handle_unmap_notify_event:474 - not a managed window. Ignoring.
+09/25/2010 09:18:05 PM - src/debug.c:format_event:227 - Error BadWindow on seqnum 947 (ReparentWindow).
+09/25/2010 09:18:05 PM - src/debug.c:format_event:227 - Error BadWindow on seqnum 948 (ChangeProperty).
+09/25/2010 09:18:05 PM - src/handlers.c:handle_unmap_notify_event:471 - event->window = 00a00013, event->event = 00a00013
+09/25/2010 09:18:05 PM - src/handlers.c:handle_unmap_notify_event:472 - UnmapNotify for 0x00a00013 (received from 0x00a00013)
+09/25/2010 09:18:05 PM - src/handlers.c:handle_unmap_notify_event:474 - not a managed window. Ignoring.
+09/25/2010 09:18:05 PM - src/handlers.c:handle_enter_notify:174 - enter_notify for 00000105, mode = 0, detail 2, serial 949
+09/25/2010 09:18:05 PM - src/handlers.c:handle_destroy_notify_event:587 - destroy notify for 0x00a00013, 0x00a00013
+09/25/2010 09:18:05 PM - src/handlers.c:handle_unmap_notify_event:471 - event->window = 00a00013, event->event = 00a00013
+09/25/2010 09:18:05 PM - src/handlers.c:handle_unmap_notify_event:472 - UnmapNotify for 0x00a00013 (received from 0x00a00013)
+09/25/2010 09:18:05 PM - src/handlers.c:handle_unmap_notify_event:474 - not a managed window. Ignoring.
+09/25/2010 09:18:05 PM - src/debug.c:format_event:235 - Event NoExpose following seqnum 951.
+09/25/2010 09:18:05 PM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+09/25/2010 09:18:05 PM - src/mainx.c:xkb_got_event:131 - Handling XKB event
+09/25/2010 09:18:05 PM - src/handlers.c:handle_key_press:91 - Keypress 36, state raw = 8
+09/25/2010 09:18:05 PM - src/handlers.c:handle_key_press:95 - (removed numlock, state = 8)
+09/25/2010 09:18:05 PM - src/handlers.c:handle_key_press:99 - (removed upper 8 bits, state = 8)
+09/25/2010 09:18:05 PM - src/handlers.c:handle_key_press:104 - (checked mode_switch, state 8)
+Warning: Cannot convert string "nil2" to type FontStruct
+09/25/2010 09:18:05 PM - src/handlers.c:handle_configure_request:294 - window 0x01000010 wants to be at 0x0 with 11x19
+09/25/2010 09:18:05 PM - src/handlers.c:handle_configure_request:294 - window 0x01000010 wants to be at 0x0 with 564x364
+09/25/2010 09:18:05 PM - src/handlers.c:handle_map_request:279 - window = 0x01000010, serial is 954.
+09/25/2010 09:18:05 PM - src/manage.c:reparent_window:184 - x = 0, y = 0, width = 564, height = 364
+09/25/2010 09:18:05 PM - src/handlers.c:handle_windowname_change:604 - _NET_WM_NAME not specified, not changing
+09/25/2010 09:18:05 PM - src/layout.c:render_container:405 - not remapping stackwin, height = 0, num_clients = 0
+09/25/2010 09:18:05 PM - src/layout.c:render_container:410 - tabbed mode, setting num_clients = 1
+09/25/2010 09:18:05 PM - src/handlers.c:handle_clientleader_change:1093 - Client leader changed to 01000010
+09/25/2010 09:18:05 PM - src/manage.c:reparent_window:355 - client->leader is set (to 0x01000010)
+09/25/2010 09:18:05 PM - src/layout.c:get_unoccupied_x:44 - get_unoccupied_x(), starting with 1366.000000, default_factor = 1.000000
+09/25/2010 09:18:05 PM - src/layout.c:get_unoccupied_x:47 - width_factor[0] = 0.000000, unoccupied = 1366.000000
+09/25/2010 09:18:05 PM - src/layout.c:get_unoccupied_x:53 - unoccupied space: 0.000000
+09/25/2010 09:18:05 PM - src/layout.c:get_unoccupied_y:63 - get_unoccupied_y(), starting with 754.000000, default_factor = 1.000000
+09/25/2010 09:18:05 PM - src/layout.c:get_unoccupied_y:66 - height_factor[0] = 0.000000, unoccupied = 754.000000
+09/25/2010 09:18:05 PM - src/layout.c:get_unoccupied_y:71 - unoccupied space: 0.000000
+09/25/2010 09:18:05 PM - src/layout.c:render_workspace:761 - height is 754
+09/25/2010 09:18:05 PM - src/layout.c:render_container:405 - not remapping stackwin, height = 0, num_clients = 1
+09/25/2010 09:18:05 PM - src/layout.c:render_container:410 - tabbed mode, setting num_clients = 1
+09/25/2010 09:18:05 PM - src/layout.c:render_container:427 - Just one client, setting height to 0
+09/25/2010 09:18:05 PM - src/layout.c:resize_client:251 - frame 0x00a00017 needs to be pushed to 0x0
+09/25/2010 09:18:05 PM - src/layout.c:resize_client:252 - resizing client 0x00a00017 to 1366 x 754
+09/25/2010 09:18:05 PM - src/container.c:container_mode:38 - mode to default
+09/25/2010 09:18:05 PM - src/layout.c:resize_client:326 - child will be at 2x16 with size 1362x736
+09/25/2010 09:18:05 PM - src/handlers.c:handle_expose_event:775 - window = 00a00017
+09/25/2010 09:18:05 PM - src/container.c:container_mode:38 - mode to default
+09/25/2010 09:18:05 PM - src/container.c:container_mode:38 - mode to default
+09/25/2010 09:18:05 PM - src/container.c:container_mode:38 - mode to default
+09/25/2010 09:18:05 PM - src/layout.c:render_bars:580 - client is at 754, should be at 754
+09/25/2010 09:18:05 PM - src/layout.c:render_bars:592 - desired_height = 14
+09/25/2010 09:18:05 PM - src/layout.c:render_container:405 - not remapping stackwin, height = 0, num_clients = 1
+09/25/2010 09:18:05 PM - src/layout.c:render_container:410 - tabbed mode, setting num_clients = 1
+09/25/2010 09:18:05 PM - src/layout.c:render_container:427 - Just one client, setting height to 0
+09/25/2010 09:18:05 PM - src/container.c:container_mode:38 - mode to default
+09/25/2010 09:18:05 PM - src/handlers.c:handle_normal_hints:889 - Window: frame 0x00a00017, child 0x01000010
+09/25/2010 09:18:05 PM - src/handlers.c:handle_normal_hints:899 - Minimum size: 11 (width) x 19 (height)
+09/25/2010 09:18:05 PM - src/handlers.c:handle_normal_hints:916 - resize increments changed
+09/25/2010 09:18:05 PM - src/handlers.c:handle_normal_hints:937 - client's base_height changed to 4
+09/25/2010 09:18:05 PM - src/handlers.c:handle_normal_hints:938 - client's base_width changed to 4
+09/25/2010 09:18:05 PM - src/layout.c:resize_client:251 - frame 0x00a00017 needs to be pushed to 0x0
+09/25/2010 09:18:05 PM - src/layout.c:resize_client:252 - resizing client 0x00a00017 to 1366 x 754
+09/25/2010 09:18:05 PM - src/container.c:container_mode:38 - mode to default
+09/25/2010 09:18:05 PM - src/layout.c:resize_client:316 - Lost 12 pixel due to client's height_increment (15 px, base_height = 4)
+09/25/2010 09:18:05 PM - src/layout.c:resize_client:323 - Lost 0 pixel due to client's width_increment (7 px, base_width = 4)
+09/25/2010 09:18:05 PM - src/layout.c:resize_client:326 - child will be at 2x16 with size 1362x724
+09/25/2010 09:18:05 PM - src/handlers.c:handle_expose_event:775 - window = 00a00017
+09/25/2010 09:18:05 PM - src/container.c:container_mode:38 - mode to default
+09/25/2010 09:18:05 PM - src/container.c:container_mode:38 - mode to default
+09/25/2010 09:18:05 PM - src/handlers.c:handle_hints:1019 - Window: frame 0x00a00017, child 0x01000010
+09/25/2010 09:18:05 PM - src/layout.c:render_container:405 - not remapping stackwin, height = 0, num_clients = 1
+09/25/2010 09:18:05 PM - src/layout.c:render_container:410 - tabbed mode, setting num_clients = 1
+09/25/2010 09:18:05 PM - src/layout.c:render_container:427 - Just one client, setting height to 0
+09/25/2010 09:18:05 PM - src/container.c:container_mode:38 - mode to default
+09/25/2010 09:18:05 PM - src/handlers.c:handle_clientleader_change:1093 - Client leader changed to 01000010
+09/25/2010 09:18:05 PM - src/handlers.c:handle_windowname_change:604 - _NET_WM_NAME not specified, not changing
+09/25/2010 09:18:05 PM - src/debug.c:format_event:235 - Event ReparentNotify following seqnum 971.
+09/25/2010 09:18:05 PM - src/debug.c:format_event:235 - Event ReparentNotify following seqnum 971.
+09/25/2010 09:18:05 PM - src/debug.c:format_event:235 - Event NoExpose following seqnum 975.
+09/25/2010 09:18:05 PM - src/debug.c:format_event:235 - Event NoExpose following seqnum 1002.
+09/25/2010 09:18:05 PM - src/debug.c:format_event:235 - Event MapNotify following seqnum 1005.
+09/25/2010 09:18:05 PM - src/debug.c:format_event:235 - Event MapNotify following seqnum 1005.
+09/25/2010 09:18:05 PM - src/debug.c:format_event:235 - Event MapNotify following seqnum 1007.
+09/25/2010 09:18:05 PM - src/handlers.c:handle_expose_event:775 - window = 00a00017
+09/25/2010 09:18:05 PM - src/container.c:container_mode:38 - mode to default
+09/25/2010 09:18:05 PM - src/container.c:container_mode:38 - mode to default
+09/25/2010 09:18:05 PM - src/handlers.c:handle_enter_notify:174 - enter_notify for 00a00017, mode = 0, detail 1, serial 1007
+09/25/2010 09:18:05 PM - src/handlers.c:handle_enter_notify:174 - enter_notify for 01000010, mode = 0, detail 0, serial 1007
+09/25/2010 09:18:05 PM - src/debug.c:format_event:235 - Event NoExpose following seqnum 1019.
+09/25/2010 09:18:05 PM - src/handlers.c:handle_expose_event:775 - window = 00a00017
+09/25/2010 09:18:05 PM - src/container.c:container_mode:38 - mode to default
+09/25/2010 09:18:05 PM - src/container.c:container_mode:38 - mode to default
+09/25/2010 09:18:05 PM - src/debug.c:format_event:235 - Event NoExpose following seqnum 1050.
+09/25/2010 09:18:05 PM - src/handlers.c:handle_expose_event:775 - window = 00a00017
+09/25/2010 09:18:05 PM - src/container.c:container_mode:38 - mode to default
+09/25/2010 09:18:05 PM - src/container.c:container_mode:38 - mode to default
+09/25/2010 09:18:05 PM - src/ipc.c:ipc_receive_message:435 - IPC: n = 14
+09/25/2010 09:18:05 PM - src/layout.c:render_container:405 - not remapping stackwin, height = 0, num_clients = 1
+09/25/2010 09:18:05 PM - src/layout.c:render_container:410 - tabbed mode, setting num_clients = 1
+09/25/2010 09:18:05 PM - src/layout.c:render_container:427 - Just one client, setting height to 0
+09/25/2010 09:18:05 PM - src/container.c:container_mode:38 - mode to default
+09/25/2010 09:18:05 PM - src/debug.c:format_event:235 - Event NoExpose following seqnum 1097.
+09/25/2010 09:18:05 PM - src/debug.c:format_event:235 - Event KeyRelease following seqnum 1097.
+09/25/2010 09:18:06 PM - src/mainx.c:xkb_got_event:131 - Handling XKB event

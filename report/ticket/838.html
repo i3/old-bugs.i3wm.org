@@ -1,0 +1,777 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #838 (back and forth between windows)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/837" title="Ticket #837" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/838?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/838?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/838?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/839" title="Ticket #839" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="7e7325fc668905cf30b88b74";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/837" title="Ticket #837">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/839" title="Ticket #839">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-10-06T19%3A25%3A34%2B02%3A00&amp;precision=second" title="See timeline at 10/06/12 19:25:34">2 years ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2014-07-20T22%3A01%3A46%2B02%3A00&amp;precision=second" title="See timeline at 07/20/14 22:01:46">8 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/838" class="trac-id">#838</a>
+    <span class="trac-status">
+      <a href="/report/query?status=accepted">accepted</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=enhancement">enhancement</a>
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">back and forth between windows</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">simao.m@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=minor">minor</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=feature-request">feature-request</a>
+        </td>
+    </tr><tr>
+        <th id="h_version" class="missing">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version="></a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion" class="missing">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+Feature Request:<br />
+</p>
+<p>
+Currently, there's a command that allows the user to go back and forth between workspaces.<br />
+</p>
+<p>
+The same feature for windows would be very good, one common use case in a developer workflow is to go back and forth between two windows (editor/terminal for example), so this would increase productivity.<br />
+</p>
+<p>
+Thanks!<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(19)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1349545034119776">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-06T19%3A37%3A14%2B02%3A00&amp;precision=second" title="See timeline at 10/06/12 19:37:14">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-keywords">
+      <strong class="trac-field-keywords">Keywords</strong>
+        <em>easy</em> added
+    </li><li class="trac-field-priority">
+      <strong class="trac-field-priority">Priority</strong>
+        changed from <em>major</em> to <em>minor</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>accepted</em>
+    </li><li class="trac-field-version">
+      <strong class="trac-field-version">Version</strong>
+        <em>4.3</em> deleted
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+The feature request is accepted, patches are welcome.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1356100093718762">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-12-21T15%3A28%3A13%2B01%3A00&amp;precision=second" title="See timeline at 12/21/12 15:28:13">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Commands to focus next window and to focus previous window would be useful, not only for that but also to be able to cycle through all the windows without having to worry about the geometrical disposition. To browse the leafs of the layout tree in a flat way, if you prefer.<br />
+</p>
+<p>
+There could be two variants of such a command: focus next/previous and focus next/previous visible, which would skip windows that are not visible because of tabbing and stacking.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1359231855227262">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-01-26T21%3A24%3A15%2B01%3A00&amp;precision=second" title="See timeline at 01/26/13 21:24:15">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I'd like to add my agreement here; having keybindings to cycle through all windows in next/previous fashion would be really useful.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1363688217379672">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:5" class="follow-up">↓ 5</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-03-19T11%3A16%3A57%2B01%3A00&amp;precision=second" title="See timeline at 03/19/13 11:16:57">2 years ago</a> by tkf
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+This is especially valuable now that 4.5 has changed where focus lands after moving a window to a different workspace (previously focus remained with that window, now it stays in the workspace it was moved from - very annoying IMHO). This could easily be worked around:<br />
+</p>
+<p>
+bindsym $mod+Shift+1 move container to workspace 1; focus previous<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1363689307160163">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+        in reply to:
+    <a href="#comment:4">↑ 4</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-03-19T11%3A35%3A07%2B01%3A00&amp;precision=second" title="See timeline at 03/19/13 11:35:07">2 years ago</a> by tkf
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Disregard. I can't read.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1364907607166488">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-04-02T15%3A00%3A07%2B02%3A00&amp;precision=second" title="See timeline at 04/02/13 15:00:07">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I second that! I really miss the ability to easily jump back and forth between windows, too.<br />
+</p>
+<p>
+Especially i think of a popup that shows a stack of the N last focused windows from which you can select one you want to jump to. That would really be a nice feature at least from my point of view...<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1368271251859264">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-05-11T13%3A20%3A51%2B02%3A00&amp;precision=second" title="See timeline at 05/11/13 13:20:51">23 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+FWIW, I don’t think having this feature is a good idea anymore. The workspace back and forth stuff is quite complex and increases code paths to think about in many situations.<br />
+</p>
+<p>
+I’d prefer it if this could be implemented as a script using IPC instead of in core i3.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1369839922559818">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-05-29T17%3A05%3A22%2B02%3A00&amp;precision=second" title="See timeline at 05/29/13 17:05:22">22 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-keywords">
+      <strong class="trac-field-keywords">Keywords</strong>
+        <em>easy</em> removed
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-9-1372754600173163">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:10" class="follow-up">↓ 10</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-02T10%3A43%3A20%2B02%3A00&amp;precision=second" title="See timeline at 07/02/13 10:43:20">21 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+How would you start implementing this as a script?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1372786745493761">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+        in reply to:
+    <a href="#comment:9">↑ 9</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-02T19%3A39%3A05%2B02%3A00&amp;precision=second" title="See timeline at 07/02/13 19:39:05">21 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/838#comment:9" title="Comment 9">anonymous</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+How would you start implementing this as a script?<br />
+</p>
+</blockquote>
+<p>
+By implementing a focus event, then subscribing to that event from a script (e.g. using AnyEvent::I3 in Perl or one of the Python IPC libraries) and storing the ID of the focused window whenever focus changes. I’d then bind a key to a separate script (or the same script with a flag) which would somehow trigger the long-running process to send a [con_id="xxx"] focus command.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1372927649901882">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-04T10%3A47%3A29%2B02%3A00&amp;precision=second" title="See timeline at 07/04/13 10:47:29">21 months ago</a> by simao.m@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I tried using the existing <tt>window</tt> event but, but this is only sent when a window is completed repainted, not when it gets focus.<br />
+</p>
+<p>
+Is there any other event I could use?<br />
+</p>
+<p>
+Thanks<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-12-1372960795746915">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-04T19%3A59%3A55%2B02%3A00&amp;precision=second" title="See timeline at 07/04/13 19:59:55">21 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+The documentation at <a class="ext-link" href="http://build.i3wm.org/docs/ipc.html"><span class="icon">​</span>http://build.i3wm.org/docs/ipc.html</a> is (always) up to date.<br />
+</p>
+<p>
+You need to implement the event, which is trivial.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-13-1388450089825379">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:13" class="cnum">
+    <a href="#comment:13">comment:13</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-31T01%3A34%3A49%2B01%3A00&amp;precision=second" title="See timeline at 12/31/13 01:34:49">15 months ago</a> by roomcays@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+At the current state IPC does not support "window focus" event.<br />
+</p>
+<p>
+Focusing window in so-called "Recently used manner" would be awesome feature, I agree.<br />
+Until some smart people will create a patch for it, the only workaround I see is calling a python/perl/bash script bound to keystrokes one uses for switching windows (so all the ' * focus' binds), which saves currently focused window's ID to a file (possibly somewhere within /tmp or other TMPFS mountpoint). Then next key stroke first reads this ID, then overwrites with new, and uses so loaded window ID as a target ID of a window to switch to.<br />
+</p>
+<p>
+I may try to do it, and if so, I will share my solution.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-14-1388657900780358">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:14" class="cnum">
+    <a href="#comment:14">comment:14</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-02T11%3A18%3A20%2B01%3A00&amp;precision=second" title="See timeline at 01/02/14 11:18:20">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+yes, please share it if you can find a solution :) Thanks<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-15-1388871081737854">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:15" class="cnum">
+    <a href="#comment:15">comment:15</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-04T22%3A31%3A21%2B01%3A00&amp;precision=second" title="See timeline at 01/04/14 22:31:21">15 months ago</a> by roomcays@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I've tried something very basic, but solution I've provided does not work with quick window switching due to file saving lags.<br />
+The best solution would be implementation of this feature within i3 itself.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-16-1393372707324454">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:16" class="cnum">
+    <a href="#comment:16">comment:16</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-02-26T00%3A58%3A27%2B01%3A00&amp;precision=second" title="See timeline at 02/26/14 00:58:27">13 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Any updates on this?<br />
+</p>
+<p>
+Given that implementing the event / hook should be trivial, I think it would be nice to have it available.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-17-1401434205864141">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:17" class="cnum">
+    <a href="#comment:17">comment:17</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-05-30T09%3A16%3A45%2B02%3A00&amp;precision=second" title="See timeline at 05/30/14 09:16:45">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+This would be a nice feature. +1 <br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-18-1402996652534935">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:18" class="cnum">
+    <a href="#comment:18">comment:18</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-17T11%3A17%3A32%2B02%3A00&amp;precision=second" title="See timeline at 06/17/14 11:17:32">10 months ago</a> by ivan@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+It would also allow to safely avoid sending keyboard input to some floating windows that pop up while writing (e.g. XWrits). <tt>for_window [class="XWrits"] floating enable, focus tiling</tt> isn't really safe because it doesn't work if you were already in a floating container. <tt>focus last</tt> would be perfect here.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-19-1405886506379146">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:19" class="cnum">
+    <a href="#comment:19">comment:19</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-20T22%3A01%3A46%2B02%3A00&amp;precision=second" title="See timeline at 07/20/14 22:01:46">8 months ago</a> by nicoe@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I have implemented the design explained in <a class="ticket" href="/report/ticket/838#comment:10" title="Comment 10">comment:10</a> in the following pull request of i3ipc-python: <a class="ext-link" href="https://github.com/acrisci/i3ipc-python/pull/2"><span class="icon">​</span>https://github.com/acrisci/i3ipc-python/pull/2</a><br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/838?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/838?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/838?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

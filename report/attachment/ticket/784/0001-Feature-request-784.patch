@@ -1,0 +1,182 @@
+From 5bdb945a417c0dc80e89dfae3c877abd67e343a3 Mon Sep 17 00:00:00 2001
+From: Marcos Moyano <marcos@anue.biz>
+Date: Thu, 20 Dec 2012 17:08:45 -0300
+Subject: [PATCH] Feature request #784
+
+---
+ include/scratchpad.h         |  5 +++
+ src/scratchpad.c             | 29 +++++++++++++-
+ testcases/t/185-scratchpad.t | 93 ++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 126 insertions(+), 1 deletion(-)
+
+diff --git a/include/scratchpad.h b/include/scratchpad.h
+index c615705..04feb2d 100644
+--- a/include/scratchpad.h
++++ b/include/scratchpad.h
+@@ -40,4 +40,9 @@ void scratchpad_show(Con *con);
+  */
+ void scratchpad_fix_resolution(void);
+ 
++/**
++ * Verify if the scratchpad is empty or not.
++ */
++bool scratchpad_is_empty(void);
++
+ #endif
+diff --git a/src/scratchpad.c b/src/scratchpad.c
+index 7b30909..ca5d411 100644
+--- a/src/scratchpad.c
++++ b/src/scratchpad.c
+@@ -96,13 +96,31 @@ void scratchpad_show(Con *con) {
+ 
+     /* If this was 'scratchpad show' without criteria, we check if the
+      * currently focused window is a scratchpad window and should be hidden
+-     * again. */
++     * again. If the current focused windows is not a scratchpad window
++     * and the scratchpad itself is empty, we look for scratchpad windows
++     * left behind elsewhere and move them to the current container */
+     if (!con &&
+         (floating = con_inside_floating(focused)) &&
+         floating->scratchpad_state != SCRATCHPAD_NONE) {
+         DLOG("Focused window is a scratchpad window, hiding it.\n");
+         scratchpad_move(focused);
+         return;
++    } else {
++        if (scratchpad_is_empty()) {
++            DLOG("Scratchpad is empty\n");
++            DLOG("Looking for floating windows marked as scatchpad\n");
++            Con *active = con_get_workspace(focused);
++            TAILQ_FOREACH(con, &all_cons, all_cons) {
++              if (con->scratchpad_state != SCRATCHPAD_NONE &&
++                  con_get_workspace(con) != active) {
++                DLOG("Found scratchad window %p\n", con);
++                DLOG("Moving window %p to current workspace\n", con);
++                con_move_to_workspace(con, active, true, false);
++                return;
++              }
++            }
++            return;
++        }
+     }
+ 
+     /* If this was 'scratchpad show' with criteria, we check if it matches a
+@@ -223,3 +241,12 @@ void scratchpad_fix_resolution(void) {
+     __i3_output->rect.width = new_width;
+     __i3_output->rect.height = new_height;
+ }
++
++/*
++ * Verify if the scratchpad is empty or not.
++ */
++bool scratchpad_is_empty(void) {
++    DLOG("Checking if the scratchpad container is empty.\n");
++    Con *__i3_scratch = workspace_get("__i3_scratch", NULL);
++    return TAILQ_EMPTY(&(__i3_scratch->floating_head));
++}
+diff --git a/testcases/t/185-scratchpad.t b/testcases/t/185-scratchpad.t
+index dafe51e..439b8de 100644
+--- a/testcases/t/185-scratchpad.t
++++ b/testcases/t/185-scratchpad.t
+@@ -369,6 +369,99 @@ verify_scratchpad_move_multiple_win(0);
+ $tmp = fresh_workspace;
+ verify_scratchpad_move_multiple_win(1);
+ 
++################################################################################
++# 12: focus a different workspace and call scratchpad show on having a
++# scratchpad window showing on another workspace. Then the same but with
++# two scratchpad windows on different workspaces.
++################################################################################
++
++$ws = get_ws($tmp);
++is(scalar @{$ws->{nodes}}, 0, 'no windows on ws');
++is(scalar @{$ws->{floating_nodes}}, 1, 'one floating windows on ws');
++cmd 'scratchpad show';
++$__i3_scratch = get_ws('__i3_scratch');
++is(scalar @{$__i3_scratch->{nodes}}, 0, "number of nodes matches");
++is(scalar @{$__i3_scratch->{floating_nodes}}, 4, "number of floating nodes matches");
++
++# Let's kill 3 and leave one
++cmd 'scratchpad show';
++cmd 'kill';
++cmd 'scratchpad show';
++cmd 'kill';
++cmd 'scratchpad show';
++cmd 'kill';
++
++cmd 'scratchpad show';
++# tiny sleep. In fast machines I sometimes got an error on line 401
++select(undef, undef, undef, 0.3);
++
++$ws = get_ws($tmp);
++$__i3_scratch = get_ws('__i3_scratch');
++is(scalar @{$ws->{nodes}}, 0, 'no windows on ws');
++is(scalar @{$ws->{floating_nodes}}, 1, 'one floating windows on ws');
++is(scalar @{$__i3_scratch->{nodes}}, 0, "number of nodes matches");
++is(scalar @{$__i3_scratch->{floating_nodes}}, 0, "number of floating nodes matches");
++
++$tmp2 = fresh_workspace;
++$ws = get_ws($tmp2);
++is(scalar @{$ws->{nodes}}, 0, 'no windows on ws');
++is(scalar @{$ws->{floating_nodes}}, 0, 'no floating windows on ws');
++
++# A call to scratchpad show should bring the window here.
++cmd 'scratchpad show';
++$ws = get_ws($tmp2);
++is(scalar @{$ws->{floating_nodes}}, 1, 'one floating windows on ws');
++ok(!workspace_exists($tmp), 'Old workspace is gone');
++
++my $scratch_window = open_window(name => 'new-scratch');
++cmd 'move scratchpad';
++
++$ws = get_ws($tmp2);
++$__i3_scratch = get_ws('__i3_scratch');
++is(scalar @{$ws->{floating_nodes}}, 1, 'one floating windows on ws');
++is(scalar @{$__i3_scratch->{nodes}}, 0, "number of nodes matches");
++is(scalar @{$__i3_scratch->{floating_nodes}}, 1, "number of floating nodes matches");
++
++# Calling scratchpad show should hide the floating window.
++cmd 'scratchpad show';
++$ws = get_ws($tmp2);
++$__i3_scratch = get_ws('__i3_scratch');
++is(scalar @{$ws->{floating_nodes}}, 0, 'no floating windows on ws');
++is(scalar @{$__i3_scratch->{nodes}}, 0, "number of nodes matches");
++is(scalar @{$__i3_scratch->{floating_nodes}}, 2, "number of floating nodes matches");
++
++cmd 'scratchpad show';
++
++$ws = get_ws($tmp2);
++$__i3_scratch = get_ws('__i3_scratch');
++is(scalar @{$ws->{floating_nodes}}, 1, 'one floating windows on ws');
++is(scalar @{$__i3_scratch->{nodes}}, 0, "number of nodes matches");
++is(scalar @{$__i3_scratch->{floating_nodes}}, 1, "number of floating nodes matches");
++
++
++$tmp = fresh_workspace;
++cmd 'scratchpad show';
++$ws = get_ws($tmp);
++$__i3_scratch = get_ws('__i3_scratch');
++is(scalar @{$ws->{floating_nodes}}, 1, 'one floating windows on ws');
++is(scalar @{$__i3_scratch->{nodes}}, 0, "number of nodes matches");
++is(scalar @{$__i3_scratch->{floating_nodes}}, 0, "number of floating nodes matches");
++$ws = get_ws($tmp2);
++is(scalar @{$ws->{floating_nodes}}, 1, 'one floating windows on ws');
++
++
++my $tmp3 = fresh_workspace;
++cmd 'scratchpad show';
++# We should get the first one from a visible workspace
++$ws = get_ws($tmp3);
++$__i3_scratch = get_ws('__i3_scratch');
++is(scalar @{$ws->{floating_nodes}}, 1, 'one floating windows on ws');
++is(scalar @{$__i3_scratch->{nodes}}, 0, "number of nodes matches");
++is(scalar @{$__i3_scratch->{floating_nodes}}, 0, "number of floating nodes matches");
++
++ok(!workspace_exists($tmp), 'Old workspace is gone');
++
++
+ # TODO: make i3bar display *something* when a window on the scratchpad has the urgency hint
+ 
+ done_testing;
+-- 
+1.8.0.2
+

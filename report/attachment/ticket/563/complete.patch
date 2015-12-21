@@ -1,0 +1,392 @@
+diff --git a/docs/userguide b/docs/userguide
+index 26c12b7..0bda11f 100644
+--- a/docs/userguide
++++ b/docs/userguide
+@@ -988,19 +988,19 @@ background::
+ statusline::
+ 	Text color to be used for the statusline.
+ focused_workspace::
+-	Text color/background color for a workspace button when the workspace
++	Border, background and text color for a workspace button when the workspace
+ 	has focus.
+ active_workspace::
+-	Text color/background color for a workspace button when the workspace
++	Border, background and text color for a workspace button when the workspace
+ 	is active (visible) on some output, but the focus is on another one.
+ 	You can only tell this apart from the focused workspace when you are
+ 	using multiple monitors.
+ inactive_workspace::
+-	Text color/background color for a workspace button when the workspace
++	Border, background and text color for a workspace button when the workspace
+ 	does not have focus and is not active (visible) on any output. This
+ 	will be the case for most workspaces.
+ urgent_workspace::
+-	Text color/background color for workspaces which contain at least one
++	Border, background and text color for a workspace button when the workspace
+ 	window with the urgency hint set.
+ 
+ *Syntax*:
+@@ -1009,21 +1009,21 @@ colors {
+     background <color>
+     statusline <color>
+ 
+-    colorclass <foreground> <background>
++    colorclass <border> <background> <text>
+ }
+ ----------------------------------------
+ 
+-*Example*:
++*Example (default colors)*:
+ --------------------------------------
+ bar {
+     colors {
+         background #000000
+         statusline #ffffff
+ 
+-        focused_workspace  #ffffff #285577
+-        active_workspace   #ffffff #333333
+-        inactive_workspace #888888 #222222
+-        urgent_workspace   #ffffff #900000
++        focused_workspace  #4c7899 #285577 #ffffff
++        active_workspace   #333333 #5f676a #ffffff
++        inactive_workspace #333333 #222222 #888888
++        urgent_workspace   #2f343a #900000 #ffffff
+     }
+ }
+ --------------------------------------
+diff --git a/i3bar/include/xcb.h b/i3bar/include/xcb.h
+index f82c711..c5a5078 100644
+--- a/i3bar/include/xcb.h
++++ b/i3bar/include/xcb.h
+@@ -30,12 +30,16 @@ struct xcb_color_strings_t {
+     char *bar_bg;
+     char *active_ws_fg;
+     char *active_ws_bg;
++    char *active_ws_border;
+     char *inactive_ws_fg;
+     char *inactive_ws_bg;
++    char *inactive_ws_border;
+     char *focus_ws_bg;
+     char *focus_ws_fg;
++    char *focus_ws_border;
+     char *urgent_ws_bg;
+     char *urgent_ws_fg;
++    char *urgent_ws_border;
+ };
+ 
+ typedef struct xcb_colors_t xcb_colors_t;
+diff --git a/i3bar/src/config.c b/i3bar/src/config.c
+index 5f3338a..97d16ac 100644
+--- a/i3bar/src/config.c
++++ b/i3bar/src/config.c
+@@ -124,14 +124,18 @@ static int config_string_cb(void *params_, const unsigned char *val, unsigned in
+ 
+     COLOR(statusline, bar_fg);
+     COLOR(background, bar_bg);
++    COLOR(focused_workspace_border, focus_ws_border);
++    COLOR(focused_workspace_background, focus_ws_bg);
+     COLOR(focused_workspace_text, focus_ws_fg);
+-    COLOR(focused_workspace_bg, focus_ws_bg);
++    COLOR(active_workspace_border, active_ws_border);
++    COLOR(active_workspace_background, active_ws_bg);
+     COLOR(active_workspace_text, active_ws_fg);
+-    COLOR(active_workspace_bg, active_ws_bg);
++    COLOR(inactive_workspace_border, inactive_ws_border);
++    COLOR(inactive_workspace_background, inactive_ws_bg);
+     COLOR(inactive_workspace_text, inactive_ws_fg);
+-    COLOR(inactive_workspace_bg, inactive_ws_bg);
++    COLOR(urgent_workspace_border, urgent_ws_border);
++    COLOR(urgent_workspace_background, urgent_ws_bg);
+     COLOR(urgent_workspace_text, urgent_ws_fg);
+-    COLOR(urgent_workspace_bg, urgent_ws_bg);
+ 
+     printf("got unexpected string %.*s for cur_key = %s\n", len, val, cur_key);
+ 
+@@ -221,12 +225,16 @@ void free_colors(struct xcb_color_strings_t *colors) {
+     FREE_COLOR(bar_bg);
+     FREE_COLOR(active_ws_fg);
+     FREE_COLOR(active_ws_bg);
++    FREE_COLOR(active_ws_border);
+     FREE_COLOR(inactive_ws_fg);
+     FREE_COLOR(inactive_ws_bg);
++    FREE_COLOR(inactive_ws_border);
+     FREE_COLOR(urgent_ws_fg);
+     FREE_COLOR(urgent_ws_bg);
++    FREE_COLOR(urgent_ws_border);
+     FREE_COLOR(focus_ws_fg);
+     FREE_COLOR(focus_ws_bg);
++    FREE_COLOR(focus_ws_border);
+ #undef FREE_COLOR
+ }
+ 
+diff --git a/i3bar/src/xcb.c b/i3bar/src/xcb.c
+index 4a5ff69..93de2e2 100644
+--- a/i3bar/src/xcb.c
++++ b/i3bar/src/xcb.c
+@@ -79,12 +79,16 @@ struct xcb_colors_t {
+     uint32_t bar_bg;
+     uint32_t active_ws_fg;
+     uint32_t active_ws_bg;
++    uint32_t active_ws_border;
+     uint32_t inactive_ws_fg;
+     uint32_t inactive_ws_bg;
++    uint32_t inactive_ws_border;
+     uint32_t urgent_ws_bg;
+     uint32_t urgent_ws_fg;
++    uint32_t urgent_ws_border;
+     uint32_t focus_ws_bg;
+     uint32_t focus_ws_fg;
++    uint32_t focus_ws_border;
+ };
+ struct xcb_colors_t colors;
+ 
+@@ -205,12 +209,16 @@ void init_colors(const struct xcb_color_strings_t *new_colors) {
+     PARSE_COLOR(bar_bg, "#000000");
+     PARSE_COLOR(active_ws_fg, "#FFFFFF");
+     PARSE_COLOR(active_ws_bg, "#333333");
++    PARSE_COLOR(active_ws_border, "#333333");
+     PARSE_COLOR(inactive_ws_fg, "#888888");
+     PARSE_COLOR(inactive_ws_bg, "#222222");
++    PARSE_COLOR(inactive_ws_border, "#333333");
+     PARSE_COLOR(urgent_ws_fg, "#FFFFFF");
+     PARSE_COLOR(urgent_ws_bg, "#900000");
++    PARSE_COLOR(urgent_ws_border, "#2f343a");
+     PARSE_COLOR(focus_ws_fg, "#FFFFFF");
+     PARSE_COLOR(focus_ws_bg, "#285577");
++    PARSE_COLOR(focus_ws_border, "#4c7899");
+ #undef PARSE_COLOR
+ }
+ 
+@@ -1339,29 +1347,44 @@ void draw_bars() {
+             DLOG("Drawing Button for WS %s at x = %d\n", ws_walk->name, i);
+             uint32_t fg_color = colors.inactive_ws_fg;
+             uint32_t bg_color = colors.inactive_ws_bg;
++            uint32_t border_color = colors.inactive_ws_border;
+             if (ws_walk->visible) {
+                 if (!ws_walk->focused) {
+                     fg_color = colors.active_ws_fg;
+                     bg_color = colors.active_ws_bg;
++                    border_color = colors.active_ws_border;
+                 } else {
+                     fg_color = colors.focus_ws_fg;
+                     bg_color = colors.focus_ws_bg;
++                    border_color = colors.focus_ws_border;
+                 }
+             }
+             if (ws_walk->urgent) {
+                 DLOG("WS %s is urgent!\n", ws_walk->name);
+                 fg_color = colors.urgent_ws_fg;
+                 bg_color = colors.urgent_ws_bg;
++                border_color = colors.urgent_ws_border;
+                 /* The urgent-hint should get noticed, so we unhide the bars shortly */
+                 unhide_bars();
+             }
+             uint32_t mask = XCB_GC_FOREGROUND | XCB_GC_BACKGROUND;
++            uint32_t vals_border[] = { border_color, border_color };
++            xcb_change_gc(xcb_connection,
++                          outputs_walk->bargc,
++                          mask,
++                          vals_border);
++            xcb_rectangle_t rect_border = { i + 1, 0, ws_walk->name_width + 10, font.height + 4 };
++            xcb_poly_fill_rectangle(xcb_connection,
++                                    outputs_walk->buffer,
++                                    outputs_walk->bargc,
++                                    1,
++                                    &rect_border);
+             uint32_t vals[] = { bg_color, bg_color };
+             xcb_change_gc(xcb_connection,
+                           outputs_walk->bargc,
+                           mask,
+                           vals);
+-            xcb_rectangle_t rect = { i + 1, 1, ws_walk->name_width + 8, font.height + 4 };
++            xcb_rectangle_t rect = { i + 2, 1, ws_walk->name_width + 8, font.height + 2 };
+             xcb_poly_fill_rectangle(xcb_connection,
+                                     outputs_walk->buffer,
+                                     outputs_walk->bargc,
+@@ -1369,8 +1392,8 @@ void draw_bars() {
+                                     &rect);
+             set_font_colors(outputs_walk->bargc, fg_color, bg_color);
+             draw_text((char*)ws_walk->ucs2_name, ws_walk->name_glyphs, true,
+-                    outputs_walk->buffer, outputs_walk->bargc, i + 5, 2, ws_walk->name_width);
+-            i += 10 + ws_walk->name_width;
++                    outputs_walk->buffer, outputs_walk->bargc, i + 6, 2, ws_walk->name_width);
++            i += 12 + ws_walk->name_width;
+         }
+ 
+         i = 0;
+diff --git a/include/config.h b/include/config.h
+index ea1885c..93e7e7e 100644
+--- a/include/config.h
++++ b/include/config.h
+@@ -225,17 +225,21 @@ struct Barconfig {
+         char *background;
+         char *statusline;
+ 
++        char *focused_workspace_border;
++        char *focused_workspace_background;
+         char *focused_workspace_text;
+-        char *focused_workspace_bg;
+ 
++        char *active_workspace_border;
++        char *active_workspace_background;
+         char *active_workspace_text;
+-        char *active_workspace_bg;
+ 
++        char *inactive_workspace_border;
++        char *inactive_workspace_background;
+         char *inactive_workspace_text;
+-        char *inactive_workspace_bg;
+ 
++        char *urgent_workspace_border;
++        char *urgent_workspace_background;
+         char *urgent_workspace_text;
+-        char *urgent_workspace_bg;
+     } colors;
+ 
+     TAILQ_ENTRY(Barconfig) configs;
+diff --git a/src/cfgparse.l b/src/cfgparse.l
+index 673724a..c03ee33 100644
+--- a/src/cfgparse.l
++++ b/src/cfgparse.l
+@@ -37,7 +37,8 @@ int yycolumn = 1;
+     yy_push_state(EAT_WHITESPACE); \
+ } while (0)
+ 
+-#define BAR_DOUBLE_COLOR do { \
++#define BAR_TRIPLE_COLOR do { \
++    yy_push_state(BAR_COLOR); \
+     yy_push_state(BAR_COLOR); \
+     yy_push_state(BAR_COLOR); \
+ } while (0)
+@@ -112,10 +113,10 @@ EOL     (\r?\n)
+ <BAR_COLORS>^[ \t]*#[^\n]*      { return TOKCOMMENT; }
+ <BAR_COLORS>background          { yy_push_state(BAR_COLOR); return TOK_BAR_COLOR_BACKGROUND; }
+ <BAR_COLORS>statusline          { yy_push_state(BAR_COLOR); return TOK_BAR_COLOR_STATUSLINE; }
+-<BAR_COLORS>focused_workspace   { BAR_DOUBLE_COLOR; return TOK_BAR_COLOR_FOCUSED_WORKSPACE; }
+-<BAR_COLORS>active_workspace    { BAR_DOUBLE_COLOR; return TOK_BAR_COLOR_ACTIVE_WORKSPACE; }
+-<BAR_COLORS>inactive_workspace  { BAR_DOUBLE_COLOR; return TOK_BAR_COLOR_INACTIVE_WORKSPACE; }
+-<BAR_COLORS>urgent_workspace    { BAR_DOUBLE_COLOR; return TOK_BAR_COLOR_URGENT_WORKSPACE; }
++<BAR_COLORS>focused_workspace   { BAR_TRIPLE_COLOR; return TOK_BAR_COLOR_FOCUSED_WORKSPACE; }
++<BAR_COLORS>active_workspace    { BAR_TRIPLE_COLOR; return TOK_BAR_COLOR_ACTIVE_WORKSPACE; }
++<BAR_COLORS>inactive_workspace  { BAR_TRIPLE_COLOR; return TOK_BAR_COLOR_INACTIVE_WORKSPACE; }
++<BAR_COLORS>urgent_workspace    { BAR_TRIPLE_COLOR; return TOK_BAR_COLOR_URGENT_WORKSPACE; }
+ <BAR_COLOR>#[0-9a-fA-F]+        { yy_pop_state(); yylval.string = sstrdup(yytext); return HEXCOLOR; }
+ <BAR,BAR_COLORS,BAR_MODE,BAR_POSITION>[a-zA-Z]+ { yylval.string = sstrdup(yytext); return WORD; }
+ 
+diff --git a/src/cfgparse.y b/src/cfgparse.y
+index cebd858..44e4f36 100644
+--- a/src/cfgparse.y
++++ b/src/cfgparse.y
+@@ -1174,38 +1174,42 @@ bar_color_statusline:
+     ;
+ 
+ bar_color_focused_workspace:
+-    TOK_BAR_COLOR_FOCUSED_WORKSPACE HEXCOLOR HEXCOLOR
++    TOK_BAR_COLOR_FOCUSED_WORKSPACE HEXCOLOR HEXCOLOR HEXCOLOR
+     {
+-        DLOG("focused_ws = %s and %s\n", $2, $3);
+-        current_bar.colors.focused_workspace_text = $2;
+-        current_bar.colors.focused_workspace_bg = $3;
++        DLOG("focused_ws = %s, %s and %s\n", $2, $3, $4);
++        current_bar.colors.focused_workspace_border = $2;
++        current_bar.colors.focused_workspace_background = $3;
++        current_bar.colors.focused_workspace_text = $4;
+     }
+     ;
+ 
+ bar_color_active_workspace:
+-    TOK_BAR_COLOR_ACTIVE_WORKSPACE HEXCOLOR HEXCOLOR
++    TOK_BAR_COLOR_ACTIVE_WORKSPACE HEXCOLOR HEXCOLOR HEXCOLOR
+     {
+-        DLOG("active_ws = %s and %s\n", $2, $3);
+-        current_bar.colors.active_workspace_text = $2;
+-        current_bar.colors.active_workspace_bg = $3;
++        DLOG("active_ws = %s, %s and %s\n", $2, $3, $4);
++        current_bar.colors.active_workspace_border = $2;
++        current_bar.colors.active_workspace_background = $3;
++        current_bar.colors.active_workspace_text = $4;
+     }
+     ;
+ 
+ bar_color_inactive_workspace:
+-    TOK_BAR_COLOR_INACTIVE_WORKSPACE HEXCOLOR HEXCOLOR
++    TOK_BAR_COLOR_INACTIVE_WORKSPACE HEXCOLOR HEXCOLOR HEXCOLOR
+     {
+-        DLOG("inactive_ws = %s and %s\n", $2, $3);
+-        current_bar.colors.inactive_workspace_text = $2;
+-        current_bar.colors.inactive_workspace_bg = $3;
++        DLOG("inactive_ws = %s, %s and %s\n", $2, $3, $4);
++        current_bar.colors.inactive_workspace_border = $2;
++        current_bar.colors.inactive_workspace_background = $3;
++        current_bar.colors.inactive_workspace_text = $4;
+     }
+     ;
+ 
+ bar_color_urgent_workspace:
+-    TOK_BAR_COLOR_URGENT_WORKSPACE HEXCOLOR HEXCOLOR
++    TOK_BAR_COLOR_URGENT_WORKSPACE HEXCOLOR HEXCOLOR HEXCOLOR
+     {
+-        DLOG("urgent_ws = %s and %s\n", $2, $3);
+-        current_bar.colors.urgent_workspace_text = $2;
+-        current_bar.colors.urgent_workspace_bg = $3;
++        DLOG("urgent_ws = %s, %s and %s\n", $2, $3, $4);
++        current_bar.colors.urgent_workspace_border = $2;
++        current_bar.colors.urgent_workspace_background = $3;
++        current_bar.colors.urgent_workspace_text = $4;
+     }
+     ;
+ 
+diff --git a/src/config.c b/src/config.c
+index 7b0b34e..555684a 100644
+--- a/src/config.c
++++ b/src/config.c
+@@ -303,14 +303,18 @@ void load_configuration(xcb_connection_t *conn, const char *override_configpath,
+             FREE(barconfig->font);
+             FREE(barconfig->colors.background);
+             FREE(barconfig->colors.statusline);
++            FREE(barconfig->colors.focused_workspace_border);
++            FREE(barconfig->colors.focused_workspace_background);
+             FREE(barconfig->colors.focused_workspace_text);
+-            FREE(barconfig->colors.focused_workspace_bg);
++            FREE(barconfig->colors.active_workspace_border);
++            FREE(barconfig->colors.active_workspace_background);
+             FREE(barconfig->colors.active_workspace_text);
+-            FREE(barconfig->colors.active_workspace_bg);
++            FREE(barconfig->colors.inactive_workspace_border);
++            FREE(barconfig->colors.inactive_workspace_background);
+             FREE(barconfig->colors.inactive_workspace_text);
+-            FREE(barconfig->colors.inactive_workspace_bg);
++            FREE(barconfig->colors.urgent_workspace_border);
++            FREE(barconfig->colors.urgent_workspace_background);
+             FREE(barconfig->colors.urgent_workspace_text);
+-            FREE(barconfig->colors.urgent_workspace_bg);
+             TAILQ_REMOVE(&barconfigs, barconfig, configs);
+             FREE(barconfig);
+         }
+diff --git a/src/ipc.c b/src/ipc.c
+index fe1464e..d209273 100644
+--- a/src/ipc.c
++++ b/src/ipc.c
+@@ -585,14 +585,18 @@ IPC_HANDLER(get_bar_config) {
+         y(map_open);
+         YSTR_IF_SET(background);
+         YSTR_IF_SET(statusline);
++        YSTR_IF_SET(focused_workspace_border);
++        YSTR_IF_SET(focused_workspace_background);
+         YSTR_IF_SET(focused_workspace_text);
+-        YSTR_IF_SET(focused_workspace_bg);
++        YSTR_IF_SET(active_workspace_border);
++        YSTR_IF_SET(active_workspace_background);
+         YSTR_IF_SET(active_workspace_text);
+-        YSTR_IF_SET(active_workspace_bg);
++        YSTR_IF_SET(inactive_workspace_border);
++        YSTR_IF_SET(inactive_workspace_background);
+         YSTR_IF_SET(inactive_workspace_text);
+-        YSTR_IF_SET(inactive_workspace_bg);
++        YSTR_IF_SET(urgent_workspace_border);
++        YSTR_IF_SET(urgent_workspace_background);
+         YSTR_IF_SET(urgent_workspace_text);
+-        YSTR_IF_SET(urgent_workspace_bg);
+         y(map_close);
+ 
+ #undef YSTR_IF_SET

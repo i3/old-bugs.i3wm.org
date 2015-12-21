@@ -1,0 +1,965 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1307 (Transmission Not Centering &amp; Moves Without Mod Key)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1306" title="Ticket #1306" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1307?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1307?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1307?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1308" title="Ticket #1308" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="d7b0c0359421f3b2a1566487";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1306" title="Ticket #1306">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1308" title="Ticket #1308">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2014-07-03T07%3A41%3A43%2B02%3A00&amp;precision=second" title="See timeline at 07/03/14 07:41:43">9 months ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2014-07-18T09%3A21%3A23%2B02%3A00&amp;precision=second" title="See timeline at 07/18/14 09:21:23">9 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1307" class="trac-id">#1307</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=invalid">invalid</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Transmission Not Centering &amp; Moves Without Mod Key</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable"><a href="/report/query?status=!closed&amp;reporter=i3-new-ticket">i3-new-ticket</a></td>
+      <th id="h_owner" class="missing">Owned by:</th>
+      <td headers="h_owner"></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.8">4.8</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.8-62-g7381b50 (2014-07-02, branch "next")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+Hi,<br />
+</p>
+<p>
+I'm using the next branch, and I noticed a few odd things when using transmission-2.83 and 2.84, when floating with no borders.<br />
+</p>
+<ol><li>transmission-gtk has a habit the first time you run it, it appears off center of screen, but the second time I run it, and I try to place it in the center of the screen, and then restart it over, it still does not appear in the center, it will appear off center, slightly to the right.
+</li></ol><p>
+--- Expected Result? transmission-gtk should center on it's own when placed in center screen and restarted.<br />
+</p>
+<ol start="2"><li>In order to get transmission-gtk to appear in the center of the screen I had to run transmission-qt and place it in the center of the screen, then the next time I ran transmission-gtk it would appear in the center.
+</li></ol><p>
+--- Expected Result? Should not need to run and center transmission-qt in order to have transmission-gtk appear in center of screen.<br />
+</p>
+<ol start="3"><li>I also noticed when using floating no borders I could move transmission-gtk without the combination of mod+left mouse button, transmission-gtk would move only holding down the left mouse button on the toolbar and moving it, but transmission-qt, I had to use the mod key and mouse together.
+</li></ol><p>
+--- Expected Result? It's my understanding windows without borders, in order to move them you need a combination of mod+left mouse button, even if you hold the left mouse button while on the toolbar?<br />
+</p>
+<ol start="4"><li>Also in the latest version of transmission 2.84, I encountered all the same issues as 2.83, except this time tranmission-qt would move with only the mouse, holding the left button on the toolbar, just like the gtk version was doing.
+</li></ol><p>
+--- Expected Result? Need to use a combination of mod+left mouse button when moving windows on toolbar, or any location?<br />
+</p>
+<p>
+Thanks <br />
+Mii<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(1)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/1307/i3.log.bz2" title="View attachment">i3.log.bz2</a><a href="/report/raw-attachment/ticket/1307/i3.log.bz2" class="trac-rawlink" title="Download">​</a>
+       (<span title="91162 bytes">89.0 KB</span>) -
+      added by <em>i3-new-ticket</em> <a class="timeline" href="/report/timeline?from=2014-07-03T07%3A41%3A44%2B02%3A00&amp;precision=second" title="See timeline at 07/03/14 07:41:44">9 months ago</a>.
+  </dt>
+              <dd>
+                desc2
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/1307/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(20)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-03T07%3A41%3A44%2B02%3A00&amp;precision=second" title="See timeline at 07/03/14 07:41:44">9 months ago</a> by i3-new-ticket
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1307/i3.log.bz2"><em>i3.log.bz2</em></a><a href="/report/raw-attachment/ticket/1307/i3.log.bz2" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+desc2<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-1-1404368284044970">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-03T08%3A18%3A04%2B02%3A00&amp;precision=second" title="See timeline at 07/03/14 08:18:04">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Forget number 4., my mistake transmission-qt also in 2.84 works with the mod+left mouse button on the toolbar. It will not move without the mod key combination...<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1404369215524331">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-03T08%3A33%3A35%2B02%3A00&amp;precision=second" title="See timeline at 07/03/14 08:33:35">9 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I can't reproduce the centering issues. It works fine for me.<br />
+</p>
+<p>
+If by "toolbar", you mean the application toolbar (not the i3 "titlebar"), then you should need the mod and left click combination to move it with no border. That combination should also work on the i3 titlebar. I can't understand your expected result because it is a question (expected result should be a statement).<br />
+</p>
+<p>
+When you restart the app, it's probably not going to remember where the old instance was on the screen last.<br />
+</p>
+<p>
+This report is not clear enough for me to work on. Try one issue at a time and see if you can reproduce whatever the problem is on other apps to rule out a bug in transmission.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1404380965170684">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-03T11%3A49%3A25%2B02%3A00&amp;precision=second" title="See timeline at 07/03/14 11:49:25">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I had the centering problem occur on 4.8 and this next branch I'm on, so this has been two versions of i3, not just next.<br />
+</p>
+<p>
+Toolbar, meaning the application toolbar, and yes I thought you need the mod+mouse for it, but with the gtk version of transmission it moves with just the mouse.<br />
+</p>
+<p>
+The 'Expected Result' with question meant if you asked the question to me, as what results do I expect. You did this to me several times in the chat channel so I'm giving it the same way, thought you might of understood.<br />
+</p>
+<p>
+Anyhow, no matter what, I"m just stating what the results should be, I thought that was clear to see.<br />
+</p>
+<p>
+So now that I've explained some of your questions/concerns, the report isn't clear?<br />
+</p>
+<p>
+thanks<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1404381123798163">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-03T11%3A52%3A03%2B02%3A00&amp;precision=second" title="See timeline at 07/03/14 11:52:03">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+This is all the report was;<br />
+</p>
+<ol><li>transmission-gtk won't center unless I run transmission-qt and center it.
+</li></ol><ol start="2"><li>transmission-gtk moves with only the mouse, don't need mod.
+</li></ol>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1404381504056747">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-03T11%3A58%3A24%2B02%3A00&amp;precision=second" title="See timeline at 07/03/14 11:58:24">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Ah Sorry forgot to mention, I found other apps I can move with just the mouse, these are them listed below;<br />
+</p>
+<p>
+1.flash-player-properties <br />
+2.Handbrake<br />
+3.xfce4-notifyd-config<br />
+</p>
+<p>
+So there seems to be some issue where some windows can move with just the mouse in i3 that shouldn't.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1404438636584039">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-04T03%3A50%3A36%2B02%3A00&amp;precision=second" title="See timeline at 07/04/14 03:50:36">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I went back playing more with the gtk version, seems like some theme are effecting it, causing this centering issues, so disregard this, not an i3 issue..<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1404456041519063">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-04T08%3A40%3A41%2B02%3A00&amp;precision=second" title="See timeline at 07/04/14 08:40:41">9 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>bug_somewhere_else</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>closed</em>
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-8-1404461092379133">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-04T10%3A04%3A52%2B02%3A00&amp;precision=second" title="See timeline at 07/04/14 10:04:52">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        <em>bug_somewhere_else</em> deleted
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>closed</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Why was this closed?<br />
+</p>
+<p>
+I said transmission centering is not an issue, but tranmission-gtk and 3 other apps move with only the mouse, so there is some sort of issue going on with this still...<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1404463412887844">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-04T10%3A43%3A32%2B02%3A00&amp;precision=second" title="See timeline at 07/04/14 10:43:32">9 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Moving windows on locations within the window without the modifier is not supported by i3 as far as I know.<br />
+</p>
+<p>
+Any app that has this behavior should be considered a gift from the gods.<br />
+</p>
+<p>
+So what improvement are you suggesting in this report? We only consider changes that somehow improve the user experience or the code base.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1404524856056076">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-05T03%3A47%3A36%2B02%3A00&amp;precision=second" title="See timeline at 07/05/14 03:47:36">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+A gift, lol...<br />
+</p>
+<p>
+Improvement? <br />
+</p>
+<p>
+I thought we established that a border less floating window can only move with the combination of mod+mouse? If that is correct, then I'm assuming the improvement is fixing this, as it seems like a bug, where some windows can work without this combination.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1404540674655422">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-05T08%3A11%3A14%2B02%3A00&amp;precision=second" title="See timeline at 07/05/14 08:11:14">9 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>invalid</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This report is an incomprehensible mess. Do not reopen this. Do some research on the internet on how to post issues to an open source bug tracker and then start a new issue if you still have a problem.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-12-1404542381067041">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-05T08%3A39%3A41%2B02%3A00&amp;precision=second" title="See timeline at 07/05/14 08:39:41">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Is English your Native Language?<br />
+</p>
+<p>
+I've been making bug reports as simple as this for Linux for 15 years and you are the first person in 15 years to say this is a mess, when the English and how I explained the report is at a level of a 15 year old that Speaks English as their Native Language and that is NO BS!<br />
+</p>
+<p>
+Seriously you need to open your eyes and learn how to pay attention TonyC, and I'm sorry I'm not trying to be rude but you honestly are not reading or paying attention to SIMPLE BASIC ENGLISH!<br />
+</p>
+<p>
+So if you have any repsect for me as an end-user trying to help then go back to the beginning and READ the report, there is nothing complicated about it...<br />
+</p>
+<p>
+Please don't belittie my intelligence, if you honestly can't go back and read the report, then you shouldn't be handling bug reports...<br />
+</p>
+<p>
+Cheers<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-13-1404580045924500">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:13" class="cnum">
+    <a href="#comment:13">comment:13</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-05T19%3A07%3A25%2B02%3A00&amp;precision=second" title="See timeline at 07/05/14 19:07:25">9 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sending a message in this tone to Tony is not cool. I know you’ll come back in your next move and apologize and say you’re only trying to help.<br />
+</p>
+<p>
+What you’re doing comes across as trolling, which is why I don’t spend any time on the issues you report.<br />
+</p>
+<p>
+This report is about a non-issue (and so was your most recent one). If windows move when you click on them and drag the pointer around, then that’s not a bug in i3, as i3 is entirely out of the loop. In X11, windows are free to implement whatever behavior they want, so if that includes moving the window while dragging, so be it.<br />
+</p>
+<p>
+So, please, before you file any more reports, ask on our IRC channel if what you’re seeing actually is a bug or rather expected behavior.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-14-1404614856133735">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:14" class="cnum">
+    <a href="#comment:14">comment:14</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-06T04%3A47%3A36%2B02%3A00&amp;precision=second" title="See timeline at 07/06/14 04:47:36">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I said I wasn't trying to be rude...<br />
+</p>
+<p>
+If you took it the wrong way TonyC and Michael, then I apologize to let you know my intentions are honest, I'm not trying to be rude, trolling or anything, I'm simply, just typing and talking, nothing more.<br />
+</p>
+<p>
+At times I feel like you guys are not being fair towards me when I make simple reports and I'm told they are to difficult to understand when they're not, just like this one.<br />
+</p>
+<p>
+Look at these comments;<br />
+</p>
+<p>
+--- I can't understand your expected result<br />
+</p>
+<p>
+--- This report is not clear enough for me to work on<br />
+</p>
+<p>
+--- incomprehensible mess<br />
+</p>
+<p>
+I think TonyC has got his head so wrapped in code he's forgetting how to understand basic English, or think beyond code, again, not trying to be rude, or anything, but let's be honest here, this report is very simple to follow.<br />
+</p>
+<p>
+I truly believe this is an issue, because Window Managers are suppose to manage windows.<br />
+</p>
+<p>
+If you don't standardize this and say this is how a Window is suppose to be controlled and used in i3 then all you do is confuse the end-user.<br />
+</p>
+<p>
+According to what I read in the docs and what I was told, is that a floating window without the titlebar and borderless, you need the mod+mouse to drag it.<br />
+</p>
+<p>
+In X11 windows might be free to implement a behavior, but what about the the point of i3 being a Window Manager to control this the i3 way?<br />
+</p>
+<p>
+It's your project, but if some windows are going to need mod+mouse to move and others don't, that is a lack of standardization. Control the windows make them behave the way you want, and give to the end-user the contol you want. But I feel like the conversation is going, well, windows might work one way, or maybe another, as though you're not sure, and you're not taking control of them...<br />
+</p>
+<p>
+i3 is obviously controlling the majority of windows with mod+mouse, so why not the others, why are they being left out?<br />
+</p>
+<p>
+What truly is the Standard i3 will follow? What is so diffult about having i3 control all windows that are without titlebar and borders to say they are all controlled mod+mouse, but if the end-user wants to change this, then it can be done. Now we have a Standard, i3 doing it onen way, and then saying the end-user can do it this way, to me that is real window management, and for now, I'm not seeing this in i3.<br />
+</p>
+<p>
+THANKS<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-15-1404615093195343">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:15" class="cnum">
+    <a href="#comment:15">comment:15</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-06T04%3A51%3A33%2B02%3A00&amp;precision=second" title="See timeline at 07/06/14 04:51:33">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sorry typo before;<br />
+</p>
+<p>
+Now we have a Standard, i3 doing it 'one' way, and then saying the end-user can do it this way, to me that is real window management, and for now, I'm not seeing this in i3.<br />
+</p>
+<p>
+Control the windows make them behave the way you want, and give to the end-user the contol you want. <br />
+</p>
+<p>
+Also hope what I said above didn't confuse, I meant, i3 does it the i3 way, mod+mouse, but at the same time, you've also give control to the end-user to change it if they want.<br />
+</p>
+<p>
+Thanks<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-16-1404645252987967">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:16" class="cnum">
+    <a href="#comment:16">comment:16</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-06T13%3A14%3A12%2B02%3A00&amp;precision=second" title="See timeline at 07/06/14 13:14:12">9 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+See, told you.<br />
+</p>
+<p>
+Anyway, let me make this very clear to you:<br />
+</p>
+<p>
+i3 _cannot_ prevent windows from implementing whatever behavior they want.<br />
+</p>
+<p>
+So there is nothing we can do about this issue. This is my last word on the topic.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-17-1404715668878451">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:17" class="cnum">
+    <a href="#comment:17">comment:17</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-07T08%3A47%3A48%2B02%3A00&amp;precision=second" title="See timeline at 07/07/14 08:47:48">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Saying; 'This is my last word on the topic', is not a professional tone either towards me as the end-user, so now it's my turn to say, I know you'll be back and apologize to me, since all I'm doing is trying to help, and you can't even try to help me understand what is going on?<br />
+</p>
+<p>
+So you're saying if the developers implement a behavior, then there's nothing i3 can do, such as inforcing that all windows use mod+mouse?<br />
+</p>
+<p>
+IMHO if you can't enforce the way a window behaves in a window manager, then it seems like you should just toss out mod+mouse, it seems pointless then...<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-18-1405663757882546">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:18" class="cnum">
+    <a href="#comment:18">comment:18</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-18T08%3A09%3A17%2B02%3A00&amp;precision=second" title="See timeline at 07/18/14 08:09:17">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        <em>invalid</em> deleted
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>closed</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Well this is my last word, so long, I'm going back to Openbox...<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-19-1405668083485250">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:19" class="cnum">
+    <a href="#comment:19">comment:19</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-18T09%3A21%3A23%2B02%3A00&amp;precision=second" title="See timeline at 07/18/14 09:21:23">9 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>invalid</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1307?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1307?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1307?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

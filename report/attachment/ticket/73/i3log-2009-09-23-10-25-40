@@ -1,0 +1,864 @@
+09/23/2009 10:25:40 AM - src/mainx.c:main:190 - i3 version 3.c-55-g775d3a0 starting
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:363 - Floating modifiers = 8
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 41, symbol = (null), modifiers = 8, command = *f*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 43, symbol = (null), modifiers = 8, command = *s*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 26, symbol = (null), modifiers = 8, command = *d*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 65, symbol = (null), modifiers = 9, command = *t*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 28, symbol = (null), modifiers = 8, command = *focus ft*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 44, symbol = (null), modifiers = 8, command = *h*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 45, symbol = (null), modifiers = 8, command = *j*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 46, symbol = (null), modifiers = 8, command = *k*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 47, symbol = (null), modifiers = 8, command = *l*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 44, symbol = (null), modifiers = 32, command = *wch*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 45, symbol = (null), modifiers = 32, command = *wcj*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 46, symbol = (null), modifiers = 32, command = *wck*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 47, symbol = (null), modifiers = 32, command = *wcl*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 44, symbol = (null), modifiers = 12, command = *sh*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 45, symbol = (null), modifiers = 12, command = *sj*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 46, symbol = (null), modifiers = 12, command = *sk*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 47, symbol = (null), modifiers = 12, command = *sl*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 44, symbol = (null), modifiers = 9, command = *mh*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 45, symbol = (null), modifiers = 9, command = *mj*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 46, symbol = (null), modifiers = 9, command = *mk*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 47, symbol = (null), modifiers = 9, command = *ml*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 44, symbol = (null), modifiers = 33, command = *wcmh*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 45, symbol = (null), modifiers = 33, command = *wcmj*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 46, symbol = (null), modifiers = 33, command = *wcmk*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 47, symbol = (null), modifiers = 33, command = *wcml*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 10, symbol = (null), modifiers = 8, command = *1*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 11, symbol = (null), modifiers = 8, command = *2*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 12, symbol = (null), modifiers = 8, command = *3*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 13, symbol = (null), modifiers = 8, command = *4*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 14, symbol = (null), modifiers = 8, command = *5*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 15, symbol = (null), modifiers = 8, command = *6*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 16, symbol = (null), modifiers = 8, command = *7*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 17, symbol = (null), modifiers = 8, command = *8*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 18, symbol = (null), modifiers = 8, command = *9*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 19, symbol = (null), modifiers = 8, command = *10*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 10, symbol = (null), modifiers = 9, command = *m1*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 11, symbol = (null), modifiers = 9, command = *m2*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 12, symbol = (null), modifiers = 9, command = *m3*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 13, symbol = (null), modifiers = 9, command = *m4*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 14, symbol = (null), modifiers = 9, command = *m5*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 15, symbol = (null), modifiers = 9, command = *m6*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 16, symbol = (null), modifiers = 9, command = *m7*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 17, symbol = (null), modifiers = 9, command = *m8*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 18, symbol = (null), modifiers = 9, command = *m9*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 19, symbol = (null), modifiers = 9, command = *m10*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 36, symbol = (null), modifiers = 8, command = *exec /usr/bin/urxvtc*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 54, symbol = (null), modifiers = 8, command = *kill*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 33, symbol = (null), modifiers = 8, command = *exec /usr/local/bin/dmenu_run -nb black -nf grey -fn '-*-terminus-*-r-normal-*-12-*-*-*-*-60-*-*'*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 26, symbol = (null), modifiers = 9, command = *exit*
+09/23/2009 10:25:40 AM - src/config.c:load_configuration:337 - keycode = 27, symbol = (null), modifiers = 9, command = *restart*
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 41
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 43
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 26
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 65
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 28
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 44
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 45
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 46
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 47
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 44
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 45
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 46
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 47
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 44
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 45
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 46
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 47
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 44
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 45
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 46
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 47
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 44
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 45
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 46
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 47
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 10
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 11
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 12
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 13
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 14
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 15
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 16
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 17
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 18
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 19
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 10
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 11
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 12
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 13
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 14
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 15
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 16
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 17
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 18
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 19
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 36
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 54
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 33
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 26
+09/23/2009 10:25:40 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 27
+09/23/2009 10:25:40 AM - src/mainx.c:main:427 - Checking for Xinerama...
+09/23/2009 10:25:40 AM - src/xinerama.c:query_screens:223 - found Xinerama screen: 1920 x 1080 at 0 x 0
+09/23/2009 10:25:40 AM - src/xinerama.c:query_screens:223 - found Xinerama screen: 1680 x 1050 at 0 x 0
+09/23/2009 10:25:40 AM - src/xinerama.c:initialize_screen:152 - that is virtual screen at 0 x 0 with 1680 x 1050
+09/23/2009 10:25:40 AM - src/xinerama.c:get_screen_containing:78 - comparing x=960 y=540 with x=0 and y=0 width 1680 height 1050
+09/23/2009 10:25:40 AM - src/mainx.c:main:446 - Starting on 0
+09/23/2009 10:25:40 AM - src/handlers.c:handle_expose_event:975 - window = 00a00001
+09/23/2009 10:25:40 AM - src/layout.c:render_workspace:628 - height is 1031
+09/23/2009 10:29:42 AM - src/handlers.c:handle_mapping_notify:267 - Received mapping_notify for keyboard or modifier mapping, re-grabbing keys
+09/23/2009 10:29:42 AM - src/config.c:ungrab_all_keys:71 - Ungrabbing all keys
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 41
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 43
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 26
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 65
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 28
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 44
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 45
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 46
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 47
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 44
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 45
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 46
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 47
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 44
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 45
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 46
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 47
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 44
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 45
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 46
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 47
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 44
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 45
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 46
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 47
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 10
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 11
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 12
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 13
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 14
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 15
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 16
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 17
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 18
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 19
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 10
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 11
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 12
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 13
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 14
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 15
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 16
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 17
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 18
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 19
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 36
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 54
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 33
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 26
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 27
+09/23/2009 10:29:42 AM - src/mainx.c:xkb_got_event:122 - got xkb event, yay
+09/23/2009 10:29:42 AM - src/config.c:ungrab_all_keys:71 - Ungrabbing all keys
+09/23/2009 10:29:42 AM - src/mainx.c:xkb_got_event:137 - Re-grabbing...
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 41
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 43
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 26
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 65
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 28
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 44
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 45
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 46
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 47
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 44
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 45
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 46
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 47
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 44
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 45
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 46
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 47
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 44
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 45
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 46
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 47
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 44
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 45
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 46
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 47
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 10
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 11
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 12
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 13
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 14
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 15
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 16
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 17
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 18
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 19
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 10
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 11
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 12
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 13
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 14
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 15
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 16
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 17
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 18
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 19
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 36
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 54
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 33
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 26
+09/23/2009 10:29:42 AM - src/config.c:grab_keycode_for_binding:76 - Grabbing 27
+09/23/2009 10:29:42 AM - src/mainx.c:xkb_got_event:139 - Done
+09/23/2009 10:29:42 AM - src/handlers.c:handle_key_press:98 - Keypress 36, state raw = 8
+09/23/2009 10:29:42 AM - src/handlers.c:handle_key_press:102 - (removed numlock, state = 8)
+09/23/2009 10:29:42 AM - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 8)
+09/23/2009 10:29:42 AM - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 8)
+09/23/2009 10:29:42 AM - src/commands.c:parse_command:802 - --- parsing command "exec /usr/bin/urxvtc" ---
+09/23/2009 10:29:42 AM - src/commands.c:parse_command:815 - starting "/usr/bin/urxvtc"
+urxvt: unable to parse color '#265997	', using pink instead.
+09/23/2009 10:29:42 AM - src/handlers.c:handle_map_request:583 - window = 0x00400009, serial is 525.
+09/23/2009 10:29:42 AM - src/manage.c:reparent_window:157 - Reparenting window 0x00400009
+09/23/2009 10:29:42 AM - src/manage.c:reparent_window:158 - x = 0, y = 0, width = 480, height = 288
+09/23/2009 10:29:42 AM - src/handlers.c:handle_windowname_change:827 - _NET_WM_NAME changed to "urxvt"
+09/23/2009 10:29:42 AM - src/handlers.c:handle_windowclass_change:949 - WM_CLASS changed to urxvt
+09/23/2009 10:29:42 AM - src/handlers.c:handle_clientleader_change:1270 - Client leader changed to 0000005d
+09/23/2009 10:29:42 AM - src/layout.c:render_workspace:628 - height is 1031
+09/23/2009 10:29:42 AM - src/layout.c:resize_client:253 - frame 0x00a00006 needs to be pushed to 0x0
+09/23/2009 10:29:42 AM - src/layout.c:resize_client:254 - resizing client 0x00a00006 to 1680 x 1031
+09/23/2009 10:29:42 AM - src/layout.c:resize_client:334 - child will be at 2x17 with size 1676x1012
+09/23/2009 10:29:42 AM - src/handlers.c:handle_expose_event:975 - window = 00a00006
+09/23/2009 10:29:42 AM - src/handlers.c:handle_windowclass_change:949 - WM_CLASS changed to urxvt
+09/23/2009 10:29:42 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a00006, child 0x00400009
+09/23/2009 10:29:42 AM - src/layout.c:resize_client:253 - frame 0x00a00006 needs to be pushed to 0x0
+09/23/2009 10:29:42 AM - src/layout.c:resize_client:254 - resizing client 0x00a00006 to 1680 x 1031
+09/23/2009 10:29:42 AM - src/layout.c:resize_client:324 - Lost 4 pixel due to client's height_increment (12 px)
+09/23/2009 10:29:42 AM - src/layout.c:resize_client:331 - Lost 2 pixel due to client's width_increment (6 px)
+09/23/2009 10:29:42 AM - src/layout.c:resize_client:334 - child will be at 2x17 with size 1674x1008
+09/23/2009 10:29:42 AM - src/handlers.c:handle_expose_event:975 - window = 00a00006
+09/23/2009 10:29:42 AM - src/handlers.c:handle_hints:1197 - Window: frame 0x00a00006, child 0x00400009
+09/23/2009 10:29:42 AM - src/handlers.c:handle_hints:1198 - Urgency flag changed to 0
+09/23/2009 10:29:42 AM - src/handlers.c:handle_clientleader_change:1270 - Client leader changed to 0000ff56
+09/23/2009 10:29:42 AM - src/handlers.c:handle_windowname_change:827 - _NET_WM_NAME changed to "urxvt"
+Event ReparentNotify following seqnum 541.
+Event ReparentNotify following seqnum 541.
+Event MapNotify following seqnum 582.
+Event MapNotify following seqnum 582.
+Event MapNotify following seqnum 584.
+09/23/2009 10:29:42 AM - src/handlers.c:handle_expose_event:975 - window = 00a00006
+09/23/2009 10:29:42 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a00006, mode = 0, detail 1, serial 584
+09/23/2009 10:29:42 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00400009, mode = 0, detail 0, serial 584
+09/23/2009 10:29:42 AM - src/handlers.c:handle_expose_event:975 - window = 00a00006
+09/23/2009 10:29:42 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a00006, child 0x00400009
+09/23/2009 10:29:42 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a00006, child 0x00400009
+09/23/2009 10:29:42 AM - src/handlers.c:handle_windowname_change:827 - _NET_WM_NAME changed to "[arch] ~"
+09/23/2009 10:29:50 AM - src/handlers.c:handle_windowname_change:827 - _NET_WM_NAME changed to "[arch] xrandr --output LVDS --auto --output HDMI-0 --auto --right-of LVDS"
+09/23/2009 10:29:50 AM - src/handlers.c:handle_expose_event:975 - window = 00a00006
+09/23/2009 10:29:50 AM - src/handlers.c:handle_expose_event:975 - window = 00a00001
+09/23/2009 10:29:50 AM - src/layout.c:render_workspace:628 - height is 1031
+09/23/2009 10:29:50 AM - src/handlers.c:handle_configure_event:688 - event->x = 0, ->y = 0, ->width = 3600, ->height = 1080
+09/23/2009 10:29:50 AM - src/handlers.c:handle_configure_event:689 - reconfigure of the root window, need to xinerama
+09/23/2009 10:29:50 AM - src/xinerama.c:query_screens:223 - found Xinerama screen: 1920 x 1080 at 0 x 0
+09/23/2009 10:29:50 AM - src/xinerama.c:query_screens:223 - found Xinerama screen: 1680 x 1050 at 1920 x 0
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:312 - Found a matching screen
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:319 - old_screen->bar = 0xa00001
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:327 - configuring bar to be at 0 x 1061 with 19 x 1920
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:342 - re-assigning ws 0
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:354 - getting first ws for screen 0x1223270
+09/23/2009 10:29:50 AM - src/xinerama.c:initialize_screen:152 - that is virtual screen at 1920 x 0 with 1680 x 1050
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:412 - Current workspace is now: 0
+09/23/2009 10:29:50 AM - src/layout.c:render_workspace:628 - height is 1061
+09/23/2009 10:29:50 AM - src/layout.c:resize_client:253 - frame 0x00a00006 needs to be pushed to 0x0
+09/23/2009 10:29:50 AM - src/layout.c:resize_client:254 - resizing client 0x00a00006 to 1920 x 1061
+09/23/2009 10:29:50 AM - src/layout.c:resize_client:324 - Lost 10 pixel due to client's height_increment (12 px)
+09/23/2009 10:29:50 AM - src/layout.c:resize_client:331 - Lost 2 pixel due to client's width_increment (6 px)
+09/23/2009 10:29:50 AM - src/layout.c:resize_client:334 - child will be at 2x17 with size 1914x1032
+09/23/2009 10:29:50 AM - src/handlers.c:handle_expose_event:975 - window = 00a00006
+09/23/2009 10:29:50 AM - src/layout.c:render_workspace:628 - height is 1031
+09/23/2009 10:29:50 AM - src/handlers.c:handle_configure_event:688 - event->x = 0, ->y = 0, ->width = 3600, ->height = 1080
+09/23/2009 10:29:50 AM - src/handlers.c:handle_configure_event:689 - reconfigure of the root window, need to xinerama
+09/23/2009 10:29:50 AM - src/xinerama.c:query_screens:223 - found Xinerama screen: 1920 x 1080 at 0 x 0
+09/23/2009 10:29:50 AM - src/xinerama.c:query_screens:223 - found Xinerama screen: 1680 x 1050 at 1920 x 0
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:312 - Found a matching screen
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:319 - old_screen->bar = 0xa00001
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:327 - configuring bar to be at 0 x 1061 with 19 x 1920
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:342 - re-assigning ws 0
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:312 - Found a matching screen
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:319 - old_screen->bar = 0xa00009
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:327 - configuring bar to be at 1920 x 1031 with 19 x 3600
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:342 - re-assigning ws 1
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:412 - Current workspace is now: 0
+09/23/2009 10:29:50 AM - src/layout.c:render_workspace:628 - height is 1061
+09/23/2009 10:29:50 AM - src/layout.c:render_workspace:628 - height is 1031
+09/23/2009 10:29:50 AM - src/handlers.c:handle_configure_event:688 - event->x = 0, ->y = 0, ->width = 3600, ->height = 1080
+09/23/2009 10:29:50 AM - src/handlers.c:handle_configure_event:689 - reconfigure of the root window, need to xinerama
+09/23/2009 10:29:50 AM - src/xinerama.c:query_screens:223 - found Xinerama screen: 1920 x 1080 at 0 x 0
+09/23/2009 10:29:50 AM - src/xinerama.c:query_screens:223 - found Xinerama screen: 1680 x 1050 at 1920 x 0
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:312 - Found a matching screen
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:319 - old_screen->bar = 0xa00001
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:327 - configuring bar to be at 0 x 1061 with 19 x 1920
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:342 - re-assigning ws 0
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:312 - Found a matching screen
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:319 - old_screen->bar = 0xa00009
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:327 - configuring bar to be at 1920 x 1031 with 19 x 3600
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:342 - re-assigning ws 1
+09/23/2009 10:29:50 AM - src/xinerama.c:xinerama_requery_screens:412 - Current workspace is now: 0
+09/23/2009 10:29:50 AM - src/layout.c:render_workspace:628 - height is 1061
+09/23/2009 10:29:50 AM - src/layout.c:render_workspace:628 - height is 1031
+09/23/2009 10:29:50 AM - src/handlers.c:handle_windowname_change:827 - _NET_WM_NAME changed to "[arch] ~"
+09/23/2009 10:29:50 AM - src/handlers.c:handle_expose_event:975 - window = 00a00001
+09/23/2009 10:29:50 AM - src/layout.c:render_workspace:628 - height is 1061
+09/23/2009 10:29:50 AM - src/layout.c:render_workspace:628 - height is 1031
+09/23/2009 10:29:50 AM - src/handlers.c:handle_expose_event:975 - window = 00a00009
+09/23/2009 10:29:50 AM - src/layout.c:render_workspace:628 - height is 1061
+09/23/2009 10:29:50 AM - src/layout.c:render_workspace:628 - height is 1031
+09/23/2009 10:29:50 AM - src/handlers.c:handle_expose_event:975 - window = 00a00006
+09/23/2009 10:29:50 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a00006, child 0x00400009
+09/23/2009 10:29:50 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a00006, child 0x00400009
+09/23/2009 10:29:54 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 0000012a, mode = 0, detail 2, serial 855
+09/23/2009 10:29:54 AM - src/handlers.c:handle_enter_notify:213 - Getting screen at 1934 x 222
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=1934 y=222 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=1934 y=222 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/handlers.c:check_crossing_screen_boundary:176 - We're now on virtual screen number 1
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=1934 y=222 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=1934 y=222 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=1960 y=213 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=1960 y=213 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2007 y=196 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2007 y=196 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2032 y=187 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2032 y=187 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2053 y=180 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2053 y=180 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2073 y=173 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2073 y=173 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2092 y=166 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2092 y=166 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2110 y=159 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2110 y=159 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2128 y=152 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2128 y=152 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2146 y=146 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2146 y=146 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2175 y=135 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2175 y=135 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2190 y=126 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2190 y=126 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2204 y=121 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2204 y=121 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2218 y=117 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2218 y=117 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2232 y=113 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2232 y=113 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2246 y=111 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2246 y=111 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2260 y=109 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2260 y=109 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2275 y=107 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2275 y=107 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2304 y=105 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2304 y=105 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2319 y=105 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2319 y=105 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2333 y=105 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2333 y=105 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2347 y=105 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2347 y=105 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2361 y=105 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2361 y=105 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2375 y=105 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2375 y=105 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2388 y=106 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2388 y=106 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2401 y=108 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2401 y=108 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2424 y=113 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:54 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2424 y=113 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2435 y=115 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2435 y=115 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2441 y=116 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2441 y=116 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2444 y=117 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2444 y=117 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2446 y=117 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2446 y=117 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2447 y=118 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2447 y=118 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2448 y=118 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2448 y=118 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2448 y=119 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2448 y=119 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2448 y=120 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2448 y=120 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2448 y=121 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2448 y=121 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2449 y=123 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2449 y=123 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2450 y=125 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2450 y=125 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2450 y=128 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2450 y=128 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2452 y=135 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2452 y=135 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2452 y=139 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2452 y=139 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2452 y=142 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2452 y=142 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2452 y=149 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2452 y=149 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2452 y=158 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2452 y=158 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2452 y=168 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2452 y=168 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2451 y=178 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2451 y=178 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2450 y=189 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2450 y=189 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2445 y=210 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2445 y=210 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2440 y=221 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2440 y=221 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2438 y=231 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2438 y=231 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2435 y=240 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2435 y=240 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2433 y=247 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2433 y=247 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2431 y=254 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2431 y=254 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2429 y=259 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2429 y=259 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2428 y=263 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2428 y=263 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2427 y=265 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2427 y=265 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2426 y=265 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:29:55 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2426 y=265 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:29:58 AM - src/handlers.c:handle_key_press:98 - Keypress 36, state raw = 8
+09/23/2009 10:29:58 AM - src/handlers.c:handle_key_press:102 - (removed numlock, state = 8)
+09/23/2009 10:29:58 AM - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 8)
+09/23/2009 10:29:58 AM - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 8)
+09/23/2009 10:29:58 AM - src/commands.c:parse_command:802 - --- parsing command "exec /usr/bin/urxvtc" ---
+09/23/2009 10:29:58 AM - src/commands.c:parse_command:815 - starting "/usr/bin/urxvtc"
+urxvt: unable to parse color '#265997	', using pink instead.
+09/23/2009 10:29:58 AM - src/handlers.c:handle_map_request:583 - window = 0x00400025, serial is 855.
+09/23/2009 10:29:58 AM - src/manage.c:reparent_window:157 - Reparenting window 0x00400025
+09/23/2009 10:29:58 AM - src/manage.c:reparent_window:158 - x = 0, y = 0, width = 480, height = 288
+09/23/2009 10:29:58 AM - src/handlers.c:handle_windowname_change:827 - _NET_WM_NAME changed to "urxvt"
+09/23/2009 10:29:58 AM - src/handlers.c:handle_windowclass_change:949 - WM_CLASS changed to urxvt
+09/23/2009 10:29:58 AM - src/handlers.c:handle_clientleader_change:1270 - Client leader changed to 000002b7
+09/23/2009 10:29:58 AM - src/layout.c:render_workspace:628 - height is 1061
+09/23/2009 10:29:58 AM - src/layout.c:render_workspace:628 - height is 1031
+09/23/2009 10:29:58 AM - src/layout.c:resize_client:253 - frame 0x00a0000d needs to be pushed to 1920x0
+09/23/2009 10:29:58 AM - src/layout.c:resize_client:254 - resizing client 0x00a0000d to 1680 x 1031
+09/23/2009 10:29:58 AM - src/layout.c:resize_client:334 - child will be at 2x17 with size 1676x1012
+09/23/2009 10:29:58 AM - src/handlers.c:handle_expose_event:975 - window = 00a0000d
+09/23/2009 10:29:58 AM - src/handlers.c:handle_windowclass_change:949 - WM_CLASS changed to urxvt
+09/23/2009 10:29:58 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a0000d, child 0x00400025
+09/23/2009 10:29:58 AM - src/layout.c:resize_client:253 - frame 0x00a0000d needs to be pushed to 1920x0
+09/23/2009 10:29:58 AM - src/layout.c:resize_client:254 - resizing client 0x00a0000d to 1680 x 1031
+09/23/2009 10:29:58 AM - src/layout.c:resize_client:324 - Lost 4 pixel due to client's height_increment (12 px)
+09/23/2009 10:29:58 AM - src/layout.c:resize_client:331 - Lost 2 pixel due to client's width_increment (6 px)
+09/23/2009 10:29:58 AM - src/layout.c:resize_client:334 - child will be at 2x17 with size 1674x1008
+09/23/2009 10:29:58 AM - src/handlers.c:handle_expose_event:975 - window = 00a0000d
+09/23/2009 10:29:58 AM - src/handlers.c:handle_hints:1197 - Window: frame 0x00a0000d, child 0x00400025
+09/23/2009 10:29:58 AM - src/handlers.c:handle_hints:1198 - Urgency flag changed to 0
+09/23/2009 10:29:58 AM - src/handlers.c:handle_clientleader_change:1270 - Client leader changed to 00000028
+09/23/2009 10:29:58 AM - src/handlers.c:handle_windowname_change:827 - _NET_WM_NAME changed to "urxvt"
+Event ReparentNotify following seqnum 871.
+Event ReparentNotify following seqnum 871.
+Event MapNotify following seqnum 926.
+Event MapNotify following seqnum 926.
+Event MapNotify following seqnum 928.
+09/23/2009 10:29:58 AM - src/handlers.c:handle_expose_event:975 - window = 00a0000d
+09/23/2009 10:29:58 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a0000d, mode = 0, detail 1, serial 928
+09/23/2009 10:29:58 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00400025, mode = 0, detail 0, serial 928
+09/23/2009 10:29:58 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a0000d, child 0x00400025
+09/23/2009 10:29:58 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a0000d, child 0x00400025
+09/23/2009 10:29:58 AM - src/handlers.c:handle_expose_event:975 - window = 00a0000d
+09/23/2009 10:29:58 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a0000d, child 0x00400025
+09/23/2009 10:29:58 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a0000d, child 0x00400025
+09/23/2009 10:29:58 AM - src/handlers.c:handle_windowname_change:827 - _NET_WM_NAME changed to "[arch] ~"
+09/23/2009 10:30:01 AM - src/handlers.c:handle_key_press:98 - Keypress 36, state raw = 8
+09/23/2009 10:30:01 AM - src/handlers.c:handle_key_press:102 - (removed numlock, state = 8)
+09/23/2009 10:30:01 AM - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 8)
+09/23/2009 10:30:01 AM - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 8)
+09/23/2009 10:30:01 AM - src/commands.c:parse_command:802 - --- parsing command "exec /usr/bin/urxvtc" ---
+09/23/2009 10:30:01 AM - src/commands.c:parse_command:815 - starting "/usr/bin/urxvtc"
+09/23/2009 10:30:01 AM - src/handlers.c:handle_map_request:583 - window = 0x00400033, serial is 996.
+urxvt: 09/23/2009 10:30:01 AM - src/manage.c:reparent_window:157 - Reparenting window 0x00400033
+09/23/2009 10:30:01 AM - src/manage.c:reparent_window:158 - x = 0, y = 0, width = 480, height = 288
+09/23/2009 10:30:01 AM - src/handlers.c:handle_windowname_change:827 - _NET_WM_NAME changed to "urxvt"
+09/23/2009 10:30:01 AM - src/handlers.c:handle_windowclass_change:949 - WM_CLASS changed to urxvt
+09/23/2009 10:30:01 AM - src/handlers.c:handle_clientleader_change:1270 - Client leader changed to 000003a2
+09/23/2009 10:30:01 AM - src/layout.c:render_workspace:628 - height is 1061
+09/23/2009 10:30:01 AM - src/layout.c:render_workspace:628 - height is 1031
+09/23/2009 10:30:01 AM - src/layout.c:resize_client:253 - frame 0x00a0000d needs to be pushed to 1920x0
+09/23/2009 10:30:01 AM - src/layout.c:resize_client:254 - resizing client 0x00a0000d to 1680 x 515
+09/23/2009 10:30:01 AM - src/layout.c:resize_client:324 - Lost 4 pixel due to client's height_increment (12 px)
+09/23/2009 10:30:01 AM - src/layout.c:resize_client:331 - Lost 2 pixel due to client's width_increment (6 px)
+09/23/2009 10:30:01 AM - src/layout.c:resize_client:334 - child will be at 2x17 with size 1674x492
+09/23/2009 10:30:01 AM - src/handlers.c:handle_expose_event:975 - window = 00a0000d
+09/23/2009 10:30:01 AM - src/layout.c:resize_client:253 - frame 0x00a00011 needs to be pushed to 1920x515
+09/23/2009 10:30:01 AM - src/layout.c:resize_client:254 - resizing client 0x00a00011 to 1680 x 515
+09/23/2009 10:30:01 AM - src/layout.c:resize_client:334 - child will be at 2x17 with size 1676x496
+09/23/2009 10:30:01 AM - src/handlers.c:handle_expose_event:975 - window = 00a00011
+09/23/2009 10:30:01 AM - src/handlers.c:handle_windowclass_change:949 - WM_CLASS changed to urxvt
+09/23/2009 10:30:01 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a00011, child 0x00400033
+09/23/2009 10:30:01 AM - src/layout.c:resize_client:253 - frame 0x00a00011 needs to be pushed to 1920x515
+09/23/2009 10:30:01 AM - src/layout.c:resize_client:254 - resizing client 0x00a00011 to 1680 x 515
+09/23/2009 10:30:01 AM - src/layout.c:resize_client:324 - Lost 4 pixel due to client's height_increment (12 px)
+09/23/2009 10:30:01 AM - src/layout.c:resize_client:331 - Lost 2 pixel due to client's width_increment (6 px)
+09/23/2009 10:30:01 AM - src/layout.c:resize_client:334 - child will be at 2x17 with size 1674x492
+09/23/2009 10:30:01 AM - src/handlers.c:handle_expose_event:975 - window = 00a00011
+09/23/2009 10:30:01 AM - src/handlers.c:handle_hints:1197 - Window: frame 0x00a00011, child 0x00400033
+09/23/2009 10:30:01 AM - src/handlers.c:handle_hints:1198 - Urgency flag changed to 0
+09/23/2009 10:30:01 AM - src/handlers.c:handle_clientleader_change:1270 - Client leader changed to 1008ff95
+09/23/2009 10:30:01 AM - src/handlers.c:handle_windowname_change:827 - _NET_WM_NAME changed to "urxvt"
+Event ReparentNotify following seqnum 1012.
+Event ReparentNotify following seqnum 1012.
+09/23/2009 10:30:01 AM - src/handlers.c:handle_expose_event:975 - window = 00a0000d
+09/23/2009 10:30:01 AM - src/handlers.c:handle_expose_event:975 - window = 00a0000d
+Event MapNotify following seqnum 1084.
+Event MapNotify following seqnum 1084.
+Event MapNotify following seqnum 1086.
+09/23/2009 10:30:01 AM - src/handlers.c:handle_expose_event:975 - window = 00a00011
+09/23/2009 10:30:01 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a0000d, child 0x00400025
+09/23/2009 10:30:01 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a0000d, child 0x00400025
+09/23/2009 10:30:01 AM - src/handlers.c:handle_expose_event:975 - window = 00a00011
+09/23/2009 10:30:01 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a00011, child 0x00400033
+09/23/2009 10:30:01 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a00011, child 0x00400033
+09/23/2009 10:30:01 AM - src/handlers.c:handle_windowname_change:827 - _NET_WM_NAME changed to "[arch] ~"
+09/23/2009 10:30:04 AM - src/handlers.c:handle_key_press:98 - Keypress 47, state raw = 9
+09/23/2009 10:30:04 AM - src/handlers.c:handle_key_press:102 - (removed numlock, state = 9)
+09/23/2009 10:30:04 AM - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 9)
+09/23/2009 10:30:04 AM - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 9)
+09/23/2009 10:30:04 AM - src/commands.c:parse_command:802 - --- parsing command "ml" ---
+09/23/2009 10:30:04 AM - src/commands.c:move_current_window:255 - moving window to direction right
+09/23/2009 10:30:04 AM - src/table.c:cleanup_table:304 - cleanup_table()
+09/23/2009 10:30:04 AM - src/util.c:set_focus:265 - Window: frame 0x00a00011, child 0x00400033
+09/23/2009 10:30:04 AM - src/table.c:fix_colrowspan:369 - Fixing col/rowspan
+09/23/2009 10:30:04 AM - src/layout.c:render_workspace:628 - height is 1031
+09/23/2009 10:30:04 AM - src/layout.c:resize_client:253 - frame 0x00a0000d needs to be pushed to 1920x0
+09/23/2009 10:30:04 AM - src/layout.c:resize_client:254 - resizing client 0x00a0000d to 840 x 1031
+09/23/2009 10:30:04 AM - src/layout.c:resize_client:324 - Lost 4 pixel due to client's height_increment (12 px)
+09/23/2009 10:30:04 AM - src/layout.c:resize_client:331 - Lost 2 pixel due to client's width_increment (6 px)
+09/23/2009 10:30:04 AM - src/layout.c:resize_client:334 - child will be at 2x17 with size 834x1008
+09/23/2009 10:30:04 AM - src/handlers.c:handle_expose_event:975 - window = 00a0000d
+09/23/2009 10:30:04 AM - src/layout.c:render_workspace:628 - height is 1031
+09/23/2009 10:30:04 AM - src/layout.c:resize_client:253 - frame 0x00a00011 needs to be pushed to 2760x0
+09/23/2009 10:30:04 AM - src/layout.c:resize_client:254 - resizing client 0x00a00011 to 840 x 1031
+09/23/2009 10:30:04 AM - src/layout.c:resize_client:324 - Lost 4 pixel due to client's height_increment (12 px)
+09/23/2009 10:30:04 AM - src/layout.c:resize_client:331 - Lost 2 pixel due to client's width_increment (6 px)
+09/23/2009 10:30:04 AM - src/layout.c:resize_client:334 - child will be at 2x17 with size 834x1008
+09/23/2009 10:30:04 AM - src/handlers.c:handle_expose_event:975 - window = 00a00011
+09/23/2009 10:30:04 AM - src/util.c:set_focus:265 - Window: frame 0x00a00011, child 0x00400033
+09/23/2009 10:30:04 AM - src/handlers.c:handle_expose_event:975 - window = 00a0000d
+09/23/2009 10:30:04 AM - src/handlers.c:handle_expose_event:975 - window = 00a0000d
+09/23/2009 10:30:04 AM - src/handlers.c:handle_expose_event:975 - window = 00a00011
+09/23/2009 10:30:04 AM - src/handlers.c:handle_expose_event:975 - window = 00a0000d
+09/23/2009 10:30:04 AM - src/handlers.c:handle_expose_event:975 - window = 00a00011
+09/23/2009 10:30:04 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a0000d, child 0x00400025
+09/23/2009 10:30:04 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a0000d, child 0x00400025
+09/23/2009 10:30:04 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a00011, child 0x00400033
+09/23/2009 10:30:04 AM - src/handlers.c:handle_normal_hints:1086 - Window: frame 0x00a00011, child 0x00400033
+09/23/2009 10:30:06 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a0000d, mode = 0, detail 2, serial 1295
+09/23/2009 10:30:06 AM - src/util.c:set_focus:265 - Window: frame 0x00a0000d, child 0x00400025
+09/23/2009 10:30:06 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a00011, mode = 0, detail 3, serial 1326
+09/23/2009 10:30:06 AM - src/util.c:set_focus:265 - Window: frame 0x00a00011, child 0x00400033
+09/23/2009 10:30:06 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00400033, mode = 0, detail 1, serial 1357
+09/23/2009 10:30:07 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a00011, mode = 0, detail 2, serial 1357
+09/23/2009 10:30:07 AM - src/handlers.c:handle_button_press:372 - Button 0 pressed
+09/23/2009 10:30:07 AM - src/util.c:set_focus:265 - Window: frame 0x00a00011, child 0x00400033
+09/23/2009 10:30:07 AM - src/handlers.c:handle_button_press:481 - press button on x=0, y=290
+09/23/2009 10:30:07 AM - src/handlers.c:handle_button_press:493 - event->event_x = 0, client->rect.width = 840
+09/23/2009 10:30:07 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2760 y=290 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:30:07 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2760 y=290 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:30:07 AM - src/resize.c:resize_graphical_handler:46 - event->event_x = 0, event->root_x = 2760
+09/23/2009 10:30:07 AM - src/resize.c:resize_graphical_handler:48 - Screen dimensions: (1920, 0) 1680 x 1050
+09/23/2009 10:30:07 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 290
+09/23/2009 10:30:07 AM - src/resize.c:resize_callback:92 - new x = 1918, y = 290
+09/23/2009 10:30:07 AM - src/resize.c:resize_callback:92 - new x = 1917, y = 291
+09/23/2009 10:30:07 AM - src/resize.c:resize_callback:92 - new x = 1916, y = 291
+09/23/2009 10:30:07 AM - src/resize.c:resize_callback:92 - new x = 1915, y = 291
+09/23/2009 10:30:07 AM - src/resize.c:resize_callback:92 - new x = 1914, y = 291
+09/23/2009 10:30:07 AM - src/resize.c:resize_callback:92 - new x = 1913, y = 291
+09/23/2009 10:30:07 AM - src/resize.c:resize_callback:92 - new x = 1913, y = 292
+09/23/2009 10:30:07 AM - src/resize.c:resize_callback:92 - new x = 1912, y = 292
+09/23/2009 10:30:07 AM - src/resize.c:resize_callback:92 - new x = 1911, y = 292
+09/23/2009 10:30:07 AM - src/resize.c:resize_callback:92 - new x = 1910, y = 292
+09/23/2009 10:30:07 AM - src/resize.c:resize_callback:92 - new x = 1909, y = 292
+09/23/2009 10:30:07 AM - src/resize.c:resize_callback:92 - new x = 1908, y = 293
+09/23/2009 10:30:07 AM - src/resize.c:resize_callback:92 - new x = 1907, y = 293
+09/23/2009 10:30:07 AM - src/resize.c:resize_callback:92 - new x = 1906, y = 293
+09/23/2009 10:30:07 AM - src/resize.c:resize_callback:92 - new x = 1905, y = 293
+09/23/2009 10:30:07 AM - src/resize.c:resize_callback:92 - new x = 1904, y = 293
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1904, y = 294
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1903, y = 294
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1902, y = 294
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1901, y = 294
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1900, y = 294
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1899, y = 294
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1898, y = 294
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1897, y = 295
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1895, y = 295
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1894, y = 295
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1893, y = 295
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1892, y = 295
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1891, y = 296
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1890, y = 296
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1889, y = 296
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1888, y = 296
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1887, y = 296
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1884, y = 297
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1883, y = 297
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1882, y = 297
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1880, y = 297
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1879, y = 297
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1878, y = 297
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1877, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1875, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1874, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1872, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1871, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1870, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1869, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1867, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1866, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1863, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1862, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1860, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1858, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1857, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1855, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1854, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1852, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1850, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1847, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1844, y = 298
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1842, y = 297
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1840, y = 296
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1838, y = 296
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1836, y = 295
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1834, y = 295
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1832, y = 295
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1828, y = 294
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1827, y = 294
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1825, y = 294
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1824, y = 294
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1823, y = 294
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1822, y = 294
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1821, y = 293
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1820, y = 293
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1818, y = 293
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1817, y = 293
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1816, y = 293
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1815, y = 293
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1814, y = 293
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1813, y = 293
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1812, y = 293
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1811, y = 293
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1810, y = 293
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1809, y = 293
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1808, y = 293
+09/23/2009 10:30:08 AM - src/resize.c:resize_callback:92 - new x = 1807, y = 293
+09/23/2009 10:30:08 AM - src/resize.c:resize_graphical_handler:121 - Resize was from X = 2760 to X = 2760
+09/23/2009 10:30:08 AM - src/resize.c:resize_graphical_handler:123 - Nothing changed, not updating anything
+09/23/2009 10:30:08 AM - src/handlers.c:handle_expose_event:975 - window = 00a00011
+09/23/2009 10:30:08 AM - src/handlers.c:handle_expose_event:975 - window = 00a00009
+09/23/2009 10:30:08 AM - src/layout.c:render_workspace:628 - height is 1061
+09/23/2009 10:30:08 AM - src/layout.c:render_workspace:628 - height is 1031
+09/23/2009 10:30:08 AM - src/layout.c:render_workspace:628 - height is 1031
+09/23/2009 10:30:08 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a00006, mode = 0, detail 4, serial 1379
+09/23/2009 10:30:08 AM - src/util.c:set_focus:265 - Window: frame 0x00a00006, child 0x00400009
+09/23/2009 10:30:08 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00400009, mode = 0, detail 4, serial 1379
+09/23/2009 10:30:09 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a00006, mode = 0, detail 2, serial 1452
+09/23/2009 10:30:09 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a0000d, mode = 0, detail 4, serial 1452
+09/23/2009 10:30:09 AM - src/util.c:set_focus:265 - Window: frame 0x00a0000d, child 0x00400025
+09/23/2009 10:30:09 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00400025, mode = 0, detail 4, serial 1452
+09/23/2009 10:30:09 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a00011, mode = 0, detail 4, serial 1483
+09/23/2009 10:30:09 AM - src/util.c:set_focus:265 - Window: frame 0x00a00011, child 0x00400033
+09/23/2009 10:30:09 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00400033, mode = 0, detail 4, serial 1483
+09/23/2009 10:30:10 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a00011, mode = 0, detail 2, serial 1514
+09/23/2009 10:30:10 AM - src/handlers.c:handle_button_press:372 - Button 0 pressed
+09/23/2009 10:30:10 AM - src/util.c:set_focus:265 - Window: frame 0x00a00011, child 0x00400033
+09/23/2009 10:30:10 AM - src/handlers.c:handle_button_press:481 - press button on x=0, y=445
+09/23/2009 10:30:10 AM - src/handlers.c:handle_button_press:493 - event->event_x = 0, client->rect.width = 840
+09/23/2009 10:30:10 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2760 y=445 with x=0 and y=0 width 1920 height 1080
+09/23/2009 10:30:10 AM - src/xinerama.c:get_screen_containing:78 - comparing x=2760 y=445 with x=1920 and y=0 width 1680 height 1050
+09/23/2009 10:30:10 AM - src/resize.c:resize_graphical_handler:46 - event->event_x = 0, event->root_x = 2760
+09/23/2009 10:30:10 AM - src/resize.c:resize_graphical_handler:48 - Screen dimensions: (1920, 0) 1680 x 1050
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 445
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 445
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 445
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 445
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 444
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 444
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 444
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 444
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 444
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 444
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 444
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 444
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 444
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 444
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 444
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 443
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 443
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 443
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 443
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 443
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 443
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 442
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 442
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 442
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 442
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 442
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 442
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 442
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 442
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 442
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 442
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 441
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 441
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 441
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 441
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 441
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 440
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 440
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 440
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 440
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 439
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 439
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 439
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 439
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 438
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 438
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 438
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 438
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 437
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 437
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 437
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 436
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 436
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 435
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 435
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 435
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 435
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 434
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 434
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 434
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 434
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 434
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 434
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 434
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 433
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 433
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 433
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 433
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 433
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 433
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 433
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 433
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 432
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:11 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 431
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 430
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 430
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 430
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 430
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 430
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 430
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 430
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 430
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 430
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 430
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 430
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 430
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 430
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 429
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 429
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 429
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 429
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 429
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 429
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 428
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 428
+09/23/2009 10:30:12 AM - src/resize.c:resize_callback:92 - new x = 1919, y = 428
+09/23/2009 10:30:12 AM - src/resize.c:resize_graphical_handler:121 - Resize was from X = 2760 to X = 2760
+09/23/2009 10:30:12 AM - src/resize.c:resize_graphical_handler:123 - Nothing changed, not updating anything
+09/23/2009 10:30:12 AM - src/handlers.c:handle_expose_event:975 - window = 00a00011
+09/23/2009 10:30:12 AM - src/handlers.c:handle_expose_event:975 - window = 00a00009
+09/23/2009 10:30:12 AM - src/layout.c:render_workspace:628 - height is 1061
+09/23/2009 10:30:12 AM - src/layout.c:render_workspace:628 - height is 1031
+09/23/2009 10:30:12 AM - src/layout.c:render_workspace:628 - height is 1031
+09/23/2009 10:30:12 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a00006, mode = 0, detail 3, serial 1536
+09/23/2009 10:30:12 AM - src/util.c:set_focus:265 - Window: frame 0x00a00006, child 0x00400009
+09/23/2009 10:30:13 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a0000d, mode = 0, detail 3, serial 1609
+09/23/2009 10:30:13 AM - src/util.c:set_focus:265 - Window: frame 0x00a0000d, child 0x00400025
+09/23/2009 10:30:13 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00400025, mode = 0, detail 1, serial 1640
+09/23/2009 10:32:48 AM - src/handlers.c:handle_windowname_change:827 - _NET_WM_NAME changed to "[arch] ls"
+09/23/2009 10:32:48 AM - src/handlers.c:handle_windowname_change:827 - _NET_WM_NAME changed to "[arch] ~"
+09/23/2009 10:32:56 AM - src/handlers.c:handle_windowname_change:827 - _NET_WM_NAME changed to "[arch] vim i3log-2009-09-23-10-25-40"
+09/23/2009 10:32:56 AM - src/handlers.c:handle_windowname_change:827 - _NET_WM_NAME changed to "i3log-2009-09-23-10-25-40 (~) - VIM"
+09/23/2009 10:34:09 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a00006, mode = 0, detail 3, serial 1688
+09/23/2009 10:34:09 AM - src/util.c:set_focus:265 - Window: frame 0x00a00006, child 0x00400009
+09/23/2009 10:34:09 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00400009, mode = 0, detail 1, serial 1719
+09/23/2009 10:34:09 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a00006, mode = 0, detail 2, serial 1719
+09/23/2009 10:34:09 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a0000d, mode = 0, detail 4, serial 1719
+09/23/2009 10:34:09 AM - src/util.c:set_focus:265 - Window: frame 0x00a0000d, child 0x00400025
+09/23/2009 10:34:09 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00400025, mode = 0, detail 4, serial 1719
+09/23/2009 10:34:21 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a0000d, mode = 0, detail 2, serial 1750
+09/23/2009 10:34:21 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a00011, mode = 0, detail 4, serial 1750
+09/23/2009 10:34:21 AM - src/util.c:set_focus:265 - Window: frame 0x00a00011, child 0x00400033
+09/23/2009 10:34:21 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00400033, mode = 0, detail 4, serial 1750
+09/23/2009 10:34:30 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00a0000d, mode = 0, detail 4, serial 1781
+09/23/2009 10:34:30 AM - src/util.c:set_focus:265 - Window: frame 0x00a0000d, child 0x00400025
+09/23/2009 10:34:30 AM - src/handlers.c:handle_enter_notify:184 - enter_notify for 00400025, mode = 0, detail 4, serial 1781
+09/23/2009 10:34:36 AM - src/handlers.c:handle_windowname_change:827 - _NET_WM_NAME changed to "[arch] ~"
+09/23/2009 10:34:36 AM - src/handlers.c:handle_windowname_change:827 - _NET_WM_NAME changed to "[arch] ~"
+09/23/2009 10:34:39 AM - src/handlers.c:handle_key_press:98 - Keypress 26, state raw = 9
+09/23/2009 10:34:39 AM - src/handlers.c:handle_key_press:102 - (removed numlock, state = 9)
+09/23/2009 10:34:39 AM - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 9)
+09/23/2009 10:34:39 AM - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 9)
+09/23/2009 10:34:39 AM - src/commands.c:parse_command:802 - --- parsing command "exit" ---
+09/23/2009 10:34:39 AM - src/commands.c:parse_command:822 - User issued exit-command, exiting without error.

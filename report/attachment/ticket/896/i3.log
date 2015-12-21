@@ -1,0 +1,3509 @@
+Script started on Wed Dec 19 12:52:50 2012
+gurthang:jasper {687} startx
+xauth:  file /home/jasper/.serverauth.32035 does not exist
+
+
+X.Org X Server 1.12.3
+Release Date: 2012-07-09
+X Protocol Version 11, Revision 0
+Build Operating System: OpenBSD 5.2 amd64 
+Current Operating System: OpenBSD gurthang.office.humppa.nl 5.2 GENERIC.MP#5 amd64
+Build Date: 04 December 2012  12:53:54PM
+ 
+Current version of pixman: 0.28.0
+        Before reporting problems, check http://wiki.x.org
+        to make sure that you have the latest version.
+Markers: (--) probed, (**) from config file, (==) default setting,
+        (++) from command line, (!!) notice, (II) informational,
+        (WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+(==) Log file: "/var/log/Xorg.0.log", Time: Wed Dec 19 12:52:52 2012
+(==) Using config file: "/etc/X11/xorg.conf"
+(==) Using system config directory "/usr/X11R6/share/X11/xorg.conf.d"
+  XRANDR name: DVI-1
+  Connector: DVI-I
+  CRT2: INTERNAL_KLDSCP_DAC2
+  DFP1: INTERNAL_KLDSCP_TMDS1
+  DDC reg: 0x7e50
+  XRANDR name: DVI-0
+  Connector: DVI-I
+  CRT1: INTERNAL_KLDSCP_DAC1
+  DFP2: INTERNAL_LVTM1
+  DDC reg: 0x7e40
+finished output detect: 0
+finished output detect: 1
+finished all detect
+Output DFP1 disable success
+Blank CRTC 0 success
+Disable CRTC 0 success
+Output DFP2 disable success
+Blank CRTC 1 success
+Disable CRTC 1 success
+mc fb loc is 00ef00d0
+Output DFP1 disable success
+Output DFP2 disable success
+Blank CRTC 0 success
+Disable CRTC 0 success
+Blank CRTC 1 success
+Disable CRTC 1 success
+Output DFP1 disable success
+Blank CRTC 0 success
+Disable CRTC 0 success
+Set CRTC 0 Source success
+Mode 1680x1050 - 2240 1089 6
+Picked PLL 0
+best_freq: 146250
+best_feedback_div: 130
+best_frac_feedback_div: 0
+best_ref_div: 3
+best_post_div: 8
+Set CRTC 0 PLL success
+Set CRTC Timing success
+Set CRTC 0 Overscan success
+Not using RMX
+scaler 0 setup success
+Set CRTC 0 Source success
+crtc 0 YUV disable setup success
+Output digital setup success
+Output DFP1 enable success
+Enable CRTC 0 success
+Unblank CRTC 0 success
+Blank CRTC 0 success
+Disable CRTC 0 success
+Lock CRTC 0 success
+Output DFP1 disable success
+Output DFP2 disable success
+Blank CRTC 1 success
+Disable CRTC 1 success
+Set CRTC 1 Source success
+Mode 1680x1050 - 2240 1089 6
+Picked PLL 1
+best_freq: 146250
+best_feedback_div: 130
+best_frac_feedback_div: 0
+best_ref_div: 3
+best_post_div: 8
+Set CRTC 1 PLL success
+Set CRTC Timing success
+Set CRTC 1 Overscan success
+Not using RMX
+scaler 1 setup success
+Set CRTC 1 Source success
+crtc 1 YUV disable setup success
+Output digital setup success
+Enable CRTC 0 success
+Unblank CRTC 0 success
+Unlock CRTC 0 success
+Output DFP1 enable success
+Output DFP2 enable success
+Enable CRTC 1 success
+Unblank CRTC 1 success
+Blank CRTC 1 success
+Disable CRTC 1 success
+Lock CRTC 1 success
+Output DFP2 disable success
+Output DFP1 disable success
+Blank CRTC 0 success
+Disable CRTC 0 success
+Set CRTC 0 Source success
+Mode 1680x1050 - 2240 1089 6
+Picked PLL 0
+best_freq: 146250
+best_feedback_div: 130
+best_frac_feedback_div: 0
+best_ref_div: 3
+best_post_div: 8
+Set CRTC 0 PLL success
+Set CRTC Timing success
+Set CRTC 0 Overscan success
+Not using RMX
+scaler 0 setup success
+Set CRTC 0 Source success
+crtc 0 YUV disable setup success
+Output digital setup success
+Enable CRTC 1 success
+Unblank CRTC 1 success
+Unlock CRTC 1 success
+Output DFP2 enable success
+Output DFP1 enable success
+Enable CRTC 0 success
+Unblank CRTC 0 success
+Blank CRTC 0 success
+Disable CRTC 0 success
+Lock CRTC 0 success
+Output DFP1 disable success
+Output DFP2 disable success
+Blank CRTC 1 success
+Disable CRTC 1 success
+Set CRTC 1 Source success
+Mode 1680x1050 - 2240 1089 6
+Picked PLL 1
+best_freq: 146250
+best_feedback_div: 130
+best_frac_feedback_div: 0
+best_ref_div: 3
+best_post_div: 8
+Set CRTC 1 PLL success
+Set CRTC Timing success
+Set CRTC 1 Overscan success
+Not using RMX
+scaler 1 setup success
+Set CRTC 1 Source success
+crtc 1 YUV disable setup success
+Output digital setup success
+Enable CRTC 0 success
+Unblank CRTC 0 success
+Unlock CRTC 0 success
+Output DFP1 enable success
+Output DFP2 enable success
+Enable CRTC 1 success
+Unblank CRTC 1 success
+Agent pid 11050
+Identity added: /home/jasper/.ssh/id_rsa (/home/jasper/.ssh/id_rsa)
+Blank CRTC 0 success
+Disable CRTC 0 success
+Lock CRTC 0 success
+Output DFP1 disable success
+Output DFP2 disable success
+Blank CRTC 1 success
+Disable CRTC 1 success
+Set CRTC 1 Source success
+Mode 1680x1050 - 2240 1089 6
+Picked PLL 1
+best_freq: 146250
+best_feedback_div: 130
+best_frac_feedback_div: 0
+best_ref_div: 3
+best_post_div: 8
+Set CRTC 1 PLL success
+Set CRTC Timing success
+Set CRTC 1 Overscan success
+Not using RMX
+scaler 1 setup success
+Set CRTC 1 Source success
+crtc 1 YUV disable setup success
+Output digital setup success
+Enable CRTC 0 success
+Unblank CRTC 0 success
+Unlock CRTC 0 success
+Output DFP1 enable success
+Output DFP2 enable success
+Enable CRTC 1 success
+Unblank CRTC 1 success
+fetchmail: can't accept options while a background fetchmail is running.
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+[13447:1443095552:1219/125258:ERROR:user_style_sheet_watcher.cc(167)] Failed to setup watch for /home/jasper/.config/chromium/Default/User StyleSheets/Custom.css
+pidgin:/usr/local/lib/libsilc.so.9.0: /usr/local/lib/libidn.so.17.0 : WARNING: symbol(stringprep_profiles) size mismatch, relink your program
+deciding for version 4 due to this line: # i3 config file (v4)
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+[libi3] libi3/font.c Using X font -misc-fixed-*-*-*-*-10-100-75-75-c-60-iso10646-1
+[i3bar/src/xcb.c:948] Calculated Font-height: 10
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:63] Parsing Outputs-JSON...
+[i3bar/src/outputs.c:206] Ignoring output "DVI-0", not configured to handle it.
+[i3bar/src/ipc.c:65] Reconfiguring Windows...
+[i3bar/src/xcb.c:1182] Re-allocating statusline-buffer, statusline_width = 0, root_screen->width_in_pixels = 3360
+i3status: trying to auto-detect output_format setting
+i3status: falling back to "none"
+[i3bar/src/xcb.c:1239] Creating Window for output DVI-1
+[i3bar/src/xcb.c:1002] Initializing system tray functionality
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:54] Got Subscribe Reply: {"success":true}
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/child.c:286] Detecting input type based on buffer *Nero - Must Be The Feeling (Delta Heavy Remix) [2:37/6:00] | 50.25 C | 19-12-2012 - 12:53:02 | vol: 85%
+*
+[i3bar/src/xcb.c:422] _NET_SYSTEM_TRAY_OPCODE received
+[i3bar/src/xcb.c:465] xembed format = 32, len = 2
+[i3bar/src/xcb.c:467] xembed version = 1
+[i3bar/src/xcb.c:468] xembed flags = 1
+[i3bar/src/xcb.c:478] X window 00400004 requested docking
+[i3bar/src/xcb.c:489] using output DVI-1
+[i3bar/src/xcb.c:552] Mapping dock client
+[i3bar/src/xcb.c:402] Configuring tray window 00400004 to x=1668
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:422] _NET_SYSTEM_TRAY_OPCODE received
+[i3bar/src/xcb.c:465] xembed format = 32, len = 2
+[i3bar/src/xcb.c:467] xembed version = 1
+[i3bar/src/xcb.c:468] xembed flags = 1
+[i3bar/src/xcb.c:478] X window 0060003c requested docking
+[i3bar/src/xcb.c:489] using output DVI-1
+[i3bar/src/xcb.c:552] Mapping dock client
+[i3bar/src/xcb.c:402] Configuring tray window 0060003c to x=1668
+[i3bar/src/xcb.c:402] Configuring tray window 00400004 to x=1656
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:677] ConfigureRequest for window = 00400004
+[i3bar/src/xcb.c:700] This is a tray window. x = 1656
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:677] ConfigureRequest for window = 0060003c
+[i3bar/src/xcb.c:700] This is a tray window. x = 1668
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+[libi3] libi3/font.c Using X font -misc-fixed-*-*-*-*-10-100-75-75-c-60-iso10646-1
+[libi3] libi3/font.c Using X font -misc-fixed-*-*-*-*-10-100-75-75-c-60-iso10646-1
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+i3status: trying to auto-detect output_format setting
+i3status: falling back to "none"
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+[3092:-2099237088:1219/125302:ERROR:gl_surface_glx.cc(62)] GLX 1.3 or later is required.
+[3092:-2099237088:1219/125302:ERROR:gl_surface_linux.cc(58)] GLSurfaceGLX::InitializeOneOff failed.
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:677] ConfigureRequest for window = 0060003c
+[i3bar/src/xcb.c:700] This is a tray window. x = 1668
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:677] ConfigureRequest for window = 0060003c
+[i3bar/src/xcb.c:700] This is a tray window. x = 1668
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:606] PropertyNotify
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:677] ConfigureRequest for window = 0060003c
+[i3bar/src/xcb.c:700] This is a tray window. x = 1668
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:677] ConfigureRequest for window = 0060003c
+[i3bar/src/xcb.c:700] This is a tray window. x = 1668
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:677] ConfigureRequest for window = 0060003c
+[i3bar/src/xcb.c:700] This is a tray window. x = 1668
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:677] ConfigureRequest for window = 0060003c
+[i3bar/src/xcb.c:700] This is a tray window. x = 1668
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:677] ConfigureRequest for window = 0060003c
+[i3bar/src/xcb.c:700] This is a tray window. x = 1668
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:606] PropertyNotify
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:677] ConfigureRequest for window = 0060003c
+[i3bar/src/xcb.c:700] This is a tray window. x = 1668
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:677] ConfigureRequest for window = 0060003c
+[i3bar/src/xcb.c:700] This is a tray window. x = 1668
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:677] ConfigureRequest for window = 0060003c
+[i3bar/src/xcb.c:700] This is a tray window. x = 1668
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:677] ConfigureRequest for window = 0060003c
+[i3bar/src/xcb.c:700] This is a tray window. x = 1668
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:677] ConfigureRequest for window = 0060003c
+[i3bar/src/xcb.c:700] This is a tray window. x = 1668
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:677] ConfigureRequest for window = 0060003c
+[i3bar/src/xcb.c:700] This is a tray window. x = 1668
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:606] PropertyNotify
+[i3bar/src/xcb.c:677] ConfigureRequest for window = 0060003c
+[i3bar/src/xcb.c:700] This is a tray window. x = 1668
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 2, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+Output DFP1 disable success
+Blank CRTC 0 success
+Disable CRTC 0 success
+Output DFP2 disable success
+Blank CRTC 1 success
+Disable CRTC 1 success
+Enable CRTC 1 success
+Unblank CRTC 1 success
+Enable CRTC 0 success
+Unblank CRTC 0 success
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+Output DFP1 disable success
+Output DFP2 disable success
+Blank CRTC 0 success
+Disable CRTC 0 success
+Blank CRTC 1 success
+Disable CRTC 1 success
+Output DFP1 disable success
+Blank CRTC 0 success
+Disable CRTC 0 success
+Set CRTC 0 Source success
+Mode 1680x1050 - 2240 1089 6
+Picked PLL 0
+best_freq: 146250
+best_feedback_div: 130
+best_frac_feedback_div: 0
+best_ref_div: 3
+best_post_div: 8
+Set CRTC 0 PLL success
+Set CRTC Timing success
+Set CRTC 0 Overscan success
+Not using RMX
+scaler 0 setup success
+Set CRTC 0 Source success
+crtc 0 YUV disable setup success
+Output digital setup success
+Output DFP1 enable success
+Enable CRTC 0 success
+Unblank CRTC 0 success
+Blank CRTC 0 success
+Disable CRTC 0 success
+Lock CRTC 0 success
+Output DFP1 disable success
+Output DFP2 disable success
+Blank CRTC 1 success
+Disable CRTC 1 success
+Set CRTC 1 Source success
+Mode 1680x1050 - 2240 1089 6
+Picked PLL 1
+best_freq: 146250
+best_feedback_div: 130
+best_frac_feedback_div: 0
+best_ref_div: 3
+best_post_div: 8
+Set CRTC 1 PLL success
+Set CRTC Timing success
+Set CRTC 1 Overscan success
+Not using RMX
+scaler 1 setup success
+Set CRTC 1 Source success
+crtc 1 YUV disable setup success
+Output digital setup success
+Enable CRTC 0 success
+Unblank CRTC 0 success
+Unlock CRTC 0 success
+Output DFP1 enable success
+Output DFP2 enable success
+Enable CRTC 1 success
+Unblank CRTC 1 success
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 2 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+/usr/local/chrome/chrome:/usr/lib/libstdc++.so.55.0: /usr/local/lib/libestdc++.so.14.0 : WARNING: symbol(_ZN11__gnu_debug17_S_debug_messagesE) size mismatch, relink your program
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+written: 16258 of 16258
+layout: {"id":19838671614976,"type":0,"orientation":"horizontal","scratchpad_state":"none","percent":null,"urgent":false,"focused":false,"layout":"splith","workspace_layout":"default","last_split_layout":"splith","border":"normal","current_border_width":-1,"rect":{"x":0,"y":0,"width":3360,"height":1050},"window_rect":{"x":0,"y":0,"width":0,"height":0},"geometry":{"x":0,"y":0,"width":0,"height":0},"name":"root","window":null,"nodes":[{"id":19838671614464,"type":1,"orientation":"none","scratchpad_state":"none","percent":0.33333333333333331483,"urgent":false,"focused":false,"layout":"output","workspace_layout":"default","last_split_layout":"splith","border":"normal","current_border_width":-1,"rect":{"x":0,"y":0,"width":1680,"height":1050},"window_rect":{"x":0,"y":0,"width":0,"height":0},"geometry":{"x":0,"y":0,"width":0,"height":0},"name":"__i3","window":null,"nodes":[{"id":19838671615488,"type":2,"orientation":"horizontal","scratchpad_state":"none","percent":null,"urgent":false,"focused":false,"layout":"splith","workspace_layout":"default","last_split_layout":"splith","border":"normal","current_border_width":-1,"rect":{"x":0,"y":0,"width":0,"height":0},"window_rect":{"x":0,"y":0,"width":0,"height":0},"geometry":{"x":0,"y":0,"width":0,"height":0},"name":"content","window":null,"nodes":[{"id":19838658278400,"type":4,"orientation":"none","scratchpad_state":"none","percent":null,"urgent":false,"focused":false,"layout":"splith","workspace_layout":"default","last_split_layout":"splith","border":"normal","current_border_width":-1,"rect":{"x":0,"y":0,"width":0,"height":0},"window_rect":{"x":0,"y":0,"width":0,"height":0},"geometry":{"x":0,"y":0,"width":0,"height":0},"name":"__i3_scratch","num":-1,"window":null,"nodes":[],"floating_nodes":[],"focus":[],"fullscreen_mode":1,"floating":"auto_off","swallows":[]}],"floating_nodes":[],"focus":[19838658278400],"fullscreen_mode":0,"floating":"auto_off","swallows":[]}],"floating_nodes":[],"focus":[19838671615488],"fullscreen_mode":0,"floating":"auto_off","swallows":[]},{"id":19838658[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:183] EOF received, exiting...
+deciding for version 4 due to this line: # i3 config file (v4)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 3360, 0)
+rect now: (0, 0, 3360, 1050)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 1680, 0)
+rect now: (0, 0, 1680, 1050)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 1680, 0)
+rect now: (1680, 0, 1680, 1050)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 1680, 0)
+rect now: (1680, 0, 1680, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 1680, 0)
+rect now: (1680, 0, 1680, 1034)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 1680, 0)
+rect now: (1680, 0, 1680, 1034)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 14, 0, 0)
+rect now: (1680, 14, 1680, 0)
+rect now: (1680, 14, 1680, 1020)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 1676, 0)
+rect now: (2, 0, 1676, 1018)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 484, 0)
+rect now: (0, 0, 484, 292)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 1680, 0)
+rect now: (1680, 0, 1680, 1034)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 14, 0, 0)
+rect now: (1680, 14, 1680, 0)
+rect now: (1680, 14, 1680, 1020)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 1676, 0)
+rect now: (2, 0, 1676, 1018)
+rect now: (4, 0, 0, 0)
+rect now: (4, 14, 0, 0)
+rect now: (4, 14, 1676, 0)
+rect now: (4, 14, 1676, 1034)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 1680, 0)
+rect now: (1680, 0, 1680, 1034)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 14, 0, 0)
+rect now: (1680, 14, 840, 0)
+rect now: (1680, 14, 840, 1020)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 836, 0)
+rect now: (2, 0, 836, 1018)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 14, 0, 0)
+rect now: (1680, 14, 836, 0)
+rect now: (1680, 14, 836, 1034)
+rect now: (2520, 0, 0, 0)
+rect now: (2520, 14, 0, 0)
+rect now: (2520, 14, 840, 0)
+rect now: (2520, 14, 840, 1020)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 836, 0)
+rect now: (2, 0, 836, 1018)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 836, 0)
+rect now: (0, 0, 836, 509)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 1680, 0)
+rect now: (1680, 0, 1680, 1034)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 14, 0, 0)
+rect now: (1680, 14, 1680, 0)
+rect now: (1680, 14, 1680, 1020)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 1676, 0)
+rect now: (2, 0, 1676, 1018)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 484, 0)
+rect now: (0, 0, 484, 292)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 1680, 0)
+rect now: (1680, 0, 1680, 1034)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 14, 0, 0)
+rect now: (1680, 14, 840, 0)
+rect now: (1680, 14, 840, 1020)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 836, 0)
+rect now: (2, 0, 836, 1018)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 754, 0)
+rect now: (0, 0, 754, 404)
+rect now: (2520, 0, 0, 0)
+rect now: (2520, 14, 0, 0)
+rect now: (2520, 14, 840, 0)
+rect now: (2520, 14, 840, 1020)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 836, 0)
+rect now: (2, 0, 836, 1018)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 484, 0)
+rect now: (0, 0, 484, 292)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 1034, 0, 0)
+rect now: (1680, 1034, 1680, 0)
+rect now: (1680, 1034, 1680, 16)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 1680, 0)
+rect now: (0, 0, 1680, 1050)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 1680, 0)
+rect now: (0, 0, 1680, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 1680, 0)
+rect now: (0, 0, 1680, 1034)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 1680, 0)
+rect now: (0, 0, 1680, 1034)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 14, 0, 0)
+rect now: (0, 14, 840, 0)
+rect now: (0, 14, 840, 1020)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 836, 0)
+rect now: (2, 0, 836, 1018)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 484, 0)
+rect now: (0, 0, 484, 292)
+rect now: (840, 0, 0, 0)
+rect now: (840, 14, 0, 0)
+rect now: (840, 14, 840, 0)
+rect now: (840, 14, 840, 1020)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 836, 0)
+rect now: (2, 0, 836, 1018)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 484, 0)
+rect now: (0, 0, 484, 292)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 1680, 0)
+rect now: (0, 0, 1680, 1034)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 14, 0, 0)
+rect now: (0, 14, 1680, 0)
+rect now: (0, 14, 1680, 1020)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 1676, 0)
+rect now: (2, 0, 1676, 1018)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 484, 0)
+rect now: (0, 0, 484, 292)
+rect now: (0, 0, 0, 0)
+rect now: (0, 1034, 0, 0)
+rect now: (0, 1034, 1680, 0)
+rect now: (0, 1034, 1680, 16)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+appended tree, using new root
+new root = 0x17c28ba9b200
+out = 0x17c28ba9b800
+ws = 0x17c287a7b800
+[libi3] libi3/font.c Using X font -misc-fixed-*-*-*-*-10-100-75-75-c-60-iso10646-1
+[libi3] libi3/font.c Using X font -misc-fixed-*-*-*-*-10-100-75-75-c-60-iso10646-1
+[libi3] libi3/font.c Using X font -misc-fixed-*-*-*-*-10-100-75-75-c-60-iso10646-1
+i3status: trying to auto-detect output_format setting
+i3status: falling back to "none"
+i3status: trying to auto-detect output_format setting
+i3status: falling back to "none"
+Received SIGPIPE, exiting
+written: 16297 of 16297
+layout: {"id":26124334248448,"type":0,"orientation":"horizontal","scratchpad_state":"none","percent":null,"urgent":false,"focused":false,"layout":"splith","workspace_layout":"default","last_split_layout":"splith","border":"normal","current_border_width":-1,"rect":{"x":0,"y":0,"width":3360,"height":1050},"window_rect":{"x":0,"y":0,"width":0,"height":0},"geometry":{"x":0,"y":0,"width":0,"height":0},"name":"root","window":null,"nodes":[{"id":26124334249984,"type":1,"orientation":"none","scratchpad_state":"none","percent":0.33333333333333331483,"urgent":false,"focused":false,"layout":"output","workspace_layout":"default","last_split_layout":"splith","border":"normal","current_border_width":-1,"rect":{"x":0,"y":0,"width":1680,"height":1050},"window_rect":{"x":0,"y":0,"width":0,"height":0},"geometry":{"x":0,"y":0,"width":0,"height":0},"name":"__i3","window":null,"nodes":[{"id":26124267010048,"type":2,"orientation":"horizontal","scratchpad_state":"none","percent":null,"urgent":false,"focused":false,"layout":"splith","workspace_layout":"default","last_split_layout":"splith","border":"normal","current_border_width":-1,"rect":{"x":0,"y":0,"width":0,"height":0},"window_rect":{"x":0,"y":0,"width":0,"height":0},"geometry":{"x":0,"y":0,"width":0,"height":0},"name":"content","window":null,"nodes":[{"id":26124267009536,"type":4,"orientation":"none","scratchpad_state":"none","percent":null,"urgent":false,"focused":false,"layout":"splith","workspace_layout":"default","last_split_layout":"splith","border":"normal","current_border_width":-1,"rect":{"x":0,"y":0,"width":0,"height":0},"window_rect":{"x":0,"y":0,"width":0,"height":0},"geometry":{"x":0,"y":0,"width":0,"height":0},"name":"__i3_scratch","num":-1,"window":null,"nodes":[],"floating_nodes":[],"focus":[],"fullscreen_mode":1,"floating":"auto_off","swallows":[]}],"floating_nodes":[],"focus":[26124267009536],"fullscreen_mode":0,"floating":"auto_off","swallows":[]}],"floating_nodes":[],"focus":[26124267010048],"fullscreen_mode":0,"floating":"auto_off","swallows":[]},{"id":26124267deciding for version 4 due to this line: # i3 config file (v4)
+Received SIGPIPE, exiting
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 3360, 0)
+rect now: (0, 0, 3360, 1050)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 1680, 0)
+rect now: (0, 0, 1680, 1050)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 1680, 0)
+rect now: (1680, 0, 1680, 1050)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 1680, 0)
+rect now: (1680, 0, 1680, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 1680, 0)
+rect now: (1680, 0, 1680, 1034)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 1680, 0)
+rect now: (1680, 0, 1680, 1050)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 14, 0, 0)
+rect now: (1680, 14, 1680, 0)
+rect now: (1680, 14, 1680, 1036)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 1676, 0)
+rect now: (2, 0, 1676, 1034)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 14, 0, 0)
+rect now: (1680, 14, 1676, 0)
+rect now: (1680, 14, 1676, 1018)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 1680, 0)
+rect now: (1680, 0, 1680, 1034)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 14, 0, 0)
+rect now: (1680, 14, 1680, 0)
+rect now: (1680, 14, 1680, 1020)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 1676, 0)
+rect now: (2, 0, 1676, 1018)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 14, 0, 0)
+rect now: (1680, 14, 1676, 0)
+rect now: (1680, 14, 1676, 1018)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 1680, 0)
+rect now: (1680, 0, 1680, 1034)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 14, 0, 0)
+rect now: (1680, 14, 840, 0)
+rect now: (1680, 14, 840, 1020)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 836, 0)
+rect now: (2, 0, 836, 1018)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 14, 0, 0)
+rect now: (1680, 14, 836, 0)
+rect now: (1680, 14, 836, 1018)
+rect now: (2520, 0, 0, 0)
+rect now: (2520, 14, 0, 0)
+rect now: (2520, 14, 840, 0)
+rect now: (2520, 14, 840, 1020)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 836, 0)
+rect now: (2, 0, 836, 1018)
+rect now: (2520, 0, 0, 0)
+rect now: (2520, 14, 0, 0)
+rect now: (2520, 14, 836, 0)
+rect now: (2520, 14, 836, 1018)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 1680, 0)
+rect now: (1680, 0, 1680, 1034)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 14, 0, 0)
+rect now: (1680, 14, 1680, 0)
+rect now: (1680, 14, 1680, 1020)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 1676, 0)
+rect now: (2, 0, 1676, 1018)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 14, 0, 0)
+rect now: (1680, 14, 1676, 0)
+rect now: (1680, 14, 1676, 1018)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 0, 1680, 0)
+rect now: (1680, 0, 1680, 1050)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 14, 0, 0)
+rect now: (1680, 14, 840, 0)
+rect now: (1680, 14, 840, 1036)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 836, 0)
+rect now: (2, 0, 836, 1034)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 14, 0, 0)
+rect now: (1680, 14, 836, 0)
+rect now: (1680, 14, 836, 1018)
+rect now: (2520, 0, 0, 0)
+rect now: (2520, 14, 0, 0)
+rect now: (2520, 14, 840, 0)
+rect now: (2520, 14, 840, 1036)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 836, 0)
+rect now: (2, 0, 836, 1034)
+rect now: (2520, 0, 0, 0)
+rect now: (2520, 14, 0, 0)
+rect now: (2520, 14, 836, 0)
+rect now: (2520, 14, 836, 1018)
+rect now: (1680, 0, 0, 0)
+rect now: (1680, 1034, 0, 0)
+rect now: (1680, 1034, 1680, 0)
+rect now: (1680, 1034, 1680, 16)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 1680, 0)
+rect now: (0, 0, 1680, 1050)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 1680, 0)
+rect now: (0, 0, 1680, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 1680, 0)
+rect now: (0, 0, 1680, 1034)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 1680, 0)
+rect now: (0, 0, 1680, 1050)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 14, 0, 0)
+rect now: (0, 14, 840, 0)
+rect now: (0, 14, 840, 1036)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 836, 0)
+rect now: (2, 0, 836, 1034)
+rect now: (0, 0, 0, 0)
+rect now: (0, 14, 0, 0)
+rect now: (0, 14, 836, 0)
+rect now: (0, 14, 836, 1018)
+rect now: (840, 0, 0, 0)
+rect now: (840, 14, 0, 0)
+rect now: (840, 14, 840, 0)
+rect now: (840, 14, 840, 1036)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 836, 0)
+rect now: (2, 0, 836, 1034)
+rect now: (840, 0, 0, 0)
+rect now: (840, 14, 0, 0)
+rect now: (840, 14, 836, 0)
+rect now: (840, 14, 836, 1018)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 1680, 0)
+rect now: (0, 0, 1680, 1034)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 14, 0, 0)
+rect now: (0, 14, 1680, 0)
+rect now: (0, 14, 1680, 1020)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 0, 0)
+rect now: (2, 0, 1676, 0)
+rect now: (2, 0, 1676, 1018)
+rect now: (0, 0, 0, 0)
+rect now: (0, 14, 0, 0)
+rect now: (0, 14, 1676, 0)
+rect now: (0, 14, 1676, 1018)
+rect now: (0, 0, 0, 0)
+rect now: (0, 1034, 0, 0)
+rect now: (0, 1034, 1680, 0)
+rect now: (0, 1034, 1680, 16)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+rect now: (0, 0, 0, 0)
+appended tree, using new root
+new root = 0x3fc987af600
+out = 0x3fc987af800
+ws = 0x3fc9b72fa00
+[libi3] libi3/font.c Using X font -misc-fixed-*-*-*-*-10-100-75-75-c-60-iso10646-1
+[libi3] libi3/font.c Using X font -misc-fixed-*-*-*-*-10-100-75-75-c-60-iso10646-1
+[i3bar/src/xcb.c:948] Calculated Font-height: 10
+[libi3] libi3/font.c Using X font -misc-fixed-*-*-*-*-10-100-75-75-c-60-iso10646-1
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:63] Parsing Outputs-JSON...
+[i3bar/src/outputs.c:206] Ignoring output "DVI-0", not configured to handle it.
+[i3bar/src/ipc.c:65] Reconfiguring Windows...
+[i3bar/src/xcb.c:1182] Re-allocating statusline-buffer, statusline_width = 0, root_screen->width_in_pixels = 3360
+i3status: trying to auto-detect output_format setting
+i3status: falling back to "none"
+i3status: trying to auto-detect output_format setting
+i3status: falling back to "none"
+[i3bar/src/xcb.c:1239] Creating Window for output DVI-1
+[i3bar/src/xcb.c:1002] Initializing system tray functionality
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/child.c:286] Detecting input type based on buffer *Rudimental - Feel The Love (Fred V & Grafix Remix) [1:05/4:49] | 48.50 C | 19-12-2012 - 12:57:30 | vol: 85%
+*
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:54] Got Subscribe Reply: {"success":true}
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:422] _NET_SYSTEM_TRAY_OPCODE received
+[i3bar/src/xcb.c:465] xembed format = 32, len = 2
+[i3bar/src/xcb.c:467] xembed version = 1
+[i3bar/src/xcb.c:468] xembed flags = 1
+[i3bar/src/xcb.c:478] X window 00400fca requested docking
+[i3bar/src/xcb.c:489] using output DVI-1
+[i3bar/src/xcb.c:552] Mapping dock client
+[i3bar/src/xcb.c:402] Configuring tray window 00400fca to x=1668
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:422] _NET_SYSTEM_TRAY_OPCODE received
+[i3bar/src/xcb.c:465] xembed format = 32, len = 2
+[i3bar/src/xcb.c:467] xembed version = 1
+[i3bar/src/xcb.c:468] xembed flags = 1
+[i3bar/src/xcb.c:478] X window 00601ca2 requested docking
+[i3bar/src/xcb.c:489] using output DVI-1
+[i3bar/src/xcb.c:552] Mapping dock client
+[i3bar/src/xcb.c:402] Configuring tray window 00601ca2 to x=1668
+[i3bar/src/xcb.c:402] Configuring tray window 00400fca to x=1656
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[i3bar/src/workspaces.c:126] Got Workspace 6, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 7, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 8, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 9, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 10, name_width: 12, glyphs: 2
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 6, glyphs: 1
+[i3bar/src/workspaces.c:126] Got Workspace 3, name_width: 6, glyphs: 1
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:125] Got Workspace Event!
+[i3bar/src/ipc.c:194] ERROR: Wrong magic code: :"defa
+ Expected: i3-ipc
+[i3bar/src/xcb.c:1434] Drawing Bars...
+[i3bar/src/ipc.c:194] ERROR: Wrong magic code: :"defa
+ Expected: i3-ipc
+[i3bar/src/xcb.c:1182] Re-allocating statusline-buffer, statusline_width = 9630, root_screen->width_in_pixels = 3360
+[i3bar/src/xcb.c:1466] Printing statusline!
+[i3bar/src/xcb.c:1500] Drawing Button for WS 1 at x = 0, len = 6
+[i3bar/src/xcb.c:1500] Drawing Button for WS 3 at x = 17, len = 6
+[i3bar/src/ipc.c:164] Got data!
+[i3bar/src/ipc.c:194] ERROR: Wrong magic code: :"defa
+ Expected: i3-ipc
+Received SIGPIPE, exiting

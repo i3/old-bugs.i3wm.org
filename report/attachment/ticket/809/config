@@ -1,0 +1,216 @@
+# Modified i3 config file.
+#
+# For returning to standard configuration
+# re-run i3-config-wizard(1).
+
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+
+# Standard modifier
+set $mod Mod4
+
+# font for window titles. ISO 10646 = Unicode
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-utf8-1
+
+
+# -------------------
+
+
+#
+# Startup programs
+#
+
+# Background
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpaper/wallpaper3.jpg
+
+# Num Lock
+exec --no-startup-id numlockx on
+
+# Automounting via devmon
+exec --no-startup-id devmon &
+
+# Disable X screensaver and dpms features
+exec --no-startup-id xset s off
+exec --no-startup-id xset -b
+exec --no-startup-id xset -dpms
+
+# Only one screen should be available
+#exec --no-startup-id xrandr --output VGA-0 --off
+#exec --no-startup-id i3-msg "workspace 1"
+
+# Create Workspaces on different screens
+workspace 10 output DVI-I-1
+workspace 1 output HDMI-0
+
+
+# -------------------
+
+
+#
+# Shortcuts
+#
+
+# Volume Change
+bindsym $mod+Prior exec --no-startup-id amixer set Master 1+
+bindsym $mod+Next exec --no-startup-id amixer set Master 1-
+
+#start a terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id lxterminal
+# maybe change i3-sensible-terminal...
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id dmenu_run
+
+# lock screen
+bindsym $mod+Shift+l exec --no-startup-id xset dpms 45 && i3lock -d -n -c 333333 && xset -dpms
+bindsym $mod+l exec --no-startup-id xset dpms 120 && i3lock -c 333333 -n && xset -dpms
+
+# Shutdown
+bindsym $mod+Shift+XF86PowerOff exec --no-startup-id sudo systemctl poweroff
+
+
+# -------------------
+
+
+#
+# i3 keyboard binding
+#
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# kill focused window
+bindsym $mod+F4 kill
+bindsym $mod+Shift+Q kill
+
+# change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout default
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+c focus child
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace and switch to it
+bindsym $mod+Shift+exclam move workspace 1; workspace 1
+bindsym $mod+Shift+quotedbl move workspace 2; workspace 2
+bindsym $mod+Shift+section move workspace 3; workspace 3
+bindsym $mod+Shift+dollar move workspace 4; workspace 4
+bindsym $mod+Shift+percent move workspace 5; workspace 5
+bindsym $mod+Shift+ampersand move workspace 6; workspace 6
+bindsym $mod+Shift+slash move workspace 7; workspace 7
+bindsym $mod+Shift+parenleft move workspace 8; workspace 8
+bindsym $mod+Shift+parenright move workspace 9; workspace 9
+bindsym $mod+Shift+equal move workspace 10; workspace 10
+
+# only move focused container to workspace but stay on current workspace
+bindsym $mod+control+1 move workspace 1
+bindsym $mod+control+2 move workspace 2
+bindsym $mod+control+3 move workspace 3
+bindsym $mod+control+4 move workspace 4
+bindsym $mod+control+5 move workspace 5
+bindsym $mod+control+6 move workspace 6
+bindsym $mod+control+7 move workspace 7
+bindsym $mod+control+8 move workspace 8
+bindsym $mod+control+9 move workspace 9
+bindsym $mod+control+0 move workspace 10
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+	# These bindings trigger as soon as you enter the resize mode
+	# Resize the border in the direction you pressed, e.g.
+	# when pressing left, the window is resized so that it has
+	# more space on its left
+bindsym Left resize shrink left 10 px or 10 ppt
+bindsym Shift+Left resize grow   left 10 px or 10 ppt
+
+bindsym Down resize shrink down 10 px or 10 ppt
+bindsym Shift+Down resize grow   down 10 px or 10 ppt
+
+bindsym Up resize shrink up 10 px or 10 ppt
+bindsym Shift+Up resize grow   up 10 px or 10 ppt
+
+bindsym Right resize shrink right 10 px or 10 ppt
+bindsym Shift+Right resize grow   right 10 px or 10 ppt
+
+	# back to normal: Enter or Escape
+bindsym Return mode "default"
+bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+
+# -------------------
+
+
+#
+# Other i3
+#
+
+# switch back to the previous workspace if the same workspace key is pressed again
+workspace_auto_back_and_forth yes
+
+# let the focus follow the mouse
+focus_follows_mouse no
+
+# reload the configuration file
+bindsym $mod+Shift+C reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+R restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+E exit
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3status
+}
+

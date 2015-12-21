@@ -1,0 +1,124 @@
+#0  0x00007f2fc6c54d67 in __GI_raise (sig=sig@entry=6) at ../nptl/sysdeps/unix/sysv/linux/raise.c:56
+        resultvar = 0
+        pid = 28758
+        selftid = 28758
+#1  0x00007f2fc6c56118 in __GI_abort () at abort.c:89
+        save_stage = 2
+        act = {__sigaction_handler = {sa_handler = 0x7fff07c2c3a0, sa_sigaction = 0x7fff07c2c3a0}, sa_mask = {__val = {
+              139843176295632, 10313323, 140733323592688, 4, 50579687147, 0, 0, 140733193388032, 0, 140733323592640, 
+              21474836480, 139843176261241, 139843176276728, 0, 139843227189248, 139843176276728}}, sa_flags = 4413505, 
+          sa_restorer = 0x436540 <__PRETTY_FUNCTION__.37188>}
+        sigs = {__val = {32, 0 <repeats 15 times>}}
+#2  0x00007f2fc6c4dbdd in __assert_fail_base (fmt=0x7f2fc6d8a2f8 "%s%s%s:%u: %s%sAssertion `%s' failed.\n%n", 
+    assertion=assertion@entry=0x435841 "fs != ((void *)0)", file=file@entry=0x4357ac "../i3/src/con.c", line=line@entry=1480, 
+    function=function@entry=0x436540 <__PRETTY_FUNCTION__.37188> "con_fullscreen_permits_focusing") at assert.c:92
+        str = 0xa218b0 ""
+        total = 4096
+#3  0x00007f2fc6c4dc92 in __GI___assert_fail (assertion=assertion@entry=0x435841 "fs != ((void *)0)", 
+    file=file@entry=0x4357ac "../i3/src/con.c", line=line@entry=1480, 
+    function=function@entry=0x436540 <__PRETTY_FUNCTION__.37188> "con_fullscreen_permits_focusing") at assert.c:101
+No locals.
+#4  0x000000000040bd80 in con_fullscreen_permits_focusing (con=<optimized out>) at ../i3/src/con.c:1480
+        fs = <optimized out>
+        __PRETTY_FUNCTION__ = "con_fullscreen_permits_focusing"
+#5  0x0000000000421b20 in cmd_focus (current_match=<optimized out>, cmd_output=0x653250 <stack+16>)
+    at ../i3/src/commands.c:1527
+        ws = 0x9e2640
+        currently_focused = <optimized out>
+        __FUNCTION__ = "cmd_focus"
+        __i3_scratch = 0x9e1d90
+        count = 0
+        current = 0xa21810
+#6  0x000000000040d431 in GENERATED_call (result=0x653190 <subcommand_output>, call_identifier=<optimized out>)
+    at include/GENERATED_command_call.h:646
+No locals.
+#7  next_state (token=0x64ff30, token=0x64ff30) at ../i3/src/commands_parser.c:191
+No locals.
+#8  0x000000000040e0c7 in parse_command (input=0xa211b0 "[id=\"23068673\"] focus child, focus", gen=gen@entry=0x0)
+    at ../i3/src/commands_parser.c:321
+        ptr = 0x4382a0 <tokens+672>
+        __FUNCTION__ = "parse_command"
+        result = 0xa21720
+        walk = 0xa211d2 ""
+        len = 34
+        c = <optimized out>
+        token = 0x64ff30
+        token_handled = false
+#9  0x00000000004300d2 in run_assignments (window=0xa213f0) at ../i3/src/assignments.c:48
+        full_command = 0xa211b0 "[id=\"23068673\"] focus child, focus"
+        result = <optimized out>
+        skip = false
+        __FUNCTION__ = "run_assignments"
+        needs_tree_render = false
+        current = 0x9e43a0
+#10 0x00000000004115ec in manage_window (window=23068673, cookie=..., needs_to_be_mapped=6, needs_to_be_mapped@entry=true)
+    at ../i3/src/manage.c:482
+        geomc = {sequence = 10621936}
+        geom = 0xa21130
+        attr = 0x9f3c50
+        utf8_title_cookie = {sequence = 10424272}
+        __FUNCTION__ = "manage_window"
+        values = {6422528}
+        event_mask_cookie = {sequence = 0}
+        urgency_hint = false
+        motif_border_style = BS_NORMAL
+        wm_size_hints = {flags = 4, x = 2, y = 18, width = 0, height = 0, min_width = 0, min_height = 0, max_width = 0, 
+          max_height = 0, width_inc = 0, height_inc = 0, min_aspect_num = 0, min_aspect_den = 0, max_aspect_num = 0, 
+          max_aspect_den = 0, base_width = 0, base_height = 0, win_gravity = 0}
+        startup_id_reply = 0x0
+        startup_ws = 0x0
+        search_at = 0x9f0fd0
+        match = 0x9e25d0
+        assignment = 0x9f0fd0
+        name = 0xa213c0 "\023"
+        fs = 0x0
+        want_floating = 176
+        rcookie = {sequence = 0}
+#11 0x0000000000411ad6 in manage_existing_windows (root=<optimized out>) at ../i3/src/manage.c:41
+        reply = 0x9f3b30
+        i = <optimized out>
+        len = <optimized out>
+        children = 0x9f3b50
+        cookies = 0x9dd840
+#12 0x0000000000408e8e in main (argc=10434576, argv=0x9f37d0) at ../i3/src/main.c:733
+        event = 0x0
+        override_configpath = 0xc <error: Cannot access memory at address 0xc>
+        autostart = false
+        layout_path = 0x9d7280 "\220r\235"
+        long_options = {{name = 0x8000000130 <error: Cannot access memory at address 0x8000000130>, has_arg = 4384400, 
+            flag = 0xffffffff00000023, val = 4384624}, {
+            name = 0x8000000027 <error: Cannot access memory at address 0x8000000027>, has_arg = 4384176, 
+            flag = 0xffffffff00000028, val = 4382880}, {
+            name = 0xffffffff00000154 <error: Cannot access memory at address 0xffffffff00000154>, has_arg = 4382704, 
+            flag = 0xffffffff00000044, val = 4383888}, {
+            name = 0x8000000156 <error: Cannot access memory at address 0x8000000156>, has_arg = 4382640, flag = 0x8000000043, 
+            val = 4382480}, {name = 0x5900000055 <error: Cannot access memory at address 0x5900000055>, has_arg = 0, 
+            flag = 0x0, val = 0}, {name = 0x0, has_arg = 0, flag = 0x0, val = 0}, {name = 0x443435 "no-autostart", 
+            has_arg = 0, flag = 0x0, val = 97}, {name = 0x440b4f "config", has_arg = 1, flag = 0x0, val = 99}, {
+            name = 0x443453 "version", has_arg = 0, flag = 0x0, val = 118}, {name = 0x443442 "moreversion", has_arg = 0, 
+            flag = 0x0, val = 109}, {name = 0x44344e "more-version", has_arg = 0, flag = 0x0, val = 109}, {
+            name = 0x44345b "more_version", has_arg = 0, flag = 0x0, val = 109}, {name = 0x443468 "help", has_arg = 0, 
+            flag = 0x0, val = 104}, {name = 0x437b70 "layout", has_arg = 1, flag = 0x0, val = 76}, {name = 0x437b45 "restart", 
+            has_arg = 1, flag = 0x0, val = 0}, {name = 0x440d2f "w", has_arg = 0, flag = 0x0, val = 0}, {
+            name = 0x440d1f "rders", has_arg = 0, flag = 0x0, val = 0}, {name = 0x44301f "disable-signalhandler", has_arg = 0, 
+            flag = 0x0, val = 0}, {name = 0x443062 "shmlog-size", has_arg = 1, flag = 0x0, val = 0}, {
+            name = 0x44306e "shmlog_size", has_arg = 1, flag = 0x0, val = 0}}
+        option_index = 8
+        opt = 0
+        __FUNCTION__ = "main"
+        gcookie = {sequence = 10434512}
+        cookie = {sequence = 0}
+        greply = 0x9f3810
+        _NET_SUPPORTED_cookie = {sequence = 10434512}
+        _NET_SUPPORTING_WM_CHECK_cookie = {sequence = 12}
+        extreply = 0x8
+        pointerreply = 0x9f37d0
+        output = 0x0
+        ipc_socket = 10434512
+        xcb_watcher = 0x9f37d0
+        xcb_prepare = 0x9f3810
+        action = {__sigaction_handler = {sa_handler = 0x1, sa_sigaction = 0x1}, sa_mask = {__val = {139843227201840, 2080, 
+              139839840190544, 2064, 0, 139843227202696, 140733323594000, 4294969360, 140733323593984, 4131212846, 4209777, 
+              4294967295, 4, 139843174863272, 139843227056592, 472446402560}}, sa_flags = 0, sa_restorer = 0x1}
+        exec_always = 0x9f37d0
+        barconfig = 0x9f37d0

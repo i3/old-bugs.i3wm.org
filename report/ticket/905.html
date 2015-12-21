@@ -1,0 +1,670 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #905 (Support for window icons (_NET_WM_ICON property))
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/904" title="Ticket #904" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/905?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/905?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/905?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/906" title="Ticket #906" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="eb5d71ee31355dea015e46b5";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/904" title="Ticket #904">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/906" title="Ticket #906">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-12-27T05%3A59%3A11%2B01%3A00&amp;precision=second" title="See timeline at 12/27/12 05:59:11">2 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2012-12-27T18%3A50%3A24%2B01%3A00&amp;precision=second" title="See timeline at 12/27/12 18:50:24">2 years ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2014-11-14T16%3A12%3A07%2B01%3A00&amp;precision=second" title="See timeline at 11/14/14 16:12:07">5 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/905" class="trac-id">#905</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=wontfix">wontfix</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Support for window icons (_NET_WM_ICON property)</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">mariusmuja@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.4">4.4</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.4-63-gbaae706 (2012-12-26, branch "origin_next")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+The attached patch adds support for window icons(the _NET_WM_ICON property). I don't really expect this to be merged since it doesn't really fit into i3 philosophy of "simple borders are the most decoration we want to have". I post it here in case other people might want to use it.<br />
+</p>
+<p>
+Myself it find it nice to have window icons, they help me quickly find the correct window icon when I have many tabs. Something along the lines "a picture's worth a thousand words" (well at least something like an icon's worth more words than there are in the window title... ).<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(2)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/905/0001-Added-support-for-window-icons-_NET_WM_ICON-property.patch" title="View attachment">0001-Added-support-for-window-icons-_NET_WM_ICON-property.patch</a><a href="/report/raw-attachment/ticket/905/0001-Added-support-for-window-icons-_NET_WM_ICON-property.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="10466 bytes">10.2 KB</span>) -
+      added by <em>anonymous</em> <a class="timeline" href="/report/timeline?from=2012-12-27T05%3A59%3A27%2B01%3A00&amp;precision=second" title="See timeline at 12/27/12 05:59:27">2 years ago</a>.
+  </dt>
+              <dt>
+    <a href="/report/attachment/ticket/905/0001-Added-support-for-window-icons-_NET_WM_ICON-property.2.patch" title="View attachment">0001-Added-support-for-window-icons-_NET_WM_ICON-property.2.patch</a><a href="/report/raw-attachment/ticket/905/0001-Added-support-for-window-icons-_NET_WM_ICON-property.2.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="10949 bytes">10.7 KB</span>) -
+      added by <em>anonymous</em> <a class="timeline" href="/report/timeline?from=2013-04-26T18%3A31%3A17%2B02%3A00&amp;precision=second" title="See timeline at 04/26/13 18:31:17">2 years ago</a>.
+  </dt>
+              <dd>
+                Newer version.
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/905/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(12)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-12-27T05%3A59%3A27%2B01%3A00&amp;precision=second" title="See timeline at 12/27/12 05:59:27">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/905/0001-Added-support-for-window-icons-_NET_WM_ICON-property.patch"><em>0001-Added-support-for-window-icons-_NET_WM_ICON-property.patch</em></a><a href="/report/raw-attachment/ticket/905/0001-Added-support-for-window-icons-_NET_WM_ICON-property.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-1-1356630624313384">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-12-27T18%3A50%3A24%2B01%3A00&amp;precision=second" title="See timeline at 12/27/12 18:50:24">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>wontfix</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Thanks for the patch, but as you already explained, I won’t merge it for the reasons you listed.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1366973848420294">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-04-26T12%3A57%3A28%2B02%3A00&amp;precision=second" title="See timeline at 04/26/13 12:57:28">2 years ago</a> by pabloa@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+How should I apply this patch? I did <tt>git clone git://code.i3wm.org/i3</tt> and then <tt>cd i3; git apply 0001-Added-support-for-window-icons-_NET_WM_ICON-property.patch</tt>. After some warnings ("trailing whitespace", "space before tab in indent") the following lines appeared:<br />
+</p>
+<pre class="wiki">error: patch failed: src/render.c:199
+error: src/render.c: patch does not apply
+</pre><p>
+Am I doing something wrong? Is the patch for a newer/older version? Thanks.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-04-26T18%3A31%3A17%2B02%3A00&amp;precision=second" title="See timeline at 04/26/13 18:31:17">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/905/0001-Added-support-for-window-icons-_NET_WM_ICON-property.2.patch"><em>0001-Added-support-for-window-icons-_NET_WM_ICON-property.2.patch</em></a><a href="/report/raw-attachment/ticket/905/0001-Added-support-for-window-icons-_NET_WM_ICON-property.2.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Newer version.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1366994032322942">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-04-26T18%3A33%3A52%2B02%3A00&amp;precision=second" title="See timeline at 04/26/13 18:33:52">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Probably the patch is too old and doesn't apply cleanly any more. I've attached the patch that I currently use on top the next branch from git.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1368402310818263">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-05-13T01%3A45%3A10%2B02%3A00&amp;precision=second" title="See timeline at 05/13/13 01:45:10">23 months ago</a> by pabloa@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <pre class="wiki">$ git branch 
+  master
+* next
+$ git pull origin next
+From git://code.i3wm.org/i3
+ * branch            next       -&gt; FETCH_HEAD
+Already up-to-date.
+$ git apply 0001-Added-support-for-window-icons-_NET_WM_ICON-property.2.patch
+0001-Added-support-for-window-icons-_NET_WM_ICON-property.2.patch:103: trailing whitespace.
+#ifdef USE_ICONS                              
+0001-Added-support-for-window-icons-_NET_WM_ICON-property.2.patch:202: space before tab in indent.
+    	DLOG("_NET_WM_ICON is not set\n");
+0001-Added-support-for-window-icons-_NET_WM_ICON-property.2.patch:213: space before tab in indent.
+    	/* Check that the property is as long as it should be (in bytes),
+0001-Added-support-for-window-icons-_NET_WM_ICON-property.2.patch:216: space before tab in indent.
+    	const uint64_t crt_len = prop_value[0] * (uint64_t) prop_value[1];
+0001-Added-support-for-window-icons-_NET_WM_ICON-property.2.patch:217: space before tab in indent.
+    	const uint64_t expected_len = (crt_len + 2) * 4;
+error: common.mk: No such file or directory
+error: include/atoms.xmacro: No such file or directory
+error: include/window.h: No such file or directory
+error: src/manage.c: No such file or directory
+error: src/tree.c: No such file or directory
+error: src/window.c: No such file or directory
+</pre><p>
+Uhm :/<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1368402641756604">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-05-13T01%3A50%3A41%2B02%3A00&amp;precision=second" title="See timeline at 05/13/13 01:50:41">23 months ago</a> by pabloa@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sorry, my bad. The working directory was in a strange state. Now it applied cleanly; just a couple of warnings.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1368404530252371">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-05-13T02%3A22%3A10%2B02%3A00&amp;precision=second" title="See timeline at 05/13/13 02:22:10">23 months ago</a> by pabloa@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+It works as expected. Thank you :)<br />
+</p>
+<p>
+It will be a pain to keep this updated though.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1393369464750170">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-02-26T00%3A04%3A24%2B01%3A00&amp;precision=second" title="See timeline at 02/26/14 00:04:24">13 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+The patch fails to apply again.<br />
+</p>
+<p>
+Can you please refresh it?<br />
+</p>
+<p>
+It might be a good idea to also publish your Git repo/branch, so that it could get used as a remote for Git.<br />
+</p>
+<p>
+Thanks!<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1393370768555792">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-02-26T00%3A26%3A08%2B01%3A00&amp;precision=second" title="See timeline at 02/26/14 00:26:08">13 months ago</a> by mariusmuja@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I published my branch on github: <a class="ext-link" href="https://github.com/mariusmuja/i3wm"><span class="icon">​</span>https://github.com/mariusmuja/i3wm</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1394036300343510">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-03-05T17%3A18%3A20%2B01%3A00&amp;precision=second" title="See timeline at 03/05/14 17:18:20">13 months ago</a> by hasufell@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Not sure if I understand the reasons. The additional code is not really much and there are obviously people who would want to help with maintaining those pieces.<br />
+</p>
+<p>
+If you want simple decorative borders, then just use them and set USE_ICONS default to off in the Makefile.<br />
+</p>
+<p>
+(posting this after 5+ tries of captchas... horrible)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1415977927512496">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-11-14T16%3A12%3A07%2B01%3A00&amp;precision=second" title="See timeline at 11/14/14 16:12:07">5 months ago</a> by bl.nero@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sorry for reviving an old thread, but I think that you should seriously reconsider your policy here. Keep in mind that some applications don't put their name in front of the window title. For example, Chrome would put the current web page title in front, and that makes it very inconvenient to find in the tabbed layout mode - especially that the padding inside the tabs are minimal, and the window titles melt into an incomprehensible blob of characters.<br />
+</p>
+<p>
+I completely understand and support the minimalism principle. However, I think that the minimalism should serve the user. The "nothing fancy" rule means that you shouldn't support 3D effects, drop shadows, and anything else that is eye candy, but not functional. However, this feature request is purely functional. It's not about eye candy, it's about usability.<br />
+</p>
+<p>
+So, here's my 2c (or a bit more).<br />
+</p>
+<p>
+Disclaimer: I started using i3 yesterday, so YMMV. And, BTW, i3 is by far the best WM I've ever tried. :)<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/905?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/905?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/905?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

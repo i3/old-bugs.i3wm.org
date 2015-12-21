@@ -1,0 +1,736 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1167 ("button-release-event" event triggered late for Clutter.Actor inside a GtkClutter.Embed widget)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1166" title="Ticket #1166" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1167?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1167?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1167?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1168" title="Ticket #1168" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="b10f1b4799187812d17b7a7d";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1166" title="Ticket #1166">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1168" title="Ticket #1168">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2014-01-22T20%3A37%3A55%2B01%3A00&amp;precision=second" title="See timeline at 01/22/14 20:37:55">14 months ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2014-04-15T17%3A49%3A32%2B02%3A00&amp;precision=second" title="See timeline at 04/15/14 17:49:32">12 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1167" class="trac-id">#1167</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">"button-release-event" event triggered late for Clutter.Actor inside a GtkClutter.Embed widget</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">alexandru.balut@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=TonyC">TonyC</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=minor">minor</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.7.1">4.7.1</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.7.1-63-gca807ce (2014-01-21, branch "makepkg")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+Steps to reproduce:<br />
+</p>
+<ul><li>Run thie script below
+</li><li>Click the red area *without moving the mouse*, notice the following events triggered: embed-press, actor-press, embed-release.
+</li></ul><p>
+The actor-release should trigger immediately after embed-release, but it triggers after the button is released only when you move the mouse!<br />
+</p>
+<pre class="wiki">#!/usr/bin/python2
+from gi.repository import GtkClutter
+GtkClutter.init([])
+
+from gi.repository import Clutter
+from gi.repository import Gtk
+Clutter.init([])
+
+win = Gtk.Window()
+embed = GtkClutter.Embed()
+actor = Clutter.Actor()
+
+actor.set_reactive(True)
+actor.set_background_color(Clutter.Color.from_string("#FF0000")[1])
+actor.set_size(400, 400)
+
+embed.get_stage().add_child(actor)
+win.add(embed)
+win.show_all()
+
+
+def releaseCb(widget, event, s):
+    print s, widget
+
+embed.connect("button-press-event", releaseCb, "embed-press")
+actor.connect("button-press-event", releaseCb, "actor-press")
+
+embed.connect("button-release-event", releaseCb, "embed-release")
+actor.connect("button-release-event", releaseCb, "actor-release")
+
+win.connect("delete-event", Gtk.main_quit)
+Gtk.main()
+</pre>
+    </div>
+  </div>
+</div>
+          
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(11)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1390563201686264">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-24T12%3A33%3A21%2B01%3A00&amp;precision=second" title="See timeline at 01/24/14 12:33:21">14 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-priority">
+      <strong class="trac-field-priority">Priority</strong>
+        changed from <em>major</em> to <em>minor</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I can confirm that this happens in i3 but not in Openbox.<br />
+</p>
+<p>
+Does this quirk cause a problem for you in the app you are developing or using?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1390563853835904">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-24T12%3A44%3A13%2B01%3A00&amp;precision=second" title="See timeline at 01/24/14 12:44:13">14 months ago</a> by alexandru.balut@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+(I'm contributing to the Pitivi video editor and the problem is that when I click the timeline, the playhead should move to that point, but it moves late, when I move the mouse. This affects all the Pitivi users which use i3wm.)<br />
+</p>
+<p>
+BTW, great job with i3wm, I was using Awesome before. :)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1390738253933338">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-26T13%3A10%3A53%2B01%3A00&amp;precision=second" title="See timeline at 01/26/14 13:10:53">14 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>accepted</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I can reproduce this. It seems to be caused by grabbing the button. Let’s see if we are doing something wrong in the details of grabbing…<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1390739611002216">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-26T13%3A33%3A31%2B01%3A00&amp;precision=second" title="See timeline at 01/26/14 13:33:31">14 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+My current state is that the following patch seems to make it work, but obviously breaks a number of features:<br />
+</p>
+<pre class="wiki">diff --git i/src/handlers.c w/src/handlers.c
+index 312372a..c65cde0 100644
+--- i/src/handlers.c
++++ w/src/handlers.c
+@@ -1075,8 +1075,15 @@ void handle_event(int type, xcb_generic_event_t *event) {
+             handle_key_press((xcb_key_press_event_t*)event);
+             break;
+ 
++        //case XCB_BUTTON_PRESS:
++        //    handle_button_press((xcb_button_press_event_t*)event);
++        //    break;
++
+         case XCB_BUTTON_PRESS:
+-            handle_button_press((xcb_button_press_event_t*)event);
++        case XCB_BUTTON_RELEASE:
++            DLOG("%s, allowing events\n", (type == XCB_BUTTON_PRESS ? "press" : "release"));
++            xcb_allow_events(conn, XCB_ALLOW_REPLAY_POINTER, XCB_CURRENT_TIME);
++            xcb_flush(conn);
+             break;
+ 
+         case XCB_MAP_REQUEST:
+diff --git i/src/manage.c w/src/manage.c
+index d84ba1b..a1c0468 100644
+--- i/src/manage.c
++++ w/src/manage.c
+@@ -199,8 +199,8 @@ void manage_window(xcb_window_t window, xcb_get_window_attributes_cookie_t cooki
+     cwindow-&gt;depth = get_visual_depth(attr-&gt;visual);
+ 
+     /* We need to grab the mouse buttons for click to focus */
+-    xcb_grab_button(conn, false, window, XCB_EVENT_MASK_BUTTON_PRESS,
+-                    XCB_GRAB_MODE_SYNC, XCB_GRAB_MODE_ASYNC, root, XCB_NONE,
++    xcb_grab_button(conn, false, window, XCB_EVENT_MASK_BUTTON_PRESS | XCB_EVENT_MASK_BUTTON_RELEASE,
++                    XCB_GRAB_MODE_SYNC, XCB_GRAB_MODE_ASYNC, XCB_NONE, XCB_NONE,
+                     1 /* left mouse button */,
+                     XCB_BUTTON_MASK_ANY /* don’t filter for any modifiers */);
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1390744841058747">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-26T15%3A00%3A41%2B01%3A00&amp;precision=second" title="See timeline at 01/26/14 15:00:41">14 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>accepted</em> to <em>infoneeded</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Ok, I further narrowed it down:<br />
+</p>
+<p>
+Whenever you click in a window, i3 will set focus again and — if the app requested that — send the WM_TAKE_FOCUS <a class="forbidden wiki" title="no permission to view this wiki page">ClientMessage</a>. This behavior was introduced to make Eclipse work, see <a class="ext-link" href="http://code.stapelberg.de/git/i3/commit?id=250577da367fd163e9c1760b5902c26ec2b79ca8"><span class="icon">​</span>http://code.stapelberg.de/git/i3/commit?id=250577da367fd163e9c1760b5902c26ec2b79ca8</a><br />
+</p>
+<p>
+When commenting out the code that sends WM_TAKE_FOCUS, the example script you provided starts working, at least on my machine:<br />
+</p>
+<pre class="wiki">--- i/src/x.c
++++ w/src/x.c
+@@ -965,6 +965,7 @@ void x_push_changes(Con *con) {
+             focused_id = XCB_NONE;
+         } else {
+             bool set_focus = true;
++#if 0
+             if (focused-&gt;window != NULL &amp;&amp;
+                 focused-&gt;window-&gt;needs_take_focus) {
+                 DLOG("Updating focus by sending WM_TAKE_FOCUS to window 0x%08x (focused: %p / %s)\n",
+@@ -973,6 +974,7 @@ void x_push_changes(Con *con) {
+                 set_focus = !focused-&gt;window-&gt;doesnt_accept_focus;
+                 DLOG("set_focus = %d\n", set_focus);
+             }
++#endif
+ 
+             if (set_focus) {
+                 DLOG("Updating focus (focused: %p / %s) to X11 window 0x%08x\n", focused, focused-&gt;name, to_focus);
+</pre><p>
+Now, I’m not sure that the problem here is on i3’s side. Why can’t Gtk properly ignore the WM_TAKE_FOCUS events?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1390758990837526">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-26T18%3A56%3A30%2B01%3A00&amp;precision=second" title="See timeline at 01/26/14 18:56:30">14 months ago</a> by alexandru.balut@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Ebassi on Gnome's #clutter said they are not sure what should be fixed in Gtk.<br />
+</p>
+<p>
+I'm not sure what information I could provide myself so this problem gets fixed.<br />
+</p>
+<p>
+It could be argued that making a commit just so Eclipse works is basically a hack. What would it take to revert that commit?<br />
+</p>
+<p>
+&lt;ebassi&gt; I somehow suspect that gtk has had an issue with WM_TAKE_FOCUS in 10 years, but I may be wrong<br />
+&lt;ebassi&gt; it actually looks like a workaround for eclipse braindamage<br />
+&lt;ebassi&gt; I'd ask the i3wm people to open a bug against gtk+ detailing what they are doing, why, and why gtk should ignore WM_TAKE_FOCUS<br />
+&lt;ebassi&gt; "This fixes more problems with Eclipse" - great, now I know exactly zero percent more than I knew before<br />
+&lt;ebassi&gt; that's not how commit messages work<br />
+&lt;ebassi&gt; <a class="ext-link" href="http://code.stapelberg.de/git/i3/commit?id=1962c30dfb3baee0fb98589aca575ae54d1142e0"><span class="icon">​</span>http://code.stapelberg.de/git/i3/commit?id=1962c30dfb3baee0fb98589aca575ae54d1142e0</a> - this looks a bit better, but it strenghtens my hunch that Eclipse is being idiotic<br />
+&lt;ebassi&gt; anyway, if only i3 has this issue among various window managers, i3 gets to fix itself, not the toolkit<br />
+&lt;ebassi&gt; in any case, a bug with only gtk code exhibiting the issue, opened against gtk, would be welcome<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1390806624704157">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-27T08%3A10%3A24%2B01%3A00&amp;precision=second" title="See timeline at 01/27/14 08:10:24">14 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+The commit is not only for Eclipse, but for all Java programs. Java’s toolkit needs WM_TAKE_FOCUS (and so do other ancient X11 clients, I suppose), so we can’t revert this.<br />
+</p>
+<p>
+The only way to revert would be for you to convince me that it’s wrong according to the spec, _and_ that there is a better way to fix the Java use-case.<br />
+</p>
+<p>
+Did you open a GTK bug as ebassi suggests? I’d be happy to provide more detail when asked, but essentially, what we do is the following:<br />
+</p>
+<ul><li>When managing a new window, i3 checks whether the program lists WM_TAKE_FOCUS in its WM_PROTOCOLS atom.
+</li><li>For windows where that is true, whenever focus is changed to that window, i3 will send a WM_TAKE_FOCUS <a class="forbidden wiki" title="no permission to view this wiki page">ClientMessage</a>. Depending on the WM_HINTS atom, it will either set focus, too (hints.input=1) or not set focus at all and rely on the client responding to the WM_TAKE_FOCUS <a class="forbidden wiki" title="no permission to view this wiki page">ClientMessage</a> (hints.input=0)
+</li><li>When the user clicks on a window, focus is explicitly set to that window again, i.e. a WM_TAKE_FOCUS <a class="forbidden wiki" title="no permission to view this wiki page">ClientMessage</a> is sent. Since X11 clients can arbitrarily change focus, this is the simplest solution to make sure that click to focus works properly. I’m not sure if other window managers rather track focus accurately, but it seems to me that this behavior should not disturb the toolkit, no matter whether i3 is the only WM which does it…
+</li></ul>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1397151418892999">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-10T19%3A36%3A58%2B02%3A00&amp;precision=second" title="See timeline at 04/10/14 19:36:58">12 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded</em> to <em>assigned</em>
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-9-1397151471514090">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-10T19%3A37%3A51%2B02%3A00&amp;precision=second" title="See timeline at 04/10/14 19:37:51">12 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-owner">
+      <strong class="trac-field-owner">Owner</strong>
+        changed from <em>michael</em> to <em>TonyC</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>assigned</em> to <em>started</em>
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-10-1397153375519273">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-10T20%3A09%3A35%2B02%3A00&amp;precision=second" title="See timeline at 04/10/14 20:09:35">12 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+FYI, I also filed <a class="ext-link" href="https://bugzilla.gnome.org/show_bug.cgi?id=723085"><span class="icon">​</span>https://bugzilla.gnome.org/show_bug.cgi?id=723085</a> (Clutter's event handling can get "stuck" under ClutterGTK+) against Clutter.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1397576972711434">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-15T17%3A49%3A32%2B02%3A00&amp;precision=second" title="See timeline at 04/15/14 17:49:32">12 months ago</a> by Tony Crisci
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>started</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/05f05858"><span class="icon">​</span>http://c.i3wm.org/05f05858</a>:<br />
+</p>
+<pre class="wiki">Dont set input focus and send WM_TAKE_FOCUS
+
+If input focus is set by the window manager, it is not necessary to send
+WM_TAKE_FOCUS because it has already taken focus.
+
+http://tronche.com/gui/x/icccm/sec-4.html#s-4.1.7
+
+&gt; The goal is to support window managers that want to assign the input
+&gt; focus to a top-level window in such a way that the top-level window
+&gt; either can assign it to one of its subwindows or can decline the offer
+&gt; of the focus. For example, a clock or a text editor with no currently
+&gt; open frames might not want to take focus even though the window
+&gt; manager generally believes that clients should take the input focus
+&gt; after being deiconified or raised.
+
+Both setting input focus and sending WM_TAKE_FOCUS is effectively
+setting focus on the window twice which is certainly against the spirit
+of the spec, if not the letter.
+
+fixes #1167
+
+</pre>
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1167?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1167?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1167?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

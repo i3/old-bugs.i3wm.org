@@ -1,0 +1,105 @@
+diff --git a/include/floating.h b/include/floating.h
+index c858652..2cae936 100644
+--- a/include/floating.h
++++ b/include/floating.h
+@@ -141,7 +141,7 @@ void floating_toggle_hide(xcb_connection_t *conn, Workspace *workspace);
+  * the event and the new coordinates (x, y).
+  *
+  */
+-void drag_pointer(Con *con, const xcb_button_press_event_t *event,
++int drag_pointer(Con *con, const xcb_button_press_event_t *event,
+                   xcb_window_t confine_to, border_t border, int cursor,
+                   callback_t callback, const void *extra);
+ 
+diff --git a/src/floating.c b/src/floating.c
+index 97b7d88..ef1ece9 100644
+--- a/src/floating.c
++++ b/src/floating.c
+@@ -561,7 +561,7 @@ void floating_resize_window(Con *con, const bool proportional,
+  * the event and the new coordinates (x, y).
+  *
+  */
+-void drag_pointer(Con *con, const xcb_button_press_event_t *event, xcb_window_t
++int drag_pointer(Con *con, const xcb_button_press_event_t *event, xcb_window_t
+                 confine_to, border_t border, int cursor, callback_t callback, const void *extra)
+ {
+     uint32_t new_x, new_y;
+@@ -587,16 +587,36 @@ void drag_pointer(Con *con, const xcb_button_press_event_t *event, xcb_window_t
+ 
+     if ((reply = xcb_grab_pointer_reply(conn, cookie, NULL)) == NULL) {
+         ELOG("Could not grab pointer\n");
+-        return;
++        return 1;
+     }
+ 
+     free(reply);
+ 
++    /* Grab the keyboard */
++    xcb_grab_keyboard_cookie_t keyb_cookie;
++    xcb_grab_keyboard_reply_t *keyb_reply;
++
++    keyb_cookie = xcb_grab_keyboard(conn,
++            false, /* get all keyboard events */
++            root, /* grab the root window */
++            XCB_CURRENT_TIME,
++            XCB_GRAB_MODE_ASYNC, /* continue processing pointer events as normal */
++            XCB_GRAB_MODE_ASYNC /* keyboard mode */
++            );
++
++    if ((keyb_reply = xcb_grab_keyboard_reply(conn, keyb_cookie, NULL)) == NULL) {
++        ELOG("Could not grab keyboard\n");
++        return 1;
++    }
++
++    free(keyb_reply);
++
+     /* Go into our own event loop */
+     xcb_flush(conn);
+ 
+     xcb_generic_event_t *inside_event, *last_motion_notify = NULL;
+     bool loop_done = false;
++    int drag_result = 0;
+     /* I’ve always wanted to have my own eventhandler… */
+     while (!loop_done && (inside_event = xcb_wait_for_event(conn))) {
+         /* We now handle all events we can get using xcb_poll_for_event */
+@@ -626,6 +646,7 @@ void drag_pointer(Con *con, const xcb_button_press_event_t *event, xcb_window_t
+                     DLOG("Unmap-notify, aborting\n");
+                     handle_event(type, inside_event);
+                     loop_done = true;
++                    drag_result = 1;
+                     break;
+ 
+                 default:
+@@ -649,7 +670,10 @@ void drag_pointer(Con *con, const xcb_button_press_event_t *event, xcb_window_t
+     }
+ 
+     xcb_ungrab_pointer(conn, XCB_CURRENT_TIME);
++    xcb_ungrab_keyboard(conn, XCB_CURRENT_TIME);
+     xcb_flush(conn);
++
++    return drag_result;
+ }
+ 
+ /*
+diff --git a/src/resize.c b/src/resize.c
+index 268dc3f..e9f1ad1 100644
+--- a/src/resize.c
++++ b/src/resize.c
+@@ -106,12 +106,16 @@ int resize_graphical_handler(Con *first, Con *second, orientation_t orientation,
+ 
+     const struct callback_params params = { orientation, output, helpwin, &new_position };
+ 
+-    drag_pointer(NULL, event, grabwin, BORDER_TOP, 0, resize_callback, &params);
++    int drag_result = drag_pointer(NULL, event, grabwin, BORDER_TOP, 0, resize_callback, &params);
+ 
+     xcb_destroy_window(conn, helpwin);
+     xcb_destroy_window(conn, grabwin);
+     xcb_flush(conn);
+ 
++    // User cancelled the drag so no action should be taken.
++    if (drag_result == 1)
++        return 0;
++
+     int pixels;
+     if (orientation == HORIZ)
+         pixels = (new_position - event->root_x);

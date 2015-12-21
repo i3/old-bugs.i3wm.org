@@ -1,0 +1,783 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1173 (Add ability to specify geometry of floating windows)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1172" title="Ticket #1172" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1173?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1173?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1173?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1174" title="Ticket #1174" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="66059a4d5ca92ad8fe86c02a";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1172" title="Ticket #1172">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1174" title="Ticket #1174">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2014-02-02T08%3A12%3A26%2B01%3A00&amp;precision=second" title="See timeline at 02/02/14 08:12:26">14 months ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2014-02-02T11%3A17%3A02%2B01%3A00&amp;precision=second" title="See timeline at 02/02/14 11:17:02">14 months ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2014-07-21T22%3A10%3A02%2B02%3A00&amp;precision=second" title="See timeline at 07/21/14 22:10:02">8 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1173" class="trac-id">#1173</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=wontfix">wontfix</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Add ability to specify geometry of floating windows</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable"><a href="/report/query?status=!closed&amp;reporter=i3-new-ticket">i3-new-ticket</a></td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.7.2">4.7.2</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.7.2 (2014-01-23, branch "tags/4.7.2")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+It would be nice to be able to specify that certain floating windows should always have a specific geometry, e.g.<br />
+</p>
+<pre class="wiki">for_window [title="urxvt"] floating_geometry 700x600+10-10
+</pre><p>
+to specify that a 'urxvt' window should be 700 pixels wide, 600 pixels high, offset 10 pixels from the left of the screen, and offset 10 pixels from the bottom of the screen, respectively.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(8)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1391336222647258">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+          <span>follow-ups:</span>
+    <a href="#comment:2" class="follow-up">↓ 2</a>
+    <a href="#comment:4" class="follow-up">↓ 4</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-02-02T11%3A17%3A02%2B01%3A00&amp;precision=second" title="See timeline at 02/02/14 11:17:02">14 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>wontfix</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+If you are using terminal emulators in floating mode, you are abusing i3. Floating mode is _only_ for popup windows such as password dialogs.<br />
+</p>
+<p>
+That said, i3 respects the geometry of floating windows, so just start urxvt with -geometry 700x600+10-10.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1391691767096545">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+        in reply to:
+    <a href="#comment:1">↑ 1</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:3" class="follow-up">↓ 3</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-02-06T14%3A02%3A47%2B01%3A00&amp;precision=second" title="See timeline at 02/06/14 14:02:47">14 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1173#comment:1" title="Comment 1">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+If you are using terminal emulators in floating mode, you are abusing i3. Floating mode is _only_ for popup windows such as password dialogs.<br />
+</p>
+</blockquote>
+<p>
+Can you elaborate on that, i.e., is it bad to float terminal windows, or i3 code isn't designed to handle floating terminals?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1391800143577999">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+        in reply to:
+    <a href="#comment:2">↑ 2</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-02-07T20%3A09%3A03%2B01%3A00&amp;precision=second" title="See timeline at 02/07/14 20:09:03">14 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1173#comment:2" title="Comment 2">anonymous</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/1173#comment:1" title="Comment 1">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+If you are using terminal emulators in floating mode, you are abusing i3. Floating mode is _only_ for popup windows such as password dialogs.<br />
+</p>
+</blockquote>
+<p>
+Can you elaborate on that, i.e., is it bad to float terminal windows, or i3 code isn't designed to handle floating terminals?<br />
+</p>
+</blockquote>
+<p>
+i3 is a tiling window manager, so the way it’s meant to be used is to primarily manage tiling windows. The support for floating windows is intentionally limited and I wouldn’t consider it sufficient for anyone who is serious about working with e.g. terminals in floating mode. In case that is what you want, you should use a different window manager.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1404315774300670">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+        in reply to:
+    <a href="#comment:1">↑ 1</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:5" class="follow-up">↓ 5</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-02T17%3A42%3A54%2B02%3A00&amp;precision=second" title="See timeline at 07/02/14 17:42:54">9 months ago</a> by pie3mn@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1173#comment:1" title="Comment 1">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+If you are using terminal emulators in floating mode, you are abusing i3. Floating mode is _only_ for popup windows such as password dialogs.<br />
+</p>
+<p>
+That said, i3 respects the geometry of floating windows, so just start urxvt with -geometry 700x600+10-10.<br />
+</p>
+</blockquote>
+<p>
+The 'geometry' argument for xterm/urxvt doesn't take pixels but characters.<br />
+So it's impossible e.g. to set the size of their instances to cover the whole screen (unless the screen dimensions are a multiple of the fonts dimensions).<br />
+</p>
+<p>
+I think there's a legit case to be made tho to enable such instances, e.g. writing a dmenu replacement running in a terminal window, which requires pixel-dimensions, or vertical terminal window popups if you want to insert a word from a long scrollable list of things.<br />
+</p>
+<p>
+There's also a problem with the position part of the geometry argument, I don't know if this is an i3 bug or not (should I open a separate ticket?) but if you open xterm/urxvt with +0+0 geometry it will be opened centered instead of the top-left corner, +0-0, -0-0, -0+0 work as expected tho (i.e. all the other corners work).<br />
+</p>
+<p>
+e.g. both of these will be opened center instead of top-left<br />
+</p>
+<pre class="wiki">xterm -geometry 30x5+0+0 -title floatme
+urxvt -geometry 30x5+0+0 -name floatme
+
+i3config:
+for_window [title="floatme"] floating enable
+</pre><hr />
+<p>
+I'd advocate an optional keyword for the 'resize' and 'move' commands to override the proposed geometry of application windows that don't provide per-pixel dimensions (like urxvt and xterm).<br />
+e.g. [override]<br />
+</p>
+<p>
+Thanks for any replies.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1405063906873413">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+        in reply to:
+    <a href="#comment:4">↑ 4</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:6" class="follow-up">↓ 6</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-11T09%3A31%3A46%2B02%3A00&amp;precision=second" title="See timeline at 07/11/14 09:31:46">9 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1173#comment:4" title="Comment 4">pie3mn@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/1173#comment:1" title="Comment 1">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+If you are using terminal emulators in floating mode, you are abusing i3. Floating mode is _only_ for popup windows such as password dialogs.<br />
+</p>
+<p>
+That said, i3 respects the geometry of floating windows, so just start urxvt with -geometry 700x600+10-10.<br />
+</p>
+</blockquote>
+<p>
+The 'geometry' argument for xterm/urxvt doesn't take pixels but characters.<br />
+So it's impossible e.g. to set the size of their instances to cover the whole screen (unless the screen dimensions are a multiple of the fonts dimensions).<br />
+</p>
+</blockquote>
+<p>
+i3 has a fullscreen command to do this.<br />
+</p>
+<blockquote class="citation">
+<p>
+I think there's a legit case to be made tho to enable such instances, e.g. writing a dmenu replacement running in a terminal window, which requires pixel-dimensions, or vertical terminal window popups if you want to insert a word from a long scrollable list of things.<br />
+</p>
+</blockquote>
+<p>
+No: dmenu is an unmanaged window (specifically so that it has control over where to appear and how big to be, without any window manager telling it otherwise). Popup windows are unmanaged windows, too.<br />
+</p>
+<blockquote class="citation">
+<p>
+There's also a problem with the position part of the geometry argument, I don't know if this is an i3 bug or not (should I open a separate ticket?) but if you open xterm/urxvt with +0+0 geometry it will be opened centered instead of the top-left corner, +0-0, -0-0, -0+0 work as expected tho (i.e. all the other corners work).<br />
+</p>
+</blockquote>
+<p>
++0+0 is the same as a non-specified geometry, which i3 interprets as “I can place this where I want”. No need to open a separate ticket for that, because I don’t think it’s fixable. Use +0-0 if you need that position.<br />
+</p>
+<blockquote class="citation">
+<p>
+I'd advocate an optional keyword for the 'resize' and 'move' commands to override the proposed geometry of application windows that don't provide per-pixel dimensions (like urxvt and xterm).<br />
+</p>
+</blockquote>
+<p>
+No. As I said before, i3’s floating support is kept to the bare minimum intentionally. If you need more than that, there’s third-party tools that you can use to get what you want (see e.g. xdotool).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1405083076320047">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+        in reply to:
+    <a href="#comment:5">↑ 5</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:7" class="follow-up">↓ 7</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-11T14%3A51%3A16%2B02%3A00&amp;precision=second" title="See timeline at 07/11/14 14:51:16">9 months ago</a> by pie3mn@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1173#comment:5" title="Comment 5">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
++0+0 is the same as a non-specified geometry, which i3 interprets as “I can place this where I want”. No need to open a separate ticket for that, because I don’t think it’s fixable. Use +0-0 if you need that position.<br />
+</p>
+</blockquote>
+<p>
++0-0 will place the window at the bottom-left corner, not the top-left corner.<br />
+</p>
+<p>
+Forcing geometry through i3config, somewhat like proposed in this ticket, could be used to overwrite the binding of "+0+0 -&gt; center".<br />
+</p>
+<blockquote class="citation">
+<p>
+i3 has a fullscreen command to do this.<br />
+</p>
+</blockquote>
+<p>
+I expressed myself poorly, you'd need pixel-sizes for stretching the window over only one dimension.<br />
+</p>
+<p>
+e.g. urxvt instance that like dmenu stretches over the whole width of the screen but only an arbitrary height anchored to the top.<br />
+</p>
+<p>
+or an xterm instance that like a side-menu stretches over the whole height of the screen but only an arbitrary width anchored to the right.<br />
+</p>
+<p>
+VTE applications do take their geometry argument per-pixel, so you can do this with them, urxvt and xterm don't.<br />
+</p>
+<blockquote class="citation">
+<p>
+No: dmenu is an unmanaged window (specifically so that it has control over where to appear and how big to be, without any window manager telling it otherwise). Popup windows are unmanaged windows, too.<br />
+</p>
+</blockquote>
+<p>
+I don't think it's a requirement for an application like an application launcher or a general insertion popup tool like dmenu to be unmanaged and it does come with side-effects.<br />
+</p>
+<p>
+e.g. of course you can't use your global hotkeys you've come accustomed to, specifically, if your focus is currently in an dmenu instance and some window in a different workspace suddenly expresses the urgency hint, you, rightly so, might be inclined to immediately try to switch to the workspace, which obviously won't work, creating primarily obtrusive popups.<br />
+</p>
+<p>
+Similarly for the case you mentioned, a password-prompt popup, you probably would not always expect and want merely being prompted for a password on some workspace take you completely out of i3s workflow.<br />
+</p>
+<blockquote class="citation">
+<p>
+No. As I said before, i3’s floating support is kept to the bare minimum intentionally. If you need more than that, there’s third-party tools that you can use to get what you want (see e.g. xdotool).<br />
+</p>
+</blockquote>
+<p>
+Besides the +0+0 issue, every other issue here can indeed be managed at least through some kind of X11 hook.<br />
+</p>
+<p>
+I'd argue tho that it would be much easier to implement this in i3 then trying to do this outside of it.<br />
+</p>
+<p>
+I tried solutions like xdotool or i3s IPC, but they will only work after the window already has been drawn, requiring another redraw, causing flickering or "jumping". - I don't think these are actual solutions.<br />
+</p>
+<hr />
+<p>
+In summary: enabling floating windows immediately after mapping to be located at the top-left is the only issue that currently seems unsolvable without approaching the i3 source.<br />
+</p>
+<p>
+Thanks for any further replies.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1405894095993341">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+        in reply to:
+    <a href="#comment:6">↑ 6</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:8" class="follow-up">↓ 8</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-21T00%3A08%3A15%2B02%3A00&amp;precision=second" title="See timeline at 07/21/14 00:08:15">8 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1173#comment:6" title="Comment 6">pie3mn@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/1173#comment:5" title="Comment 5">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
++0+0 is the same as a non-specified geometry, which i3 interprets as “I can place this where I want”. No need to open a separate ticket for that, because I don’t think it’s fixable. Use +0-0 if you need that position.<br />
+</p>
+</blockquote>
+<p>
++0-0 will place the window at the bottom-left corner, not the top-left corner.<br />
+</p>
+</blockquote>
+<p>
+Interesting. That behavior seems to come from libX11 (?) which is parsing the -geometry argument. i3 only receives a request for the window for the final position, it never sees the +0-0.<br />
+</p>
+<p>
+Unfortunately, I don’t have a better answer than before. Some programs (like GIMP) specify +0+0 and mean “place me wherever”.<br />
+</p>
+<blockquote class="citation">
+<p>
+Forcing geometry through i3config, somewhat like proposed in this ticket, could be used to overwrite the binding of "+0+0 -&gt; center".<br />
+</p>
+</blockquote>
+<p>
+I see how this is useful for your specific use case but I don’t think that’s a useful thing to have in general. As explained in other tickets, i3 heavily focuses on tiling and not on floating.<br />
+</p>
+<blockquote class="citation">
+<blockquote class="citation">
+<p>
+No: dmenu is an unmanaged window (specifically so that it has control over where to appear and how big to be, without any window manager telling it otherwise). Popup windows are unmanaged windows, too.<br />
+</p>
+</blockquote>
+<p>
+I don't think it's a requirement for an application like an application launcher or a general insertion popup tool like dmenu to be unmanaged and it does come with side-effects.<br />
+</p>
+<p>
+e.g. of course you can't use your global hotkeys you've come accustomed to, specifically, if your focus is currently in an dmenu instance and some window in a different workspace suddenly expresses the urgency hint, you, rightly so, might be inclined to immediately try to switch to the workspace, which obviously won't work, creating primarily obtrusive popups.<br />
+</p>
+</blockquote>
+<p>
+I disagree with that. I’d argue that if you are launching something, that should be quick enough that you don’t want to handle an interruption. And if you do, why not just close the launcher?<br />
+</p>
+<p>
+You’ll have to make a choice here: either you accept that tiling is what i3 is about and you somehow integrate your launcher ideas into i3’s tiling concept (getting all the shortcuts etc.), or you go the other route and make the window unmanaged.<br />
+</p>
+<blockquote class="citation">
+<blockquote class="citation">
+<p>
+No. As I said before, i3’s floating support is kept to the bare minimum intentionally. If you need more than that, there’s third-party tools that you can use to get what you want (see e.g. xdotool).<br />
+</p>
+</blockquote>
+<p>
+Besides the +0+0 issue, every other issue here can indeed be managed at least through some kind of X11 hook.<br />
+</p>
+<p>
+I'd argue tho that it would be much easier to implement this in i3 then trying to do this outside of it.<br />
+</p>
+</blockquote>
+<p>
+For you perhaps. For us, see <a class="ext-link" href="https://faq.i3wm.org/question/778/why-is-patch-not-merged-and-made-optional/"><span class="icon">​</span>https://faq.i3wm.org/question/778/why-is-patch-not-merged-and-made-optional/</a> — I don’t think the cost that I tried to explain in that post is worth the effort/complexity/maintenance/… in this particular case.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1405973402557262">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+        in reply to:
+    <a href="#comment:7">↑ 7</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-21T22%3A10%3A02%2B02%3A00&amp;precision=second" title="See timeline at 07/21/14 22:10:02">8 months ago</a> by pie3mn@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1173#comment:7" title="Comment 7">michael</a>:<br />
+After thinking about this a bit more, I can't disagree with your conclusion.<br />
+</p>
+<blockquote class="citation">
+<p>
+Unfortunately, I don’t have a better answer than before. Some programs (like GIMP) specify +0+0 and mean “place me wherever”.<br />
+</p>
+</blockquote>
+<p>
+Apparently the ICCCM (and EWMH for that matter) deems it's the applications job to set a "gravity" hint and the WM is supposed to obey that, yet all applications I tried don't even seem to bother to change this "gravity" hint to anything but the default <a class="forbidden wiki" title="no permission to view this wiki page">NorthWest</a> value. <br />
+</p>
+<p>
+Another solution to this, aside from the initial ticket, if this would gain attraction in the future, could be to use/misuse some existing hint or even declare an arbitrary one to look for and not center on +0+0 if it's present.<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1173?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1173?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1173?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

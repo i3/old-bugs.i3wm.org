@@ -1,0 +1,161 @@
+From f08c2e4d09bd03bd0fbc552252eb751edde778f2 Mon Sep 17 00:00:00 2001
+From: Axel Beckert <abe@deuxchevaux.org>
+Date: Mon, 31 Aug 2009 19:34:57 +0200
+Subject: [PATCH] Support for (Debian) GNU/kFreeBSD
+
+---
+ Makefile                  |    4 ++++
+ i3status.h                |    9 ++++++++-
+ src/get_battery_info.c    |    4 ++--
+ src/get_cpu_temperature.c |    4 ++--
+ src/get_eth_info.c        |    6 +++---
+ src/get_load.c            |    2 +-
+ src/process_runs.c        |    2 +-
+ 7 files changed, 21 insertions(+), 10 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 751d5af..b894762 100644
+--- a/Makefile
++++ b/Makefile
+@@ -12,6 +12,10 @@ CFLAGS+=-DLINUX
+ CFLAGS+=-D_GNU_SOURCE
+ endif
+ 
++ifeq ($(shell uname),GNU/kFreeBSD)
++CFLAGS+=-lbsd
++endif
++
+ # Define this if you want i3status to spit out dzen2-compatible output on stdout
+ #CFLAGS+=-DDZEN
+ CFLAGS+=$(EXTRA_CFLAGS)
+diff --git a/i3status.h b/i3status.h
+index 73221a5..81a52a0 100644
+--- a/i3status.h
++++ b/i3status.h
+@@ -28,7 +28,7 @@
+ 
+ #define THERMAL_ZONE "/sys/class/thermal/thermal_zone%d/temp"
+ 
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+ 
+ #define THERMAL_ZONE "hw.acpi.thermal.tz%d.temperature"
+ #define BATT_LIFE "hw.acpi.battery.life"
+@@ -37,6 +37,13 @@
+ 
+ #endif
+ 
++#if defined(__FreeBSD_kernel__) && defined(__GLIBC__)
++
++#include <sys/stat.h>
++#include <sys/param.h>
++
++#endif
++
+ typedef enum { CS_DISCHARGING, CS_CHARGING, CS_FULL } charging_status_t;
+ enum { ORDER_RUN, ORDER_WLAN, ORDER_ETH, ORDER_BATTERY, ORDER_CPU_TEMPERATURE, ORDER_LOAD, ORDER_TIME, ORDER_IPV6, MAX_ORDER };
+ 
+diff --git a/src/get_battery_info.c b/src/get_battery_info.c
+index 41f2ff3..ee78706 100644
+--- a/src/get_battery_info.c
++++ b/src/get_battery_info.c
+@@ -5,7 +5,7 @@
+ 
+ #include "i3status.h"
+ 
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
+ #endif
+@@ -92,7 +92,7 @@ const char *get_battery_info(struct battery *bat) {
+                          (status == CS_DISCHARGING ? "BAT" : "FULL")),
+                         (((float)remaining / (float)full_design) * 100));
+         }
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+         int state;
+         int sysctl_rslt;
+         size_t sysctl_size = sizeof(sysctl_rslt);
+diff --git a/src/get_cpu_temperature.c b/src/get_cpu_temperature.c
+index ca6b9df..9eb55bb 100644
+--- a/src/get_cpu_temperature.c
++++ b/src/get_cpu_temperature.c
+@@ -5,7 +5,7 @@
+ 
+ #include "i3status.h"
+ 
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+ #include <err.h>
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
+@@ -31,7 +31,7 @@ const char *get_cpu_temperature_info() {
+                 (void)snprintf(buf, sizeof(buf), "T: ? C");
+         else
+                 (void)snprintf(buf, sizeof(buf), "T: %ld C", (temp/1000));
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+         int sysctl_rslt;
+         size_t sysctl_size = sizeof (sysctl_rslt);
+         if (sysctlbyname(thermal_zone,&sysctl_rslt,&sysctl_size,NULL,0))
+diff --git a/src/get_eth_info.c b/src/get_eth_info.c
+index 4d9a8a9..80cc829 100644
+--- a/src/get_eth_info.c
++++ b/src/get_eth_info.c
+@@ -17,7 +17,7 @@
+ #define PART_ETHSPEED  "E: %s (%d Mbit/s)"
+ #endif
+ 
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+ #include <net/if_media.h>
+ #define IFM_TYPE_MATCH(dt, t)                       \
+         (IFM_TYPE((dt)) == 0 || IFM_TYPE((dt)) == IFM_TYPE((t)))
+@@ -34,7 +34,7 @@ const char *get_eth_info() {
+         static char part[512];
+ #if defined(LINUX)
+         int ethspeed=0;
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+         char *ethspeed;
+ #endif
+         const char *ip_address = get_ip_addr(eth_interface);
+@@ -57,7 +57,7 @@ const char *get_eth_info() {
+                 if (ioctl(general_socket, SIOCETHTOOL, &ifr) == 0)
+                         ethspeed = (ecmd.speed == USHRT_MAX ? 0 : ecmd.speed);
+                 else get_ethspeed = false;
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+                 struct ifmediareq ifm;
+                 (void)memset(&ifm, 0, sizeof(ifm));
+                 (void)strncpy(ifm.ifm_name, eth_interface, sizeof(ifm.ifm_name));
+diff --git a/src/get_load.c b/src/get_load.c
+index 4f04b94..2f58d9b 100644
+--- a/src/get_load.c
++++ b/src/get_load.c
+@@ -9,7 +9,7 @@ const char *get_load() {
+         static char part[512];
+ 
+ /* Get load */
+-#if defined(__FreeBSD__) || defined(linux) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__APPLE__) || defined(sun)
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(linux) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__APPLE__) || defined(sun)
+         double loadavg[3];
+         if (getloadavg(loadavg, 3) == -1)
+                 errx(-1, "getloadavg() failed\n");
+diff --git a/src/process_runs.c b/src/process_runs.c
+index bf4e919..d8513a5 100644
+--- a/src/process_runs.c
++++ b/src/process_runs.c
+@@ -39,7 +39,7 @@ bool process_runs(const char *path) {
+         (void)read(fd, pidbuf, sizeof(pidbuf));
+         (void)close(fd);
+ 
+-#ifdef LINUX
++#if defined(LINUX) || defined(__GNU__) || defined(__GLIBC__)
+         struct stat statbuf;
+         char procbuf[512];
+         (void)snprintf(procbuf, sizeof(procbuf), "/proc/%ld", strtol(pidbuf, NULL, 10));
+-- 
+1.6.3.3
+

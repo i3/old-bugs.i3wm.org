@@ -1,0 +1,279 @@
+29.11.2009 13:45:46 - src/handlers.c:handle_hints:968 - Window: frame 0x00a00009, child 0x01000008
+29.11.2009 13:45:46 - src/handlers.c:handle_hints:969 - Urgency flag changed to 1
+29.11.2009 13:45:51 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a00025, mode = 0, detail 2, serial 4541
+29.11.2009 13:45:51 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a00021, mode = 0, detail 3, serial 4541
+29.11.2009 13:45:51 - src/util.c:set_focus:265 - Window: frame 0x00a00021, child 0x01600003
+29.11.2009 13:45:51 - src/handlers.c:handle_enter_notify:186 - enter_notify for 01600003, mode = 0, detail 0, serial 4572
+29.11.2009 13:45:52 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a00021, mode = 0, detail 2, serial 4572
+29.11.2009 13:45:52 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00000111, mode = 0, detail 2, serial 4572
+29.11.2009 13:45:52 - src/handlers.c:handle_enter_notify:215 - Getting screen at 950 x 802
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=950 y=802 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=950 y=802 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=950 y=802 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=950 y=802 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=943 y=805 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=943 y=805 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=938 y=808 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=938 y=808 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=931 y=812 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=931 y=812 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=924 y=815 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=924 y=815 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=918 y=818 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=918 y=818 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=911 y=822 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=911 y=822 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=909 y=823 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=909 y=823 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=904 y=824 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=904 y=824 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=903 y=825 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=903 y=825 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=900 y=825 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=900 y=825 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=896 y=824 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=896 y=824 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=892 y=823 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=892 y=823 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=888 y=822 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=888 y=822 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=885 y=820 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=885 y=820 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=881 y=818 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=881 y=818 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=877 y=815 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=877 y=815 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=874 y=812 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=874 y=812 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=870 y=810 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=870 y=810 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=866 y=807 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=866 y=807 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=863 y=803 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:45:52 - src/xinerama.c:get_screen_containing:78 - comparing x=863 y=803 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:45:52 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:45:52 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a00021, mode = 0, detail 3, serial 4572
+29.11.2009 13:45:52 - src/handlers.c:handle_enter_notify:186 - enter_notify for 01600003, mode = 0, detail 0, serial 4572
+29.11.2009 13:45:54 - src/handlers.c:handle_key_press:98 - Keypress 41, state raw = 64
+29.11.2009 13:45:54 - src/handlers.c:handle_key_press:102 - (removed numlock, state = 64)
+29.11.2009 13:45:54 - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 64)
+29.11.2009 13:45:54 - src/handlers.c:handle_key_press:117 - (checked mode_switch, state 64)
+29.11.2009 13:45:54 - src/commands.c:parse_command:865 - --- parsing command "f" ---
+29.11.2009 13:45:54 - src/client.c:client_enter_fullscreen:160 - Entering fullscreen mode...
+29.11.2009 13:45:54 - src/client.c:client_enter_fullscreen:172 - child itself will be at 0x0 with size 1280x800
+29.11.2009 13:45:54 - src/handlers.c:handle_expose_event:730 - window = 00a00021
+29.11.2009 13:45:54 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a00021, mode = 0, detail 2, serial 4573
+29.11.2009 13:45:54 - src/handlers.c:handle_enter_notify:186 - enter_notify for 01600003, mode = 0, detail 0, serial 4574
+29.11.2009 13:45:56 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a00025, mode = 0, detail 4, serial 4587
+29.11.2009 13:45:56 - src/util.c:set_focus:265 - Window: frame 0x00a00025, child 0x00e00008
+29.11.2009 13:45:56 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00e00008, mode = 0, detail 4, serial 4587
+29.11.2009 13:45:58 - src/handlers.c:handle_windowname_change:582 - _NET_WM_NAME changed to "xeen-nb1: tail -n 100 i3log-2009-11-28-02-08-39"
+29.11.2009 13:45:58 - src/handlers.c:handle_windowname_change:582 - _NET_WM_NAME changed to "xeen-nb1: ~/.i3/logs"
+29.11.2009 13:46:03 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a00021, mode = 0, detail 4, serial 4642
+29.11.2009 13:46:03 - src/util.c:set_focus:265 - Window: frame 0x00a00021, child 0x01600003
+29.11.2009 13:46:03 - src/handlers.c:handle_enter_notify:186 - enter_notify for 01600003, mode = 0, detail 3, serial 4642
+29.11.2009 13:46:05 - src/click.c:handle_button_press:254 - Button 0 pressed
+29.11.2009 13:46:05 - src/util.c:set_focus:265 - Window: frame 0x00a00021, child 0x01600003
+29.11.2009 13:46:05 - src/click.c:handle_button_press:312 - press button on x=638, y=121
+29.11.2009 13:46:05 - src/click.c:handle_button_press:324 - event->event_x = 638, client->rect.width = 1280
+29.11.2009 13:46:05 - src/click.c:handle_button_press:339 - client. done.
+29.11.2009 13:46:05 - src/handlers.c:handle_normal_hints:846 - Window: frame 0x00a00021, child 0x01600003
+29.11.2009 13:46:05 - src/handlers.c:handle_normal_hints:896 - client's base_height changed to 217
+29.11.2009 13:46:05 - src/layout.c:resize_client:252 - frame 0x00a00021 needs to be pushed to 0x520
+29.11.2009 13:46:05 - src/layout.c:resize_client:253 - resizing client 0x00a00021 to 1280 x 260
+29.11.2009 13:46:05 - src/layout.c:resize_client:336 - child will be at 2x17 with size 1276x241
+29.11.2009 13:46:05 - src/handlers.c:handle_expose_event:730 - window = 00a00021
+29.11.2009 13:46:05 - src/handlers.c:handle_expose_event:730 - window = 00a0001d
+29.11.2009 13:46:05 - src/handlers.c:handle_expose_event:730 - window = 00a00009
+29.11.2009 13:46:05 - src/handlers.c:handle_expose_event:730 - window = 00a00001
+29.11.2009 13:46:05 - src/layout.c:render_workspace:709 - height is 781
+29.11.2009 13:46:05 - src/layout.c:render_workspace:709 - height is 1005
+29.11.2009 13:46:05 - src/handlers.c:handle_expose_event:730 - window = 00a00021
+29.11.2009 13:46:05 - src/handlers.c:handle_normal_hints:846 - Window: frame 0x00a00021, child 0x01600003
+29.11.2009 13:46:05 - src/handlers.c:handle_normal_hints:896 - client's base_height changed to 217
+29.11.2009 13:46:05 - src/layout.c:resize_client:252 - frame 0x00a00021 needs to be pushed to 0x520
+29.11.2009 13:46:05 - src/layout.c:resize_client:253 - resizing client 0x00a00021 to 1280 x 260
+29.11.2009 13:46:05 - src/layout.c:resize_client:336 - child will be at 2x17 with size 1276x241
+29.11.2009 13:46:05 - src/handlers.c:handle_expose_event:730 - window = 00a00021
+29.11.2009 13:46:05 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a00009, mode = 2, detail 4, serial 4804
+29.11.2009 13:46:05 - src/handlers.c:handle_enter_notify:188 - This was not a normal notify, ignoring
+29.11.2009 13:46:05 - src/handlers.c:handle_enter_notify:186 - enter_notify for 01000008, mode = 2, detail 4, serial 4804
+29.11.2009 13:46:05 - src/handlers.c:handle_enter_notify:188 - This was not a normal notify, ignoring
+29.11.2009 13:46:06 - src/handlers.c:handle_enter_notify:186 - enter_notify for 01000008, mode = 0, detail 2, serial 4804
+29.11.2009 13:46:06 - src/util.c:set_focus:265 - Window: frame 0x00a00009, child 0x01000008
+29.11.2009 13:46:06 - src/handlers.c:handle_hints:968 - Window: frame 0x00a00009, child 0x01000008
+29.11.2009 13:46:06 - src/handlers.c:handle_hints:969 - Urgency flag changed to 0
+29.11.2009 13:46:06 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a00009, mode = 0, detail 2, serial 4836
+29.11.2009 13:46:06 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a0001d, mode = 0, detail 3, serial 4836
+29.11.2009 13:46:06 - src/util.c:set_focus:265 - Window: frame 0x00a0001d, child 0x01a00008
+29.11.2009 13:46:06 - src/handlers.c:handle_enter_notify:186 - enter_notify for 01a00008, mode = 0, detail 0, serial 4857
+29.11.2009 13:46:06 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a0001d, mode = 0, detail 2, serial 4857
+29.11.2009 13:46:06 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a00021, mode = 0, detail 3, serial 4857
+29.11.2009 13:46:06 - src/util.c:set_focus:265 - Window: frame 0x00a00021, child 0x01600003
+29.11.2009 13:46:06 - src/handlers.c:handle_enter_notify:186 - enter_notify for 01600003, mode = 0, detail 0, serial 4878
+29.11.2009 13:46:08 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a00021, mode = 0, detail 2, serial 4878
+29.11.2009 13:46:08 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a0001d, mode = 0, detail 3, serial 4878
+29.11.2009 13:46:08 - src/util.c:set_focus:265 - Window: frame 0x00a0001d, child 0x01a00008
+29.11.2009 13:46:08 - src/handlers.c:handle_enter_notify:186 - enter_notify for 01a00008, mode = 0, detail 1, serial 4899
+29.11.2009 13:46:08 - src/handlers.c:handle_enter_notify:186 - enter_notify for 01a00008, mode = 0, detail 2, serial 4899
+29.11.2009 13:46:08 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a00021, mode = 0, detail 3, serial 4899
+29.11.2009 13:46:08 - src/util.c:set_focus:265 - Window: frame 0x00a00021, child 0x01600003
+29.11.2009 13:46:08 - src/handlers.c:handle_enter_notify:186 - enter_notify for 01600003, mode = 0, detail 0, serial 4920
+29.11.2009 13:46:09 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a00021, mode = 0, detail 2, serial 4920
+29.11.2009 13:46:09 - src/handlers.c:handle_enter_notify:186 - enter_notify for 01600003, mode = 0, detail 0, serial 4920
+29.11.2009 13:46:12 - src/handlers.c:handle_key_press:98 - Keypress 47, state raw = 65
+29.11.2009 13:46:12 - src/handlers.c:handle_key_press:102 - (removed numlock, state = 65)
+29.11.2009 13:46:12 - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 65)
+29.11.2009 13:46:12 - src/handlers.c:handle_key_press:117 - (checked mode_switch, state 65)
+29.11.2009 13:46:12 - src/commands.c:parse_command:865 - --- parsing command "ml" ---
+29.11.2009 13:46:12 - src/commands.c:move_current_window:274 - moving window to direction right
+29.11.2009 13:46:12 - src/layout.c:render_workspace:709 - height is 781
+29.11.2009 13:46:12 - src/layout.c:resize_client:252 - frame 0x00a00009 needs to be pushed to 0x0
+29.11.2009 13:46:12 - src/layout.c:resize_client:253 - resizing client 0x00a00009 to 640 x 260
+29.11.2009 13:46:12 - src/layout.c:resize_client:326 - Lost 5 pixel due to client's height_increment (13 px, base_height = 15)
+29.11.2009 13:46:12 - src/layout.c:resize_client:333 - Lost 4 pixel due to client's width_increment (7 px, base_width = 9)
+29.11.2009 13:46:12 - src/layout.c:resize_client:336 - child will be at 2x17 with size 632x236
+29.11.2009 13:46:12 - src/handlers.c:handle_expose_event:730 - window = 00a00009
+29.11.2009 13:46:12 - src/layout.c:resize_client:252 - frame 0x00a0001d needs to be pushed to 0x260
+29.11.2009 13:46:12 - src/layout.c:resize_client:253 - resizing client 0x00a0001d to 640 x 260
+29.11.2009 13:46:12 - src/layout.c:resize_client:326 - Lost 5 pixel due to client's height_increment (13 px, base_height = 15)
+29.11.2009 13:46:12 - src/layout.c:resize_client:333 - Lost 4 pixel due to client's width_increment (7 px, base_width = 9)
+29.11.2009 13:46:12 - src/layout.c:resize_client:336 - child will be at 2x17 with size 632x236
+29.11.2009 13:46:12 - src/handlers.c:handle_expose_event:730 - window = 00a0001d
+29.11.2009 13:46:12 - src/layout.c:render_workspace:709 - height is 781
+29.11.2009 13:46:12 - src/layout.c:render_workspace:709 - height is 1005
+29.11.2009 13:46:12 - src/table.c:cleanup_table:319 - cleanup_table()
+29.11.2009 13:46:12 - src/util.c:set_focus:265 - Window: frame 0x00a00021, child 0x01600003
+29.11.2009 13:46:12 - src/table.c:fix_colrowspan:384 - Fixing col/rowspan
+29.11.2009 13:46:12 - src/layout.c:render_workspace:709 - height is 781
+29.11.2009 13:46:12 - src/layout.c:resize_client:252 - frame 0x00a00009 needs to be pushed to 0x0
+29.11.2009 13:46:12 - src/layout.c:resize_client:253 - resizing client 0x00a00009 to 640 x 390
+29.11.2009 13:46:12 - src/layout.c:resize_client:326 - Lost 5 pixel due to client's height_increment (13 px, base_height = 15)
+29.11.2009 13:46:12 - src/layout.c:resize_client:333 - Lost 4 pixel due to client's width_increment (7 px, base_width = 9)
+29.11.2009 13:46:12 - src/layout.c:resize_client:336 - child will be at 2x17 with size 632x366
+29.11.2009 13:46:12 - src/handlers.c:handle_expose_event:730 - window = 00a00009
+29.11.2009 13:46:12 - src/layout.c:resize_client:252 - frame 0x00a0001d needs to be pushed to 0x390
+29.11.2009 13:46:12 - src/layout.c:resize_client:253 - resizing client 0x00a0001d to 640 x 390
+29.11.2009 13:46:12 - src/layout.c:resize_client:326 - Lost 5 pixel due to client's height_increment (13 px, base_height = 15)
+29.11.2009 13:46:12 - src/layout.c:resize_client:333 - Lost 4 pixel due to client's width_increment (7 px, base_width = 9)
+29.11.2009 13:46:12 - src/layout.c:resize_client:336 - child will be at 2x17 with size 632x366
+29.11.2009 13:46:12 - src/handlers.c:handle_expose_event:730 - window = 00a0001d
+29.11.2009 13:46:12 - src/layout.c:render_workspace:709 - height is 781
+29.11.2009 13:46:12 - src/util.c:set_focus:265 - Window: frame 0x00a00021, child 0x01600003
+29.11.2009 13:46:12 - src/handlers.c:handle_expose_event:730 - window = 00a00009
+29.11.2009 13:46:12 - src/handlers.c:handle_expose_event:730 - window = 00a00009
+29.11.2009 13:46:12 - src/handlers.c:handle_expose_event:730 - window = 00a0001d
+29.11.2009 13:46:12 - src/handlers.c:handle_expose_event:730 - window = 00a0001d
+29.11.2009 13:46:12 - src/handlers.c:handle_expose_event:730 - window = 00a00009
+29.11.2009 13:46:12 - src/handlers.c:handle_expose_event:730 - window = 00a0001d
+29.11.2009 13:46:12 - src/handlers.c:handle_expose_event:730 - window = 00a00009
+29.11.2009 13:46:12 - src/handlers.c:handle_normal_hints:846 - Window: frame 0x00a0001d, child 0x01a00008
+29.11.2009 13:46:12 - src/handlers.c:handle_normal_hints:846 - Window: frame 0x00a0001d, child 0x01a00008
+29.11.2009 13:46:12 - src/handlers.c:handle_normal_hints:846 - Window: frame 0x00a00009, child 0x01000008
+29.11.2009 13:46:12 - src/handlers.c:handle_normal_hints:846 - Window: frame 0x00a00009, child 0x01000008
+29.11.2009 13:46:12 - src/handlers.c:handle_expose_event:730 - window = 00a00021
+29.11.2009 13:46:12 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a00021, mode = 0, detail 4, serial 5169
+29.11.2009 13:46:12 - src/handlers.c:handle_enter_notify:186 - enter_notify for 01600003, mode = 0, detail 3, serial 5169
+29.11.2009 13:46:12 - src/handlers.c:handle_normal_hints:846 - Window: frame 0x00a0001d, child 0x01a00008
+29.11.2009 13:46:12 - src/handlers.c:handle_normal_hints:846 - Window: frame 0x00a0001d, child 0x01a00008
+29.11.2009 13:46:12 - src/handlers.c:handle_normal_hints:846 - Window: frame 0x00a00009, child 0x01000008
+29.11.2009 13:46:12 - src/handlers.c:handle_normal_hints:846 - Window: frame 0x00a00009, child 0x01000008
+29.11.2009 13:46:12 - src/handlers.c:handle_expose_event:730 - window = 00a00021
+29.11.2009 13:46:12 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a00021, mode = 0, detail 4, serial 5187
+29.11.2009 13:46:12 - src/handlers.c:handle_enter_notify:186 - enter_notify for 01600003, mode = 0, detail 3, serial 5187
+29.11.2009 13:46:14 - src/handlers.c:handle_unmap_notify_event:459 - event->window = 01600cfe, event->event = 00000111
+29.11.2009 13:46:14 - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x01600cfe (received from 0x00000111)
+29.11.2009 13:46:14 - src/handlers.c:handle_unmap_notify_event:462 - not a managed window. Ignoring.
+29.11.2009 13:46:14 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00000111, mode = 0, detail 2, serial 5197
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1031 y=808 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1031 y=808 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:14 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1050 y=821 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1050 y=821 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:14 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1067 y=833 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1067 y=833 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:14 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1080 y=846 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1080 y=846 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:14 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1091 y=857 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1091 y=857 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:14 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1102 y=868 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1102 y=868 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:14 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1113 y=880 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1113 y=880 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:14 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1126 y=891 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1126 y=891 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:14 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1137 y=901 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1137 y=901 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:14 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1150 y=912 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1150 y=912 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:14 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1164 y=923 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1164 y=923 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:14 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1179 y=936 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1179 y=936 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:14 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1196 y=947 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1196 y=947 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:14 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1214 y=957 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1214 y=957 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:14 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1241 y=970 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1241 y=970 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:14 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1266 y=983 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1266 y=983 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:14 - src/handlers.c:check_crossing_screen_boundary:167 - ERROR: No such screen
+29.11.2009 13:46:14 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a00025, mode = 0, detail 1, serial 5197
+29.11.2009 13:46:14 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00e00008, mode = 0, detail 1, serial 5197
+29.11.2009 13:46:14 - src/util.c:set_focus:265 - Window: frame 0x00a00025, child 0x00e00008
+29.11.2009 13:46:14 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00e00008, mode = 0, detail 2, serial 5228
+29.11.2009 13:46:14 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a00025, mode = 0, detail 2, serial 5228
+29.11.2009 13:46:14 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00000111, mode = 0, detail 2, serial 5228
+29.11.2009 13:46:14 - src/handlers.c:handle_enter_notify:215 - Getting screen at 1680 x 1004
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1680 y=1004 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1680 y=1004 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1680 y=1004 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1680 y=1004 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1681 y=1004 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:14 - src/xinerama.c:get_screen_containing:78 - comparing x=1681 y=1004 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:15 - src/handlers.c:handle_windowname_change:582 - _NET_WM_NAME changed to "xeen-nb1: ~/.i3/logs"
+29.11.2009 13:46:15 - src/handlers.c:handle_windowname_change:582 - _NET_WM_NAME changed to "xeen-nb1: ~/.i3/logs"
+29.11.2009 13:46:17 - src/xinerama.c:get_screen_containing:78 - comparing x=1682 y=1004 with x=0 and y=0 width 1280 height 800
+29.11.2009 13:46:17 - src/xinerama.c:get_screen_containing:78 - comparing x=1682 y=1004 with x=1280 and y=0 width 1280 height 1024
+29.11.2009 13:46:17 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00a00025, mode = 0, detail 0, serial 5232
+29.11.2009 13:46:17 - src/handlers.c:handle_enter_notify:186 - enter_notify for 00e00008, mode = 0, detail 1, serial 5232
+29.11.2009 13:46:17 - src/handlers.c:handle_key_press:98 - Keypress 41, state raw = 64
+29.11.2009 13:46:17 - src/handlers.c:handle_key_press:102 - (removed numlock, state = 64)
+29.11.2009 13:46:17 - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 64)
+29.11.2009 13:46:17 - src/handlers.c:handle_key_press:117 - (checked mode_switch, state 64)

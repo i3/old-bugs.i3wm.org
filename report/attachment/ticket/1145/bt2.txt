@@ -1,0 +1,375 @@
+gdb $ bt full
+#0  0x00007f47c722b1d5 in raise () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#1  0x00007f47c722e388 in abort () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#2  0x00007f47c7224252 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#3  0x00007f47c7224302 in __assert_fail () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#4  0x000000000042f690 in render_con (con=0x214a600, render_fullscreen=false) at ../i3-wm-4.7.1-1+g4.7-84/src/render.c:231
+        i = 1
+        assigned = 222
+        signal = 32767
+        child = 0x0
+        total = 1920
+        children = 1
+        __FUNCTION__ = "render_con"
+        rect = {
+          x = 0, 
+          y = 0, 
+          width = 1920, 
+          height = 1080
+        }
+        x = 0
+        y = 0
+        i = 0
+        fullscreen = 0x0
+        deco_height = 18
+        sizes = 0x7fffd2e99308
+        __PRETTY_FUNCTION__ = "render_con"
+#5  0x00000000004300ed in render_con (con=0x214a400, render_fullscreen=true) at ../i3-wm-4.7.1-1+g4.7-84/src/render.c:412
+        child = 0x214a600
+        children = 1
+        __FUNCTION__ = "render_con"
+        rect = {
+          x = 0, 
+          y = 0, 
+          width = 1920, 
+          height = 1080
+        }
+        x = 1920
+        y = 0
+        i = 0
+        fullscreen = 0x0
+        deco_height = 18
+        sizes = 0x7fffd2e99458
+        __PRETTY_FUNCTION__ = "render_con"
+#6  0x000000000042f423 in render_con (con=0x2148be0, render_fullscreen=false) at ../i3-wm-4.7.1-1+g4.7-84/src/render.c:212
+        children = 5
+        __FUNCTION__ = "render_con"
+        rect = {
+          x = 0, 
+          y = 0, 
+          width = 1920, 
+          height = 1080
+        }
+        x = 0
+        y = 0
+        i = 0
+        fullscreen = 0x214a400
+        deco_height = 48
+        sizes = 0x7fffd2e99598
+        __PRETTY_FUNCTION__ = "render_con"
+#7  0x000000000042ee28 in render_l_output (con=0x2148900) at ../i3-wm-4.7.1-1+g4.7-84/src/render.c:114
+        child = 0x2148be0
+        dockchild = 0x0
+        x = 0
+        y = 1080
+        height = 1080
+        content = 0x2148be0
+        __FUNCTION__ = "render_l_output"
+        __PRETTY_FUNCTION__ = "render_l_output"
+        ws = 0x214a400
+        fullscreen = 0x0
+#8  0x000000000042f762 in render_con (con=0x2148900, render_fullscreen=false) at ../i3-wm-4.7.1-1+g4.7-84/src/render.c:247
+        children = 3
+        __FUNCTION__ = "render_con"
+        rect = {
+          x = 0, 
+          y = 0, 
+---Type <return> to continue, or q <return> to quit---
+          width = 1920, 
+          height = 1080
+        }
+        x = 0
+        y = 0
+        i = 0
+        fullscreen = 0x0
+        deco_height = 18
+        sizes = 0x7fffd2e99758
+        __PRETTY_FUNCTION__ = "render_con"
+#9  0x000000000042f7a4 in render_con (con=0x213d660, render_fullscreen=false) at ../i3-wm-4.7.1-1+g4.7-84/src/render.c:251
+        output = 0x2148900
+        children = 2
+        __FUNCTION__ = "render_con"
+        rect = {
+          x = 0, 
+          y = 0, 
+          width = 1920, 
+          height = 1080
+        }
+        x = 0
+        y = 0
+        i = 0
+        fullscreen = 0x0
+        deco_height = 18
+        sizes = 0x7fffd2e998a8
+        __PRETTY_FUNCTION__ = "render_con"
+#10 0x0000000000435ec2 in tree_render () at ../i3-wm-4.7.1-1+g4.7-84/src/tree.c:520
+        __FUNCTION__ = "tree_render"
+#11 0x000000000042e75e in randr_query_outputs () at ../i3-wm-4.7.1-1+g4.7-84/src/randr.c:809
+        output = 0x0
+        other = 0x0
+        first = 0x0
+        pcookie = {
+          sequence = 750
+        }
+        rcookie = {
+          sequence = 749
+        }
+        res = 0x214bd00
+        cts = 283078874
+        randr_outputs = 0x214bd28
+        __FUNCTION__ = "randr_query_outputs"
+        len = 7
+        ocookie = 0x7fffd2e99a00
+#12 0x000000000042e80c in randr_init (event_base=0x65b540 <randr_base>) at ../i3-wm-4.7.1-1+g4.7-84/src/randr.c:827
+        extreply = 0x213c830
+#13 0x0000000000428686 in main (argc=4, argv=0x7fffd2e9a218) at ../i3-wm-4.7.1-1+g4.7-84/src/main.c:697
+        i3_version = 0x449ad0 "4.7-84-gac74a63 (2014-01-01, branch \"next\")"
+        override_configpath = 0x0
+        autostart = false
+        layout_path = 0x2122150 "\001"
+        delete_layout_path = true
+        force_xinerama = false
+        fake_outputs = 0x0
+        disable_signalhandler = false
+        long_options = {{
+            name = 0x44b38e "no-autostart", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 97
+          }, {
+            name = 0x44b39b "config", 
+            has_arg = 1, 
+            flag = 0x0, 
+            val = 99
+          }, {
+            name = 0x44b3a2 "version", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 118
+          }, {
+            name = 0x44b3aa "moreversion", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 109
+          }, {
+            name = 0x44b3b6 "more-version", 
+            has_arg = 0, 
+---Type <return> to continue, or q <return> to quit---
+            flag = 0x0, 
+            val = 109
+          }, {
+            name = 0x44b3c3 "more_version", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 109
+          }, {
+            name = 0x44b3d0 "help", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 104
+          }, {
+            name = 0x44b3d5 "layout", 
+            has_arg = 1, 
+            flag = 0x0, 
+            val = 76
+          }, {
+            name = 0x449df3 "restart", 
+            has_arg = 1, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x449c39 "force-xinerama", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x449c48 "force_xinerama", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x449d6f "disable-signalhandler", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x449db2 "shmlog-size", 
+            has_arg = 1, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x449dbe "shmlog_size", 
+            has_arg = 1, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x449d85 "get-socketpath", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x449d94 "get_socketpath", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x449e08 "fake_outputs", 
+            has_arg = 1, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x449dfb "fake-outputs", 
+            has_arg = 1, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x449e38 "force-old-config-parser-v4.4-only", 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 0
+          }, {
+            name = 0x0, 
+            has_arg = 0, 
+            flag = 0x0, 
+            val = 0
+          }}
+        option_index = 8
+---Type <return> to continue, or q <return> to quit---
+        opt = -1
+        __FUNCTION__ = "main"
+        gcookie = {
+          sequence = 5
+        }
+        pointercookie = {
+          sequence = 6
+        }
+        cookie = {
+          sequence = 9
+        }
+        greply = 0x2122280
+        _NET_SUPPORTED_cookie = {
+          sequence = 11
+        }
+        _NET_SUPPORTING_WM_CHECK_cookie = {
+          sequence = 12
+        }
+        _NET_WM_NAME_cookie = {
+          sequence = 13
+        }
+        _NET_WM_STATE_FULLSCREEN_cookie = {
+          sequence = 14
+        }
+        _NET_WM_STATE_DEMANDS_ATTENTION_cookie = {
+          sequence = 15
+        }
+        _NET_WM_STATE_cookie = {
+          sequence = 16
+        }
+        _NET_WM_WINDOW_TYPE_cookie = {
+          sequence = 17
+        }
+        _NET_WM_WINDOW_TYPE_DOCK_cookie = {
+          sequence = 18
+        }
+        _NET_WM_WINDOW_TYPE_DIALOG_cookie = {
+          sequence = 19
+        }
+        _NET_WM_WINDOW_TYPE_UTILITY_cookie = {
+          sequence = 20
+        }
+        _NET_WM_WINDOW_TYPE_TOOLBAR_cookie = {
+          sequence = 21
+        }
+        _NET_WM_WINDOW_TYPE_SPLASH_cookie = {
+          sequence = 22
+        }
+        _NET_WM_DESKTOP_cookie = {
+          sequence = 23
+        }
+        _NET_WM_STRUT_PARTIAL_cookie = {
+          sequence = 24
+        }
+        _NET_CLIENT_LIST_STACKING_cookie = {
+          sequence = 25
+        }
+        _NET_CURRENT_DESKTOP_cookie = {
+          sequence = 26
+        }
+        _NET_ACTIVE_WINDOW_cookie = {
+          sequence = 27
+        }
+        _NET_STARTUP_ID_cookie = {
+          sequence = 28
+        }
+        _NET_WORKAREA_cookie = {
+          sequence = 29
+        }
+        WM_PROTOCOLS_cookie = {
+          sequence = 30
+        }
+        WM_DELETE_WINDOW_cookie = {
+          sequence = 31
+        }
+        UTF8_STRING_cookie = {
+          sequence = 32
+        }
+        WM_STATE_cookie = {
+---Type <return> to continue, or q <return> to quit---
+          sequence = 33
+        }
+        WM_CLIENT_LEADER_cookie = {
+          sequence = 34
+        }
+        WM_TAKE_FOCUS_cookie = {
+          sequence = 35
+        }
+        WM_WINDOW_ROLE_cookie = {
+          sequence = 36
+        }
+        I3_SOCKET_PATH_cookie = {
+          sequence = 37
+        }
+        I3_CONFIG_PATH_cookie = {
+          sequence = 38
+        }
+        I3_SYNC_cookie = {
+          sequence = 39
+        }
+        I3_SHMLOG_PATH_cookie = {
+          sequence = 40
+        }
+        I3_PID_cookie = {
+          sequence = 41
+        }
+        _NET_REQUEST_FRAME_EXTENTS_cookie = {
+          sequence = 42
+        }
+        _NET_FRAME_EXTENTS_cookie = {
+          sequence = 43
+        }
+        needs_tree_init = false
+        pointerreply = 0x7f47ca54b000
+        output = 0x7f47c75a4dc0
+        ipc_socket = 0
+        xcb_watcher = 0x4009d8
+        xkb = 0x100000000
+        xcb_prepare = 0x10000082b
+        action = {
+          __sigaction_handler = {
+            sa_handler = 0xffffffff00000087, 
+            sa_sigaction = 0xffffffff00000087
+          }, 
+          sa_mask = {
+            __val = {18446744073709551615, 139946314207720, 139946312005755, 0, 139946313898384, 1, 0, 1, 139946314207720, 0, 
+              139946263955008, 2080, 2064, 140736731914816, 139946245278128, 0}
+          }, 
+          sa_flags = -900164288, 
+          sa_restorer = 0xf63d4e2e
+        }
+        exec_always = 0x7fffd2e9a010
+        barconfig = 0x3e
+

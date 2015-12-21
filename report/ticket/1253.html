@@ -1,0 +1,1300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1253 (Request - Please Move Directories Created From /tmp to $HOME)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1252" title="Ticket #1252" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1253?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1253?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1253?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1254" title="Ticket #1254" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="0c5a418b353db7edfdf01d55";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1252" title="Ticket #1252">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1254" title="Ticket #1254">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2014-06-07T06%3A51%3A43%2B02%3A00&amp;precision=second" title="See timeline at 06/07/14 06:51:43">10 months ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2014-08-10T22%3A55%3A00%2B02%3A00&amp;precision=second" title="See timeline at 08/10/14 22:55:00">8 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1253" class="trac-id">#1253</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=invalid">invalid</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Request - Please Move Directories Created From /tmp to $HOME</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable"><a href="/report/query?status=!closed&amp;reporter=i3-new-ticket">i3-new-ticket</a></td>
+      <th id="h_owner" class="missing">Owned by:</th>
+      <td headers="h_owner"></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.7.2">4.7.2</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.7.2 (2014-01-23, branch "tags/4.7.2")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+Hi i3 Team,<br />
+</p>
+<p>
+I hope you will please consider this request.<br />
+</p>
+<p>
+I use /tmp for a lot of various things, and I really need to see what is going on in there, and using i3 I've noticed it is really filling it up with a lof of i3 directories named like this as example;<br />
+</p>
+<p>
+i3-foo.2vMG45<br />
+</p>
+<p>
+I'm assuming too that once you log out of i3 these are not needed and recreated over? If that is true it would really be great if they could be created under the i3 $HOME user /path as;  ~/.i3 or ~/.config/i3 and then when you're done running i3 they're removed, instead of piling up, which they do right now in /tmp<br />
+</p>
+<p>
+Thank you all very much for your time and consideration on this.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(2)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/1253/tmp.log" title="View attachment">tmp.log</a><a href="/report/raw-attachment/ticket/1253/tmp.log" class="trac-rawlink" title="Download">​</a>
+       (<span title="1642 bytes">1.6 KB</span>) -
+      added by <em>anonymous</em> <a class="timeline" href="/report/timeline?from=2014-06-14T08%3A21%3A22%2B02%3A00&amp;precision=second" title="See timeline at 06/14/14 08:21:22">10 months ago</a>.
+  </dt>
+              <dt>
+    <a href="/report/attachment/ticket/1253/i3.log.bz2" title="View attachment">i3.log.bz2</a><a href="/report/raw-attachment/ticket/1253/i3.log.bz2" class="trac-rawlink" title="Download">​</a>
+       (<span title="15001 bytes">14.6 KB</span>) -
+      added by <em>anonymous</em> <a class="timeline" href="/report/timeline?from=2014-06-14T08%3A21%3A31%2B02%3A00&amp;precision=second" title="See timeline at 06/14/14 08:21:31">10 months ago</a>.
+  </dt>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/1253/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(27)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1402258654954612">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-08T22%3A17%3A34%2B02%3A00&amp;precision=second" title="See timeline at 06/08/14 22:17:34">10 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Note that XDG_RUNTIME_DIR is used by i3, so that should point to /run with modern linux distributions, not /tmp — /tmp is only used as a fallback.<br />
+</p>
+<p>
+There was an actual bug here, which was that the ipc socket was not cleaned up. That’s fixed with the following commit.<br />
+</p>
+<p>
+In case you still don’t see the directory being cleaned up, it may be that i3 logs an error on startup. These error logfiles are in general not deleted so that you can inspect them after an i3 crash/exit. If you don’t care for them and value a clean /tmp over having error logs available, feel free to use the following keybinding:<br />
+</p>
+<pre class="wiki">bindsym $mod+Shift+e exec --no-startup-id echo &gt; $(dirname $(i3 --get-socketpath))/errorlog.* &amp;&amp; exit
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1402259332344759">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-08T22%3A28%3A52%2B02%3A00&amp;precision=second" title="See timeline at 06/08/14 22:28:52">10 months ago</a> by Michael Stapelberg
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/26460c09"><span class="icon">​</span>http://c.i3wm.org/26460c09</a>:<br />
+</p>
+<pre class="wiki">delete ipc socket when exiting, cleanup tmpdir
+
+fixes #1253
+
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1402442426768889">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-11T01%3A20%3A26%2B02%3A00&amp;precision=second" title="See timeline at 06/11/14 01:20:26">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        <em>fixed</em> deleted
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>closed</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Directories are still being created in /tmp and not removed on a restart.<br />
+</p>
+<p>
+Here is the contents I have when I shut down and restarted my box that were left<br />
+</p>
+<p>
+cd /tmp<br />
+</p>
+<blockquote class="citation">
+<p>
+ls                                                      <br />
+</p>
+</blockquote>
+<p>
+i3-foo.3ye2Ug  i3-foo.ITOC0D  i3-foo.yTLZaI<br />
+i3-foo.0tQ2iq  i3-foo.HAMCxB  i3-foo.aTheD3<br />
+</p>
+<p>
+The contents of all them where like this;<br />
+</p>
+<p>
+ipc-socket.2857<br />
+</p>
+<p>
+And one of them had an empty file called, errorlog.1987<br />
+</p>
+<p>
+I thought these were going to be moved and created in the users $HOME ~/.i3 path? and I also thought they were going to be removed on a restart?<br />
+</p>
+<p>
+Thank you<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1402442817046500">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-11T01%3A26%3A57%2B02%3A00&amp;precision=second" title="See timeline at 06/11/14 01:26:57">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+My mistake, I forgot what was being mentioned above, that there isn't a cleanup in case of an error, but there was only one directory with an error in it all the others I mentioned only had the ipc-socket listed in it, so at least those should of been cleaned up?<br />
+</p>
+<p>
+Also what's the point of having an empty errolog file and it's /tmp directory not removed? As I mentioned the errorlog file was empty, so it would be great if i3 could be created to see if an errorlog exists and it's 0 KB in size then it's removed...<br />
+</p>
+<blockquote class="citation">
+<p>
+ls -l errorlog.1987                                                                                    <br />
+</p>
+</blockquote>
+<p>
+-rw-r--r-- 1 foo users 0 Jun 10 13:12 errorlog.1987<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1402471182535258">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-11T09%3A19%3A42%2B02%3A00&amp;precision=second" title="See timeline at 06/11/14 09:19:42">10 months ago</a> by Michael Stapelberg
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/94574db6"><span class="icon">​</span>http://c.i3wm.org/94574db6</a>:<br />
+</p>
+<pre class="wiki">cleanup temporary directory when restarting and not using XDG_RUNTIME_DIR
+
+fixes #1253
+
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1402472663036893">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-11T09%3A44%3A23%2B02%3A00&amp;precision=second" title="See timeline at 06/11/14 09:44:23">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Do I need to also use the first patch?<br />
+</p>
+<p>
+<a class="ext-link" href="http://c.i3wm.org/26460c09"><span class="icon">​</span>http://c.i3wm.org/26460c09</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1402474746010575">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-11T10%3A19%3A06%2B02%3A00&amp;precision=second" title="See timeline at 06/11/14 10:19:06">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sorry I'll just clone from git...<br />
+</p>
+<p>
+thanks<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1402569666332795">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-12T12%3A41%3A06%2B02%3A00&amp;precision=second" title="See timeline at 06/12/14 12:41:06">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        <em>fixed</em> deleted
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>closed</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+cleanup temporary directory when restarting and not using XDG_RUNTIME_DIR<br />
+</p>
+<p>
+I tried to patch with;<br />
+</p>
+<p>
+patch -p1 &lt; /path/to/patch<br />
+</p>
+<p>
+And I'm getting this output;<br />
+</p>
+<p>
+patching file src/commands.c<br />
+Hunk <a class="closed ticket" href="/report/ticket/1" title="task: Design a logo/favicon (closed: fixed)">#1</a> succeeded at 1640 (offset -42 lines).<br />
+patching file src/main.c<br />
+Hunk <a class="closed ticket" href="/report/ticket/2" title="defect: focus problems with firefox (or other gtk apps?) and right-clicking (closed: worksforme)">#2</a> succeeded at 648 (offset -23 lines).<br />
+patching file testcases/lib/i3test.pm<br />
+Hunk <a class="closed ticket" href="/report/ticket/1" title="task: Design a logo/favicon (closed: fixed)">#1</a> succeeded at 781 (offset -2 lines).<br />
+can't find file to patch at input line 71<br />
+Perhaps you used the wrong -p or --strip option?<br />
+The text leading up to this was:<br />
+</p>
+<hr />
+<p>
+|diff --git a/testcases/t/229-cleanup-tmpdir.t b/testcases/t/229-cleanup-tmpdir.t<br />
+|index 6448da0..eff39b0 100644<br />
+</p>
+<table class="wiki">
+<tr>a/testcases/t/229-cleanup-tmpdir.t
+</tr></table>
+<p>
+|+++ b/testcases/t/229-cleanup-tmpdir.t<br />
+</p>
+<hr />
+<p>
+File to patch: <br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1402571431765123">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-12T13%3A10%3A31%2B02%3A00&amp;precision=second" title="See timeline at 06/12/14 13:10:31">10 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Please stop reopening this bug for such issues. If you can’t apply the patch, please seek external help for that or ask in our IRC channel. We provide autobuilds of the git version for Debian and Ubuntu, see <a class="ext-link" href="http://i3wm.org/docs/repositories.html"><span class="icon">​</span>http://i3wm.org/docs/repositories.html</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1402578214661952">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-12T15%3A03%3A34%2B02%3A00&amp;precision=second" title="See timeline at 06/12/14 15:03:34">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        <em>fixed</em> deleted
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>closed</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I only opened it to get your attention because I know you want to get things done, so I'm just trying to help. I only wanted to apply the patch, not go upstream somewhere else...<br />
+</p>
+<p>
+I know how to apply a patch, I'm trying to tell you that it's not working.<br />
+</p>
+<p>
+patch -p1 &lt; /path/to/patch should apply it and it doesn't.<br />
+</p>
+<p>
+Thank you<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1402594484300543">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-12T19%3A34%3A44%2B02%3A00&amp;precision=second" title="See timeline at 06/12/14 19:34:44">10 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I did not provide a patch, I fixed this in git. I don’t care if you have trouble applying some random git commit onto a released version, that is not a supported workflow and more likely to fail than to succeed.<br />
+</p>
+<p>
+Sorry for the harsh words, but this is my last reply on this bug. If you insist on wanting to test, please use the version from git directly or get help somewhere else. I suggest applying the changes from the patch manually in case all else fails.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-12-1402657238491682">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-13T13%3A00%3A38%2B02%3A00&amp;precision=second" title="See timeline at 06/13/14 13:00:38">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sorry for any misunderstandings, I was just trying to help you is all.<br />
+</p>
+<p>
+The link;<br />
+</p>
+<p>
+<a class="ext-link" href="http://code.stapelberg.de/git/i3/commit?id=94574db6"><span class="icon">​</span>http://code.stapelberg.de/git/i3/commit?id=94574db6</a><br />
+</p>
+<p>
+Shows as a .patch;<br />
+</p>
+<p>
+<a class="ext-link" href="http://code.stapelberg.de/git/i3/patch/?id=94574db6f6d329797d7fa4e19f75645cd6cbae86"><span class="icon">​</span>http://code.stapelberg.de/git/i3/patch/?id=94574db6f6d329797d7fa4e19f75645cd6cbae86</a><br />
+</p>
+<p>
+Anyhow now worries, I was just trying to help, not hassle you, sorry if you misunderstood me.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-13-1402657470773360">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:13" class="cnum">
+    <a href="#comment:13">comment:13</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-13T13%3A04%3A30%2B02%3A00&amp;precision=second" title="See timeline at 06/13/14 13:04:30">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        <em>fixed</em> deleted
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>closed</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I'm reopening this because the directories are still filling up the /tmp and they're not being removed....<br />
+</p>
+<p>
+I had 12 like; i3-foo.3ye2Ug directories created...<br />
+</p>
+<p>
+At the time of the replies saying fixed I noticed i3 was only making a few /tmp directories and they were getting removed when restarting.<br />
+</p>
+<p>
+At present I'm on this release;<br />
+i3 version 4.7.2-197-g5beaea3 (2014-06-12, branch "next")<br />
+</p>
+<p>
+Thanks<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-14-1402663951072547">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:14" class="cnum">
+    <a href="#comment:14">comment:14</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-13T14%3A52%3A31%2B02%3A00&amp;precision=second" title="See timeline at 06/13/14 14:52:31">10 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Please provide the output of <tt>ls -hlR /tmp</tt> and a logfile.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-14T08%3A21%3A22%2B02%3A00&amp;precision=second" title="See timeline at 06/14/14 08:21:22">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1253/tmp.log"><em>tmp.log</em></a><a href="/report/raw-attachment/ticket/1253/tmp.log" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-14T08%3A21%3A31%2B02%3A00&amp;precision=second" title="See timeline at 06/14/14 08:21:31">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1253/i3.log.bz2"><em>i3.log.bz2</em></a><a href="/report/raw-attachment/ticket/1253/i3.log.bz2" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-15-1402726942956577">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:15" class="cnum">
+    <a href="#comment:15">comment:15</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-14T08%3A22%3A22%2B02%3A00&amp;precision=second" title="See timeline at 06/14/14 08:22:22">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+/tmp log and logfile added... :)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-16-1402741740340443">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:16" class="cnum">
+    <a href="#comment:16">comment:16</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-14T12%3A29%3A00%2B02%3A00&amp;precision=second" title="See timeline at 06/14/14 12:29:00">10 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+There’s no restart or exit in this logfile.<br />
+</p>
+<p>
+In your /tmp, there’s old directories, so please clean that up before testing.<br />
+</p>
+<p>
+Please provide some steps how to reproduce, i.e. what exactly you do (how do you start and stop i3, when do you look at /tmp, etc.).<br />
+</p>
+
+    </div>
+  <div class="trac-lastedit ">
+    Last edited <a class="timeline" href="/report/timeline?from=2014-06-14T12%3A29%3A13%2B02%3A00&amp;precision=second" title="See timeline at 06/14/14 12:29:13">10 months ago</a>
+        by michael
+      (<a href="/report/ticket/1253?cversion=0&amp;cnum_hist=16#comment:16">previous</a>)
+      (<a href="/report/ticket/1253?action=comment-diff&amp;cnum=16&amp;version=1">diff</a>)
+  </div>
+
+              </div>
+              <div class="change" id="trac-change-17-1402807927111563">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:17" class="cnum">
+    <a href="#comment:17">comment:17</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-15T06%3A52%3A07%2B02%3A00&amp;precision=second" title="See timeline at 06/15/14 06:52:07">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Ok on restart or exit in this logfile...<br />
+</p>
+<p>
+As far as old directories in /tmp that is because they kept adding up, but I have upgraded to the latest next branch so let me see how the latest next branch goes.<br />
+</p>
+<p>
+I don't use any display managers, just startx to start, and I use a bash script for Yad, Yad is a fork of Zenity which gives me a small gui logout, and I use it for my logout, reboot and shutdown, here's how the script looks;<br />
+</p>
+<hr />
+<p>
+#! /bin/bash<br />
+</p>
+<p>
+action=$(yad --width 300 --entry --title "System Logout" \<br />
+</p>
+<blockquote>
+<p>
+--window-icon=gnome-shutdown \<br />
+--image=gnome-shutdown \<br />
+--button="gtk-ok:0" --button="gtk-close:1" \<br />
+--text "Choose action:" \<br />
+--entry-text \<br />
+"Logout" "Power Off" "Reboot")<br />
+</p>
+</blockquote>
+<p>
+ret=$?<br />
+</p>
+<p>
+<a class="forbidden wiki" title="no permission to view this wiki page"> $ret -eq 1 </a> &amp;&amp; exit 0<br />
+</p>
+<p>
+if <a class="forbidden wiki" title="no permission to view this wiki page"> $ret -eq 2 </a>; then<br />
+</p>
+<blockquote>
+<p>
+gdmflexiserver --startnew &amp;<br />
+exit 0<br />
+</p>
+</blockquote>
+<p>
+fi<br />
+</p>
+<p>
+case $action in<br />
+</p>
+<blockquote>
+<p>
+Power*) cmd="sudo /sbin/poweroff" ;;<br />
+Reboot*) cmd="sudo /sbin/reboot" ;;<br />
+Logout*) cmd="i3-msg exit" ;;<br />
+</p>
+<blockquote>
+<p>
+*) exit 1 ;;<br />
+</p>
+</blockquote>
+<p>
+esac<br />
+</p>
+</blockquote>
+<p>
+eval exec $cmd<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-18-1403137382351269">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:18" class="cnum">
+    <a href="#comment:18">comment:18</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-19T02%3A23%3A02%2B02%3A00&amp;precision=second" title="See timeline at 06/19/14 02:23:02">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+So are we still waiting on more info? I did provide this...<br />
+</p>
+<p>
+thanks...<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-19-1403162928962374">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:19" class="cnum">
+    <a href="#comment:19">comment:19</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-19T09%3A28%3A48%2B02%3A00&amp;precision=second" title="See timeline at 06/19/14 09:28:48">9 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Your setup is super strange and you expect support from us within 4 days? Dude. Calm down.<br />
+</p>
+<p>
+There’s much more important things to fix than tmpfiles being left behind on 1 users weird setup.<br />
+</p>
+<p>
+If you want to get this fixed, either have a look at it yourself, or provide a way for me to reproduce this that doesn’t involve getting rid of my display manager.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-20-1403240153126926">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:20" class="cnum">
+    <a href="#comment:20">comment:20</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:23" class="follow-up">↓ 23</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-20T06%3A55%3A53%2B02%3A00&amp;precision=second" title="See timeline at 06/20/14 06:55:53">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sorry if you misunderstood me, didn't mean for you to think I was jumpy. I was only checking to make sure you have what you needed is all, I wasn't sure if you or someone was still waiting on me?<br />
+</p>
+<p>
+I was actually checking back out of resepct to the developers to make sure they have what they wanted from me, that's all.<br />
+</p>
+<p>
+I'm not doing anything strange with my setup, just startx to start i3 and that script to logout, reboot, or shutdown, neither one should be the issue for the directories being created in /tmp<br />
+</p>
+<p>
+When you ask, provide a way to reproduce this, no one developing i3 has these directories being created in /tmp? I don't see how the end-user could be creating these, it's not something I'm doing...<br />
+</p>
+<p>
+THANKS<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-21-1403241070033372">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:21" class="cnum">
+    <a href="#comment:21">comment:21</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-20T07%3A11%3A10%2B02%3A00&amp;precision=second" title="See timeline at 06/20/14 07:11:10">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I'm now using i3 version 4.8-5-gd8328c7 (2014-06-15, branch "next") and I went back to check on this bracnh version, when you asked about trying to reproduce it. I haven't really looked at it, because I thought it was something still be looked into.<br />
+</p>
+<p>
+But now I'm seeing when I log out of i3 that the directories are being removed, so maybe there has been a fix to this?<br />
+</p>
+<p>
+Anyhow I'll keep my eye on it and report if I see the directories building up again and not being removed.<br />
+</p>
+<p>
+By the way here's a screenshot showing one directory and the contents when I logged in;<br />
+</p>
+<p>
+<a class="ext-link" href="http://i.imgur.com/vg2WD1m.jpg"><span class="icon">​</span>http://i.imgur.com/vg2WD1m.jpg</a><br />
+</p>
+<p>
+thanks<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-22-1403249702588862">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:22" class="cnum">
+    <a href="#comment:22">comment:22</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-20T09%3A35%3A02%2B02%3A00&amp;precision=second" title="See timeline at 06/20/14 09:35:02">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I found something interesting that may be of help.<br />
+</p>
+<p>
+When I log into i3 one directory is created, if I log back out right away with only the one directory in /tmp it is removed.<br />
+</p>
+<p>
+But if I use i3 for any length of time, more directories are created, and if there are more than one directory when I log out of i3 they are not removed.<br />
+</p>
+<p>
+So it appears i3 will only remove one directory, not more...<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-23-1403264085388717">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:23" class="cnum">
+    <a href="#comment:23">comment:23</a>
+  </span>
+        in reply to:
+    <a href="#comment:20">↑ 20</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-20T13%3A34%3A45%2B02%3A00&amp;precision=second" title="See timeline at 06/20/14 13:34:45">9 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1253#comment:20" title="Comment 20">anonymous</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+I'm not doing anything strange with my setup, just startx to start i3 and that script to logout, reboot, or shutdown, neither one should be the issue for the directories being created in /tmp<br />
+</p>
+</blockquote>
+<p>
+Using startx to start i3 _is_ strange. Everyone else just uses a display manager.<br />
+</p>
+<blockquote class="citation">
+<p>
+But if I use i3 for any length of time, more directories are created, and if there are more than one directory when I log out of i3 they are not removed.<br />
+</p>
+</blockquote>
+<p>
+Perhaps they are not created by i3 but by some other tool. i3 in itself will only ever use one temp directory at a time.<br />
+</p>
+<p>
+Of course, if there are more temp directories, e.g. because i3 crashes or is killed with -9, these will not be cleaned up. This cannot possibly be fixed.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-24-1403298306347235">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:24" class="cnum">
+    <a href="#comment:24">comment:24</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-20T23%3A05%3A06%2B02%3A00&amp;precision=second" title="See timeline at 06/20/14 23:05:06">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Hi michael,<br />
+</p>
+<p>
+First let me say I mean you no disrespect at all, and I truly do appreciate everything you do, so please always remember that when I make you a bug report, and I will always sign my bug report as 'Mii' so you know who you are talking to. I'm a Geek, as hardcore as they come, doesn't mean I know everything, but who does?<br />
+</p>
+<p>
+So as a geek I love to help my fellow geek the best I can.<br />
+</p>
+<p>
+Now with everything I've just said, let's be honest here about this situation, so end-users of less experience aren't confused.<br />
+</p>
+<ol><li>There is nothing strange about using 'startx'. The 'Standard' X11 distribution comes with it.
+</li></ol><ol start="2"><li>i3 is a Window Manager, it is also very small, ligtweight and  minimalistic, is it not? It most certainly is.
+</li></ol><ol start="3"><li>The truth is, most bloated distros use Display Managers, but small, ligtweight and minimalistic distros do not. So what the honest truth here is, a small, ligtweight and minimalistic distro is more in line with the ideas and philosophy of i3, and that would be using startx, because use only what you need, and you don't need a Display Manager to log into a window manager.
+</li></ol><ol start="4"><li>So the question here would be, since when did the thinking of the i3 team become, use more than what is needed, in this case a Disply Manager? Personally this kind of thinking and to hear 'startx strange, I personally feel like this kind of thinking is strange.
+</li></ol><p>
+So again Michael, with absolutely no disrespect to you, but only the highest respect, you and the i3 team, really need to go back and read this, everyone and consider these words, because if anything, startx should be considered the standard way of thinking as it relates to a small window manager like i3 not display managers.<br />
+</p>
+<p>
+Ok, now that I've had my word.<br />
+</p>
+<ol><li>I don't recall asking, but does i3 create these directories?
+</li></ol><ol start="2"><li>When I log into i3 and check this, the only thing I'm doing is starting a terminal and checking /tmp so i3 must be creating this because I'm not starting anything.
+</li></ol><ol start="3"><li>If there's another tool as you mention, are you tallking about some i3 tool, or 3rd party that has nothing to do with the i3 project, but can be used by i3 like dmenu as example? Also is a 3rd party app is doing this, the naming convention should not even be calling itself i3, if it's not even an i3 tool/app, that doesn't make sense then to associate itself this way.
+</li></ol><ol start="4"><li>The bash script I use for the Yad gui is only running i3-msg exit to log out of i3, so I'm not sure how that would be considered, crashing or killing i3 in a way it doesn't like, therefore allowing the creation of these directories to fill up in /tmp without being removed?
+</li></ol><p>
+Thank you again very much michael, and I hope you appreciate me just as much for taking my time also to help you improve i3, and I do enjoy helping!<br />
+</p>
+<p>
+Cheers<br />
+Mii<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-25-1407704100924616">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:25" class="cnum">
+    <a href="#comment:25">comment:25</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-10T22%3A55%3A00%2B02%3A00&amp;precision=second" title="See timeline at 08/10/14 22:55:00">8 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>invalid</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>closed</em>
+    </li>
+  </ul>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1253?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1253?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1253?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

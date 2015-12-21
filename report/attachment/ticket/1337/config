@@ -1,0 +1,159 @@
+# Super key.
+set $mod Mod4
+
+# Font for window titles and the bottom bar.
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+# Kill focused window.
+bindsym $mod+shift+q kill
+
+# Select focused focus.
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+a focus parent
+bindsym $mod+d focus child
+focus_follows_mouse no
+
+# Move focused window.
+bindsym $mod+shift+h move left
+bindsym $mod+shift+j move down
+bindsym $mod+shift+k move up
+bindsym $mod+shift+l move right
+
+# Modify container layouts.
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+f fullscreen
+bindsym $mod+y split v
+bindsym $mod+u split h
+
+# Floating window stuff.
+bindsym $mod+shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+floating_modifier $mod
+for_window [class="Xfce4-notifyd"] floating enable, border none, focus mode_toggle
+
+# Custom workspaces names.
+set $im    "4: im"
+set $voip  "5: voip"
+set $games "6: games"
+set $www   "7: www"
+set $mail  "8: mail"
+set $audio "9: audio"
+set $misc "10: misc"
+
+# Switch workspaces.
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace $im
+bindsym $mod+5 workspace $voip
+bindsym $mod+6 workspace $games
+bindsym $mod+7 workspace $www
+bindsym $mod+8 workspace $mail
+bindsym $mod+9 workspace $audio
+bindsym $mod+0 workspace $misc
+
+# Move containers between workspaces.
+bindsym $mod+shift+1 move container to workspace 1
+bindsym $mod+shift+2 move container to workspace 2
+bindsym $mod+shift+3 move container to workspace 3
+bindsym $mod+shift+4 move container to workspace $im
+bindsym $mod+shift+5 move container to workspace $voip
+bindsym $mod+shift+6 move container to workspace $games
+bindsym $mod+shift+7 move container to workspace $www
+bindsym $mod+shift+8 move container to workspace $mail
+bindsym $mod+shift+9 move container to workspace $audio
+bindsym $mod+shift+0 move container to workspace $misc
+
+# Modify i3.
+bindsym $mod+shift+c reload
+bindsym $mod+shift+r restart
+
+# Resize window.
+bindsym $mod+o mode "resize"
+mode "resize"
+{
+  bindsym h resize grow   width  10 px or 10 ppt
+  bindsym j resize shrink height 10 px or 10 ppt
+  bindsym k resize grow   height 10 px or 10 ppt
+  bindsym l resize shrink width  10 px or 10 ppt
+  
+  bindsym Escape           mode "default"
+  bindsym Ctrl+bracketleft mode "default"
+}
+
+# Exit mode.
+set $mode_exit exit.sh: (l)ock | (L)ogout | (R)eboot | (S)hutdown | (c)ancel
+bindsym $mod+shift+e mode "$mode_exit"
+mode "$mode_exit"
+{
+  bindsym l       exec --no-startup-id ~/.i3/exit.sh lock,     mode "default"
+  bindsym shift+l exec --no-startup-id ~/.i3/exit.sh logout,   mode "default"
+  bindsym shift+r exec --no-startup-id ~/.i3/exit.sh reboot,   mode "default"
+  bindsym shift+s exec --no-startup-id ~/.i3/exit.sh shutdown, mode "default"
+  bindsym c mode "default"
+}
+
+# The i3bar.
+bar
+{
+  status_command i3status
+  position bottom
+  tray_output none
+}
+
+# WM settings.
+hide_edge_borders both
+
+# Keyboard shortcuts.
+bindsym $mod+x exec roxterm --separate
+bindsym $mod+q exec thunar
+bindsym $mod+r exec dmenu_run
+bindsym $mod+g exec roxterm -e ghci
+bindsym $mod+Print exec scrot
+
+# Daemons.
+exec --no-startup-id mpd
+exec --no-startup-id sh ~/.fehbg
+
+# $im
+for_window [class="Pidgin"] move container to workspace $im
+for_window [class="Pidgin" window_role="conversation"] resize grow width 0 px or 40 ppt
+exec --no-startup-id pidgin
+
+# $voip
+for_window [title=".*Skype™"] move container to workspace $voip
+for_window [class="Skype"] move container to workspace $voip
+for_window [class="Skype" window_role="ConversationsWindow"] resize grow width 0 px or 40 ppt
+exec --no-startup-id skype
+
+# $games
+for_window [title="Updating Steam..."] move container to workspace $games
+for_window [title="Steam Login"] move container to workspace 1
+for_window [class="Steam"] move container to workspace $games
+for_window [class="Steam"] layout tabbed
+for_window [title="Updating Steam..."] layout toggle split
+for_window [title="Steam Login"] layout toggle split
+#exec --no-startup-id steam
+
+# $www
+for_window [class="Firefox"] move container to workspace $www
+exec --no-startup-id firefox
+
+# $mail
+for_window [class="Thunderbird"] move container to workspace $mail
+exec --no-startup-id thunderbird
+
+# $audio
+for_window [class="Pavucontrol"] move container to workspace $audio
+for_window [title="vimpc"] move container to workspace $audio
+exec --no-startup-id pavucontrol
+exec --no-startup-id ~/.i3/winwait.sh "Volume Control" "roxterm --separate --title \"vimpc\" -e \"vimpc\""
+
+# $misc
+for_window [title="^notes$"] move container to workspace $misc
+exec --no-startup-id roxterm --separate --title "notes" -e "vim $HOME/notes"

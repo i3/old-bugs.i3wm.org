@@ -1,0 +1,52 @@
+From 245b6ff99499d535f91684658868517e61163139 Mon Sep 17 00:00:00 2001
+From: Julius Plenz <julius@plenz.com>
+Date: Fri, 10 Aug 2012 13:52:06 +0200
+Subject: [PATCH 2/2] Implement "wraparound" when focusing in a direction
+
+Thus, with two screens, you can actually toggle between them using the
+single command "focus output left".
+
+Signed-off-by: Julius Plenz <julius@plenz.com>
+---
+ src/randr.c |   25 ++++++++++++++++++++++++-
+ 1 file changed, 24 insertions(+), 1 deletion(-)
+
+diff --git a/src/randr.c b/src/randr.c
+index 3b42c47..c298a90 100644
+--- a/src/randr.c
++++ b/src/randr.c
+@@ -186,7 +186,30 @@ Output *get_output_next(direction_t direction, Output *current) {
+         }
+     }
+ 
+-    return candidate ? candidate : current;
++    /* In case no candidate for the direction found, try the
++     * candidate farthest away in the opposite direction */
++    if(!candidate) {
++        switch (direction) {
++            case D_UP:
++                candidate = get_output_most(D_DOWN, current);
++                break;
++            case D_DOWN:
++                candidate = get_output_most(D_UP, current);
++                break;
++            case D_LEFT:
++                candidate = get_output_most(D_RIGHT, current);
++                break;
++            case D_RIGHT:
++                candidate = get_output_most(D_LEFT, current);
++                break;
++        }
++
++        /* fallback */
++        if(!candidate)
++            candidate = current;
++    }
++
++    return candidate;
+ }
+ 
+ /*
+-- 
+1.7.10.4
+

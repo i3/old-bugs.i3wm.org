@@ -1,0 +1,27 @@
+From 1ac40ffd4ca5e6806a48d81915b913414a34fabe Mon Sep 17 00:00:00 2001
+From: Tony Crisci <tony@dubstepdish.com>
+Date: Thu, 1 May 2014 23:03:15 -0400
+Subject: [PATCH] Add barconfig and binding event support
+
+Adds `binding` and `barconfig_update` to the events hash to support
+subscribing to these events with the `subscribe` method.
+---
+ lib/AnyEvent/I3.pm | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/lib/AnyEvent/I3.pm b/lib/AnyEvent/I3.pm
+index e472ccc..5c9917e 100644
+--- a/lib/AnyEvent/I3.pm
++++ b/lib/AnyEvent/I3.pm
+@@ -112,6 +112,8 @@ my %events = (
+     output => ($event_mask | 1),
+     mode => ($event_mask | 2),
+     window => ($event_mask | 3),
++    barconfig_update => ($event_mask | 4),
++    binding => ($event_mask | 5),
+     _error => 0xFFFFFFFF,
+ );
+ 
+-- 
+1.9.2
+

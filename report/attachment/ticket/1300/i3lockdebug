@@ -1,0 +1,20 @@
+joshua@EchoMint ~ $ i3lock --debug
+[i3lock-debug] found Xinerama screen: 1920 x 1080 at 3000 x 448
+[i3lock-debug] found Xinerama screen: 1080 x 1920 at 0 x 0
+[i3lock-debug] found Xinerama screen: 1920 x 1080 at 1080 x 448
+joshua@EchoMint ~ $ [i3lock-debug] current password = c
+[i3lock-debug] current password = ch
+[i3lock-debug] current password = cha
+[i3lock-debug] current password = chan
+[i3lock-debug] current password = chang
+[i3lock-debug] current password = change
+[i3lock-debug] current password = changed
+[i3lock-debug] current password = changedp
+[i3lock-debug] current password = changedpa
+[i3lock-debug] current password = changedpas
+[i3lock-debug] current password = changedpass
+[i3lock-debug] current password = changedpassw
+[i3lock-debug] current password = changedpasswo
+[i3lock-debug] current password = changedpasswor
+[i3lock-debug] current password = changedpassword
+[i3lock-debug] successfully authenticated

@@ -1,0 +1,149 @@
+#0  0x00007fb3d68b4d8a in waitpid () from /usr/lib/libpthread.so.0
+No symbol table info available.
+#1  0x00000000004320ff in backtrace () at ../i3/src/sighandler.c:113
+        tmpdir = 0x4485ee "/tmp"
+        pid_parent = 2387
+        filename = 0xe0d410 "/tmp/i3-backtrace.2387.0.txt"
+        suffix = 1
+        bt = {st_dev = 16, st_ino = 206158430240, st_nlink = 140734268589344, st_mode = 1075201120, st_uid = 32767, st_gid = 0, __pad0 = 0, st_rdev = 4490765, st_size = 4491216, st_blksize = 183, st_blocks = 1, st_atim = {tv_sec = 2387, tv_nsec = 412316860417}, st_mtim = {tv_sec = 0, tv_nsec = 14234752}, st_ctim = {tv_sec = 140410411553744, tv_nsec = 140734268590816}, __unused = {140734268589392, 3, 140410420212213}}
+        pid_gdb = 2555
+        __FUNCTION__ = "backtrace"
+        status = 0
+#2  0x00000000004324ac in sig_handle_key_press (ignored=0x0, conn=0xd923f0, event=0xe0d3e0) at ../i3/src/sighandler.c:187
+        state = 0
+        sym = 98
+        __FUNCTION__ = "sig_handle_key_press"
+#3  0x00000000004328e6 in handle_signal (sig=11, info=0x7fff40164770, data=0x7fff40164640) at ../i3/src/sighandler.c:303
+        type = 2
+        __FUNCTION__ = "handle_signal"
+        action = {__sigaction_handler = {sa_handler = 0x0, sa_sigaction = 0x0}, sa_mask = {__val = {6638560, 30064771072, 14224608, 140410422107315, 140734268589999, 14227664, 140410372143761, 0, 0, 56286354997248, 19, 0, 140734268589536, 0, 14732592, 4085}}, sa_flags = 6638560, sa_restorer = 0x3435000700000000}
+        event = 0xe0d3e0
+#4  <signal handler called>
+No symbol table info available.
+#5  0x00000000004089f2 in con_get_fullscreen_con (con=0x0, fullscreen_mode=1) at ../i3/src/con.c:373
+        current = 0x0
+        child = 0xe0b430
+        bfs_head = {tqh_first = 0x0, tqh_last = 0x7fff40164a90}
+        entry = 0xe0d730
+#6  0x0000000000436e07 in render_con (con=0xd9b5b0, render_fullscreen=false) at ../i3/src/render.c:257
+        content = 0xe0b430
+        workspace = 0x0
+        fullscreen = 0x0
+        child = 0x0
+        output = 0xe0afe0
+        children = 3
+        __FUNCTION__ = "render_con"
+        rect = {x = 0, y = 0, width = 3360, height = 1080}
+        x = 0
+        y = 0
+        i = 0
+        fullscreen = 0x0
+        deco_height = 16
+        sizes = 0x7fff40164ae8
+        __PRETTY_FUNCTION__ = "render_con"
+#7  0x0000000000439322 in tree_render () at ../i3/src/tree.c:493
+        __FUNCTION__ = "tree_render"
+#8  0x0000000000438a96 in tree_close (con=0xe0c280, kill_window=DONT_KILL_WINDOW, dont_kill_parent=false, force_set_focus=false) at ../i3/src/tree.c:295
+        was_mapped = false
+        parent = 0xe0b430
+        next = 0xe0b430
+        __FUNCTION__ = "tree_close"
+        child = 0x0
+        nextchild = 0x1000000000001d0
+        abort_kill = false
+        ws = 0xe0c280
+#9  0x000000000040d081 in randr_query_outputs () at ../i3/src/randr.c:676
+        floating_con = 0x0
+        next = 0x0
+        current = 0xe0c280
+        old_content = 0xe0b430
+        child = 0x0
+        first_content = 0xe0bd90
+        output = 0xe0af40
+        other = 0x0
+        first = 0xe0af90
+        pcookie = {sequence = 459}
+        rcookie = {sequence = 458}
+        res = 0xe0d440
+        cts = 361938
+        randr_outputs = 0xe0d468
+        __FUNCTION__ = "randr_query_outputs"
+        len = 4
+        ocookie = 0x7fff40164cf0
+#10 0x0000000000433a84 in handle_screen_change (e=0xe0aa30) at ../i3/src/handlers.c:425
+        __FUNCTION__ = "handle_screen_change"
+#11 0x0000000000434fc8 in handle_event (type=89, event=0xe0aa30) at ../i3/src/handlers.c:1056
+No locals.
+#12 0x000000000042468c in xcb_check_cb (loop=0x7fb3d74399a0, w=0xd91da0, revents=32768) at ../i3/src/main.c:136
+        type = 89
+        event = 0xe0aa30
+        __FUNCTION__ = "xcb_check_cb"
+#13 0x00007fb3d72303df in ev_invoke_pending () from /usr/lib/libev.so.4
+No symbol table info available.
+#14 0x00007fb3d7233577 in ev_run () from /usr/lib/libev.so.4
+No symbol table info available.
+#15 0x0000000000424574 in ev_loop (loop=0x7fb3d74399a0, flags=0) at /usr/include/ev.h:820
+No locals.
+#16 0x000000000042741f in main (argc=1, argv=0x7fff40166598) at ../i3/src/main.c:852
+        i3_version = 0x443a18 "4.4-76-g527ec2a (2013-01-02, branch \"next\")"
+        override_configpath = 0x0
+        autostart = true
+        layout_path = 0x0
+        delete_layout_path = false
+        force_xinerama = false
+        fake_outputs = 0x0
+        disable_signalhandler = false
+        long_options = {{name = 0x445121 "no-autostart", has_arg = 0, flag = 0x0, val = 97}, {name = 0x44512e "config", has_arg = 1, flag = 0x0, val = 99}, {name = 0x445135 "version", has_arg = 0, flag = 0x0, val = 118}, {name = 0x44513d "moreversion", has_arg = 0, flag = 0x0, val = 109}, {name = 0x445149 "more-version", has_arg = 0, flag = 0x0, val = 109}, {name = 0x445156 "more_version", has_arg = 0, flag = 0x0, val = 109}, {name = 0x445163 "help", has_arg = 0, flag = 0x0, val = 104}, {name = 0x445168 "layout", has_arg = 1, flag = 0x0, val = 76}, {name = 0x443d3b "restart", has_arg = 1, flag = 0x0, val = 0}, {name = 0x443b81 "force-xinerama", has_arg = 0, flag = 0x0, val = 0}, {name = 0x443b90 "force_xinerama", has_arg = 0, flag = 0x0, val = 0}, {name = 0x443cb7 "disable-signalhandler", has_arg = 0, flag = 0x0, val = 0}, {name = 0x443cfa "shmlog-size", has_arg = 1, flag = 0x0, val = 0}, {name = 0x443d06 "shmlog_size", has_arg = 1, flag = 0x0, val = 0}, {name = 0x443ccd "get-socketpath", has_arg = 0, flag = 0x0, val = 0}, {name = 0x443cdc "get_socketpath", has_arg = 0, flag = 0x0, val = 0}, {name = 0x443d50 "fake_outputs", has_arg = 1, flag = 0x0, val = 0}, {name = 0x443d43 "fake-outputs", has_arg = 1, flag = 0x0, val = 0}, {name = 0x443d80 "force-old-config-parser-v4.4-only", has_arg = 0, flag = 0x0, val = 0}, {name = 0x0, has_arg = 0, flag = 0x0, val = 0}}
+        option_index = 0
+        opt = -1
+        __FUNCTION__ = "main"
+        gcookie = {sequence = 5}
+        pointercookie = {sequence = 6}
+        cookie = {sequence = 17}
+        greply = 0xd91d00
+        _NET_SUPPORTED_cookie = {sequence = 19}
+        _NET_SUPPORTING_WM_CHECK_cookie = {sequence = 20}
+        _NET_WM_NAME_cookie = {sequence = 21}
+        _NET_WM_STATE_FULLSCREEN_cookie = {sequence = 22}
+        _NET_WM_STATE_cookie = {sequence = 23}
+        _NET_WM_WINDOW_TYPE_cookie = {sequence = 24}
+        _NET_WM_WINDOW_TYPE_DOCK_cookie = {sequence = 25}
+        _NET_WM_WINDOW_TYPE_DIALOG_cookie = {sequence = 26}
+        _NET_WM_WINDOW_TYPE_UTILITY_cookie = {sequence = 27}
+        _NET_WM_WINDOW_TYPE_TOOLBAR_cookie = {sequence = 28}
+        _NET_WM_WINDOW_TYPE_SPLASH_cookie = {sequence = 29}
+        _NET_WM_DESKTOP_cookie = {sequence = 30}
+        _NET_WM_STRUT_PARTIAL_cookie = {sequence = 31}
+        _NET_CLIENT_LIST_STACKING_cookie = {sequence = 32}
+        _NET_CURRENT_DESKTOP_cookie = {sequence = 33}
+        _NET_ACTIVE_WINDOW_cookie = {sequence = 34}
+        _NET_WORKAREA_cookie = {sequence = 35}
+        _NET_STARTUP_ID_cookie = {sequence = 36}
+        WM_PROTOCOLS_cookie = {sequence = 37}
+        WM_DELETE_WINDOW_cookie = {sequence = 38}
+        UTF8_STRING_cookie = {sequence = 39}
+        WM_STATE_cookie = {sequence = 40}
+        WM_CLIENT_LEADER_cookie = {sequence = 41}
+        WM_TAKE_FOCUS_cookie = {sequence = 42}
+        WM_WINDOW_ROLE_cookie = {sequence = 43}
+        I3_SOCKET_PATH_cookie = {sequence = 44}
+        I3_CONFIG_PATH_cookie = {sequence = 45}
+        I3_SYNC_cookie = {sequence = 46}
+        I3_SHMLOG_PATH_cookie = {sequence = 47}
+        I3_PID_cookie = {sequence = 48}
+        needs_tree_init = true
+        pointerreply = 0xd91cd0
+        output = 0xe0af90
+        ipc_socket = 9
+        xcb_watcher = 0xe0ad00
+        xkb = 0xe0acc0
+        xcb_check = 0xd91da0
+        xcb_prepare = 0xdeb000
+        action = {__sigaction_handler = {sa_handler = 0x42496a <handle_signal>, sa_sigaction = 0x42496a <handle_signal>}, sa_mask = {__val = {0 <repeats 16 times>}}, sa_flags = -1073741820, sa_restorer = 0x7d}
+        exec_always = 0x0
+        barconfig = 0x0
+A debugging session is active.
+
+	Inferior 1 [process 2387] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]

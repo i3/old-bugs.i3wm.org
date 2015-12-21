@@ -1,0 +1,114 @@
+#0  con_by_window_id (window=31460526) at ../i3-9999/src/con.c:443
+        con = 0x7b1ef0
+#1  0x0000000000430a27 in render_con (con=<optimized out>, 
+    render_fullscreen=<optimized out>) at ../i3-9999/src/render.c:295
+        next_transient = <optimized out>
+        floating_child = 0x7bf990
+        transient_con = 0x7b3f40
+        is_transient_for = false
+        content = <optimized out>
+        workspace = <optimized out>
+        fullscreen = 0x7bf990
+        child = 0x7bfb00
+        output = 0x6bc3f0
+        children = <optimized out>
+        __FUNCTION__ = "render_con"
+        rect = <optimized out>
+        x = <optimized out>
+        y = <optimized out>
+        i = 0
+        fullscreen = <optimized out>
+        sizes = 0x7fff13b02cb8
+        __PRETTY_FUNCTION__ = "render_con"
+#2  0x0000000000432926 in tree_render () at ../i3-9999/src/tree.c:518
+        __FUNCTION__ = "tree_render"
+#3  0x000000000040e845 in run_binding (bind=<optimized out>, con=con@entry=0x0)
+    at ../i3-9999/src/bindings.c:405
+        command = 0x7b31d0 "\220\213z"
+        result = 0x7b31b0
+#4  0x00000000004195c4 in handle_key_press (event=event@entry=0x7a87a0)
+    at ../i3-9999/src/key_press.c:33
+        key_release = <optimized out>
+        __FUNCTION__ = "handle_key_press"
+        bind = <optimized out>
+        result = <optimized out>
+#5  0x000000000042c3f8 in handle_event (type=<optimized out>, 
+    event=event@entry=0x7a87a0) at ../i3-9999/src/handlers.c:1238
+        __FUNCTION__ = "handle_event"
+#6  0x0000000000421a26 in xcb_check_cb (loop=<optimized out>, 
+    w=<optimized out>, revents=<optimized out>) at ../i3-9999/src/main.c:137
+        type = <optimized out>
+        event = 0x7a87a0
+        __FUNCTION__ = "xcb_check_cb"
+#7  0x0000003b7e404c85 in ev_invoke_pending () from /usr/lib64/libev.so.4
+No symbol table info available.
+#8  0x0000003b7e407d34 in ev_run () from /usr/lib64/libev.so.4
+No symbol table info available.
+#9  0x000000000040a025 in ev_loop (flags=0, loop=<optimized out>)
+    at /usr/include/ev.h:826
+No locals.
+#10 main (argc=<optimized out>, argv=<optimized out>)
+    at ../i3-9999/src/main.c:820
+        override_configpath = <optimized out>
+        autostart = false
+        layout_path = <optimized out>
+        delete_layout_path = <optimized out>
+        force_xinerama = false
+        fake_outputs = 0x0
+        disable_signalhandler = false
+        long_options = {{name = 0x43c959 "no-autostart", has_arg = 0, 
+            flag = 0x0, val = 97}, {name = 0x44107d "config", has_arg = 1, 
+            flag = 0x0, val = 99}, {name = 0x43c977 "version", has_arg = 0, 
+            flag = 0x0, val = 118}, {name = 0x43c966 "moreversion", 
+            has_arg = 0, flag = 0x0, val = 109}, {
+            name = 0x43c972 "more-version", has_arg = 0, flag = 0x0, 
+            val = 109}, {name = 0x43c97f "more_version", has_arg = 0, 
+            flag = 0x0, val = 109}, {name = 0x43c98c "help", has_arg = 0, 
+            flag = 0x0, val = 104}, {name = 0x43e408 "layout", has_arg = 1, 
+            flag = 0x0, val = 76}, {name = 0x43e3dd "restart", has_arg = 1, 
+            flag = 0x0, val = 0}, {name = 0x4412b2 "force-xinerama", 
+            has_arg = 0, flag = 0x0, val = 0}, {
+            name = 0x4412a2 "force_xinerama", has_arg = 0, flag = 0x0, 
+            val = 0}, {name = 0x43c543 "disable-signalhandler", has_arg = 0, 
+            flag = 0x0, val = 0}, {name = 0x43c586 "shmlog-size", has_arg = 1, 
+            flag = 0x0, val = 0}, {name = 0x43c592 "shmlog_size", has_arg = 1, 
+            flag = 0x0, val = 0}, {name = 0x43c559 "get-socketpath", 
+            has_arg = 0, flag = 0x0, val = 0}, {
+            name = 0x43c568 "get_socketpath", has_arg = 0, flag = 0x0, 
+            val = 0}, {name = 0x4412c2 "fake_outputs", has_arg = 1, 
+            flag = 0x0, val = 0}, {name = 0x4412d0 "fake-outputs", 
+            has_arg = 1, flag = 0x0, val = 0}, {
+            name = 0x43cc80 "force-old-config-parser-v4.4-only", has_arg = 0, 
+            flag = 0x0, val = 0}, {name = 0x0, has_arg = 0, flag = 0x0, 
+            val = 0}}
+        option_index = 8
+        opt = <optimized out>
+        __FUNCTION__ = "main"
+        gcookie = <optimized out>
+        pointercookie = {sequence = 6}
+        cookie = <optimized out>
+        greply = <optimized out>
+        _NET_SUPPORTED_cookie = <optimized out>
+        _NET_SUPPORTING_WM_CHECK_cookie = {sequence = 12}
+        extreply = <optimized out>
+        needs_tree_init = <optimized out>
+        pointerreply = <optimized out>
+        output = <optimized out>
+        ipc_socket = <optimized out>
+        xcb_watcher = <optimized out>
+        xcb_prepare = <optimized out>
+        action = {__sigaction_handler = {
+            sa_handler = 0x4219a0 <handle_signal>, 
+            sa_sigaction = 0x4219a0 <handle_signal>}, sa_mask = {__val = {
+              0 <repeats 16 times>}}, sa_flags = -1073741820, 
+          sa_restorer = 0x1}
+        exec_always = <optimized out>
+        barconfig = 0x0
+Quit
+Quit
+Quit
+A debugging session is active.
+
+	Inferior 1 [process 12158] will be detached.
+
+Quit anyway? (y or n) Detaching from program: /usr/bin/i3, process 12158

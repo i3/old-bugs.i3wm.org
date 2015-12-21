@@ -1,0 +1,244 @@
+From 95f82482d1b761005f554ee76981d0bae433eff2 Mon Sep 17 00:00:00 2001
+From: Max Alexander Busse <ablepharus@gmail.com>
+Date: Sun, 25 Dec 2011 03:30:10 +0100
+Subject: [PATCH 95/95] Switch and Move to next workspace on the same Output.
+ As requested in \#554
+
+---
+ include/workspace.h |   12 +++++
+ src/cmdparse.l      |    2 +
+ src/cmdparse.y      |   44 ++++++++++++++++++++
+ src/workspace.c     |  112 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 170 insertions(+), 0 deletions(-)
+
+diff --git a/include/workspace.h b/include/workspace.h
+index 995499f..21b733a 100644
+--- a/include/workspace.h
++++ b/include/workspace.h
+@@ -70,6 +70,18 @@ Con* workspace_next();
+ Con* workspace_prev();
+ 
+ /**
++ * Returns the next workspace on the same output
++ *
++ */
++Con* workspace_next_on_output();
++
++/**
++ * Returns the previous workspace on the same output
++ *
++ */
++Con* workspace_prev_on_output();
++
++/**
+  * Focuses the previously focused workspace.
+  *
+  */
+diff --git a/src/cmdparse.l b/src/cmdparse.l
+index 1431ec3..d382c8d 100644
+--- a/src/cmdparse.l
++++ b/src/cmdparse.l
+@@ -78,6 +78,8 @@ EOL (\r?\n)
+      * handling strings ('workspace' command) */
+ next                            { BEGIN(INITIAL); return TOK_NEXT; }
+ prev                            { BEGIN(INITIAL); return TOK_PREV; }
++next_on_output                  { BEGIN(INITIAL); return TOK_NEXT_ON_OUTPUT; }
++prev_on_output                  { BEGIN(INITIAL); return TOK_PREV_ON_OUTPUT; }
+ back_and_forth                  { BEGIN(INITIAL); return TOK_BACK_AND_FORTH; }
+ 
+ <WANT_STRING>\"[^\"]+\"         {
+diff --git a/src/cmdparse.y b/src/cmdparse.y
+index 7425c31..84c9a7c 100644
+--- a/src/cmdparse.y
++++ b/src/cmdparse.y
+@@ -155,6 +155,8 @@ bool definitelyGreaterThan(float a, float b, float epsilon) {
+ %token              TOK_OPEN            "open"
+ %token              TOK_NEXT            "next"
+ %token              TOK_PREV            "prev"
++%token              TOK_NEXT_ON_OUTPUT  "next_on_output"
++%token              TOK_PREV_ON_OUTPUT  "prev_on_output"
+ %token              TOK_SCRATCHPAD      "scratchpad"
+ %token              TOK_SHOW            "show"
+ %token              TOK_SPLIT           "split"
+@@ -632,6 +634,16 @@ workspace:
+         workspace_show(workspace_prev());
+         tree_render();
+     }
++    | TOK_WORKSPACE TOK_NEXT_ON_OUTPUT
++    {
++        workspace_show(workspace_next_on_output());
++        tree_render();
++    }
++    | TOK_WORKSPACE TOK_PREV_ON_OUTPUT
++    {
++        workspace_show(workspace_prev_on_output());
++        tree_render();
++    }
+     | TOK_WORKSPACE TOK_BACK_AND_FORTH
+     {
+         workspace_back_and_forth();
+@@ -864,6 +876,38 @@ move:
+ 
+         tree_render();
+     }
++    | TOK_MOVE TOK_WORKSPACE TOK_NEXT_ON_OUTPUT
++    {
++        owindow *current;
++
++        /* get the workspace */
++        Con *ws = workspace_next_on_output();
++
++        HANDLE_EMPTY_MATCH;
++
++        TAILQ_FOREACH(current, &owindows, owindows) {
++            printf("matching: %p / %s\n", current->con, current->con->name);
++            con_move_to_workspace(current->con, ws, true, false);
++        }
++
++        tree_render();
++    }
++    | TOK_MOVE TOK_WORKSPACE TOK_PREV_ON_OUTPUT
++    {
++        owindow *current;
++
++        /* get the workspace */
++        Con *ws = workspace_prev_on_output();
++
++        HANDLE_EMPTY_MATCH;
++
++        TAILQ_FOREACH(current, &owindows, owindows) {
++            printf("matching: %p / %s\n", current->con, current->con->name);
++            con_move_to_workspace(current->con, ws, true, false);
++        }
++
++        tree_render();
++    }
+     | TOK_MOVE TOK_OUTPUT STR
+     {
+         owindow *current;
+diff --git a/src/workspace.c b/src/workspace.c
+index b8fb73a..55d4af6 100644
+--- a/src/workspace.c
++++ b/src/workspace.c
+@@ -409,6 +409,118 @@ workspace_prev_end:
+     return prev;
+ }
+ 
++
++/*
++ * Focuses the next workspace on the same output.
++ *
++ */
++Con* workspace_next_on_output() {
++    Con *current = con_get_workspace(focused);
++    Con *next = NULL;
++    Con *output  = con_get_output(focused);
++
++    if (current->num == -1) {
++        /* If currently a named workspace, find next named workspace. */
++        next = TAILQ_NEXT(current, nodes);
++    } else {
++        /* If currently a numbered workspace, find next numbered workspace. */
++        NODES_FOREACH(output_get_content(output)) {
++            if (child->type != CT_WORKSPACE)
++                continue;
++            if (child->num == -1)
++                break;
++            /* Need to check child against current and next because we are
++             * traversing multiple lists and thus are not guaranteed the
++             * relative order between the list of workspaces. */
++            if (current->num < child->num && (!next || child->num < next->num))
++                next = child;
++            }
++        }
++
++    /* Find next named workspace. */
++    if (!next) {
++        bool found_current = false;
++        NODES_FOREACH(output_get_content(output)) {
++            if (child->type != CT_WORKSPACE)
++                continue;
++            if (child == current) {
++                found_current = 1;
++            } else if (child->num == -1 && (current->num != -1 || found_current)) {
++                next = child;
++                goto workspace_next_on_output_end;
++            }
++        }
++    }
++
++    /* Find first workspace. */
++    if (!next) {
++        NODES_FOREACH(output_get_content(output)) {
++            if (child->type != CT_WORKSPACE)
++                continue;
++            if (!next || (child->num != -1 && child->num < next->num))
++                next = child;
++        }
++    }
++workspace_next_on_output_end:
++    return next;
++}
++
++/*
++ * Focuses the previous workspace on same output.
++ *
++ */
++Con* workspace_prev_on_output() {
++    Con *current = con_get_workspace(focused);
++    Con *prev = NULL;
++    Con *output  = con_get_output(focused);
++
++    if (current->num == -1) {
++        /* If named workspace, find previous named workspace. */
++        prev = TAILQ_PREV(current, nodes_head, nodes);
++        if (prev && prev->num != -1)
++            prev = NULL;
++    } else {
++        /* If numbered workspace, find previous numbered workspace. */
++        NODES_FOREACH_REVERSE(output_get_content(output)) {
++            if (child->type != CT_WORKSPACE || child->num == -1)
++                continue;
++             /* Need to check child against current and previous because we
++             * are traversing multiple lists and thus are not guaranteed
++             * the relative order between the list of workspaces. */
++            if (current->num > child->num && (!prev || child->num > prev->num))
++                prev = child;
++        }
++    }
++
++    /* Find previous named workspace. */
++    if (!prev) {
++        bool found_current = false;
++        NODES_FOREACH_REVERSE(output_get_content(output)) {
++            if (child->type != CT_WORKSPACE)
++                continue;
++            if (child == current) {
++                found_current = true;
++            } else if (child->num == -1 && (current->num != -1 || found_current)) {
++                prev = child;
++                goto workspace_prev_on_output_end;
++            }
++        }
++    }
++
++    /* Find last workspace. */
++    if (!prev) {
++        NODES_FOREACH_REVERSE(output_get_content(output)) {
++            if (child->type != CT_WORKSPACE)
++                continue;
++            if (!prev || child->num > prev->num)
++                prev = child;
++        }
++    }
++
++workspace_prev_on_output_end:
++    return prev;
++}
++
+ /*
+  * Focuses the previously focused workspace.
+  *
+-- 
+1.7.8
+

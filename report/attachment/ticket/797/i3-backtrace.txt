@@ -1,0 +1,131 @@
+[Thread debugging using libthread_db enabled]
+0x00007fdf17a82fe8 in poll () from /lib64/libc.so.6
+#0  0x00007fdf17a82fe8 in poll () from /lib64/libc.so.6
+No symbol table info available.
+#1  0x00007fdf196fb85a in ?? () from /usr/lib64/libxcb.so.1
+No symbol table info available.
+#2  0x00007fdf196fce8f in xcb_wait_for_event () from /usr/lib64/libxcb.so.1
+No symbol table info available.
+#3  0x0000000000436299 in handle_signal (sig=6, info=0x7fffdff5a8f0, data=0x7fffdff5a7c0) at ../i3-dev/src/sighandler.c:299
+        __FUNCTION__ = "handle_signal"
+        action = {__sigaction_handler = {sa_handler = 0, sa_sigaction = 0}, sa_mask = {__val = {33828925, 18446741531088912499, 4573008, 0, 4572983, 0, 47244640256, 6749952, 3757419772, 140736950807426, 4619553, 12884901888, 140736950807432, 120, 4569923, 0}}, sa_flags = 4569872, sa_restorer = 0}
+        event = 0x20436f0
+#4  <signal handler called>
+No symbol table info available.
+#5  0x00007fdf179d78a5 in raise () from /lib64/libc.so.6
+No symbol table info available.
+#6  0x00007fdf179d9085 in abort () from /lib64/libc.so.6
+No symbol table info available.
+#7  0x00007fdf179d0a1e in __assert_fail_base () from /lib64/libc.so.6
+No symbol table info available.
+#8  0x00007fdf179d0ae0 in __assert_fail () from /lib64/libc.so.6
+No symbol table info available.
+#9  0x000000000041ee2c in con_fullscreen_permits_focusing (con=0x20419d0) at ../i3-dev/src/con.c:1339
+        fs = 0x0
+        __PRETTY_FUNCTION__ = "con_fullscreen_permits_focusing"
+#10 0x0000000000438303 in _tree_next (con=0x2040b30, way=112 'p', orientation=HORIZ, wrap=true) at ../i3-dev/src/tree.c:569
+        __FUNCTION__ = "_tree_next"
+        parent = 0x2040210
+        current = 0x2040b30
+        next = 0x20419d0
+#11 0x000000000043835f in tree_next (way=112 'p', orientation=HORIZ) at ../i3-dev/src/tree.c:585
+No locals.
+#12 0x000000000041881b in cmd_focus_direction (current_match=0x66ff00, cmd_output=0x66ff70, direction=0x2040900 "left") at ../i3-dev/src/commands.c:1201
+        __FUNCTION__ = "cmd_focus_direction"
+#13 0x000000000041b1d6 in GENERATED_call (call_identifier=53, result=0x66ff70) at include/GENERATED_call.h:429
+No locals.
+#14 0x000000000041b5f3 in next_state (token=0x66e8a0) at ../i3-dev/src/commands_parser.c:192
+No locals.
+#15 0x000000000041b7f5 in parse_command (input=0x20415b0 "focus left") at ../i3-dev/src/commands_parser.c:251
+        ptr = 0x66ef70
+        __FUNCTION__ = "parse_command"
+        walk = 0x20415ba ""
+        len = 10
+        c = 0
+        token = 0x66e8a0
+        token_handled = false
+#16 0x0000000000428bda in handle_key_press (event=0x20372f0) at ../i3-dev/src/key_press.c:278
+        key_release = false
+        __FUNCTION__ = "handle_key_press"
+        state_filtered = 64
+        bind = 0x202aea0
+        command_copy = 0x20415b0 "focus left"
+        command_output = 0x200ac38
+        reply = 0x200ac60 ""
+        length = 0
+        parse_conf = {allowComments = 3757420672, checkUTF8 = 32767}
+        handle = 0x7fdf18610e00
+        state = yajl_status_ok
+#17 0x00000000004255f5 in handle_event (type=2, event=0x20372f0) at ../i3-dev/src/handlers.c:1049
+No locals.
+#18 0x000000000042ab1c in xcb_check_cb (loop=0x7fdf18610b80, w=0x2013470, revents=32768) at ../i3-dev/src/main.c:136
+        type = 2
+        event = 0x20372f0
+        __FUNCTION__ = "xcb_check_cb"
+#19 0x00007fdf18407041 in ev_invoke_pending (loop=0x7fdf18610b80) at ev.c:2143
+        p = <value optimized out>
+        pri = <value optimized out>
+#20 0x00007fdf1840c02a in ev_run (loop=0x7fdf18610b80, flags=0) at ev.c:2519
+        __PRETTY_FUNCTION__ = "ev_run"
+#21 0x000000000042aa04 in ev_loop (loop=0x7fdf18610b80, flags=0) at /usr/include/libev/ev.h:810
+No locals.
+#22 0x000000000042d8d4 in main (argc=1, argv=0x7fffdff5c838) at ../i3-dev/src/main.c:844
+        i3_version = 0x462510 "4.2-305-g22922a9 (2012-09-11, branch \"next\")"
+        override_configpath = 0x0
+        autostart = true
+        layout_path = 0x0
+        delete_layout_path = false
+        force_xinerama = false
+        fake_outputs = 0x0
+        disable_signalhandler = false
+        long_options = {{name = 0x463b81 "no-autostart", has_arg = 0, flag = 0x0, val = 97}, {name = 0x463b8e "config", has_arg = 1, flag = 0x0, val = 99}, {name = 0x463b95 "version", has_arg = 0, flag = 0x0, val = 118}, {name = 0x463b9d "moreversion", has_arg = 0, flag = 0x0, val = 109}, {name = 0x463ba9 "more-version", has_arg = 0, flag = 0x0, val = 109}, {name = 0x463bb6 "more_version", has_arg = 0, flag = 0x0, val = 109}, {name = 0x463bc3 "help", has_arg = 0, flag = 0x0, val = 104}, {name = 0x463bc8 "layout", has_arg = 1, flag = 0x0, val = 76}, {name = 0x46283b "restart", has_arg = 1, flag = 0x0, val = 0}, {name = 0x462682 "force-xinerama", has_arg = 0, flag = 0x0, val = 0}, {name = 0x462691 "force_xinerama", has_arg = 0, flag = 0x0, val = 0}, {name = 0x4627b7 "disable-signalhandler", has_arg = 0, flag = 0x0, val = 0}, {name = 0x4627fa "shmlog-size", has_arg = 1, flag = 0x0, val = 0}, {name = 0x462806 "shmlog_size", has_arg = 1, flag = 0x0, val = 0}, {name = 0x4627cd "get-socketpath", has_arg = 0, flag = 0x0, val = 0}, {name = 0x4627dc "get_socketpath", has_arg = 0, flag = 0x0, val = 0}, {name = 0x462850 "fake_outputs", has_arg = 1, flag = 0x0, val = 0}, {name = 0x462843 "fake-outputs", has_arg = 1, flag = 0x0, val = 0}, {name = 0x0, has_arg = 0, flag = 0x0, val = 0}}
+        option_index = 0
+        opt = -1
+        __FUNCTION__ = "main"
+        gcookie = {sequence = 1}
+        pointercookie = {sequence = 2}
+        mask = 2048
+        values = {5374032}
+        cookie = {sequence = 7}
+        greply = 0x2029990
+        _NET_SUPPORTED_cookie = {sequence = 9}
+        _NET_SUPPORTING_WM_CHECK_cookie = {sequence = 10}
+        _NET_WM_NAME_cookie = {sequence = 11}
+        _NET_WM_STATE_FULLSCREEN_cookie = {sequence = 12}
+        _NET_WM_STATE_cookie = {sequence = 13}
+        _NET_WM_WINDOW_TYPE_cookie = {sequence = 14}
+        _NET_WM_WINDOW_TYPE_DOCK_cookie = {sequence = 15}
+        _NET_WM_WINDOW_TYPE_DIALOG_cookie = {sequence = 16}
+        _NET_WM_WINDOW_TYPE_UTILITY_cookie = {sequence = 17}
+        _NET_WM_WINDOW_TYPE_TOOLBAR_cookie = {sequence = 18}
+        _NET_WM_WINDOW_TYPE_SPLASH_cookie = {sequence = 19}
+        _NET_WM_DESKTOP_cookie = {sequence = 20}
+        _NET_WM_STRUT_PARTIAL_cookie = {sequence = 21}
+        _NET_CLIENT_LIST_STACKING_cookie = {sequence = 22}
+        _NET_CURRENT_DESKTOP_cookie = {sequence = 23}
+        _NET_ACTIVE_WINDOW_cookie = {sequence = 24}
+        _NET_WORKAREA_cookie = {sequence = 25}
+        _NET_STARTUP_ID_cookie = {sequence = 26}
+        WM_PROTOCOLS_cookie = {sequence = 27}
+        WM_DELETE_WINDOW_cookie = {sequence = 28}
+        UTF8_STRING_cookie = {sequence = 29}
+        WM_STATE_cookie = {sequence = 30}
+        WM_CLIENT_LEADER_cookie = {sequence = 31}
+        WM_TAKE_FOCUS_cookie = {sequence = 32}
+        WM_WINDOW_ROLE_cookie = {sequence = 33}
+        I3_SOCKET_PATH_cookie = {sequence = 34}
+        I3_CONFIG_PATH_cookie = {sequence = 35}
+        I3_SYNC_cookie = {sequence = 36}
+        I3_SHMLOG_PATH_cookie = {sequence = 37}
+        I3_PID_cookie = {sequence = 38}
+        needs_tree_init = true
+        pointerreply = 0x200a680
+        output = 0x20361d0
+        ipc_socket = 9
+        xcb_watcher = 0x20360f0
+        xkb = 0x2036070
+        xcb_check = 0x2013470
+        xcb_prepare = 0x2019720
+        action = {__sigaction_handler = {sa_handler = 0x42ae00 <handle_signal>, sa_sigaction = 0x42ae00 <handle_signal>}, sa_mask = {__val = {0 <repeats 16 times>}}, sa_flags = -1073741820, sa_restorer = 0x7fdf00000001}
+        exec_always = 0x0
+        barconfig = 0x0

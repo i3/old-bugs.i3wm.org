@@ -1,0 +1,618 @@
+# Jeremy Reeder's i3 configuration, for i3 v4.6
+# See http://i3wm.org/docs/userguide.html for a configuration reference.
+
+# MY CONFIGURATION PRINCIPLES
+# ---------------------------
+# Ⅰ: When I open a window, that window should be visible and focused.
+# Ⅱ: It should be obvious which window is focused.
+# Ⅲ: Windows should be automatically organized where I can find them.
+# Ⅳ: Windows should be sized and positioned automatically.
+# Ⅴ: Windows should not be obstructed except by modal children.
+# Ⅵ: Windows should be organized automatically.
+# Ⅶ: Screen space should not be wasted.
+# Ⅷ: Keyboard shortcuts should work well with any keyboard layout.
+# Ⅸ: The configuration should consist of a few general rules, not a
+#    bajillion specific rules.
+
+
+
+# KEYBOARD SHORTCUTS
+# ------------------
+# This key-binding layout conforms to some conventions established by the VI*
+# editor, especially those associated with directional navigation which are
+# also used by window managers DWM and AWESOME. But unlike several key-bindings
+# of those applications, more importance is placed on organization of the
+# physical layout than on mnemonics. This is influenced by my desire to keep
+# the bindings compatible with a variety of foreign keyboard layouts.
+#
+#   * Notably, this involves a deviation from i3's default directional
+#     navigation bindings.
+#
+# For reference, the symbols of a standard US QWERTY keyboard are used in
+# documentation of the shortcuts. The primary keys used in this layout are as
+# follows. Most of them are in easy reach.
+#
+#
+# Esc
+#     1   2   3   4           7   8   9   0
+# Tab                      Y   U   I   O   P
+#          S   D   F        H   J   K   L   ;      Enter
+# Shift                                           Shift          ↑
+# Ctrl Super            Space                  Super     Ctrl   ←↓→
+
+
+# The "Super" key (AKA Windows key) is used for nearly all keyboard shortcuts.
+# "Ctrl" and "Shift" are sometimes used in addition to it, but never on their
+# own. Since the Super key is not commonly used by applications, this approach
+# virtually eliminates key-binding conflicts.
+set $super Mod4
+set $alt Mod1
+
+# The Super key can also be used to move a floating window with the
+# drag-and-drop method.
+floating_modifier $super
+
+# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+# THE KEY-BINDINGS ARE AS FOLLOWS, BEGINNING WITH THE MOST IMPORTANT ONES
+# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+# A terminal can be launched.
+bindsym $super+Return exec --no-startup-id "terminal-for-current-nemo || i3-sensible-terminal"
+
+# A file manager can be opened.
+bindsym $super+Shift+Return exec --no-startup-id "nemo-for-current-terminal || nemo --no-desktop"
+
+# Super+Semicolon opens a program menu based on available executables.
+# I use a customized version of "dmenu_run", which first tries to run the
+# given command and then falls back to an Internet search if the command is
+# invalid. By setting XMODIFIERS to an empty string, we ensure that any
+# executed command will work with the current keyboard layout.
+bindcode $super+47 exec --no-startup-id "XMODIFIERS='' dmenu_run -i -p Run"
+
+# Super+Shift+Semicolon opens another program menu, based on installed
+# programs with entries in files which have a ".desktop" extension.
+bindcode $super+Shift+47 exec --no-startup-id "XMODIFIERS='' i3-dmenu-desktop --dmenu='dmenu -i -p Launch'"
+
+# A system menu is provided with a custom dmenu-based script, allowing such
+# actions as logout, poweroff, and hibernate.
+bindsym $super+Escape exec --no-startup-id "dmenu-systemctl"
+
+# Super+[UIO] sets the window layout of the current container:
+#   U = tabbed
+#   I = horizontally split
+#   O = vertically split
+bindcode $super+30 layout tabbed
+bindcode $super+31 layout splith
+bindcode $super+32 layout splitv
+
+# Super+Shift+[UIO] splits the current window in a given layout. That is, it
+# nests the window in a container and sets the container's layout as defined
+# above.
+bindcode $super+Shift+30 split v; layout tabbed
+bindcode $super+Shift+31 split h
+bindcode $super+Shift+32 split v
+
+# Super+D deletes the current window, closing the associated application.
+bindcode $super+40 kill
+
+# Super+Shift+D destroys whatever window you click on, killing the associated
+# application. This is only necessary when an application has hung.
+bindcode --release $super+Shift+40 exec --no-startup-id "xkill"
+
+# Super+[HJKL←↓↑→] navigates the windows in "vi" directions.
+bindcode $super+43 focus left
+bindcode $super+44 focus down
+bindcode $super+45 focus up
+bindcode $super+46 focus right
+
+# Super+[←↓↑→] resizes the window.
+# Super+Shift+[←↓↑→] resizes the window in smaller increments.
+bindsym $super+Left resize shrink width 160 px or 16 ppt
+bindsym $super+Down resize shrink height 160 px or 16 ppt
+bindsym $super+Up resize grow height 160 px or 16 ppt
+bindsym $super+Right resize grow width 160 px or 16 ppt
+bindsym $super+Shift+Left resize shrink width 40 px or 4 ppt
+bindsym $super+Shift+Down resize shrink height 40 px or 4 ppt
+bindsym $super+Shift+Up resize grow height 40 px or 4 ppt
+bindsym $super+Shift+Right resize grow width 40 px or 4 ppt
+
+# Super+Shift+[HJKL] moves the current window within its workspace.
+bindcode $super+Shift+43 move left
+bindcode $super+Shift+44 move down
+bindcode $super+Shift+45 move up
+bindcode $super+Shift+46 move right
+
+# Super+Ctrl+[HJKL] navigates the monitors.
+bindcode $super+Ctrl+43 focus output left
+bindcode $super+Ctrl+44 focus output down
+bindcode $super+Ctrl+45 focus output up
+bindcode $super+Ctrl+46 focus output right
+
+# Super+Ctrl+Shift+[HJKL] moves the current workspace to another monitor.
+bindcode $super+Ctrl+Shift+43 move workspace to output left
+bindcode $super+Ctrl+Shift+44 move workspace to output down
+bindcode $super+Ctrl+Shift+45 move workspace to output up
+bindcode $super+Ctrl+Shift+46 move workspace to output right
+
+# Super+Alt+[HL] navigates the workspaces of the current monitor.
+bindcode $super+$alt+43 workspace prev_on_output
+bindcode $super+$alt+46 workspace next_on_output
+
+# Super+Alt+[HL] moves the current container to another workspace on the
+# current monitor.
+bindcode $super+$alt+Shift+43 move container to workspace prev_on_output
+bindcode $super+$alt+Shift+46 move container to workspace next_on_output
+
+# Super+[0-9|F1-F12|Tab] navigates to the specified workspace.
+#   0-9 = auto-managed workspaces 1-9
+#   F1-F12 = manually managed workspaces 1Ф-12Ф
+#   Comma|Period = workspace to the left or right
+#   Tab = previous workspace
+bindsym $super+1 workspace $1
+bindsym $super+2 workspace $2
+bindsym $super+3 workspace $3
+bindsym $super+4 workspace $4
+bindsym $super+5 workspace $5
+bindsym $super+6 workspace $6
+bindsym $super+7 workspace $7
+bindsym $super+8 workspace $8
+bindsym $super+9 workspace $9
+bindsym $super+0 workspace $null_out
+bindsym $super+F1 workspace $f1
+bindsym $super+F2 workspace $f2
+bindsym $super+F3 workspace $f3
+bindsym $super+F4 workspace $f4
+bindsym $super+F5 workspace $f5
+bindsym $super+F6 workspace $f6
+bindsym $super+F7 workspace $f7
+bindsym $super+F8 workspace $f8
+bindsym $super+F9 workspace $f9
+bindsym $super+F10 workspace $f10
+bindsym $super+F11 workspace $f11
+bindsym $super+F12 workspace $f12
+bindsym $super+Tab workspace back_and_forth
+
+# Super+[0-9|F1-F12|Tab] moves the current window to the specified workspace.
+bindsym $super+Shift+1 move container to workspace $1
+bindsym $super+Shift+2 move container to workspace $2
+bindsym $super+Shift+3 move container to workspace $3
+bindsym $super+Shift+4 move container to workspace $4
+bindsym $super+Shift+5 move container to workspace $5
+bindsym $super+Shift+6 move container to workspace $6
+bindsym $super+Shift+7 move container to workspace $7
+bindsym $super+Shift+8 move container to workspace $8
+bindsym $super+Shift+9 move container to workspace $9
+bindsym $super+Shift+0 move container to workspace $null_in
+bindsym $super+Shift+F1 move container to workspace $f1
+bindsym $super+Shift+F2 move container to workspace $f2
+bindsym $super+Shift+F3 move container to workspace $f3
+bindsym $super+Shift+F4 move container to workspace $f4
+bindsym $super+Shift+F5 move container to workspace $f5
+bindsym $super+Shift+F6 move container to workspace $f6
+bindsym $super+Shift+F7 move container to workspace $f7
+bindsym $super+Shift+F8 move container to workspace $f8
+bindsym $super+Shift+F9 move container to workspace $f9
+bindsym $super+Shift+F10 move container to workspace $f10
+bindsym $super+Shift+F11 move container to workspace $f11
+bindsym $super+Shift+F12 move container to workspace $f12
+bindsym $super+Shift+Tab move container to workspace back_and_forth
+
+# Super+y yanks the current window from its workspace.
+bindcode $super+29 move scratchpad
+# Super+p pastes the first window in the scratchpad into the current workspace
+# in floating mode.
+bindcode $super+33 scratchpad show
+
+# Super+space toggles focus between the tiled layer and the floating layer.
+bindsym $super+space focus mode_toggle
+
+# Super+Shift+space toggles the current window between tiled mode and floating
+# mode.
+bindsym $super+Shift+space floating toggle
+
+# Super+F toggles full-screen mode for the current window.
+bindcode $super+41 fullscreen; mode $fullscreen
+
+# Super+Shift+F toggles multi-screen mode for the current window.
+bindcode $super+Shift+41 fullscreen global; mode $fullscreen
+
+# Super exits full-screen mode.
+set $fullscreen "⇱ ⇲"
+mode $fullscreen {
+	bindsym Print exec --no-startup-id $screenshot
+	bindsym Super_L fullscreen; mode "default"
+	bindsym Super_R fullscreen; mode "default"
+	bindsym Escape fullscreen; mode "default"
+	# If the window toggles its own full-screen mode, then i3 may remain in the
+	# full-screen key-binding mode when no longer in the corresponding display
+	# mode. To recover, reset the key-binding mode without toggling display:
+	bindsym Scroll_Lock mode "default"
+}
+
+# Super+[PgUp|PgDn] navigates the window hierarchy.
+bindsym $super+Prior focus parent
+bindsym $super+Next focus child
+
+# Calc launches a calculator.
+bindsym XF86Calculator exec --no-startup-id $calculator
+bindcode $super+21 exec --no-startup-id $calculator
+set $calculator "speedcrunch || gnome-calculator"
+
+# DisplayMode or Super+BackSpace detects the monitors with a custom script.
+bindsym XF86Display exec --no-startup-id detect-displays
+bindsym $super+BackSpace exec --no-startup-id detect-displays
+
+# Super+Shift+BackSpace detects the monitors in low-resolution mirror mode.
+bindsym $super+Shift+BackSpace exec --no-startup-id detect-mirrored-displays
+
+# PrintScreen takes a screenshot.
+bindsym Print exec --no-startup-id $screenshot
+set $screenshot "gnome-screenshot --file=Pictures/screenshot.png"
+#set $screenshot "import $HOME/Pictures/screenshot.png"
+#set $screenshot mkscreenshot
+
+# Super+Ctrl+space toggles the keyboard layout with a custom script.
+bindsym $super+Ctrl+space exec --no-startup-id toggle_keyboard_layout
+
+# The context-menu key just gets in the way and does not seem to be required by
+# any application. (So much, in fact, that many laptop keyboards omit this key.)
+# It's disabled in case I accidentally hit it.
+bindsym Menu workspace back_and_forth; workspace back_and_forth
+
+
+
+# STUFF TO EXECUTE UPON STARTUP
+# -----------------------------
+
+# In order to avoid getting stuck in a state where the mouse pointer indicates
+# that we're waiting for something, the '--no-startup-id' option is used
+# whenever no window is expected to appear.
+
+# SETUP
+# - Masquerade as a different window manager, in order to unbreak Swing apps.
+exec --no-startup-id "wmname LG3D"
+# - Set the keyboard layout.
+exec --no-startup-id "setxkbmap re || setxkbmap us"
+# - Run a custom script to detect displays with 'xrandr'.
+exec --no-startup-id "detect-displays"
+# - Set the wallpaper.
+#exec_always --no-startup-id "xsetroot -solid black"
+# - Start a screensaver daemon.
+exec --no-startup-id "xscreensaver -nosplash"
+# - Auto-hide the mouse pointer when not in use.
+exec --no-startup-id "unclutter -grab -keystroke"
+# - Launch a power manager to handle auto-hibernation when the battery gets low.
+exec --no-startup-id "xfce4-power-manager"
+# - Launch Firefox in the background for quick access on demand.
+exec --no-startup-id "firefox about:mozilla"
+
+# STATUS-BAR STUFF
+# - Auto-connect to WiFi.
+exec --no-startup-id "nm-applet"
+# - Auto-synchronize with free cloud-storage at <http://dropbox.com>.
+exec --no-startup-id "dropbox"
+# - Connect to a chat service.
+exec --no-startup-id "empathy --start-hidden"
+# - Provide a volume-control app.
+exec --no-startup-id "pnmixer"
+# - Battery gauge; needs to restart with i3 in order to stay on top.
+set $battery_gauge "pkill xbattbar; sleep 0.4s; xbattbar -c -t 2 -p 7 -I green -O black -i cyan -o black bottom"
+exec_always --no-startup-id $battery_gauge
+
+
+# OUTPUTS & WORKSPACES
+# --------------------
+
+# The workspace names are written in Cyrillic. If Latin characters are
+# preferred, the quoted text can be changed without any functional effect.
+
+# Before any activities are started, each output displays its own port name.
+# I'm sure this is not a complete list of all possible names, but these are
+# all of the names that I've encountered.
+workspace "цртⅠ" output CRT1
+workspace "цртⅡ" output CRT2
+workspace "дфпⅠ" output DFP1
+workspace "дфпⅡ" output DFP2
+workspace "ДисплаыПорт-∅" output DisplayPort-0
+workspace "ДисплаыПорт-Ⅰ" output DisplayPort-1
+workspace "ДисплаыПорт-Ⅱ" output DisplayPort-2
+workspace "ДПⅠ" output DP1
+workspace "ХДМИⅠ" output HDMI1
+workspace "ЛВДС" output LVDS
+workspace "ЛВДСⅠ" output LVDS1
+workspace "ВГА-∅" output VGA-0
+workspace "ВГАⅠ" output VGA1
+workspace "ВИРТУАЛⅠ" output VIRTUAL1
+
+# Windows are organized into workspaces based on the activities to which they
+# apply. Each workspace has a number and a name, the name being a verb that
+# describes the activity. The numeric workspace variables below must be set
+# exactly the same as their corresponding named variables, but the text can be
+# anything meaningful to the user. I use Cyrillic Esperanto verbs. As long as
+# each textual description starts with a number, the workspaces will always be
+# displayed in a consistent, numerically sorted order. Otherwise i3 will not
+# sort them.
+#
+# The observational activities come first.
+set $peruse "1:Фолиуми"
+set $1 "1:Фолиуми"
+set $watch "2:Спекти"
+set $2 "2:Спекти"
+# Then the administrative activities.
+set $talk "3:Комуники"
+set $3 "3:Комуники"
+set $plan "4:Плани"
+set $4 "4:Плани"
+# Then a couple of workspaces that are not used by default, since their keys
+# are harder to reach.
+set $5 "5:Уми"
+set $6 "6:Алиуми"
+# Then the creative activities.
+set $write "7:Скриви"
+set $7 "7:Скриви"
+set $code "8:Програми"
+set $8 "8:Програми"
+set $command "9:Команди"
+set $9 "9:Команди"
+# Then a set of workspaces corresponding to the function keys F1-F12.
+set $f1 "1Ф"
+set $f2 "2Ф"
+set $f3 "3Ф"
+set $f4 "4Ф"
+set $f5 "5Ф"
+set $f6 "6Ф"
+set $f7 "7Ф"
+set $f8 "8Ф"
+set $f9 "9Ф"
+set $f10 "10Ф"
+set $f11 "11Ф"
+set $f12 "12Ф"
+# And finally, a write-only workspace analogous to /dev/null.
+set $null_in " "
+set $null_out "∅"
+
+# Set your primary display here. To see what it is, run 'xrandr -q'.
+set $primary_display "VGA-0"
+
+# All of the activity-based workspaces are assigned to the primary display by
+# default. This reduces the risk of accidentally exposing a private window to a
+# public audience during a presentation.
+
+workspace $talk output $primary_display
+workspace $plan output $primary_display
+
+workspace $peruse output $primary_display
+workspace $watch output $primary_display
+
+workspace $write output $primary_display
+workspace $command output $primary_display
+workspace $code output $primary_display
+
+workspace $null_in output $primary_display
+workspace $null_out output $primary_display
+
+
+# DISPLAY CONFIGURATION
+# ---------------------
+
+# A red border and titlebar make it very clear which window is in focus.
+# class                  border   backgr  text   indic
+client.focused          #ee0000 #cc0000 #ffffff #cc0000
+client.focused_inactive #545454 #5f676a #ffffff #5f676a
+client.unfocused        #545454 #222222 #888888 #222222
+client.urgent           #006600 #005500 #dddddd #005500
+
+# An status bar is at the bottom of the screen.
+bar {
+#                         fore    back
+	colors {
+		focused_workspace #ffffff #770000
+		urgent_workspace  #dddddd #005500
+	}
+	workspace_buttons yes
+	tray_output primary
+
+	# If an auto-hiding sidebar is desired, change the mode to "hide".
+	mode dock
+
+	# A status text displays within the bar.
+	#status_command i3status
+	#status_command "dzen2 -dock"
+
+	# A pretty Unicode font.
+	font pango:DejaVu Sans 10
+}
+
+
+# Window titles use a pretty Unicode font.
+font pango:DejaVu Sans Mono 10
+
+# Each new window gets a border, but no titlebar is shown except for floating
+# or tabbed windows. This maximizes usage of available screen real estate when
+# there are no other windows to distinguish from the current one.
+new_window pixel 3
+new_float normal 3
+
+# Borders are always visible in any mode other than fullscreen, even when
+# adjacent to screen edges. In tabbed mode this may be considered a waste of
+# space, but in split mode it's very helpful in identifying the focused window.
+hide_edge_borders none
+
+# Go automatically to a new window and make it a little bigger than preëxisting
+# windows.
+#for_window [instance="^"] focus, exec --no-startup-id "sleep 0.25s; xdotool key super+Right"
+for_window [instance="^"] focus, exec --no-startup-id "i3-msg resize grow width 160 px or 16 ppt"
+
+# Experimental — Center a window:
+#exec --no-startup-id "xdotool mousemove --window $(xdotool getactivewindow) --polar 0 0"
+
+# Browsing and configuration dialogs are often larger and easier to navigate
+# as tiles.
+for_window [title="(?i)^(Browse|Open)( (?!Web )|$)"] floating disable
+for_window [title="(?i)Select (document|template)"] floating disable
+for_window [title="(?i)Address Book"] floating disable
+for_window [title="(?i)Upload"] floating disable
+for_window [title="(?i)Attach File"] floating disable
+for_window [title="(?i)(^| )Save (as|to|file|image)( |…|\.{3}|$)"] floating disable
+for_window [title="(Properties|Settings)$"] floating disable
+
+
+
+# INTERFACE CONFIGURATION
+# -----------------------
+
+# I let the window manager determine the default split orientation based on
+# the orientation of the monitors.
+default_orientation auto
+
+# Default layout:
+# The "tabbed" layout makes good use of screen real estate for a single window.
+# The "default" layout can be used to share the screen among multiple windows
+# by default.
+workspace_layout default
+
+# Some constraints are placed on the size of floating windows.
+# Tiny windows are hard to select.
+floating_minimum_size 300 x 200
+# Huge windows are unlikely to fit on the screen.
+floating_maximum_size 1280x1024
+
+# Focus is determined by mouse-pointer position. No click is required.
+#focus_follows_mouse yes
+# Focus is determined by mouse clicks, not by the position of the pointer.
+focus_follows_mouse no
+
+# In full-screen mode, don't show popups unless they belong to the full-screen
+# application.
+popup_during_fullscreen smart
+
+# When navigating a container's windows, we wrap around only when there's no
+# adjacent fixture to navigate into.
+force_focus_wrapping no
+
+# Keep a window in the urgent state long enough to be noticed.
+force_display_urgency_hint 1500 ms
+
+
+
+# DEFAULT WORKSPACE ASSIGNMENTS
+# -----------------------------
+
+# Each window is assigned to a workspace with 'assign', or moved to a new
+# workspace after the initial assignment with 'for_window', based on the
+# following rules. Each string of characters is interpreted as a regular
+# expression.
+
+# ADMINISTRATIVE WINDOWS
+
+# $talk
+# - e-mail clients
+assign [class="Evolution$"] $talk
+assign [class="Seamonkey" instance="Msgcompose"] $talk
+for_window [title="(- Gmail|Gmail -|.+@gmail\.com)"] move container to workspace $talk, workspace $talk
+for_window [title="mail\.google\.com"] move container to workspace $talk, workspace $talk
+for_window [title="Outlook Web App"] move container to workspace $talk, workspace $talk
+for_window [title="Untitled Message"] move container to workspace $talk, workspace $talk
+for_window [title="(?i)(^|\s)(re|fwd?): "] move container to workspace $talk, workspace $talk
+for_window [title="(Inbox -|- Inbox|Inbox Rule)"] move container to workspace $talk, workspace $talk
+# - group communication
+for_window [title="(Facebook|Google\+)"] move container to workspace $talk, workspace $talk
+# - chat clients
+assign [class="(Empathy|Pidgin)"] $talk
+
+# $plan
+assign [class="Evolution-notify"] $plan
+assign [class="((?i)FreeMind|Vym)"] $plan
+for_window [class="(?i)FreeMind" title="^Change pattern$"] floating disable
+for_window [class="Pnmixer"] floating disable
+for_window [title="Google Calendar"] move container to workspace $plan, workspace $plan
+for_window [title="BBCom JIRA"] move container to workspace $plan, workspace $plan
+for_window [title="(Mint\.com|Personal Finance)"] move container to workspace $plan, workspace $plan
+for_window [title="TurboTax"] move container to workspace $plan, workspace $plan
+for_window [title="Tasks - .+@gmail\.com"] move container to workspace $plan, workspace $plan
+for_window [title="Self Service Portal"] move container to workspace $plan, workspace $plan
+for_window [title="Cornerstone OnDemand"] move container to workspace $plan, workspace $plan
+for_window [title="myUnisa"] move container to workspace $plan, workspace $plan
+for_window [title="Study Buddies"] move container to workspace $plan, workspace $plan
+for_window [title="WorkFlowy"] move container to workspace $plan, workspace $plan
+
+# OBSERVATIONAL WINDOWS
+
+# $peruse
+# - web browsers
+assign [window_role="(?i)browser"] $peruse
+assign [class="(?i)(Firefox|browser)"] $peruse
+assign [class="Seamonkey" instance="(Dialog|Navigator)"] $peruse
+# - document viewers
+assign [class="(Evince|Okular)"] $peruse
+assign [title="(?i)\.(htm|pdf)"] browse
+# - file managers
+assign [class="(Dolphin|Emelfm2|Nautilus|Nemo|Thunar|Worker)"] $peruse
+assign [window_role="(?i)organi[sz]er"] $peruse
+for_window [class="jetbrains-idea" title="^(Changes|Packages|Problems|Production|Project|Structure|TODO)"] move container to workspace $peruse, workspace $peruse
+#for_window [class="jetbrains-idea" title="^win\d+$"] move container to workspace $null_in
+for_window [class="Firefox" title="The Book of Mozilla, 15:1"] move container to workspace $null_in
+# - references
+assign [class="Goldendict"] $peruse
+
+# $watch
+# - video
+assign [class="(Minitube|Plugin-container|Smplayer|Totem)"] $watch
+for_window [title="YouTube"] move container to workspace $watch, workspace $watch
+# - audio
+assign [class="(Amarok|Banshee|Pithos|RhythmBox)"] $watch
+for_window [title="Last\.fm"] move container to workspace $watch, workspace $watch
+# - presentation
+assign [class="(libre|open)office-impress"] $watch
+# - debuggers
+for_window [class="jetbrains-idea" title="^(Debug|Run)"] move container to workspace $watch, workspace $watch
+for_window [title="JProfiler"] move container to workspace $watch, workspace $watch
+for_window [title="Test (Case |)Detail"] move container to workspace $watch, workspace $watch
+# - virtual machines
+assign [class="VirtualBox"] $watch
+
+# CREATIVE WINDOWS
+
+# $command
+# - terminal emulators
+assign [class="Term"] $command
+# - controllers
+for_window [title="Home - Nest"] move container to workspace $command, workspace $command
+for_window [title="Dashboard(?! - .* JIRA)"] move container to workspace $command, workspace $command
+# - configuration tools
+assign [class="(?i)(config|control|settings|tweak-tool)"] $command
+assign [class="Rigo"] $command
+assign [class="^Lx"] $command
+
+# $code
+# - integrated development environments
+assign [title="SQL Developer"] $code
+assign [class="oracle-ide"] $code
+assign [class="Gnome-inform7"] $code
+assign [class="jetbrains-idea"] $code
+assign [instance="XWindowPeer" title="^win\d+$"] $code
+for_window [instance="XWindowPeer" title="^win\d+$"] move container to workspace $null_in
+for_window [class="jetbrains-idea" title="^(Commit|Git) "] floating disable
+for_window [class="jetbrains-idea" title="(Merge|Conflict)"] floating disable
+for_window [class="jetbrains-idea" title="^(Debug|Run)$"] floating disable
+
+# $write
+# - document-composition tools
+assign [class="Lyx"] $write
+assign [class="(libre|open)office-(writer|calc)"] $write
+assign [class="Soffice"] $write
+assign [class="Gedit|Gvim"] $write
+assign [class="Lokalize"] $write
+assign [class="Gimp"] $write
+for_window [class="Gimp" window_role="gimp-toolbox"] floating disable
+for_window [title="Translator Toolkit"] move container to workspace $write, workspace $write
+for_window [class="^Vym$" title="^vym$"] move container to workspace $null_in
+for_window [class="(?i)FreeMind" title="^FreeMind$"] move container to workspace $null_in, kill
+
+# $null_out
+assign [class="(Gcalctool|Speedcrunch)"] $null_out
+for_window [class="(Gcalctool|Speedcrunch)"] floating enable
+for_window [class="Firefox" instance="^DTA"] floating enable, move container to workspace $null_out, workspace $null_out
+
+# Default workspace, for all windows unmatched by the rules above:
+assign [instance=".*"] $command

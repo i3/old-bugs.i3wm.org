@@ -1,0 +1,809 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #855 (System crach on automatic resizing a floating window)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/854" title="Ticket #854" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/855?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/855?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/855?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/857" title="Ticket #857" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="c0520a4c316a9bba26407694";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/854" title="Ticket #854">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/857" title="Ticket #857">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-10-22T17%3A31%3A26%2B02%3A00&amp;precision=second" title="See timeline at 10/22/12 17:31:26">2 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2012-10-29T16%3A55%3A07%2B01%3A00&amp;precision=second" title="See timeline at 10/29/12 16:55:07">2 years ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/855" class="trac-id">#855</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=worksforme">worksforme</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">System crach on automatic resizing a floating window</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">ishahinism@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=critical">critical</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.3">4.3</a>
+        </td>
+        <th id="h_keywords">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+              <a href="/report/query?status=!closed&amp;keywords=~resize">resize</a> <a href="/report/query?status=!closed&amp;keywords=~floating">floating</a>
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.3-21-g718d922
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Linux">Linux</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+              Slackware 14.0
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+I tried to make a quake like terminal with scratchpad on i3 with this commands:<br />
+</p>
+<pre class="wiki">for_window [instance="dropdown_urxvt"] move to scratchpad, border 1pixel
+for_window [class="URxvt"] focus; resize grow width 300px
+bindsym F12 [instance="dropdown_urxvt"] scratchpad show, move position 0px 0px
+</pre><p>
+On stable version of i3 after starting the window manager, it'll crash on workspace switching. every programs are works fine but you cat switch between workspace. I found out that if I remove this line:<br />
+</p>
+<pre class="wiki">for_window [class="URxvt"] focus; resize grow width 300px
+</pre><p>
+every thing will work fine. After that I reinstalled i3 with latest git version: 4.3-21-g718d922 (2012-10-03, branch "master"). Here the problem is a little different. After restarting the system, if I try to start i3, it'll start but all of the system will freeze. I can't even switch to another runlevel. It'll crash and exit after 2 minutes. But after this crash if I run i3 again, every thing will works fine like this picture:<br />
+<a class="ext-link" href="http://dl.dropbox.com/u/25017694/Blog-photos/i3_urxvt_dropdown.png"><span class="icon">​</span>http://dl.dropbox.com/u/25017694/Blog-photos/i3_urxvt_dropdown.png</a><br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(4)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/855/config" title="View attachment">config</a><a href="/report/raw-attachment/ticket/855/config" class="trac-rawlink" title="Download">​</a>
+       (<span title="6108 bytes">6.0 KB</span>) -
+      added by <em>ishahinism@…</em> <a class="timeline" href="/report/timeline?from=2012-10-22T17%3A32%3A09%2B02%3A00&amp;precision=second" title="See timeline at 10/22/12 17:32:09">2 years ago</a>.
+  </dt>
+              <dd>
+                My config file
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/855/i3.log.gz" title="View attachment">i3.log.gz</a><a href="/report/raw-attachment/ticket/855/i3.log.gz" class="trac-rawlink" title="Download">​</a>
+       (<span title="14627 bytes">14.3 KB</span>) -
+      added by <em>ishahinism@…</em> <a class="timeline" href="/report/timeline?from=2012-10-23T08%3A45%3A05%2B02%3A00&amp;precision=second" title="See timeline at 10/23/12 08:45:05">2 years ago</a>.
+  </dt>
+              <dd>
+                The log file while i3 crashed.
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/855/i3Screenshot.png" title="View attachment">i3Screenshot.png</a><a href="/report/raw-attachment/ticket/855/i3Screenshot.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="316782 bytes">309.4 KB</span>) -
+      added by <em>ishahinism@…</em> <a class="timeline" href="/report/timeline?from=2012-10-23T10%3A05%3A31%2B02%3A00&amp;precision=second" title="See timeline at 10/23/12 10:05:31">2 years ago</a>.
+  </dt>
+              <dd>
+                i3wm RTL screenshot
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/855/urxvtc" title="View attachment">urxvtc</a><a href="/report/raw-attachment/ticket/855/urxvtc" class="trac-rawlink" title="Download">​</a>
+       (<span title="104 bytes">104 bytes</span>) -
+      added by <em>ishahinism@…</em> <a class="timeline" href="/report/timeline?from=2012-10-24T19%3A21%3A46%2B02%3A00&amp;precision=second" title="See timeline at 10/24/12 19:21:46">2 years ago</a>.
+  </dt>
+              <dd>
+                run urxvt in daemon mode
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/855/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(12)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-22T17%3A32%3A09%2B02%3A00&amp;precision=second" title="See timeline at 10/22/12 17:32:09">2 years ago</a> by ishahinism@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/855/config"><em>config</em></a><a href="/report/raw-attachment/ticket/855/config" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+My config file<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-1-1350929235877212">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-22T20%3A07%3A15%2B02%3A00&amp;precision=second" title="See timeline at 10/22/12 20:07:15">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Thanks for the detailed bugreport. I don’t have time to reproduce the issue right now but will do so later. In the meantime, can you please read <a class="ext-link" href="http://i3wm.org/docs/debugging.html"><span class="icon">​</span>http://i3wm.org/docs/debugging.html</a> and attach a debug logfile? Thanks!<br />
+</p>
+<p>
+Also, unrelated to the report: I see that you are using right-to-left font rendering within i3 and I’d love to have a screenshot which shows off this feature on i3wm.org. Could you send a screenshot which we can use for i3wm.org? Thanks!<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-23T08%3A45%3A05%2B02%3A00&amp;precision=second" title="See timeline at 10/23/12 08:45:05">2 years ago</a> by ishahinism@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/855/i3.log.gz"><em>i3.log.gz</em></a><a href="/report/raw-attachment/ticket/855/i3.log.gz" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+The log file while i3 crashed.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1350975192729635">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:3" class="follow-up">↓ 3</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-23T08%3A53%3A12%2B02%3A00&amp;precision=second" title="See timeline at 10/23/12 08:53:12">2 years ago</a> by ishahinism@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+It's my pleasure to help this awesome software development. I attached the debug log file.<br />
+</p>
+<p>
+And about the screenshot you said. Is a screen shot from a RTL titled page (like Persian Wikipedia) enough? or you want something else. Give me more detail and I'll send you this as soon as possible ;-) <br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1350976218210252">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+        in reply to:
+    <a href="#comment:2">↑ 2</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:4" class="follow-up">↓ 4</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-23T09%3A10%3A18%2B02%3A00&amp;precision=second" title="See timeline at 10/23/12 09:10:18">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/855#comment:2" title="Comment 2">ishahinism@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+And about the screenshot you said. Is a screen shot from a RTL titled page (like Persian Wikipedia) enough? or you want something else. Give me more detail and I'll send you this as soon as possible ;-) <br />
+</p>
+</blockquote>
+<p>
+Some real-life usage example would be good. Maybe a screenshot showing an RTL page in your browser and an RTL chat.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-23T10%3A05%3A31%2B02%3A00&amp;precision=second" title="See timeline at 10/23/12 10:05:31">2 years ago</a> by ishahinism@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/855/i3Screenshot.png"><em>i3Screenshot.png</em></a><a href="/report/raw-attachment/ticket/855/i3Screenshot.png" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+i3wm RTL screenshot<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1350979648603316">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+        in reply to:
+    <a href="#comment:3">↑ 3</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-23T10%3A07%3A28%2B02%3A00&amp;precision=second" title="See timeline at 10/23/12 10:07:28">2 years ago</a> by ishahinism@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/855#comment:3" title="Comment 3">michael</a>: <br />
+</p>
+<blockquote class="citation">
+<p>
+Some real-life usage example would be good. Maybe a screenshot showing an RTL page in your browser and an RTL chat.<br />
+</p>
+</blockquote>
+<p>
+I attached a screenshot. these are most of my usage in an RTL environment ;-) <br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1351097748623331">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+        in reply to:
+    <a href="#comment:description">↑ description</a>
+        ;
+          <span>follow-ups:</span>
+    <a href="#comment:6" class="follow-up">↓ 6</a>
+    <a href="#comment:7" class="follow-up">↓ 7</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-24T18%3A55%3A48%2B02%3A00&amp;precision=second" title="See timeline at 10/24/12 18:55:48">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="closed ticket" href="/report/ticket/855" title="defect: System crach on automatic resizing a floating window (closed: worksforme)">ishahinism@…</a>:<br />
+</p>
+<blockquote class="citation">
+<pre class="wiki">for_window [instance="dropdown_urxvt"] move to scratchpad, border 1pixel
+for_window [class="URxvt"] focus; resize grow width 300px
+bindsym F12 [instance="dropdown_urxvt"] scratchpad show, move position 0px 0px
+</pre></blockquote>
+<p>
+This is slightly different than what you have in the config file you’ve attached.<br />
+</p>
+<blockquote class="citation">
+<p>
+every thing will work fine. After that I reinstalled i3 with latest git version: 4.3-21-g718d922 (2012-10-03, branch "master").<br />
+</p>
+</blockquote>
+<p>
+Can you please change to the "next" branch?<br />
+</p>
+<blockquote class="citation">
+<p>
+Here the problem is a little different. After restarting the system, if I try to start i3, it'll start but all of the system will freeze. I can't even switch to another runlevel. It'll crash and exit after 2 minutes. But after this crash if I run i3 again, every thing will works fine like this picture:<br />
+</p>
+</blockquote>
+<p>
+Can you still switch workspaces using $mod+1, $mod+2, etc.? You mentioned that i3 crashes after two minutes. Do you see the crash dialog? Also, can you generate a backtrace (the crash dialogs prompts you to, but you need to have gdb installed) when that happens again and attach it please?<br />
+</p>
+<p>
+Also you forgot to attach ~/.i3/urxvtc to this ticket.<br />
+</p>
+<p>
+I tried to reproduce this issue but failed. For me, urxvt is started and moved to the scratchpad. The focus is wrong afterwards (in the scratchpad apparently), but i3 is neither frozen nor crashes.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1351099212148900">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+        in reply to:
+    <a href="#comment:5">↑ 5</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-24T19%3A20%3A12%2B02%3A00&amp;precision=second" title="See timeline at 10/24/12 19:20:12">2 years ago</a> by ishahinism@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/855#comment:5" title="Comment 5">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+This is slightly different than what you have in the config file you’ve attached.<br />
+</p>
+</blockquote>
+<p>
+What differences? could you tell me please? I did it in two different times, and may I did something different with them.  <br />
+</p>
+<blockquote class="citation">
+<p>
+Can you please change to the "next" branch?<br />
+</p>
+</blockquote>
+<p>
+Yes! I'll do it as soon as possible and update the ticket. <br />
+</p>
+<blockquote class="citation">
+<p>
+Can you still switch workspaces using $mod+1, $mod+2, etc.? You mentioned that i3 crashes after two minutes. Do you see the crash dialog? Also, can you generate a backtrace (the crash dialogs prompts you to, but you need to have gdb installed) when that happens again and attach it please?<br />
+</p>
+</blockquote>
+<p>
+No, no! I mean for the first time i3 will freeze! nothing works. It'll quit and nothing will shows on the X. But for the second time, every thing will works fine.<br />
+Anyway, I'll try my best to make a backtrace. I didn't do it before, but I'll try.<br />
+</p>
+<blockquote class="citation">
+<p>
+Also you forgot to attach ~/.i3/urxvtc to this ticket.<br />
+</p>
+<p>
+I tried to reproduce this issue but failed. For me, urxvt is started and moved to the scratchpad. The focus is wrong afterwards (in the scratchpad apparently), but i3 is neither frozen nor crashes.<br />
+</p>
+</blockquote>
+<p>
+That's a simple script to run urxvt in daemon mode. I'll attach it now.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-24T19%3A21%3A46%2B02%3A00&amp;precision=second" title="See timeline at 10/24/12 19:21:46">2 years ago</a> by ishahinism@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/855/urxvtc"><em>urxvtc</em></a><a href="/report/raw-attachment/ticket/855/urxvtc" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+run urxvt in daemon mode<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1351106380463980">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+        in reply to:
+    <a href="#comment:5">↑ 5</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:8" class="follow-up">↓ 8</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-24T21%3A19%3A40%2B02%3A00&amp;precision=second" title="See timeline at 10/24/12 21:19:40">2 years ago</a> by ishahinism@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/855#comment:5" title="Comment 5">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Can you please change to the "next" branch?<br />
+</p>
+</blockquote>
+<p>
+WoW, I'm on the last git version now, and everything works fine. Thank you.<br />
+Do you still need that backtrace on? If you need I can downgrade and make that. <br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1351526107447646">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+        in reply to:
+    <a href="#comment:7">↑ 7</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-29T16%3A55%3A07%2B01%3A00&amp;precision=second" title="See timeline at 10/29/12 16:55:07">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>worksforme</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/855#comment:7" title="Comment 7">ishahinism@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/855#comment:5" title="Comment 5">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Can you please change to the "next" branch?<br />
+</p>
+</blockquote>
+<p>
+WoW, I'm on the last git version now, and everything works fine. Thank you.<br />
+Do you still need that backtrace on? If you need I can downgrade and make that. <br />
+</p>
+</blockquote>
+<p>
+Thanks, if the next branch works fine, there’s no need to look into an old bug.<br />
+</p>
+<p>
+In case it ever happens again with a version of the next branch, feel free to re-open.<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/855?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/855?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/855?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+
+Currently i3 places new windows inside the focused container, growing downwards.
+since widescreens are common these days, it's useful to have the option of changing
+this behaviour so that with one window open, a new one will open in a new column
+by it's side.
+This patches adds an option "open_sideways" which does "the right thing(C)".
+
+ys 20/02/11 
+===============================================================================
+diff -uNr i3-3.e-bf2.orig//docs/userguide i3-3.e-bf2.mod//docs/userguide
+--- i3-3.e-bf2.orig//docs/userguide	2011-01-19 22:26:43.000000000 +0200
++++ i3-3.e-bf2.mod//docs/userguide	2011-02-20 19:02:01.000000000 +0200
+@@ -333,6 +333,18 @@
+ new_window <bp|bn|bb>
+ ---------------------------------------------
+ 
++=== Move 2nd Window To a new column automatically
++
++This option determines if the 2nd window opened is placed in the same column
++below the current focused window, or automatically moves to a new column on 
++the right. The same behaviour is exhibited when moving a window to a workspace
++which already has a single window.
++
++*Syntax*:
++---------------------------------------------
++open_sideways <yes|no>
++---------------------------------------------
++
+ *Examples*:
+ ---------------------
+ new_window bp
+diff -uNr i3-3.e-bf2.orig//src/cfgparse.l i3-3.e-bf2.mod//src/cfgparse.l
+--- i3-3.e-bf2.orig//src/cfgparse.l	2011-01-19 22:26:37.000000000 +0200
++++ i3-3.e-bf2.mod//src/cfgparse.l	2011-02-20 18:26:16.000000000 +0200
+@@ -92,6 +92,7 @@
+ ipc_socket                      { BEGIN(BIND_AWS_COND); return TOKIPCSOCKET; }
+ new_container                   { return TOKNEWCONTAINER; }
+ new_window                      { return TOKNEWWINDOW; }
++open_sideways                   { return TOKENSIDEWAYS; }
+ focus_follows_mouse             { return TOKFOCUSFOLLOWSMOUSE; }
+ workspace_bar                   { return TOKWORKSPACEBAR; }
+ default                         { yylval.number = MODE_DEFAULT; return TOKCONTAINERMODE; }
+diff -uNr i3-3.e-bf2.orig//src/cfgparse.y i3-3.e-bf2.mod//src/cfgparse.y
+--- i3-3.e-bf2.orig//src/cfgparse.y	2011-01-19 22:26:37.000000000 +0200
++++ i3-3.e-bf2.mod//src/cfgparse.y	2011-02-20 18:43:42.000000000 +0200
+@@ -239,6 +239,7 @@
+ %token TOKMODE "mode"
+ %token TOKNEWCONTAINER "new_container"
+ %token TOKNEWWINDOW "new_window"
++%token TOKENSIDEWAYS "open_sideways"
+ %token TOKFOCUSFOLLOWSMOUSE "focus_follows_mouse"
+ %token TOKWORKSPACEBAR "workspace_bar"
+ %token TOKCONTAINERMODE "default/stacking/tabbed"
+@@ -258,6 +259,7 @@
+         | floating_modifier
+         | new_container
+         | new_window
++        | open_sideways
+         | focus_follows_mouse
+         | workspace_bar
+         | workspace
+@@ -427,6 +429,14 @@
+         }
+         ;
+ 
++open_sideways:
++        TOKENSIDEWAYS WHITESPACE bool
++        {
++                DLOG("the 2nd window started in a ws should open in a new column\n");
++                config.open_sideways = ($<number>3);
++        }
++        ;
++
+ bool:
+         NUMBER
+         {
+diff -uNr i3-3.e-bf2.orig//src/commands.c i3-3.e-bf2.mod//src/commands.c
+--- i3-3.e-bf2.orig//src/commands.c	2011-01-19 22:26:37.000000000 +0200
++++ i3-3.e-bf2.mod//src/commands.c	2011-02-20 18:58:50.000000000 +0200
+@@ -662,7 +670,18 @@
+                 return;
+         }
+ 
+-        Container *to_container = t_ws->table[t_ws->current_col][t_ws->current_row];
++        Container *to_container;
++
++        /*if there is only one window and one container, place the new one in a new 
++        * column to the right. screens are W-I-D-E these days       */
++        if( config.open_sideways &&
++                t_ws->cols == 1 &&  t_ws->rows == 1 
++                && CIRCLEQ_FIRST(&(t_ws->table[0][0]->clients)) ==  CIRCLEQ_LAST(&(t_ws->table[0][0]->clients))
++                && !CIRCLEQ_EMPTY(&(t_ws->table[0][0]->clients))  ) {
++                expand_table_cols(t_ws);
++                to_container = t_ws->table[1][0];
++        } else
++                to_container = t_ws->table[t_ws->current_col][t_ws->current_row];
+ 
+         assert(to_container != NULL);
+ 
+diff -uNr i3-3.e-bf2.orig//src/manage.c i3-3.e-bf2.mod//src/manage.c
+--- i3-3.e-bf2.orig//src/manage.c	2011-01-19 22:26:37.000000000 +0200
++++ i3-3.e-bf2.mod//src/manage.c	2011-02-20 19:37:07.563517863 +0200
+@@ -421,6 +421,18 @@
+ 
+         /* Insert into the currently active container, if it’s not a dock window */
+         if (!new->dock && !client_is_floating(new)) {
++                /* if there is only one window and one container, place the new one in a new 
++                 * column to the right. screens are W-I-D-E these days       */
++                if( config.open_sideways &&
++                        new->workspace->cols == 1 &&  new->workspace->rows == 1 
++                        && CIRCLEQ_FIRST(&(new->container->clients)) ==  CIRCLEQ_LAST(&(new->container->clients))
++                        && !CIRCLEQ_EMPTY(&(new->container->clients))  ) {
++                        expand_table_cols(new->workspace);
++                        new->container=new->workspace->table[1][0];
++                        old_focused=NULL;
++                        new->container->currently_focused=new;
++                } 
++
+                 /* Insert after the old active client, if existing. If it does not exist, the
+                    container is empty and it does not matter, where we insert it */
+                 if (old_focused != NULL && !old_focused->dock)

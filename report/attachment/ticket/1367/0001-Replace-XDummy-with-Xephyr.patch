@@ -1,0 +1,28 @@
+From 64386b0006b89e9a08b05272210bcb27c41828ed Mon Sep 17 00:00:00 2001
+From: Tony Crisci <tony@dubstepdish.com>
+Date: Sun, 21 Sep 2014 18:48:22 -0400
+Subject: [PATCH] Replace XDummy with Xephyr
+
+This is a proof of concept that illustrates a way that XDummy may be
+replaced with Xephyr.
+---
+ testcases/lib/StartXDummy.pm | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/testcases/lib/StartXDummy.pm b/testcases/lib/StartXDummy.pm
+index 592feb8..cd2069b 100644
+--- a/testcases/lib/StartXDummy.pm
++++ b/testcases/lib/StartXDummy.pm
+@@ -112,8 +112,7 @@ sub start_xdummy {
+         # Xorg configuration. The tests should be independant from the
+         # actual system X configuration.
+         my $socket = fork_xserver($keep_xdummy_output, $displaynum,
+-                './Xdummy', ":$displaynum", '-config', '/dev/null',
+-                '-configdir', '/dev/null', '-nolisten', 'tcp');
++                'Xephyr', ":$displaynum", '-nolisten', 'tcp');
+         push(@displays, ":$displaynum");
+         push(@sockets_waiting, $socket);
+         $displaynum++;
+-- 
+2.1.0
+

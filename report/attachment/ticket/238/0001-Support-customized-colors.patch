@@ -1,0 +1,145 @@
+From 14e3f7387589444e9e6dbbbfa7f083c11744b9d1 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Fernando=20Tarl=C3=A1=20Cardoso=20Lemos?= <fernandotcl@gmail.com>
+Date: Tue, 29 Jun 2010 20:59:03 -0300
+Subject: [PATCH] Support customized colors.
+
+---
+ i3status.c                |   27 +++++++++++++++++++++++++++
+ src/output.c              |    8 ++++----
+ src/print_eth_info.c      |    4 ++--
+ src/print_run_watch.c     |    2 +-
+ src/print_wireless_info.c |    4 ++--
+ 5 files changed, 36 insertions(+), 9 deletions(-)
+
+diff --git a/i3status.c b/i3status.c
+index 64fac76..eabcd6c 100644
+--- a/i3status.c
++++ b/i3status.c
+@@ -65,12 +65,33 @@ static char *file_exists(char *path) {
+         return full_path;
+ }
+ 
++/*
++ * Validates a color in "#RRGGBB" format
++ *
++ */
++static int valid_color(const char *value)
++{
++        if (strlen(value) != 7) return 0;
++        if (value[0] != '#') return 0;
++        for (int i = 1; i < 7; ++i) {
++                if (value[i] >= '0' && value[i] <= '9') continue;
++                if (value[i] >= 'a' && value[i] <= 'f') continue;
++                if (value[i] >= 'A' && value[i] <= 'F') continue;
++                return 0;
++        }
++        return 1;
++}
++
+ int main(int argc, char *argv[]) {
+         unsigned int j;
+ 
+         cfg_opt_t general_opts[] = {
+                 CFG_STR("output_format", "dzen2", CFGF_NONE),
+                 CFG_BOOL("colors", 1, CFGF_NONE),
++                CFG_STR("color_good", "#00FF00", CFGF_NONE),
++                CFG_STR("color_degraded", "#FFFF00", CFGF_NONE),
++                CFG_STR("color_bad", "#FF0000", CFGF_NONE),
++                CFG_STR("color_separator", "#333333", CFGF_NONE),
+                 CFG_INT("interval", 1, CFGF_NONE),
+                 CFG_END()
+         };
+@@ -194,6 +215,12 @@ int main(int argc, char *argv[]) {
+                 output_format = O_NONE;
+         else die("Unknown output format: \"%s\"\n", output_str);
+ 
++        if (!valid_color(cfg_getstr(cfg_general, "color_good"))
++                        || !valid_color(cfg_getstr(cfg_general, "color_degraded"))
++                        || !valid_color(cfg_getstr(cfg_general, "color_bad"))
++                        || !valid_color(cfg_getstr(cfg_general, "color_separator")))
++               die("Bad color format");
++
+         if ((general_socket = socket(AF_INET, SOCK_DGRAM, 0)) == -1)
+                 die("Could not create socket\n");
+ 
+diff --git a/src/output.c b/src/output.c
+index 3d6666e..c0c1480 100644
+--- a/src/output.c
++++ b/src/output.c
+@@ -21,9 +21,9 @@ char *color(const char *colorstr) {
+                 return colorbuf;
+         }
+         if (output_format == O_DZEN2)
+-                (void)snprintf(colorbuf, sizeof(colorbuf), "^fg(%s)", colorstr);
++                (void)snprintf(colorbuf, sizeof(colorbuf), "^fg(%s)", cfg_getstr(cfg_general, colorstr));
+         else if (output_format == O_XMOBAR)
+-                (void)snprintf(colorbuf, sizeof(colorbuf), "<fc=%s>", colorstr);
++                (void)snprintf(colorbuf, sizeof(colorbuf), "<fc=%s>", cfg_getstr(cfg_general, colorstr));
+ 
+         return colorbuf;
+ }
+@@ -40,9 +40,9 @@ char *endcolor() {
+ 
+ void print_seperator() {
+         if (output_format == O_DZEN2)
+-                printf("^fg(#333333)^p(5;-2)^ro(2)^p()^fg()^p(5)");
++                printf("^fg(%s)^p(5;-2)^ro(2)^p()^fg()^p(5)", cfg_getstr(cfg_general, "color_separator"));
+         else if (output_format == O_XMOBAR)
+-                printf("<fc=#333333> | </fc>");
++                printf("<fc=%s> | </fc>", cfg_getstr(cfg_general, "color_separator"));
+         else if (output_format == O_NONE)
+                 printf(" | ");
+ }
+diff --git a/src/print_eth_info.c b/src/print_eth_info.c
+index 9ad9b92..28ba6c1 100644
+--- a/src/print_eth_info.c
++++ b/src/print_eth_info.c
+@@ -79,12 +79,12 @@ void print_eth_info(const char *interface, const char *format_up, const char *fo
+         const char *ip_address = get_ip_addr(interface);
+ 
+         if (ip_address == NULL) {
+-                printf("%s", color("#FF0000"));
++                printf("%s", color("color_bad"));
+                 printf("%s", format_down);
+                 (void)printf("%s", endcolor());
+                 return;
+         } else {
+-                printf("%s", color("#00FF00"));
++                printf("%s", color("color_good"));
+         }
+ 
+         for (walk = format_up; *walk != '\0'; walk++) {
+diff --git a/src/print_run_watch.c b/src/print_run_watch.c
+index 807e322..455130e 100644
+--- a/src/print_run_watch.c
++++ b/src/print_run_watch.c
+@@ -6,7 +6,7 @@ void print_run_watch(const char *title, const char *pidfile, const char *format)
+ 	bool running = process_runs(pidfile);
+ 	const char *walk;
+ 
+-	printf("%s", (running ? color("#00FF00") : color("#FF0000")));
++	printf("%s", (running ? color("color_good") : color("color_bad")));
+ 
+         for (walk = format; *walk != '\0'; walk++) {
+                 if (*walk != '%') {
+diff --git a/src/print_wireless_info.c b/src/print_wireless_info.c
+index 50cf8e4..4eeaa36 100644
+--- a/src/print_wireless_info.c
++++ b/src/print_wireless_info.c
+@@ -143,11 +143,11 @@ void print_wireless_info(const char *interface, const char *format_up, const cha
+         if (get_wireless_info(interface, &info)) {
+                 walk = format_up;
+                 if (info.flags & WIRELESS_INFO_FLAG_HAS_QUALITY)
+-                        printf("%s", info.quality < info.quality_average ? color("#FFFF00") : color("#00FF00"));
++                        printf("%s", info.quality < info.quality_average ? color("color_degraded") : color("color_good"));
+         }
+         else {
+                 walk = format_down;
+-                printf("%s", color("#FF0000"));
++                printf("%s", color("color_bad"));
+         }
+ 
+         for (; *walk != '\0'; walk++) {
+-- 
+1.7.1
+

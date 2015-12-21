@@ -1,0 +1,25 @@
+From 7f587639aead11c26aa4051b63f3d19987a50392 Mon Sep 17 00:00:00 2001
+From: Iakov Davydov <dav01@myths.ru>
+Date: Sun, 22 Jul 2012 14:04:38 +0400
+Subject: [PATCH 2/2] typo fix in the comment
+
+---
+ include/config.h |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/config.h b/include/config.h
+index d356b5d..2d05a53 100644
+--- a/include/config.h
++++ b/include/config.h
+@@ -108,7 +108,7 @@ struct Config {
+      * It is not planned to add any different focus models. */
+     bool disable_focus_follows_mouse;
+ 
+-    /** Remove horizontal border if it's adjacent to the screen edge. 
++    /** Remove vertical border if it's adjacent to the screen edge. 
+      * This is usefull if you are reaching scrollbar on the edge of the
+      * screen. By default, this is disabled */
+     bool no_edge_border;
+-- 
+1.7.9.5
+

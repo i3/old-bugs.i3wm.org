@@ -1,0 +1,350 @@
+From 2e0ba42179187f48c496603d587cf7717c20500c Mon Sep 17 00:00:00 2001
+From: Max Alexander Busse <ablepharus@gmail.com>
+Date: Tue, 19 Jun 2012 00:06:19 +0200
+Subject: [PATCH 13/13] Introduction of a workspace block, containing special
+ configuration overwriting standard configuration.
+ Implemented workspace_layout, border (new_window) and
+ default_orientation.
+
+---
+ include/config.h    |   20 ++++++++++++++++
+ include/workspace.h |    8 ++++++
+ src/cfgparse.y      |   62 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ src/con.c           |   30 ++++++++++++++----------
+ src/config.c        |    2 +
+ src/workspace.c     |   55 ++++++++++++++++++++++++++++++++++++++++-----
+ 6 files changed, 159 insertions(+), 18 deletions(-)
+
+diff --git a/include/config.h b/include/config.h
+index 310f8b0..7a23cd8 100644
+--- a/include/config.h
++++ b/include/config.h
+@@ -20,10 +20,13 @@
+ 
+ typedef struct Config Config;
+ typedef struct Barconfig Barconfig;
++typedef struct Workspaceconfig Workspaceconfig;
+ extern char *current_configpath;
+ extern Config config;
+ extern SLIST_HEAD(modes_head, Mode) modes;
+ extern TAILQ_HEAD(barconfig_head, Barconfig) barconfigs;
++extern TAILQ_HEAD(workspaceconfig_head, Workspaceconfig) workspaceconfigs;
++extern TAILQ_HEAD(workspace_head, workspace_struct) workspace_list_head;
+ 
+ /**
+  * Used during the config file lexing/parsing to keep the state of the lexer
+@@ -268,6 +271,23 @@ struct Barconfig {
+ };
+ 
+ /**
++ * Holds Workspace configurations for specific Workspaces
++ */
++struct Workspaceconfig {
++
++    int *default_layout ;
++    border_style_t *default_border;
++    orientation_t *default_orientation;
++    
++    struct workspace_struct {
++        char *workspace;
++        TAILQ_ENTRY(workspace_struct) workspace_block_workspaces;
++    } *workspace_list;
++    
++    TAILQ_ENTRY(Workspaceconfig) workspace_configs;
++};
++
++/**
+  * Reads the configuration from ~/.i3/config or /etc/i3/config if not found.
+  *
+  * If you specify override_configpath, only this path is used to look for a
+diff --git a/include/workspace.h b/include/workspace.h
+index 1b25b42..17d1ddb 100644
+--- a/include/workspace.h
++++ b/include/workspace.h
+@@ -14,6 +14,7 @@
+ #include "data.h"
+ #include "tree.h"
+ #include "randr.h"
++#include "config.h"
+ 
+ /**
+  * Returns a pointer to the workspace with the given number (starting at 0),
+@@ -54,6 +55,13 @@ void workspace_set_name(Workspace *ws, const char *name);
+ bool workspace_is_visible(Con *ws);
+ 
+ /**
++ * Returns a workspace specific configuration struct - Workspaceconfig, see 
++ * include/config.h - or NULL
++ */
++
++Workspaceconfig *get_specific_conf(const char *num);
++
++/**
+  * Switches to the given workspace
+  *
+  */
+diff --git a/src/cfgparse.y b/src/cfgparse.y
+index ab8be57..136d56e 100644
+--- a/src/cfgparse.y
++++ b/src/cfgparse.y
+@@ -15,6 +15,8 @@ static pid_t configerror_pid = -1;
+ 
+ static Match current_match;
+ static Barconfig current_bar;
++static Workspaceconfig current_workspaces;
++
+ /* The pattern which was specified by the user, for example -misc-fixed-*. We
+  * store this in a separate variable because in the i3 config struct we just
+  * store the i3Font. */
+@@ -1478,6 +1480,19 @@ workspace_bar:
+     ;
+ 
+ workspace:
++    
++    TOKWORKSPACE workspace_identifiers '{' workspacelines '}'
++    {
++        /* Copy the current (static) structure into a dynamically allocated
++         * one, then cleanup our static one. */
++        Workspaceconfig *workspace_config = scalloc(sizeof(Workspaceconfig));
++        memcpy(workspace_config, &current_workspaces, sizeof(Workspaceconfig));
++        TAILQ_INSERT_TAIL(&workspaceconfigs, workspace_config, workspace_configs);
++
++        memset(&current_workspaces, '\0', sizeof(Workspaceconfig));
++
++    }
++    |
+     TOKWORKSPACE qstring_or_number TOKOUTPUT OUTPUT optional_workspace_name
+     {
+         char *ws_name = $2;
+@@ -1529,6 +1544,53 @@ workspace:
+     }
+     ;
+ 
++workspace_identifiers:
++    workspace_identifier ',' workspace_identifiers
++    | workspace_identifier
++    ;
++
++workspace_identifier:
++    | STR /* workspace_name*/
++    {
++        struct workspace_struct *entry = malloc(sizeof(struct workspace_struct));
++        entry->workspace = $1;
++        current_workspaces.workspace_list = malloc(sizeof(struct workspace_struct));
++        TAILQ_INSERT_TAIL(&workspace_list_head, entry,  workspace_block_workspaces);
++    }
++    | qstring_or_number
++    {
++        struct workspace_struct *entry = malloc(sizeof(struct workspace_struct));
++        entry->workspace = $1;
++        current_workspaces.workspace_list = malloc(sizeof(struct workspace_struct));
++        TAILQ_INSERT_TAIL(&workspace_list_head, entry,  workspace_block_workspaces);
++    }
++    ;
++
++workspacelines:
++    /* empty */
++    | workspacelines workspaceline
++    ;
++
++workspaceline:
++    comment
++    | TOK_ORIENTATION direction
++    {
++        current_workspaces.default_orientation = malloc(sizeof(orientation_t));
++        *(current_workspaces.default_orientation) = $2;
++    }
++    | TOK_WORKSPACE_LAYOUT layout_mode
++    {
++        ;
++        current_workspaces.default_layout = malloc(sizeof(int));
++        (*current_workspaces.default_layout) = $2;
++    }
++    | TOKNEWWINDOW border_style 
++    {
++        current_workspaces.default_border = malloc(sizeof(border_style_t));
++        *(current_workspaces.default_border) = $2;
++    }
++    ;
++
+ optional_workspace_name:
+     /* empty */          { $$ = NULL; }
+     | workspace_name     { $$ = $1; }
+diff --git a/src/con.c b/src/con.c
+index f804a20..68dbe40 100644
+--- a/src/con.c
++++ b/src/con.c
+@@ -124,6 +124,7 @@ void con_attach(Con *con, Con *parent, bool ignore_focus) {
+             }
+         }
+ 
++
+         /* When the container is not a split container (but contains a window)
+          * and is attached to a workspace, we check if the user configured a
+          * workspace_layout. This is done in workspace_attach_to, which will
+@@ -132,18 +133,23 @@ void con_attach(Con *con, Con *parent, bool ignore_focus) {
+          * workspace_layout).
+          */
+         if (con->window != NULL &&
+-            parent->type == CT_WORKSPACE &&
+-            config.default_layout != L_DEFAULT) {
+-            DLOG("Parent is a workspace. Applying default layout...\n");
+-            Con *target = workspace_attach_to(parent);
+-
+-            /* Attach the original con to this new split con instead */
+-            nodes_head = &(target->nodes_head);
+-            focus_head = &(target->focus_head);
+-            con->parent = target;
+-            current = NULL;
+-
+-            DLOG("done\n");
++            parent->type == CT_WORKSPACE) {
++            
++            Workspaceconfig *wsconfig = get_specific_conf(parent->name) ;
++            
++            if ((( wsconfig != NULL && wsconfig->default_layout != NULL && wsconfig->default_layout != L_DEFAULT) ||
++                ((wsconfig == NULL || wsconfig->default_layout == NULL)  && config.default_layout != L_DEFAULT))) {
++                DLOG("Parent is a workspace. Applying default layout...\n");
++                Con *target = workspace_attach_to(parent);
++
++                /* Attach the original con to this new split con instead */
++                nodes_head = &(target->nodes_head);
++                focus_head = &(target->focus_head);
++                con->parent = target;
++                current = NULL;
++
++                DLOG("done\n");
++            }
+         }
+ 
+         /* Insert the container after the tiling container, if found.
+diff --git a/src/config.c b/src/config.c
+index 50ec282..f24f22c 100644
+--- a/src/config.c
++++ b/src/config.c
+@@ -17,6 +17,8 @@ char *current_configpath = NULL;
+ Config config;
+ struct modes_head modes;
+ struct barconfig_head barconfigs = TAILQ_HEAD_INITIALIZER(barconfigs);
++struct workspaceconfig_head workspaceconfigs = TAILQ_HEAD_INITIALIZER(workspaceconfigs);
++struct workspace_head workspace_list_head = TAILQ_HEAD_INITIALIZER(workspace_list_head);
+ 
+ /**
+  * Ungrabs all keys, to be called before re-grabbing the keys because of a
+diff --git a/src/workspace.c b/src/workspace.c
+index 3d08fa4..4ebc45c 100644
+--- a/src/workspace.c
++++ b/src/workspace.c
+@@ -10,6 +10,8 @@
+  */
+ #include "all.h"
+ 
++
++
+ /* Stores a copy of the name of the last used workspace for the workspace
+  * back-and-forth switching. */
+ static char *previous_workspace_name = NULL;
+@@ -40,6 +42,8 @@ Con *workspace_get(const char *num, bool *created) {
+             GREP_FIRST(output, croot, !strcmp(child->name, assignment->output));
+             break;
+         }
++        Workspaceconfig *wsconfig = get_specific_conf(num);
++
+         Con *content = output_get_content(output);
+         LOG("got output %p with content %p\n", output, content);
+         /* We need to attach this container after setting its type. con_attach
+@@ -64,15 +68,21 @@ Con *workspace_get(const char *num, bool *created) {
+         else workspace->num = parsed_num;
+         LOG("num = %d\n", workspace->num);
+ 
++        /* Check if there is an default_orientation set for this particular workspace */
++        int default_orientation = config.default_orientation;
++        if (wsconfig && wsconfig->default_orientation)
++        {
++            default_orientation = *wsconfig->default_orientation;
++        }
+         /* If default_orientation is set to NO_ORIENTATION we
+          * determine workspace orientation from workspace size.
+          * Otherwise we just set the orientation to default_orientation. */
+-        if (config.default_orientation == NO_ORIENTATION) {
++        else if (default_orientation == NO_ORIENTATION) {
+             workspace->orientation = (output->rect.height > output->rect.width) ? VERT : HORIZ;
+             DLOG("Auto orientation. Output resolution set to (%d,%d), setting orientation to %d.\n",
+                  workspace->rect.width, workspace->rect.height, workspace->orientation);
+         } else {
+-            workspace->orientation = config.default_orientation;
++            workspace->orientation = default_orientation;
+         }
+ 
+         con_attach(workspace, content, false);
+@@ -227,6 +237,26 @@ bool workspace_is_visible(Con *ws) {
+ }
+ 
+ /*
++ * Returns a workspace specific configuration struct - Workspaceconfig, see 
++ * include/config.h - or NULL
++ */
++
++Workspaceconfig *get_specific_conf(const char *num) {
++    Workspaceconfig *wsconfig = NULL;
++    Workspaceconfig *wsit = NULL;
++    TAILQ_FOREACH(wsit, &workspaceconfigs, workspace_configs) {
++        struct workspace_struct *ws_names;
++        TAILQ_FOREACH(ws_names, &workspace_list_head, workspace_block_workspaces) {
++            if (strcmp(num, ws_names->workspace) == 0)
++            {
++                wsconfig = wsit;
++            }
++        }
++     }
++
++     return wsconfig;
++}
++/*
+  * XXX: we need to clean up all this recursive walking code.
+  *
+  */
+@@ -736,7 +766,20 @@ void ws_force_orientation(Con *ws, orientation_t orientation) {
+ Con *workspace_attach_to(Con *ws) {
+     DLOG("Attaching a window to workspace %p / %s\n", ws, ws->name);
+ 
+-    if (config.default_layout == L_DEFAULT) {
++    /* default_layout and default_orientation from config may be overwritten*/
++    int default_layout = config.default_layout;
++    int default_orientation = config.default_orientation;
++
++    Workspaceconfig *wsconfig = get_specific_conf(ws->name);
++
++    if (wsconfig != NULL) {
++        if (wsconfig->default_layout != NULL)
++            default_layout = *wsconfig->default_layout;
++        if (wsconfig->default_orientation != NULL)
++            default_orientation = *wsconfig->default_orientation;
++    }
++
++    if (default_layout == L_DEFAULT) {
+         DLOG("Default layout, just attaching it to the workspace itself.\n");
+         return ws;
+     }
+@@ -747,15 +790,15 @@ Con *workspace_attach_to(Con *ws) {
+     new->parent = ws;
+ 
+     /* 2: set the requested layout on the split con */
+-    new->layout = config.default_layout;
++    new->layout = default_layout;
+ 
+     /* 3: While the layout is irrelevant in stacked/tabbed mode, it needs
+      * to be set. Otherwise, this con will not be interpreted as a split
+      * container. */
+-    if (config.default_orientation == NO_ORIENTATION) {
++    if (default_orientation == NO_ORIENTATION) {
+         new->orientation = (ws->rect.height > ws->rect.width) ? VERT : HORIZ;
+     } else {
+-        new->orientation = config.default_orientation;
++        new->orientation = default_orientation;
+     }
+ 
+     /* 4: attach the new split container to the workspace */
+-- 
+1.7.8.6
+

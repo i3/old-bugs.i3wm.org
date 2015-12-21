@@ -1,0 +1,126 @@
+From 09faf102ac1c142545938d94d91c89a02be144aa Mon Sep 17 00:00:00 2001
+From: Claudio Marforio <marforio@gmail.com>
+Date: Tue, 12 Jul 2011 12:24:01 +0200
+Subject: [PATCH] patch to allow exec_always in configure file
+
+---
+ include/data.h |    6 +++++-
+ include/i3.h   |    1 +
+ src/cfgparse.l |    1 +
+ src/cfgparse.y |   11 +++++++++++
+ src/main.c     |   10 ++++++++++
+ 5 files changed, 28 insertions(+), 1 deletions(-)
+
+diff --git a/include/data.h b/include/data.h
+index fed4420..4dc379c 100644
+--- a/include/data.h
++++ b/include/data.h
+@@ -174,13 +174,17 @@ struct Binding {
+ };
+ 
+ /**
+- * Holds a command specified by an exec-line in the config (see src/config.c)
++ * Holds a command specified by either an:
++ * - exec-line
++ * - exec_always-line
++ * in the config (see src/config.c)
+  *
+  */
+ struct Autostart {
+     /** Command, like in command mode */
+     char *command;
+     TAILQ_ENTRY(Autostart) autostarts;
++    TAILQ_ENTRY(Autostart) autostarts_always;
+ };
+ 
+ /**
+diff --git a/include/i3.h b/include/i3.h
+index 73b6117..c54e3c3 100644
+--- a/include/i3.h
++++ b/include/i3.h
+@@ -26,6 +26,7 @@ extern Display *xlibdpy, *xkbdpy;
+ extern int xkb_current_group;
+ extern TAILQ_HEAD(bindings_head, Binding) *bindings;
+ extern TAILQ_HEAD(autostarts_head, Autostart) autostarts;
++extern TAILQ_HEAD(autostarts_always_head, Autostart) autostarts_always;
+ extern TAILQ_HEAD(ws_assignments_head, Workspace_Assignment) ws_assignments;
+ extern TAILQ_HEAD(assignments_head, Assignment) assignments;
+ extern SLIST_HEAD(stack_wins_head, Stack_Window) stack_wins;
+diff --git a/src/cfgparse.l b/src/cfgparse.l
+index 9194fbe..2e1d240 100644
+--- a/src/cfgparse.l
++++ b/src/cfgparse.l
+@@ -147,6 +147,7 @@ stack-limit                     { return TOKSTACKLIMIT; }
+ cols                            { /* yylval.number = STACK_LIMIT_COLS; */return TOKSTACKLIMIT; }
+ rows                            { /* yylval.number = STACK_LIMIT_ROWS; */return TOKSTACKLIMIT; }
+ exec                            { WS_STRING; return TOKEXEC; }
++exec_always                     { WS_STRING; return TOKEXEC_ALWAYS; }
+ client.background               { BEGIN(COLOR_COND); yylval.single_color = &config.client.background; return TOKSINGLECOLOR; }
+ client.focused                  { BEGIN(COLOR_COND); yylval.color = &config.client.focused; return TOKCOLOR; }
+ client.focused_inactive         { BEGIN(COLOR_COND); yylval.color = &config.client.focused_inactive; return TOKCOLOR; }
+diff --git a/src/cfgparse.y b/src/cfgparse.y
+index 09201c7..c85cfc2 100644
+--- a/src/cfgparse.y
++++ b/src/cfgparse.y
+@@ -518,6 +518,7 @@ void parse_file(const char *f) {
+ %token                  TOKIPCSOCKET                "ipc_socket"
+ %token                  TOKRESTARTSTATE             "restart_state"
+ %token                  TOKEXEC                     "exec"
++%token                  TOKEXEC_ALWAYS              "exec_always"
+ %token  <single_color>  TOKSINGLECOLOR
+ %token  <color>         TOKCOLOR
+ %token                  TOKARROW                    "→"
+@@ -590,6 +591,7 @@ line:
+     | ipcsocket
+     | restart_state
+     | exec
++	| exec_always
+     | single_color
+     | color
+     | terminal
+@@ -1036,6 +1038,15 @@ exec:
+     }
+     ;
+ 
++exec_always:
++    TOKEXEC_ALWAYS STR
++	{
++	  struct Autostart *new = smalloc(sizeof(struct Autostart));
++	  new->command = $2;
++	  TAILQ_INSERT_TAIL(&autostarts_always, new, autostarts_always);
++	}
++    ;
++
+ terminal:
+     TOKTERMINAL STR
+     {
+diff --git a/src/main.c b/src/main.c
+index 7910c8b..f0ad448 100644
+--- a/src/main.c
++++ b/src/main.c
+@@ -32,6 +32,9 @@ struct bindings_head *bindings;
+ /* The list of exec-lines */
+ struct autostarts_head autostarts = TAILQ_HEAD_INITIALIZER(autostarts);
+ 
++/* The list of exec_always lines */
++struct autostarts_always_head autostarts_always = TAILQ_HEAD_INITIALIZER(autostarts_always);
++
+ /* The list of assignments */
+ struct assignments_head assignments = TAILQ_HEAD_INITIALIZER(assignments);
+ 
+@@ -465,5 +468,12 @@ int main(int argc, char *argv[]) {
+         }
+     }
+ 
++	/* Autostarting exec_always-lines */
++	struct Autostart *exec_always;
++	TAILQ_FOREACH(exec_always, &autostarts_always, autostarts_always) {
++	  LOG("auto-starting (always!) %s\n", exec_always->command);
++	  start_application(exec_always->command);
++	}
++
+     ev_loop(main_loop, 0);
+ }
+-- 
+1.7.4.1
+

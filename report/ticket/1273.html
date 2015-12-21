@@ -1,0 +1,1095 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1273 (Gnome System Settings broken)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1272" title="Ticket #1272" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1273?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1273?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1273?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1274" title="Ticket #1274" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="0ab6ee5e8443632ccbce811d";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1272" title="Ticket #1272">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1274" title="Ticket #1274">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2014-06-16T22%3A20%3A42%2B02%3A00&amp;precision=second" title="See timeline at 06/16/14 22:20:42">10 months ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2014-08-31T00%3A20%3A15%2B02%3A00&amp;precision=second" title="See timeline at 08/31/14 00:20:15">7 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1273" class="trac-id">#1273</a>
+    <span class="trac-status">
+      <a href="/report/query?status=infoneeded_new">infoneeded_new</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Gnome System Settings broken</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">jhnmlkvch9@…</td>
+      <th id="h_owner" class="missing">Owned by:</th>
+      <td headers="h_owner"></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=minor">minor</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.8">4.8</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.8-8-g34f6f18 (2014-06-15, branch "master")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+A lot of the settings icons from the gnome-control-panel are missing. I had to revert back to 4.7.2 to make them re-appear.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(1)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/1273/Screenshot%20from%202014-06-16%2015%3A19%3A49.png" title="View attachment">Screenshot from 2014-06-16 15:19:49.png</a><a href="/report/raw-attachment/ticket/1273/Screenshot%20from%202014-06-16%2015%3A19%3A49.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="27591 bytes">26.9 KB</span>) -
+      added by <em>i3-new-ticket</em> <a class="timeline" href="/report/timeline?from=2014-06-16T22%3A20%3A43%2B02%3A00&amp;precision=second" title="See timeline at 06/16/14 22:20:43">10 months ago</a>.
+  </dt>
+              <dd>
+                desc2
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/1273/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(19)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-16T22%3A20%3A43%2B02%3A00&amp;precision=second" title="See timeline at 06/16/14 22:20:43">10 months ago</a> by i3-new-ticket
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1273/Screenshot%20from%202014-06-16%2015%3A19%3A49.png"><em>Screenshot from 2014-06-16 15:19:49.png</em></a><a href="/report/raw-attachment/ticket/1273/Screenshot%20from%202014-06-16%2015%3A19%3A49.png" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+desc2<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-1-1402950365579243">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-16T22%3A26%3A05%2B02%3A00&amp;precision=second" title="See timeline at 06/16/14 22:26:05">10 months ago</a> by jhnmlkvch9@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+that should be gnome-control-center<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1402951529548293">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-16T22%3A45%3A29%2B02%3A00&amp;precision=second" title="See timeline at 06/16/14 22:45:29">10 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-priority">
+      <strong class="trac-field-priority">Priority</strong>
+        changed from <em>major</em> to <em>minor</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I don’t use g-c-c. Someone else will have to look into this.<br />
+</p>
+<p>
+If you want to help, using “git bisect” to figure out which commit has caused this would go a long way.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1402953102191286">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-16T23%3A11%3A42%2B02%3A00&amp;precision=second" title="See timeline at 06/16/14 23:11:42">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I don't have this issue with g-c-c 3.12.1 and i3 version 4.8 (2014-06-15, branch "4.8")<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1402961807406850">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-17T01%3A36%3A47%2B02%3A00&amp;precision=second" title="See timeline at 06/17/14 01:36:47">10 months ago</a> by jhnmlkvch9@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I'll try git-bisect. It the meantime a quick update. sudo gnome-control-center brings back the icons. So probably a permissions issue. However, I don't think root should be needed to for system settings.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1405504720882510">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-16T11%3A58%3A40%2B02%3A00&amp;precision=second" title="See timeline at 07/16/14 11:58:40">9 months ago</a> by jhnmlkvch9@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+ok. sorry for the delay. I was able to finally get around to trying git bisect. Unfortunately, the problem goes all the way back to:<br />
+</p>
+<p>
+git bisect 4.8-28-g9463be4 4.8<br />
+.<br />
+.<br />
+.<br />
+i3 version 4.8-1-gf30c0a4 (2014-06-15, branch "4.8-1-gf30c0a4")<br />
+f30c0a4fc7df8512e811807903e310cfe68bfaab is the first bad commit<br />
+</p>
+<p>
+It works fine in 4.7.2<br />
+</p>
+<p>
+git bisect start 4.8-1-gf30c0a4 4.7.2<br />
+Previous HEAD position was f30c0a4... Merge branch 'release-4.8' into next<br />
+Switched to branch 'master'<br />
+Your branch is up-to-date with 'origin/master'.<br />
+Bisecting: 105 revisions left to test after this (roughly 7 steps)<br />
+<a class="missing changeset" title="No default repository defined">[35eac121fc68ea02b60abea4f38a9dd5f1389795]</a> Update ipc library list documentation<br />
+.<br />
+.<br />
+.<br />
+i3 version 4.7.2-105-g35eac12 (2014-03-10, branch "tags/4.7.2-105-g35eac12")<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1405525252981526">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-16T17%3A40%3A52%2B02%3A00&amp;precision=second" title="See timeline at 07/16/14 17:40:52">9 months ago</a> by jhnmlkvch9@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+In other words, this version is fine:<br />
+</p>
+<p>
+i3 version 4.7.2-105-g35eac12 (2014-03-10, branch "tags/4.7.2-105-g35eac12")<br />
+</p>
+<p>
+Everything after is broken.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1405532103299065">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-16T19%3A35%3A03%2B02%3A00&amp;precision=second" title="See timeline at 07/16/14 19:35:03">9 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Sorry, I should have been more specific. Can you bisect this on the “next” branch? The master branch just contains a commit that merges an entire new version, which is not very helpful when bisecting :).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1405809016813996">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-20T00%3A30%3A16%2B02%3A00&amp;precision=second" title="See timeline at 07/20/14 00:30:16">8 months ago</a> by jhnmlkvch9@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I'm not sure this is working either. Maybe I'm missing something regarding bisecting on the next branch. Let me know and I'll give it another shot. Here is what I did. Despite starting with the next branch, I still end up with the same merge point as the problematic commit.<br />
+</p>
+<p>
+========================================<br />
+</p>
+<p>
+i3 version 4.8-81-g0d656dd (2014-07-15, branch "next") &lt;-- bad<br />
+</p>
+<p>
+git bisect start 4.8-81-g0d656dd 4.8<br />
+</p>
+<p>
+========================================<br />
+</p>
+<p>
+i3 version 4.8-43-gb91cd34 (2014-06-24, branch "4.8-43-gb91cd34") &lt;-- bad<br />
+</p>
+<p>
+Bisecting: 18 revisions left to test after this (roughly 4 steps)<br />
+<a class="missing changeset" title="No default repository defined">[c9362325454fe1fea000be277ba736bfe813df14]</a> Consistently parse workspace numbers<br />
+</p>
+<p>
+=========================================<br />
+</p>
+<p>
+i3 version 4.8-18-gc936232 (2014-06-23, branch "4.8-18-gc936232") &lt;-- bad<br />
+</p>
+<p>
+Bisecting: 8 revisions left to test after this (roughly 3 steps)<br />
+<a class="missing changeset" title="No default repository defined">[4c06e7a573e450329212b28a3b8f4a5e89b326d4]</a> clang-format-3.5 <strong>/*.h </strong>/*.c<br />
+</p>
+<p>
+=========================================<br />
+</p>
+<p>
+i3 version 4.8-9-g4c06e7a (2014-06-19, branch "4.8-9-g4c06e7a") &lt;-- bad<br />
+</p>
+<p>
+Bisecting: 4 revisions left to test after this (roughly 2 steps)<br />
+<a class="missing changeset" title="No default repository defined">[29240445056faf84326f07f65e970cb4f66bd939]</a> debian: bump standards-version to 3.9.5 (no changes necessary)<br />
+</p>
+<p>
+=========================================<br />
+</p>
+<p>
+i3 version 4.8-4-g2924044 (2014-06-15, branch "4.8-4-g2924044") &lt;-- bad<br />
+</p>
+<p>
+Bisecting: 1 revision left to test after this (roughly 1 step)<br />
+<a class="missing changeset" title="No default repository defined">[e77b7e616765e7c190aefbbe5a3b1e377b1eb651]</a> debian: update changelog<br />
+</p>
+<p>
+=========================================<br />
+</p>
+<p>
+i3 version 4.8-2-ge77b7e6 (2014-06-15, branch "4.8-2-ge77b7e6") &lt;-- bad<br />
+</p>
+<p>
+Bisecting: 0 revisions left to test after this (roughly 0 steps)<br />
+<a class="missing changeset" title="No default repository defined">[f30c0a4fc7df8512e811807903e310cfe68bfaab]</a> Merge branch 'release-4.8' into next<br />
+</p>
+<p>
+=========================================<br />
+</p>
+<p>
+i3 version 4.8-1-gf30c0a4 (2014-06-15, branch "4.8-1-gf30c0a4") &lt;-- bad<br />
+</p>
+<p>
+f30c0a4fc7df8512e811807903e310cfe68bfaab is the first bad commit<br />
+</p>
+<p>
+==========================================<br />
+</p>
+<p>
+git bisect start 4.8-1-gf30c0a4 4.7.2<br />
+</p>
+<p>
+Previous HEAD position was f30c0a4... Merge branch 'release-4.8' into next<br />
+Switched to branch 'next'<br />
+Your branch is up-to-date with 'origin/next'.<br />
+Bisecting: 105 revisions left to test after this (roughly 7 steps)<br />
+<a class="missing changeset" title="No default repository defined">[35eac121fc68ea02b60abea4f38a9dd5f1389795]</a> Update ipc library list documentation<br />
+</p>
+<p>
+===========================================<br />
+</p>
+<p>
+i3 version 4.7.2-105-g35eac12 (2014-03-10, branch "tags/4.7.2-105-g35eac12") &lt;-- GOOD<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1405861820394515">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-20T15%3A10%3A20%2B02%3A00&amp;precision=second" title="See timeline at 07/20/14 15:10:20">8 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+With “git bisect start 4.8-81-g0d656dd 4.8” you’re bisecting what’s currently in “next” against what was in next when 4.8 was released.<br />
+</p>
+<p>
+However, we’ve already established that the bug was introduced somewhere between 4.7.2 and 4.8, right?<br />
+</p>
+<p>
+So, I’d kindly ask you to run “git bisect start 4.8 4.7.2”.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1405878449651726">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-20T19%3A47%3A29%2B02%3A00&amp;precision=second" title="See timeline at 07/20/14 19:47:29">8 months ago</a> by jhnmlkvch9@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+But isn't that what I did in the last step:<br />
+</p>
+<p>
+git bisect start 4.8-1-gf30c0a4 4.7.2<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1405891746748523">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-20T23%3A29%3A06%2B02%3A00&amp;precision=second" title="See timeline at 07/20/14 23:29:06">8 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sorry, I missed the part in your output where you switched to a different command.<br />
+</p>
+<p>
+Nevertheless, the output doesn’t make sense to me: git bisect tells you there are 105 revisions to test in 7 steps and then you tell me about a GOOD revision, but not about any further revisions…? I’m looking for the revision which first introduced the bad behavior.<br />
+</p>
+<p>
+Did you accidentally not copy&amp;paste the whole output?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-12-1405907188150850">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-21T03%3A46%3A28%2B02%3A00&amp;precision=second" title="See timeline at 07/21/14 03:46:28">8 months ago</a> by jhnmlkvch9@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Yes that is the whole output. My first thought was maybe the change was in branch release-4.8 as the message indicates. May be I should be bisecting that branch, if I can check it out.<br />
+</p>
+<p>
+At any rate, when I do the last bisect command it just goes to 4.7.2-105-g35eac12 directly. Same if I bisect from the current version of the next branch.<br />
+</p>
+<p>
+Let me know how to proceed.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-13-1405927442215484">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:13" class="cnum">
+    <a href="#comment:13">comment:13</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-21T09%3A24%3A02%2B02%3A00&amp;precision=second" title="See timeline at 07/21/14 09:24:02">8 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I cannot reproduce this:<br />
+</p>
+<pre class="wiki">midna /tmp/i3 master $ git bisect start 4.8-1-gf30c0a4 4.7.2
+Bisecting: 105 revisions left to test after this (roughly 7 steps)
+[35eac121fc68ea02b60abea4f38a9dd5f1389795] Update ipc library list documentation
+
+midna /tmp/i3 35eac121fc68ea02b60abea4f38a9dd5f1389795 $ git bisect good
+Bisecting: 52 revisions left to test after this (roughly 6 steps)
+[4126c87dafccb4db1f2490d0cf17a14b529da326] Dont include dock clients in ewmh lists
+</pre><p>
+and:<br />
+</p>
+<pre class="wiki">midna /tmp/i3 master $ git bisect start 4.8-1-gf30c0a4 4.7.2
+Already on 'master'
+Your branch is up-to-date with 'origin/master'.
+Bisecting: 105 revisions left to test after this (roughly 7 steps)
+[35eac121fc68ea02b60abea4f38a9dd5f1389795] Update ipc library list documentation
+
+midna /tmp/i3 35eac121fc68ea02b60abea4f38a9dd5f1389795 $ git bisect bad
+Bisecting: 52 revisions left to test after this (roughly 6 steps)
+[81fd4ec71c4d36aec0c345150debb97e4cb09014] add testcase for #1149
+</pre><p>
+So, in either case, there has to be more output than what you provided. Can you start over with a fresh checkout and provide _all_ the output of your terminal session?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-14-1406001972950522">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:14" class="cnum">
+    <a href="#comment:14">comment:14</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-22T06%3A06%3A12%2B02%3A00&amp;precision=second" title="See timeline at 07/22/14 06:06:12">8 months ago</a> by jhnmlkvch9@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Here is the complete output:<br />
+</p>
+<p>
+jmkv1@jmkv1:~/i3$ i3 --version<br />
+i3 version 4.8-82-g8e8afb2 (2014-07-20, branch "next") © 2009-2014 Michael Stapelberg and contributors<br />
+</p>
+<p>
+jmkv1@jmkv1:~/i3$ git bisect start 4.8 4.7.2<br />
+Bisecting: 104 revisions left to test after this (roughly 7 steps)<br />
+<a class="missing changeset" title="No default repository defined">[35eac121fc68ea02b60abea4f38a9dd5f1389795]</a> Update ipc library list documentation<br />
+</p>
+<p>
+jmkv1@jmkv1:~/i3$ make<br />
+[libi3] CC libi3/fake_configure_notify.c<br />
+[libi3] CC libi3/font.c<br />
+[libi3] CC libi3/get_exe_path.c<br />
+[libi3] CC libi3/get_mod_mask.c<br />
+[libi3] CC libi3/ipc_connect.c<br />
+[libi3] CC libi3/ipc_recv_message.c<br />
+[libi3] CC libi3/ipc_send_message.c<br />
+[libi3] CC libi3/root_atom_contents.c<br />
+[libi3] CC libi3/ucs2_conversion.c<br />
+[libi3] AR libi3.a<br />
+[i3] CC src/assignments.c<br />
+[i3] CC src/bindings.c<br />
+[i3] CC src/click.c<br />
+[i3] CC src/commands.c<br />
+[i3] Generating command parser<br />
+[i3] CC src/commands_parser.c<br />
+[i3] CC src/con.c<br />
+[i3] CC src/config.c<br />
+[i3] CC src/config_directives.c<br />
+[i3] Generating config parser<br />
+[i3] CC src/config_parser.c<br />
+[i3] CC src/debug.c<br />
+[i3] CC src/display_version.c<br />
+[i3] CC src/ewmh.c<br />
+[i3] CC src/fake_outputs.c<br />
+[i3] CC src/floating.c<br />
+[i3] CC src/handlers.c<br />
+[i3] CC src/ipc.c<br />
+[i3] CC src/key_press.c<br />
+[i3] CC src/load_layout.c<br />
+[i3] CC src/log.c<br />
+[i3] CC src/main.c<br />
+[i3] CC src/manage.c<br />
+[i3] CC src/match.c<br />
+[i3] CC src/move.c<br />
+[i3] CC src/output.c<br />
+[i3] CC src/randr.c<br />
+[i3] CC src/regex.c<br />
+[i3] CC src/render.c<br />
+[i3] CC src/resize.c<br />
+[i3] CC src/restore_layout.c<br />
+[i3] CC src/scratchpad.c<br />
+[i3] CC src/sd-daemon.c<br />
+[i3] CC src/sighandler.c<br />
+[i3] CC src/startup.c<br />
+[i3] CC src/tree.c<br />
+[i3] CC src/util.c<br />
+[i3] CC src/window.c<br />
+[i3] CC src/workspace.c<br />
+[i3] CC src/x.c<br />
+[i3] CC src/xcb.c<br />
+[i3] CC src/xcursor.c<br />
+[i3] CC src/xinerama.c<br />
+[i3] Link i3<br />
+[i3-config-wizard] CC i3-config-wizard/main.c<br />
+[i3-config-wizard] Link i3-config-wizard<br />
+[i3-msg] CC i3-msg/main.c<br />
+[i3-msg] Link i3-msg<br />
+[i3-input] CC i3-input/keysym2ucs.c<br />
+[i3-input] CC i3-input/main.c<br />
+[i3-input] Link i3-input<br />
+[i3-nagbar] CC i3-nagbar/main.c<br />
+[i3-nagbar] Link i3-nagbar<br />
+[i3bar] CC i3bar/src/child.c<br />
+[i3bar] CC i3bar/src/config.c<br />
+[i3bar] CC i3bar/src/ipc.c<br />
+[i3bar] CC i3bar/src/main.c<br />
+[i3bar] CC i3bar/src/mode.c<br />
+[i3bar] CC i3bar/src/outputs.c<br />
+[i3bar] CC i3bar/src/parse_json_header.c<br />
+[i3bar] CC i3bar/src/workspaces.c<br />
+[i3bar] CC i3bar/src/xcb.c<br />
+[i3bar] Link i3bar<br />
+[i3-dump-log] CC i3-dump-log/main.c<br />
+[i3-dump-log] Link i3-dump-log<br />
+</p>
+<p>
+jmkv1@jmkv1:~/i3$ sudo make install<br />
+[i3] Install<br />
+[i3-config-wizard] Install<br />
+[i3-msg] Install<br />
+[i3-input] Install<br />
+[i3-nagbar] Install<br />
+[i3bar] Install<br />
+[i3-dump-log] Install<br />
+</p>
+<p>
+jmkv1@jmkv1:~/i3$ i3 --version<br />
+i3 version 4.7.2-105-g35eac12 (2014-03-10, branch "tags/4.7.2-105-g35eac12") © 2009-2014 Michael Stapelberg and contributors<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-15-1406013302991044">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:15" class="cnum">
+    <a href="#comment:15">comment:15</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-22T09%3A15%3A02%2B02%3A00&amp;precision=second" title="See timeline at 07/22/14 09:15:02">8 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+So, in this output, why do you not continue the bisect with “git bisect --good” (if the version works) or “git bisect --bad” (if it does not work) until the bisect is complete…?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-16-1406446830041681">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:16" class="cnum">
+    <a href="#comment:16">comment:16</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-27T09%3A40%3A30%2B02%3A00&amp;precision=second" title="See timeline at 07/27/14 09:40:30">8 months ago</a> by jhnmlkvch9@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I stopped because, it was already good at that point. However, now, I have continued. Everything continues to be good. Here are the versions:<br />
+</p>
+<p>
+Bisecting: 13 revisions left to test after this (roughly 4 steps)<br />
+<a class="missing changeset" title="No default repository defined">[cdbf62d0555c63cb471253b30071d9d4d18adf77]</a> man/i3.man: Update font doc to reflect i3.config<br />
+</p>
+<p>
+Bisecting: 8 revisions left to test after this (roughly 3 steps)<br />
+<a class="missing changeset" title="No default repository defined">[d5cf494ba26d6dffde002907d620736e6c71adf7]</a> Update ipc COMMAND reply documentation<br />
+</p>
+<p>
+Bisecting: 4 revisions left to test after this (roughly 2 steps)<br />
+<a class="missing changeset" title="No default repository defined">[89be6cb509c5b42b1ced48b27939e5a63ef43a0c]</a> Merge branch 'fix-recv-memleak'<br />
+</p>
+<p>
+Bisecting: 2 revisions left to test after this (roughly 1 step)<br />
+<a class="missing changeset" title="No default repository defined">[8ed95ae58cb371a24214ec0474199f5551829cd6]</a> Improved detection of windows that want floating<br />
+</p>
+<p>
+Bisecting: 0 revisions left to test after this (roughly 1 step)<br />
+<a class="missing changeset" title="No default repository defined">[81271887e20957d3e1ef1e6f5c32b4a61dd034cf]</a> Set con window to NULL on tree_close<br />
+</p>
+<p>
+35eac121fc68ea02b60abea4f38a9dd5f1389795 is the first bad commit<br />
+commit 35eac121fc68ea02b60abea4f38a9dd5f1389795<br />
+Author: Tony Crisci &lt;tony@…&gt;<br />
+Date:   Sun Mar 9 21:33:26 2014 -0400<br />
+</p>
+<blockquote>
+<p>
+Update ipc library list documentation<br />
+</p>
+</blockquote>
+<p>
+    <br />
+</p>
+<blockquote>
+<p>
+Add a link to the new <a class="forbidden wiki" title="no permission to view this wiki page">JavaScript</a>, Python, and Lua ipc libraries.<br />
+</p>
+</blockquote>
+<p>
+    <br />
+</p>
+<blockquote>
+<p>
+Add notice that the older Python libraries are not maintained.<br />
+</p>
+</blockquote>
+<p>
+    <br />
+</p>
+<blockquote>
+<p>
+Sort the list alphabetically.<br />
+</p>
+</blockquote>
+<p>
+:040000 040000 09fda0110f9a45723016e894c35c7ced27eb760e 6d6da335ffad891319b9f04c0e148b5f1f8b4cf7 M        docs<br />
+</p>
+<p>
+i3 version 4.7.2-104-g8127188 (2014-03-10, branch "bisect/good-81271887e20957d3e1ef1e6f5c32b4a61dd034cf") © 2009-2014 Michael Stapelberg and contributors<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-17-1406458592622266">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:17" class="cnum">
+    <a href="#comment:17">comment:17</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-27T12%3A56%3A32%2B02%3A00&amp;precision=second" title="See timeline at 07/27/14 12:56:32">8 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I’m sorry that this is taking so long, but this still doesn’t make sense to me.<br />
+</p>
+<blockquote class="citation">
+<p>
+I stopped because, it was already good at that point. However, now, I have continued. Everything continues to be good. Here are the versions:<br />
+</p>
+</blockquote>
+<p>
+But we’re <strong>not</strong> looking for a good commit, we are looking for the bad commit :). So, yeah, please bisect until the very end.<br />
+</p>
+<p>
+Everything continuing to be good sounds wrong to me (it implies that 35eac121fc68ea02b60abea4f38a9dd5f1389795 is the commit which introduces the problem, however this commit only modifies docs/ipc which does not end up in the compiled binary, so it cannot be responsible for the breakage). This would mean one of our assumptions is flawed. Let’s go over it one by one:<br />
+</p>
+<ol><li>You are using “git bisect start 4.8 4.7.2”. This implies that 4.8 is bad and 4.7.2 is good. Can you use “git checkout 4.8”, build that and verify it is indeed bad? Same with 4.7.2, is it indeed good?
+</li><li>After every git bisect --good or --bad you <strong>do</strong> build, install and test i3 to see if the bug is still reproducible, right?
+</li><li>Can you please use <tt>i3 --moreversion</tt> before testing to confirm that the _running_ version is what we expect?
+</li><li>Can you please provide <strong>the entire terminal session</strong>, including the commands that you enter, not just the outputs that you get? If there are steps that are not visible from the terminal output, please add a quick explanation of what you do at the appropriate place (e.g. “here I log out of i3 and log back in to get the new version”).
+</li></ol><p>
+Thanks for your patience.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-18-1409437215285428">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:18" class="cnum">
+    <a href="#comment:18">comment:18</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-31T00%3A20%3A15%2B02%3A00&amp;precision=second" title="See timeline at 08/31/14 00:20:15">7 months ago</a> by jhnmlkvch9@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+after much investigation I think the problem started between 4.7.2-112 and 4.7.2-200. Unfortunately, I think since I did not do make clean for each bisect, I was able to get a version of latest 4.8 next branch without the problem.<br />
+</p>
+<p>
+This is a really tedious thing especially because I can't get the changes to stick without literally logging out and logging back into i3. I'll try and get the exact commit with the problem, but unfortunately I don't have the time right now.<br />
+</p>
+<p>
+I just wanted to give this update in the mean time.<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1273?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1273?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1273?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

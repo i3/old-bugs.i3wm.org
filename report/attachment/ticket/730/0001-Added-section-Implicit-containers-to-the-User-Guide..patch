@@ -1,0 +1,48 @@
+From 09bf9d4b64a60110d7fb77c8da5682bc2f97e797 Mon Sep 17 00:00:00 2001
+From: Mateusz Loskot <mateusz@loskot.net>
+Date: Thu, 14 Jun 2012 00:55:46 +0100
+Subject: [PATCH] Added section Implicit containers to the User Guide. It is
+ based on IRC discussion with Michael about Containers
+ created automatically (implicitly) when orientation
+ changes.
+
+---
+ docs/userguide |   22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+
+diff --git a/docs/userguide b/docs/userguide
+index 8ffda89..026f09e 100644
+--- a/docs/userguide
++++ b/docs/userguide
+@@ -235,6 +235,28 @@ windows will be opened to the right of the +Vertical Split Container+:
+ 
+ image::tree-shot3.png["shot3",title="Focus parent, then open new terminal"]
+ 
++=== Implicit containers
++	
++Sometimes +Containers+ are created implicitly.
++
++This may happen in response to changed orientation of current workspace.
++When you start i3 with a single monitor, a single workspace and you open three
++terminal windows, all the three windows are leaves directly attached to the same
++node of the i3 tree, to the workspace.
++By default, orientation of all the three terminal windows in the workspace
+++Container+ is horizontal.
++
++If you move one of the windows vertically, for instance down (+mod+k+),
++orientation of the workspace will change.
++The horizontal split +Container+ of workspace will change to vertical
++split +Container+.
++The terminal window moved actively will appear at the bottom of the workspace.
++Finally, new horizontal split +Container+ will be created at the top of
++the workspace to accommodate the other two terminal windows.
++Now, when you switch to tabbed mode (+mod+w+), you will notice that the two
++windows moved passively are attached to separate +Container+ node
++instead of directly to the workspace.
++
+ [[configuring]]
+ == Configuring i3
+ 
+-- 
+1.7.10.4
+

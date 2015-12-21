@@ -1,0 +1,657 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #781 (gnome3 based apps have "jumpy" menus)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/780" title="Ticket #780" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/781?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/781?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/781?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/782" title="Ticket #782" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="a7e85297bba17377caeebbad";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/780" title="Ticket #780">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/782" title="Ticket #782">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-08-21T22%3A54%3A55%2B02%3A00&amp;precision=second" title="See timeline at 08/21/12 22:54:55">3 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2013-12-01T20%3A26%3A54%2B01%3A00&amp;precision=second" title="See timeline at 12/01/13 20:26:54">16 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/781" class="trac-id">#781</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=reporter_inactive">reporter_inactive</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">gnome3 based apps have "jumpy" menus</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">tooker@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.2">4.2</a>
+        </td>
+        <th id="h_keywords">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+              <a href="/report/query?status=!closed&amp;keywords=~gnome3">gnome3</a> <a href="/report/query?status=!closed&amp;keywords=~menu">menu</a> <a href="/report/query?status=!closed&amp;keywords=~jump">jump</a>
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion" class="missing">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Linux">Linux</a>
+        </td>
+    </tr><tr>
+        <th id="h_app">
+          X11 program:
+        </th>
+        <td headers="h_app">
+              evolution, gnome-terminal
+        </td>
+        <th id="h_distri">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+              FedoreCore 17
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+I'm using the stock i3 (4.2) that comes with FC17 and menus for gnome3 apps like evolution and gnome-terminal are sometimes unusable, which makes these apps mostly unusable.  It looks like the menu is trying to jump to the top of the screen where they would be when using gnome3 shell. I've attached a screenshot of me trying to run evolution.<br />
+</p>
+<p>
+To reproduce simply run a gnome3 based app (gnome-terminal and evolution tested) and run your mouse through the menubar and menu items until you observe the menu collapse or jump to the top-left of your screen.  I've observed similar problems with dropdown selections but this might be a separate bug.<br />
+</p>
+<p>
+Please provide a detailed description of your problem.<br />
+ <br />
+Please reproduce the problem with the default configuration file (if impossible, attach your config file).<br />
+ <br />
+Please provide a logfile with full debug level (compress it), see <a class="ext-link" href="http://i3wm.org/docs/4.0/debugging.html"><span class="icon">​</span>http://i3wm.org/docs/4.0/debugging.html</a><br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(2)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/781/gnome-bug.jpg" title="View attachment">gnome-bug.jpg</a><a href="/report/raw-attachment/ticket/781/gnome-bug.jpg" class="trac-rawlink" title="Download">​</a>
+       (<span title="115106 bytes">112.4 KB</span>) -
+      added by <em>tooker@…</em> <a class="timeline" href="/report/timeline?from=2012-08-21T22%3A56%3A12%2B02%3A00&amp;precision=second" title="See timeline at 08/21/12 22:56:12">3 years ago</a>.
+  </dt>
+              <dd>
+                Screenshot of evolution menus after they jumped to the top left of the screen.
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/781/i3-bug781-jumpygtk3-gdmshell.tar.gz" title="View attachment">i3-bug781-jumpygtk3-gdmshell.tar.gz</a><a href="/report/raw-attachment/ticket/781/i3-bug781-jumpygtk3-gdmshell.tar.gz" class="trac-rawlink" title="Download">​</a>
+       (<span title="61440 bytes">60.0 KB</span>) -
+      added by <em>antcodd@…</em> <a class="timeline" href="/report/timeline?from=2013-03-19T12%3A55%3A30%2B01%3A00&amp;precision=second" title="See timeline at 03/19/13 12:55:30">2 years ago</a>.
+  </dt>
+              <dd>
+                Minimal logs of jumpy GTK3 menus when launching from GDM-shell and no jumping with GDM-fallback
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/781/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(10)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-08-21T22%3A56%3A12%2B02%3A00&amp;precision=second" title="See timeline at 08/21/12 22:56:12">3 years ago</a> by tooker@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/781/gnome-bug.jpg"><em>gnome-bug.jpg</em></a><a href="/report/raw-attachment/ticket/781/gnome-bug.jpg" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Screenshot of evolution menus after they jumped to the top left of the screen.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-1-1347029756876236">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-07T16%3A55%3A56%2B02%3A00&amp;precision=second" title="See timeline at 09/07/12 16:55:56">3 years ago</a> by Piotr Domagalski &lt;piotr@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I'm using gnome 3.4.1 (Arch Linux package) and latest i3 from git's next branch and cannot reproduce this problem. At least not with gnome-terminal.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1348923126135379">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-29T14%3A52%3A06%2B02%3A00&amp;precision=second" title="See timeline at 09/29/12 14:52:06">2 years ago</a> by xn
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+happens to me again, using<br />
+</p>
+<blockquote>
+<p>
+Running i3 version: 4.3-67-g064be45 (2012-09-27, branch "next") (pid 10850)<br />
+</p>
+</blockquote>
+<p>
+When using the menus I get output like this:<br />
+</p>
+<pre class="wiki">(gthumb:11634): Gtk-CRITICAL **: gtk_widget_get_preferred_width_for_height: assertion `height &gt;= 0' failed
+
+(gthumb:11634): Gtk-CRITICAL **: gtk_widget_get_preferred_width_for_height: assertion `height &gt;= 0' failed
+
+(gthumb:11634): Gtk-WARNING **: gtk_widget_size_allocate(): attempt to allocate widget with width 335 and height -242
+
+(gthumb:11634): Gtk-CRITICAL **: gtk_widget_get_preferred_width_for_height: assertion `height &gt;= 0' failed
+
+(gthumb:11634): Gtk-CRITICAL **: gtk_widget_get_preferred_width_for_height: assertion `height &gt;= 0' failed
+
+(gthumb:11634): Gtk-WARNING **: gtk_widget_size_allocate(): attempt to allocate widget with width 335 and height -242
+
+(gthumb:11634): Gtk-CRITICAL **: gtk_widget_get_preferred_width_for_height: assertion `height &gt;= 0' failed
+</pre><p>
+I’m unsure what exactly causes the messages to be printed. Opening/closing the menus is not enough, although they are positioned and sized incorrectly. Hovering over the menu points seems necessary, but it does not happen everytime -- the messages only appear randomly.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1363595618353363">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-03-18T09%3A33%3A38%2B01%3A00&amp;precision=second" title="See timeline at 03/18/13 09:33:38">2 years ago</a> by antcodd@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I am also having this issue, with the above size warning text and similar artificats. Menus jump around and often collapse to 0 height. It seems to apply to all GTK3 apps too, not just the ones from Gnome. I'm also running Arch, with GTK3 3.6.4-2, i3 4.5-1. It is much easier to trigger when mousing over menu items but it sometimes does it when just opening the menu. It doesn't seem to happen in a default config of Awesome (which also uses xcb) so I think it is some kind of i3-specific bug.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-03-19T12%3A55%3A30%2B01%3A00&amp;precision=second" title="See timeline at 03/19/13 12:55:30">2 years ago</a> by antcodd@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/781/i3-bug781-jumpygtk3-gdmshell.tar.gz"><em>i3-bug781-jumpygtk3-gdmshell.tar.gz</em></a><a href="/report/raw-attachment/ticket/781/i3-bug781-jumpygtk3-gdmshell.tar.gz" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Minimal logs of jumpy GTK3 menus when launching from GDM-shell and no jumping with GDM-fallback<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1363695453950657">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:5" class="follow-up">↓ 5</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-03-19T13%3A17%3A33%2B01%3A00&amp;precision=second" title="See timeline at 03/19/13 13:17:33">2 years ago</a> by antcodd@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I thought I had managed to nail down the scenario where this bug occurs. It seemed to only happen when using GDM as the login manager, and even then only when it is GDM shell mode (the default, but I believe Debian changes this to fallback). GDM shell mode looks a lot like Gnome Shell so there might be some hooks going on with the top bar, or simply confusion over the change from compositing. It could be a bug in a number of things, but it doesn't occur with Awesome. It seems to trigger consistently then when creating a new workspace and switching back to one with a GTK3 window. I have attached some logs of reproducing the bug in gnome-terminal with a fresh i3 config launched from GDM shell, and not reproducing it from GDM fallback mode. I also tried lightdm with the GTK3 greeter, and startx with a .xinitrc and could not reproduce the bug.<br />
+</p>
+<p>
+I forced GDM to use fallback mode in Arch by adding a file /etc/dbus/db/gdm.d/99-fallback (or some other name with a number greater than 00):<br />
+</p>
+<p>
+[org/gnome/desktop/session]<br />
+session-name='gdm-fallback'<br />
+</p>
+<p>
+Unfortunately, while copying that out of VIM I managed to trigger the bug! I had several workspaces open and was using mouse select and right click in gnome terminal.<br />
+I am also using i3-gnome (i3 using the Gnome session manager) at the moment (I wasn't for the testing).<br />
+I haven't been able to reproduce it just now after logging out and in to double check I was using fallback. Hopefully this at least gives a clue to the bug. As a completely random stab in the dark I guess could it be because of the hardware acceleration in Chrome?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1365797712321126">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+        in reply to:
+    <a href="#comment:4">↑ 4</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-04-12T22%3A15%3A12%2B02%3A00&amp;precision=second" title="See timeline at 04/12/13 22:15:12">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/781#comment:4" title="Comment 4">antcodd@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+I thought I had managed to nail down the scenario where this bug occurs. It seemed to only happen when using GDM as the login manager, and even then only when it is GDM shell mode (the default, but I believe Debian changes this to fallback). GDM shell mode looks a lot like Gnome Shell so there might be some hooks going on with the top bar, or simply confusion over the change from compositing. It could be a bug in a number of things, but it doesn't occur with Awesome. It seems to trigger consistently then when creating a new workspace and switching back to one with a GTK3 window. I have attached some logs of reproducing the bug in gnome-terminal with a fresh i3 config launched from GDM shell, and not reproducing it from GDM fallback mode. I also tried lightdm with the GTK3 greeter, and startx with a .xinitrc and could not reproduce the bug.<br />
+</p>
+</blockquote>
+<p>
+Thanks for your detailed update. I briefly looked at your log files but did not notice anything suspicious. I presume the issue just does not show up in the i3 log at all, but is caused by something the GTK apps assume.<br />
+</p>
+<p>
+Just FYI, I don’t have a setup ready with which I could comfortably change my login manager for at least a few weeks. This ticket will have to wait :).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1365907525275152">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:7" class="follow-up">↓ 7</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-04-14T04%3A45%3A25%2B02%3A00&amp;precision=second" title="See timeline at 04/14/13 04:45:25">2 years ago</a> by antcodd@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Thanks. I couldn't see anything suspicious either, hence why I made sure the logs included the GTK error output as well.<br />
+</p>
+<p>
+I haven't seen the issue in a while since I switched to lightdm for now (using unthemed GTK3 in lightdm at the moment) so I suspect it is something to do with some environment or XSetting GDM sets up. I'll let you know if I see it again with a non-GDM display manager. Odd that it doesn't happen with other window managers such as Awesome though.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1365922239175834">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+        in reply to:
+    <a href="#comment:6">↑ 6</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-04-14T08%3A50%3A39%2B02%3A00&amp;precision=second" title="See timeline at 04/14/13 08:50:39">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/781#comment:6" title="Comment 6">antcodd@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+I haven't seen the issue in a while since I switched to lightdm for now (using unthemed GTK3 in lightdm at the moment) so I suspect it is something to do with some environment or XSetting GDM sets up. I'll let you know if I see it again with a non-GDM display manager. Odd that it doesn't happen with other window managers such as Awesome though.<br />
+</p>
+</blockquote>
+<p>
+Just yesterday I was told that gdm sets up the _NET_WORKAREA hint on the root window. Could you provide the output of <tt>xprop -root</tt> when starting via gdm (buggy) and when starting via lightdm (works)?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1385926014949934">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-01T20%3A26%3A54%2B01%3A00&amp;precision=second" title="See timeline at 12/01/13 20:26:54">16 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>reporter_inactive</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Closing due to inactivity<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/781?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/781?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/781?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+diff --git i/src/scratchpad.c w/src/scratchpad.c
+index 6bba823..5072280 100644
+--- i/src/scratchpad.c
++++ w/src/scratchpad.c
+@@ -60,7 +60,8 @@ void scratchpad_move(Con *con) {
+ 
+     /* 4: Fix focus. Normally, when moving a window to a different output, the
+      * destination output gets focused. In this case, we don’t want that. */
+-    con_focus(focus_next);
++    if (con_get_workspace(focus_next) == con_get_workspace(focused))
++        con_focus(focus_next);
+ }
+ 
+ /*
+diff --git i/src/workspace.c w/src/workspace.c
+index 1749959..f027475 100644
+--- i/src/workspace.c
++++ w/src/workspace.c
+@@ -227,6 +227,11 @@ bool workspace_is_visible(Con *ws) {
+     Con *output = con_get_output(ws);
+     if (output == NULL)
+         return false;
++
++    /* Workspaces on the __i3-pseudo output are never visible. */
++    if (output->name[0] == '_' && output->name[1] == '_')
++        return false;
++
+     Con *fs = con_get_fullscreen_con(output, CF_OUTPUT);
+     LOG("workspace visible? fs = %p, ws = %p\n", fs, ws);
+     return (fs == ws);

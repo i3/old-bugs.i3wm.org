@@ -1,0 +1,130 @@
+# This configuration uses $m and Mod3. Make sure they are mapped properly using xev(1)
+# and xmodmap(1). Usually, $m is Alt (Alt_L) and Mod3 is Windows (Super_L)
+set $m Mod1
+set $term urxvtc
+set $fm thunar
+font -misc-fixed-medium-*-*-*-12-*-*-*-*-*-*-16
+workspace_layout tabbed
+new_window none
+# XXX: REMOVED workspace_bar line. There is no internal workspace bar in v4.
+focus_follows_mouse no
+
+# Use Mouse+$m to drag floating windows to their wanted position
+floating_modifier $m
+# Fullscreen 
+bindsym $m+f fullscreen
+# Tabbed
+bindsym $m+w layout tabbed
+# Toggle tiling/floating of the current window ($m+Shift+Space)
+bindcode $m+Shift+65 floating toggle
+
+# focus between clients in a container
+bindsym $m+Shift+Tab focus left
+bindsym $m+Tab focus right
+
+# focus to another container
+bindsym $m+Left focus left
+bindsym $m+Right focus right
+bindsym $m+Down focus down
+bindsym $m+Up focus up
+
+# move app to another conatiner
+bindsym $m+Shift+Left move left
+bindsym $m+Shift+Down move down
+bindsym $m+Shift+Up move up
+bindsym $m+Shift+Right move right
+
+# resizing
+mode "resize" {
+    # increase size of a container
+    bindsym Left resize shrink left 10px
+    bindsym Down resize grow bottom 10px
+    bindsym Up resize shrink top 10px
+    bindsym Right resize grow right 10px
+    # decrease size of a container
+    bindsym Shift+Left resize grow left 10px
+    bindsym Shift+Down resize shrink bottom 10px
+    bindsym Shift+Up resize grow top 10px
+    bindsym Shift+Right resize shrink right 10px
+    #back to normal
+    bindsym Return mode "default"
+}
+bindsym $m+r mode "resize"
+
+# Workspaces ($m+1/2/…)
+bindcode $m+10 workspace 1
+bindcode $m+11 workspace 2
+bindcode $m+12 workspace 3
+bindcode $m+13 workspace 4
+bindcode $m+14 workspace 5
+bindcode $m+15 workspace 6
+bindcode $m+16 workspace 7
+bindcode $m+17 workspace 8
+bindcode $m+18 workspace 9
+bindcode $m+19 workspace 10
+
+# Move to Workspaces
+bindcode $m+Shift+10 move workspace 1
+bindcode $m+Shift+11 move workspace 2
+bindcode $m+Shift+12 move workspace 3
+bindcode $m+Shift+13 move workspace 4
+bindcode $m+Shift+14 move workspace 5
+bindcode $m+Shift+15 move workspace 6
+bindcode $m+Shift+16 move workspace 7
+bindcode $m+Shift+17 move workspace 8
+bindcode $m+Shift+18 move workspace 9
+bindcode $m+Shift+19 move workspace 10
+
+# $m+Enter starts a new terminal
+bindsym $m+c exec $term
+# $m+d starts a file manager
+bindsym $m+d exec $fm
+# $m+Shift+q kills the current client
+bindsym $m+Shift+q kill
+
+# start the browser
+bindsym $m+b exec firefox
+
+# Lautstärkeregler
+bindsym XF86AudioRaiseVolume exec amixer sset Master,0 2+
+bindsym XF86AudioLowerVolume exec amixer sset Master,0 2-                        
+bindsym XF86AudioMute exec amixer sset Master,0 toggle
+
+bindsym XF86AudioPlay exec ~/.local/bin/moc_switch.sh
+bindsym XF86Tools exec $term -e mocp
+bindsym XF86HomePage exec $fm
+
+# $m+v starts dmenu and launches the selected application
+# for now, we don’t have a launcher of our own.
+bindsym $m+x exec ~/.local/bin/dmenu_myrun.sh
+bindsym $m+i exec ~/.local/bin/info.sh
+bindsym $m+y exec ~/.local/bin/info.sh
+bindsym $m+j exec ~/bastelei/GtkHelferlein/notizblatt ~/.Notizen.txt
+
+# mocp control
+bindsym $m+p exec ~/.local/bin/moc_switch.sh
+bindsym $m+m exec $term -e mocp
+bindsym $m+n exec mocp -f
+
+# $m+Shift+e exits i3
+#bind $m+Shift+26 exit
+
+# $m+Shift+r restarts i3 inplace
+bindsym $m+Shift+r restart
+bindsym $m+l exec ~/.local/bin/lock.sh 660000
+
+# The IPC interface allows programs like an external workspace bar
+# (i3-wsbar) or i3-msg (can be used to "remote-control" i3) to work.
+ipc-socket ~/.i3/ipc.sock
+
+# Buntmach
+client.focused          #336699 #336699 #ffffff
+#client.focused          #3465a4 #3465a4 #ffffff
+#client.focused_inactive #333333 #336699 #cccccc
+#client.unfocused        #333333 #333333 #cccccc
+#client.urgent           #999933 #cccc66 #ffffff
+
+#############################################################
+# DELETE THE FOLLOWING LINES TO DISABLE THE WELCOME MESSAGE #
+#############################################################
+

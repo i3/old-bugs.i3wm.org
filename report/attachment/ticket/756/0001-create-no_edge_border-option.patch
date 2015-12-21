@@ -1,0 +1,207 @@
+From ae45fa06a93a88ee766dbbc6861b31c10eb9d7a9 Mon Sep 17 00:00:00 2001
+From: Iakov Davydov <dav01@myths.ru>
+Date: Sun, 22 Jul 2012 13:57:07 +0400
+Subject: [PATCH] create no_edge_border option
+
+---
+ include/con.h    |    6 ++++++
+ include/config.h |    5 +++++
+ include/data.h   |    3 +++
+ src/cfgparse.l   |    1 +
+ src/cfgparse.y   |   10 ++++++++++
+ src/con.c        |   37 +++++++++++++++++++++++++++++++++++--
+ src/x.c          |   18 ++++++++++++------
+ 7 files changed, 72 insertions(+), 8 deletions(-)
+
+diff --git a/include/con.h b/include/con.h
+index b14c477..3862316 100644
+--- a/include/con.h
++++ b/include/con.h
+@@ -222,6 +222,12 @@ Con *con_descend_direction(Con *con, direction_t direction);
+ Rect con_border_style_rect(Con *con);
+ 
+ /**
++ * Returns adjecent borders of the window. We need this if no_edge_border is
++ * enabled.
++ */
++adjacent con_adjacent_border(Con *con);
++
++/**
+  * Use this function to get a container’s border style. This is important
+  * because when inside a stack, the border style is always BS_NORMAL.
+  * For tabbed mode, the same applies, with one exception: when the container is
+diff --git a/include/config.h b/include/config.h
+index 310f8b0..d356b5d 100644
+--- a/include/config.h
++++ b/include/config.h
+@@ -108,6 +108,11 @@ struct Config {
+      * It is not planned to add any different focus models. */
+     bool disable_focus_follows_mouse;
+ 
++    /** Remove horizontal border if it's adjacent to the screen edge. 
++     * This is usefull if you are reaching scrollbar on the edge of the
++     * screen. By default, this is disabled */
++    bool no_edge_border;
++
+     /** By default, a workspace bar is drawn at the bottom of the screen.
+      * If you want to have a more fancy bar, it is recommended to replace
+      * the whole bar by dzen2, for example using the i3-wsbar script which
+diff --git a/include/data.h b/include/data.h
+index f4ed9a3..ab292de 100644
+--- a/include/data.h
++++ b/include/data.h
+@@ -60,6 +60,9 @@ typedef enum { BS_NORMAL = 0, BS_NONE = 1, BS_1PIXEL = 2 } border_style_t;
+  * only this specific window or the whole X11 client */
+ typedef enum { DONT_KILL_WINDOW = 0, KILL_WINDOW = 1, KILL_CLIENT = 2 } kill_window_t;
+ 
++/** we specify values so ADJ_LEFT | ADJ_RIGHT == ADJ_BOTH */
++typedef enum { ADJ_NONE = 0, ADJ_LEFT = 1, ADJ_RIGHT = 2, ADJ_BOTH = 3 } adjacent;
++
+ enum {
+     BIND_NONE = 0,
+     BIND_SHIFT = XCB_MOD_MASK_SHIFT,        /* (1 << 0) */
+diff --git a/src/cfgparse.l b/src/cfgparse.l
+index cdf110d..0af8f5e 100644
+--- a/src/cfgparse.l
++++ b/src/cfgparse.l
+@@ -200,6 +200,7 @@ new_float                       { return TOKNEWFLOAT; }
+ normal                          { return TOK_NORMAL; }
+ none                            { return TOK_NONE; }
+ 1pixel                          { return TOK_1PIXEL; }
++no_edge_border                  { return TOK_NO_EDGE_BORDER; }
+ focus_follows_mouse             { return TOKFOCUSFOLLOWSMOUSE; }
+ force_focus_wrapping            { return TOK_FORCE_FOCUS_WRAPPING; }
+ force_xinerama                  { return TOK_FORCE_XINERAMA; }
+diff --git a/src/cfgparse.y b/src/cfgparse.y
+index ab8be57..3bd2662 100644
+--- a/src/cfgparse.y
++++ b/src/cfgparse.y
+@@ -690,6 +690,7 @@ void parse_file(const char *f) {
+ %token                  TOK_NORMAL                  "normal"
+ %token                  TOK_NONE                    "none"
+ %token                  TOK_1PIXEL                  "1pixel"
++%token                  TOK_NO_EDGE_BORDER          "no_edge_border"
+ %token                  TOKFOCUSFOLLOWSMOUSE        "focus_follows_mouse"
+ %token                  TOK_FORCE_FOCUS_WRAPPING    "force_focus_wrapping"
+ %token                  TOK_FORCE_XINERAMA          "force_xinerama"
+@@ -788,6 +789,7 @@ line:
+     | workspace_layout
+     | new_window
+     | new_float
++    | no_edge_border
+     | focus_follows_mouse
+     | force_focus_wrapping
+     | force_xinerama
+@@ -1429,6 +1431,14 @@ bool:
+     }
+     ;
+ 
++no_edge_border:
++    TOK_NO_EDGE_BORDER bool
++    {
++        DLOG("no edge border = %d\n", $2);
++        config.no_edge_border = !($2);
++    }
++    ;
++
+ focus_follows_mouse:
+     TOKFOCUSFOLLOWSMOUSE bool
+     {
+diff --git a/src/con.c b/src/con.c
+index c24a379..a4c8fba 100644
+--- a/src/con.c
++++ b/src/con.c
+@@ -893,12 +893,31 @@ Con *con_descend_direction(Con *con, direction_t direction) {
+  *
+  */
+ Rect con_border_style_rect(Con *con) {
++    adjacent adj = ADJ_NONE;
++    Rect result;
++    if (config.no_edge_border) adj = con_adjacent_border(con);
+     switch (con_border_style(con)) {
+     case BS_NORMAL:
+-        return (Rect){2, 0, -(2 * 2), -2};
++        result = (Rect){2, 0, -(2 * 2), -2};
++        if (adj & ADJ_LEFT) {
++            result.x -= 2;
++            result.width += 2;
++        }
++        if (adj & ADJ_RIGHT) {
++            result.width += 2;
++        }
++        return result;
+ 
+     case BS_1PIXEL:
+-        return (Rect){1, 1, -2, -2};
++        result = (Rect){1, 1, -2, -2};
++        if (adj & ADJ_LEFT) {
++            result.x -= 1;
++            result.width += 1;
++        }
++        if (adj & ADJ_RIGHT) {
++            result.width += 1;
++        }
++        return result;
+ 
+     case BS_NONE:
+         return (Rect){0, 0, 0, 0};
+@@ -909,6 +928,20 @@ Rect con_border_style_rect(Con *con) {
+ }
+ 
+ /*
++ * Returns adjacent borders of the window. We need this if no_edge_border is
++ * enabled.
++ */
++adjacent con_adjacent_border(Con *con) {
++    adjacent result = ADJ_NONE;
++    Con *output = con_get_output(con);
++    if (con->rect.x == output->rect.x)
++        result |= ADJ_LEFT;
++    if (con->rect.x + con->rect.width == output->rect.x + output->rect.width)
++        result |= ADJ_RIGHT;
++    return result;
++}
++
++/*
+  * Use this function to get a container’s border style. This is important
+  * because when inside a stack, the border style is always BS_NORMAL.
+  * For tabbed mode, the same applies, with one exception: when the container is
+diff --git a/src/x.c b/src/x.c
+index 08eb8fe..9d3fa14 100644
+--- a/src/x.c
++++ b/src/x.c
+@@ -299,6 +299,8 @@ void x_window_kill(xcb_window_t window, kill_window_t kill_window) {
+ void x_draw_decoration(Con *con) {
+     Con *parent = con->parent;
+     bool leaf = con_is_leaf(con);
++    adjacent adj = ADJ_NONE;
++    if (config.no_edge_border) adj = con_adjacent_border(con);
+     /* This code needs to run for:
+      *  • leaf containers
+      *  • non-leaf containers which are in a stacked/tabbed container
+@@ -408,12 +410,16 @@ void x_draw_decoration(Con *con) {
+          * rectangle because some childs are not freely resizable and we want
+          * their background color to "shine through". */
+         xcb_change_gc(conn, con->pm_gc, XCB_GC_FOREGROUND, (uint32_t[]){ p->color->background });
+-        xcb_rectangle_t borders[] = {
+-            { 0, 0, br.x, r->height },
+-            { 0, r->height + br.height + br.y, r->width, r->height },
+-            { r->width + br.width + br.x, 0, r->width, r->height }
+-        };
+-        xcb_poly_fill_rectangle(conn, con->pixmap, con->pm_gc, 3, borders);
++        if (!(adj & ADJ_LEFT)) {
++            xcb_rectangle_t leftline = { 0, 0, br.x, r->height };
++            xcb_poly_fill_rectangle(conn, con->pixmap, con->pm_gc, 1, &leftline);
++        }
++        if (!(adj & ADJ_RIGHT)) {
++            xcb_rectangle_t rightline = { r->width + br.width + br.x, 0, r->width, r->height };
++            xcb_poly_fill_rectangle(conn, con->pixmap, con->pm_gc, 1, &rightline);
++        }
++        xcb_rectangle_t bottomline = { 0, r->height + br.height + br.y, r->width, r->height };
++        xcb_poly_fill_rectangle(conn, con->pixmap, con->pm_gc, 1, &bottomline);
+         /* 1pixel border needs an additional line at the top */
+         if (p->border_style == BS_1PIXEL) {
+             xcb_rectangle_t topline = { br.x, 0, con->rect.width + br.width + br.x, br.y };
+-- 
+1.7.9.5
+

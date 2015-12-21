@@ -1,0 +1,538 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #910 (Floating windows decoration bug)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/909" title="Ticket #909" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/910?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/910?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/910?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/911" title="Ticket #911" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="d90c9a803cf343d416f1417b";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/909" title="Ticket #909">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/911" title="Ticket #911">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-12-30T10%3A07%3A38%2B01%3A00&amp;precision=second" title="See timeline at 12/30/12 10:07:38">2 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2013-01-24T12%3A42%3A24%2B01%3A00&amp;precision=second" title="See timeline at 01/24/13 12:42:24">2 years ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/910" class="trac-id">#910</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Floating windows decoration bug</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">mariusm@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.4">4.4</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              i3 4.4-69-g6856b23 (2012-12-27, branch "origin_next") starting
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+Hi,<br />
+</p>
+<p>
+I have noticed the following issue: when bringing the window of the XBMC application to the floating layer the window will start resizing by itself (growing) on the vertical axis. This seemed to be related to the window decoration because the issue disappeared when I disabled the decoration. Also it seems to happen only for certain font types/size (I noticed it for font "pango: Tahoma 8", but it worked fine with Tahoma 9 or 10 or the default font).<br />
+</p>
+<p>
+Browsing through the code I noticed the deco_height variable being calculated as config.font.height + 4 in render.c and as config.font.height + 5 in con.c and floating.c. I tried changing it to config.font.height + 5 and this seems to have fixed the problem:<br />
+</p>
+<pre class="wiki">diff --git a/src/render.c b/src/render.c
+index 476d1ca..e924541 100644
+--- a/src/render.c
++++ b/src/render.c
+@@ -196,7 +196,7 @@ void render_con(Con *con, bool render_fullscreen) {
+     }
+ 
+     /* find the height for the decorations */
+-    int deco_height = config.font.height + 4;
++    int deco_height = config.font.height + 5;
+     if (config.font.height &amp; 0x01)
+         ++deco_height;
+</pre><p>
+This is probably not the correct fix or at least the whole fix because it breaks some tests related to floating windows. I'm attaching a log saved while the XBMC window was resizing by itself.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(2)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/910/i3.log.bz2" title="View attachment">i3.log.bz2</a><a href="/report/raw-attachment/ticket/910/i3.log.bz2" class="trac-rawlink" title="Download">​</a>
+       (<span title="19168 bytes">18.7 KB</span>) -
+      added by <em>i3-new-ticket</em> <a class="timeline" href="/report/timeline?from=2012-12-30T10%3A07%3A39%2B01%3A00&amp;precision=second" title="See timeline at 12/30/12 10:07:39">2 years ago</a>.
+  </dt>
+              <dd>
+                desc2
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/910/0001-Fixing-continuous-resize-bug-in-floating-mode.patch" title="View attachment">0001-Fixing-continuous-resize-bug-in-floating-mode.patch</a><a href="/report/raw-attachment/ticket/910/0001-Fixing-continuous-resize-bug-in-floating-mode.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="897 bytes">897 bytes</span>) -
+      added by <em>anonymous</em> <a class="timeline" href="/report/timeline?from=2013-01-02T10%3A21%3A12%2B01%3A00&amp;precision=second" title="See timeline at 01/02/13 10:21:12">2 years ago</a>.
+  </dt>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/910/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(5)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-12-30T10%3A07%3A39%2B01%3A00&amp;precision=second" title="See timeline at 12/30/12 10:07:39">2 years ago</a> by i3-new-ticket
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/910/i3.log.bz2"><em>i3.log.bz2</em></a><a href="/report/raw-attachment/ticket/910/i3.log.bz2" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+desc2<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-1-1357050263692494">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-01-01T15%3A24%3A23%2B01%3A00&amp;precision=second" title="See timeline at 01/01/13 15:24:23">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+12:16 @sECuRE&gt; SardemFF7: can you have a look at <a class="ext-link" href="http://bugs.i3wm.org/query/ticket/910"><span class="icon">​</span>http://bugs.i3wm.org/query/ticket/910</a> please?<br />
+13:13 @SardemFF7&gt; sECuRE: This seems weird, the "if (config.font.height &amp; 0x01)" should handle that<br />
+</p>
+<p>
+Not sure how to proceed. Patches or further investigation welcome, for now other tickets are on my list.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1357118458745452">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-01-02T10%3A20%3A58%2B01%3A00&amp;precision=second" title="See timeline at 01/02/13 10:20:58">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+The way I understand it, "if (config.font.height &amp; 0x01) ++deco_height" has an effect only if the font height is an odd number. If it's an even number it has no effect and the deco_height will be assigned different values in render.c and handlers.c.<br />
+</p>
+<p>
+Upon further investigation, the issue is that handle_configure_request() is being called continuously:<br />
+</p>
+<pre class="wiki">$ i3-dump-log | grep handle_configure_request
+13-01-02 01:13:18 AM - handlers.c:handle_configure_request:296 - window 0x0360000e wants to be at 0x0 with 963x65
+13-01-02 01:13:18 AM - handlers.c:handle_configure_request:301 - Configure request for unmanaged window, can do that.
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:296 - window 0x0360000e wants to be at 2x0 with 963x654
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:327 - Configure request!
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:371 - proposed width = 963, new width is 967 (x11 border 0)
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:377 - proposed height = 654, new height is 675 (x11 border 0)
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:380 - Container is a floating leaf node, will do that.
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:296 - window 0x0360000e wants to be at 2x0 with 963x655
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:327 - Configure request!
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:371 - proposed width = 963, new width is 967 (x11 border 0)
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:377 - proposed height = 655, new height is 676 (x11 border 0)
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:380 - Container is a floating leaf node, will do that.
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:296 - window 0x0360000e wants to be at 2x0 with 963x656
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:327 - Configure request!
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:371 - proposed width = 963, new width is 967 (x11 border 0)
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:377 - proposed height = 656, new height is 677 (x11 border 0)
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:380 - Container is a floating leaf node, will do that.
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:296 - window 0x0360000e wants to be at 2x0 with 963x657
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:327 - Configure request!
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:371 - proposed width = 963, new width is 967 (x11 border 0)
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:377 - proposed height = 657, new height is 678 (x11 border 0)
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:380 - Container is a floating leaf node, will do that.
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:296 - window 0x0360000e wants to be at 2x0 with 963x658
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:327 - Configure request!
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:371 - proposed width = 963, new width is 967 (x11 border 0)
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:377 - proposed height = 658, new height is 679 (x11 border 0)
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:380 - Container is a floating leaf node, will do that.
+13-01-02 01:13:27 AM - handlers.c:handle_configure_request:296 - window 0x0360000e wants to be at 2x0 with 963x659
+...
+</pre><p>
+Wouldn't using "int deco_height = con-&gt;deco_rect.height" in handlers.c be better? I've tested this change and it fixes the bug.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-01-02T10%3A21%3A12%2B01%3A00&amp;precision=second" title="See timeline at 01/02/13 10:21:12">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/910/0001-Fixing-continuous-resize-bug-in-floating-mode.patch"><em>0001-Fixing-continuous-resize-bug-in-floating-mode.patch</em></a><a href="/report/raw-attachment/ticket/910/0001-Fixing-continuous-resize-bug-in-floating-mode.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-3-1359027744309966">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-01-24T12%3A42%3A24%2B01%3A00&amp;precision=second" title="See timeline at 01/24/13 12:42:24">2 years ago</a> by Marius Muja
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/bfd15087"><span class="icon">​</span>http://c.i3wm.org/bfd15087</a>:<br />
+</p>
+<pre class="wiki">Fixing continuous resize bug in floating mode
+
+fixes #910
+
+</pre>
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/910?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/910?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/910?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

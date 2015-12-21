@@ -1,0 +1,122 @@
+==2830== Memcheck, a memory error detector
+==2830== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==2830== Using Valgrind-3.9.0 and LibVEX; rerun with -h for copyright info
+==2830== Command: /home/tonyctl/sync/i3/i3
+==2830== Parent PID: 2826
+==2830== 
+==2839== 
+==2839== HEAP SUMMARY:
+==2839==     in use at exit: 996,183 bytes in 13,283 blocks
+==2839==   total heap usage: 22,295 allocs, 9,012 frees, 108,886,755 bytes allocated
+==2839== 
+==2839== LEAK SUMMARY:
+==2839==    definitely lost: 8,784 bytes in 17 blocks
+==2839==    indirectly lost: 8,201 bytes in 317 blocks
+==2839==      possibly lost: 278,103 bytes in 360 blocks
+==2839==    still reachable: 700,167 bytes in 12,584 blocks
+==2839==         suppressed: 0 bytes in 0 blocks
+==2839== Rerun with --leak-check=full to see details of leaked memory
+==2839== 
+==2839== For counts of detected and suppressed errors, rerun with: -v
+==2839== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+==2880== 
+==2880== HEAP SUMMARY:
+==2880==     in use at exit: 996,183 bytes in 13,283 blocks
+==2880==   total heap usage: 22,295 allocs, 9,012 frees, 108,886,755 bytes allocated
+==2880== 
+==2880== LEAK SUMMARY:
+==2880==    definitely lost: 8,784 bytes in 17 blocks
+==2880==    indirectly lost: 8,201 bytes in 317 blocks
+==2880==      possibly lost: 278,103 bytes in 360 blocks
+==2880==    still reachable: 700,167 bytes in 12,584 blocks
+==2880==         suppressed: 0 bytes in 0 blocks
+==2880== Rerun with --leak-check=full to see details of leaked memory
+==2880== 
+==2880== For counts of detected and suppressed errors, rerun with: -v
+==2880== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+==2911== 
+==2911== HEAP SUMMARY:
+==2911==     in use at exit: 996,183 bytes in 13,283 blocks
+==2911==   total heap usage: 22,295 allocs, 9,012 frees, 108,886,755 bytes allocated
+==2911== 
+==2911== LEAK SUMMARY:
+==2911==    definitely lost: 8,784 bytes in 17 blocks
+==2911==    indirectly lost: 8,201 bytes in 317 blocks
+==2911==      possibly lost: 278,103 bytes in 360 blocks
+==2911==    still reachable: 700,167 bytes in 12,584 blocks
+==2911==         suppressed: 0 bytes in 0 blocks
+==2911== Rerun with --leak-check=full to see details of leaked memory
+==2911== 
+==2911== For counts of detected and suppressed errors, rerun with: -v
+==2911== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+==2914== 
+==2914== HEAP SUMMARY:
+==2914==     in use at exit: 996,265 bytes in 13,284 blocks
+==2914==   total heap usage: 22,297 allocs, 9,013 frees, 108,886,937 bytes allocated
+==2914== 
+==2914== LEAK SUMMARY:
+==2914==    definitely lost: 8,784 bytes in 17 blocks
+==2914==    indirectly lost: 8,201 bytes in 317 blocks
+==2914==      possibly lost: 278,103 bytes in 360 blocks
+==2914==    still reachable: 700,249 bytes in 12,585 blocks
+==2914==         suppressed: 0 bytes in 0 blocks
+==2914== Rerun with --leak-check=full to see details of leaked memory
+==2914== 
+==2914== For counts of detected and suppressed errors, rerun with: -v
+==2914== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+==2830== Conditional jump or move depends on uninitialised value(s)
+==2830==    at 0x410998: manage_window (manage.c:372)
+==2830==    by 0x438A3E: handle_map_request (handlers.c:280)
+==2830==    by 0x43A7A1: handle_event (handlers.c:1108)
+==2830==    by 0x42A020: xcb_check_cb (main.c:144)
+==2830==    by 0x70935E4: ev_invoke_pending (in /usr/lib/libev.so.4.0.0)
+==2830==    by 0x7096776: ev_run (in /usr/lib/libev.so.4.0.0)
+==2830==    by 0x429F08: ev_loop (ev.h:826)
+==2830==    by 0x42D399: main (main.c:913)
+==2830== 
+==2830== Syscall param rt_sigaction(act->sa_mask) points to uninitialised byte(s)
+==2830==    at 0x771D98A: __libc_sigaction (in /usr/lib/libpthread-2.19.so)
+==2830==    by 0x41522E: handle_signal (sighandler.c:292)
+==2830==    by 0x771D87F: ??? (in /usr/lib/libpthread-2.19.so)
+==2830==    by 0x7960388: raise (in /usr/lib/libc-2.19.so)
+==2830==    by 0x7961787: abort (in /usr/lib/libc-2.19.so)
+==2830==    by 0x79594A5: __assert_fail_base (in /usr/lib/libc-2.19.so)
+==2830==    by 0x7959551: __assert_fail (in /usr/lib/libc-2.19.so)
+==2830==    by 0x412D68: con_orientation (con.c:849)
+==2830==    by 0x423BAD: cmd_resize_tiling_width_height (commands.c:694)
+==2830==    by 0x424229: cmd_resize (commands.c:788)
+==2830==    by 0x42D6AC: GENERATED_call (GENERATED_command_call.h:46)
+==2830==    by 0x42E68F: next_state (commands_parser.c:192)
+==2830==  Address 0xffeffe438 is on thread 1's stack
+==2830== 
+==2830== Syscall param rt_sigaction(act->sa_flags) points to uninitialised byte(s)
+==2830==    at 0x771D98A: __libc_sigaction (in /usr/lib/libpthread-2.19.so)
+==2830==    by 0x41522E: handle_signal (sighandler.c:292)
+==2830==    by 0x771D87F: ??? (in /usr/lib/libpthread-2.19.so)
+==2830==    by 0x7960388: raise (in /usr/lib/libc-2.19.so)
+==2830==    by 0x7961787: abort (in /usr/lib/libc-2.19.so)
+==2830==    by 0x79594A5: __assert_fail_base (in /usr/lib/libc-2.19.so)
+==2830==    by 0x7959551: __assert_fail (in /usr/lib/libc-2.19.so)
+==2830==    by 0x412D68: con_orientation (con.c:849)
+==2830==    by 0x423BAD: cmd_resize_tiling_width_height (commands.c:694)
+==2830==    by 0x424229: cmd_resize (commands.c:788)
+==2830==    by 0x42D6AC: GENERATED_call (GENERATED_command_call.h:46)
+==2830==    by 0x42E68F: next_state (commands_parser.c:192)
+==2830==  Address 0xffeffe428 is on thread 1's stack
+==2830== 
+==2830== 
+==2830== HEAP SUMMARY:
+==2830==     in use at exit: 1,021,069 bytes in 13,676 blocks
+==2830==   total heap usage: 26,556 allocs, 12,880 frees, 109,190,929 bytes allocated
+==2830== 
+==2830== LEAK SUMMARY:
+==2830==    definitely lost: 10,259 bytes in 25 blocks
+==2830==    indirectly lost: 13,410 bytes in 520 blocks
+==2830==      possibly lost: 266,991 bytes in 107 blocks
+==2830==    still reachable: 729,297 bytes in 13,018 blocks
+==2830==         suppressed: 0 bytes in 0 blocks
+==2830== Rerun with --leak-check=full to see details of leaked memory
+==2830== 
+==2830== For counts of detected and suppressed errors, rerun with: -v
+==2830== Use --track-origins=yes to see where uninitialised values come from
+==2830== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 6 from 2)

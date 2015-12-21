@@ -1,0 +1,35 @@
+From 31e39bd582d8136982ab15aba67bce568623ce26 Mon Sep 17 00:00:00 2001
+From: Marcelo Cerri <mhcerri@linux.vnet.ibm.com>
+Date: Mon, 24 Sep 2012 10:10:35 -0300
+Subject: [PATCH] fix splitting for containers that only have one child
+
+Currently when a container is split, i3 changes the layout instead of
+creating a new container only when the container has just one child and
+its layout is already one of the split layouts.
+
+Because of this, splitting a container that has one child but uses a
+layout other than L_SPLIT{V,H}, creates a new container. This patch
+changes this behaviour to change the current layout if the container has
+just one child, regardless of its layout.
+---
+ src/tree.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/src/tree.c b/src/tree.c
+index 3d598d5..c01a213 100644
+--- a/src/tree.c
++++ b/src/tree.c
+@@ -366,9 +366,7 @@ void tree_split(Con *con, orientation_t orientation) {
+     /* if we are in a container whose parent contains only one
+      * child (its split functionality is unused so far), we just change the
+      * orientation (more intuitive than splitting again) */
+-    if (con_num_children(parent) == 1 &&
+-        (parent->layout == L_SPLITH ||
+-         parent->layout == L_SPLITV)) {
++    if (con_num_children(parent) == 1) {
+         parent->layout = (orientation == HORIZ) ? L_SPLITH : L_SPLITV;
+         DLOG("Just changing orientation of existing container\n");
+         return;
+-- 
+1.7.12
+

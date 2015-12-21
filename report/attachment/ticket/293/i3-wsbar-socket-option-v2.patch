@@ -1,0 +1,49 @@
+--- /usr/bin/i3-wsbar	2011-01-13 01:43:32.000000000 -0700
++++ /home/nathan/bin/i3-wsbar	2011-01-14 04:01:22.936668362 -0700
+@@ -18,6 +18,7 @@
+ my $last_line = "";
+ 
+ my $command = "";
++my $i3socket = "";
+ my $input_on = "";
+ my $output_on = "";
+ my $show_all = 0;
+@@ -27,6 +28,7 @@
+     'input-on=s' => \$input_on,
+     'output-on=s' => \$output_on,
+     'show-all' => \$show_all,
++    'socket=s' => \$i3socket,
+     'help' => sub { pod2usage(1); exit 0 },
+ );
+ 
+@@ -36,6 +38,10 @@
+     exit 1;
+ }
+ 
++if ($i3socket ne '') {
++    $i3 = i3($i3socket);
++}
++
+ my @input_on = split(/,/, $input_on);
+ my @output_on = split(/,/, $output_on);
+ 
+@@ -154,7 +160,7 @@
+             ($bg, $fg) = qw(4c7899 ffffff) if $ws->{visible};
+             ($bg, $fg) = qw(900000 ffffff) if $ws->{urgent};
+ 
+-            my $cmd = q|i3-msg "| . $ws->{num} . q|"|;
++            my $cmd = q|i3-msg -s | . $i3socket . q| "| . $ws->{num} . q|"|;
+             my $name = $ws->{name};
+ 
+             # Begin the clickable area
+@@ -245,6 +251,10 @@
+ If enabled, all workspaces are shown (not only those of the current output).
+ Handy to use with C<--output-on>.
+ 
++=item B<--socket=/path/to/ipc.sock>
++
++Use alternate ipc.sock file.
++
+ =back
+ 
+ =cut

@@ -1,0 +1,253 @@
+#  i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+# This config file uses keycodes (bindsym) and was written for the QWERTY
+# layout.
+#
+# To get a config file with the same key positions, but for your current
+# layout, use the i3-config-wizard
+#
+
+# font for window titles. ISO 10646 = Unicode
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+set $mod Mod4
+
+set $1 1:www
+set $2 2:emacs
+set $3 3:social
+set $4 4:media
+set $5 5:urxvt
+set $6 6:misc
+
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec urxvtc
+#i3-sensible-terminal
+
+# kill focused window
+#bindsym $mod+Shift+q kill
+bindsym Control+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec dmenu_run
+
+# change focus
+# bindsym $mod+j focus left
+# bindsym $mod+k focus down
+# bindsym $mod+l focus up
+# bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+# bindsym $mod+Shift+j move left
+# bindsym $mod+Shift+k move down
+# bindsym $mod+Shift+l move up
+# bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym $mod+Mod1+s layout stacking
+bindsym $mod+Mod1+t layout tabbed
+bindsym $mod+Mod1+d layout default
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+w workspace $1
+bindsym $mod+1 workspace $1
+bindsym $mod+e workspace $2
+bindsym $mod+2 workspace $2
+bindsym $mod+s workspace $3
+bindsym $mod+3 workspace $3
+bindsym $mod+m Workspace $4
+bindsym $mod+4 workspace $4
+bindsym $mod+k workspace $5
+bindsym $mod+5 workspace $5
+bindsym $mod+6 workspace $6
+bindsym $mod+o workspace $6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+w move container to workspace $1
+bindsym $mod+Shift+e move container to workspace $2
+bindsym $mod+Shift+s move container to workspace $3
+bindsym $mod+Shift+m move container to workspace $4
+bindsym $mod+Shift+k move container to workspace $5
+bindsym $mod+Shift+o move container to workspace $6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+l exit
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j           resize shrink width 10 px or 10 ppt
+        bindsym k           resize grow height 10 px or 10 ppt
+        bindsym l           resize shrink height 10 px or 10 ppt
+        bindsym semicolon   resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+bindsym $mod+x mode "move"
+mode "move" {
+    bindsym w move container to workspace $1; workspace $1; mode "default"
+    bindsym e move container to workspace $2; workspace $2; mode "default"
+    bindsym s move container to workspace $3; workspace $3; mode "default"
+    bindsym m move container to workspace $4; workspace $4; mode "default"
+    bindsym k move container to workspace $5; workspace $5; mode "default"
+    bindsym o move container to workspace $6; workspace $6; mode "default"
+    bindsym 1 move workspace to output HDMI-0; output HDMI-0; mode "default"
+    bindsym 2 move workspace to output VGA-0; output VGA-0; mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+    status_command i3status -c ~/.i3/i3status.conf
+    position          top
+    workspace_buttons yes
+    tray_output primary
+    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+    colors {
+        background #262729
+        statusline #ffffff
+
+        focused_workspace  #ffffff #285577
+        active_workspace   #ffffff #333333
+        inactive_workspace #888888 #222222
+        urgent_workspace   #ffffff #900000
+    }
+}
+
+
+client.focused #7C9E4A #7C9E4A #ffffff #285577
+
+#FF7302 #FF7302
+#######################################################################
+# automatically start i3-config-wizard to offer the user to create a
+# keysym-based config which used his favorite modifier (alt or windows)
+#
+# i3-config-wizard will not launch if there already is a config file
+# in ~/.i3/config.
+#
+# Please remove the following exec line:
+#######################################################################
+# exec i3-config-wizard
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+bindsym XF86Favorites exec amixer -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
+bindsym XF86WWW exec amixer -q set Master 2dB- unmute
+
+bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioPlay exec exaile -t
+bindsym XF86AudioNext exec exaile -n
+bindsym XF86Messenger exec exaile -p
+bindsym XF86AudioPrev exec exaile -p
+bindsym XF86Launch1 exec exaile -n
+bindsym XF86AudioStop exec exaile -s
+
+bindsym Control+Mod1+Right workspace next
+bindsym Control+Mod1+Left workspace prev
+bindsym Control+$mod+Right workspace next_on_output
+bindsym Control+$mod+Left workspace prev_on_output
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+F4 exec ~/documentos/bin/shutdown_dialog.sh
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+
+exec --no-startup-id xrdb ~/.Xresources
+exec --no-startup-id setxkbmap -layout es
+exec --no-startup-id dunst -nb '#AB0029' -geometry x3+0+15 -fn '-misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1'
+exec --no-startup-id kupfer --no-splash
+exec --no-startup-id nm-applet
+exec --no-startup-id weatherboy -l 466862 -u c -a -d 15
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id xscreensaver -no-splash
+exec --no-startup-id urxvtd
+exec --no-startup-id dropboxd
+exec --no-startup-id orage
+
+
+assign [class="Firefox"] $1
+assign [class="Emacs"] $2
+assign [class="Exaile"] $4
+assign [class="Pidgin"] $3
+assign [class="Skype"] $3
+assign [class="URxvt"] $5
+
+workspace "$1" output HDMI-0
+workspace "$2" output VGA-0
+workspace "$3" output HDMI-0
+workspace "$4" output VGA-0
+workspace "$5" output VGA-0
+workspace "$6" output VGA-0
+
+
+for_window [class="xfce4-notifyd"] floating enable
+for_window [class="Hamster-time-tracker"] floating enable
+for_window [class="Galculator"] floating enable
+for_window [class="Kruler|Kupfer|Orage"] border none, floating enable

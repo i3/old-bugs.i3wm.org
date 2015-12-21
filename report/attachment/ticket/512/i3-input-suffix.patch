@@ -1,0 +1,66 @@
+diff -uNr i3-4.0.1.orig/i3-input/main.c i3-4.0.1/i3-input/main.c
+--- i3-4.0.1.orig/i3-input/main.c	2011-08-01 15:24:31.000000000 -0600
++++ i3-4.0.1/i3-input/main.c	2011-09-01 19:48:01.075048750 -0600
+@@ -49,6 +49,7 @@
+ static int input_position;
+ static int font_height;
+ static char *command_prefix;
++static char *command_suffix;
+ static char *prompt;
+ static int prompt_len;
+ static int limit;
+@@ -173,12 +174,19 @@
+ 
+ static void finish_input() {
+         uint8_t *command = concat_strings(glyphs_utf8, input_position);
++        char *prefixed_command = (char*)command;
+         char *full_command = (char*)command;
+         /* prefix the command if a prefix was specified on commandline */
+         if (command_prefix != NULL) {
+-                if (asprintf(&full_command, "%s%s", command_prefix, command) == -1)
++                if (asprintf(&prefixed_command, "%s%s", command_prefix, command) == -1)
+                         err(EXIT_FAILURE, "asprintf() failed\n");
+         }
++        if (command_suffix != NULL) {
++                if (asprintf(&full_command, "%s%s", prefixed_command, command_suffix) == -1)
++                        err(EXIT_FAILURE, "asprintf() failed\n");
++        }
++        else
++                full_command = prefixed_command;
+         printf("command = %s\n", full_command);
+ 
+         ipc_send_message(sockfd, strlen(full_command), 0, (uint8_t*)full_command);
+@@ -290,12 +298,13 @@
+                 {"limit", required_argument, 0, 'l'},
+                 {"prompt", required_argument, 0, 'P'},
+                 {"prefix", required_argument, 0, 'p'},
++                {"suffix", required_argument, 0, 'S'},
+                 {"font", required_argument, 0, 'f'},
+                 {"help", no_argument, 0, 'h'},
+                 {0, 0, 0, 0}
+         };
+ 
+-        char *options_string = "s:p:P:f:l:vh";
++        char *options_string = "s:p:S:P:f:l:vh";
+ 
+         while ((o = getopt_long(argc, argv, options_string, long_options, &option_index)) != -1) {
+                 switch (o) {
+@@ -310,6 +319,9 @@
+                                 FREE(command_prefix);
+                                 command_prefix = strdup(optarg);
+                                 break;
++                        case 'S':
++                                FREE(command_suffix);
++                                command_suffix = strdup(optarg);
+                         case 'l':
+                                 limit = atoi(optarg);
+                                 break;
+@@ -323,7 +335,7 @@
+                                 break;
+                         case 'h':
+                                 printf("i3-input " I3_VERSION);
+-                                printf("i3-input [-s <socket>] [-p <prefix>] [-l <limit>] [-P <prompt>] [-f <font>] [-v]\n");
++                                printf("i3-input [-s <socket>] [-p <prefix>] [-S <suffix>] [-l <limit>] [-P <prompt>] [-f <font>] [-v]\n");
+                                 return 0;
+                 }
+         }

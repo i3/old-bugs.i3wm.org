@@ -1,0 +1,169 @@
+From 50c05e1c2490776afbcc4d41bbd4e8a701882abe Mon Sep 17 00:00:00 2001
+From: Tony Crisci <tony@dubstepdish.com>
+Date: Sun, 29 Dec 2013 23:11:45 -0500
+Subject: [PATCH] Respect Motif hint for no decorations
+
+When the _MOTIF_WM_HINTS property of a window specifies it should have
+no decorations, respond by setting the border style of that container to
+BS_NONE.
+
+This comes from the old Motif window manager. It was originally intended
+to specify exactly what sort of decorations a window should have, and
+exactly what sort of user input it should respond to. The EWMH spec
+intended to replace Motif hints with _NET_WM_WINDOW_TYPE, but it is
+still in use by popular widget toolkits such as GTK+ and Java AWT.
+
+i3's implementation simply mirrors Gnome's Metacity. Official
+documentation of this hint is nowhere to be found.
+
+For more information see:
+https://people.gnome.org/~tthurman/docs/metacity/xprops_8h-source.html
+http://stackoverflow.com/questions/13787553/detect-if-a-x11-window-has-decorations
+---
+ include/atoms.xmacro |  1 +
+ include/window.h     | 11 +++++++++++
+ src/manage.c         | 12 ++++++++++--
+ src/window.c         | 50 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 72 insertions(+), 2 deletions(-)
+
+diff --git a/include/atoms.xmacro b/include/atoms.xmacro
+index 41889eb..e6e72e7 100644
+--- a/include/atoms.xmacro
++++ b/include/atoms.xmacro
+@@ -31,3 +31,4 @@ xmacro(I3_SHMLOG_PATH)
+ xmacro(I3_PID)
+ xmacro(_NET_REQUEST_FRAME_EXTENTS)
+ xmacro(_NET_FRAME_EXTENTS)
++xmacro(_MOTIF_WM_HINTS)
+diff --git a/include/window.h b/include/window.h
+index abc27d6..20a18f0 100644
+--- a/include/window.h
++++ b/include/window.h
+@@ -63,4 +63,15 @@ void window_update_role(i3Window *win, xcb_get_property_reply_t *prop, bool befo
+  */
+ void window_update_hints(i3Window *win, xcb_get_property_reply_t *prop, bool *urgency_hint);
+ 
++/**
++ * Updates the MOTIF_WM_HINTS.
++ *
++ * i3 only uses this hint when it specifies a window should have no
++ * decorations, which is how most window managers handle it. Only take action
++ * if `motif_has_decorations' is set to false.
++ *
++ */
++
++void window_update_motif_hints(i3Window *win, xcb_get_property_reply_t *prop, bool *motif_has_decorations);
++
+ #endif
+diff --git a/src/manage.c b/src/manage.c
+index d7a28eb..40a8277 100644
+--- a/src/manage.c
++++ b/src/manage.c
+@@ -118,7 +118,8 @@ void manage_window(xcb_window_t window, xcb_get_window_attributes_cookie_t cooki
+     xcb_get_property_cookie_t wm_type_cookie, strut_cookie, state_cookie,
+                               utf8_title_cookie, title_cookie,
+                               class_cookie, leader_cookie, transient_cookie,
+-                              role_cookie, startup_id_cookie, wm_hints_cookie;
++                              role_cookie, startup_id_cookie, wm_hints_cookie,
++                              motif_hints_cookie;
+ 
+ 
+     geomc = xcb_get_geometry(conn, d);
+@@ -188,6 +189,7 @@ void manage_window(xcb_window_t window, xcb_get_window_attributes_cookie_t cooki
+     role_cookie = GET_PROPERTY(A_WM_WINDOW_ROLE, 128);
+     startup_id_cookie = GET_PROPERTY(A__NET_STARTUP_ID, 512);
+     wm_hints_cookie = xcb_icccm_get_wm_hints(conn, window);
++    motif_hints_cookie = GET_PROPERTY(A__MOTIF_WM_HINTS, 5 * sizeof(long));
+     /* TODO: also get wm_normal_hints here. implement after we got rid of xcb-event */
+ 
+     DLOG("Managing window 0x%08x\n", window);
+@@ -222,6 +224,8 @@ void manage_window(xcb_window_t window, xcb_get_window_attributes_cookie_t cooki
+     window_update_role(cwindow, xcb_get_property_reply(conn, role_cookie, NULL), true);
+     bool urgency_hint;
+     window_update_hints(cwindow, xcb_get_property_reply(conn, wm_hints_cookie, NULL), &urgency_hint);
++    bool motif_has_decorations = true;
++    window_update_motif_hints(cwindow, xcb_get_property_reply(conn, motif_hints_cookie, NULL), &motif_has_decorations);
+ 
+     xcb_get_property_reply_t *startup_id_reply;
+     startup_id_reply = xcb_get_property_reply(conn, startup_id_cookie, NULL);
+@@ -325,7 +329,6 @@ void manage_window(xcb_window_t window, xcb_get_window_attributes_cookie_t cooki
+             TAILQ_REMOVE(&(nc->swallow_head), match, matches);
+         }
+     }
+-
+     DLOG("new container = %p\n", nc);
+     if (nc->window != NULL) {
+         if (!restore_kill_placeholder(nc->window->id)) {
+@@ -444,6 +447,11 @@ void manage_window(xcb_window_t window, xcb_get_window_attributes_cookie_t cooki
+         floating_enable(nc, true);
+     }
+ 
++    if (!motif_has_decorations) {
++        floating_enable(nc, false);
++        con_set_border_style(nc, BS_NONE, 0);
++    }
++
+     /* to avoid getting an UnmapNotify event due to reparenting, we temporarily
+      * declare no interest in any state change event of this window */
+     values[0] = XCB_NONE;
+diff --git a/src/window.c b/src/window.c
+index b51be53..7dc1aa2 100644
+--- a/src/window.c
++++ b/src/window.c
+@@ -254,3 +254,53 @@ void window_update_hints(i3Window *win, xcb_get_property_reply_t *prop, bool *ur
+ 
+     free(prop);
+ }
++
++/**
++ * Updates the MOTIF_WM_HINTS.
++ *
++ * i3 only uses this hint when it specifies a window should have no
++ * decorations, which is how most window managers handle it. Only take action
++ * if `motif_has_decorations' is set to false.
++ *
++ * This comes from the old Motif window manager. It was originally intended to
++ * specify exactly what sort of decorations a window should have, and exactly
++ * what sort of user input it should respond to. The EWMH spec intended to
++ * replace Motif hints with _NET_WM_WINDOW_TYPE, but it is still in use by
++ * popular widget toolkits such as GTK+ and Java AWT.
++ *
++ */
++void window_update_motif_hints(i3Window *win, xcb_get_property_reply_t *prop, bool *motif_has_decorations) {
++    /* This implementation simply mirrors Gnome's Metacity. Official
++     * documentation of this hint is nowhere to be found.
++     * For more information see:
++     * https://people.gnome.org/~tthurman/docs/metacity/xprops_8h-source.html
++     * http://stackoverflow.com/questions/13787553/detect-if-a-x11-window-has-decorations
++     */
++
++    if (motif_has_decorations != NULL)
++        *motif_has_decorations = true;
++
++    if (prop == NULL || xcb_get_property_value_length(prop) == 0) {
++        FREE(prop);
++        return;
++    }
++
++    /* The property consists of an array of 5 `long's. The first value is a bit
++     * mask of what properties the hint will specify. We are only interested in
++     * (1L << 1) because it indicates that the second value of the array tells
++     * us which decorations the window should have, each flag being a
++     * particular decoration. */
++    long *motif_hints = (long *)xcb_get_property_value(prop);
++
++    if (motif_has_decorations != NULL &&
++            motif_hints[0] & (1L << 1) &&
++            motif_hints[1] == 0) {
++        /* If the first value indicates that the second value indicates
++         * decorations, and this value is empty, we interpret this to mean that
++         * the window should have no decorations. */
++        DLOG("MOTIF_WM_HINTS specifies no window decorations.\n");
++        *motif_has_decorations = false;
++    }
++
++    FREE(prop);
++}
+-- 
+1.8.5.2
+

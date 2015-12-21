@@ -1,0 +1,951 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #771 (reproducable crash: assert fails in src/randr.c)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/770" title="Ticket #770" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/771?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/771?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/771?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/772" title="Ticket #772" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="29aac1662b7bbad62bff1ae9";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/770" title="Ticket #770">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/772" title="Ticket #772">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-08-10T02%3A54%3A03%2B02%3A00&amp;precision=second" title="See timeline at 08/10/12 02:54:03">3 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2012-09-22T16%3A55%3A45%2B02%3A00&amp;precision=second" title="See timeline at 09/22/12 16:55:45">3 years ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/771" class="trac-id">#771</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">reproducable crash: assert fails in src/randr.c</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable"><a href="/report/query?status=!closed&amp;reporter=anonymous">anonymous</a></td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.1">4.1</a>
+        </td>
+        <th id="h_keywords">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+              <a href="/report/query?status=!closed&amp;keywords=~assert">assert</a>, <a href="/report/query?status=!closed&amp;keywords=~focus">focus</a> <a href="/report/query?status=!closed&amp;keywords=~ouput">ouput</a>
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.2-74-gc5cfe22
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+              Debian
+        </td>
+    </tr><tr>
+        <th id="h_ircnick">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+              Feh
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+Using "focus output &lt;direction&gt;" reproducably crashes i3. The case seems to be the assert statement at src/randr.c:136, see backtrace below.<br />
+</p>
+<p>
+This is the XRandR setup:<br />
+</p>
+<blockquote>
+<p>
+xrandr --output VGA1 --auto --primary --output HDMI3 --auto --left-of VGA1<br />
+xrandr --output HDMI3 --rotate left --output VGA1 --pos 1080x500<br />
+</p>
+</blockquote>
+<p>
+NB: There are no two screens with the same X or Y coordinates. However, you<br />
+*could* establish a relationship "right of", "over", etc. (output see below.) The layout looks like this:<br />
+</p>
+<pre class="wiki">+----+
+|    |--------+
+| S1 |   S2   |
+|    |--------+
++----+
+
+</pre><p>
+The assertion in src/randr.c:136 fails. Full backtrace:<br />
+</p>
+<pre class="wiki">Excess command line arguments ignored. (14938)
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007f3e203b6a58 in *__GI___poll (fds=0x7fff793d6b20, nfds=1, timeout=&lt;optimized out&gt;) at ../sysdeps/unix/sysv/linux/poll.c:83
+83	../sysdeps/unix/sysv/linux/poll.c: No such file or directory.
+#0  0x00007f3e203b6a58 in *__GI___poll (fds=0x7fff793d6b20, nfds=1, timeout=&lt;optimized out&gt;) at ../sysdeps/unix/sysv/linux/poll.c:83
+        oldtype = &lt;optimized out&gt;
+        result = &lt;optimized out&gt;
+#1  0x00007f3e21c360a2 in ?? () from /usr/lib/x86_64-linux-gnu/libxcb.so.1
+No symbol table info available.
+#2  0x00007f3e21c3783f in xcb_wait_for_event () from /usr/lib/x86_64-linux-gnu/libxcb.so.1
+No symbol table info available.
+#3  0x000000000043358a in handle_signal (sig=6, info=0x7fff793d6df0, data=0x7fff793d6cc0) at src/sighandler.c:181
+        __FUNCTION__ = "handle_signal"
+        action = {__sigaction_handler = {sa_handler = 0, sa_sigaction = 0}, sa_mask = {__val = {4222429319, 140735227458176, 139904804894398, 139904805981307, 0, 139904804912220, 4556915, 0, 140735227457592, 139904805981280, 0, 0, 49278710936, 140737488355327, 140733193388032, 4553840}}, sa_flags = 0, sa_restorer = 0x7f3e2032fc5c &lt;_IO_vfprintf_internal+18396&gt;}
+        crash_text_num = 6
+        height = 91
+        text_len = 46
+        longest_text = 0xfb05b0
+        font_width = 322
+        width = 342
+        screen = 0x0
+        win = 8388652
+        event = 0xfba430
+#4  &lt;signal handler called&gt;
+No symbol table info available.
+#5  0x00007f3e2031b475 in *__GI_raise (sig=&lt;optimized out&gt;) at ../nptl/sysdeps/unix/sysv/linux/raise.c:64
+        pid = &lt;optimized out&gt;
+        selftid = &lt;optimized out&gt;
+#6  0x00007f3e2031e6f0 in *__GI_abort () at abort.c:92
+        act = {__sigaction_handler = {sa_handler = 0x45edb6, sa_sigaction = 0x45edb6}, sa_mask = {__val = {139904805976040, 140735227458176, 136, 140735227458416, 139904805040406, 206158430232, 140735227458432, 140735227458208, 139904804938728, 206158430256, 140735227458456, 16448208, 16448192, 10, 4582838, 140735227472337}}, sa_flags = 541268031, sa_restorer = 0x45ed60}
+        sigs = {__val = {32, 0 &lt;repeats 15 times&gt;}}
+#7  0x00007f3e20314621 in *__GI___assert_fail (assertion=0x45edb6 "candidate != ((void *)0)", file=&lt;optimized out&gt;, line=136, function=0x45f880 "get_output_most") at assert.c:81
+        buf = 0xfafad0 "i3: src/randr.c:136: get_output_most: Assertion `candidate != ((void *)0)' failed.\n"
+#8  0x000000000042dd6f in get_output_most (direction=D_UP, current=0xfafb40) at src/randr.c:136
+        output = 0x0
+        candidate = 0x0
+        position = 0
+        __PRETTY_FUNCTION__ = "get_output_most"
+#9  0x00000000004141c7 in get_output_from_string (current_output=0xfafb40, output_str=0xfb14f0 "down") at src/commands.c:72
+        output = 0x0
+#10 0x0000000000418b75 in cmd_focus_output (current_match=0x669800, cmd_output=0x669870, name=0xfb14f0 "down") at src/commands.c:1483
+        current = 0x0
+        __FUNCTION__ = "cmd_focus_output"
+        current_output = 0xfafb40
+        output = 0x7fff793d74c0
+        __PRETTY_FUNCTION__ = "cmd_focus_output"
+        ws = 0x45831e
+#11 0x0000000000419f38 in GENERATED_call (call_identifier=24, result=0x669870) at include/GENERATED_call.h:197
+No locals.
+#12 0x000000000041a7a8 in next_state (token=0x667d10) at src/commands_parser.c:194
+        __FUNCTION__ = "next_state"
+#13 0x000000000041acd6 in parse_command (input=0xfb9b60 "focus output down") at src/commands_parser.c:318
+        str = 0xfb14f0 "down"
+        inpos = 4
+        outpos = 4
+        beginning = 0xfb9b6d "down"
+        ptr = 0x668780
+        __FUNCTION__ = "parse_command"
+        walk = 0xfb9b71 ""
+        len = 17
+        c = 0
+        token = 0x667d10
+        token_handled = false
+#14 0x000000000042414f in handle_command (fd=11, message=0x7fff793d766e "focus output down", size=17, message_size=17, message_type=0) at src/ipc.c:122
+        command = 0xfb9b60 "focus output down"
+        command_output = 0x0
+        reply = 0xb00fba1b0 &lt;Address 0xb00fba1b0 out of bounds&gt;
+        length = 0
+#15 0x000000000042645f in ipc_receive_message (loop=0x7f3e20cc31e0, w=0xfafea0, revents=1) at src/ipc.c:879
+        h = 0x4240ea &lt;handle_command&gt;
+        message_size = 17
+        message_type = 0
+        buf = "i3-ipc\021\000\000\000\000\000\000\000focus output down\000ON\376\070\253\a\024@|86 &gt;\177\000\000\200x=y\377\177\000\000\363\277A\000\000\000\000\000\340v=y\001\000\000\000 \375\372", '\000' &lt;repeats 13 times&gt;"\260, v=y\377\177\000\000\000\000\000\000\000\000\000\000 \375\372\000\000\000\000\000`\233\373", '\000' &lt;repeats 13 times&gt;, "`x=y\377\177\000\000\334\vC", '\000' &lt;repeats 13 times&gt;, "6\004\000\000\000\000\000\000\021\000\000\000&gt;\177\000\000\000\000\000\000&gt;\177\000\000\000\000\000\000\377\177\000\000pw=y\377\177\000\000\314\061\314 &gt;\177\000\000ô8 &gt;\177\000\000pw=y\377\177", '\000' &lt;repeats 14 times&gt;"\377, \177\000\000\000\000\000\000\377\177"...
+        n = 17
+        __FUNCTION__ = "ipc_receive_message"
+        message = 0x7fff793d766e "focus output down"
+#16 0x00007f3e20aba66f in ev_invoke_pending () from /usr/lib/libev.so.4
+No symbol table info available.
+#17 0x00007f3e20abd6f5 in ev_run () from /usr/lib/libev.so.4
+No symbol table info available.
+#18 0x00000000004282cc in ev_loop (loop=0x7f3e20cc31e0, flags=0) at /usr/include/ev.h:820
+No locals.
+#19 0x000000000042b068 in main (argc=4, argv=0x7fff793d9578) at src/main.c:810
+        i3_version = 0x45cd40 "4.2-74-gc5cfe22 (2012-08-04, branch \"master\")"
+        override_configpath = 0x0
+        autostart = false
+        layout_path = 0xf73880 ""
+        delete_layout_path = true
+        force_xinerama = false
+        fake_outputs = 0x0
+        disable_signalhandler = false
+        long_options = {{name = 0x45e331 "no-autostart", has_arg = 0, flag = 0x0, val = 97}, {name = 0x45e33e "config", has_arg = 1, flag = 0x0, val = 99}, {name = 0x45e345 "version", has_arg = 0, flag = 0x0, val = 118}, {name = 0x45e34d "help", has_arg = 0, flag = 0x0, val = 104}, {name = 0x45e352 "layout", has_arg = 1, flag = 0x0, val = 76}, {name = 0x45cffb "restart", has_arg = 1, flag = 0x0, val = 0}, {name = 0x45ce3e "force-xinerama", has_arg = 0, flag = 0x0, val = 0}, {name = 0x45ce4d "force_xinerama", has_arg = 0, flag = 0x0, val = 0}, {name = 0x45cf77 "disable-signalhandler", has_arg = 0, flag = 0x0, val = 0}, {name = 0x45cfba "shmlog-size", has_arg = 1, flag = 0x0, val = 0}, {name = 0x45cfc6 "shmlog_size", has_arg = 1, flag = 0x0, val = 0}, {name = 0x45cf8d "get-socketpath", has_arg = 0, flag = 0x0, val = 0}, {name = 0x45cf9c "get_socketpath", has_arg = 0, flag = 0x0, val = 0}, {name = 0x45d010 "fake_outputs", has_arg = 1, flag = 0x0, val = 0}, {name = 0x45d003 "fake-outputs", has_arg = 1, flag = 0x0, val = 0}, {name = 0x0, has_arg = 0, flag = 0x0, val = 0}}
+        option_index = 5
+        opt = -1
+        __FUNCTION__ = "main"
+        gcookie = {sequence = 5}
+        pointercookie = {sequence = 6}
+        mask = 2048
+        values = {5374032}
+        cookie = {sequence = 9}
+        greply = 0xf739e0
+        _NET_SUPPORTED_cookie = {sequence = 11}
+        _NET_SUPPORTING_WM_CHECK_cookie = {sequence = 12}
+        _NET_WM_NAME_cookie = {sequence = 13}
+        _NET_WM_STATE_FULLSCREEN_cookie = {sequence = 14}
+        _NET_WM_STATE_cookie = {sequence = 15}
+        _NET_WM_WINDOW_TYPE_cookie = {sequence = 16}
+        _NET_WM_WINDOW_TYPE_DOCK_cookie = {sequence = 17}
+        _NET_WM_WINDOW_TYPE_DIALOG_cookie = {sequence = 18}
+        _NET_WM_WINDOW_TYPE_UTILITY_cookie = {sequence = 19}
+        _NET_WM_WINDOW_TYPE_TOOLBAR_cookie = {sequence = 20}
+        _NET_WM_WINDOW_TYPE_SPLASH_cookie = {sequence = 21}
+        _NET_WM_DESKTOP_cookie = {sequence = 22}
+        _NET_WM_STRUT_PARTIAL_cookie = {sequence = 23}
+        _NET_CLIENT_LIST_STACKING_cookie = {sequence = 24}
+        _NET_CURRENT_DESKTOP_cookie = {sequence = 25}
+        _NET_ACTIVE_WINDOW_cookie = {sequence = 26}
+        _NET_WORKAREA_cookie = {sequence = 27}
+        _NET_STARTUP_ID_cookie = {sequence = 28}
+        WM_PROTOCOLS_cookie = {sequence = 29}
+        WM_DELETE_WINDOW_cookie = {sequence = 30}
+        UTF8_STRING_cookie = {sequence = 31}
+        WM_STATE_cookie = {sequence = 32}
+        WM_CLIENT_LEADER_cookie = {sequence = 33}
+        WM_TAKE_FOCUS_cookie = {sequence = 34}
+        WM_WINDOW_ROLE_cookie = {sequence = 35}
+        I3_SOCKET_PATH_cookie = {sequence = 36}
+        I3_CONFIG_PATH_cookie = {sequence = 37}
+        I3_SYNC_cookie = {sequence = 38}
+        I3_SHMLOG_PATH_cookie = {sequence = 39}
+        needs_tree_init = false
+        pointerreply = 0xf739b0
+        output = 0xfafbe0
+        ipc_socket = 9
+        xcb_watcher = 0xfaf9a0
+        xkb = 0xfaf800
+        xcb_check = 0xf73950
+        xcb_prepare = 0xf739e0
+        action = {__sigaction_handler = {sa_handler = 0x4286d9 &lt;handle_signal&gt;, sa_sigaction = 0x4286d9 &lt;handle_signal&gt;}, sa_mask = {__val = {0 &lt;repeats 16 times&gt;}}, sa_flags = -1073741820, sa_restorer = 0}
+        exec_always = 0x0
+        barconfig = 0x0
+</pre><p>
+As a reference, the detailed xrandr output:<br />
+</p>
+<pre class="wiki">Screen 0: minimum 320 x 200, current 3000 x 1920, maximum 8192 x 8192
+LVDS1 connected (normal left inverted right x axis y axis)
+   1366x768       60.0 +
+   1360x768       59.8     60.0
+   1024x768       60.0
+   800x600        60.3     56.2
+   640x480        59.9
+VGA1 connected 1920x1080+1080+500 (normal left inverted right x axis y axis) 510mm x 287mm
+   1920x1080      60.0*+   60.0
+   1600x1200      60.0
+   1680x1050      60.0
+   1680x945       60.0
+   1400x1050      74.9     60.0
+   1600x900       60.0
+   1280x1024      75.0     60.0
+   1440x900       75.0     59.9
+   1280x960       60.0
+   1366x768       60.0
+   1360x768       60.0
+   1280x800       74.9     59.8
+   1152x864       75.0
+   1280x768       74.9     59.9
+   1024x768       75.1     75.0     70.1     60.0
+   1024x576       60.0
+   800x600        72.2     75.0     60.3     56.2
+   848x480        60.0
+   640x480        75.0     72.8     60.0     59.9
+   720x400        70.1
+HDMI1 disconnected (normal left inverted right x axis y axis)
+DP1 disconnected (normal left inverted right x axis y axis)
+HDMI2 disconnected (normal left inverted right x axis y axis)
+HDMI3 connected 1080x1920+0+0 left (normal left inverted right x axis y axis) 510mm x 287mm
+   1920x1080      60.0*+
+   1920x1200      60.0
+   1600x1200      60.0
+   1680x1050      60.0     59.9
+   1680x945       60.0
+   1400x1050      74.9     60.0     59.9
+   1600x900       60.0
+   1280x1024      75.0     60.0
+   1440x900       75.0     59.9     59.9
+   1280x960       60.0
+   1366x768       60.0
+   1360x768       60.0
+   1280x800       74.9     59.8     59.9
+   1152x864       75.0
+   1280x768       74.9     59.9     60.0
+   1024x768       75.1     75.0     70.1     60.0
+   1024x576       60.0
+   800x600        72.2     75.0     60.3     56.2
+   848x480        60.0
+   640x480        75.0     72.8     60.0     59.9
+   720x400        70.1
+DP2 disconnected (normal left inverted right x axis y axis)
+DP3 disconnected (normal left inverted right x axis y axis)
+</pre>
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(6)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/771/i3l.gz" title="View attachment">i3l.gz</a><a href="/report/raw-attachment/ticket/771/i3l.gz" class="trac-rawlink" title="Download">​</a>
+       (<span title="83558 bytes">81.6 KB</span>) -
+      added by <em>anonymous</em> <a class="timeline" href="/report/timeline?from=2012-08-10T02%3A54%3A44%2B02%3A00&amp;precision=second" title="See timeline at 08/10/12 02:54:44">3 years ago</a>.
+  </dt>
+              <dt>
+    <a href="/report/attachment/ticket/771/0001-Improve-find-neighbour-output-algorithm.patch" title="View attachment">0001-Improve-find-neighbour-output-algorithm.patch</a><a href="/report/raw-attachment/ticket/771/0001-Improve-find-neighbour-output-algorithm.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="2864 bytes">2.8 KB</span>) -
+      added by <em>Feh</em> <a class="timeline" href="/report/timeline?from=2012-08-10T13%3A55%3A05%2B02%3A00&amp;precision=second" title="See timeline at 08/10/12 13:55:05">3 years ago</a>.
+  </dt>
+              <dt>
+    <a href="/report/attachment/ticket/771/0002-Implement-wraparound-when-focusing-in-a-direction.patch" title="View attachment">0002-Implement-wraparound-when-focusing-in-a-direction.patch</a><a href="/report/raw-attachment/ticket/771/0002-Implement-wraparound-when-focusing-in-a-direction.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="1508 bytes">1.5 KB</span>) -
+      added by <em>Feh</em> <a class="timeline" href="/report/timeline?from=2012-08-10T13%3A55%3A13%2B02%3A00&amp;precision=second" title="See timeline at 08/10/12 13:55:13">3 years ago</a>.
+  </dt>
+              <dt>
+    <a href="/report/attachment/ticket/771/0001-Improve-find-neighbour-output-algorithm.2.patch" title="View attachment">0001-Improve-find-neighbour-output-algorithm.2.patch</a><a href="/report/raw-attachment/ticket/771/0001-Improve-find-neighbour-output-algorithm.2.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="2862 bytes">2.8 KB</span>) -
+      added by <em>Feh</em> <a class="timeline" href="/report/timeline?from=2012-08-11T02%3A40%3A55%2B02%3A00&amp;precision=second" title="See timeline at 08/11/12 02:40:55">3 years ago</a>.
+  </dt>
+              <dt>
+    <a href="/report/attachment/ticket/771/0001-Improve-find-neighbour-output-algorithm.3.patch" title="View attachment">0001-Improve-find-neighbour-output-algorithm.3.patch</a><a href="/report/raw-attachment/ticket/771/0001-Improve-find-neighbour-output-algorithm.3.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="2862 bytes">2.8 KB</span>) -
+      added by <em>Feh</em> <a class="timeline" href="/report/timeline?from=2012-08-11T02%3A40%3A55%2B02%3A00&amp;precision=second" title="See timeline at 08/11/12 02:40:55">3 years ago</a>.
+  </dt>
+              <dt>
+    <a href="/report/attachment/ticket/771/0002-Implement-wraparound-when-focusing-in-a-direction.2.patch" title="View attachment">0002-Implement-wraparound-when-focusing-in-a-direction.2.patch</a><a href="/report/raw-attachment/ticket/771/0002-Implement-wraparound-when-focusing-in-a-direction.2.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="1508 bytes">1.5 KB</span>) -
+      added by <em>Feh</em> <a class="timeline" href="/report/timeline?from=2012-08-11T02%3A41%3A05%2B02%3A00&amp;precision=second" title="See timeline at 08/11/12 02:41:05">3 years ago</a>.
+  </dt>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/771/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(14)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-08-10T02%3A54%3A44%2B02%3A00&amp;precision=second" title="See timeline at 08/10/12 02:54:44">3 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/771/i3l.gz"><em>i3l.gz</em></a><a href="/report/raw-attachment/ticket/771/i3l.gz" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-1-1344563274254293">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-08-10T03%3A47%3A54%2B02%3A00&amp;precision=second" title="See timeline at 08/10/12 03:47:54">3 years ago</a> by Feh
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+This trvial patch fixes the crash, but not the problem that the selection algorithm could be better...<br />
+</p>
+<pre class="wiki">diff --git i/src/randr.c w/src/randr.c
+index d29ce12..5ecf388 100644
+--- i/src/randr.c
++++ w/src/randr.c
+@@ -99,7 +99,7 @@ Output *get_output_containing(int x, int y) {
+  *
+  */
+ Output *get_output_most(direction_t direction, Output *current) {
+-    Output *output, *candidate = NULL;
++    Output *output, *candidate = current;
+     int position = 0;
+     TAILQ_FOREACH(output, &amp;outputs, outputs) {
+         if (!output-&gt;active)
+</pre>
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-08-10T13%3A55%3A05%2B02%3A00&amp;precision=second" title="See timeline at 08/10/12 13:55:05">3 years ago</a> by Feh
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/771/0001-Improve-find-neighbour-output-algorithm.patch"><em>0001-Improve-find-neighbour-output-algorithm.patch</em></a><a href="/report/raw-attachment/ticket/771/0001-Improve-find-neighbour-output-algorithm.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-08-10T13%3A55%3A13%2B02%3A00&amp;precision=second" title="See timeline at 08/10/12 13:55:13">3 years ago</a> by Feh
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/771/0002-Implement-wraparound-when-focusing-in-a-direction.patch"><em>0002-Implement-wraparound-when-focusing-in-a-direction.patch</em></a><a href="/report/raw-attachment/ticket/771/0002-Implement-wraparound-when-focusing-in-a-direction.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-2-1344599777428101">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-08-10T13%3A56%3A17%2B02%3A00&amp;precision=second" title="See timeline at 08/10/12 13:56:17">3 years ago</a> by Feh
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+These two patches fix the problem for me and make wraparound motions work (eg., going to the left and ending up on the right).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1344645618223610">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-08-11T02%3A40%3A18%2B02%3A00&amp;precision=second" title="See timeline at 08/11/12 02:40:18">3 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Here is an update of the patches as applied to current "next" branch. The previus version had a little "glitch" (using &gt;= instead of &gt;).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-08-11T02%3A40%3A55%2B02%3A00&amp;precision=second" title="See timeline at 08/11/12 02:40:55">3 years ago</a> by Feh
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/771/0001-Improve-find-neighbour-output-algorithm.2.patch"><em>0001-Improve-find-neighbour-output-algorithm.2.patch</em></a><a href="/report/raw-attachment/ticket/771/0001-Improve-find-neighbour-output-algorithm.2.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-08-11T02%3A40%3A55%2B02%3A00&amp;precision=second" title="See timeline at 08/11/12 02:40:55">3 years ago</a> by Feh
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/771/0001-Improve-find-neighbour-output-algorithm.3.patch"><em>0001-Improve-find-neighbour-output-algorithm.3.patch</em></a><a href="/report/raw-attachment/ticket/771/0001-Improve-find-neighbour-output-algorithm.3.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-08-11T02%3A41%3A05%2B02%3A00&amp;precision=second" title="See timeline at 08/11/12 02:41:05">3 years ago</a> by Feh
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/771/0002-Implement-wraparound-when-focusing-in-a-direction.2.patch"><em>0002-Implement-wraparound-when-focusing-in-a-direction.2.patch</em></a><a href="/report/raw-attachment/ticket/771/0002-Implement-wraparound-when-focusing-in-a-direction.2.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-4-1344728039122204">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-08-12T01%3A33%3A59%2B02%3A00&amp;precision=second" title="See timeline at 08/12/12 01:33:59">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Here are my comments from IRC for reference:<br />
+</p>
+<pre class="wiki">01:23 @sECuRE&gt; Feh: your patches for #771 break quite a few testcases
+01:29 @sECuRE&gt; Feh: breakage starts as soon as i merge the second hunk of get_output_most (the one which 
+               modifies the D_UP || D_DOWN case)
+01:30 @sECuRE&gt; Feh: consider xrandr --output VGA1 --mode 1024x768 --output VGA2 --mode 1024x768 --right-of VGA1
+01:30 @sECuRE&gt; Feh: (so: 1024x768+0+0,1024x768+1024+0)
+01:30 @sECuRE&gt; Feh: your conditions are now true when i use 'focus output up', but that should be a no-op
+01:31 @sECuRE&gt; Feh: FYI: for easier coding, you could use this testcase i wrote: 
+               http://t.zekjur.net/506-focus-right.t
+01:33 @sECuRE&gt; Feh: btw, my most recent idea for this problem was to just simulate what a user would be doing: 
+               take the currently focused con, leave one coordinate untouched (y for a left/right move and 
+               vice-versa), then increment the other coordinate so that it is just outside the current screen. 
+               then use get_output_containing() on the resulting coordinates
+01:33 @sECuRE&gt; Feh: you’re welcome to try that if you want to, i need to fix a few other things right now ;)
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1346168423466110">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-08-28T17%3A40%3A23%2B02%3A00&amp;precision=second" title="See timeline at 08/28/12 17:40:23">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+btw, <a class="closed ticket" href="/report/ticket/669" title="defect: i3 crashes when moving worspaces between different outputs with ... (closed: fixed)">#669</a> is related<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1348269492252087">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-22T01%3A18%3A12%2B02%3A00&amp;precision=second" title="See timeline at 09/22/12 01:18:12">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+After discussing with swh on IRC, we should probably implement it like this (example for <tt>focus right</tt>:<br />
+</p>
+<ol><li>Use (x,y) of the current output.
+</li><li>Increment x until get_output_containing() returns something else.
+</li><li>Do step 1 and 2 with (x,y) being top, middle and bottom
+</li><li>Use the result with the lowest difference in the y coordinate)
+</li></ol><p>
+The edge case suggested by swh was a 2560x1600 LCD monitor with a 1024x600 netbook, that is configured --right-of, but aligned at the top/bottom with the LCD monitor.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1348303462283799">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-22T10%3A44%3A22%2B02%3A00&amp;precision=second" title="See timeline at 09/22/12 10:44:22">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <pre class="wiki">02:25  swh&gt; sECuRE: For left/right rejection, how about this? current-&gt;rect.y &gt; (output-&gt;rect.y + 
+            output-&gt;rect.height) || output-&gt;rect.y &gt; (current-&gt;rect.y + current-&gt;rect.height)
+02:26  swh&gt; I.e. reject if the current output's bottom is above the top of the new output, or if the new 
+            output's bottom is above the top of the current output
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1348325745573212">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-22T16%3A55%3A45%2B02%3A00&amp;precision=second" title="See timeline at 09/22/12 16:55:45">3 years ago</a> by Michael Stapelberg
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/19883108"><span class="icon">​</span>http://c.i3wm.org/19883108</a>:<br />
+Make get_output_next() work with non-aligned RandR setups (+test) (Thanks Feh, swh, Moritz)<br />
+</p>
+<p>
+A good visualization of the new algorithm is this:<br />
+</p>
+<blockquote>
+<p>
++--------+<br />
+|        |<br />
+</p>
+</blockquote>
+<p>
++--------+=|   S1   |========================<br />
+|        | |        |<br />
+|   S0   | +--------+<br />
+|        |         +--------+<br />
++--------+=========|        |================<br />
+</p>
+<blockquote>
+<p>
+|   S2   | +--------+<br />
+|        | |        |<br />
++--------+ |   S3   |<br />
+</p>
+<blockquote>
+<p>
+|        |<br />
++--------+<br />
+</p>
+</blockquote>
+</blockquote>
+<p>
+When focus is on S0, 'focus output right' will first match S1 (the<br />
+closest output which overlaps in the highlighted area), then S2, but not<br />
+S3 (since S3 does not overlap into the highlighted area).<br />
+</p>
+<p>
+fixes <a class="closed ticket" href="/report/ticket/669" title="defect: i3 crashes when moving worspaces between different outputs with ... (closed: fixed)">#669</a><br />
+fixes <a class="closed ticket" href="/report/ticket/771" title="defect: reproducable crash: assert fails in src/randr.c (closed: fixed)">#771</a><br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/771?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/771?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/771?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

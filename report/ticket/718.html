@@ -1,0 +1,622 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #718 (empty container race condition)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/717" title="Ticket #717" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/718?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/718?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/718?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/719" title="Ticket #719" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="c90ea82dcbf30d5c70207ac3";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/717" title="Ticket #717">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/719" title="Ticket #719">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-05-26T19%3A22%3A25%2B02%3A00&amp;precision=second" title="See timeline at 05/26/12 19:22:25">3 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2012-09-27T12%3A10%3A43%2B02%3A00&amp;precision=second" title="See timeline at 09/27/12 12:10:43">3 years ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2012-09-28T19%3A11%3A31%2B02%3A00&amp;precision=second" title="See timeline at 09/28/12 19:11:31">3 years ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/718" class="trac-id">#718</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">empty container race condition</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable"><a href="/report/query?status=!closed&amp;reporter=xeen">xeen</a></td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=minor">minor</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.3">4.3</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion" class="missing">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+Run this in a terminal:<br />
+</p>
+<pre class="wiki">for i in {0..1000..1}; do urxvtc -e "does_not_exist"; done
+</pre><p>
+The faster the window closes again, the better. Therefore urxvtc outperforms urxvt. You’ll end up with a lot of empty containers that are still managed by i3 although they don’t contain any window. Restarting removes the container but has that space still being managed by i3. <br />
+</p>
+<p>
+For completeness, I attached the irc chatlog at the bottom. The attached log is a whole i3 session, but searching for "does_not_exist" should get you started.<br />
+</p>
+<pre class="wiki">18:41:48 &lt;@xeen&gt; I believe I found a race condition in i3. If I open a term (in my case urxvt) with a zsh shell and have it run the following command: »urxvt -e "zsh -i"« I sometimes get empty i3 containers that are persistent across restarts.
+18:42:16 &lt;@xeen&gt; Unfortunately it’s not so easy to reproduce the issue and I had logging deactivated at the time.
+18:45:12 &lt;@xeen&gt; i3 somehow still handles the window, but xprop returns the desktop. The title bar seems to be taken from invalid memory at times or is simply transparent like the rest of the window
+18:47:22 &lt;@xeen&gt; hm, actually what I just described only happens after restarting i3. Before that, i3 displays a normal (but empty) container. xprop yields WM_NAME(STRING) = "[i3 con] container around 0x259bab0"
+18:50:11 &lt;@xeen&gt; ah, now I can reproduce it: Open a dozen terms and have them run for i in {0..1000..1}; do urxvt -e "zsh -i"; done
+18:50:46 &lt;@xeen&gt; I’ll try to get a log next time I restart X.
+18:53:05 &lt;@badboy&gt; hm, I don't think your testing this right
+18:53:32 &lt;@badboy&gt; urxvt -e "zsh -i" tries to start the program zsh\ -i which does obviously not exist
+18:53:38 &lt;@badboy&gt; urxvt -e zsh -i works as expected
+18:59:25 &lt;@xeen&gt; badboy: I’m testing i3 and it definitely shouldn’t create empty containers even if I hand bogus input to urxvt. You’re right though, the line for urxvt doesn’t make sense (and I have since corrected my error).
+18:59:57 &lt;@xeen&gt; I’ve reduced the example to what I posted above, but likely urxvt -e "does_not_exist" will work fine as well.
+19:01:30 &lt;@badboy&gt; Hm, I see the urxvt window appearing on the right and immediately closed, no empty container left.
+19:01:59 &lt;@xeen&gt; for i in {0..1000..1}; do urxvtc -e "does_not_exist"; done
+19:02:04 &lt;@xeen&gt; this works as well and even better
+19:02:16 &lt;@xeen&gt; note I exchanged urxvt with urxvtc
+19:03:03 &lt;@xeen&gt; so I presume the race condition is related to X or i3 dealing with windows that are closed almost right after that
+19:03:50 &lt;@badboy&gt; ok, now I have an empty container left.
+19:04:48 &lt;@xeen&gt; do you want me to provide a log file? I need to kill i3 anyway due to all the empty windows all over the place
+19:05:07 &lt;@xeen&gt; badboy: if you restart i3 now, the container will disappear but i3 will still manage that space
+19:05:55 &lt;@badboy&gt; Hm, the title line was still rendered there, but the space was usable again after restarting.
+</pre>
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(1)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/718/enjoy_your_log.gz" title="View attachment">enjoy_your_log.gz</a><a href="/report/raw-attachment/ticket/718/enjoy_your_log.gz" class="trac-rawlink" title="Download">​</a>
+       (<span title="258798 bytes">252.7 KB</span>) -
+      added by <em>xeen</em> <a class="timeline" href="/report/timeline?from=2012-05-26T19%3A23%3A12%2B02%3A00&amp;precision=second" title="See timeline at 05/26/12 19:23:12">3 years ago</a>.
+  </dt>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/718/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(9)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-05-26T19%3A23%3A12%2B02%3A00&amp;precision=second" title="See timeline at 05/26/12 19:23:12">3 years ago</a> by xeen
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/718/enjoy_your_log.gz"><em>enjoy_your_log.gz</em></a><a href="/report/raw-attachment/ticket/718/enjoy_your_log.gz" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-1-1348725875727347">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-27T08%3A04%3A35%2B02%3A00&amp;precision=second" title="See timeline at 09/27/12 08:04:35">3 years ago</a> by drdarkraven@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Still reproducible with newest git.<br />
+</p>
+<p>
+I think this is because the window is destroyed before i3 was able to manage it.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1348729599290846">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-27T09%3A06%3A39%2B02%3A00&amp;precision=second" title="See timeline at 09/27/12 09:06:39">3 years ago</a> by drdarkraven@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+This patch fix the bug for me.<br />
+</p>
+<pre class="wiki">diff --git a/src/manage.c b/src/manage.c
+index 9a5a4cf..e09d79a 100644
+--- a/src/manage.c
++++ b/src/manage.c
+@@ -125,11 +125,14 @@ void manage_window(xcb_window_t window, xcb_get_window_attributes_cookie_t cooki
+ 
+     uint32_t values[1];
+ 
+-    /* Set a temporary event mask for the new window, consisting only of
+-     * PropertyChange. We need to be notified of PropertyChanges because the
+-     * client can change its properties *after* we requested them but *before*
+-     * we actually reparented it and have set our final event mask. */
+-    values[0] = XCB_EVENT_MASK_PROPERTY_CHANGE;
++    /* Set a temporary event mask for the new window, consisting of
++     * PropertyChange and StructureNotify. We need to be notified of
++     * PropertyChanges because the client can change its properties
++     * *after* we requested them but *before* we actually reparented
++     * it and have set our final event mask. The StructureNotify is
++     * needed because the client might kill itself before we are able
++     * to reparent it.*/
++    values[0] = XCB_EVENT_MASK_PROPERTY_CHANGE | XCB_EVENT_MASK_STRUCTURE_NOTIFY;
+     xcb_change_window_attributes(conn, window, XCB_CW_EVENT_MASK, values);
+ 
+ #define GET_PROPERTY(atom, len) xcb_get_property(conn, false, window, atom, XCB_GET_PROPERTY_TYPE_ANY, 0, len)
+
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1348740643162640">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-27T12%3A10%3A43%2B02%3A00&amp;precision=second" title="See timeline at 09/27/12 12:10:43">3 years ago</a> by Michael Stapelberg
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/a3f3d567"><span class="icon">​</span>http://c.i3wm.org/a3f3d567</a>:<br />
+</p>
+<pre class="wiki">Bugfix: properly react to windows being unmapped before we can reparent (Thanks xeen, darkraven)
+
+We need to verify that setting the event mask works, and we need to
+include StructureNotify to get unmap events at any point in time.
+Thanks darkraven for the pointer.
+
+fixes #718
+
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1348741478302118">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:5" class="follow-up">↓ 5</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-27T12%3A24%3A38%2B02%3A00&amp;precision=second" title="See timeline at 09/27/12 12:24:38">3 years ago</a> by drdarkraven@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+i want to point out that maybe the contianer window should also be destroyed after the reparent is aborted.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1348742801682582">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+        in reply to:
+    <a href="#comment:4">↑ 4</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-27T12%3A46%3A41%2B02%3A00&amp;precision=second" title="See timeline at 09/27/12 12:46:41">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/718#comment:4" title="Comment 4">drdarkraven@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+i want to point out that maybe the contianer window should also be destroyed after the reparent is aborted.<br />
+</p>
+</blockquote>
+<p>
+I don’t have any left-overs when reproducing the issue with xeen’s for-loop and my (!) patch. Can you provide steps to reproduce? Or am I misunderstanding you?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1348744019876386">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:7" class="follow-up">↓ 7</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-27T13%3A06%3A59%2B02%3A00&amp;precision=second" title="See timeline at 09/27/12 13:06:59">3 years ago</a> by drdarkraven@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+The issue is fixed with this patch.<br />
+I just want to say, as afterthoughts, at manage.c line 364, when the reparenting is aborted, the container window has already been created and should be destroyed.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1348848788998805">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+        in reply to:
+    <a href="#comment:6">↑ 6</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-28T18%3A13%3A08%2B02%3A00&amp;precision=second" title="See timeline at 09/28/12 18:13:08">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/718#comment:6" title="Comment 6">drdarkraven@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+The issue is fixed with this patch.<br />
+I just want to say, as afterthoughts, at manage.c line 364, when the reparenting is aborted, the container window has already been created and should be destroyed.<br />
+</p>
+</blockquote>
+<p>
+True. Do you have a way to test this code-path? It’s far too complex for blind patching, unfortunately :-/.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1348852291765575">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-28T19%3A11%3A31%2B02%3A00&amp;precision=second" title="See timeline at 09/28/12 19:11:31">3 years ago</a> by drdarkraven@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+...If you revert the fix for this issue, you could test that code path.<br />
+It is one of the causes of this issue.<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/718?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/718?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/718?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

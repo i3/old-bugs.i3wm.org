@@ -1,0 +1,568 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1214 (Absolute focus in current container)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1213" title="Ticket #1213" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1214?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1214?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1214?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1215" title="Ticket #1215" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="bf00bcd695401b9178f7939f";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1213" title="Ticket #1213">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1215" title="Ticket #1215">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2014-04-06T16%3A40%3A39%2B02%3A00&amp;precision=second" title="See timeline at 04/06/14 16:40:39">12 months ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2014-04-14T21%3A59%3A53%2B02%3A00&amp;precision=second" title="See timeline at 04/14/14 21:59:53">12 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1214" class="trac-id">#1214</a>
+    <span class="trac-status">
+      <a href="/report/query?status=new">new</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=enhancement">enhancement</a>
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Absolute focus in current container</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">glin@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=minor">minor</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version" class="missing">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version="></a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.7.2 (2014-01-23, branch "tags/4.7.2")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+For workspaces, we have absolute focusing (like <tt>$mod+3</tt> to get to workspace 3) and relative focusing (<tt>workspace prev</tt>, <tt>workspace next</tt> commands).<br />
+</p>
+<p>
+But for focus, we only have relative (<tt>focus left</tt>, <tt>focus up</tt> etc.). I would love to be able to set shortcuts for absolute focusing within currently active container (like command <tt>focus 3</tt> to focus third window/subcontainer of the current container).<br />
+</p>
+<p>
+Example:<br />
+</p>
+<p>
+Lets say I'm in a container with 4 terminals (tabbed layout), and for my current task I'm frequently switching between the first and fourth ones. So instead pressing <tt>$mod+; ; ;</tt> and <tt>$mod + j j j</tt> I would rather use just for example <tt>$mod+f1</tt>, <tt>$mod+f4</tt>.<br />
+</p>
+<p>
+I was surprised that this is not currently possible as absolute mental model is default for workspace navigation, so I expected there would be at least possibility to set shortcuts for absolute navigation withing the current container. I think this is last thing that keeps me from switching to i3 as my mind works mainly in absolute navigation model.<br />
+</p>
+<p>
+Would it be possible to add this?<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(1)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/1214/focus_num.py" title="View attachment">focus_num.py</a><a href="/report/raw-attachment/ticket/1214/focus_num.py" class="trac-rawlink" title="Download">​</a>
+       (<span title="467 bytes">467 bytes</span>) -
+      added by <em>glin@…</em> <a class="timeline" href="/report/timeline?from=2014-04-14T21%3A39%3A03%2B02%3A00&amp;precision=second" title="See timeline at 04/14/14 21:39:03">12 months ago</a>.
+  </dt>
+              <dd>
+                Script to focus n-th child within current parent container.
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/1214/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(7)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1396800136981814">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-06T18%3A02%3A16%2B02%3A00&amp;precision=second" title="See timeline at 04/06/14 18:02:16">12 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-priority">
+      <strong class="trac-field-priority">Priority</strong>
+        changed from <em>major</em> to <em>minor</em>
+    </li><li class="trac-field-type">
+      <strong class="trac-field-type">Type</strong>
+        changed from <em>defect</em> to <em>enhancement</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Your first thing would be difficult to do right in the core code. I really wish someone would figure out a way to do vim-like "execute command n-times" but I haven't figured that one out yet. I think we are leaning toward directing people toward an ipc library such as my <a class="ext-link" href="https://github.com/acrisci/i3ipc-glib"><span class="icon">​</span>new ipc library</a> to add features like this.<br />
+</p>
+<p>
+If you post this as a question on the <a class="ext-link" href="https://faq.i3wm.org"><span class="icon">​</span>faq</a>, I will write this one for you. If it turns out to be really useful or popular, then we might want to consider adding it into core later.<br />
+</p>
+<p>
+As for your second thing, this feature is already in the core code as <a class="ext-link" href="http://i3wm.org/docs/userguide.html#_vim_like_marks_mark_goto"><span class="icon">​</span>vim-like marks</a> which you can find in the user guide.<br />
+</p>
+
+    </div>
+  <div class="trac-lastedit ">
+    Last edited <a class="timeline" href="/report/timeline?from=2014-04-06T18%3A43%3A09%2B02%3A00&amp;precision=second" title="See timeline at 04/06/14 18:43:09">12 months ago</a>
+        by TonyC
+      (<a href="/report/ticket/1214?cversion=0&amp;cnum_hist=1#comment:1">previous</a>)
+      (<a href="/report/ticket/1214?action=comment-diff&amp;cnum=1&amp;version=1">diff</a>)
+  </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1396814705007721">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:3" class="follow-up">↓ 3</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-06T22%3A05%3A05%2B02%3A00&amp;precision=second" title="See timeline at 04/06/14 22:05:05">12 months ago</a> by glin@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I really meant the whole ticket as one thing, I know about marks, but I do switching between tabs of my current tabbed terminal really often and the example was just simpler task, sometimes I add fifth and I'm switching 1,4,5,4,5,1... I can't imagine that I would have to mark tabs all the time when now I have it simply on ALT+number, without doing anything. Not mentioning that then I switch to a different window where I also have 3-6 tabs and use same ALT+number shortcuts, which I think is not possible with marking as marks are global.<br />
+</p>
+<p>
+And on the other hand I'm excited that with this in I3, I could switch same way not only between tabs with terminal, but with any application.<br />
+</p>
+<p>
+I'll try to look at core source code and/or IPC lib as I can't believe that this would be difficult to add :), if I'm lost I'll post the faq question.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1396819757714078">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+        in reply to:
+    <a href="#comment:2">↑ 2</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-06T23%3A29%3A17%2B02%3A00&amp;precision=second" title="See timeline at 04/06/14 23:29:17">12 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1214#comment:2" title="Comment 2">glin@…</a>:<br />
+</p>
+<p>
+Sure, I don't think this is a bad idea for core if it is done right. This would need to be officially accepted though.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1397497002740442">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-14T19%3A36%3A42%2B02%3A00&amp;precision=second" title="See timeline at 04/14/14 19:36:42">12 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I think this would be a cool feature, but only if done right. To iron out all the kinks, it’s best to keep this code in a separate program/script that uses i3’s IPC interface. Once we are confident that it works well in all the scenarios, I’ll consider merging this behavior into core i3.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1397497024715605">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-14T19%3A37%3A04%2B02%3A00&amp;precision=second" title="See timeline at 04/14/14 19:37:04">12 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-version">
+      <strong class="trac-field-version">Version</strong>
+        <em>4.7.2</em> deleted
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Unsetting the version since it’s a feature request.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-14T21%3A39%3A03%2B02%3A00&amp;precision=second" title="See timeline at 04/14/14 21:39:03">12 months ago</a> by glin@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1214/focus_num.py"><em>focus_num.py</em></a><a href="/report/raw-attachment/ticket/1214/focus_num.py" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Script to focus n-th child within current parent container.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1397505593878519">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-14T21%3A59%3A53%2B02%3A00&amp;precision=second" title="See timeline at 04/14/14 21:59:53">12 months ago</a> by glin@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I attached a short script in python for that. You need to change (or have installed) path to <a class="ext-link" href="https://github.com/ziberna/i3-py"><span class="icon">​</span>i3-py</a>, then you can bind it like this in .i3/config:<br />
+</p>
+<pre class="wiki">bindsym $mod2+1 exec ~/.i3/focus_num.py 1
+bindsym $mod2+2 exec ~/.i3/focus_num.py 2
+bindsym $mod2+3 exec ~/.i3/focus_num.py 3
+bindsym $mod2+4 exec ~/.i3/focus_num.py 4
+bindsym $mod2+5 exec ~/.i3/focus_num.py 5
+bindsym $mod2+6 exec ~/.i3/focus_num.py 6
+....
+</pre><p>
+How it works: <br />
+</p>
+<ol><li>It focuses <tt>n</tt>-th child in the parent container of the currently focused window/container (where <tt>n</tt> is taken as the first parameter from command line).
+</li><li>If it isn't a window, it focuses a child recursively till it hit's the window (same as when you use for example 'focus right' and right from the current position is a container).
+</li></ol><p>
+I have yet to test it for me - first I have to come with meaningful key bindings to be able to efficiently switch workspaces, select parent, and switch focus by this script.<br />
+</p>
+<p>
+It could probably be written much better (like find the window I want to focus and use only one focus command), but for testing purposes I think it's OK.<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1214?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1214?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1214?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

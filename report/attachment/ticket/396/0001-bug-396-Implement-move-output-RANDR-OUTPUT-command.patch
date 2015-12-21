@@ -1,0 +1,71 @@
+From 4237de9c30fff9fbff1f25e875b43f1bd432f6be Mon Sep 17 00:00:00 2001
+From: Peter Bui <pnutzh4x0r@gmail.com>
+Date: Mon, 8 Aug 2011 17:28:19 -0400
+Subject: [PATCH] bug-396: Implement move output <RANDR-OUTPUT> command
+
+---
+ src/cmdparse.l |    1 +
+ src/cmdparse.y |   28 ++++++++++++++++++++++++++++
+ 2 files changed, 29 insertions(+), 0 deletions(-)
+
+diff --git a/src/cmdparse.l b/src/cmdparse.l
+index 6c756b0..c7c64e3 100644
+--- a/src/cmdparse.l
++++ b/src/cmdparse.l
+@@ -123,6 +123,7 @@ floating                        { return TOK_FLOATING; }
+ toggle                          { return TOK_TOGGLE; }
+ mode_toggle                     { return TOK_MODE_TOGGLE; }
+ workspace                       { WS_STRING; return TOK_WORKSPACE; }
++output                          { WS_STRING; return TOK_OUTPUT; }
+ focus                           { return TOK_FOCUS; }
+ move                            { return TOK_MOVE; }
+ open                            { return TOK_OPEN; }
+diff --git a/src/cmdparse.y b/src/cmdparse.y
+index 32558f2..7ad6f53 100644
+--- a/src/cmdparse.y
++++ b/src/cmdparse.y
+@@ -149,6 +149,7 @@ bool definitelyGreaterThan(float a, float b, float epsilon) {
+ %token              TOK_ENABLE          "enable"
+ %token              TOK_DISABLE         "disable"
+ %token              TOK_WORKSPACE       "workspace"
++%token              TOK_OUTPUT          "output"
+ %token              TOK_TOGGLE          "toggle"
+ %token              TOK_FOCUS           "focus"
+ %token              TOK_MOVE            "move"
+@@ -704,6 +705,33 @@ move:
+ 
+         tree_render();
+     }
++    | TOK_MOVE TOK_OUTPUT STR
++    {
++        owindow *current;
++
++        printf("should move window to output %s\n", $3);
++        /* get the output */
++        Output *output = get_output_by_name($3);
++        free($3);
++
++        HANDLE_EMPTY_MATCH;
++
++        if (!output)
++            return 0;
++
++        /* get visible workspace on output */
++        Con *ws = NULL;
++        GREP_FIRST(ws, output_get_content(output->con), workspace_is_visible(child));
++        if (!ws)
++            return 0;
++
++        TAILQ_FOREACH(current, &owindows, owindows) {
++            printf("matching: %p / %s\n", current->con, current->con->name);
++            con_move_to_workspace(current->con, ws);
++        }
++
++        tree_render();
++    }
+     ;
+ 
+ append_layout:
+-- 
+1.7.6
+

@@ -1,0 +1,682 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1276 (Export an add-on library)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1275" title="Ticket #1275" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1276?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1276?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1276?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1277" title="Ticket #1277" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="8dd370394f4f416f49569e1d";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1275" title="Ticket #1275">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1277" title="Ticket #1277">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2014-06-17T06%3A07%3A49%2B02%3A00&amp;precision=second" title="See timeline at 06/17/14 06:07:49">10 months ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2014-07-05T01%3A28%3A05%2B02%3A00&amp;precision=second" title="See timeline at 07/05/14 01:28:05">9 months ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2014-07-06T18%3A50%3A26%2B02%3A00&amp;precision=second" title="See timeline at 07/06/14 18:50:26">9 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1276" class="trac-id">#1276</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=enhancement">enhancement</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=wontfix">wontfix</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Export an add-on library</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">tony@…</td>
+      <th id="h_owner" class="missing">Owned by:</th>
+      <td headers="h_owner"></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version" class="missing">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version="></a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.8-5-gd8328c7 (2014-06-15, branch "next")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+An add-on library would be useful for i3's core utilities (i3msg, i3status, i3lock, i3bar, etc.), the test suite, user-created scripts, and developers of new applications designed to work with i3.<br />
+</p>
+<p>
+The ipc interface is good for this purpose, but requires too much marshalling to be practical for using in new projects. Exporting a library would have these other benefits:<br />
+</p>
+<ul><li>A reference implementation of the ipc protocol inspires confidence in developers to create add-ons and applications that improve i3 for future use cases
+</li><li>Reduces dependencies required for the testcases and testcases can be used to test the library itself
+</li><li>Removes duplicate code for marshalling messages from the ipc in all parts of i3, reducing complexity across the project
+</li><li>Allows breakage of ipc implementation details that may be useful in the future (such as a port to D-Bus)
+</li></ul><p>
+<a class="ext-link" href="https://github.com/acrisci/i3ipc-glib"><span class="icon">​</span>i3ipc-glib</a> is an introspectable library that could be used as a guide for the implementation. Bringing this library into the project would require a dependency on GLib and a build dependency on GObject-Introspection.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(6)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1402978094263852">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-17T06%3A08%3A14%2B02%3A00&amp;precision=second" title="See timeline at 06/17/14 06:08:14">10 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-type">
+      <strong class="trac-field-type">Type</strong>
+        changed from <em>defect</em> to <em>enhancement</em>
+    </li><li class="trac-field-version">
+      <strong class="trac-field-version">Version</strong>
+        <em>4.8</em> deleted
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-2-1402988650218838">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+        in reply to:
+    <a href="#comment:description">↑ description</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-17T09%3A04%3A10%2B02%3A00&amp;precision=second" title="See timeline at 06/17/14 09:04:10">10 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="closed ticket" href="/report/ticket/1276" title="enhancement: Export an add-on library (closed: wontfix)">tony@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+An add-on library would be useful for i3's core utilities (i3msg, i3status, i3lock, i3bar, etc.), the test suite, user-created scripts, and developers of new applications designed to work with i3.<br />
+</p>
+</blockquote>
+<p>
+For i3-internal use we already have libi3/ipc*.c, which is already used in i3-msg. In your list, i3status does not have (and never should) a dependency on i3’s IPC interface. Same goes for i3lock. The only remaining app is i3bar, and that should be trivially portable to the libi3 IPC functions.<br />
+</p>
+<p>
+So, no, adding a new library will not benefit the i3* utilities :).<br />
+</p>
+<p>
+As for user-created scripts, I think the biggest barrier is the programming language here. Shipping yet another IPC library with i3 will not help people who write in other languages.<br />
+</p>
+<blockquote class="citation">
+<p>
+The ipc interface is good for this purpose, but requires too much marshalling to be practical for using in new projects. Exporting a library would have these other benefits:<br />
+</p>
+<ul><li>A reference implementation of the ipc protocol inspires confidence in developers to create add-ons and applications that improve i3 for future use cases
+</li></ul></blockquote>
+<p>
+We already have a reference implementation, it’s libi3/ipc*, as used by i3-msg. I don’t know what you mean with “inspires confidence”.<br />
+</p>
+<blockquote class="citation">
+<ul><li>Reduces dependencies required for the testcases and testcases can be used to test the library itself
+</li></ul></blockquote>
+<p>
+Probably true, but there’s already a different bugreport for that, right?<br />
+</p>
+<blockquote class="citation">
+<ul><li>Removes duplicate code for marshalling messages from the ipc in all parts of i3, reducing complexity across the project
+</li></ul></blockquote>
+<p>
+Nope. As I said, i3bar can be trivially ported to use libi3/ipc*, unless I misunderstand what you mean by “marshalling”.<br />
+</p>
+<blockquote class="citation">
+<ul><li>Allows breakage of ipc implementation details that may be useful in the future (such as a port to D-Bus)
+</li></ul></blockquote>
+<p>
+No. We will not change the IPC system to anything other than what it currently is (or at least preserve compatibility with what we have today). Sorry. That’d be a huge “fuck you” to all the people who ever wrote a script/external program for i3. This is not going to happen. See also the bug about libnotify with regards to how dbus is perceived by many of our users.<br />
+</p>
+<blockquote class="citation">
+<p>
+<a class="ext-link" href="https://github.com/acrisci/i3ipc-glib"><span class="icon">​</span>i3ipc-glib</a> is an introspectable library that could be used as a guide for the implementation. Bringing this library into the project would require a dependency on GLib and a build dependency on GObject-Introspection.<br />
+</p>
+</blockquote>
+<p>
+The best way to make a convincing argument to ship something with i3 is proving that many people already use it. It worked this way with i3bar. It used to be a separate project, but everyone was using it, so we bundled it with i3.<br />
+</p>
+<p>
+So, in this case, the corresponding argument would be that while there are like 10 different IPC libraries, everyone is using yours because it’s so compelling. I don’t see that currently, but perhaps I’m wrong.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1402998295078783">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:4" class="follow-up">↓ 4</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-17T11%3A44%3A55%2B02%3A00&amp;precision=second" title="See timeline at 06/17/14 11:44:55">10 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I can't say that i3ipc-glib is the most popular ipc library, but I hope I can convince you that this is not important. The fact that there are like 10 different ipc libraries indicates to me that ipc scripting itself is popular. I think what is valid here as far as popularity goes is the popularity of all the ipc libraries and ipc implementations <em>together</em>. I think you yourself have made the case that this is an important part of i3.<br />
+</p>
+<blockquote class="citation">
+<p>
+As for user-created scripts, I think the biggest barrier is the programming language here.<br />
+</p>
+</blockquote>
+<p>
+What I am suggesting is the <em>one ipc library to rule them all</em>. i3ipc-glib is an introspectable library. It exposes language bindings in practically <a class="ext-link" href="https://wiki.gnome.org/Projects/GObjectIntrospection/Users"><span class="icon">​</span>every programming language</a>. A GObject-Introspection library transcends the barrier of programming language. Someone would simply need to install the binding library, some of which are supported directly by Gnome, and they can use it to write add-ons.<br />
+</p>
+<p>
+Because this library fits all of the use cases of all the ipc libraries together, I think it is valid to consider the popularity of all of them when making this decision.<br />
+</p>
+<p>
+I think this is an elegant solution because the exact same library that subscribes to workspace events in i3bar can also be used in the testcases with the perl bindings. This sort of tight integration with i3 itself is what I mean by "inspiring confidence" in someone developing an application for i3. They know it will be there and is supported, and they will have plenty of examples from i3 to use as a basis for a new project.<br />
+</p>
+<p>
+I just learned what <a class="ext-link" href="https://en.wikipedia.org/wiki/Marshalling_%28computer_science%29"><span class="icon">​</span>marshalling</a> meant a few weeks ago so sorry for using a buzzword.<br />
+</p>
+<blockquote class="citation">
+<p>
+marshalling or marshaling is the process of transforming the memory representation of an object to a data format suitable for storage or transmission<br />
+</p>
+</blockquote>
+<p>
+i3ipc-glib goes above and beyond what libi3 does. libi3 gives you a string of JSON that you must then parse to extract the information you need from it. i3ipc-glib is an object-oriented library that exposes an <a class="ext-link" href="http://dubstepdish.com/i3ipc-glib/i3ipcCon.html"><span class="icon">​</span>object for containers</a> and structs for <a class="ext-link" href="http://dubstepdish.com/i3ipc-glib/i3ipc-glib-i3ipc-event-types.html"><span class="icon">​</span>events</a> and <a class="ext-link" href="http://dubstepdish.com/i3ipc-glib/i3ipc-glib-i3ipc-reply-types.html"><span class="icon">​</span>replies</a>. It does all the heavy lifting of parsing the JSON for you. The socket itself is completely abstracted away, and we can use GOjbect signal connection for events, which is much simpler.<br />
+</p>
+<p>
+tl;dr: ipc scripting is popular enough to be considered as something to bring into core and providing a library would simplify parts of i3 like i3bar and the testcases by eliminating the need to parse json.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1404516485168973">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+        in reply to:
+    <a href="#comment:3">↑ 3</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-05T01%3A28%3A05%2B02%3A00&amp;precision=second" title="See timeline at 07/05/14 01:28:05">9 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>wontfix</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1276#comment:3" title="Comment 3">TonyC</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+I can't say that i3ipc-glib is the most popular ipc library, but I hope I can convince you that this is not important. The fact that there are like 10 different ipc libraries indicates to me that ipc scripting itself is popular. I think what is valid here as far as popularity goes is the popularity of all the ipc libraries and ipc implementations <em>together</em>. I think you yourself have made the case that this is an important part of i3.<br />
+</p>
+</blockquote>
+<p>
+The popularity of all libraries does mean that using the IPC interface is popular, agreed. It does not mean that i3ipc-glib will be popular — that is just speculation and depends on so many other factors :).<br />
+</p>
+<blockquote class="citation">
+<blockquote class="citation">
+<p>
+As for user-created scripts, I think the biggest barrier is the programming language here.<br />
+</p>
+</blockquote>
+<p>
+What I am suggesting is the <em>one ipc library to rule them all</em>. i3ipc-glib is an introspectable library. It exposes language bindings in practically <a class="ext-link" href="https://wiki.gnome.org/Projects/GObjectIntrospection/Users"><span class="icon">​</span>every programming language</a>. A GObject-Introspection library transcends the barrier of programming language. Someone would simply need to install the binding library, some of which are supported directly by Gnome, and they can use it to write add-ons.<br />
+</p>
+</blockquote>
+<p>
+While that may be true, I don’t think it’s a big advantage _in practice_ _for our user base_. I think many users prefer bindings that are implemented natively in the programming language of their choice, i.e. not using gobject-introspection. This may be for religious reasons, but also for familiarity (when debugging/in general) and because native libraries have a better chance of embracing the programming language’s specialties (in comparison with a more generic “one-size-fits-all” approach).<br />
+</p>
+<blockquote class="citation">
+<p>
+Because this library fits all of the use cases of all the ipc libraries together, I think it is valid to consider the popularity of all of them when making this decision.<br />
+</p>
+</blockquote>
+<p>
+I don’t think so, for the reasons outlined above.<br />
+</p>
+<blockquote class="citation">
+<p>
+I think this is an elegant solution because the exact same library that subscribes to workspace events in i3bar can also be used in the testcases with the perl bindings. This sort of tight integration with i3 itself is what I mean by "inspiring confidence" in someone developing an application for i3. They know it will be there and is supported, and they will have plenty of examples from i3 to use as a basis for a new project.<br />
+</p>
+</blockquote>
+<p>
+I have never heard of a case where people complained about an i3 IPC library being broken, i.e. I never encountered people lacking this kind of confidence. Sure it’d be nice to know that the particular library is widely used and at the core of i3, but this is not addressing an actual problem.<br />
+</p>
+<blockquote class="citation">
+<p>
+I just learned what <a class="ext-link" href="https://en.wikipedia.org/wiki/Marshalling_%28computer_science%29"><span class="icon">​</span>marshalling</a> meant a few weeks ago so sorry for using a buzzword.<br />
+</p>
+<blockquote class="citation">
+<p>
+marshalling or marshaling is the process of transforming the memory representation of an object to a data format suitable for storage or transmission<br />
+</p>
+</blockquote>
+<p>
+i3ipc-glib goes above and beyond what libi3 does. libi3 gives you a string of JSON that you must then parse to extract the information you need from it. i3ipc-glib is an object-oriented library that exposes an <a class="ext-link" href="http://dubstepdish.com/i3ipc-glib/i3ipcCon.html"><span class="icon">​</span>object for containers</a> and structs for <a class="ext-link" href="http://dubstepdish.com/i3ipc-glib/i3ipc-glib-i3ipc-event-types.html"><span class="icon">​</span>events</a> and <a class="ext-link" href="http://dubstepdish.com/i3ipc-glib/i3ipc-glib-i3ipc-reply-types.html"><span class="icon">​</span>replies</a>. It does all the heavy lifting of parsing the JSON for you. The socket itself is completely abstracted away, and we can use GOjbect signal connection for events, which is much simpler.<br />
+</p>
+</blockquote>
+<p>
+Sounds good :).<br />
+</p>
+<blockquote class="citation">
+<p>
+tl;dr: ipc scripting is popular enough to be considered as something to bring into core and providing a library would simplify parts of i3 like i3bar and the testcases by eliminating the need to parse json.<br />
+</p>
+</blockquote>
+<p>
+As outlined above, I don’t see the need for pulling this library into core i3. The ecosystem of third-party libraries in various languages seems healthy enough to me.<br />
+</p>
+<p>
+The argument about simplifying i3bar may be true. The argument about testcases isn’t. Parsing JSON in Perl is _really_ simple. Touching all the testcases to use a new API is much more work.<br />
+</p>
+<p>
+I’m going to mark this ticket as wontfix, just to indicate my current feeling about this proposal. Note that this is not my last word on the subject. If you can come up with compelling evidence (i.e. with new data that was not already discussed here) that proves your library is hugely popular and obsoletes all other libraries or really is what the majority of users want, I’m happy to reconsider. I think your library can/should be able to accomplish this without being shipped with i3 itself.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1404652781354576">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:6" class="follow-up">↓ 6</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-06T15%3A19%3A41%2B02%3A00&amp;precision=second" title="See timeline at 07/06/14 15:19:41">9 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I realize it might be a bit unusual to ship an add-on library like this and I respect your position on this matter.<br />
+</p>
+<p>
+What I am having problems understanding is why the library has not become more popular. It is currently the only python library that is maintained. The other two are years out of date and don't have full support of python3 or even have support for the i3 window event. i3ipc-glib additionally has advanced features like tree filtering that eliminate the need for any recursive tree algorithms in scripts, as well as event-detail filtering.<br />
+</p>
+<p>
+It is crazy to think that people prefer hacky bash scripts with xdotool and i3-msg calls. We have someone in the irc chat who is hand-hacking a workspace-formatting script from the socket level, parsing the json and writing tree algorithms in what I imagine is hundreds of lines of dense code which would be just a few lines with the <a class="ext-link" href="https://github.com/acrisci/i3ipc-python"><span class="icon">​</span>i3ipc-python</a> override library.<br />
+</p>
+<p>
+If the fear of installing a third-party Gnome-based C library justifies this sort of extra work, I can't imagine it ever becoming a standard for scripting. I think people would find something like i3ipc-glib useful, but it appears that there is a distribution/marketing bottleneck that is preventing people from actually using it.<br />
+</p>
+<p>
+What I would like to see is a community of add-on developers who create new tools to address varying needs of different kinds of users such as new dock clients, pagers/window switchers, and GUI tools that attract new users to the wm (perhaps those less familiar with unix design philosophy), such as the add-on communities that have spawned from web browser add-on interfaces. I don't see that being possible with the current options for ipc libraries.<br />
+</p>
+<p>
+But enough of this rant. I guess we will wait and see if the library becomes more popular as i3 gains more users.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1404665426451373">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+        in reply to:
+    <a href="#comment:5">↑ 5</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-06T18%3A50%3A26%2B02%3A00&amp;precision=second" title="See timeline at 07/06/14 18:50:26">9 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Thanks for continuing a respectful discussion :).<br />
+</p>
+<p>
+Replying to <a class="ticket" href="/report/ticket/1276#comment:5" title="Comment 5">TonyC</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+What I am having problems understanding is why the library has not become more popular. It is currently the only python library that is maintained. The other two are years out of date and don't have full support of python3 or even have support for the i3 window event. i3ipc-glib additionally has advanced features like tree filtering that eliminate the need for any recursive tree algorithms in scripts, as well as event-detail filtering.<br />
+</p>
+</blockquote>
+<p>
+It could be either of these:<br />
+</p>
+<ol><li>The deficiencies of the current python libraries are not a concern for its users.
+</li><li>Users of the current python libraries cannot find your library and hence don’t know there is a better one. To address this, you could contact the “current” maintainers (since you’ve said they are unmaintained) and make them add a link to your library on their library’s website.
+</li></ol><blockquote class="citation">
+<p>
+It is crazy to think that people prefer hacky bash scripts with xdotool and i3-msg calls. We have someone in the irc chat who is hand-hacking a workspace-formatting script from the socket level, parsing the json and writing tree algorithms in what I imagine is hundreds of lines of dense code which would be just a few lines with the <a class="ext-link" href="https://github.com/acrisci/i3ipc-python"><span class="icon">​</span>i3ipc-python</a> override library.<br />
+</p>
+</blockquote>
+<p>
+Agreed. The fact that so many people still think shell scripts are a good solution is baffling to me, too.<br />
+</p>
+<blockquote class="citation">
+<p>
+If the fear of installing a third-party Gnome-based C library justifies this sort of extra work, I can't imagine it ever becoming a standard for scripting. I think people would find something like i3ipc-glib useful, but it appears that there is a distribution/marketing bottleneck that is preventing people from actually using it.<br />
+</p>
+</blockquote>
+<p>
+You could start a survey (on i3-discuss and/or the IRC channel) and collect reasons why people don’t use your library. It could be that they don’t know about it, that they actually fear installing it because of glib, that the documentation is lacking, or some other reason that we both cannot think of.<br />
+</p>
+<p>
+Further, you could provide a collection of ipc scripts and recipes in a nice format as additional documentation and promote that, in the hope that people will appreciate your library based on the examples you can provide.<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1276?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1276?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1276?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

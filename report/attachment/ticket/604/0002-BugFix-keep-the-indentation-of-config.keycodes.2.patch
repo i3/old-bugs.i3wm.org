@@ -1,0 +1,38 @@
+From 2ce719c357d24c4684d26a990d4469a3bdd57108 Mon Sep 17 00:00:00 2001
+From: beauby <lucas.hosseini@gmail.com>
+Date: Fri, 10 Feb 2012 00:31:07 +0100
+Subject: [PATCH 2/3] BugFix: keep the indentation of config.keycodes
+
+---
+ i3-config-wizard/main.c |    7 +++++--
+ 1 files changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/i3-config-wizard/main.c b/i3-config-wizard/main.c
+index 9f23db2..352fee5 100644
+--- a/i3-config-wizard/main.c
++++ b/i3-config-wizard/main.c
+@@ -328,8 +328,11 @@ static void finish() {
+ 
+         /* Skip leading whitespace */
+         char *walk = line;
+-        while (isspace(*walk) && walk < (line + len))
++        while (isspace(*walk) && walk < (line + len)) {
++            /* Pre-output the skipped whitespaces to keep proper indentation */
++            fputc(*walk, ks_config);
+             walk++;
++        }
+ 
+         /* Set the modifier the user chose */
+         if (strncmp(walk, "set $mod ", strlen("set $mod ")) == 0) {
+@@ -342,7 +345,7 @@ static void finish() {
+         /* Check for 'bindcode'. If it’s not a bindcode line, we
+          * just copy it to the output file */
+         if (strncmp(walk, "bindcode", strlen("bindcode")) != 0) {
+-            fputs(line, ks_config);
++            fputs(walk, ks_config);
+             continue;
+         }
+ 
+-- 
+1.7.9
+

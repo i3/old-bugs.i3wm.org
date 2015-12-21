@@ -1,0 +1,16 @@
+Hi,
+
+The way uxterm is set up for me (it's the way it's set up for most people with the stock config, actually), it changes its window name shortly after being launched. i3 appropriately updates the window decorations to reflect the change in the default mode. For the stacked and tabbed modes, however, I'm able to consistently make i3 ignore the title update. This is all using HEAD (branch master).
+
+A very similar problem was solved not long ago with commit 935f950c. Before that commit, any uxterm launched for the first time in a workspace when in tabbed or stacked mode retained the "uxterm" title until you switched workspaces or pressed some key combination that i3 regonized. I'd say this report is just another way to reproduce the problem fixed by 935f950c. Here's how you reproduce it:
+
+1) Open 2 uxterms
+2) Switch to the tabbed or stacked layout
+3) Close the 2 uxterms
+4) Open a new uxterm
+
+Anything that "refreshes" the window decorations makes the decorations reflect what the window title is expected to be. Examples of things that refresh the decorations are: switching to another workspace and back, switching modes or moving the current client to another workspace. If you close the uxterm you opened in step 4 and open a new uxterm, it will also reflect the problem. The only way to "fix" a workspace is to switch to the default layout and stick to it.
+
+Moreover, if in the uxterm you opened in step 4 you launch something like "vim foo", which should change the window name to "foo + (~) - VIM", nothing happens, i.e., the window name is unchanged.
+
+I'm attaching the i3 logs. The logs represent the event of me closing the window opened in step 4 and opening a new uxterm (so that the log is small and better understandable). As I see it, we are receiving the event correspondent to the change of window name, but _NET_WM_NAME is somehow not set.

@@ -1,0 +1,86 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "floating": "auto_off",
+    "geometry": {
+       "height": 777,
+       "width": 199,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Buddy List",
+    "percent": 0.116145833333333,
+    "swallows": [
+       {
+       "class": "^Pidgin$",
+       "window_role": "^buddy_list$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 1 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.883854166666667,
+    "swallows": [
+       {}
+    ],
+    "type": "con",
+    "nodes": [
+        {
+            // splitv split container with 2 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splitv",
+            "percent": 1,
+            "swallows": [
+               {}
+            ],
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 318,
+                       "width": 566,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "zsh",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                         "class": "^URxvt$",
+                         "instance": "^IRC$",
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "pixel",
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 1057,
+                       "width": 636,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "Michael Stapelberg",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                         "class": "^Pidgin$",
+                         "window_role": "^conversation$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+

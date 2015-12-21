@@ -1,0 +1,50 @@
+10/08/2012 05:46:00 PM - config.c:grab_keycode_for_binding:34 - Grabbing 18
+10/08/2012 05:46:00 PM - config.c:grab_keycode_for_binding:34 - Grabbing 19
+10/08/2012 05:46:00 PM - config.c:grab_keycode_for_binding:34 - Grabbing 54
+10/08/2012 05:46:00 PM - config.c:grab_keycode_for_binding:34 - Grabbing 27
+10/08/2012 05:46:00 PM - config.c:grab_keycode_for_binding:34 - Grabbing 26
+10/08/2012 05:46:00 PM - config.c:grab_keycode_for_binding:34 - Grabbing 27
+10/08/2012 05:46:02 PM - main.c:xkb_got_event:149 - Handling XKB event
+10/08/2012 05:46:04 PM - key_press.c:handle_key_press:240 - KeyPress 33, state raw = 80
+10/08/2012 05:46:04 PM - key_press.c:handle_key_press:244 - (removed numlock, state = 64)
+10/08/2012 05:46:04 PM - key_press.c:handle_key_press:248 - (removed upper 8 bits, state = 64)
+10/08/2012 05:46:04 PM - key_press.c:handle_key_press:253 - (checked mode_switch, state 64)
+10/08/2012 05:46:04 PM - commands_parser.c:parse_command:208 - COMMAND: *exec "dmenu_run -b"*
+10/08/2012 05:46:04 PM - commands.c:cmd_criteria_init:211 - Initializing criteria, current_match = 0x661640
+10/08/2012 05:46:04 PM - commands.c:cmd_exec:1178 - should execute dmenu_run -b, no_startup_id = 0
+10/08/2012 05:46:04 PM - startup id = i3/dmenu_run/806-14-localhost_TIME6288136
+10/08/2012 05:46:04 PM - executing: dmenu_run -b
+10/08/2012 05:46:04 PM - commands.c:cmd_criteria_init:211 - Initializing criteria, current_match = 0x661640
+10/08/2012 05:46:04 PM - key_press.c:json_boolean:187 - Got bool: 1, parse_error_key 0, nesting_level 1
+10/08/2012 05:46:04 PM - handlers.c:handle_destroy_notify_event:502 - destroy notify for 0x00400041, 0x00400041
+10/08/2012 05:46:04 PM - handlers.c:handle_unmap_notify_event:435 - UnmapNotify for 0x00400041 (received from 0x00400041), serial 25093
+10/08/2012 05:46:04 PM - Not a managed window, ignoring UnmapNotify event
+Invalid MIT-MAGIC-COOKIE-1 keycannot open display
+10/08/2012 05:46:04 PM - key_press.c:handle_key_press:240 - KeyRelease 33, state raw = 80
+10/08/2012 05:46:04 PM - key_press.c:handle_key_press:244 - (removed numlock, state = 64)
+10/08/2012 05:46:04 PM - key_press.c:handle_key_press:248 - (removed upper 8 bits, state = 64)
+10/08/2012 05:46:04 PM - key_press.c:handle_key_press:253 - (checked mode_switch, state 64)
+10/08/2012 05:46:04 PM - key_press.c:handle_key_press:264 - no match, new state_filtered = 64
+10/08/2012 05:46:04 PM - key_press.c:handle_key_press:272 - Could not lookup key binding (modifiers 64, keycode 33)
+10/08/2012 05:46:04 PM - handlers.c:handle_focus_in:924 - focus change in, for window 0x01800006
+10/08/2012 05:46:04 PM - handlers.c:handle_focus_in:928 - That is con 0x14ae8a0 / #ff0000
+10/08/2012 05:46:04 PM - handlers.c:handle_focus_in:932 - FocusIn event for grab/ungrab, ignoring
+10/08/2012 05:46:04 PM - main.c:xkb_got_event:149 - Handling XKB event
+10/08/2012 05:46:04 PM - handlers.c:handle_expose_event:586 - window = 00400011
+10/08/2012 05:46:04 PM - handlers.c:handle_expose_event:586 - window = 00400011
+10/08/2012 05:46:04 PM - handlers.c:handle_expose_event:586 - window = 0040002a
+10/08/2012 05:46:04 PM - handlers.c:handle_expose_event:586 - window = 0040002a
+10/08/2012 05:46:04 PM - handlers.c:handle_expose_event:586 - window = 0040002a
+10/08/2012 05:46:04 PM - handlers.c:handle_expose_event:586 - window = 00400011
+10/08/2012 05:46:04 PM - handlers.c:handle_expose_event:586 - window = 00400011
+10/08/2012 05:46:05 PM - main.c:xkb_got_event:149 - Handling XKB event
+10/08/2012 05:46:05 PM - main.c:xkb_got_event:149 - Handling XKB event
+10/08/2012 05:46:07 PM - main.c:xkb_got_event:149 - Handling XKB event
+10/08/2012 05:47:04 PM - startup.c:startup_timeout:36 - Timeout for startup sequence i3/dmenu_run/806-14-localhost_TIME6288136
+10/08/2012 05:47:04 PM - startup.c:startup_monitor_event:234 - startup sequence i3/dmenu_run/806-14-localhost_TIME6288136 completed
+10/08/2012 05:47:04 PM - startup.c:_delete_startup_sequence:78 - Will delete startup sequence i3/dmenu_run/806-14-localhost_TIME6288136 at timestamp 1349711254
+10/08/2012 05:47:04 PM - startup.c:_delete_startup_sequence:98 - Deleting startup sequence i3/i3-sensible-terminal/806-13-localhost_TIME4342719, delete_at = 1349709308, current_time = 1349711224
+10/08/2012 05:47:04 PM - startup.c:startup_monitor_event:237 - No more startup sequences running, changing root window cursor to default pointer.
+10/08/2012 05:47:04 PM - handlers.c:handle_destroy_notify_event:502 - destroy notify for 0x00400042, 0x00400042
+10/08/2012 05:47:04 PM - handlers.c:handle_unmap_notify_event:435 - UnmapNotify for 0x00400042 (received from 0x00400042), serial 25105
+10/08/2012 05:47:04 PM - Not a managed window, ignoring UnmapNotify event

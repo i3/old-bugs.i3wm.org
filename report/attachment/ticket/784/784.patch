@@ -1,0 +1,79 @@
+From 1a0f45200263637b3385f583a71b63743684fd31 Mon Sep 17 00:00:00 2001
+From: Marcos Moyano <marcos@anue.biz>
+Date: Tue, 2 Oct 2012 12:04:02 -0300
+Subject: [PATCH] Implement bring open scratchpad window to the current
+ workspace (ticket #784)
+
+---
+ include/scratchpad.h |  5 +++++
+ src/scratchpad.c     | 30 +++++++++++++++++++++++++++++-
+ 2 files changed, 34 insertions(+), 1 deletion(-)
+
+diff --git a/include/scratchpad.h b/include/scratchpad.h
+index 4d55332..cb94c1c 100644
+--- a/include/scratchpad.h
++++ b/include/scratchpad.h
+@@ -40,4 +40,9 @@ void scratchpad_show(Con *con);
+  */
+ void scratchpad_fix_resolution(void);
+ 
++/**
++ * Verify if the scratchpad is empty or not.
++ */
++bool is_scratchpad_empty(void);
++
+ #endif
+diff --git a/src/scratchpad.c b/src/scratchpad.c
+index 16e26ce..e1699f5 100644
+--- a/src/scratchpad.c
++++ b/src/scratchpad.c
+@@ -90,13 +90,29 @@ void scratchpad_show(Con *con) {
+ 
+     /* If this was 'scratchpad show' without criteria, we check if the
+      * currently focused window is a scratchpad window and should be hidden
+-     * again. */
++     * again. If the current focused windows is not a scratchpad window
++     * and the scratchpad itself is empty, we look for scratchpad windows
++     * left behind elsewhere and move them to the current container */
+     if (!con &&
+         (floating = con_inside_floating(focused)) &&
+         floating->scratchpad_state != SCRATCHPAD_NONE) {
+         DLOG("Focused window is a scratchpad window, hiding it.\n");
+         scratchpad_move(focused);
+         return;
++    } else {
++        if(is_scratchpad_empty()) {
++            DLOG("Scratchpad is empty\n");
++            DLOG("Looking for floating windows marked as scatchpad\n");
++            Con *active = con_get_workspace(focused);
++            TAILQ_FOREACH(con, &all_cons, all_cons) {
++              if (con->scratchpad_state != SCRATCHPAD_NONE) {
++                DLOG("Found scatchad window %p\n", con);
++                DLOG("Moving window %p to current workspace\n", con);
++                con_move_to_workspace(con, active, true, false);
++              }
++            }
++            return;
++        }
+     }
+ 
+     /* If this was 'scratchpad show' with criteria, we check if it matches a
+@@ -217,3 +233,15 @@ void scratchpad_fix_resolution(void) {
+     __i3_output->rect.width = new_width;
+     __i3_output->rect.height = new_height;
+ }
++
++/*
++ * Verify if the scratchpad is empty or not.
++ */
++bool is_scratchpad_empty(void) {
++    DLOG("Checking if the scratchpad container is empty.\n");
++    Con *__i3_scratch = workspace_get("__i3_scratch", NULL);
++    Con *con = TAILQ_FIRST(&(__i3_scratch->floating_head));
++    if (con)
++      return false;
++    return true;
++}
+-- 
+1.7.12.2
+

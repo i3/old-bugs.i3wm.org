@@ -1,0 +1,68 @@
+From 55fbae52b7e36adb99f410a5d206741135e0bf0f Mon Sep 17 00:00:00 2001
+From: Angelo Haller <angelo@szanni.org>
+Date: Wed, 16 Nov 2011 11:41:00 +0100
+Subject: [PATCH 3/3] Update userguide to incorporate new border property for
+ ws tiles.
+
+---
+ docs/userguide |   20 ++++++++++----------
+ 1 files changed, 10 insertions(+), 10 deletions(-)
+
+diff --git a/docs/userguide b/docs/userguide
+index 762d803..4110144 100644
+--- a/docs/userguide
++++ b/docs/userguide
+@@ -952,19 +952,19 @@ background::
+ statusline::
+ 	Text color to be used for the statusline.
+ focused_workspace::
+-	Text color/background color for a workspace button when the workspace
++	Border, background and text color for a workspace button when the workspace
+ 	has focus.
+ active_workspace::
+-	Text color/background color for a workspace button when the workspace
++	Border, background and text color for a workspace button when the workspace
+ 	is active (visible) on some output, but the focus is on another one.
+ 	You can only tell this apart from the focused workspace when you are
+ 	using multiple monitors.
+ inactive_workspace::
+-	Text color/background color for a workspace button when the workspace
++	Border, background and text color for a workspace button when the workspace
+ 	does not have focus and is not active (visible) on any output. This
+ 	will be the case for most workspaces.
+ urgent_workspace::
+-	Text color/background color for workspaces which contain at least one
++	Border, background and text color for a workspace button when the workspace
+ 	window with the urgency hint set.
+ 
+ *Syntax*:
+@@ -973,20 +973,20 @@ colors {
+     background <color>
+     statusline <color>
+ 
+-    colorclass <foreground> <background>
++    colorclass <border> <background> <text>
+ }
+ ----------------------------------------
+ 
+-*Example*:
++*Example (default colors)*:
+ --------------------------------------
+ colors {
+     background #000000
+     statusline #ffffff
+ 
+-    focused_workspace  #ffffff #285577
+-    active_workspace   #ffffff #333333
+-    inactive_workspace #888888 #222222
+-    urgent_workspace   #ffffff #900000
++    focused_workspace  #4c7899 #285577 #ffffff
++    active_workspace   #333333 #5f676a #ffffff
++    inactive_workspace #333333 #222222 #888888
++    urgent_workspace   #2f343a #900000 #ffffff
+ }
+ --------------------------------------
+ 
+-- 
+1.7.7.3
+

@@ -1,0 +1,27 @@
+From b65f5ccd405ceb8165a041acf13d23b47320ff39 Mon Sep 17 00:00:00 2001
+From: Saurabh Kumar <saurabhgeek92@gmail.com>
+Date: Thu, 20 Dec 2012 06:24:56 +0530
+Subject: [PATCH] Remove trailing whitespace from dmenu output
+
+fixes #891
+---
+ i3-dmenu-desktop | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/i3-dmenu-desktop b/i3-dmenu-desktop
+index 20c7fbe..284a86b 100755
+--- a/i3-dmenu-desktop
++++ b/i3-dmenu-desktop
+@@ -283,6 +283,9 @@ exit $status unless $status == 0;
+ 
+ my $choice = <$dmenu_out>;
+ my $app;
++
++$choice =~ s/\s+$//;
++
+ # Exact match: the user chose “Avidemux (GTK+)”
+ if (exists($choices{$choice})) {
+     $app = $apps{$choices{$choice}};
+-- 
+1.8.0.2
+

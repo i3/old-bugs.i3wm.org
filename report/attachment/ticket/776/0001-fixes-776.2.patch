@@ -1,0 +1,280 @@
+From 88df960fb8ace8d58bad6d6c84192a41d9d5f6a6 Mon Sep 17 00:00:00 2001
+From: chrysn <chrysn@fsfe.org>
+Date: Tue, 4 Sep 2012 10:51:18 +0200
+Subject: [PATCH] fixes #776
+
+this implements both the "move container to workspace back_and_forth" command
+and movements to the same workspace when auto_back_and_forth is set.
+
+it includes documentation and test suite additions by michael.
+
+it also simplifies the workspace_show_by_name function (making use of
+workspace_get accepting NULL pointers).
+---
+ docs/userguide                  |    4 ++-
+ include/commands.h              |    6 ++++
+ include/workspace.h             |    6 ++++
+ parser-specs/commands.spec      |    2 ++
+ src/commands.c                  |   59 +++++++++++++++++++++++++++++++++++++++
+ src/workspace.c                 |   19 +++++++++++--
+ testcases/t/176-workspace-baf.t |   40 ++++++++++++++++++++++++++
+ 7 files changed, 133 insertions(+), 3 deletions(-)
+
+diff --git a/docs/userguide b/docs/userguide
+index e42a6ac..2214002 100644
+--- a/docs/userguide
++++ b/docs/userguide
+@@ -1392,7 +1392,8 @@ container to the next/previous workspace and +move container to workspace curren
+ 
+ [[back_and_forth]]
+ To switch back to the previously focused workspace, use +workspace
+-back_and_forth+.
++back_and_forth+; likewise, you can move containers to the previously focused
++workspace using +move container to workspace back_and_forth+.
+ 
+ To move a container to another xrandr output such as +LVDS1+ or +VGA1+, you can
+ use the +move container to output+ command followed by the name of the target
+@@ -1428,6 +1429,7 @@ bindsym mod+Shift+2 move container to workspace 2
+ 
+ # switch between the current and the previously focused one
+ bindsym mod+b workspace back_and_forth
++bindsym mod+Shift+b move container to workspace back_and_forth
+ 
+ # move the whole workspace to the next output
+ bindsym mod+x move workspace to output right
+diff --git a/include/commands.h b/include/commands.h
+index 37ee98d..3ad8e32 100644
+--- a/include/commands.h
++++ b/include/commands.h
+@@ -56,6 +56,12 @@ void cmd_criteria_add(I3_CMD, char *ctype, char *cvalue);
+ void cmd_move_con_to_workspace(I3_CMD, char *which);
+ 
+ /**
++ * Implementation of 'move [window|container] [to] workspace back_and_forth'.
++ *
++ */
++void cmd_move_con_to_workspace_back_and_forth(I3_CMD);
++
++/**
+  * Implementation of 'move [window|container] [to] workspace <name>'.
+  *
+  */
+diff --git a/include/workspace.h b/include/workspace.h
+index 1b25b42..761d1c2 100644
+--- a/include/workspace.h
++++ b/include/workspace.h
+@@ -95,6 +95,12 @@ Con* workspace_prev_on_output(void);
+  */
+ void workspace_back_and_forth(void);
+ 
++/**
++ * Returns the previously focused workspace con, or NULL if unavailable.
++ *
++ */
++Con *workspace_back_and_forth_get(void);
++
+ 
+ #if 0
+ /**
+diff --git a/parser-specs/commands.spec b/parser-specs/commands.spec
+index b4c9e00..2c46e66 100644
+--- a/parser-specs/commands.spec
++++ b/parser-specs/commands.spec
+@@ -243,6 +243,8 @@ state MOVE_WORKSPACE:
+       -> MOVE_WORKSPACE_TO_OUTPUT
+   workspace = 'next', 'prev', 'next_on_output', 'prev_on_output', 'current'
+       -> call cmd_move_con_to_workspace($workspace)
++  'back_and_forth'
++      -> call cmd_move_con_to_workspace_back_and_forth()
+   'number'
+       -> MOVE_WORKSPACE_NUMBER
+   workspace = string
+diff --git a/src/commands.c b/src/commands.c
+index 2d8fce3..34f0f9d 100644
+--- a/src/commands.c
++++ b/src/commands.c
+@@ -99,6 +99,29 @@ static bool maybe_back_and_forth(struct CommandResult *cmd_output, char *name) {
+     return true;
+ }
+ 
++/*
++ * Return the passed workspace unless it is the current one and auto back and
++ * forth is enabled, in which case the back_and_forth workspace is returned.
++ */
++static Con *maybe_auto_back_and_forth_workspace(Con *workspace) {
++    Con *current, *baf;
++
++    if (!config.workspace_auto_back_and_forth)
++        return workspace;
++
++    current = con_get_workspace(focused);
++
++    if (current == workspace) {
++        baf = workspace_back_and_forth_get();
++        if (baf != NULL) {
++            DLOG("Substituting workspace with back_and_forth, as it is focused.\n");
++            return baf;
++        }
++    }
++
++    return workspace;
++}
++
+ // This code is commented out because we might recycle it for popping up error
+ // messages on parser errors.
+ #if 0
+@@ -400,6 +423,38 @@ void cmd_move_con_to_workspace(I3_CMD, char *which) {
+     ysuccess(true);
+ }
+ 
++/**
++ * Implementation of 'move [window|container] [to] workspace back_and_forth'.
++ *
++ */
++void cmd_move_con_to_workspace_back_and_forth(I3_CMD) {
++    owindow *current;
++    Con *ws;
++
++    ws = workspace_back_and_forth_get();
++
++    if (ws == NULL) {
++        y(map_open);
++        ystr("success");
++        y(bool, false);
++        ystr("error");
++        ystr("No workspace was previously active.");
++        y(map_close);
++        return;
++    }
++
++    HANDLE_EMPTY_MATCH;
++
++    TAILQ_FOREACH(current, &owindows, owindows) {
++        DLOG("matching: %p / %s\n", current->con, current->con->name);
++        con_move_to_workspace(current->con, ws, true, false);
++    }
++
++    cmd_output->needs_tree_render = true;
++    // XXX: default reply for now, make this a better reply
++    ysuccess(true);
++}
++
+ /*
+  * Implementation of 'move [window|container] [to] workspace <name>'.
+  *
+@@ -432,6 +487,8 @@ void cmd_move_con_to_workspace_name(I3_CMD, char *name) {
+     /* get the workspace */
+     Con *ws = workspace_get(name, NULL);
+ 
++    ws = maybe_auto_back_and_forth_workspace(ws);
++
+     HANDLE_EMPTY_MATCH;
+ 
+     TAILQ_FOREACH(current, &owindows, owindows) {
+@@ -489,6 +546,8 @@ void cmd_move_con_to_workspace_number(I3_CMD, char *which) {
+         workspace = workspace_get(which, NULL);
+     }
+ 
++    workspace = maybe_auto_back_and_forth_workspace(workspace);
++
+     HANDLE_EMPTY_MATCH;
+ 
+     TAILQ_FOREACH(current, &owindows, owindows) {
+diff --git a/src/workspace.c b/src/workspace.c
+index 94efd47..6f560ad 100644
+--- a/src/workspace.c
++++ b/src/workspace.c
+@@ -392,8 +392,7 @@ void workspace_show(Con *workspace) {
+  */
+ void workspace_show_by_name(const char *num) {
+     Con *workspace;
+-    bool changed_num_workspaces;
+-    workspace = workspace_get(num, &changed_num_workspaces);
++    workspace = workspace_get(num, NULL);
+     _workspace_show(workspace);
+ }
+ 
+@@ -664,6 +663,22 @@ void workspace_back_and_forth(void) {
+     workspace_show_by_name(previous_workspace_name);
+ }
+ 
++/*
++ * Returns the previously focused workspace con, or NULL if unavailable.
++ *
++ */
++Con *workspace_back_and_forth_get(void) {
++    if (!previous_workspace_name) {
++        DLOG("no previous workspace name set.");
++        return NULL;
++    }
++
++    Con *workspace;
++    workspace = workspace_get(previous_workspace_name, NULL);
++
++    return workspace;
++}
++
+ static bool get_urgency_flag(Con *con) {
+     Con *child;
+     TAILQ_FOREACH(child, &(con->nodes_head), nodes)
+diff --git a/testcases/t/176-workspace-baf.t b/testcases/t/176-workspace-baf.t
+index 07c3c84..8ed3303 100644
+--- a/testcases/t/176-workspace-baf.t
++++ b/testcases/t/176-workspace-baf.t
+@@ -47,6 +47,33 @@ ok(get_ws($second_ws)->{focused}, 'second workspace focused');
+ cmd qq|workspace "$second_ws"|;
+ ok(get_ws($second_ws)->{focused}, 'second workspace still focused');
+ 
++################################################################################
++# verify that 'move workspace back_and_forth' works as expected
++################################################################################
++
++cmd qq|workspace "$first_ws"|;
++my $first_win = open_window;
++
++cmd qq|workspace "$second_ws"|;
++my $second_win = open_window;
++
++is(@{get_ws_content($first_ws)}, 1, 'one container on ws 1 before moving');
++cmd 'move workspace back_and_forth';
++is(@{get_ws_content($first_ws)}, 2, 'two containers on ws 1 before moving');
++
++my $third_win = open_window;
++
++################################################################################
++# verify that moving to the current ws is a no-op without
++# workspace_auto_back_and_forth.
++################################################################################
++
++cmd qq|workspace "$first_ws"|;
++
++is(@{get_ws_content($second_ws)}, 1, 'one container on ws 2 before moving');
++cmd qq|move workspace "$first_ws"|;
++is(@{get_ws_content($second_ws)}, 1, 'still one container');
++
+ exit_gracefully($pid);
+ 
+ #####################################################################
+@@ -72,6 +99,19 @@ ok(get_ws($third_ws)->{focused}, 'third workspace focused');
+ 
+ cmd qq|workspace "$third_ws"|;
+ ok(get_ws($second_ws)->{focused}, 'second workspace focused');
++$first_win = open_window;
++
++################################################################################
++# verify that moving to the current ws moves to the previous one with
++# workspace_auto_back_and_forth.
++################################################################################
++
++cmd qq|workspace "$first_ws"|;
++$second_win = open_window;
++
++is(@{get_ws_content($second_ws)}, 1, 'one container on ws 2 before moving');
++cmd qq|move workspace "$first_ws"|;
++is(@{get_ws_content($second_ws)}, 2, 'two containers on ws 2');
+ 
+ ################################################################################
+ # Now see if "workspace number <number>" also works as expected with
+-- 
+1.7.10.4
+

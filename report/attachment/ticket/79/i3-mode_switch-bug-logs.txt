@@ -1,0 +1,69 @@
+I'm trying to make window fullscreen using the keys 'f' and winkey (Mod4 on my notebook)
+
+=== 1. Version built from git with the default config ===
+==== 1.1 English layout - keybinding works ====
+ - client is made fullscreen
+ - nothing is sent to the client (usual behaviour)
+ - mode_switch is not applied
+{{{
+02/28/2010 10:34:07 PM - src/handlers.c:handle_key_press:100 - Keypress 41, state raw = 64
+02/28/2010 10:34:07 PM - src/handlers.c:handle_key_press:104 - (removed numlock, state = 64)
+02/28/2010 10:34:07 PM - src/handlers.c:handle_key_press:108 - (removed upper 8 bits, state = 64)
+02/28/2010 10:34:07 PM - src/handlers.c:handle_key_press:119 - (checked mode_switch, state 64)    <--- here
+}}}
+==== 1.2 Russian layout - keybinding doesn't work ====
+ - making client fullscreen FAILS
+ - NOTHING is sent to the client (but should be, because the keybinding is not processed by wm)
+ - mode_switch IS applied
+{{{
+02/28/2010 10:34:11 PM - src/handlers.c:handle_key_press:100 - Keypress 41, state raw = 64
+02/28/2010 10:34:11 PM - src/handlers.c:handle_key_press:104 - (removed numlock, state = 64)
+02/28/2010 10:34:11 PM - src/handlers.c:handle_key_press:108 - (removed upper 8 bits, state = 64)
+02/28/2010 10:34:11 PM - src/handlers.c:handle_key_press:119 - (checked mode_switch, state 320)   <--- here
+}}}
+==== 1.3 Normal input works normal ====
+
+=== 2. Version built from git with modified config ===
+the following line was added to the config
+{{{
+bindsym Mod4+Mode_switch+f f
+}}}
+==== 2.1 English layout - keybinding works ====
+ - client is made fullscreen
+ - nothing is sent to the client
+ - mode_switch is not applied
+{{{
+02/28/2010 10:34:47 PM - src/handlers.c:handle_key_press:100 - Keypress 41, state raw = 64
+02/28/2010 10:34:47 PM - src/handlers.c:handle_key_press:104 - (removed numlock, state = 64)
+02/28/2010 10:34:47 PM - src/handlers.c:handle_key_press:108 - (removed upper 8 bits, state = 64)
+02/28/2010 10:34:47 PM - src/handlers.c:handle_key_press:119 - (checked mode_switch, state 64)    <--- here
+}}}
+==== 2.2 Russian layout - keybinding works ====
+ - client is made fullscreen
+ - nothing is sent to the client
+ - mode_switch IS applied
+{{{
+02/28/2010 10:34:49 PM - src/handlers.c:handle_key_press:100 - Keypress 41, state raw = 64
+02/28/2010 10:34:49 PM - src/handlers.c:handle_key_press:104 - (removed numlock, state = 64)
+02/28/2010 10:34:49 PM - src/handlers.c:handle_key_press:108 - (removed upper 8 bits, state = 64)
+02/28/2010 10:34:49 PM - src/handlers.c:handle_key_press:119 - (checked mode_switch, state 320)   <--- here
+}}}
+====  2.3 Normal input DOESN'T work in russian layout: ====
+When I press a 'f' key in english layout, it is caught by wm, but then transfered to the client
+{{{
+02/28/2010 10:34:54 PM - src/handlers.c:handle_key_press:100 - Keypress 41, state raw = 0
+02/28/2010 10:34:54 PM - src/handlers.c:handle_key_press:104 - (removed numlock, state = 0)
+02/28/2010 10:34:54 PM - src/handlers.c:handle_key_press:108 - (removed upper 8 bits, state = 0)
+02/28/2010 10:34:54 PM - src/handlers.c:handle_key_press:119 - (checked mode_switch, state 0)     <--- here
+}}}
+But when I press a russian 'а' (the same button), it is transfered to the client as 'f' key, so I can't enter any russian letter located on a bound button
+{{{
+02/28/2010 10:34:52 PM - src/handlers.c:handle_key_press:100 - Keypress 41, state raw = 0
+02/28/2010 10:34:52 PM - src/handlers.c:handle_key_press:104 - (removed numlock, state = 0)
+02/28/2010 10:34:52 PM - src/handlers.c:handle_key_press:108 - (removed upper 8 bits, state = 0)
+02/28/2010 10:34:52 PM - src/handlers.c:handle_key_press:119 - (checked mode_switch, state 256)   <--- here
+}}}
+
+=== 3. Patched version ===
+In the version with those lines removed, everything works as one should have expected. In both cases (ru, en) log is equal to the case 1.1.
+Normal input works and nothing is caught by wm at all.

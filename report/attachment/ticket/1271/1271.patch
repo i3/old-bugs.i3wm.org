@@ -1,0 +1,27 @@
+diff --git i/src/load_layout.c w/src/load_layout.c
+index 5fe7c84..ffee04e 100644
+--- i/src/load_layout.c
++++ w/src/load_layout.c
+@@ -115,6 +115,22 @@ static int json_end_map(void *ctx) {
+             json_node->num = ws_name_to_number(json_node->name);
+         }
+ 
++        if (con_is_floating(json_node)) {
++            DLOG("name = %s\n", json_node->name);
++            DLOG("parent = %s\n", json_node->parent->name);
++            DLOG("geometry = (%d x %d) at %d, %d\n", json_node->geometry.width, json_node->geometry.height, json_node->geometry.x, json_node->geometry.y);
++            DLOG("rect = (%d x %d) at %d, %d\n", json_node->rect.width, json_node->rect.height, json_node->rect.x, json_node->rect.y);
++            // TODO: is this correct with regards to borders?
++            if (json_node->rect.width == 0)
++                json_node->rect.width = json_node->geometry.width;
++            if (json_node->rect.height == 0)
++                json_node->rect.height = json_node->geometry.height;
++            if (json_node->parent->rect.width == 0)
++                json_node->parent->rect.width = json_node->rect.width;
++            if (json_node->parent->rect.height == 0)
++                json_node->parent->rect.height = json_node->rect.height;
++        }
++
+         LOG("attaching\n");
+         con_attach(json_node, json_node->parent, true);
+         LOG("Creating window\n");

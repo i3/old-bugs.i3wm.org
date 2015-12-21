@@ -1,0 +1,1507 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #558 (Different kinds of clicking)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/557" title="Ticket #557" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/558?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/558?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/558?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/559" title="Ticket #559" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="a2e0b9273ba223ad59c16886";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/557" title="Ticket #557">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/559" title="Ticket #559">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2011-11-11T15%3A06%3A16%2B01%3A00&amp;precision=second" title="See timeline at 11/11/11 15:06:16">3 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2014-06-19T13%3A01%3A22%2B02%3A00&amp;precision=second" title="See timeline at 06/19/14 13:01:22">9 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/558" class="trac-id">#558</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=enhancement">enhancement</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Different kinds of clicking</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable"><a href="/report/query?status=!closed&amp;reporter=julien">julien</a></td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=trivial">trivial</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version" class="missing">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version="></a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion" class="missing">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+Hello Michael,<br />
+</p>
+<p>
+As discussed on bug <a class="closed ticket" href="/report/ticket/534" title="defect: tabbed layout and resizing tool (closed: fixed)">#534</a>, different kinds of clicking can be usefull for the user to get different results (focus, resizing tool, etc.).<br />
+</p>
+<p>
+As we said, they are many possible ideas, like for example :<br />
+</p>
+<p>
+1°) click (1 sec) on a tab makes the tab to be focused ; click (more than 1sec) on a tab calls the resizing tool ;<br />
+</p>
+<p>
+2°) click on a tab makes the tab to be focused ; click+Mod1 on a tab calls the resizing tool.<br />
+</p>
+<p>
+Thanks a lot for i3 !<br />
+</p>
+<p>
+Best regards,<br />
+</p>
+<p>
+Julien<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(25)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1322007380641630">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-11-23T01%3A16%3A20%2B01%3A00&amp;precision=second" title="See timeline at 11/23/11 01:16:20">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+This behaviour should be configurable. Another use case (from <a class="closed ticket" href="/report/ticket/570" title="enhancement: Configurable mouse bindings (closed: duplicate)">#570</a>):<br />
+</p>
+<p>
+It would be great if you could configure the bindings for the mouse (such as $mod+button1 to drag and $mod+button2 to resize floating windows) in a similar way as the bindings for the keyboard.<br />
+I know it's probably too complex for the simplicity intended for i3, but I didn't know if asking here for a specific binding would be reasonable (what I actually would need is that $mod+button4/5 over a window switched to the previous/next window in stacked mode, just like button4/5 do over the window decoration, but with $mod and over all the window, not only its title).<br />
+So if you prefer to keep out configurable mouse bindings and prefer to hardcode specific bindings (if they fit well), feel free to close this bug report ;)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1324134304380466">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-12-17T16%3A05%3A04%2B01%3A00&amp;precision=second" title="See timeline at 12/17/11 16:05:04">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>accepted</em>
+    </li><li class="trac-field-version">
+      <strong class="trac-field-version">Version</strong>
+        <em>4.2</em> deleted
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I agree that we want to have this, but it’s not important, so unsetting version.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1350916211522840">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:12" class="follow-up">↓ 12</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-22T16%3A30%3A11%2B02%3A00&amp;precision=second" title="See timeline at 10/22/12 16:30:11">2 years ago</a> by p.staszewski@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I would like to say that I would very much like this feature too!<br />
+</p>
+<p>
+My original idea can be best described by sample config entries:<br />
+bindmouse button1 focus<br />
+bindmouse button2 kill<br />
+bindmouse button3 move scratchpad<br />
+bindmouse shift+button1 move container to workspace 10<br />
+etc.<br />
+</p>
+<p>
+The bindings defined above should work only for clicks on title bars.<br />
+</p>
+<p>
+Thank you for your work on i3!<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1370953313995366">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-06-11T14%3A21%3A53%2B02%3A00&amp;precision=second" title="See timeline at 06/11/13 14:21:53">22 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+For those with multiple mouse buttons, this would be useful for switching workspaces quickly, for example.<br />
+</p>
+<pre class="wiki">bindmouse button6 workspace next
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1379007018381853">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-09-12T19%3A30%3A18%2B02%3A00&amp;precision=second" title="See timeline at 09/12/13 19:30:18">19 months ago</a> by cyd@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+A workaround: <br />
+$ cat ~/.bindkeysrc<br />
+</p>
+<p>
+# Bind Mousebutton 9<br />
+"i3-msg -t command "workspace next""<br />
+</p>
+<blockquote>
+<p>
+b:9<br />
+</p>
+</blockquote>
+<p>
+$ xbindkeys -f ~/.xbindkeysrc<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1381817070173525">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:7" class="follow-up">↓ 7</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-10-15T08%3A04%3A30%2B02%3A00&amp;precision=second" title="See timeline at 10/15/13 08:04:30">18 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+See also <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a> for what this feature request should cover.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1381852323551858">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+        in reply to:
+    <a href="#comment:6">↑ 6</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:8" class="follow-up">↓ 8</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-10-15T17%3A52%3A03%2B02%3A00&amp;precision=second" title="See timeline at 10/15/13 17:52:03">18 months ago</a> by josh
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/558#comment:6" title="Comment 6">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+See also <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a> for what this feature request should cover.<br />
+</p>
+</blockquote>
+<p>
+@michael I think it's good to organize issues into relevant topics, but I feel that this issue (<a class="closed ticket" href="/report/ticket/558" title="enhancement: Different kinds of clicking (closed: fixed)">#558</a>) being open for two years may lead to <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a> being prolonged with it.<br />
+</p>
+<p>
+<a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a> is a clean feature request. Maybe (since <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a> has been merged) we can implement <a class="closed ticket" href="/report/ticket/558" title="enhancement: Different kinds of clicking (closed: fixed)">#558</a> in stages.<br />
+</p>
+<p>
+tldr; myself and others wold really like to see the features requested in <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a> implemented soon.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1381942911208995">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+        in reply to:
+    <a href="#comment:7">↑ 7</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:10" class="follow-up">↓ 10</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-10-16T19%3A01%3A51%2B02%3A00&amp;precision=second" title="See timeline at 10/16/13 19:01:51">18 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/558#comment:7" title="Comment 7">josh</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/558#comment:6" title="Comment 6">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+See also <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a> for what this feature request should cover.<br />
+</p>
+</blockquote>
+<p>
+@michael I think it's good to organize issues into relevant topics, but I feel that this issue (<a class="closed ticket" href="/report/ticket/558" title="enhancement: Different kinds of clicking (closed: fixed)">#558</a>) being open for two years may lead to <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a> being prolonged with it.<br />
+</p>
+<p>
+<a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a> is a clean feature request. Maybe (since <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a> has been merged) we can implement <a class="closed ticket" href="/report/ticket/558" title="enhancement: Different kinds of clicking (closed: fixed)">#558</a> in stages.<br />
+</p>
+<p>
+tldr; myself and others wold really like to see the features requested in <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a> implemented soon.<br />
+</p>
+</blockquote>
+<p>
+I neither do “we need it soon” nor “so many people want it”. Either we do it cleanly or not at all :).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1382249595279480">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-10-20T08%3A13%3A15%2B02%3A00&amp;precision=second" title="See timeline at 10/20/13 08:13:15">18 months ago</a> by tony@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I can start looking at this, but I'm not sure I have a clear idea how this can be implemented in a way that also implements the features in <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a>.<br />
+</p>
+<p>
+Can someone summarize the consensus on what exactly implementing this would require and provide example config directives that would implement each part of <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a>?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1384190346699416">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+        in reply to:
+    <a href="#comment:8">↑ 8</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:11" class="follow-up">↓ 11</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-11-11T18%3A19%3A06%2B01%3A00&amp;precision=second" title="See timeline at 11/11/13 18:19:06">17 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/558#comment:8" title="Comment 8">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/558#comment:7" title="Comment 7">josh</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/558#comment:6" title="Comment 6">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+See also <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a> for what this feature request should cover.<br />
+</p>
+</blockquote>
+<p>
+@michael I think it's good to organize issues into relevant topics, but I feel that this issue (<a class="closed ticket" href="/report/ticket/558" title="enhancement: Different kinds of clicking (closed: fixed)">#558</a>) being open for two years may lead to <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a> being prolonged with it.<br />
+</p>
+<p>
+<a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a> is a clean feature request. Maybe (since <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a> has been merged) we can implement <a class="closed ticket" href="/report/ticket/558" title="enhancement: Different kinds of clicking (closed: fixed)">#558</a> in stages.<br />
+</p>
+<p>
+tldr; myself and others wold really like to see the features requested in <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a> implemented soon.<br />
+</p>
+</blockquote>
+<p>
+I neither do “we need it soon” nor “so many people want it”. Either we do it cleanly or not at all :).<br />
+</p>
+</blockquote>
+<p>
+I believe the reason that "we need it soon" and "so many people want it" have been mentioned is specifically because <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a> has been merged with <a class="closed ticket" href="/report/ticket/558" title="enhancement: Different kinds of clicking (closed: fixed)">#558</a>, which has been open for two years and marked as "trivial". No one is saying not to do it cleanly, we're simply saying that for some of us the issues in <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a> aren't "trivial" and we're concerned on how that issue is being addressed, or not addressed as the case may be.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1384193191927967">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+        in reply to:
+    <a href="#comment:10">↑ 10</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-11-11T19%3A06%3A31%2B01%3A00&amp;precision=second" title="See timeline at 11/11/13 19:06:31">17 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/558#comment:10" title="Comment 10">anonymous</a>:<br />
+</p>
+<p>
+This is beginning to go through now.<br />
+</p>
+<p>
+There is a lot of activity going on with i3bar that is higher priority than this, so I'm going to put off the proper solution for a bit. If you really want something now though, apply <a class="ext-link" href="http://cr.i3wm.org/patch/296"><span class="icon">​</span>this patch</a> which allows you to do something like:<br />
+</p>
+<pre class="wiki">bar {
+    i3bar_command /path/to/i3bar --noninteractive
+}
+</pre><p>
+and that will disable all clicking on the bar (except tray icons I think).<br />
+</p>
+<p>
+As for the other feature which was requested in <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a>, disabling the scrolling and clicking on tabbed window decorations, I'm doubting right now whether we can do that cleanly because of how specific it is.<br />
+</p>
+<p>
+On the one hand, disabling mouse interaction with i3 completely is not a feature I think people want because drag resize/move and click to focus are kind of essential. On the other hand, I don't think a config directive like <tt>disable-scrolling-and-clicking-on-tabbed-window-decorations yes</tt> is going to be in accordance with Michael's idea of doing it "clean".<br />
+</p>
+<p>
+So if you can think of a rule somewhere in between along with a way to explain it to people in the docs that we can agree on, I will implement it.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-12-1388828546298898">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+        in reply to:
+    <a href="#comment:3">↑ 3</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:13" class="follow-up">↓ 13</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-04T10%3A42%3A26%2B01%3A00&amp;precision=second" title="See timeline at 01/04/14 10:42:26">15 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I'll summarize the current state of this feature as I see it now.<br />
+</p>
+<p>
+Replying to <a class="ticket" href="/report/ticket/558#comment:3" title="Comment 3">p.staszewski@…</a>:<br />
+</p>
+<p>
+I think this is the best implementation that has been suggested so far. The command will look like this:<br />
+</p>
+<pre class="wiki">bindmouse [ModN[+...]]ButtonM &lt;command&gt;
+</pre><p>
+With the following behavior:<br />
+</p>
+<ol><li>The command will only take effect if a window title bar is clicked.
+</li><li>A command that takes effect will be in the context of the window whose title bar was clicked (i.e., that window is assumed to be focused)
+</li><li>A bindmouse directive will override the default behavior of the click.
+</li></ol><p>
+This should allow the user to no-op any default mouse behavior they do not like (implementing <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a>).<br />
+</p>
+<p>
+It also allows for the user to easily configure the most obvious use for this feature, that is, right/middle click/scroll wheel on the title bars, without interfering with an application's own handling of click events.<br />
+</p>
+<p>
+A problem I can see with this is that there would be no way to reproduce the default "scroll" mouse wheel feature (perhaps in the opposite direction). Maybe a <tt>--no-focus</tt> flag should be taken to mean that the command should not focus the window.<br />
+</p>
+<p>
+How does that sound?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-13-1388947973880069">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:13" class="cnum">
+    <a href="#comment:13">comment:13</a>
+  </span>
+        in reply to:
+    <a href="#comment:12">↑ 12</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:14" class="follow-up">↓ 14</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-05T19%3A52%3A53%2B01%3A00&amp;precision=second" title="See timeline at 01/05/14 19:52:53">15 months ago</a> by p.staszewski@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/558#comment:12" title="Comment 12">TonyC</a>:<br />
+</p>
+<blockquote class="citation">
+<ol><li>The command will only take effect if a window title bar is clicked.
+</li><li>A command that takes effect will be in the context of the window whose title bar was clicked (i.e., that window is assumed to be focused)
+</li><li>A bindmouse directive will override the default behaviour of the click.
+</li></ol></blockquote>
+<p>
+Points 1. and 2. - exactly.<br />
+Point 3. - why have a hard-coded behaviour? I would leave it as an entirely config file choice. If you don't setup <tt>bindmouse</tt> the title bars will simply not react to any mouse clicks.<br />
+<br />
+</p>
+<blockquote class="citation">
+<p>
+A problem I can see with this is that there would be no way to reproduce the default "scroll" mouse wheel feature (perhaps in the opposite direction). Maybe a <tt>--no-focus</tt> flag should be taken to mean that the command should not focus the window.<br />
+</p>
+</blockquote>
+<p>
+Honestly I did not consider scroll wheel at that time...<br />
+</p>
+<p>
+I would introduce it as a command though:<br />
+</p>
+<pre class="wiki">focus cycle &lt;left|right&gt;
+</pre><p>
+So that to get the currently default behaviour:<br />
+</p>
+<pre class="wiki">bindmouse Button4 focus cycle left
+bindnouse Button5 focus cycle right
+</pre><p>
+I haven't looked at the implementation, but form the user's point-of-view the current mouse scrolling of windows behaves differently from <tt>focus &lt;left|right&gt;</tt> (i.e. mouse wheel cycles windows only within current container - it won't switch containers).<br />
+</p>
+<p>
+As for the <tt>--no-focus</tt> flag - I don't see where I would want to use it.<br />
+<br />
+</p>
+<blockquote class="citation">
+<p>
+How does that sound?<br />
+</p>
+</blockquote>
+<p>
+Great! :)<br />
+<br />
+</p>
+<p>
+Thanks to all for discussion and interest in this feature.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-14-1388953530458428">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:14" class="cnum">
+    <a href="#comment:14">comment:14</a>
+  </span>
+        in reply to:
+    <a href="#comment:13">↑ 13</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:15" class="follow-up">↓ 15</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-05T21%3A25%3A30%2B01%3A00&amp;precision=second" title="See timeline at 01/05/14 21:25:30">15 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/558#comment:13" title="Comment 13">p.staszewski@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/558#comment:12" title="Comment 12">TonyC</a>:<br />
+</p>
+<blockquote class="citation">
+<ol><li>The command will only take effect if a window title bar is clicked.
+</li></ol></blockquote>
+</blockquote>
+<p>
+I’m not entirely sure if this is a good idea. Using e.g. <tt>bindmouse Mod4+Button1 exec my_popup_menu</tt> may be a useful thing to have. But then again, we can probably add a flag later, e.g. <tt>bindmouse Mod4+Button1 --entire-window exec my_popup_menu</tt><br />
+</p>
+<blockquote class="citation">
+<blockquote class="citation">
+<ol start="2"><li>A command that takes effect will be in the context of the window whose title bar was clicked (i.e., that window is assumed to be focused)
+</li></ol></blockquote>
+</blockquote>
+<p>
+I don’t think you explicitly need to write this, given that clicking first focuses the window anyway due to focus-on-click. Also note that scrolling internally is a click<br />
+</p>
+<blockquote class="citation">
+<blockquote class="citation">
+<ol start="3"><li>A bindmouse directive will override the default behaviour of the click.
+</li></ol></blockquote>
+<p>
+Points 1. and 2. - exactly.<br />
+Point 3. - why have a hard-coded behaviour? I would leave it as an entirely config file choice. If you don't setup <tt>bindmouse</tt> the title bars will simply not react to any mouse clicks.<br />
+</p>
+</blockquote>
+<p>
+Because of backwards compatibility, which is _really_ important for us. We cannot just release a new version where clicking doesn’t work until the user modifies her config file.<br />
+</p>
+<blockquote class="citation">
+<blockquote class="citation">
+<p>
+A problem I can see with this is that there would be no way to reproduce the default "scroll" mouse wheel feature (perhaps in the opposite direction). Maybe a <tt>--no-focus</tt> flag should be taken to mean that the command should not focus the window.<br />
+</p>
+</blockquote>
+</blockquote>
+<p>
+Why not, precisely?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-15-1388964902036339">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:15" class="cnum">
+    <a href="#comment:15">comment:15</a>
+  </span>
+        in reply to:
+    <a href="#comment:14">↑ 14</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-06T00%3A35%3A02%2B01%3A00&amp;precision=second" title="See timeline at 01/06/14 00:35:02">15 months ago</a> by p.staszewski@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+(I'll try to avoid superfluous nesting.)<br />
+</p>
+<p>
+Replying to <a class="ticket" href="/report/ticket/558#comment:14" title="Comment 14">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+I’m not entirely sure if this is a good idea. Using e.g. <tt>bindmouse Mod4+Button1 exec my_popup_menu</tt> may be a useful thing to have. But then again, we can probably add a flag later, e.g. <tt>bindmouse Mod4+Button1 --entire-window exec my_popup_menu</tt><br />
+</p>
+</blockquote>
+<p>
+A flag, later on - I'm all for it; but later on.<br />
+</p>
+<p>
+Disregarding the fact that most apps already have mouse bindings inside their 'space', my idea here was to 'compensate' for the lack of the close/max|min buttons commonly found on most title bars - with the 'twist' that there are no icons, just mouse button bindings, and that they are fully-configurable.<br />
+</p>
+<p>
+I have probably expressed that on the IRC channel already, but: I personally have two distinct modes of WM interaction: keyboard driven, and mouse driven. While the keyboard gives me (extreme) flexibility the mouse gives me simplicity and one-hand operation.<br />
+</p>
+<p>
+As of now I can focus any window with the mouse. My main <strong>real</strong> problem is that I can't close <strong>every</strong> window with the mouse (only those that have, obviously, a button or a menu option for that).<br />
+</p>
+<p>
+Given the above I would be satisfied with the simple default binding that right-click on a title bar means kill that window. Given the fact that I do like the flexibility I was looking for a more configurable approach.<br />
+<br />
+</p>
+<blockquote class="citation">
+<p>
+I don’t think you explicitly need to write this, given that clicking first focuses the window anyway due to focus-on-click. Also note that scrolling internally is a click<br />
+</p>
+</blockquote>
+<p>
+I agree focus (and click context) should be obvious - but then the scroll wheel cycling (as it works now) may make it a little blurry, so I confirmed the approach.<br />
+</p>
+<p>
+And yes, I do realize that scroll wheel is just a click. Funny thing though is that I didn't think about it that way intuitively when I was first posting my request. I guess the physical acts of clicking and scrolling with a wheel are distinct enough to enforce a mental notion that these are handled differently.<br />
+<br />
+</p>
+<blockquote class="citation">
+<p>
+Because of backwards compatibility, which is _really_ important for us. We cannot just release a new version where clicking doesn’t work until the user modifies her config file.<br />
+</p>
+</blockquote>
+<p>
+I agree.<br />
+</p>
+<p>
+I assume the above then necessitates something like a <tt>noop</tt> command (or <tt>off</tt>, or <tt>disable</tt>; I'll leave the language of that to you), in order to override the default mouse key bindings - but that should be trivial.<br />
+<br />
+</p>
+<blockquote class="citation">
+<p>
+Why not, precisely?<br />
+</p>
+</blockquote>
+<p>
+I believe the answer to that is two-fold.<br />
+</p>
+<p>
+First - mouse wheel scrolling right now works whenever the mouse pointer is on <strong>any</strong> title bar - it just cycles from whatever the currently focused window is, in direction appropriate to the scroll direction.<br />
+</p>
+<p>
+Given the premise 'command is executed for the window the title bar we click' this may seem to break the logic a bit - for mouse wheel cycle we should cycle left|right relative to the currently focused window, i.e. not do 'first focus the window for which the mouse pointer is over the title bar' (hope this makes sense).<br />
+</p>
+<p>
+The second part is that cycling as it works now is distinct from the <tt>focus &lt;left|right&gt;</tt>, as it does not cross containers. Hence the suggestion to have a separate command for this exact behaviour.<br />
+<br />
+</p>
+<p>
+I hope I've managed to clarify.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-16-1388979018164982">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:16" class="cnum">
+    <a href="#comment:16">comment:16</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:17" class="follow-up">↓ 17</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-06T04%3A30%3A18%2B01%3A00&amp;precision=second" title="See timeline at 01/06/14 04:30:18">15 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I didn't mean to imply that the container would automatically be focused by the activation of a bindmouse command. Let me amend my specification of behavior 2:<br />
+</p>
+<ol start="2"><li>A command that takes effect will be in the context of the container whose title bar was clicked (i.e., that container is assumed to be uniquely <strong>selected by criteria</strong>).
+</li></ol><p>
+Of course, when I say "a title bar was clicked" I mean a <tt>ButtonPress</tt> event was detected with pointer coordinates within the bounds of a title bar.<br />
+</p>
+<p>
+If we were to automatically focus a container, we could not meet the requirements of <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a>, because it would not be possible to truly no-op the mouse wheel (or any other button) over title bars.<br />
+</p>
+<p>
+To illustrate how this works, consider the directive:<br />
+</p>
+<pre class="wiki">bindmouse Button1 floating enable
+</pre><p>
+and suppose the binding is activated with <tt>$clicked_con_id</tt> holding the <a class="ext-link" href="http://i3wm.org/docs/userguide.html#command_criteria"><span class="icon">​</span>con_id</a> of the clicked container. Then the following command would be sent to i3:<br />
+</p>
+<pre class="wiki">[con_id="$clicked_con_id"] floating enable
+</pre><p>
+If some command requires the container to be focused to act on the container (e.g., <tt>move &lt;direction&gt;</tt>, which ignores the criteria and acts upon the focused container instead), the user may explicitly focus the container first:<br />
+</p>
+<pre class="wiki">bindmouse Button1 focus; move left
+</pre><p>
+which will work as expected. However, these commands should implement criteria matching eventually.<br />
+</p>
+<p>
+To get the scroll wheel functionality we would need two additional commands which act on the focused container within the parent of the leaf container selected by the criteria:<br />
+</p>
+<ol><li><tt>focus cycle_next</tt> - the behavior of <em>wheel down</em>
+</li><li><tt>focus cycle_previous</tt> - the behavior of <em>wheel up</em>
+</li></ol><p>
+Here is a complete example:<br />
+</p>
+<pre class="wiki"># notable default mouse actions
+bindmouse Button1 focus
+bindmouse Button4 focus cycle_previous
+bindmouse Button5 focus cycle_next
+
+# disable scroll wheel on interface
+bindmouse Button4 nop
+bindmouse Button5 nop
+
+# right click kills window
+bindmouse Button3 kill
+
+# middle click sends to scratchpad
+bindmouse Button2 move scratchpad
+
+# mod and left click toggle floating
+bindmouse $mod+Button1 focus; floating toggle
+
+# mod and middle click moves across outputs
+bindmouse $mod+Button2 move container to output right
+
+# mod and scroll wheels move around
+bindmouse $mod+Button4 focus; move left
+bindmouse $mod+Button5 focus; move right
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-17-1389037653709779">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:17" class="cnum">
+    <a href="#comment:17">comment:17</a>
+  </span>
+        in reply to:
+    <a href="#comment:16">↑ 16</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:18" class="follow-up">↓ 18</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-06T20%3A47%3A33%2B01%3A00&amp;precision=second" title="See timeline at 01/06/14 20:47:33">15 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/558#comment:16" title="Comment 16">TonyC</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+I didn't mean to imply that the container would automatically be focused by the activation of a bindmouse command. Let me amend my specification of behavior 2:<br />
+</p>
+<ol start="2"><li>A command that takes effect will be in the context of the container whose title bar was clicked (i.e., that container is assumed to be uniquely <strong>selected by criteria</strong>).
+</li></ol><p>
+Of course, when I say "a title bar was clicked" I mean a <tt>ButtonPress</tt> event was detected with pointer coordinates within the bounds of a title bar.<br />
+</p>
+<p>
+If we were to automatically focus a container, we could not meet the requirements of <a class="closed ticket" href="/report/ticket/1104" title="defect: Disable switching workspaces or windows via mouse (closed: fixed)">#1104</a>, because it would not be possible to truly no-op the mouse wheel (or any other button) over title bars.<br />
+</p>
+<p>
+To illustrate how this works, consider the directive:<br />
+</p>
+<pre class="wiki">bindmouse Button1 floating enable
+</pre><p>
+and suppose the binding is activated with <tt>$clicked_con_id</tt> holding the <a class="ext-link" href="http://i3wm.org/docs/userguide.html#command_criteria"><span class="icon">​</span>con_id</a> of the clicked container. Then the following command would be sent to i3:<br />
+</p>
+<pre class="wiki">[con_id="$clicked_con_id"] floating enable
+</pre></blockquote>
+<p>
+This makes sense to me.<br />
+</p>
+<blockquote class="citation">
+<p>
+If some command requires the container to be focused to act on the container (e.g., <tt>move &lt;direction&gt;</tt>, which ignores the criteria and acts upon the focused container instead), the user may explicitly focus the container first:<br />
+</p>
+<pre class="wiki">bindmouse Button1 focus; move left
+</pre><p>
+which will work as expected. However, these commands should implement criteria matching eventually.<br />
+</p>
+</blockquote>
+<p>
+I think you meant ”focus, move left”, right? See the second paragraph of <a class="ext-link" href="http://i3wm.org/docs/userguide.html#command_criteria"><span class="icon">​</span>http://i3wm.org/docs/userguide.html#command_criteria</a><br />
+</p>
+<blockquote class="citation">
+<p>
+To get the scroll wheel functionality we would need two additional commands which act on the focused container within the parent of the leaf container selected by the criteria:<br />
+</p>
+<ol><li><tt>focus cycle_next</tt> - the behavior of <em>wheel down</em>
+</li><li><tt>focus cycle_previous</tt> - the behavior of <em>wheel up</em>
+</li></ol></blockquote>
+<p>
+Why not name them “focus wheel_up” and “focus wheel_down”? That makes it more clear what their intention is, I think. Also, if we find a case where the behavior doesn’t make sense (intuitively, given how the scroll wheel works), it is easier to change that command than a more generic “cycle” command.<br />
+</p>
+<blockquote class="citation">
+<p>
+Here is a complete example:<br />
+</p>
+<pre class="wiki"># notable default mouse actions
+bindmouse Button1 focus
+bindmouse Button4 focus cycle_previous
+bindmouse Button5 focus cycle_next
+
+# disable scroll wheel on interface
+bindmouse Button4 nop
+bindmouse Button5 nop
+
+# right click kills window
+bindmouse Button3 kill
+
+# middle click sends to scratchpad
+bindmouse Button2 move scratchpad
+
+# mod and left click toggle floating
+bindmouse $mod+Button1 focus; floating toggle
+
+# mod and middle click moves across outputs
+bindmouse $mod+Button2 move container to output right
+
+# mod and scroll wheels move around
+bindmouse $mod+Button4 focus; move left
+bindmouse $mod+Button5 focus; move right
+</pre></blockquote>
+<p>
+Looks good, apart from the comma versus semicolon thing I noted above.<br />
+</p>
+<p>
+Also, it would be good if you could add a bindmouse for i3bar in this example — I assume we want to have a very similar concept for i3bar, right?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-18-1389112156908077">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:18" class="cnum">
+    <a href="#comment:18">comment:18</a>
+  </span>
+        in reply to:
+    <a href="#comment:17">↑ 17</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-07T17%3A29%3A16%2B01%3A00&amp;precision=second" title="See timeline at 01/07/14 17:29:16">15 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/558#comment:17" title="Comment 17">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Why not name them “focus wheel_up” and “focus wheel_down”? That makes it more clear what their intention is, I think. Also, if we find a case where the behavior doesn’t make sense (intuitively, given how the scroll wheel works), it is easier to change that command than a more generic “cycle” command.<br />
+</p>
+</blockquote>
+<p>
+The name could use some work. It's difficult to think of something simple to describe this that doesn't use specialist vocabulary.<br />
+</p>
+<p>
+Using <tt>wheel_up</tt> and <tt>wheel_down</tt> seems opinionated to me and could be confusing. For instance, suppose I bind the button "wheel up" to the command <tt>wheel_down</tt>. Now what happens when I press the button "wheel up" on tabs? How long did it take you to figure it out?<br />
+</p>
+<p>
+<tt>cycle_next</tt> and <tt>cycle_previous</tt> has the exact same problem because it's not clear which is the first and which is the last container. In a stack, the lowest index is at the top. If you think about it, this is the opposite of how things are ordinarily ordered (such as the standard representation of a Cartesian cross).<br />
+</p>
+<blockquote class="citation">
+<p>
+Also, it would be good if you could add a bindmouse for i3bar in this example — I assume we want to have a very similar concept for i3bar, right?<br />
+</p>
+</blockquote>
+<p>
+Yes, i3bar should have a similar feature. Since it is not a managed window, it will have to be implemented separately. The details of this implementation is still an open issue.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-19-1389562666484878">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:19" class="cnum">
+    <a href="#comment:19">comment:19</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-12T22%3A37%3A46%2B01%3A00&amp;precision=second" title="See timeline at 01/12/14 22:37:46">15 months ago</a> by Tony Crisci
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/54012719"><span class="icon">​</span>http://c.i3wm.org/54012719</a>:<br />
+</p>
+<pre class="wiki">Add `input_type` enum to `Binding` typedef
+
+An input type of B_KEYBOARD will indicated this binding was created with
+"bindsym", "bindcode", or "bind" and should only run on key press
+events.
+
+An input type of B_MOUSE will indicate this binding was created with
+"bindmouse" and should only run on button press events (not yet
+implemented).
+
+For more information see #558.
+
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-20-1389774004806503">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:20" class="cnum">
+    <a href="#comment:20">comment:20</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:21" class="follow-up">↓ 21</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-15T09%3A20%3A04%2B01%3A00&amp;precision=second" title="See timeline at 01/15/14 09:20:04">15 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+For the i3bar implementation, we could either do this within i3bar or i3 itself. Here are the advantages/disadvantages to each.<br />
+</p>
+<p>
+If we implemented it in i3 itself, a <tt>--dock</tt> flag would be added to the <tt>bindmouse</tt> directive to indicate the mouse binding should execute when the pointer is over (any) dock window.<br />
+</p>
+<ul><li>Easier implementation
+</li><li>Portable across bars/docks a user may choose
+</li><li>Supports modes
+</li></ul><p>
+However, this may break compatibility unless there is some way to eat the event before i3bar can get it whenever a binding runs.<br />
+</p>
+<p>
+To implement this is i3bar, the <tt>bindmouse</tt> would be declared within a bar block and become part of the bar config.<br />
+</p>
+<ul><li>Complex implementation (the bar must store bindings and use the ipc to execute commands)
+</li><li>Fits user expectations (I think people will naturally assume they can do this)
+</li><li>Bars are configured separately (some people may not want commands to execute over <em>any</em> dock client)
+</li></ul>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-21-1389857485226164">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:21" class="cnum">
+    <a href="#comment:21">comment:21</a>
+  </span>
+        in reply to:
+    <a href="#comment:20">↑ 20</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-16T08%3A31%3A25%2B01%3A00&amp;precision=second" title="See timeline at 01/16/14 08:31:25">15 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/558#comment:20" title="Comment 20">TonyC</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+For the i3bar implementation, we could either do this within i3bar or i3 itself. Here are the advantages/disadvantages to each.<br />
+</p>
+<p>
+If we implemented it in i3 itself, a <tt>--dock</tt> flag would be added to the <tt>bindmouse</tt> directive to indicate the mouse binding should execute when the pointer is over (any) dock window.<br />
+</p>
+</blockquote>
+<p>
+I don’t think this is a good idea.<br />
+</p>
+<blockquote class="citation">
+<ul><li>Portable across bars/docks a user may choose
+</li></ul></blockquote>
+<p>
+I think it’s a feature that different bars are different in terms of what a click/other mouse buttons does, even though your other pros are true.<br />
+</p>
+<blockquote class="citation">
+<p>
+To implement this is i3bar, the <tt>bindmouse</tt> would be declared within a bar block and become part of the bar config.<br />
+</p>
+<ul><li>Complex implementation (the bar must store bindings and use the ipc to execute commands)
+</li></ul></blockquote>
+<p>
+The bar already uses plenty of IPC, that’s not a concern. It also already reads the config from i3.<br />
+</p>
+<blockquote class="citation">
+<ul><li>Fits user expectations (I think people will naturally assume they can do this)
+</li><li>Bars are configured separately (some people may not want commands to execute over <em>any</em> dock client)
+</li></ul></blockquote>
+<p>
+Good point, yeah.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-22-1396727208141853">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:22" class="cnum">
+    <a href="#comment:22">comment:22</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:23" class="follow-up">↓ 23</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-05T21%3A46%3A48%2B02%3A00&amp;precision=second" title="See timeline at 04/05/14 21:46:48">12 months ago</a> by jandry
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I think a great deal of complication could be avoided if i3 could simply bind a command to various mousebinds; this would easily allow users to use xdotool to set mouse actions to already existing keybinds:<br />
+</p>
+<p>
+bindmouse $mod+Button2 command; xdotool key Alt+Shift+q<br />
+-or-<br />
+bindmouse $mod+Button2 command; sh /home/user/some/xdotool/script.sh<br />
+</p>
+<p>
+In this way, you wouldnt even have to have a container or titlebar for an app. It could be "context" driven (similar to how Openbox has "desktop" and "frame" context options). That said, I think having configurable mouseactions for titlebar clicks is a unique and very good idea for those that use them.<br />
+</p>
+<p>
+As for the bar I have no idea...<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-23-1396768144266321">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:23" class="cnum">
+    <a href="#comment:23">comment:23</a>
+  </span>
+        in reply to:
+    <a href="#comment:22">↑ 22</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-06T09%3A09%3A04%2B02%3A00&amp;precision=second" title="See timeline at 04/06/14 09:09:04">12 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/558#comment:22" title="Comment 22">jandry</a>:<br />
+</p>
+<p>
+I think that is an excellent idea feature-wise. I'm working on a more general way to intercept commands for custom scripting in <a class="closed ticket" href="/report/ticket/1210" title="enhancement: Add an IPC &#34;Command&#34; Event (now &#34;Binding&#34; Event) (closed: fixed)">#1210</a> which I think would pair very well with the new mouse binding feature and let you accomplish what you are after in a cleaner way.<br />
+</p>
+<p>
+As for the status of this feature itself, most of the refactoring required for implementing the feature is complete and I plan to put most of my i3-development effort into this next week.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-24-1403013447067387">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:24" class="cnum">
+    <a href="#comment:24">comment:24</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-17T15%3A57%3A27%2B02%3A00&amp;precision=second" title="See timeline at 06/17/14 15:57:27">10 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Bindmouse is done. It will be merged soon. Here is how it turned out:<br />
+</p>
+<pre class="wiki">=== Mouse bindings
+
+A mouse binding makes i3 execute a command upon pressing a specific mouse
+button in the scope of the clicked container (see &lt;&lt;command_criteria&gt;&gt;). You
+can configure mouse bindings in a similar way to key bindings.
+
+*Syntax*:
+----------------------------------
+bindsym [Modifiers+]button[n] command
+----------------------------------
+
+If the binding has no modifiers, it will only run when you click on the
+titlebar of the window. Otherwise, it will run when any part of the window is
+clicked.
+
+*Examples*:
+--------------------------------
+# The middle button over a titlebar kills the window
+bindsym button2 kill
+
+# The middle button and a modifer over any part of the window kills the window
+bindsym $mod+button2 kill
+
+# The right button toggles floating
+bindsym button3 floating toggle
+bindsym $mod+button3 floating toggle
+
+# The side buttons move the window around
+bindsym button9 move left
+bindsym button8 move right
+--------------------------------
+
+</pre><p>
+I'm not going to do mouse bindings over i3bar because it's too complicated.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-25-1403175682422382">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:25" class="cnum">
+    <a href="#comment:25">comment:25</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-19T13%3A01%3A22%2B02%3A00&amp;precision=second" title="See timeline at 06/19/14 13:01:22">9 months ago</a> by Tony Crisci
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>accepted</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/0df172fd"><span class="icon">​</span>http://c.i3wm.org/0df172fd</a>:<br />
+</p>
+<pre class="wiki">Feature: implement mouse bindings
+
+A configured mouse binding (for example `bindsym button3 kill`) runs
+its command when the mouse button is pressed over parts of a container.
+
+If the binding has no modifer, it will only run when the button is
+clicked on the window titlebar.
+
+Otherwise if the binding has a modifier, it will run over the titlebar
+or any part of the contained window.
+
+fixes #558
+
+</pre>
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/558?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/558?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/558?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

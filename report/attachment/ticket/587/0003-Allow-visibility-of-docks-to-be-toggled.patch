@@ -1,0 +1,150 @@
+From 74264e3a1d865f0b00980e67cfeff626fcc4354a Mon Sep 17 00:00:00 2001
+From: dbp <platypus01@gmail.com>
+Date: Mon, 12 Dec 2011 00:12:33 -0800
+Subject: [PATCH 3/3] Allow visibility of docks to be toggled.
+
+---
+ include/config.h |    4 ++++
+ src/cfgparse.l   |    1 +
+ src/cfgparse.y   |   12 ++++++++++++
+ src/cmdparse.l   |    1 +
+ src/cmdparse.y   |   18 ++++++++++++++++++
+ src/render.c     |    3 ++-
+ 6 files changed, 38 insertions(+), 1 deletions(-)
+
+diff --git a/include/config.h b/include/config.h
+index d71d2f4..bc0b420 100644
+--- a/include/config.h
++++ b/include/config.h
+@@ -113,6 +113,10 @@ struct Config {
+      * comes with i3. Thus, you can turn it off entirely. */
+     bool disable_workspace_bar;
+ 
++    /** Whether docked windows are visible. Toggle with the 'docks toggle'
++     * command. Set the default with the docks_visible option. */
++    bool hide_docks;
++
+     /** Think of the following layout: Horizontal workspace with a tabbed
+      * con on the left of the screen and a terminal on the right of the
+      * screen. You are in the second container in the tabbed container and
+diff --git a/src/cfgparse.l b/src/cfgparse.l
+index 47dc595..1fcc036 100644
+--- a/src/cfgparse.l
++++ b/src/cfgparse.l
+@@ -163,6 +163,7 @@ bind                            { yy_push_state(WANT_STRING); yy_push_state(EAT_
+ bindcode                        { yy_push_state(WANT_STRING); yy_push_state(EAT_WHITESPACE); yy_push_state(EAT_WHITESPACE); return TOKBINDCODE; }
+ bindsym                         { yy_push_state(BINDSYM_COND); yy_push_state(EAT_WHITESPACE); return TOKBINDSYM; }
+ floating_modifier               { return TOKFLOATING_MODIFIER; }
++docks_visible                   { return TOKDOCKS_VISIBLE; }
+ workspace                       { return TOKWORKSPACE; }
+ output                          { yy_push_state(OUTPUT_COND); yy_push_state(EAT_WHITESPACE); return TOKOUTPUT; }
+ terminal                        { WS_STRING; return TOKTERMINAL; }
+diff --git a/src/cfgparse.y b/src/cfgparse.y
+index 43426fc..c64d416 100644
+--- a/src/cfgparse.y
++++ b/src/cfgparse.y
+@@ -662,6 +662,7 @@ void parse_file(const char *f) {
+ %token                  TOKCONTROL                  "control"
+ %token                  TOKSHIFT                    "shift"
+ %token                  TOKFLOATING_MODIFIER        "floating_modifier"
++%token                  TOKDOCKS_VISIBLE            "docks_visible"
+ %token  <string>        QUOTEDSTRING                "<quoted string>"
+ %token                  TOKWORKSPACE                "workspace"
+ %token                  TOKOUTPUT                   "output"
+@@ -775,6 +776,7 @@ line:
+     | mode
+     | bar
+     | floating_modifier
++    | docks_visible
+     | orientation
+     | workspace_layout
+     | new_window
+@@ -1238,6 +1240,16 @@ floating_modifier:
+     }
+     ;
+ 
++docks_visible:
++    TOKDOCKS_VISIBLE bool
++    {
++        DLOG("dock visibility = %d\n", $2);
++        /* This is inverted so that docks are visible by default
++         * when initializing the struct with zero. */
++        config.hide_docks = !($2);
++    }
++    ;
++
+ orientation:
+     TOK_ORIENTATION direction
+     {
+diff --git a/src/cmdparse.l b/src/cmdparse.l
+index 5a72765..c89b299 100644
+--- a/src/cmdparse.l
++++ b/src/cmdparse.l
+@@ -126,6 +126,7 @@ none                            { return TOK_NONE; }
+ mode                            { BEGIN(WANT_QSTRING); return TOK_MODE; }
+ tiling                          { return TOK_TILING; }
+ floating                        { return TOK_FLOATING; }
++docks                           { return TOK_DOCKS; }
+ toggle                          { return TOK_TOGGLE; }
+ mode_toggle                     { return TOK_MODE_TOGGLE; }
+ workspace                       { WS_STRING; return TOK_WORKSPACE; }
+diff --git a/src/cmdparse.y b/src/cmdparse.y
+index 092bea2..7b81b33 100644
+--- a/src/cmdparse.y
++++ b/src/cmdparse.y
+@@ -144,6 +144,7 @@ bool definitelyGreaterThan(float a, float b, float epsilon) {
+ %token              TOK_MODE            "mode"
+ %token              TOK_TILING          "tiling"
+ %token              TOK_FLOATING        "floating"
++%token              TOK_DOCKS           "docks"
+ %token              TOK_MODE_TOGGLE     "mode_toggle"
+ %token              TOK_ENABLE          "enable"
+ %token              TOK_DISABLE         "disable"
+@@ -382,6 +383,7 @@ operation:
+     | fullscreen
+     | split
+     | floating
++    | docks
+     | mark
+     | resize
+     | nop
+@@ -707,6 +709,22 @@ floating:
+     }
+     ;
+ 
++docks:
++    TOK_DOCKS boolean
++    {
++        if ($2 == TOK_TOGGLE) {
++            printf("should toggle dock visibility\n");
++            config.hide_docks ^= 1;
++        }
++        else {
++            printf("should switch dock visibility %s\n", ($2 == TOK_ENABLE ? "on" : "off"));
++            config.hide_docks = ($2 == TOK_DISABLE);
++        }
++
++        tree_render();
++    }
++    ;
++
+ boolean:
+     TOK_ENABLE    { $$ = TOK_ENABLE; }
+     | TOK_DISABLE { $$ = TOK_DISABLE; }
+diff --git a/src/render.c b/src/render.c
+index 2905356..e230245 100644
+--- a/src/render.c
++++ b/src/render.c
+@@ -66,7 +66,8 @@ static void render_l_output(Con *con) {
+         TAILQ_FOREACH(dockchild, &(child->nodes_head), nodes)
+             child->rect.height += dockchild->geometry.height;
+ 
+-        height -= child->rect.height;
++        if (!config.hide_docks)
++            height -= child->rect.height;
+     }
+ 
+     /* Second pass: Set the widths/heights */
+-- 
+1.7.6.1
+

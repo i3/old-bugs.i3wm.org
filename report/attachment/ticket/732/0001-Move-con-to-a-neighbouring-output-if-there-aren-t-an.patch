@@ -1,0 +1,108 @@
+From df32d8cf4ce2f6412b1eb8e0e16ed47a761ae61c Mon Sep 17 00:00:00 2001
+From: Vadim Atlygin <vadim.atlygin@gmail.com>
+Date: Sat, 16 Jun 2012 20:43:14 +1000
+Subject: [PATCH] Move con to a neighbouring output if there aren't any space
+ left to be moved on the current one.
+
+---
+ src/move.c |   48 ++++++++++++++++++++++++++++++++++++++----------
+ 1 file changed, 38 insertions(+), 10 deletions(-)
+
+diff --git a/src/move.c b/src/move.c
+index d110312..5874ade 100644
+--- a/src/move.c
++++ b/src/move.c
+@@ -67,7 +67,7 @@ static void insert_con_into(Con *con, Con *target, position_t position) {
+  * workspace.
+  *
+  */
+-static void attach_to_workspace(Con *con, Con *ws) {
++static void attach_to_workspace(Con *con, Con *ws, bool use_head) {
+     con_detach(con);
+     con_fix_percent(con->parent);
+ 
+@@ -75,8 +75,14 @@ static void attach_to_workspace(Con *con, Con *ws) {
+ 
+     con->parent = ws;
+ 
+-    TAILQ_INSERT_TAIL(&(ws->nodes_head), con, nodes);
+-    TAILQ_INSERT_TAIL(&(ws->focus_head), con, focused);
++    if (use_head) {
++        TAILQ_INSERT_HEAD(&(ws->nodes_head), con, nodes);
++        TAILQ_INSERT_HEAD(&(ws->focus_head), con, focused);
++    } else {
++        TAILQ_INSERT_TAIL(&(ws->nodes_head), con, nodes);
++        TAILQ_INSERT_TAIL(&(ws->focus_head), con, focused);
++    }
++
+ 
+     /* Pretend the con was just opened with regards to size percent values.
+      * Since the con is moved to a completely different con, the old value
+@@ -85,6 +91,30 @@ static void attach_to_workspace(Con *con, Con *ws) {
+     con_fix_percent(ws);
+ }
+ 
++void tree_move_neighboring_output(Con *con, int direction) {
++    Output *current_output = get_output_containing(con->rect.x, con->rect.y);
++    Output *next_output;
++
++    if (!current_output)
++        return;
++    DLOG("Current output is %s\n", current_output->name);
++
++    next_output = get_output_next(direction, current_output);
++    if (!next_output)
++        return;
++    DLOG("Next output is %s\n", next_output->name);
++
++    /* Find visible workspace on next output */
++    Con *workspace = NULL;
++    GREP_FIRST(workspace, output_get_content(next_output->con), workspace_is_visible(child));
++
++    /* Show next workspace and focus appropriate container if possible. */
++    if (!workspace)
++        return;
++
++    attach_to_workspace(con, workspace, direction == D_DOWN || direction == D_RIGHT);
++}
++
+ /*
+  * Moves the current container in the given direction (D_LEFT, D_RIGHT,
+  * D_UP, D_DOWN).
+@@ -100,11 +130,6 @@ void tree_move(int direction) {
+         return;
+     }
+ 
+-    if (con->parent->type == CT_WORKSPACE && con_num_children(con->parent) == 1) {
+-        DLOG("This is the only con on this workspace, not doing anything\n");
+-        return;
+-    }
+-
+     orientation_t o = (direction == D_LEFT || direction == D_RIGHT ? HORIZ : VERT);
+ 
+     Con *same_orientation = con_parent_with_orientation(con, o);
+@@ -122,7 +147,7 @@ void tree_move(int direction) {
+             if (con_inside_floating(con)) {
+                 /* 'con' should be moved out of a floating container */
+                 DLOG("Inside floating, moving to workspace\n");
+-                attach_to_workspace(con, con_get_workspace(con));
++                attach_to_workspace(con, con_get_workspace(con), false);
+                 goto end;
+             }
+             DLOG("Force-changing orientation\n");
+@@ -156,8 +181,11 @@ void tree_move(int direction) {
+              * again, but starting one level higher. If we are on the workspace
+              * level, don’t do that. The result would be a force change of
+              * workspace orientation, which is not necessary. */
+-            if (con->parent == con_get_workspace(con))
++            if (con->parent == con_get_workspace(con)) {
++                DLOG("Workspace level, trying to move to neighboring output.\n");
++                tree_move_neighboring_output(con, direction);
+                 return;
++            }
+             same_orientation = con_parent_with_orientation(con->parent, o);
+         }
+     } while (same_orientation == NULL);
+-- 
+1.7.9.5
+

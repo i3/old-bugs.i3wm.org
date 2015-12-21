@@ -1,0 +1,581 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1326 (Moving containers to a certain position sometimes difficult)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1325" title="Ticket #1325" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1326?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1326?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1326?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1327" title="Ticket #1327" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="7a746e4c878a0b4020b1a451";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1325" title="Ticket #1325">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1327" title="Ticket #1327">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2014-07-20T15%3A47%3A59%2B02%3A00&amp;precision=second" title="See timeline at 07/20/14 15:47:59">8 months ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2014-09-29T22%3A44%3A01%2B02%3A00&amp;precision=second" title="See timeline at 09/29/14 22:44:01">6 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1326" class="trac-id">#1326</a>
+    <span class="trac-status">
+      <a href="/report/query?status=accepted">accepted</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Moving containers to a certain position sometimes difficult</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">klausgy@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.8">4.8</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.8 (2014-06-15, branch "4.8")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+Hi, I noticed that specific arrangments of windows are diffucult / counterintuitive to obtain using the i3 navigation.  For example, I have this situation (I leave the leafs of the split containers out of the picture):<br />
+</p>
+<p>
+<a class="forbidden wiki" title="no permission to view this wiki page">(tabbed)</a><br />
+|   |   |_<a class="forbidden wiki" title="no permission to view this wiki page">(vertically-split)</a><br />
+|   |_<a class="forbidden wiki" title="no permission to view this wiki page">(vertically-split)</a><br />
+|_<a class="forbidden wiki" title="no permission to view this wiki page">(leaf)</a><br />
+</p>
+<p>
+And I want to get this:<br />
+</p>
+<p>
+<a class="forbidden wiki" title="no permission to view this wiki page">(tabbed)</a><br />
+|   |   |_<a class="forbidden wiki" title="no permission to view this wiki page">(vertically-split)</a><br />
+|   |_<a class="forbidden wiki" title="no permission to view this wiki page">(leaf)</a><br />
+|_<a class="forbidden wiki" title="no permission to view this wiki page">(vertically-split)</a><br />
+</p>
+<p>
+When moving Firefox to the right, it circles through the two split containers and ends up in the tabbed container on the right border.  When moving it upwards while it circles through Splitx, i3 creates a horizontally-split out of main and places Firefox there.  The only way I found to achieve the desired position is to select Split1 (via select-parent) and move it to the left.  I think there should be an easier way provided for this (ideally, I imagine when moving Firefox to the right and after circling through Split1 it gets placed between Split1 and Split2 in Main, just as desired).<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(1)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/1326/0001-Fix-container-movement-logic-to-be-reversible.patch" title="View attachment">0001-Fix-container-movement-logic-to-be-reversible.patch</a><a href="/report/raw-attachment/ticket/1326/0001-Fix-container-movement-logic-to-be-reversible.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="1757 bytes">1.7 KB</span>) -
+      added by <em>icandothings@…</em> <a class="timeline" href="/report/timeline?from=2014-09-19T04%3A50%3A33%2B02%3A00&amp;precision=second" title="See timeline at 09/19/14 04:50:33">6 months ago</a>.
+  </dt>
+              <dd>
+                Patch
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/1326/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(8)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1405864915555224">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-20T16%3A01%3A55%2B02%3A00&amp;precision=second" title="See timeline at 07/20/14 16:01:55">8 months ago</a> by klausgy@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sorry, I didn't deal with the formatting rules in my ACSII art and it removed some information, so here again the two diagrams:<br />
+</p>
+<p>
+[Main (tabbed)]<br />
+|  |  |_[Split1 (vertically-split)]<br />
+|  |_[Split2 (vertically-split)]<br />
+|_[Firefox (leaf)]<br />
+</p>
+<p>
+[Main (tabbed)]<br />
+|  |  |_[Split1 (vertically-split)]<br />
+|  |_[Firefox (leaf)]<br />
+|_[Split2 (vertically-split)]<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1405892528029694">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-20T23%3A42%3A08%2B02%3A00&amp;precision=second" title="See timeline at 07/20/14 23:42:08">8 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+There is one more way:<br />
+</p>
+<p>
+While your focus is on split1, use “focus parent”, then create a new terminal. You’ll now be able to move firefox to the right (in direction of the terminal) and it’ll be where you want it to be (AIUI). You can then close the terminal. This can be automated.<br />
+</p>
+<p>
+In general, I’m not quite sure how you’d expect us to fix what you’re describing. Changing the behavior of how i3 handles window moves will inevitably upset some part of our users and we want to strongly avoid any backwards-incompatible changes. Adding another option for this sort of behavior however is not a good idea either since it has implications on other parts of the user experiences (e.g. “when using modeX + modeY, feature Z is not easy to use, so you need to add special case #n+1”) and makes reasoning about the code so much more complex.<br />
+</p>
+<p>
+I’d suggest you find a solution for your problem that works by combining existing commands and/or using an IPC script, see <a class="ext-link" href="http://i3wm.org/docs/ipc.html"><span class="icon">​</span>http://i3wm.org/docs/ipc.html</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1405894585011176">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-21T00%3A16%3A25%2B02%3A00&amp;precision=second" title="See timeline at 07/21/14 00:16:25">8 months ago</a> by klausgy@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I see your arguments.  Just to answer on how I'd fix it, I'd say after moving a window out of one container, it does not immedeatly get placed in the next container but if possible between those two, Then the next motion command will place it in the second container.<br />
+</p>
+<p>
+This would indeed break backwards compatibility but not necessarily user habit, as you would in the worst case have to put one command twice instead of once to achieve the same result (like, when moving a window most of the time I don't count the moves but stop when the desired position is achieved, I wouldn't probably notice if one extra position sneaked into the sequence).<br />
+</p>
+<p>
+One possible further argument for my side: It'd be a cool (but maybe unrealizable, even with my suggestion) axiom that 'move to the right' after 'move to the left' equals 'do nothing', in the case I specified above, if Firefox already sits between those containers and I move it to the right, it gets placed in the right container but 'move to the left' does not restore the initial position.<br />
+</p>
+<p>
+Anyway, thanks for the answer and clarification and for creating a wonderful product!<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1406013917650062">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-22T09%3A25%3A17%2B02%3A00&amp;precision=second" title="See timeline at 07/22/14 09:25:17">8 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I think I agree, provided this can be realized without an overly complicated patch.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1406013921560552">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-22T09%3A25%3A21%2B02%3A00&amp;precision=second" title="See timeline at 07/22/14 09:25:21">8 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-owner">
+      <strong class="trac-field-owner">Owner</strong>
+        set to <em>michael</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>accepted</em>
+    </li>
+  </ul>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-09-19T04%3A50%3A33%2B02%3A00&amp;precision=second" title="See timeline at 09/19/14 04:50:33">6 months ago</a> by icandothings@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1326/0001-Fix-container-movement-logic-to-be-reversible.patch"><em>0001-Fix-container-movement-logic-to-be-reversible.patch</em></a><a href="/report/raw-attachment/ticket/1326/0001-Fix-container-movement-logic-to-be-reversible.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Patch<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1411095207546630">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-09-19T04%3A53%3A27%2B02%3A00&amp;precision=second" title="See timeline at 09/19/14 04:53:27">6 months ago</a> by icandothings@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sorry for the poor description above, hit submit too quickly.<br />
+</p>
+<p>
+But that patch changes the container movement to work the way the ticket describes.  Currently using it on my system without issues.  Its a very simple patch, I basically just deleted an if.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1412023441172086">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-09-29T22%3A44%3A01%2B02%3A00&amp;precision=second" title="See timeline at 09/29/14 22:44:01">6 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Can you submit this to <a class="ext-link" href="http://cr.i3wm.org/"><span class="icon">​</span>http://cr.i3wm.org/</a> please?<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1326?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1326?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1326?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

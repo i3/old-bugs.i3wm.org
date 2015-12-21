@@ -1,0 +1,3756 @@
+window
+ 0x2a066d8:
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 44066525
+_NET_WM_USER_TIME(CARDINAL) = 2389822
+_NET_WM_STATE(ATOM) = _NET_WM_STATE_ABOVE, _NET_WM_STATE_STAYS_ON_TOP
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2a0653a
+_NET_WM_ICON(CARDINAL) = 	Icon (48 x 48):
+	                                                
+	                      ░░░                       
+	                     ░░░░░░                     
+	                     ▒░░░░▒                     
+	                     ▒░░░░▒                     
+	                    ░░░░░░▒░                    
+	                    ▒░░░░░░▒                    
+	                    ▒░░░░░░▒                    
+	                       ░   ░                    
+	                            ░                   
+	                   ░       ░                    
+	                            ░                   
+	                   ░       ░ ░                  
+	                  ░         ░                   
+	                             ░                  
+	                 ░░         ░ ░                 
+	                 ▒░░       ░░▒▒                 
+	                 ▒▒░░░░░░░░░▒▒▒                 
+	                ░▒▒░░░░░░░░░░▒▒░                
+	                ▒▒▒░░░░░░░░░░▒▒░                
+	                ▒▒▒░░░░░░░░░░▒▒▒                
+	               ░▒▒░░░░░░░░░░░▒▒▒                
+	               ▒▒▒░░░░░░░░░░░▒▒▒░               
+	               ▒▒▒░░░░░░░░░░░▒▒▒▒               
+	               ▒▒▒░░░░░░░░░░░░▒▒▒               
+	              ░ ░░░░░░░░░░░░░░▒░░               
+	              ░░ ░ ░░░░░░░░░░░ ░ ░              
+	              ░ ░             ░ ░░              
+	             ░ ░             ░ ░ ░              
+	             ░░ ░             ░ ░ ░             
+	         ░░▒░░ ░             ░ ░ ░░▒▒▒▒         
+	        ░░░▒▒ ░ ░             ░ ░ ░▒▒▒▒░        
+	        ░░▒▒▒▒ ░             ░ ░ ░▒▒▒▒▒▒        
+	        ░░▒▒▒▒░ ░             ░ ░▒▒▒▒▒▒▒        
+	       ░░░░▒▒▒▒▒░░           ░░░▒▒▒▒▒▒▒▒░       
+	       ░░░░▒▒▒▒▒▒▒░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒░       
+	       ░░░░▒▒▒▒▒▒▒░░▒▒░░░░░░░░░▒▒▒▒▒▒▒▒▒░       
+	      ░░░░░▒▒▒▒▒▒▒░▒▒▒░░░░░░░░░▒▒▒▒▒▒░░░░       
+	      ░░░░░░▒▒▒▒▒▒░▒▒▒░░░░░░░░░▒▒▒▒▒░░░░░░      
+	      ░░░░░░░░▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒░░░░░░░░      
+	      ░░░░░░░░░░░░▒▒▒▒▒░░░░░░░░░░░░░░░░░░░      
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░      
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	    ░            ░░░░░░░░░░░░                   
+	    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░    
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	                                                
+
+	Icon (32 x 32):
+	                                
+	               ░░░              
+	              ░░░▒              
+	              ░░░░              
+	             ░░░░░░             
+	             ░░░░░░             
+	             ░                  
+	                  ░             
+	                   ░            
+	            ░      ░            
+	                   ░            
+	           ░▒░░░░░░▒░           
+	           ▒▒░░░░░░▒▒           
+	           ▒░░░░░░░▒▒           
+	          ░▒░░░░░░░▒▒░          
+	          ▒▒░░░░░░░░▒▒          
+	          ░▒░░░░░░░░▒▒          
+	          ░ ░░░░░░░░░░          
+	         ░ ░         ░░         
+	         ░░         ░░░░░       
+	      ░▒▒░ ░       ░ ░░▒▒▒      
+	      ░▒▒░░         ░ ░▒▒▒░     
+	     ░░▒▒▒░░       ░░░▒▒▒▒░     
+	     ░░▒▒▒▒▒░░░░░░░░░▒▒▒▒▒▒     
+	     ░░▒▒▒▒▒░▒▒░░░░░░▒▒▒▒░░     
+	    ░░░░▒▒▒▒▒▒▒░░░░░░▒▒░░░░     
+	    ░░░░░░░▒▒▒▒▒░░░░░░░░░░░░    
+	    ░░░░░░░░░░░░░░░░░░░░░░░░    
+	    ░░░░░░░░░░░░░░░░░░░░░░░░    
+	   ░                        ░   
+	   ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░   
+	                                
+
+
+_NET_WM_WINDOW_OPACITY(CARDINAL) = 0
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_CLIENT_LEADER(WINDOW): window id # 0x2a0013a
+_NET_WM_PID(CARDINAL) = 8579
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_TOOLTIP, _KDE_NET_WM_WINDOW_TYPE_OVERRIDE, _NET_WM_WINDOW_TYPE_NORMAL
+_MOTIF_WM_HINTS(_MOTIF_WM_HINTS) = 0x2, 0x1, 0x0, 0x0, 0x0
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_NAME(STRING) = "vlc"
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLASS(STRING) = "vlc", "Vlc"
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		bitmap id # to use for icon: 0x2a066da
+		window id # of group leader: 0x2a0013a
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		user specified location: 567, 1014
+		program specified location: 567, 1014
+		user specified size: 800 by 62
+		program specified size: 800 by 62
+		program specified minimum size: 800 by 62
+		window gravity: NorthWest
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_COMMAND(STRING) = { "vlc" }
+_KDE_NET_WM_SHADOW(CARDINAL) = 44043018, 44043022, 44043026, 44043030, 44043034, 44043038, 44043042, 44043046, 40, 40, 40, 40
+window
+ 0x2011573:
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		window id # of group leader: 0x2000001
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2000078
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33625461
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_POPUP_MENU
+_NET_WM_USER_TIME(CARDINAL) = 2614040
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x2011574
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified location: 0, 0
+		program specified minimum size: 1 by 4
+		program specified maximum size: 32767 by 32767
+		window gravity: NorthWest
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Firefox"
+WM_ICON_NAME(STRING) = "Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x2011574:
+window
+ 0x201234a:
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		window id # of group leader: 0x2000001
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2000078
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33629004
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_TOOLTIP
+_NET_WM_USER_TIME(CARDINAL) = 2557334
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x201234b
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified location: 0, 0
+		program specified minimum size: 126 by 25
+		program specified maximum size: 633 by 32767
+		window gravity: NorthWest
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Firefox"
+WM_ICON_NAME(STRING) = "akademik-padding.png (Obrazek PNG, 946×130 pikseli)"
+_NET_WM_ICON_NAME(UTF8_STRING) = "akademik-padding.png (Obrazek PNG, 946×130 pikseli)"
+WM_NAME(STRING) = "akademik-padding.png (Obrazek PNG, 946×130 pikseli)"
+_NET_WM_NAME(UTF8_STRING) = "akademik-padding.png (Obrazek PNG, 946×130 pikseli)"
+window
+ 0x201234b:
+window
+ 0x201234f:
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33629009
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_NET_WM_USER_TIME(CARDINAL) = 2445727
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x2012350
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "firefox", "Firefox"
+WM_ICON_NAME(STRING) = "Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x2012350:
+window
+ 0x20117da:
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		window id # of group leader: 0x2000001
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x20117d1
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33626076
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_UTILITY
+_NET_WM_USER_TIME(CARDINAL) = 2442597
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x20117db
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified location: 0, 0
+		program specified minimum size: 1 by 96
+		program specified maximum size: 32767 by 32767
+		window gravity: NorthWest
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Firefox"
+WM_ICON_NAME(STRING) = "Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x20117db:
+window
+ 0x2011d01:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x20117d1
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33627395
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_TOOLTIP
+_NET_WM_USER_TIME(CARDINAL) = 2406782
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x2011d02
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Firefox"
+WM_ICON_NAME(STRING) = "Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x2011d02:
+window
+ 0x2000bfb:
+_NET_STARTUP_ID(UTF8_STRING) = "i3/urxvt/2756-1-darkmachine_TIME22770"
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		window id # of group leader: 0x2000001
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2000078
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33557501
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_UTILITY
+_NET_WM_USER_TIME(CARDINAL) = 2401614
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x2000bfc
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified location: 0, 0
+		program specified minimum size: 1 by 6
+		program specified maximum size: 32767 by 32767
+		window gravity: NorthWest
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Firefox"
+WM_ICON_NAME(STRING) = "Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x2000bfc:
+window
+ 0x2011155:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2000059
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33624407
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_UTILITY
+_NET_WM_USER_TIME(CARDINAL) = 2397590
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x2011156
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Firefox"
+WM_ICON_NAME(STRING) = "Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x2011156:
+window
+ 0x2011152:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2000059
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33624404
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_UTILITY
+_NET_WM_USER_TIME(CARDINAL) = 2397590
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x2011153
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Firefox"
+WM_ICON_NAME(STRING) = "Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x2011153:
+window
+ 0x22034dc:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2200078
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 35665118
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_TOOLTIP
+_NET_WM_USER_TIME(CARDINAL) = 1714975
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x22034dd
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Thunderbird"
+WM_ICON_NAME(STRING) = "Thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Thunderbird"
+WM_NAME(STRING) = "Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "Thunderbird"
+window
+ 0x22034dd:
+window
+ 0x2a0678d:
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 44066706
+_NET_WM_USER_TIME(CARDINAL) = 2389822
+_NET_WM_STATE(ATOM) = _NET_WM_STATE_ABOVE, _NET_WM_STATE_STAYS_ON_TOP
+_NET_WM_ICON(CARDINAL) = 	Icon (48 x 48):
+	                                                
+	                      ░░░                       
+	                     ░░░░░░                     
+	                     ▒░░░░▒                     
+	                     ▒░░░░▒                     
+	                    ░░░░░░▒░                    
+	                    ▒░░░░░░▒                    
+	                    ▒░░░░░░▒                    
+	                       ░   ░                    
+	                            ░                   
+	                   ░       ░                    
+	                            ░                   
+	                   ░       ░ ░                  
+	                  ░         ░                   
+	                             ░                  
+	                 ░░         ░ ░                 
+	                 ▒░░       ░░▒▒                 
+	                 ▒▒░░░░░░░░░▒▒▒                 
+	                ░▒▒░░░░░░░░░░▒▒░                
+	                ▒▒▒░░░░░░░░░░▒▒░                
+	                ▒▒▒░░░░░░░░░░▒▒▒                
+	               ░▒▒░░░░░░░░░░░▒▒▒                
+	               ▒▒▒░░░░░░░░░░░▒▒▒░               
+	               ▒▒▒░░░░░░░░░░░▒▒▒▒               
+	               ▒▒▒░░░░░░░░░░░░▒▒▒               
+	              ░ ░░░░░░░░░░░░░░▒░░               
+	              ░░ ░ ░░░░░░░░░░░ ░ ░              
+	              ░ ░             ░ ░░              
+	             ░ ░             ░ ░ ░              
+	             ░░ ░             ░ ░ ░             
+	         ░░▒░░ ░             ░ ░ ░░▒▒▒▒         
+	        ░░░▒▒ ░ ░             ░ ░ ░▒▒▒▒░        
+	        ░░▒▒▒▒ ░             ░ ░ ░▒▒▒▒▒▒        
+	        ░░▒▒▒▒░ ░             ░ ░▒▒▒▒▒▒▒        
+	       ░░░░▒▒▒▒▒░░           ░░░▒▒▒▒▒▒▒▒░       
+	       ░░░░▒▒▒▒▒▒▒░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒░       
+	       ░░░░▒▒▒▒▒▒▒░░▒▒░░░░░░░░░▒▒▒▒▒▒▒▒▒░       
+	      ░░░░░▒▒▒▒▒▒▒░▒▒▒░░░░░░░░░▒▒▒▒▒▒░░░░       
+	      ░░░░░░▒▒▒▒▒▒░▒▒▒░░░░░░░░░▒▒▒▒▒░░░░░░      
+	      ░░░░░░░░▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒░░░░░░░░      
+	      ░░░░░░░░░░░░▒▒▒▒▒░░░░░░░░░░░░░░░░░░░      
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░      
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	    ░            ░░░░░░░░░░░░                   
+	    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░    
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	                                                
+
+	Icon (32 x 32):
+	                                
+	               ░░░              
+	              ░░░▒              
+	              ░░░░              
+	             ░░░░░░             
+	             ░░░░░░             
+	             ░                  
+	                  ░             
+	                   ░            
+	            ░      ░            
+	                   ░            
+	           ░▒░░░░░░▒░           
+	           ▒▒░░░░░░▒▒           
+	           ▒░░░░░░░▒▒           
+	          ░▒░░░░░░░▒▒░          
+	          ▒▒░░░░░░░░▒▒          
+	          ░▒░░░░░░░░▒▒          
+	          ░ ░░░░░░░░░░          
+	         ░ ░         ░░         
+	         ░░         ░░░░░       
+	      ░▒▒░ ░       ░ ░░▒▒▒      
+	      ░▒▒░░         ░ ░▒▒▒░     
+	     ░░▒▒▒░░       ░░░▒▒▒▒░     
+	     ░░▒▒▒▒▒░░░░░░░░░▒▒▒▒▒▒     
+	     ░░▒▒▒▒▒░▒▒░░░░░░▒▒▒▒░░     
+	    ░░░░▒▒▒▒▒▒▒░░░░░░▒▒░░░░     
+	    ░░░░░░░▒▒▒▒▒░░░░░░░░░░░░    
+	    ░░░░░░░░░░░░░░░░░░░░░░░░    
+	    ░░░░░░░░░░░░░░░░░░░░░░░░    
+	   ░                        ░   
+	   ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░   
+	                                
+
+
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_CLIENT_LEADER(WINDOW): window id # 0x2a0013a
+_NET_WM_PID(CARDINAL) = 8579
+_NET_WM_WINDOW_TYPE(ATOM) = _KDE_NET_WM_WINDOW_TYPE_OVERRIDE, _NET_WM_WINDOW_TYPE_NORMAL
+_MOTIF_WM_HINTS(_MOTIF_WM_HINTS) = 0x2, 0x1, 0x0, 0x0, 0x0
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_NAME(STRING) = "vlc"
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLASS(STRING) = "vlc", "Vlc"
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		bitmap id # to use for icon: 0x2a0678f
+		window id # of group leader: 0x2a0013a
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		user specified location: 800, 999
+		program specified location: 800, 999
+		user specified size: 39 by 23
+		program specified size: 39 by 23
+		window gravity: NorthWest
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_COMMAND(STRING) = { "vlc" }
+window
+ 0x2a01c1a:
+_NET_WM_ICON(CARDINAL) = 	Icon (48 x 48):
+	                                                
+	                      ░░░                       
+	                     ░░░░░░                     
+	                     ▒░░░░▒                     
+	                     ▒░░░░▒                     
+	                    ░░░░░░▒░                    
+	                    ▒░░░░░░▒                    
+	                    ▒░░░░░░▒                    
+	                       ░   ░                    
+	                            ░                   
+	                   ░       ░                    
+	                            ░                   
+	                   ░       ░ ░                  
+	                  ░         ░                   
+	                             ░                  
+	                 ░░         ░ ░                 
+	                 ▒░░       ░░▒▒                 
+	                 ▒▒░░░░░░░░░▒▒▒                 
+	                ░▒▒░░░░░░░░░░▒▒░                
+	                ▒▒▒░░░░░░░░░░▒▒░                
+	                ▒▒▒░░░░░░░░░░▒▒▒                
+	               ░▒▒░░░░░░░░░░░▒▒▒                
+	               ▒▒▒░░░░░░░░░░░▒▒▒░               
+	               ▒▒▒░░░░░░░░░░░▒▒▒▒               
+	               ▒▒▒░░░░░░░░░░░░▒▒▒               
+	              ░ ░░░░░░░░░░░░░░▒░░               
+	              ░░ ░ ░░░░░░░░░░░ ░ ░              
+	              ░ ░             ░ ░░              
+	             ░ ░             ░ ░ ░              
+	             ░░ ░             ░ ░ ░             
+	         ░░▒░░ ░             ░ ░ ░░▒▒▒▒         
+	        ░░░▒▒ ░ ░             ░ ░ ░▒▒▒▒░        
+	        ░░▒▒▒▒ ░             ░ ░ ░▒▒▒▒▒▒        
+	        ░░▒▒▒▒░ ░             ░ ░▒▒▒▒▒▒▒        
+	       ░░░░▒▒▒▒▒░░           ░░░▒▒▒▒▒▒▒▒░       
+	       ░░░░▒▒▒▒▒▒▒░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒░       
+	       ░░░░▒▒▒▒▒▒▒░░▒▒░░░░░░░░░▒▒▒▒▒▒▒▒▒░       
+	      ░░░░░▒▒▒▒▒▒▒░▒▒▒░░░░░░░░░▒▒▒▒▒▒░░░░       
+	      ░░░░░░▒▒▒▒▒▒░▒▒▒░░░░░░░░░▒▒▒▒▒░░░░░░      
+	      ░░░░░░░░▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒░░░░░░░░      
+	      ░░░░░░░░░░░░▒▒▒▒▒░░░░░░░░░░░░░░░░░░░      
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░      
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	    ░            ░░░░░░░░░░░░                   
+	    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░    
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	                                                
+
+	Icon (32 x 32):
+	                                
+	               ░░░              
+	              ░░░▒              
+	              ░░░░              
+	             ░░░░░░             
+	             ░░░░░░             
+	             ░                  
+	                  ░             
+	                   ░            
+	            ░      ░            
+	                   ░            
+	           ░▒░░░░░░▒░           
+	           ▒▒░░░░░░▒▒           
+	           ▒░░░░░░░▒▒           
+	          ░▒░░░░░░░▒▒░          
+	          ▒▒░░░░░░░░▒▒          
+	          ░▒░░░░░░░░▒▒          
+	          ░ ░░░░░░░░░░          
+	         ░ ░         ░░         
+	         ░░         ░░░░░       
+	      ░▒▒░ ░       ░ ░░▒▒▒      
+	      ░▒▒░░         ░ ░▒▒▒░     
+	     ░░▒▒▒░░       ░░░▒▒▒▒░     
+	     ░░▒▒▒▒▒░░░░░░░░░▒▒▒▒▒▒     
+	     ░░▒▒▒▒▒░▒▒░░░░░░▒▒▒▒░░     
+	    ░░░░▒▒▒▒▒▒▒░░░░░░▒▒░░░░     
+	    ░░░░░░░▒▒▒▒▒░░░░░░░░░░░░    
+	    ░░░░░░░░░░░░░░░░░░░░░░░░    
+	    ░░░░░░░░░░░░░░░░░░░░░░░░    
+	   ░                        ░   
+	   ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░   
+	                                
+
+
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_CLIENT_LEADER(WINDOW): window id # 0x2a0013a
+_NET_WM_PID(CARDINAL) = 8579
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_MOTIF_WM_HINTS(_MOTIF_WM_HINTS) = 0x3, 0x3e, 0x7e, 0x0, 0x0
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_NAME(STRING) = "vlc"
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLASS(STRING) = "vlc", "Vlc"
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		bitmap id # to use for icon: 0x2a01c1c
+		window id # of group leader: 0x2a0013a
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		user specified size: 960 by 432
+		program specified size: 960 by 432
+		window gravity: NorthWest
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_COMMAND(STRING) = { "vlc" }
+window
+ 0x2a01c15:
+_NET_WM_ICON(CARDINAL) = 	Icon (48 x 48):
+	                                                
+	                      ░░░                       
+	                     ░░░░░░                     
+	                     ▒░░░░▒                     
+	                     ▒░░░░▒                     
+	                    ░░░░░░▒░                    
+	                    ▒░░░░░░▒                    
+	                    ▒░░░░░░▒                    
+	                       ░   ░                    
+	                            ░                   
+	                   ░       ░                    
+	                            ░                   
+	                   ░       ░ ░                  
+	                  ░         ░                   
+	                             ░                  
+	                 ░░         ░ ░                 
+	                 ▒░░       ░░▒▒                 
+	                 ▒▒░░░░░░░░░▒▒▒                 
+	                ░▒▒░░░░░░░░░░▒▒░                
+	                ▒▒▒░░░░░░░░░░▒▒░                
+	                ▒▒▒░░░░░░░░░░▒▒▒                
+	               ░▒▒░░░░░░░░░░░▒▒▒                
+	               ▒▒▒░░░░░░░░░░░▒▒▒░               
+	               ▒▒▒░░░░░░░░░░░▒▒▒▒               
+	               ▒▒▒░░░░░░░░░░░░▒▒▒               
+	              ░ ░░░░░░░░░░░░░░▒░░               
+	              ░░ ░ ░░░░░░░░░░░ ░ ░              
+	              ░ ░             ░ ░░              
+	             ░ ░             ░ ░ ░              
+	             ░░ ░             ░ ░ ░             
+	         ░░▒░░ ░             ░ ░ ░░▒▒▒▒         
+	        ░░░▒▒ ░ ░             ░ ░ ░▒▒▒▒░        
+	        ░░▒▒▒▒ ░             ░ ░ ░▒▒▒▒▒▒        
+	        ░░▒▒▒▒░ ░             ░ ░▒▒▒▒▒▒▒        
+	       ░░░░▒▒▒▒▒░░           ░░░▒▒▒▒▒▒▒▒░       
+	       ░░░░▒▒▒▒▒▒▒░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒░       
+	       ░░░░▒▒▒▒▒▒▒░░▒▒░░░░░░░░░▒▒▒▒▒▒▒▒▒░       
+	      ░░░░░▒▒▒▒▒▒▒░▒▒▒░░░░░░░░░▒▒▒▒▒▒░░░░       
+	      ░░░░░░▒▒▒▒▒▒░▒▒▒░░░░░░░░░▒▒▒▒▒░░░░░░      
+	      ░░░░░░░░▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒░░░░░░░░      
+	      ░░░░░░░░░░░░▒▒▒▒▒░░░░░░░░░░░░░░░░░░░      
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░      
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	    ░            ░░░░░░░░░░░░                   
+	    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░    
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	                                                
+
+	Icon (32 x 32):
+	                                
+	               ░░░              
+	              ░░░▒              
+	              ░░░░              
+	             ░░░░░░             
+	             ░░░░░░             
+	             ░                  
+	                  ░             
+	                   ░            
+	            ░      ░            
+	                   ░            
+	           ░▒░░░░░░▒░           
+	           ▒▒░░░░░░▒▒           
+	           ▒░░░░░░░▒▒           
+	          ░▒░░░░░░░▒▒░          
+	          ▒▒░░░░░░░░▒▒          
+	          ░▒░░░░░░░░▒▒          
+	          ░ ░░░░░░░░░░          
+	         ░ ░         ░░         
+	         ░░         ░░░░░       
+	      ░▒▒░ ░       ░ ░░▒▒▒      
+	      ░▒▒░░         ░ ░▒▒▒░     
+	     ░░▒▒▒░░       ░░░▒▒▒▒░     
+	     ░░▒▒▒▒▒░░░░░░░░░▒▒▒▒▒▒     
+	     ░░▒▒▒▒▒░▒▒░░░░░░▒▒▒▒░░     
+	    ░░░░▒▒▒▒▒▒▒░░░░░░▒▒░░░░     
+	    ░░░░░░░▒▒▒▒▒░░░░░░░░░░░░    
+	    ░░░░░░░░░░░░░░░░░░░░░░░░    
+	    ░░░░░░░░░░░░░░░░░░░░░░░░    
+	   ░                        ░   
+	   ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░   
+	                                
+
+
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_CLIENT_LEADER(WINDOW): window id # 0x2a0013a
+_NET_WM_PID(CARDINAL) = 8579
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_MOTIF_WM_HINTS(_MOTIF_WM_HINTS) = 0x3, 0x3e, 0x7e, 0x0, 0x0
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_NAME(STRING) = "vlc"
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLASS(STRING) = "vlc", "Vlc"
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		bitmap id # to use for icon: 0x2a01c17
+		window id # of group leader: 0x2a0013a
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		user specified size: 960 by 432
+		program specified size: 960 by 432
+		window gravity: NorthWest
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_COMMAND(STRING) = { "vlc" }
+window
+ 0x2e00132:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_CLIENT_LEADER(WINDOW): window id # 0x2e0012d
+_NET_WM_PID(CARDINAL) = 8703
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_MOTIF_WM_HINTS(_MOTIF_WM_HINTS) = 0x3, 0x3e, 0x7e, 0x0, 0x0
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_NAME(STRING) = "kded4"
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLASS(STRING) = "kded4", "Kded4"
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		window id # of group leader: 0x2e0012d
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		user specified size: 960 by 432
+		program specified size: 960 by 432
+		window gravity: NorthWest
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_COMMAND(STRING) = { "kded4" }
+window
+ 0x2e0012d:
+WM_CLIENT_LEADER(WINDOW): window id # 0x2e0012d
+window
+ 0x2e0012b:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_CLIENT_LEADER(WINDOW): window id # 0x2e0012d
+_NET_WM_PID(CARDINAL) = 8703
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_MOTIF_WM_HINTS(_MOTIF_WM_HINTS) = 0x3, 0x3e, 0x7e, 0x0, 0x0
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_NAME(STRING) = "kded4"
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLASS(STRING) = "kded4", "Kded4"
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		window id # of group leader: 0x2e0012d
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		user specified size: 960 by 432
+		program specified size: 960 by 432
+		window gravity: NorthWest
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_COMMAND(STRING) = { "kded4" }
+window
+ 0x2a00b09:
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 44043054
+_NET_WM_USER_TIME(CARDINAL) = 1664199
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2a0014f
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		user specified location: 2, 40
+		program specified location: 2, 40
+		user specified size: 409 by 330
+		program specified size: 409 by 330
+		window gravity: Static
+WM_HINTS(WM_HINTS):
+		Initial state is Normal State.
+		bitmap id # to use for icon: 0x2a00b2b
+_NET_WM_ICON(CARDINAL) = 	Icon (48 x 48):
+	                                                
+	                      ░░░                       
+	                     ░░░░░░                     
+	                     ▒░░░░▒                     
+	                     ▒░░░░▒                     
+	                    ░░░░░░▒░                    
+	                    ▒░░░░░░▒                    
+	                    ▒░░░░░░▒                    
+	                       ░   ░                    
+	                            ░                   
+	                   ░       ░                    
+	                            ░                   
+	                   ░       ░ ░                  
+	                  ░         ░                   
+	                             ░                  
+	                 ░░         ░ ░                 
+	                 ▒░░       ░░▒▒                 
+	                 ▒▒░░░░░░░░░▒▒▒                 
+	                ░▒▒░░░░░░░░░░▒▒░                
+	                ▒▒▒░░░░░░░░░░▒▒░                
+	                ▒▒▒░░░░░░░░░░▒▒▒                
+	               ░▒▒░░░░░░░░░░░▒▒▒                
+	               ▒▒▒░░░░░░░░░░░▒▒▒░               
+	               ▒▒▒░░░░░░░░░░░▒▒▒▒               
+	               ▒▒▒░░░░░░░░░░░░▒▒▒               
+	              ░ ░░░░░░░░░░░░░░▒░░               
+	              ░░ ░ ░░░░░░░░░░░ ░ ░              
+	              ░ ░             ░ ░░              
+	             ░ ░             ░ ░ ░              
+	             ░░ ░             ░ ░ ░             
+	         ░░▒░░ ░             ░ ░ ░░▒▒▒▒         
+	        ░░░▒▒ ░ ░             ░ ░ ░▒▒▒▒░        
+	        ░░▒▒▒▒ ░             ░ ░ ░▒▒▒▒▒▒        
+	        ░░▒▒▒▒░ ░             ░ ░▒▒▒▒▒▒▒        
+	       ░░░░▒▒▒▒▒░░           ░░░▒▒▒▒▒▒▒▒░       
+	       ░░░░▒▒▒▒▒▒▒░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒░       
+	       ░░░░▒▒▒▒▒▒▒░░▒▒░░░░░░░░░▒▒▒▒▒▒▒▒▒░       
+	      ░░░░░▒▒▒▒▒▒▒░▒▒▒░░░░░░░░░▒▒▒▒▒▒░░░░       
+	      ░░░░░░▒▒▒▒▒▒░▒▒▒░░░░░░░░░▒▒▒▒▒░░░░░░      
+	      ░░░░░░░░▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒░░░░░░░░      
+	      ░░░░░░░░░░░░▒▒▒▒▒░░░░░░░░░░░░░░░░░░░      
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░      
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	    ░            ░░░░░░░░░░░░                   
+	    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░    
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	                                                
+
+	Icon (32 x 32):
+	                                
+	               ░░░              
+	              ░░░▒              
+	              ░░░░              
+	             ░░░░░░             
+	             ░░░░░░             
+	             ░                  
+	                  ░             
+	                   ░            
+	            ░      ░            
+	                   ░            
+	           ░▒░░░░░░▒░           
+	           ▒▒░░░░░░▒▒           
+	           ▒░░░░░░░▒▒           
+	          ░▒░░░░░░░▒▒░          
+	          ▒▒░░░░░░░░▒▒          
+	          ░▒░░░░░░░░▒▒          
+	          ░ ░░░░░░░░░░          
+	         ░ ░         ░░         
+	         ░░         ░░░░░       
+	      ░▒▒░ ░       ░ ░░▒▒▒      
+	      ░▒▒░░         ░ ░▒▒▒░     
+	     ░░▒▒▒░░       ░░░▒▒▒▒░     
+	     ░░▒▒▒▒▒░░░░░░░░░▒▒▒▒▒▒     
+	     ░░▒▒▒▒▒░▒▒░░░░░░▒▒▒▒░░     
+	    ░░░░▒▒▒▒▒▒▒░░░░░░▒▒░░░░     
+	    ░░░░░░░▒▒▒▒▒░░░░░░░░░░░░    
+	    ░░░░░░░░░░░░░░░░░░░░░░░░    
+	    ░░░░░░░░░░░░░░░░░░░░░░░░    
+	   ░                        ░   
+	   ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░   
+	                                
+
+
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_DROPDOWN_MENU, _NET_WM_WINDOW_TYPE_POPUP_MENU, _NET_WM_WINDOW_TYPE_NORMAL
+_KDE_NET_WM_SHADOW(CARDINAL) = 44043018, 44043022, 44043026, 44043030, 44043034, 44043038, 44043042, 44043046, 39, 39, 39, 39
+window
+ 0x2a0013a:
+WM_CLIENT_LEADER(WINDOW): window id # 0x2a0013a
+window
+ 0x2802fee:
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 41955318
+_NET_WM_USER_TIME(CARDINAL) = 1572374
+_KDE_OXYGEN_BACKGROUND_PIXMAP(CARDINAL) = 0
+_KDE_OXYGEN_BACKGROUND_GRADIENT(CARDINAL) = 1
+_NET_WM_ICON(CARDINAL) = 	Icon (48 x 48):
+	                                                
+	                                                
+	                                                
+	                                                
+	                                                
+	                                                
+	                    ░░░░░░░                     
+	                 ▒▓▓████████▓▒░                 
+	              ░▓██▓▓▒▒▒▒▒▒▒▓▓██▓░               
+	             ▒██▓▒░░░░░░░░░░░▒▓▓█▓░             
+	           ░▓█▓▒░░░░░░░░░░░░░░░░▓██▒            
+	          ░█▓▒░░░░░░░░░░░░░░░░░░░▒▓█▒           
+	         ░█▓▒░░░░░░░░▒▒▒▒▒░░░░░░░░░▓█▒          
+	        ░█▓░░░░░░░▒▓███████▓▒░░░░░░░▓█░         
+	        ▓▓▒░░░░░▒▓█▓▓▒░░░▒▒▓█▓▒░░░░░▒▓▓░        
+	       ▓█▒░░░░░▓█▓▒         ▒▓█▓░░░░░▒█▓        
+	      ░█▓░░░░░▓█▓             ▓█▓░░░░░▓█░       
+	      ▓█▒░░░░▓█▒               ▒█▓░░░░▒▓▓       
+	      █▓░░░░▒█▓                 ▓█▒░░░░▓█░      
+	     ▒█▒░░░░▓█                   █▓░░░░▒█▒      
+	     ▓█▒░░░▒█▒                   ▒█▒░░░▒▓▓      
+	     ▓▓░░░░▓█░                   ░█▓░▒▒▒▓▓      
+	     █▓░░░░▓▓                     ▓▓▒▒▒▒▓█      
+	     █▓░░░░▓▓                     ▓▓▒▒▒▒▓█░     
+	     █▓░░░▒▓▓                     ▓█▒▒▒▒▒█░     
+	     █▓▒▒▒▒▓▓▓▓▓▓▓▓▓▓▒░           ▓█▒▒▒▒▓█░     
+	     █▓▒▒▒▒▓██▓▓▓▓▓▓███▓▒░        ▓█▒▒▒▒▓█░     
+	     █▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓██▓░      ▓▓▒▒▒▒▓█      
+	     ▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓██▓    ░█▓▒▒▒▒▓█      
+	     ▒█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓█▓░  ▒█▒▒▒▒▒▓▓      
+	     ░█▓▒▒▒▒▒▒▓▓▓▓▓▓▓▒▒▒▒▒▒▒▓▓█▒ ▓▓▒▒▒▒▒█▒      
+	      ▓▓▒▒▒▒▒▓█▓▓▓▓███▓▓▒▒▒▒▒▒▓█▓█▒▒▒▒▒▓█░      
+	      ▒█▓▒▒▒▒▓█▓    ░▒▓█▓▓▒▒▒▒▒▓█▓▒▒▒▒▒█▓       
+	       ▓▓▒▒▒▒▒▓█▓░     ▒▓█▓▒▒▒▒▒▒▒▒▒▒▒▓█░       
+	       ░█▓▒▒▒▒▒▓▓█▒░     ▓█▓▒▒▒▒▒▒▒▒▒▓█▒        
+	        ▓█▓▒▒▒▒▒▒▓██▓▒▒░▒▒██▓▒▒▒▒▒▒▒▒▓▓░        
+	         ▓█▓▒▒▒▒▒▒▓▓▓█████▓▓▒▒▒▒▒▒▒▒▒▓██▓█▓     
+	          ▓▓▓▒▒▒▒▒▒▒▒▒▒▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓     
+	           ▓█▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓     
+	            ▓█▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒▒▒▒▒▒▓▓     
+	             ░▓█▓▓▓▒▒▒▒▒▒▒▒▒▒▓▓▓█▓█▓▓▒▒▒▒▓▓     
+	               ▒▓██▓▓▓▓▓▓▓▓▓██▓▓░ ▒▓█▓▓▓▓▓▓     
+	                 ░▒▓▓██████▓▓▒      ▒▓████▓     
+	                      ░░░░             ░░░      
+	                                                
+	                                                
+	                                                
+	                                                
+
+
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+_NET_WM_NAME(UTF8_STRING) = "QNapi - pobieranie napisów..."
+WM_CLIENT_LEADER(WINDOW): window id # 0x280012e
+_NET_WM_PID(CARDINAL) = 8442
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_MOTIF_WM_HINTS(_MOTIF_WM_HINTS) = 0x3, 0x3e, 0x7e, 0x0, 0x0
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_NAME(STRING) = "QNapi - pobieranie napisów..."
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLASS(STRING) = "qnapi", "Qnapi"
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		bitmap id # to use for icon: 0x2802ff3
+		window id # of group leader: 0x280012e
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		user specified location: 962, 417
+		program specified location: 962, 417
+		user specified size: 800 by 140
+		program specified size: 800 by 140
+		program specified minimum size: 580 by 140
+		program specified maximum size: 800 by 140
+		window gravity: NorthWest
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_COMMAND(STRING) = { "qnapi" }
+window
+ 0x280012e:
+WM_CLIENT_LEADER(WINDOW): window id # 0x280012e
+window
+ 0x2200999:
+WM_STATE(WM_STATE):
+		window state: Withdrawn
+		icon window: 0x0
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		bitmap id # to use for icon: 0x220099c
+		bitmap id # of mask for icon: 0x220099d
+		window id # of group leader: 0x2200001
+WM_WINDOW_ROLE(STRING) = "Msgcompose"
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+_NET_WM_ICON(CARDINAL) = 	Icon (16 x 16):
+	     ░          
+	    ▒░▒▒▒▒░     
+	  ░▒░░░░░░▒▒░   
+	  ▒░░░▒▒▒░░▒▒░  
+	 ▒▒▒▒▒▓▓▓▒▒▒░▒  
+	░▒▒▒▒▒▒░▒▓▒░▒▒░ 
+	░▒▓░▒░   ▒▒▒▒░▒ 
+	▒▒▒▒░    ░▓░▒░▒ 
+	▒▓░ ░  ░░▒▓▒▒▒▒ 
+	░▓   ░░░  ▒▒▒▒▒ 
+	░▓░       ░▓▒▒▒ 
+	 ▓▓░░     ░▓▓▒░ 
+	  ▓▒▒▒▒░  ▒▓▓▒  
+	   ▒░░░▒▒▒▓▓▓   
+	      ░░▒▓▓▒    
+	       ░▒▒░     
+
+	Icon (32 x 32):
+	            ░▒                  
+	          ░▒▒▒░░░░░             
+	         ░▒▒░░░░▒▒▒▒▒▒          
+	        ░▒░░░░░▒▒▒▒▒▒▒▒▒░       
+	       ▒▒░░░░░▒▒▒▒▒▒▒░▒▒▒▒      
+	     ░▒▒░ ░░░░▒▒▒▒░░▒▒▒░▒▒▒     
+	     ▒▒▒░░▒▒░▒▒▒░░░░░░▒▒▒▒▒▒    
+	    ▒░▓░░▒▒░░▒▒▓▓▓▒░▒▒░▒▒░▒▒▒   
+	   ░░▒▓░▒░▒░▒▒▒▓▓▓▓▓░▒▒░▒▒▒▒▒▒  
+	   ░▒▓▓░▓▓░▒▒▓▓▓▓▓▓▓▒░▒▒▒░▒▒▒▒░ 
+	  ░░▓▓▓▒▒▒▒▓▓▓▓▓▓▓▓▓▓▒░▒░▒▒▒▒▒▒ 
+	  ░▒▓▒▓ ░▓▓▓▒░░   ░▒▓▓░▒░▒▒▒▒▒▒ 
+	 ░░▒▓░▒░░▓▒░        ▒▓░▒▒▒▒▒▒▒▒░
+	 ░░▓▒ ▒░▓▒░          ▓▒▒▓▒▒▒░▒▒▒
+	 ▒░▓▒ ░▒▒░          ░▒▓▒▓▒▒▒░▒▒▒
+	 ▒▒▒▒   ░░        ░▒░▒▒▒▓░▒▒░▒▒▒
+	 ▒▓▓▒   ░▒      ░▒░  ▒▒▒▓░▒▒▒▒▒▒
+	 ░▒▓░     ░   ░▒░░   ▒▒▓▓░▒▒▒▒▒▒
+	 ░▒▒ ░    ░░▒░░  ░   ▒▓▓▓▒▓▒▒▒▒▒
+	  ▒▓░                ▒▓▒▓▓▒▒▒▒▒▒
+	  ▒▓░             ░    ▒▓▓▒▒▓▓▒░
+	  ░▓▒░             ░   ▒▓▓▒▓▓▓▒ 
+	   ▒▓▓▒▒░          ░   ▓▓▓▒▓▓▓▒ 
+	   ░▓▓▓▓▓▒▒░        ░ ░▓▓▓▓▓▒▓░ 
+	    ░▓▓▓▒▓▒░▒▒░    ░░░▓▓▓▓▓▒▓▒  
+	     ░▓▓░░▒░░░▒▒▒░  ░▒▓▓▓▓▓▓▓   
+	      ░▓▓ ░░░░░░░▒▒▒░▓▓▓▓▓▓▓    
+	       ░▒░░░░░░░░░░░▓▓▓▓▓▓▓     
+	            ░░░░░░░▒▓▓▓▓▓▒      
+	               ░░▒▒▒▓▓▓▓░       
+	                ░▓▓▒▒▒▒         
+	                                
+
+	Icon (48 x 48):
+	                 ▒                              
+	                ▒▒▒░                            
+	               ▒░▒▒▒▒░░░░░░░░                   
+	              ▒░▒▒░░░░░░▒▒▒▒▒▒▒░                
+	             ▒░░▒░░░░░░▒▒▒▒▒▒▒▒▒▒░              
+	           ░▒▒░░░░░░░░▒▒▒▒▒▒▒▒▒░▒▒▒░            
+	          ▒▒▒░░░░░░░░▒▒▒▒▒▒▒░░▒▒▒▒▒▒▒░          
+	         ▒▒▒░░░░░░░░░▒▒▒▒▒░░▒▒▒▒▒▒░▒▒▒▒         
+	        ▒▒▒▒░░░░░▒░░▒▒▒▒▒▒▒▒▒▒░░▒▒▒▒░░▒▒        
+	       ▒▒▒▒░░░░▒▒▒░▒▒▒▒▒░░▒▒░▒▒▒▒░░▒▒▒░▒▒       
+	      ▒░▒▓░░░░▒▒▒░░▒▒▓▓▒▒░░░░░▒░▒▒▒▒▒▒▒░▒▒      
+	     ░░▒▓▓ ░░▒▒▒░░▒▒▒▓▓▓▓▓▒▒░▒▒▒░▒▒▒▒▒▒░▒▒▒     
+	    ░▒▒▒▓▓░░▒▓▓▒░▒▒▒▒▒▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒░▒▒▒▒▒░    
+	    ▒░▒▓▓▓░░▒░░▒░▒▒▒▒▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒░▒▒▒▒▒▒    
+	   ░░▒▓▓▓▓░░▒▓▒░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▒░▒▒▒░▒░░▒▒▒▒▒░   
+	   ░▒▒▓▓▒▓▒░▒░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░▒▒░▒▒▒▒▒▒▒░▒   
+	   ░▒▒▓▓▒▓▒▒▒▒▒▓▓▓▓▒▒▒░░░▒▒▓▓▓▓▒░▒▒░▒▒▒▒▒▒▒░▒░  
+	  ░░▒▓▓▒░▓░▒▒▓▓▓▒▒▒░       ░░▒▒▓░░▒░▒▒▒▒▒▒▒░░▒  
+	  ░░▒▓▒░░▒░░▓▓▒▒▒░           ░▒▓▒░▒▒▒▒▒▒▒░▒▒░▒  
+	  ▒░▒▓▒░ ▒░▓▒▒▒░░             ░▓▒░▒▓▒▒▒▒▒░▒▒░▓░ 
+	 ░▒░▓▓░  ▒▒▒░░░░              ░▒▓▒▒▓▒▒▒▒▒░▒▒▒▓▒ 
+	 ░▒░▒▓░   ▒░░░░                ░▓▒▒▓▒▒▒▒▒░░▒▒▒▒ 
+	 ░▒░▒▓░     ▒░                 ░▓▒▒▓▒░▒▒▒░▒▒▒▒▒ 
+	 ▒▒▒▒▒░     ░▒               ░░▒▒▒▒▓▒░▒▒▒░▒▒▒▒▒ 
+	 ▒▒▓▒▒░      ░░           ░░▒░ ░▒▒▒▓▒░▒▒▒▒▒▒▒▒▒ 
+	 ░▒▓▒▒░       ░         ░░░    ░▒▒▒▓▒░▒▒▒▒▒▒▒▒▒ 
+	 ░▒▓▒░░        ░     ░░░░      ░▒▒▓▓░░▒▒▒▒▒▒▒▒▒ 
+	  ▒▒▒░░        ░░ ░░░░         ▒▒▓▓▓▒▒▓▒▒▒▒░▒▒▒ 
+	  ▒▒▒░          ░░            ░▒▓▓▒▓▒▓▓▒▒▒▒░▒▒▒ 
+	  ▒▒▒░                        ░▒▒░▒▓▒▓▒░▒▓▒▒▓▒░ 
+	  ░▓▓░                          ░░▒▓▒▓▒░▒▓▓▓▓▒░ 
+	   ▓▓▒                           ░▒▓▒▓▓▒▓▓▓▓▒▒  
+	   ▒▓▓▒░                    ░    ░▓▓▓▓▓▒▓▓▒▓▒▒  
+	    ▓▓▓▒▒░                       ▒▓▓▓▓▒▒▓▓▒▓▒░  
+	    ░▓▓▓▓▓▒▒░                ░   ▒▓▓▓▓▒▓▓▒▓▓▒   
+	     ▒▓▓▓▓▓▓▓▒▒░             ░░ ░▓▓▓▓▓▓▓▓▒▓▒░   
+	      ▓▓▓▓▓░▓▓▓░░░░    ░░     ░░▒▓▓▓▓▓▓▓▒▓▓▒    
+	       ▓▓▓▓▒ ▒▓▒ ░░▒░░    ░░░░░░▒▓▓▓▓▓▓▒▒▓▓     
+	        ▒▓▓▓  ░▒░░░░░░▒▒░   ░░░▒▓▓▓▓▓▓▓▒▓▓░     
+	         ▒▓▓▒ ░░░░░░░░░░░▒░░  ░▓▒▓▓▓▓▓▓▓▓░      
+	          ░▓▓░░░░░░░░░░░░░░░▒▒▒▒▓▓▓▓▓▓▓▓░       
+	           ░▒░ ░░░░░░░░░░░░░░▒▒▒▓▓▓▓▓▓▓░        
+	                 ░░░░░░░░░░░▒▒▒▓▓▓▓▒▓▒          
+	                    ░░░░░░░▒▒▒▓▓▓▓▒▓▒           
+	                      ░░░▒▒▒▒▓▓▓▓▒▓░            
+	                        ▒▒▒▓▓▓▒▒▒▒              
+	                        ▒▒▒░░░▒░                
+	                                                
+
+
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 35654043
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_NET_WM_USER_TIME(CARDINAL) = 0
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x220099a
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified minimum size: 34 by 265
+		program specified maximum size: 32767 by 32767
+		window gravity: NorthWest
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Msgcompose", "Thunderbird"
+WM_ICON_NAME(STRING) = "Tworzenie: (bez tematu)"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Tworzenie: (bez tematu)"
+WM_NAME(STRING) = "Tworzenie: (bez tematu)"
+_NET_WM_NAME(UTF8_STRING) = "Tworzenie: (bez tematu)"
+window
+ 0x220099a:
+window
+ 0x22009ed:
+GDK_TIMESTAMP_PROP(GDK_TIMESTAMP_PROP) = 0x61
+_NET_WM_USER_TIME(CARDINAL) = 1504076
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 10 by 10
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_ICON_NAME(STRING) = "Thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Thunderbird"
+WM_NAME(STRING) = "Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "Thunderbird"
+window
+ 0x22009ea:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2200999
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 35654124
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_POPUP_MENU
+_NET_WM_USER_TIME(CARDINAL) = 1504076
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x22009eb
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Thunderbird"
+WM_ICON_NAME(STRING) = "Thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Thunderbird"
+WM_NAME(STRING) = "Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "Thunderbird"
+window
+ 0x22009eb:
+window
+ 0x22009a7:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2200999
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 35654057
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_POPUP_MENU
+_NET_WM_USER_TIME(CARDINAL) = 1504076
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x22009a8
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Thunderbird"
+WM_ICON_NAME(STRING) = "Thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Thunderbird"
+WM_NAME(STRING) = "Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "Thunderbird"
+window
+ 0x22009a8:
+window
+ 0x22009a4:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2200999
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 35654054
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_POPUP_MENU
+_NET_WM_USER_TIME(CARDINAL) = 1504076
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x22009a5
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Thunderbird"
+WM_ICON_NAME(STRING) = "Thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Thunderbird"
+WM_NAME(STRING) = "Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "Thunderbird"
+window
+ 0x22009a5:
+window
+ 0x220099e:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2200999
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 35654048
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_POPUP_MENU
+_NET_WM_USER_TIME(CARDINAL) = 1504076
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x220099f
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Thunderbird"
+WM_ICON_NAME(STRING) = "Thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Thunderbird"
+WM_NAME(STRING) = "Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "Thunderbird"
+window
+ 0x220099f:
+window
+ 0x200dbf6:
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		window id # of group leader: 0x2000001
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2000078
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33610744
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_UTILITY
+_NET_WM_USER_TIME(CARDINAL) = 1373121
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x200dbf7
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified location: 0, 0
+		program specified minimum size: 280 by 100
+		program specified maximum size: 32767 by 32767
+		window gravity: NorthWest
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Firefox"
+WM_ICON_NAME(STRING) = "Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x200dbf7:
+window
+ 0x2004e00:
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		window id # of group leader: 0x2000001
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2000078
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33574402
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_UTILITY
+_NET_WM_USER_TIME(CARDINAL) = 1370467
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x2004e01
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified location: 0, 0
+		program specified minimum size: 1 by 4
+		program specified maximum size: 32767 by 32767
+		window gravity: NorthWest
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Firefox"
+WM_ICON_NAME(STRING) = "Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x2004e01:
+window
+ 0x2008fa4:
+XdndTypeList(ATOM) = text/x-moz-url, _NETSCAPE_URL, text/x-moz-url-data, text/x-moz-url-desc, text/uri-list, text/_moz_htmlcontext, text/_moz_htmlinfo, text/html, text/unicode, text/plain;charset=utf-8, text/plain, application/x-moz-nativeimage, application/x-moz-file-promise, application/x-moz-file-promise-url, application/x-moz-file-promise-dest-filename
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		window id # of group leader: 0x2000001
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33591206
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_NET_WM_USER_TIME(CARDINAL) = 966718
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x2008fa5
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified location: 0, 0
+		program specified minimum size: 0 by 0
+		window gravity: NorthWest
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "firefox", "Firefox"
+WM_ICON_NAME(STRING) = "Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x2008fa5:
+window
+ 0x1e01bfe:
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_DIALOG
+_NET_WM_STATE(ATOM) = _NET_WM_STATE_SKIP_TASKBAR
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: False
+		window id # of group leader: 0x1e0043a
+WM_TRANSIENT_FOR(WINDOW): window id # 0x1e0043a
+_NET_WM_PID(CARDINAL) = 5270
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_PROTOCOLS(ATOM): protocols  
+_MOTIF_WM_HINTS(_MOTIF_WM_HINTS) = 0x3, 0x0, 0x0, 0x0, 0x0
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified location: 862, 465
+		program specified size: 462 by 212
+		window gravity: NorthWest
+WM_CLASS(STRING) = "sun-awt-X11-XWindowPeer", "jetbrains-phpstorm"
+WM_CLIENT_LEADER(WINDOW): window id # 0x1e00005
+_NET_WM_NAME(UTF8_STRING) = "win0"
+WM_NAME(STRING) = "win0"
+window
+ 0x2004151:
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		window id # of group leader: 0x2000001
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2000078
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33571155
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_POPUP_MENU
+_NET_WM_USER_TIME(CARDINAL) = 437900
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x2004152
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified location: 0, 0
+		program specified minimum size: 1 by 4
+		program specified maximum size: 32767 by 32767
+		window gravity: NorthWest
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Firefox"
+WM_ICON_NAME(STRING) = "Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x2004152:
+window
+ 0x220064b:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2200078
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 35653197
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_TOOLTIP
+_NET_WM_USER_TIME(CARDINAL) = 419229
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x220064c
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Thunderbird"
+WM_ICON_NAME(STRING) = "Thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Thunderbird"
+WM_NAME(STRING) = "Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "Thunderbird"
+window
+ 0x220064c:
+window
+ 0x100000a:
+_NET_SYSTEM_TRAY_COLORS(CARDINAL) = 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535
+_NET_SYSTEM_TRAY_ORIENTATION(CARDINAL) = 0
+window
+ 0xc00118:
+WM_NAME(STRING) = "[i3 con] container around 0x9c6760"
+window
+ 0x1e0265c:
+WM_STATE(WM_STATE):
+		window state: Normal
+		icon window: 0x0
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_DIALOG
+_MOTIF_WM_HINTS(_MOTIF_WM_HINTS) = 0x3, 0x26, 0x1e, 0x0, 0x0
+_NET_FRAME_EXTENTS(CARDINAL) = 2, 2, 18, 2
+_NET_WM_ICON(CARDINAL) = 	Icon (32 x 32):
+	                                
+	                                
+	                    ░░░░░░░▒▒   
+	                   ░░     ░▒░   
+	                   ░    ░░▒▒░   
+	                  ░    ░▒▒▒░    
+	                  ░   ░▒░▒░░    
+	                 ░    ░░▒▒░     
+	                 ░   ░▒▒▒░      
+	                 ▒   ░▒▒▒░      
+	▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒░  ░░▒▒▒░      
+	▒              ░▒░  ░░░░▒░      
+	▒ ▒░░░▒  ░░░░░▒▒▓░░ ░░░░▒▒      
+	▒ ▒▒▒▒▒  ░▒▒▒▒▒▒▒▒▒ ░░░░░▒░     
+	▒ ▒▒▒▒▒ ░░▒▒▒▒▒▒▒▒▒░░░░░░░▒░    
+	▒ ▒▒▒▒▒ ░▒▒▒▒▒▒▒▒▓▒▒░░░░░░░▒░   
+	▒ ░▒ ░▒ ░░ ▒▒░▒ ░░▓▒▒░░░░░░▒▒   
+	▒  ░  ▒  ░  ▒ ░  ░▒▓▒▒░░░░░▒▒░  
+	▒  ░▒ ░ ░▒  ▒  ▒  ░▒▓▒▒░░░░▒▒▒  
+	▒  ░▒ ░ ░▒  ▒  ▒  ░▒▒▒▒░░░░▒▒▒░ 
+	▒░ ░▒ ░ ░▒  ▒  ▒  ░▒▒▓░░ ░░▒▒▒░ 
+	▒░ ░▒ ░ ░▒  ▒  ▒  ░▒▒▓▒░ ░░▒▒▒░ 
+	▒░ ░▒ ▒ ░▒  ▒  ░ ░▒▒▒▓▒░ ░░▒▒▒░ 
+	▒░ ░  ▒ ░▒  ▒    ░▒▒▓▒▒ ░░░▒▒▒░ 
+	▒░ ▒▒▒▒▒▒▒▒▒▒  ▒▒▒▒▓▒▒░ ░░▒▒▓░  
+	▒░ ░▒░▒▒▒▒▒▒▒  ▒▒▒▓▒▒░ ░░░▒▒▒░  
+	▓░ ░▒▒▒▒▒▒▒▒▒  ▒▒▒▓▒▒░░░░▒▒▓▒░  
+	▓░ ▒▒▒▒▒▒▒▒▒▓  ▒▒▓▒▒░▒▒▒▒▒▒▒░   
+	▓▒▒▓▓▓▓▓▓▓▓▓▓▒▒▓▓▒▒▒▒▒▒▒▒▒▓░░   
+	 ░░░░░░░░░░░░░░░░░░░░░░░░░░░    
+	                                
+	                                
+
+	Icon (16 x 16):
+	          ░░░▒▒▒
+	         ░░  ░▒ 
+	         ▒  ░▒  
+	         ░ ░▒▒  
+	▓▓▓▓▓▓▓▓▓  ░▒   
+	▒       ▒  ░▒░  
+	▒ ░░ ▒▒▒▒░ ░░▒  
+	▒ ░░ ▒▒▒▒▒░░░░▒ 
+	▒  ░  ░  ░▒░░░▒▒
+	▒ ▒  ▒  ▓ ▓▒░░░▓
+	▓ ▒  ▓  ▓ ▓▓░░░▓
+	▓ ▓  ▓  ▓ ▓▓░░░▓
+	▓  ░ ▓   ░▓▒ ░▒▓
+	▓ ▓▒▒▒▒ ▓▒▓░ ░▒▓
+	▓ ▓▒▒▒▒ ▓▓▒░░▒▓ 
+	▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 
+
+
+_NET_WM_STATE(ATOM) = _NET_WM_STATE_SKIP_TASKBAR
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: False
+		window id # of group leader: 0x1e0043a
+WM_TRANSIENT_FOR(WINDOW): window id # 0x1e0119e
+_NET_WM_PID(CARDINAL) = 5270
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS
+WM_CLASS(STRING) = "sun-awt-X11-XDialogPeer", "jetbrains-phpstorm"
+WM_CLIENT_LEADER(WINDOW): window id # 0x1e00005
+_NET_WM_ICON_NAME(UTF8_STRING) = "Partial Commit of Active Changelist"
+WM_ICON_NAME(STRING) = "Partial Commit of Active Changelist"
+_NET_WM_NAME(UTF8_STRING) = "Partial Commit of Active Changelist"
+WM_NAME(STRING) = "Partial Commit of Active Changelist"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		user specified location: 239, 463
+		program specified location: 239, 463
+		program specified size: 471 by 105
+		window gravity: NorthWest
+window
+ 0x1e02662:
+WM_CLASS(STRING) = "Focus-Proxy-Window", "FocusProxy"
+WM_CLIENT_LEADER(WINDOW): window id # 0x1e00005
+_NET_WM_NAME(UTF8_STRING) = "FocusProxy"
+WM_NAME(STRING) = "FocusProxy"
+window
+ 0x1e0265f:
+WM_CLASS(STRING) = "sun-awt-X11-XContentWindow", "jetbrains-phpstorm"
+WM_CLIENT_LEADER(WINDOW): window id # 0x1e00005
+_NET_WM_NAME(UTF8_STRING) = "Content window"
+WM_NAME(STRING) = "Content window"
+window
+ 0xc00119:
+WM_NAME(STRING) = "[i3 con] floatingcon around 0x9c6ec0"
+window
+ 0xc00078:
+WM_NAME(STRING) = "[i3 con] container around 0x9afb50"
+window
+ 0x1000007:
+WM_STATE(WM_STATE):
+		window state: Normal
+		icon window: 0x0
+_NET_WM_STRUT_PARTIAL(CARDINAL) = 0, 0, 0, 19, 0, 0, 0, 0, 0, 0, 1920, 3840
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_DOCK
+WM_NAME(STRING) = "i3bar for output VGA-0"
+WM_CLASS(STRING) = "i3bar", "i3bar"
+window
+ 0x2a0018e:
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 44040596
+_NET_WM_ICON(CARDINAL) = 	Icon (48 x 48):
+	                                                
+	                      ░░░                       
+	                     ░░░░░░                     
+	                     ▒░░░░▒                     
+	                     ▒░░░░▒                     
+	                    ░░░░░░▒░                    
+	                    ▒░░░░░░▒                    
+	                    ▒░░░░░░▒                    
+	                       ░   ░                    
+	                            ░                   
+	                   ░       ░                    
+	                            ░                   
+	                   ░       ░ ░                  
+	                  ░         ░                   
+	                             ░                  
+	                 ░░         ░ ░                 
+	                 ▒░░       ░░▒▒                 
+	                 ▒▒░░░░░░░░░▒▒▒                 
+	                ░▒▒░░░░░░░░░░▒▒░                
+	                ▒▒▒░░░░░░░░░░▒▒░                
+	                ▒▒▒░░░░░░░░░░▒▒▒                
+	               ░▒▒░░░░░░░░░░░▒▒▒                
+	               ▒▒▒░░░░░░░░░░░▒▒▒░               
+	               ▒▒▒░░░░░░░░░░░▒▒▒▒               
+	               ▒▒▒░░░░░░░░░░░░▒▒▒               
+	              ░ ░░░░░░░░░░░░░░▒░░               
+	              ░░ ░ ░░░░░░░░░░░ ░ ░              
+	              ░ ░             ░ ░░              
+	             ░ ░             ░ ░ ░              
+	             ░░ ░             ░ ░ ░             
+	         ░░▒░░ ░             ░ ░ ░░▒▒▒▒         
+	        ░░░▒▒ ░ ░             ░ ░ ░▒▒▒▒░        
+	        ░░▒▒▒▒ ░             ░ ░ ░▒▒▒▒▒▒        
+	        ░░▒▒▒▒░ ░             ░ ░▒▒▒▒▒▒▒        
+	       ░░░░▒▒▒▒▒░░           ░░░▒▒▒▒▒▒▒▒░       
+	       ░░░░▒▒▒▒▒▒▒░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒░       
+	       ░░░░▒▒▒▒▒▒▒░░▒▒░░░░░░░░░▒▒▒▒▒▒▒▒▒░       
+	      ░░░░░▒▒▒▒▒▒▒░▒▒▒░░░░░░░░░▒▒▒▒▒▒░░░░       
+	      ░░░░░░▒▒▒▒▒▒░▒▒▒░░░░░░░░░▒▒▒▒▒░░░░░░      
+	      ░░░░░░░░▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒░░░░░░░░      
+	      ░░░░░░░░░░░░▒▒▒▒▒░░░░░░░░░░░░░░░░░░░      
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░      
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	    ░            ░░░░░░░░░░░░                   
+	    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░    
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	                                                
+
+	Icon (32 x 32):
+	                                
+	               ░░░              
+	              ░░░▒              
+	              ░░░░              
+	             ░░░░░░             
+	             ░░░░░░             
+	             ░                  
+	                  ░             
+	                   ░            
+	            ░      ░            
+	                   ░            
+	           ░▒░░░░░░▒░           
+	           ▒▒░░░░░░▒▒           
+	           ▒░░░░░░░▒▒           
+	          ░▒░░░░░░░▒▒░          
+	          ▒▒░░░░░░░░▒▒          
+	          ░▒░░░░░░░░▒▒          
+	          ░ ░░░░░░░░░░          
+	         ░ ░         ░░         
+	         ░░         ░░░░░       
+	      ░▒▒░ ░       ░ ░░▒▒▒      
+	      ░▒▒░░         ░ ░▒▒▒░     
+	     ░░▒▒▒░░       ░░░▒▒▒▒░     
+	     ░░▒▒▒▒▒░░░░░░░░░▒▒▒▒▒▒     
+	     ░░▒▒▒▒▒░▒▒░░░░░░▒▒▒▒░░     
+	    ░░░░▒▒▒▒▒▒▒░░░░░░▒▒░░░░     
+	    ░░░░░░░▒▒▒▒▒░░░░░░░░░░░░    
+	    ░░░░░░░░░░░░░░░░░░░░░░░░    
+	    ░░░░░░░░░░░░░░░░░░░░░░░░    
+	   ░                        ░   
+	   ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░   
+	                                
+
+
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_CLIENT_LEADER(WINDOW): window id # 0x2a0013a
+_NET_WM_PID(CARDINAL) = 8579
+_NET_WM_WINDOW_TYPE(ATOM) = _KDE_NET_WM_WINDOW_TYPE_OVERRIDE, _NET_WM_WINDOW_TYPE_NORMAL
+_MOTIF_WM_HINTS(_MOTIF_WM_HINTS) = 0x2, 0x3, 0x0, 0x0, 0x0
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_NAME(STRING) = "vlc"
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLASS(STRING) = "vlc", "Vlc"
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		bitmap id # to use for icon: 0x2a00190
+		window id # of group leader: 0x2a0013a
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified minimum size: 22 by 22
+		window gravity: NorthWest
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_COMMAND(STRING) = { "vlc" }
+window
+ 0x280012c:
+_NET_WM_USER_TIME(CARDINAL) = 1570870
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 41943347
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_CLIENT_LEADER(WINDOW): window id # 0x280012e
+_NET_WM_PID(CARDINAL) = 8442
+_NET_WM_WINDOW_TYPE(ATOM) = _KDE_NET_WM_WINDOW_TYPE_OVERRIDE, _NET_WM_WINDOW_TYPE_NORMAL
+_MOTIF_WM_HINTS(_MOTIF_WM_HINTS) = 0x2, 0x3, 0x0, 0x0, 0x0
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_NAME(STRING) = "qnapi"
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLASS(STRING) = "qnapi", "Qnapi"
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		window id # of group leader: 0x280012e
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified minimum size: 22 by 22
+		window gravity: NorthWest
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_COMMAND(STRING) = { "qnapi" }
+window
+ 0x1200039:
+_NET_WM_OPAQUE_REGION(CARDINAL) = 
+GDK_TIMESTAMP_PROP(GDK_TIMESTAMP_PROP) = 0x61
+_XEMBED_INFO(_XEMBED_INFO) = 0x1, 0x1
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 18874427, 18874428
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x120003a
+WM_CLIENT_LEADER(WINDOW): window id # 0x1200001
+_NET_WM_PID(CARDINAL) = 2834
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified minimum size: 20 by 20
+		program specified base size: 0 by 0
+		window gravity: NorthWest
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "pa-applet", "Pa-applet"
+WM_ICON_NAME(STRING) = "pa-applet"
+_NET_WM_ICON_NAME(UTF8_STRING) = "pa-applet"
+WM_NAME(STRING) = "pa-applet"
+_NET_WM_NAME(UTF8_STRING) = "pa-applet"
+window
+ 0x120003a:
+window
+ 0xc00045:
+window
+ 0xc000fd:
+WM_NAME(STRING) = "[i3 con] container around 0x9bff50"
+window
+ 0x20117d1:
+_NET_WM_STATE(ATOM) = 
+WM_STATE(WM_STATE):
+		window state: Normal
+		icon window: 0x0
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		bitmap id # to use for icon: 0x20117d4
+		bitmap id # of mask for icon: 0x20117d5
+		window id # of group leader: 0x2000001
+WM_WINDOW_ROLE(STRING) = "Detached"
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+_NET_WM_ICON(CARDINAL) = 	Icon (22 x 22):
+	                      
+	         ░░░░         
+	      ░░░░░░░░░       
+	     ░▒▒░░░░░░▒░ ░    
+	  ░▒▒▒▒░░▒░░▒▒▒▒░ ░   
+	  ░▒░░░░▒▒▒▒▒▒▒▒░     
+	  ░░░░░░▒▒▒▒▒▒▒▒▒     
+	  ░░░░░░▒░▒▒▒▒▒▒▒░    
+	 ░▒░░░░░░▒▒▒▒▒▒▒▒░    
+	 ▒▒▒░░░░▒▒▒▒▒▒▓▓▒   ░ 
+	 ▒▒▒░░▒▒▒▒▒▒▓▓▓▓▒   ▒ 
+	 ▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▒   ░ 
+	 ▒▒▒▒▒▒░▒▒▒░░▓▓▓░   ░ 
+	 ░▒▒▒▒▒▒░░▒▒▒▓▓▓░ ░░  
+	  ▒▒▒▒▒▒▒▒▓▓▓▓▓▒░░░▒  
+	  ░▒▒▒▒▒▒▒▓▓▓▓▒░░░▒▒  
+	   ▒▒▒▒▒▒▒▒▒▒░░░░░▒░  
+	   ░▒▒▒▒▒▒▒▒▒░░░▒▒░   
+	    ░▒▒▒▒▒▒▒▒▒▒▒▒░    
+	     ░▒▒▒▒▒▒▒▒▒▒▒     
+	      ░░▒▒▒▒▒▒▒░      
+	                      
+
+	Icon (16 x 16):
+	                
+	      ░░░░      
+	    ░▒░░░░░     
+	  ░▒▒░▒░░░▒░    
+	  ▒░░░▒▒▒▒▒▒    
+	 ░░░░░░░▒▒▒▒░   
+	 ░▒░░░▒▒▒▒▒▒░ ░ 
+	 ▒▒░▒▒▒▒▒▓▓▓  ░ 
+	 ▒▒▒▒▒▓▒▒▓▓▓  ░ 
+	 ▒▒▒▒░░░▒▒▓▒  ░ 
+	 ░▒▒▒▒▒▓▓▓▓░░░░ 
+	  ▒▒▒▒▒▒▒▒░░░▒  
+	   ▒▒▒▒▒▒░░░▒░  
+	   ░▒▒▒▒▒▒▒▒░   
+	    ░▒▒▒▒▒▒░    
+	       ░░       
+
+	Icon (24 x 24):
+	                        
+	                        
+	          ░░░░          
+	       ░░░░░░░░░        
+	      ░▒▒░░░░░░▒░ ░     
+	   ░▒▒▒▒░░▒░░▒▒▒▒░ ░    
+	   ░▒░░░░▒▒▒▒▒▒▒▒░      
+	   ░░░░░░▒▒▒▒▒▒▒▒▒      
+	   ░░░░░░▒░▒▒▒▒▒▒▒░     
+	  ░▒░░░░░░▒▒▒▒▒▒▒▒░     
+	  ▒▒▒░░░░▒▒▒▒▒▒▓▓▒   ░  
+	  ▒▒▒░░▒▒▒▒▒▒▓▓▓▓▒   ▒  
+	  ▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▒   ░  
+	  ▒▒▒▒▒▒░▒▒▒░░▓▓▓░   ░  
+	  ░▒▒▒▒▒▒░░▒▒▒▓▓▓░ ░░   
+	   ▒▒▒▒▒▒▒▒▓▓▓▓▓▒░░░▒   
+	   ░▒▒▒▒▒▒▒▓▓▓▓▒░░░▒▒   
+	    ▒▒▒▒▒▒▒▒▒▒░░░░░▒░   
+	    ░▒▒▒▒▒▒▒▒▒░░░▒▒░    
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒░     
+	      ░▒▒▒▒▒▒▒▒▒▒▒      
+	       ░░▒▒▒▒▒▒▒░       
+	                        
+	                        
+
+	Icon (32 x 32):
+	                                
+	              ░░░░              
+	          ░░░░░░░░░░░░          
+	        ░░░░░░░░░░░░░░          
+	       ░░▒▒▒░░░░░░░░░░░  ░      
+	    ░ ░▒▒▒▒░░░░░░░░░░░░▒  ░     
+	   ░▒▒▒▒░░░░░░░░░░░▒▒▒▒░░  ░    
+	   ▒▒▒░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒    ░   
+	   ▒░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒░       
+	   ░░░░░░░░▒░░░▒▒▒▒▒▒▒▒▒▒       
+	  ░░░░░░░░░▒▒▒░▒▒▒▒▒▒▒▒▒▒░      
+	  ░░░░░░░░░░░ ░▒▒▒▒▒▒▒▒▒▒▒      
+	 ░▒▒░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒      
+	 ░▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▓▓▒░    ░ 
+	 ░▒▒▒░░░░▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▒     ▒ 
+	 ░▒▒▒░░░▒▒▒▓▒▒▒▒▒▒▓▓▓▓▓▓▒    ░▒ 
+	 ░▒▒▒▒░▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▒    ░░ 
+	 ░▒▒▒▒▒▒▒░░▒▒▓▓▒▒▒▒▓▓▓▓▓▒    ░  
+	 ░▒▒▒▒▒▒▒░░░░▒░░░░░▓▓▓▓▒░░   ░  
+	  ▒▒▒▒▒▒▒▒░░░░░░▒▒▒▓▓▓▓▒░░ ░░░  
+	  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓░░░░░░░  
+	  ░▒▒▒▒▒▒▒░░▒▓▓▓▓▓▓▓▓▓▒░░░░░░░  
+	   ▒▒▒▒▒▒▒▒▒░▒▒▓▓▓▓▓▒▒░░░░░░▒░  
+	   ░▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒░░░░░░░▒▒   
+	    ▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░▒░   
+	     ▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▒░    
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░     
+	      ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░      
+	       ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒       
+	        ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░        
+	          ░▒▒▒▒▒▒▒▒▒▒░          
+	                                
+
+	Icon (128 x 128):
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+	                                                     ░░░░░░░░░░░░░░░░░░░░░                                                      
+	                                                 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                                 
+	                                              ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                              
+	                                           ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                           
+	                                         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                         
+	                                       ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                       
+	                                     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                     
+	                                   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ ░░░░░░                                   
+	                                 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   ░░░░                                  
+	                                ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    ░░░░                                
+	                              ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒░░░    ░░░                               
+	                 ░           ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒░     ░░░                             
+	                ░░          ░░░░░░░░▒▒▒▒▒▒▒▒░▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒      ░░ ░░                         
+	                ░░         ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒      ░░░▒░                        
+	               ░░░░      ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒       ░░▒▒                       
+	               ░░░░     ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒       ░░▒▒                      
+	              ░░░░░    ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒       ░░▒░                     
+	              ░░░░░░  ░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒░▒▒░░░░░░░░░▒▒▒▒▒       ░░▒░                    
+	             ░░░░░░▒▒░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░ ░▒▒▒░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒░░░░░░░░▒▒▒▒▒       ░░▒░░░                 
+	             ░░░░░▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░▒▒▒░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒░░▒▒░░░▒▒▒▒░       ░░▒░▒                 
+	             ░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░   ░▒▒▒░       ░▒░▒░                
+	            ░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░▒▒░░░░░░░░░░▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ░▒▒▒        ░░▒▒                
+	            ░▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒    ░▒░        ░▒▒░               
+	            ░▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒     ▒         ░▒▒               
+	            ▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒     ░         ▒▒               
+	            ▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░              ░▒░              
+	            ▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒               ░░              
+	            ▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒               ▒              
+	            ▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░              ░              
+	            ▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                             
+	            ▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                            
+	            ▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                            
+	           ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                           
+	           ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                           
+	          ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                           
+	          ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                          
+	         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                          
+	         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒░  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                         
+	        ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒░░░▒▒▒   ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                         
+	        ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒░░░        ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                         
+	       ░░░░░░░▒░▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒░░░░       ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▒                         
+	       ░░░░░░░▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒                         
+	       ░░░░░░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓░                        
+	      ░░░░░▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓░                  ░     
+	      ░░░░▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▓▓▓▒                  ░     
+	      ░░░▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒▒▒░ ░▓▓▒                 ░▒     
+	      ░░░▒▒▒▒▒▒▒░░▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▒▒▒  ▒▓▒                 ▒▒     
+	     ░░░▒▒▒▒▒▒▒▒░▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▒▒▒▒   ▓▒                ░▒▒     
+	     ░░░▒▒▒▒▒▒▒▒░▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▒▒▓▒   ░▓                ▒▒▒░    
+	     ░░▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▒    ▒                ▒▒▒░    
+	      ░▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ░                ▒▒▒░    
+	    ░ ░▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                    ░▒▒▒░    
+	      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                    ░▒▒▒░    
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                    ░▒▒▒░    
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                   ▒▒▒▒     
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▓▓▓▒▒▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                   ▒▒▒▒     
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░░░░░░░░░░▒▒▒▒▒▒▒▒▒▓▓▓▓▒▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                  ░▓▒▒░     
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒░░░░░░░░▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                  ░▓▒▒░     
+	     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                  ▒▓▓░░     
+	     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▒▒▒▒▒░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                  ▒▓▒░░     
+	     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▒▒▒▒░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░       ░░        ░▓▒░░░     
+	     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▒▒▒▒▒▒░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓      ░░░░        ░▒░░░░     
+	     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░▒▒▒▒▒▒▒▒░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░   ░░         ░░░░░░     
+	     ▒░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░▒▒▒▒▒▒▒░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░   ░░         ░░░░░░     
+	     ░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▒▒▒▒▒▒▒░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒░░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░▓▒░░░░   ░          ░░░░░      
+	     ░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ▓░░░░░   ░          ░░░░░      
+	       ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒░░░░░░░░░░░░░░▒▒▓▓▓▓▓▒▒░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒ ▒░░░░░             ░░░░░░      
+	       ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒ ░░░░░              ░░░░░░      
+	       ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░  ░░░░              ░░░░░       
+	       ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░  ░░░░           ░░░░░░░░       
+	       ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ░░░░      ░░░░░░░░░░░░░       
+	       ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒   ░░░░     ░░░░░░░░░░░░░        
+	        ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░   ░░░      ░░░░░░░░░░░░░        
+	        ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▒░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ░░░     ░░░░░░░░░░░░░         
+	        ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒    ░░░   ░░░░░░░░░░░░░░░         
+	        ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░    ░░░░░░░░░░░░░░░░░░░░░         
+	         ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░░░░░░░░░░░░░░░         
+	         ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░▒░         
+	         ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▓▓▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒         
+	          ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░ ░░░░░░░░░░░░░░░░░░░░▒▒▒         
+	          ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░ ░░░░░░░░░░░░░░░░░░░▒▒▒▒         
+	           ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░▒▓▒▒░         
+	           ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒░         
+	            ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░▒▓▒░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒▒          
+	            ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒▒          
+	             ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒▒░          
+	             ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▒▒▒           
+	              ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓▒▒░▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▒▒▒▒           
+	              ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒▒▒░           
+	               ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒▒▒░            
+	               ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▒▒▒▒▒▒             
+	                ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒░             
+	                 ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒░              
+	                  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒░               
+	                  ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒░                
+	                   ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒░                 
+	                    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▒░                  
+	                     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                   
+	                      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                     
+	                       ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                      
+	                       ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                       
+	                        ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                        
+	                         ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░                         
+	                          ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░                         
+	                          ░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▒▒░░                          
+	                           ░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒▒▒░░                          
+	                           ░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▒▒░░                           
+	                            ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▒▒▒░░                            
+	                             ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒▒▒▒▒░░░                             
+	                               ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░                               
+	                                ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░                                
+	                                  ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░                                  
+	                                    ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░                                    
+	                                       ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░                                       
+	                                          ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░                                          
+	                                              ░░░░░▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░                                             
+	                                                   ░░░░░░░░░▒▒▒▒▒▒▒░░░░░░░░░░                                                   
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+
+
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33626067
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_NET_WM_USER_TIME(CARDINAL) = 2788168
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x20117d2
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified location: 0, 0
+		program specified minimum size: 0 by 0
+		program specified maximum size: 32767 by 32767
+		window gravity: NorthWest
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Firebug", "Firefox"
+WM_ICON_NAME(STRING) = "Firebug - [DEV] Wnioski o akademik"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firebug - [DEV] Wnioski o akademik"
+WM_NAME(STRING) = "Firebug - [DEV] Wnioski o akademik"
+_NET_WM_NAME(UTF8_STRING) = "Firebug - [DEV] Wnioski o akademik"
+window
+ 0x20117d2:
+window
+ 0xc00100:
+window
+ 0xc00032:
+WM_NAME(STRING) = "[i3 con] container around 0x8be9a0"
+window
+ 0x2000078:
+_NET_WM_STATE(ATOM) = 
+WM_STATE(WM_STATE):
+		window state: Normal
+		icon window: 0x0
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		bitmap id # to use for icon: 0x200007b
+		bitmap id # of mask for icon: 0x200007c
+		window id # of group leader: 0x2000001
+_NET_STARTUP_ID(UTF8_STRING) = "i3/dmenu_run/2756-2-darkmachine_TIME28218"
+WM_WINDOW_ROLE(STRING) = "browser"
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+_NET_WM_ICON(CARDINAL) = 	Icon (22 x 22):
+	                      
+	         ░░░░         
+	      ░░░░░░░░░       
+	     ░▒▒░░░░░░▒░ ░    
+	  ░▒▒▒▒░░▒░░▒▒▒▒░ ░   
+	  ░▒░░░░▒▒▒▒▒▒▒▒░     
+	  ░░░░░░▒▒▒▒▒▒▒▒▒     
+	  ░░░░░░▒░▒▒▒▒▒▒▒░    
+	 ░▒░░░░░░▒▒▒▒▒▒▒▒░    
+	 ▒▒▒░░░░▒▒▒▒▒▒▓▓▒   ░ 
+	 ▒▒▒░░▒▒▒▒▒▒▓▓▓▓▒   ▒ 
+	 ▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▒   ░ 
+	 ▒▒▒▒▒▒░▒▒▒░░▓▓▓░   ░ 
+	 ░▒▒▒▒▒▒░░▒▒▒▓▓▓░ ░░  
+	  ▒▒▒▒▒▒▒▒▓▓▓▓▓▒░░░▒  
+	  ░▒▒▒▒▒▒▒▓▓▓▓▒░░░▒▒  
+	   ▒▒▒▒▒▒▒▒▒▒░░░░░▒░  
+	   ░▒▒▒▒▒▒▒▒▒░░░▒▒░   
+	    ░▒▒▒▒▒▒▒▒▒▒▒▒░    
+	     ░▒▒▒▒▒▒▒▒▒▒▒     
+	      ░░▒▒▒▒▒▒▒░      
+	                      
+
+	Icon (16 x 16):
+	                
+	      ░░░░      
+	    ░▒░░░░░     
+	  ░▒▒░▒░░░▒░    
+	  ▒░░░▒▒▒▒▒▒    
+	 ░░░░░░░▒▒▒▒░   
+	 ░▒░░░▒▒▒▒▒▒░ ░ 
+	 ▒▒░▒▒▒▒▒▓▓▓  ░ 
+	 ▒▒▒▒▒▓▒▒▓▓▓  ░ 
+	 ▒▒▒▒░░░▒▒▓▒  ░ 
+	 ░▒▒▒▒▒▓▓▓▓░░░░ 
+	  ▒▒▒▒▒▒▒▒░░░▒  
+	   ▒▒▒▒▒▒░░░▒░  
+	   ░▒▒▒▒▒▒▒▒░   
+	    ░▒▒▒▒▒▒░    
+	       ░░       
+
+	Icon (24 x 24):
+	                        
+	                        
+	          ░░░░          
+	       ░░░░░░░░░        
+	      ░▒▒░░░░░░▒░ ░     
+	   ░▒▒▒▒░░▒░░▒▒▒▒░ ░    
+	   ░▒░░░░▒▒▒▒▒▒▒▒░      
+	   ░░░░░░▒▒▒▒▒▒▒▒▒      
+	   ░░░░░░▒░▒▒▒▒▒▒▒░     
+	  ░▒░░░░░░▒▒▒▒▒▒▒▒░     
+	  ▒▒▒░░░░▒▒▒▒▒▒▓▓▒   ░  
+	  ▒▒▒░░▒▒▒▒▒▒▓▓▓▓▒   ▒  
+	  ▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▒   ░  
+	  ▒▒▒▒▒▒░▒▒▒░░▓▓▓░   ░  
+	  ░▒▒▒▒▒▒░░▒▒▒▓▓▓░ ░░   
+	   ▒▒▒▒▒▒▒▒▓▓▓▓▓▒░░░▒   
+	   ░▒▒▒▒▒▒▒▓▓▓▓▒░░░▒▒   
+	    ▒▒▒▒▒▒▒▒▒▒░░░░░▒░   
+	    ░▒▒▒▒▒▒▒▒▒░░░▒▒░    
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒░     
+	      ░▒▒▒▒▒▒▒▒▒▒▒      
+	       ░░▒▒▒▒▒▒▒░       
+	                        
+	                        
+
+	Icon (32 x 32):
+	                                
+	              ░░░░              
+	          ░░░░░░░░░░░░          
+	        ░░░░░░░░░░░░░░          
+	       ░░▒▒▒░░░░░░░░░░░  ░      
+	    ░ ░▒▒▒▒░░░░░░░░░░░░▒  ░     
+	   ░▒▒▒▒░░░░░░░░░░░▒▒▒▒░░  ░    
+	   ▒▒▒░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒    ░   
+	   ▒░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒░       
+	   ░░░░░░░░▒░░░▒▒▒▒▒▒▒▒▒▒       
+	  ░░░░░░░░░▒▒▒░▒▒▒▒▒▒▒▒▒▒░      
+	  ░░░░░░░░░░░ ░▒▒▒▒▒▒▒▒▒▒▒      
+	 ░▒▒░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒      
+	 ░▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▓▓▒░    ░ 
+	 ░▒▒▒░░░░▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▒     ▒ 
+	 ░▒▒▒░░░▒▒▒▓▒▒▒▒▒▒▓▓▓▓▓▓▒    ░▒ 
+	 ░▒▒▒▒░▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▒    ░░ 
+	 ░▒▒▒▒▒▒▒░░▒▒▓▓▒▒▒▒▓▓▓▓▓▒    ░  
+	 ░▒▒▒▒▒▒▒░░░░▒░░░░░▓▓▓▓▒░░   ░  
+	  ▒▒▒▒▒▒▒▒░░░░░░▒▒▒▓▓▓▓▒░░ ░░░  
+	  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓░░░░░░░  
+	  ░▒▒▒▒▒▒▒░░▒▓▓▓▓▓▓▓▓▓▒░░░░░░░  
+	   ▒▒▒▒▒▒▒▒▒░▒▒▓▓▓▓▓▒▒░░░░░░▒░  
+	   ░▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒░░░░░░░▒▒   
+	    ▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░▒░   
+	     ▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▒░    
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░     
+	      ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░      
+	       ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒       
+	        ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░        
+	          ░▒▒▒▒▒▒▒▒▒▒░          
+	                                
+
+	Icon (128 x 128):
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+	                                                     ░░░░░░░░░░░░░░░░░░░░░                                                      
+	                                                 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                                 
+	                                              ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                              
+	                                           ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                           
+	                                         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                         
+	                                       ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                       
+	                                     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                     
+	                                   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ ░░░░░░                                   
+	                                 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   ░░░░                                  
+	                                ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    ░░░░                                
+	                              ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒░░░    ░░░                               
+	                 ░           ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒░     ░░░                             
+	                ░░          ░░░░░░░░▒▒▒▒▒▒▒▒░▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒      ░░ ░░                         
+	                ░░         ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒      ░░░▒░                        
+	               ░░░░      ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒       ░░▒▒                       
+	               ░░░░     ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒       ░░▒▒                      
+	              ░░░░░    ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒       ░░▒░                     
+	              ░░░░░░  ░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒░▒▒░░░░░░░░░▒▒▒▒▒       ░░▒░                    
+	             ░░░░░░▒▒░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░ ░▒▒▒░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒░░░░░░░░▒▒▒▒▒       ░░▒░░░                 
+	             ░░░░░▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░▒▒▒░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒░░▒▒░░░▒▒▒▒░       ░░▒░▒                 
+	             ░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░   ░▒▒▒░       ░▒░▒░                
+	            ░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░▒▒░░░░░░░░░░▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ░▒▒▒        ░░▒▒                
+	            ░▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒    ░▒░        ░▒▒░               
+	            ░▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒     ▒         ░▒▒               
+	            ▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒     ░         ▒▒               
+	            ▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░              ░▒░              
+	            ▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒               ░░              
+	            ▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒               ▒              
+	            ▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░              ░              
+	            ▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                             
+	            ▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                            
+	            ▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                            
+	           ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                           
+	           ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                           
+	          ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                           
+	          ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                          
+	         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                          
+	         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒░  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                         
+	        ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒░░░▒▒▒   ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                         
+	        ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒░░░        ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                         
+	       ░░░░░░░▒░▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒░░░░       ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▒                         
+	       ░░░░░░░▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒                         
+	       ░░░░░░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓░                        
+	      ░░░░░▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓░                  ░     
+	      ░░░░▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▓▓▓▒                  ░     
+	      ░░░▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒▒▒░ ░▓▓▒                 ░▒     
+	      ░░░▒▒▒▒▒▒▒░░▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▒▒▒  ▒▓▒                 ▒▒     
+	     ░░░▒▒▒▒▒▒▒▒░▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▒▒▒▒   ▓▒                ░▒▒     
+	     ░░░▒▒▒▒▒▒▒▒░▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▒▒▓▒   ░▓                ▒▒▒░    
+	     ░░▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▒    ▒                ▒▒▒░    
+	      ░▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ░                ▒▒▒░    
+	    ░ ░▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                    ░▒▒▒░    
+	      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                    ░▒▒▒░    
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                    ░▒▒▒░    
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                   ▒▒▒▒     
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▓▓▓▒▒▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                   ▒▒▒▒     
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░░░░░░░░░░▒▒▒▒▒▒▒▒▒▓▓▓▓▒▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                  ░▓▒▒░     
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒░░░░░░░░▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                  ░▓▒▒░     
+	     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                  ▒▓▓░░     
+	     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▒▒▒▒▒░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                  ▒▓▒░░     
+	     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▒▒▒▒░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░       ░░        ░▓▒░░░     
+	     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▒▒▒▒▒▒░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓      ░░░░        ░▒░░░░     
+	     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░▒▒▒▒▒▒▒▒░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░   ░░         ░░░░░░     
+	     ▒░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░▒▒▒▒▒▒▒░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░   ░░         ░░░░░░     
+	     ░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▒▒▒▒▒▒▒░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒░░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░▓▒░░░░   ░          ░░░░░      
+	     ░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ▓░░░░░   ░          ░░░░░      
+	       ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒░░░░░░░░░░░░░░▒▒▓▓▓▓▓▒▒░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒ ▒░░░░░             ░░░░░░      
+	       ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒ ░░░░░              ░░░░░░      
+	       ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░  ░░░░              ░░░░░       
+	       ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░  ░░░░           ░░░░░░░░       
+	       ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ░░░░      ░░░░░░░░░░░░░       
+	       ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒   ░░░░     ░░░░░░░░░░░░░        
+	        ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░   ░░░      ░░░░░░░░░░░░░        
+	        ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▒░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ░░░     ░░░░░░░░░░░░░         
+	        ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒    ░░░   ░░░░░░░░░░░░░░░         
+	        ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░    ░░░░░░░░░░░░░░░░░░░░░         
+	         ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░░░░░░░░░░░░░░░         
+	         ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░▒░         
+	         ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▓▓▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒         
+	          ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░ ░░░░░░░░░░░░░░░░░░░░▒▒▒         
+	          ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░ ░░░░░░░░░░░░░░░░░░░▒▒▒▒         
+	           ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░▒▓▒▒░         
+	           ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒░         
+	            ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░▒▓▒░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒▒          
+	            ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒▒          
+	             ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒▒░          
+	             ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▒▒▒           
+	              ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓▒▒░▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▒▒▒▒           
+	              ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒▒▒░           
+	               ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒▒▒░            
+	               ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▒▒▒▒▒▒             
+	                ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒░             
+	                 ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒░              
+	                  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒░               
+	                  ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒░                
+	                   ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒░                 
+	                    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▒░                  
+	                     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                   
+	                      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                     
+	                       ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                      
+	                       ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                       
+	                        ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                        
+	                         ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░                         
+	                          ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░                         
+	                          ░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▒▒░░                          
+	                           ░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒▒▒░░                          
+	                           ░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▒▒░░                           
+	                            ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▒▒▒░░                            
+	                             ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒▒▒▒▒░░░                             
+	                               ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░                               
+	                                ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░                                
+	                                  ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░                                  
+	                                    ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░                                    
+	                                       ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░                                       
+	                                          ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░                                          
+	                                              ░░░░░▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░                                             
+	                                                   ░░░░░░░░░▒▒▒▒▒▒▒░░░░░░░░░░                                                   
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+
+
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33554554
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_NET_WM_USER_TIME(CARDINAL) = 2650945
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x2000079
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified minimum size: 300 by 125
+		program specified maximum size: 32767 by 32767
+		window gravity: NorthWest
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Navigator", "Firefox"
+WM_ICON_NAME(STRING) = "[DEV] Wnioski o akademik - Mozilla Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "[DEV] Wnioski o akademik - Mozilla Firefox"
+WM_NAME(STRING) = "[DEV] Wnioski o akademik - Mozilla Firefox"
+_NET_WM_NAME(UTF8_STRING) = "[DEV] Wnioski o akademik - Mozilla Firefox"
+window
+ 0x2000079:
+window
+ 0xc000e3:
+WM_NAME(STRING) = "[i3 con] workspace 4"
+window
+ 0xc00044:
+window
+ 0xc0003c:
+window
+ 0xc0007b:
+WM_NAME(STRING) = "[i3 con] container around 0x9aec90"
+window
+ 0x100000b:
+WM_STATE(WM_STATE):
+		window state: Normal
+		icon window: 0x0
+_NET_WM_STRUT_PARTIAL(CARDINAL) = 0, 0, 0, 19, 0, 0, 0, 0, 0, 0, 0, 1920
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_DOCK
+WM_NAME(STRING) = "i3bar for output DVI-D-0"
+WM_CLASS(STRING) = "i3bar", "i3bar"
+window
+ 0xc0003a:
+window
+ 0xc00034:
+WM_NAME(STRING) = "[i3 con] container around 0x9ba080"
+window
+ 0x1e0119e:
+WM_TRANSIENT_FOR(WINDOW): window id # 0x1e0043a
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x9e, 0x11, 0xe0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+XdndAware(ATOM) = BITMAP
+WM_STATE(WM_STATE):
+		window state: Normal
+		icon window: 0x0
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_MOTIF_WM_HINTS(_MOTIF_WM_HINTS) = 0x3, 0x1, 0x1, 0x0, 0x0
+_NET_WM_STATE(ATOM) = 
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: False
+		Initial state is Normal State.
+_NET_FRAME_EXTENTS(CARDINAL) = 2, 2, 18, 2
+_NET_WM_ICON(CARDINAL) = 	Icon (32 x 32):
+	                                
+	                                
+	                    ░░░░░░░▒▒   
+	                   ░░     ░▒░   
+	                   ░    ░░▒▒░   
+	                  ░    ░▒▒▒░    
+	                  ░   ░▒░▒░░    
+	                 ░    ░░▒▒░     
+	                 ░   ░▒▒▒░      
+	                 ▒   ░▒▒▒░      
+	▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒░  ░░▒▒▒░      
+	▒              ░▒░  ░░░░▒░      
+	▒ ▒░░░▒  ░░░░░▒▒▓░░ ░░░░▒▒      
+	▒ ▒▒▒▒▒  ░▒▒▒▒▒▒▒▒▒ ░░░░░▒░     
+	▒ ▒▒▒▒▒ ░░▒▒▒▒▒▒▒▒▒░░░░░░░▒░    
+	▒ ▒▒▒▒▒ ░▒▒▒▒▒▒▒▒▓▒▒░░░░░░░▒░   
+	▒ ░▒ ░▒ ░░ ▒▒░▒ ░░▓▒▒░░░░░░▒▒   
+	▒  ░  ▒  ░  ▒ ░  ░▒▓▒▒░░░░░▒▒░  
+	▒  ░▒ ░ ░▒  ▒  ▒  ░▒▓▒▒░░░░▒▒▒  
+	▒  ░▒ ░ ░▒  ▒  ▒  ░▒▒▒▒░░░░▒▒▒░ 
+	▒░ ░▒ ░ ░▒  ▒  ▒  ░▒▒▓░░ ░░▒▒▒░ 
+	▒░ ░▒ ░ ░▒  ▒  ▒  ░▒▒▓▒░ ░░▒▒▒░ 
+	▒░ ░▒ ▒ ░▒  ▒  ░ ░▒▒▒▓▒░ ░░▒▒▒░ 
+	▒░ ░  ▒ ░▒  ▒    ░▒▒▓▒▒ ░░░▒▒▒░ 
+	▒░ ▒▒▒▒▒▒▒▒▒▒  ▒▒▒▒▓▒▒░ ░░▒▒▓░  
+	▒░ ░▒░▒▒▒▒▒▒▒  ▒▒▒▓▒▒░ ░░░▒▒▒░  
+	▓░ ░▒▒▒▒▒▒▒▒▒  ▒▒▒▓▒▒░░░░▒▒▓▒░  
+	▓░ ▒▒▒▒▒▒▒▒▒▓  ▒▒▓▒▒░▒▒▒▒▒▒▒░   
+	▓▒▒▓▓▓▓▓▓▓▓▓▓▒▒▓▓▒▒▒▒▒▒▒▒▒▓░░   
+	 ░░░░░░░░░░░░░░░░░░░░░░░░░░░    
+	                                
+	                                
+
+	Icon (16 x 16):
+	          ░░░▒▒▒
+	         ░░  ░▒ 
+	         ▒  ░▒  
+	         ░ ░▒▒  
+	▓▓▓▓▓▓▓▓▓  ░▒   
+	▒       ▒  ░▒░  
+	▒ ░░ ▒▒▒▒░ ░░▒  
+	▒ ░░ ▒▒▒▒▒░░░░▒ 
+	▒  ░  ░  ░▒░░░▒▒
+	▒ ▒  ▒  ▓ ▓▒░░░▓
+	▓ ▒  ▓  ▓ ▓▓░░░▓
+	▓ ▓  ▓  ▓ ▓▓░░░▓
+	▓  ░ ▓   ░▓▒ ░▒▓
+	▓ ▓▒▒▒▒ ▓▒▓░ ░▒▓
+	▓ ▓▒▒▒▒ ▓▓▒░░▒▓ 
+	▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 
+
+
+_NET_WM_PID(CARDINAL) = 5270
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS
+WM_CLASS(STRING) = "sun-awt-X11-XFramePeer", "jetbrains-phpstorm"
+WM_CLIENT_LEADER(WINDOW): window id # 0x1e00005
+_NET_WM_ICON_NAME(UTF8_STRING) = "panel2 - [~/Documents/Projekty/panel2] - .../app/config/config_prod.yml - PhpStorm 7.1.3"
+WM_ICON_NAME(STRING) = "panel2 - [~/Documents/Projekty/panel2] - .../app/config/config_prod.yml - PhpStorm 7.1.3"
+_NET_WM_NAME(UTF8_STRING) = "panel2 - [~/Documents/Projekty/panel2] - .../app/config/config_prod.yml - PhpStorm 7.1.3"
+WM_NAME(STRING) = "panel2 - [~/Documents/Projekty/panel2] - .../app/config/config_prod.yml - PhpStorm 7.1.3"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		user specified location: 0, 531
+		program specified location: 0, 531
+		program specified size: 1916 by 510
+		window gravity: NorthWest
+window
+ 0x1e011a4:
+WM_CLASS(STRING) = "Focus-Proxy-Window", "FocusProxy"
+WM_CLIENT_LEADER(WINDOW): window id # 0x1e00005
+_NET_WM_NAME(UTF8_STRING) = "FocusProxy"
+WM_NAME(STRING) = "FocusProxy"
+window
+ 0x1e011a1:
+WM_CLASS(STRING) = "sun-awt-X11-XContentWindow", "jetbrains-phpstorm"
+WM_CLIENT_LEADER(WINDOW): window id # 0x1e00005
+_NET_WM_NAME(UTF8_STRING) = "Content window"
+WM_NAME(STRING) = "Content window"
+window
+ 0xc00033:
+WM_NAME(STRING) = "[i3 con] container around 0x9b9910"
+window
+ 0x1e0043a:
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x3a, 0x4, 0xe0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+XdndAware(ATOM) = BITMAP
+WM_STATE(WM_STATE):
+		window state: Normal
+		icon window: 0x0
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_MOTIF_WM_HINTS(_MOTIF_WM_HINTS) = 0x3, 0x1, 0x1, 0x0, 0x0
+_NET_WM_STATE(ATOM) = 
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: False
+		Initial state is Normal State.
+_NET_FRAME_EXTENTS(CARDINAL) = 2, 2, 18, 2
+_NET_WM_ICON(CARDINAL) = 	Icon (32 x 32):
+	                                
+	                                
+	                    ░░░░░░░▒▒   
+	                   ░░     ░▒░   
+	                   ░    ░░▒▒░   
+	                  ░    ░▒▒▒░    
+	                  ░   ░▒░▒░░    
+	                 ░    ░░▒▒░     
+	                 ░   ░▒▒▒░      
+	                 ▒   ░▒▒▒░      
+	▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒░  ░░▒▒▒░      
+	▒              ░▒░  ░░░░▒░      
+	▒ ▒░░░▒  ░░░░░▒▒▓░░ ░░░░▒▒      
+	▒ ▒▒▒▒▒  ░▒▒▒▒▒▒▒▒▒ ░░░░░▒░     
+	▒ ▒▒▒▒▒ ░░▒▒▒▒▒▒▒▒▒░░░░░░░▒░    
+	▒ ▒▒▒▒▒ ░▒▒▒▒▒▒▒▒▓▒▒░░░░░░░▒░   
+	▒ ░▒ ░▒ ░░ ▒▒░▒ ░░▓▒▒░░░░░░▒▒   
+	▒  ░  ▒  ░  ▒ ░  ░▒▓▒▒░░░░░▒▒░  
+	▒  ░▒ ░ ░▒  ▒  ▒  ░▒▓▒▒░░░░▒▒▒  
+	▒  ░▒ ░ ░▒  ▒  ▒  ░▒▒▒▒░░░░▒▒▒░ 
+	▒░ ░▒ ░ ░▒  ▒  ▒  ░▒▒▓░░ ░░▒▒▒░ 
+	▒░ ░▒ ░ ░▒  ▒  ▒  ░▒▒▓▒░ ░░▒▒▒░ 
+	▒░ ░▒ ▒ ░▒  ▒  ░ ░▒▒▒▓▒░ ░░▒▒▒░ 
+	▒░ ░  ▒ ░▒  ▒    ░▒▒▓▒▒ ░░░▒▒▒░ 
+	▒░ ▒▒▒▒▒▒▒▒▒▒  ▒▒▒▒▓▒▒░ ░░▒▒▓░  
+	▒░ ░▒░▒▒▒▒▒▒▒  ▒▒▒▓▒▒░ ░░░▒▒▒░  
+	▓░ ░▒▒▒▒▒▒▒▒▒  ▒▒▒▓▒▒░░░░▒▒▓▒░  
+	▓░ ▒▒▒▒▒▒▒▒▒▓  ▒▒▓▒▒░▒▒▒▒▒▒▒░   
+	▓▒▒▓▓▓▓▓▓▓▓▓▓▒▒▓▓▒▒▒▒▒▒▒▒▒▓░░   
+	 ░░░░░░░░░░░░░░░░░░░░░░░░░░░    
+	                                
+	                                
+
+	Icon (16 x 16):
+	          ░░░▒▒▒
+	         ░░  ░▒ 
+	         ▒  ░▒  
+	         ░ ░▒▒  
+	▓▓▓▓▓▓▓▓▓  ░▒   
+	▒       ▒  ░▒░  
+	▒ ░░ ▒▒▒▒░ ░░▒  
+	▒ ░░ ▒▒▒▒▒░░░░▒ 
+	▒  ░  ░  ░▒░░░▒▒
+	▒ ▒  ▒  ▓ ▓▒░░░▓
+	▓ ▒  ▓  ▓ ▓▓░░░▓
+	▓ ▓  ▓  ▓ ▓▓░░░▓
+	▓  ░ ▓   ░▓▒ ░▒▓
+	▓ ▓▒▒▒▒ ▓▒▓░ ░▒▓
+	▓ ▓▒▒▒▒ ▓▓▒░░▒▓ 
+	▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 
+
+
+_NET_WM_PID(CARDINAL) = 5270
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS
+WM_CLASS(STRING) = "sun-awt-X11-XFramePeer", "jetbrains-phpstorm"
+WM_CLIENT_LEADER(WINDOW): window id # 0x1e00005
+_NET_WM_ICON_NAME(UTF8_STRING) = "centrom - [~/Documents/Projekty/centrom] - .../src/Dsnet/DormApplicationsBundle/Resources/public/css/main.css - PhpStorm 7.1.3"
+WM_ICON_NAME(STRING) = "centrom - [~/Documents/Projekty/centrom] - .../src/Dsnet/DormApplicationsBundle/Resources/public/css/main.css - PhpStorm 7.1.3"
+_NET_WM_NAME(UTF8_STRING) = "centrom - [~/Documents/Projekty/centrom] - .../src/Dsnet/DormApplicationsBundle/Resources/public/css/main.css - PhpStorm 7.1.3"
+WM_NAME(STRING) = "centrom - [~/Documents/Projekty/centrom] - .../src/Dsnet/DormApplicationsBundle/Resources/public/css/main.css - PhpStorm 7.1.3"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		user specified location: 0, 531
+		program specified location: 0, 531
+		program specified size: 1916 by 510
+		window gravity: NorthWest
+window
+ 0x1e00440:
+WM_CLASS(STRING) = "Focus-Proxy-Window", "FocusProxy"
+WM_CLIENT_LEADER(WINDOW): window id # 0x1e00005
+_NET_WM_NAME(UTF8_STRING) = "FocusProxy"
+WM_NAME(STRING) = "FocusProxy"
+window
+ 0x1e0043d:
+WM_CLASS(STRING) = "sun-awt-X11-XContentWindow", "jetbrains-phpstorm"
+WM_CLIENT_LEADER(WINDOW): window id # 0x1e00005
+_NET_WM_NAME(UTF8_STRING) = "Content window"
+WM_NAME(STRING) = "Content window"
+window
+ 0xc000e6:
+WM_NAME(STRING) = "[i3 con] workspace 5"
+window
+ 0xc00039:
+window
+ 0xc00031:
+window
+ 0xc000f4:
+WM_NAME(STRING) = "[i3 con] container around 0x9bf9d0"
+window
+ 0x2a0653a:
+_NET_WM_USER_TIME(CARDINAL) = 2389822
+_NET_WM_STATE(ATOM) = _NET_WM_STATE_FULLSCREEN
+_KDE_OXYGEN_BACKGROUND_PIXMAP(CARDINAL) = 0
+_KDE_OXYGEN_BACKGROUND_GRADIENT(CARDINAL) = 1
+_NET_WM_ICON(CARDINAL) = 	Icon (48 x 48):
+	                                                
+	                      ░░░                       
+	                     ░░░░░░                     
+	                     ▒░░░░▒                     
+	                     ▒░░░░▒                     
+	                    ░░░░░░▒░                    
+	                    ▒░░░░░░▒                    
+	                    ▒░░░░░░▒                    
+	                       ░   ░                    
+	                            ░                   
+	                   ░       ░                    
+	                            ░                   
+	                   ░       ░ ░                  
+	                  ░         ░                   
+	                             ░                  
+	                 ░░         ░ ░                 
+	                 ▒░░       ░░▒▒                 
+	                 ▒▒░░░░░░░░░▒▒▒                 
+	                ░▒▒░░░░░░░░░░▒▒░                
+	                ▒▒▒░░░░░░░░░░▒▒░                
+	                ▒▒▒░░░░░░░░░░▒▒▒                
+	               ░▒▒░░░░░░░░░░░▒▒▒                
+	               ▒▒▒░░░░░░░░░░░▒▒▒░               
+	               ▒▒▒░░░░░░░░░░░▒▒▒▒               
+	               ▒▒▒░░░░░░░░░░░░▒▒▒               
+	              ░ ░░░░░░░░░░░░░░▒░░               
+	              ░░ ░ ░░░░░░░░░░░ ░ ░              
+	              ░ ░             ░ ░░              
+	             ░ ░             ░ ░ ░              
+	             ░░ ░             ░ ░ ░             
+	         ░░▒░░ ░             ░ ░ ░░▒▒▒▒         
+	        ░░░▒▒ ░ ░             ░ ░ ░▒▒▒▒░        
+	        ░░▒▒▒▒ ░             ░ ░ ░▒▒▒▒▒▒        
+	        ░░▒▒▒▒░ ░             ░ ░▒▒▒▒▒▒▒        
+	       ░░░░▒▒▒▒▒░░           ░░░▒▒▒▒▒▒▒▒░       
+	       ░░░░▒▒▒▒▒▒▒░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒░       
+	       ░░░░▒▒▒▒▒▒▒░░▒▒░░░░░░░░░▒▒▒▒▒▒▒▒▒░       
+	      ░░░░░▒▒▒▒▒▒▒░▒▒▒░░░░░░░░░▒▒▒▒▒▒░░░░       
+	      ░░░░░░▒▒▒▒▒▒░▒▒▒░░░░░░░░░▒▒▒▒▒░░░░░░      
+	      ░░░░░░░░▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒░░░░░░░░      
+	      ░░░░░░░░░░░░▒▒▒▒▒░░░░░░░░░░░░░░░░░░░      
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░      
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	    ░            ░░░░░░░░░░░░                   
+	    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░    
+	     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     
+	                                                
+
+	Icon (32 x 32):
+	                                
+	               ░░░              
+	              ░░░▒              
+	              ░░░░              
+	             ░░░░░░             
+	             ░░░░░░             
+	             ░                  
+	                  ░             
+	                   ░            
+	            ░      ░            
+	                   ░            
+	           ░▒░░░░░░▒░           
+	           ▒▒░░░░░░▒▒           
+	           ▒░░░░░░░▒▒           
+	          ░▒░░░░░░░▒▒░          
+	          ▒▒░░░░░░░░▒▒          
+	          ░▒░░░░░░░░▒▒          
+	          ░ ░░░░░░░░░░          
+	         ░ ░         ░░         
+	         ░░         ░░░░░       
+	      ░▒▒░ ░       ░ ░░▒▒▒      
+	      ░▒▒░░         ░ ░▒▒▒░     
+	     ░░▒▒▒░░       ░░░▒▒▒▒░     
+	     ░░▒▒▒▒▒░░░░░░░░░▒▒▒▒▒▒     
+	     ░░▒▒▒▒▒░▒▒░░░░░░▒▒▒▒░░     
+	    ░░░░▒▒▒▒▒▒▒░░░░░░▒▒░░░░     
+	    ░░░░░░░▒▒▒▒▒░░░░░░░░░░░░    
+	    ░░░░░░░░░░░░░░░░░░░░░░░░    
+	    ░░░░░░░░░░░░░░░░░░░░░░░░    
+	   ░                        ░   
+	   ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░   
+	                                
+
+
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+_NET_WM_NAME(UTF8_STRING) = "Outlander S01E03 - VLC media player"
+WM_CLIENT_LEADER(WINDOW): window id # 0x2a0013a
+WM_WINDOW_ROLE(STRING) = "vlc-main"
+_NET_WM_PID(CARDINAL) = 8579
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_MOTIF_WM_HINTS(_MOTIF_WM_HINTS) = 0x3, 0x3e, 0x7e, 0x0, 0x0
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_NAME(STRING) = "Outlander S01E03 - VLC media player"
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLASS(STRING) = "vlc", "Vlc"
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		bitmap id # to use for icon: 0x2a00151
+		window id # of group leader: 0x2a0013a
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		user specified location: -2, 0
+		program specified location: -2, 0
+		user specified size: 1920 by 1080
+		program specified size: 1920 by 1080
+		program specified minimum size: 541 by 0
+		window gravity: NorthWest
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_COMMAND(STRING) = { "vlc" }
+window
+ 0x2a0646f:
+window
+ 0x2a06469:
+window
+ 0x2a06475:
+window
+ 0x2a06473:
+window
+ 0x2a06471:
+window
+ 0x2a06477:
+window
+ 0x2a0647d:
+window
+ 0x3400000:
+window
+ 0x2a0647b:
+window
+ 0x2a06479:
+window
+ 0x2a0646d:
+window
+ 0x2a0646b:
+window
+ 0x2a06467:
+window
+ 0xc0009b:
+WM_NAME(STRING) = "[i3 con] container around 0x9bb1d0"
+window
+ 0x260000a:
+WM_STATE(WM_STATE):
+		window state: Withdrawn
+		icon window: 0x0
+_NET_STARTUP_ID(UTF8_STRING) = "i3/urxvt/2756-0-darkmachine_TIME1093108"
+_NET_WM_PID(CARDINAL) = 7885
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, _NET_WM_PING
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLASS(STRING) = "urxvt", "URxvt"
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		window id # of group leader: 0x260000a
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified minimum size: 12 by 21
+		program specified resize increment: 8 by 17
+		program specified base size: 4 by 4
+		window gravity: NorthWest
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_COMMAND(STRING) = { "urxvt" }
+_NET_WM_ICON_NAME(UTF8_STRING) = "urxvt"
+WM_ICON_NAME(STRING) = "urxvt"
+_NET_WM_NAME(UTF8_STRING) = "urxvt"
+WM_NAME(STRING) = "urxvt"
+window
+ 0x260000f:
+window
+ 0xc00040:
+WM_NAME(STRING) = "[i3 con] container around 0x8be8c0"
+window
+ 0x140000a:
+_NET_WM_STATE(ATOM) = 
+WM_STATE(WM_STATE):
+		window state: Withdrawn
+		icon window: 0x0
+_NET_STARTUP_ID(UTF8_STRING) = "i3/urxvt/2756-0-darkmachine_TIME22570"
+_NET_WM_PID(CARDINAL) = 2892
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, _NET_WM_PING
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLASS(STRING) = "urxvt", "URxvt"
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		window id # of group leader: 0x140000a
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified minimum size: 12 by 21
+		program specified resize increment: 8 by 17
+		program specified base size: 4 by 4
+		window gravity: NorthWest
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_COMMAND(STRING) = { "urxvt" }
+_NET_WM_ICON_NAME(UTF8_STRING) = "EKG2"
+WM_ICON_NAME(STRING) = "EKG2"
+_NET_WM_NAME(UTF8_STRING) = "EKG2"
+WM_NAME(STRING) = "EKG2"
+window
+ 0x140000f:
+window
+ 0xc0003e:
+WM_NAME(STRING) = "[i3 con] container around 0x8bee70"
+window
+ 0x1c0000a:
+WM_STATE(WM_STATE):
+		window state: Withdrawn
+		icon window: 0x0
+_NET_STARTUP_ID(UTF8_STRING) = "i3/urxvt/2756-1-darkmachine_TIME22770"
+_NET_WM_PID(CARDINAL) = 2896
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, _NET_WM_PING
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLASS(STRING) = "urxvt", "URxvt"
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		window id # of group leader: 0x1c0000a
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified minimum size: 12 by 21
+		program specified resize increment: 8 by 17
+		program specified base size: 4 by 4
+		window gravity: NorthWest
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_COMMAND(STRING) = { "urxvt" }
+_NET_WM_ICON_NAME(UTF8_STRING) = "januszmk@users: ~"
+WM_ICON_NAME(STRING) = "januszmk@users: ~"
+_NET_WM_NAME(UTF8_STRING) = "januszmk@users: ~"
+WM_NAME(STRING) = "januszmk@users: ~"
+window
+ 0x1c0000f:
+window
+ 0xc00041:
+window
+ 0xc00042:
+WM_NAME(STRING) = "[i3 con] container around 0x9af5f0"
+window
+ 0x2200078:
+WM_STATE(WM_STATE):
+		window state: Withdrawn
+		icon window: 0x0
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		Initial state is Normal State.
+		bitmap id # to use for icon: 0x220007b
+		bitmap id # of mask for icon: 0x220007c
+		window id # of group leader: 0x2200001
+_NET_STARTUP_ID(UTF8_STRING) = "i3/dmenu_run/2756-3-darkmachine_TIME32954"
+WM_WINDOW_ROLE(STRING) = "3pane"
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+_NET_WM_ICON(CARDINAL) = 	Icon (16 x 16):
+	     ░          
+	    ▒░▒▒▒▒░     
+	  ░▒░░░░░░▒▒░   
+	  ▒░░░▒▒▒░░▒▒░  
+	 ▒▒▒▒▒▓▓▓▒▒▒░▒  
+	░▒▒▒▒▒▒░▒▓▒░▒▒░ 
+	░▒▓░▒░   ▒▒▒▒░▒ 
+	▒▒▒▒░    ░▓░▒░▒ 
+	▒▓░ ░  ░░▒▓▒▒▒▒ 
+	░▓   ░░░  ▒▒▒▒▒ 
+	░▓░       ░▓▒▒▒ 
+	 ▓▓░░     ░▓▓▒░ 
+	  ▓▒▒▒▒░  ▒▓▓▒  
+	   ▒░░░▒▒▒▓▓▓   
+	      ░░▒▓▓▒    
+	       ░▒▒░     
+
+	Icon (32 x 32):
+	            ░▒                  
+	          ░▒▒▒░░░░░             
+	         ░▒▒░░░░▒▒▒▒▒▒          
+	        ░▒░░░░░▒▒▒▒▒▒▒▒▒░       
+	       ▒▒░░░░░▒▒▒▒▒▒▒░▒▒▒▒      
+	     ░▒▒░ ░░░░▒▒▒▒░░▒▒▒░▒▒▒     
+	     ▒▒▒░░▒▒░▒▒▒░░░░░░▒▒▒▒▒▒    
+	    ▒░▓░░▒▒░░▒▒▓▓▓▒░▒▒░▒▒░▒▒▒   
+	   ░░▒▓░▒░▒░▒▒▒▓▓▓▓▓░▒▒░▒▒▒▒▒▒  
+	   ░▒▓▓░▓▓░▒▒▓▓▓▓▓▓▓▒░▒▒▒░▒▒▒▒░ 
+	  ░░▓▓▓▒▒▒▒▓▓▓▓▓▓▓▓▓▓▒░▒░▒▒▒▒▒▒ 
+	  ░▒▓▒▓ ░▓▓▓▒░░   ░▒▓▓░▒░▒▒▒▒▒▒ 
+	 ░░▒▓░▒░░▓▒░        ▒▓░▒▒▒▒▒▒▒▒░
+	 ░░▓▒ ▒░▓▒░          ▓▒▒▓▒▒▒░▒▒▒
+	 ▒░▓▒ ░▒▒░          ░▒▓▒▓▒▒▒░▒▒▒
+	 ▒▒▒▒   ░░        ░▒░▒▒▒▓░▒▒░▒▒▒
+	 ▒▓▓▒   ░▒      ░▒░  ▒▒▒▓░▒▒▒▒▒▒
+	 ░▒▓░     ░   ░▒░░   ▒▒▓▓░▒▒▒▒▒▒
+	 ░▒▒ ░    ░░▒░░  ░   ▒▓▓▓▒▓▒▒▒▒▒
+	  ▒▓░                ▒▓▒▓▓▒▒▒▒▒▒
+	  ▒▓░             ░    ▒▓▓▒▒▓▓▒░
+	  ░▓▒░             ░   ▒▓▓▒▓▓▓▒ 
+	   ▒▓▓▒▒░          ░   ▓▓▓▒▓▓▓▒ 
+	   ░▓▓▓▓▓▒▒░        ░ ░▓▓▓▓▓▒▓░ 
+	    ░▓▓▓▒▓▒░▒▒░    ░░░▓▓▓▓▓▒▓▒  
+	     ░▓▓░░▒░░░▒▒▒░  ░▒▓▓▓▓▓▓▓   
+	      ░▓▓ ░░░░░░░▒▒▒░▓▓▓▓▓▓▓    
+	       ░▒░░░░░░░░░░░▓▓▓▓▓▓▓     
+	            ░░░░░░░▒▓▓▓▓▓▒      
+	               ░░▒▒▒▓▓▓▓░       
+	                ░▓▓▒▒▒▒         
+	                                
+
+	Icon (48 x 48):
+	                 ▒                              
+	                ▒▒▒░                            
+	               ▒░▒▒▒▒░░░░░░░░                   
+	              ▒░▒▒░░░░░░▒▒▒▒▒▒▒░                
+	             ▒░░▒░░░░░░▒▒▒▒▒▒▒▒▒▒░              
+	           ░▒▒░░░░░░░░▒▒▒▒▒▒▒▒▒░▒▒▒░            
+	          ▒▒▒░░░░░░░░▒▒▒▒▒▒▒░░▒▒▒▒▒▒▒░          
+	         ▒▒▒░░░░░░░░░▒▒▒▒▒░░▒▒▒▒▒▒░▒▒▒▒         
+	        ▒▒▒▒░░░░░▒░░▒▒▒▒▒▒▒▒▒▒░░▒▒▒▒░░▒▒        
+	       ▒▒▒▒░░░░▒▒▒░▒▒▒▒▒░░▒▒░▒▒▒▒░░▒▒▒░▒▒       
+	      ▒░▒▓░░░░▒▒▒░░▒▒▓▓▒▒░░░░░▒░▒▒▒▒▒▒▒░▒▒      
+	     ░░▒▓▓ ░░▒▒▒░░▒▒▒▓▓▓▓▓▒▒░▒▒▒░▒▒▒▒▒▒░▒▒▒     
+	    ░▒▒▒▓▓░░▒▓▓▒░▒▒▒▒▒▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒░▒▒▒▒▒░    
+	    ▒░▒▓▓▓░░▒░░▒░▒▒▒▒▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒░▒▒▒▒▒▒    
+	   ░░▒▓▓▓▓░░▒▓▒░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▒░▒▒▒░▒░░▒▒▒▒▒░   
+	   ░▒▒▓▓▒▓▒░▒░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░▒▒░▒▒▒▒▒▒▒░▒   
+	   ░▒▒▓▓▒▓▒▒▒▒▒▓▓▓▓▒▒▒░░░▒▒▓▓▓▓▒░▒▒░▒▒▒▒▒▒▒░▒░  
+	  ░░▒▓▓▒░▓░▒▒▓▓▓▒▒▒░       ░░▒▒▓░░▒░▒▒▒▒▒▒▒░░▒  
+	  ░░▒▓▒░░▒░░▓▓▒▒▒░           ░▒▓▒░▒▒▒▒▒▒▒░▒▒░▒  
+	  ▒░▒▓▒░ ▒░▓▒▒▒░░             ░▓▒░▒▓▒▒▒▒▒░▒▒░▓░ 
+	 ░▒░▓▓░  ▒▒▒░░░░              ░▒▓▒▒▓▒▒▒▒▒░▒▒▒▓▒ 
+	 ░▒░▒▓░   ▒░░░░                ░▓▒▒▓▒▒▒▒▒░░▒▒▒▒ 
+	 ░▒░▒▓░     ▒░                 ░▓▒▒▓▒░▒▒▒░▒▒▒▒▒ 
+	 ▒▒▒▒▒░     ░▒               ░░▒▒▒▒▓▒░▒▒▒░▒▒▒▒▒ 
+	 ▒▒▓▒▒░      ░░           ░░▒░ ░▒▒▒▓▒░▒▒▒▒▒▒▒▒▒ 
+	 ░▒▓▒▒░       ░         ░░░    ░▒▒▒▓▒░▒▒▒▒▒▒▒▒▒ 
+	 ░▒▓▒░░        ░     ░░░░      ░▒▒▓▓░░▒▒▒▒▒▒▒▒▒ 
+	  ▒▒▒░░        ░░ ░░░░         ▒▒▓▓▓▒▒▓▒▒▒▒░▒▒▒ 
+	  ▒▒▒░          ░░            ░▒▓▓▒▓▒▓▓▒▒▒▒░▒▒▒ 
+	  ▒▒▒░                        ░▒▒░▒▓▒▓▒░▒▓▒▒▓▒░ 
+	  ░▓▓░                          ░░▒▓▒▓▒░▒▓▓▓▓▒░ 
+	   ▓▓▒                           ░▒▓▒▓▓▒▓▓▓▓▒▒  
+	   ▒▓▓▒░                    ░    ░▓▓▓▓▓▒▓▓▒▓▒▒  
+	    ▓▓▓▒▒░                       ▒▓▓▓▓▒▒▓▓▒▓▒░  
+	    ░▓▓▓▓▓▒▒░                ░   ▒▓▓▓▓▒▓▓▒▓▓▒   
+	     ▒▓▓▓▓▓▓▓▒▒░             ░░ ░▓▓▓▓▓▓▓▓▒▓▒░   
+	      ▓▓▓▓▓░▓▓▓░░░░    ░░     ░░▒▓▓▓▓▓▓▓▒▓▓▒    
+	       ▓▓▓▓▒ ▒▓▒ ░░▒░░    ░░░░░░▒▓▓▓▓▓▓▒▒▓▓     
+	        ▒▓▓▓  ░▒░░░░░░▒▒░   ░░░▒▓▓▓▓▓▓▓▒▓▓░     
+	         ▒▓▓▒ ░░░░░░░░░░░▒░░  ░▓▒▓▓▓▓▓▓▓▓░      
+	          ░▓▓░░░░░░░░░░░░░░░▒▒▒▒▓▓▓▓▓▓▓▓░       
+	           ░▒░ ░░░░░░░░░░░░░░▒▒▒▓▓▓▓▓▓▓░        
+	                 ░░░░░░░░░░░▒▒▒▓▓▓▓▒▓▒          
+	                    ░░░░░░░▒▒▒▓▓▓▓▒▓▒           
+	                      ░░░▒▒▒▒▓▓▓▓▒▓░            
+	                        ▒▒▒▓▓▓▒▒▒▒              
+	                        ▒▒▒░░░▒░                
+	                                                
+
+
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 35651706
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_NET_WM_USER_TIME(CARDINAL) = 2227046
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x2200079
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified minimum size: 440 by 198
+		program specified maximum size: 32767 by 32767
+		window gravity: NorthWest
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Mail", "Thunderbird"
+WM_ICON_NAME(STRING) = "spam - janusz@dsnet.pl - Mozilla Thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "spam - janusz@dsnet.pl - Mozilla Thunderbird"
+WM_NAME(STRING) = "spam - janusz@dsnet.pl - Mozilla Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "spam - janusz@dsnet.pl - Mozilla Thunderbird"
+window
+ 0x2200079:
+window
+ 0xc00043:
+window
+ 0xc00038:
+window
+ 0xc00047:
+window
+ 0xc00046:
+WM_NAME(STRING) = "[i3 con] output VGA-0"
+window
+ 0xc0003b:
+WM_NAME(STRING) = "[i3 con] output DVI-D-0"
+window
+ 0xc00030:
+window
+ 0xc0002f:
+window
+ 0xc0002e:
+window
+ 0xc0002d:
+window
+ 0xc0002c:
+_NET_WM_NAME(UTF8_STRING) = "i3"
+_NET_SUPPORTING_WM_CHECK(WINDOW): window id # 0xc0002c
+window
+ 0x2400001:
+_MOTIF_DRAG_TARGETS(_MOTIF_DRAG_TARGETS) = 0x6c, 0x0, 0x3, 0x0, 0x42, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x1f, 0x0, 0x0, 0x0, 0xb, 0x0, 0x1f, 0x0, 0x0, 0x0, 0x28, 0x1, 0x0, 0x0, 0xaa, 0x1, 0x0, 0x0, 0x9, 0x2, 0x0, 0x0, 0xa, 0x2, 0x0, 0x0, 0xb, 0x2, 0x0, 0x0, 0xc, 0x2, 0x0, 0x0, 0xd, 0x2, 0x0, 0x0, 0xe, 0x2, 0x0, 0x0, 0xf, 0x2, 0x0, 0x0, 0x10, 0x2, 0x0, 0x0
+window
+ 0x1e00005:
+_MOTIF_ATOM_0(_MOTIF_DRAG_INITIATOR_INFO) = 0x6c, 0x0, 0x2, 0x0, 0xed, 0x1, 0x0, 0x0
+XdndTypeList(ATOM) = UTF8_STRING, TEXT, STRING, text/plain;charset=UTF-16, text/plain;charset=UTF-8, text/plain;charset=UTF-16BE, text/plain;charset=UTF-16LE, text/plain;charset=ISO-8859-1, text/plain;charset=US-ASCII, text/plain, text/plain;charset=unicode
+XdndActionList(ATOM) = XdndActionCopy, XdndActionMove
+_SUNW_JAVA_AWT_TIME(ATOM) = 
+WM_CLASS(STRING) = "jetbrains-phpstorm", "jetbrains-phpstorm"
+WM_CLIENT_LEADER(WINDOW): window id # 0x1e00005
+_NET_WM_NAME(UTF8_STRING) = "jetbrains-phpstorm"
+WM_NAME(STRING) = "jetbrains-phpstorm"
+window
+ 0x1e00004:
+_NET_WM_STATE(ATOM) = 
+WM_HINTS(WM_HINTS):
+		Initial state is Normal State.
+_NET_FRAME_EXTENTS(CARDINAL) = 2, 2, 18, 2
+_NET_WM_ICON(CARDINAL) = 	Icon (16 x 16):
+	  ░░░░░░░░░░░░  
+	░              ░
+	░              ░
+	░        ░     ░
+	░       ░      ░
+	░      ░ ░░    ░
+	░     ░ ░░     ░
+	░     ░ ░      ░
+	░      ░░  ░░  ░
+	▒   ▒▒░▒▒░░ ▒░ ▒
+	▒     ░░░░  ▒░ ▒
+	▒    ▒▒▒▒▒ ▒░  ▒
+	▒              ▒
+	▒  ░░░░░░░░░   ▒
+	▒░            ░▒
+	░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░
+
+	Icon (24 x 23):
+	  ░░░░░░░░░░░░░░░░░░░░  
+	                        
+	░                      ░
+	░                      ░
+	░                      ░
+	░           ░          ░
+	░          ░           ░
+	░         ░  ░         ░
+	░        ░░ ░          ░
+	░        ░░░           ░
+	░        ░░░░          ░
+	░      ░░  ░░  ░░      ░
+	▒     ░▒▒░░░▒░░ ▒░     ▒
+	▒      ░░       ▒░     ▒
+	▒      ░▒▒▒▒▒▒ ▒░      ▒
+	▒       ░░    ░░       ▒
+	▒       ░▒▒▒▒          ▒
+	▒   ░░░░      ░░░░     ▒
+	▒    ░░▒▒▒▒▒▒▒▒░░      ▒
+	▒                      ▒
+	▒                      ▒
+	░░                    ░░
+	 ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░ 
+
+	Icon (32 x 32):
+	     ░░░░░░░░░░░░░░░░░░░░░░     
+	  ░                          ░  
+	 ░                            ░ 
+	                                
+	░                              ░
+	░                              ░
+	░                ░             ░
+	░              ░░              ░
+	░             ░░  ░░           ░
+	░            ░░  ░░            ░
+	░           ░░  ░░             ░
+	░           ░░  ░              ░
+	░           ░░  ░░             ░
+	░           ░░  ░░             ░
+	░            ░░ ░░░            ░
+	░             ░  ░░            ░
+	░                ░     ░       ░
+	▒       ░░░            ░▒      ▒
+	▒       ░▒░░░░░░░░░░░   ░      ▒
+	▒         ░░            ▒      ▒
+	▒         ░░      ░░   ░░      ▒
+	▒         ░░▒▒▒▒▒▒▒░  ░░       ▒
+	▒          ░░░░░               ▒
+	▒          ▒░░░░░░░            ▒
+	▒       ░░ ░▒▒▒▒▒▒░░           ▒
+	▒     ░░░     ░░       ░░      ▒
+	▒     ▒▒▒░░░       ░░░░░░      ▒
+	░░      ░░░░▒▒▒▒▒▒▒░░░░       ░░
+	░░                            ░░
+	 ▒░                          ░▒ 
+	  ▒░░                      ░░▒  
+	   ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░   
+
+	Icon (48 x 48):
+	    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    
+	  ░                                          ░  
+	 ░                                            ░ 
+	                                                
+	░                                              ░
+	░                          ░                   ░
+	░                          ░                   ░
+	░                         ░░                   ░
+	░                         ░░                   ░
+	░                        ░░                    ░
+	░                       ░░                     ░
+	░                      ░░     ░                ░
+	░                    ░░░    ░░                 ░
+	░                   ░░░   ░░░                  ░
+	░                  ░░░   ░░░                   ░
+	░                 ░░░   ░░░                    ░
+	░                 ░░░  ░░░                     ░
+	░                 ░░   ░░░                     ░
+	░                 ░░   ░░░                     ░
+	░                 ░░   ░░░░                    ░
+	░                  ░░   ░░░                    ░
+	░                  ░░   ░░░░                   ░
+	░                   ░░   ░░░                   ░
+	░                    ░░   ░░                   ░
+	░                     ░   ░░                   ░
+	▒             ░░░░       ░░      ░░░░          ▒
+	▒           ░▒░░                    ▒▒░        ▒
+	▒          ░▒▒▒░░ ░░░░░░░░░░░░░░    ░▒▒        ▒
+	▒           ░░░▒▒▒▒▒▒▒▒▒▒░░░░░       ▒▒        ▒
+	▒                                   ░▒░        ▒
+	▒              ░░                  ░▒░         ▒
+	▒             ░▒▒░░░░░░░░░░░░░    ░▒░          ▒
+	▒              ░▒▒▒▒▒▒▒▒▒▒▒▒▒░  ░░░░           ▒
+	▒                ░░░░░░░░░░░    ░░             ▒
+	▒                                              ▒
+	▒               ▒░░░     ░░░                   ▒
+	▒               ▒▒▒▒▒░░░▒▒▒▒▒░                 ▒
+	▒           ░░░  ░░▒▒▒▒▒▒▒▒░░                  ▒
+	▒         ░▒░                       ░░         ▒
+	▒       ░▒▒▒                       ░▒          ▒
+	▒       ░▒▒▒▒░░░░░         ░░░░░▒▒▒░           ▒
+	▒         ░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░            ▒
+	▒            ░░░░░▒▒▒▒▒▒▒▒▒▒░░░░               ▒
+	▒                                              ▒
+	░░                                            ░░
+	 ▒░                                          ░▒ 
+	 ░▒░                                        ░▒░ 
+	   ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░   
+
+
+_NET_WM_PID(CARDINAL) = 5270
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS
+WM_CLASS(STRING) = "sun-awt-X11-XFramePeer", "jetbrains-phpstorm"
+WM_CLIENT_LEADER(WINDOW): window id # 0x1e00005
+_NET_WM_ICON_NAME(UTF8_STRING) = "Java"
+WM_ICON_NAME(STRING) = "Java"
+_NET_WM_NAME(UTF8_STRING) = " "
+WM_NAME(STRING) = " "
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		user specified location: 0, 0
+		program specified location: 0, 0
+		program specified size: 1 by 1
+		window gravity: NorthWest
+window
+ 0x1e0001c:
+WM_CLASS(STRING) = "Focus-Proxy-Window", "FocusProxy"
+WM_CLIENT_LEADER(WINDOW): window id # 0x1e00005
+_NET_WM_NAME(UTF8_STRING) = "FocusProxy"
+WM_NAME(STRING) = "FocusProxy"
+window
+ 0x1e00019:
+WM_CLASS(STRING) = "sun-awt-X11-XContentWindow", "jetbrains-phpstorm"
+WM_CLIENT_LEADER(WINDOW): window id # 0x1e00005
+_NET_WM_NAME(UTF8_STRING) = "Content window"
+WM_NAME(STRING) = "Content window"
+window
+ 0x2001ef0:
+GDK_TIMESTAMP_PROP(GDK_TIMESTAMP_PROP) = 0x61
+_NET_WM_USER_TIME(CARDINAL) = 75161
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 10 by 10
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_ICON_NAME(STRING) = "Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x2000c55:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2000078
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33557591
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_TOOLTIP
+_NET_WM_USER_TIME(CARDINAL) = 55961
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x2000c56
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Firefox"
+WM_ICON_NAME(STRING) = "Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x2000c56:
+window
+ 0x2200218:
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 35652122
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_NET_WM_USER_TIME(CARDINAL) = 32954
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x2200219
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "thunderbird", "Thunderbird"
+WM_ICON_NAME(STRING) = "Thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Thunderbird"
+WM_NAME(STRING) = "Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "Thunderbird"
+window
+ 0x2200219:
+window
+ 0x2200111:
+window
+ 0x22000be:
+_MOTIF_WM_HINTS(_MOTIF_WM_HINTS) = 0x2, 0x0, 0x0, 0x0, 0x0
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_TOOLBAR
+_NET_WM_USER_TIME(CARDINAL) = 32954
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x22000bf
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 1 by 1
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_ICON_NAME(STRING) = "Thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Thunderbird"
+WM_NAME(STRING) = "Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "Thunderbird"
+window
+ 0x22000bf:
+window
+ 0x22000ab:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2200078
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 35651757
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_UTILITY
+_NET_WM_USER_TIME(CARDINAL) = 32954
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x22000ac
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Thunderbird"
+WM_ICON_NAME(STRING) = "Thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Thunderbird"
+WM_NAME(STRING) = "Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "Thunderbird"
+window
+ 0x22000ac:
+window
+ 0x22000a8:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2200078
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 35651754
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_POPUP_MENU
+_NET_WM_USER_TIME(CARDINAL) = 32954
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x22000a9
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Thunderbird"
+WM_ICON_NAME(STRING) = "Thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Thunderbird"
+WM_NAME(STRING) = "Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "Thunderbird"
+window
+ 0x22000a9:
+window
+ 0x22000a5:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2200078
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 35651751
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_POPUP_MENU
+_NET_WM_USER_TIME(CARDINAL) = 32954
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x22000a6
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Thunderbird"
+WM_ICON_NAME(STRING) = "Thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Thunderbird"
+WM_NAME(STRING) = "Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "Thunderbird"
+window
+ 0x22000a6:
+window
+ 0x22000a2:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2200078
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 35651748
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_TOOLTIP
+_NET_WM_USER_TIME(CARDINAL) = 32954
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x22000a3
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Thunderbird"
+WM_ICON_NAME(STRING) = "Thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Thunderbird"
+WM_NAME(STRING) = "Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "Thunderbird"
+window
+ 0x22000a3:
+window
+ 0x220009b:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2200078
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 35651741
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_UTILITY
+_NET_WM_USER_TIME(CARDINAL) = 32954
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x220009c
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Thunderbird"
+WM_ICON_NAME(STRING) = "Thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Thunderbird"
+WM_NAME(STRING) = "Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "Thunderbird"
+window
+ 0x220009c:
+window
+ 0x2200081:
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 35651715
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_NET_WM_USER_TIME(CARDINAL) = 32954
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x2200082
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "thunderbird", "Thunderbird"
+WM_ICON_NAME(STRING) = "Thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Thunderbird"
+WM_NAME(STRING) = "Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "Thunderbird"
+window
+ 0x2200082:
+window
+ 0x220007e:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 35651712
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_NET_WM_USER_TIME(CARDINAL) = 32954
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x220007f
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "thunderbird", "Thunderbird"
+WM_ICON_NAME(STRING) = "Thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Thunderbird"
+WM_NAME(STRING) = "Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "Thunderbird"
+window
+ 0x220007f:
+window
+ 0x220007d:
+_MOZILLA_PROFILE(STRING) = "default"
+_MOZILLA_PROGRAM(STRING) = "thunderbird"
+_MOZILLA_USER(STRING) = "janusz"
+_MOZILLA_VERSION(STRING) = "5.1"
+_NET_WM_USER_TIME(CARDINAL) = 32954
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 10 by 10
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_ICON_NAME(STRING) = "Thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Thunderbird"
+WM_NAME(STRING) = "Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "Thunderbird"
+window
+ 0x2200059:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+_NET_WM_ICON(CARDINAL) = 	Icon (16 x 16):
+	     ░          
+	    ▒░▒▒▒▒░     
+	  ░▒░░░░░░▒▒░   
+	  ▒░░░▒▒▒░░▒▒░  
+	 ▒▒▒▒▒▓▓▓▒▒▒░▒  
+	░▒▒▒▒▒▒░▒▓▒░▒▒░ 
+	░▒▓░▒░   ▒▒▒▒░▒ 
+	▒▒▒▒░    ░▓░▒░▒ 
+	▒▓░ ░  ░░▒▓▒▒▒▒ 
+	░▓   ░░░  ▒▒▒▒▒ 
+	░▓░       ░▓▒▒▒ 
+	 ▓▓░░     ░▓▓▒░ 
+	  ▓▒▒▒▒░  ▒▓▓▒  
+	   ▒░░░▒▒▒▓▓▓   
+	      ░░▒▓▓▒    
+	       ░▒▒░     
+
+	Icon (32 x 32):
+	            ░▒                  
+	          ░▒▒▒░░░░░             
+	         ░▒▒░░░░▒▒▒▒▒▒          
+	        ░▒░░░░░▒▒▒▒▒▒▒▒▒░       
+	       ▒▒░░░░░▒▒▒▒▒▒▒░▒▒▒▒      
+	     ░▒▒░ ░░░░▒▒▒▒░░▒▒▒░▒▒▒     
+	     ▒▒▒░░▒▒░▒▒▒░░░░░░▒▒▒▒▒▒    
+	    ▒░▓░░▒▒░░▒▒▓▓▓▒░▒▒░▒▒░▒▒▒   
+	   ░░▒▓░▒░▒░▒▒▒▓▓▓▓▓░▒▒░▒▒▒▒▒▒  
+	   ░▒▓▓░▓▓░▒▒▓▓▓▓▓▓▓▒░▒▒▒░▒▒▒▒░ 
+	  ░░▓▓▓▒▒▒▒▓▓▓▓▓▓▓▓▓▓▒░▒░▒▒▒▒▒▒ 
+	  ░▒▓▒▓ ░▓▓▓▒░░   ░▒▓▓░▒░▒▒▒▒▒▒ 
+	 ░░▒▓░▒░░▓▒░        ▒▓░▒▒▒▒▒▒▒▒░
+	 ░░▓▒ ▒░▓▒░          ▓▒▒▓▒▒▒░▒▒▒
+	 ▒░▓▒ ░▒▒░          ░▒▓▒▓▒▒▒░▒▒▒
+	 ▒▒▒▒   ░░        ░▒░▒▒▒▓░▒▒░▒▒▒
+	 ▒▓▓▒   ░▒      ░▒░  ▒▒▒▓░▒▒▒▒▒▒
+	 ░▒▓░     ░   ░▒░░   ▒▒▓▓░▒▒▒▒▒▒
+	 ░▒▒ ░    ░░▒░░  ░   ▒▓▓▓▒▓▒▒▒▒▒
+	  ▒▓░                ▒▓▒▓▓▒▒▒▒▒▒
+	  ▒▓░             ░    ▒▓▓▒▒▓▓▒░
+	  ░▓▒░             ░   ▒▓▓▒▓▓▓▒ 
+	   ▒▓▓▒▒░          ░   ▓▓▓▒▓▓▓▒ 
+	   ░▓▓▓▓▓▒▒░        ░ ░▓▓▓▓▓▒▓░ 
+	    ░▓▓▓▒▓▒░▒▒░    ░░░▓▓▓▓▓▒▓▒  
+	     ░▓▓░░▒░░░▒▒▒░  ░▒▓▓▓▓▓▓▓   
+	      ░▓▓ ░░░░░░░▒▒▒░▓▓▓▓▓▓▓    
+	       ░▒░░░░░░░░░░░▓▓▓▓▓▓▓     
+	            ░░░░░░░▒▓▓▓▓▓▒      
+	               ░░▒▒▒▓▓▓▓░       
+	                ░▓▓▒▒▒▒         
+	                                
+
+	Icon (48 x 48):
+	                 ▒                              
+	                ▒▒▒░                            
+	               ▒░▒▒▒▒░░░░░░░░                   
+	              ▒░▒▒░░░░░░▒▒▒▒▒▒▒░                
+	             ▒░░▒░░░░░░▒▒▒▒▒▒▒▒▒▒░              
+	           ░▒▒░░░░░░░░▒▒▒▒▒▒▒▒▒░▒▒▒░            
+	          ▒▒▒░░░░░░░░▒▒▒▒▒▒▒░░▒▒▒▒▒▒▒░          
+	         ▒▒▒░░░░░░░░░▒▒▒▒▒░░▒▒▒▒▒▒░▒▒▒▒         
+	        ▒▒▒▒░░░░░▒░░▒▒▒▒▒▒▒▒▒▒░░▒▒▒▒░░▒▒        
+	       ▒▒▒▒░░░░▒▒▒░▒▒▒▒▒░░▒▒░▒▒▒▒░░▒▒▒░▒▒       
+	      ▒░▒▓░░░░▒▒▒░░▒▒▓▓▒▒░░░░░▒░▒▒▒▒▒▒▒░▒▒      
+	     ░░▒▓▓ ░░▒▒▒░░▒▒▒▓▓▓▓▓▒▒░▒▒▒░▒▒▒▒▒▒░▒▒▒     
+	    ░▒▒▒▓▓░░▒▓▓▒░▒▒▒▒▒▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒░▒▒▒▒▒░    
+	    ▒░▒▓▓▓░░▒░░▒░▒▒▒▒▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒░▒▒▒▒▒▒    
+	   ░░▒▓▓▓▓░░▒▓▒░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▒░▒▒▒░▒░░▒▒▒▒▒░   
+	   ░▒▒▓▓▒▓▒░▒░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░▒▒░▒▒▒▒▒▒▒░▒   
+	   ░▒▒▓▓▒▓▒▒▒▒▒▓▓▓▓▒▒▒░░░▒▒▓▓▓▓▒░▒▒░▒▒▒▒▒▒▒░▒░  
+	  ░░▒▓▓▒░▓░▒▒▓▓▓▒▒▒░       ░░▒▒▓░░▒░▒▒▒▒▒▒▒░░▒  
+	  ░░▒▓▒░░▒░░▓▓▒▒▒░           ░▒▓▒░▒▒▒▒▒▒▒░▒▒░▒  
+	  ▒░▒▓▒░ ▒░▓▒▒▒░░             ░▓▒░▒▓▒▒▒▒▒░▒▒░▓░ 
+	 ░▒░▓▓░  ▒▒▒░░░░              ░▒▓▒▒▓▒▒▒▒▒░▒▒▒▓▒ 
+	 ░▒░▒▓░   ▒░░░░                ░▓▒▒▓▒▒▒▒▒░░▒▒▒▒ 
+	 ░▒░▒▓░     ▒░                 ░▓▒▒▓▒░▒▒▒░▒▒▒▒▒ 
+	 ▒▒▒▒▒░     ░▒               ░░▒▒▒▒▓▒░▒▒▒░▒▒▒▒▒ 
+	 ▒▒▓▒▒░      ░░           ░░▒░ ░▒▒▒▓▒░▒▒▒▒▒▒▒▒▒ 
+	 ░▒▓▒▒░       ░         ░░░    ░▒▒▒▓▒░▒▒▒▒▒▒▒▒▒ 
+	 ░▒▓▒░░        ░     ░░░░      ░▒▒▓▓░░▒▒▒▒▒▒▒▒▒ 
+	  ▒▒▒░░        ░░ ░░░░         ▒▒▓▓▓▒▒▓▒▒▒▒░▒▒▒ 
+	  ▒▒▒░          ░░            ░▒▓▓▒▓▒▓▓▒▒▒▒░▒▒▒ 
+	  ▒▒▒░                        ░▒▒░▒▓▒▓▒░▒▓▒▒▓▒░ 
+	  ░▓▓░                          ░░▒▓▒▓▒░▒▓▓▓▓▒░ 
+	   ▓▓▒                           ░▒▓▒▓▓▒▓▓▓▓▒▒  
+	   ▒▓▓▒░                    ░    ░▓▓▓▓▓▒▓▓▒▓▒▒  
+	    ▓▓▓▒▒░                       ▒▓▓▓▓▒▒▓▓▒▓▒░  
+	    ░▓▓▓▓▓▒▒░                ░   ▒▓▓▓▓▒▓▓▒▓▓▒   
+	     ▒▓▓▓▓▓▓▓▒▒░             ░░ ░▓▓▓▓▓▓▓▓▒▓▒░   
+	      ▓▓▓▓▓░▓▓▓░░░░    ░░     ░░▒▓▓▓▓▓▓▓▒▓▓▒    
+	       ▓▓▓▓▒ ▒▓▒ ░░▒░░    ░░░░░░▒▓▓▓▓▓▓▒▒▓▓     
+	        ▒▓▓▓  ░▒░░░░░░▒▒░   ░░░▒▓▓▓▓▓▓▓▒▓▓░     
+	         ▒▓▓▒ ░░░░░░░░░░░▒░░  ░▓▒▓▓▓▓▓▓▓▓░      
+	          ░▓▓░░░░░░░░░░░░░░░▒▒▒▒▓▓▓▓▓▓▓▓░       
+	           ░▒░ ░░░░░░░░░░░░░░▒▒▒▓▓▓▓▓▓▓░        
+	                 ░░░░░░░░░░░▒▒▒▓▓▓▓▒▓▒          
+	                    ░░░░░░░▒▒▒▓▓▓▓▒▓▒           
+	                      ░░░▒▒▒▒▓▓▓▓▒▓░            
+	                        ▒▒▒▓▓▓▒▒▒▒              
+	                        ▒▒▒░░░▒░                
+	                                                
+
+
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 35651675
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_NET_WM_USER_TIME(CARDINAL) = 32954
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x220005a
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Toplevel", "Thunderbird"
+WM_ICON_NAME(STRING) = 
+_NET_WM_ICON_NAME(UTF8_STRING) = 
+WM_NAME(STRING) = 
+_NET_WM_NAME(UTF8_STRING) = 
+window
+ 0x220005a:
+window
+ 0x2200001:
+_NET_STARTUP_ID(UTF8_STRING) = "i3/dmenu_run/2756-3-darkmachine_TIME32954"
+WM_CLASS(STRING) = "thunderbird", "Thunderbird"
+WM_COMMAND(STRING) = { "thunderbird" }
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x2200002
+WM_CLIENT_LEADER(WINDOW): window id # 0x2200001
+_NET_WM_PID(CARDINAL) = 2976
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 10 by 10
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING
+WM_ICON_NAME(STRING) = "thunderbird"
+_NET_WM_ICON_NAME(UTF8_STRING) = "thunderbird"
+WM_NAME(STRING) = "Thunderbird"
+_NET_WM_NAME(UTF8_STRING) = "Thunderbird"
+window
+ 0x2200002:
+window
+ 0x20003d0:
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33555410
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_NET_WM_USER_TIME(CARDINAL) = 28218
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x20003d1
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "firefox", "Firefox"
+WM_ICON_NAME(STRING) = "Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x20003d1:
+window
+ 0x20000f3:
+window
+ 0x20000c3:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+WM_TRANSIENT_FOR(WINDOW): window id # 0x2000078
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33554629
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_UTILITY
+_NET_WM_USER_TIME(CARDINAL) = 28218
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x20000c4
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Popup", "Firefox"
+WM_ICON_NAME(STRING) = "Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x20000c4:
+window
+ 0x2000081:
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33554563
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_NET_WM_USER_TIME(CARDINAL) = 28218
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x2000082
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "firefox", "Firefox"
+WM_ICON_NAME(STRING) = "Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x2000082:
+window
+ 0x200007e:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33554560
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_NET_WM_USER_TIME(CARDINAL) = 28218
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x200007f
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "firefox", "Firefox"
+WM_ICON_NAME(STRING) = "Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x200007f:
+window
+ 0x200007d:
+_MOZILLA_PROFILE(STRING) = "default"
+_MOZILLA_PROGRAM(STRING) = "firefox"
+_MOZILLA_USER(STRING) = "janusz"
+_MOZILLA_VERSION(STRING) = "5.1"
+_NET_WM_USER_TIME(CARDINAL) = 28218
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 10 by 10
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_ICON_NAME(STRING) = "Firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "Firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x2000059:
+XdndAware(ATOM) = BITMAP
+_MOTIF_DRAG_RECEIVER_INFO(_MOTIF_DRAG_RECEIVER_INFO) = 0x6c, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x10, 0x0, 0x0, 0x0
+_NET_WM_ICON(CARDINAL) = 	Icon (22 x 22):
+	                      
+	         ░░░░         
+	      ░░░░░░░░░       
+	     ░▒▒░░░░░░▒░ ░    
+	  ░▒▒▒▒░░▒░░▒▒▒▒░ ░   
+	  ░▒░░░░▒▒▒▒▒▒▒▒░     
+	  ░░░░░░▒▒▒▒▒▒▒▒▒     
+	  ░░░░░░▒░▒▒▒▒▒▒▒░    
+	 ░▒░░░░░░▒▒▒▒▒▒▒▒░    
+	 ▒▒▒░░░░▒▒▒▒▒▒▓▓▒   ░ 
+	 ▒▒▒░░▒▒▒▒▒▒▓▓▓▓▒   ▒ 
+	 ▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▒   ░ 
+	 ▒▒▒▒▒▒░▒▒▒░░▓▓▓░   ░ 
+	 ░▒▒▒▒▒▒░░▒▒▒▓▓▓░ ░░  
+	  ▒▒▒▒▒▒▒▒▓▓▓▓▓▒░░░▒  
+	  ░▒▒▒▒▒▒▒▓▓▓▓▒░░░▒▒  
+	   ▒▒▒▒▒▒▒▒▒▒░░░░░▒░  
+	   ░▒▒▒▒▒▒▒▒▒░░░▒▒░   
+	    ░▒▒▒▒▒▒▒▒▒▒▒▒░    
+	     ░▒▒▒▒▒▒▒▒▒▒▒     
+	      ░░▒▒▒▒▒▒▒░      
+	                      
+
+	Icon (16 x 16):
+	                
+	      ░░░░      
+	    ░▒░░░░░     
+	  ░▒▒░▒░░░▒░    
+	  ▒░░░▒▒▒▒▒▒    
+	 ░░░░░░░▒▒▒▒░   
+	 ░▒░░░▒▒▒▒▒▒░ ░ 
+	 ▒▒░▒▒▒▒▒▓▓▓  ░ 
+	 ▒▒▒▒▒▓▒▒▓▓▓  ░ 
+	 ▒▒▒▒░░░▒▒▓▒  ░ 
+	 ░▒▒▒▒▒▓▓▓▓░░░░ 
+	  ▒▒▒▒▒▒▒▒░░░▒  
+	   ▒▒▒▒▒▒░░░▒░  
+	   ░▒▒▒▒▒▒▒▒░   
+	    ░▒▒▒▒▒▒░    
+	       ░░       
+
+	Icon (24 x 24):
+	                        
+	                        
+	          ░░░░          
+	       ░░░░░░░░░        
+	      ░▒▒░░░░░░▒░ ░     
+	   ░▒▒▒▒░░▒░░▒▒▒▒░ ░    
+	   ░▒░░░░▒▒▒▒▒▒▒▒░      
+	   ░░░░░░▒▒▒▒▒▒▒▒▒      
+	   ░░░░░░▒░▒▒▒▒▒▒▒░     
+	  ░▒░░░░░░▒▒▒▒▒▒▒▒░     
+	  ▒▒▒░░░░▒▒▒▒▒▒▓▓▒   ░  
+	  ▒▒▒░░▒▒▒▒▒▒▓▓▓▓▒   ▒  
+	  ▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▒   ░  
+	  ▒▒▒▒▒▒░▒▒▒░░▓▓▓░   ░  
+	  ░▒▒▒▒▒▒░░▒▒▒▓▓▓░ ░░   
+	   ▒▒▒▒▒▒▒▒▓▓▓▓▓▒░░░▒   
+	   ░▒▒▒▒▒▒▒▓▓▓▓▒░░░▒▒   
+	    ▒▒▒▒▒▒▒▒▒▒░░░░░▒░   
+	    ░▒▒▒▒▒▒▒▒▒░░░▒▒░    
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒░     
+	      ░▒▒▒▒▒▒▒▒▒▒▒      
+	       ░░▒▒▒▒▒▒▒░       
+	                        
+	                        
+
+	Icon (32 x 32):
+	                                
+	              ░░░░              
+	          ░░░░░░░░░░░░          
+	        ░░░░░░░░░░░░░░          
+	       ░░▒▒▒░░░░░░░░░░░  ░      
+	    ░ ░▒▒▒▒░░░░░░░░░░░░▒  ░     
+	   ░▒▒▒▒░░░░░░░░░░░▒▒▒▒░░  ░    
+	   ▒▒▒░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒    ░   
+	   ▒░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒░       
+	   ░░░░░░░░▒░░░▒▒▒▒▒▒▒▒▒▒       
+	  ░░░░░░░░░▒▒▒░▒▒▒▒▒▒▒▒▒▒░      
+	  ░░░░░░░░░░░ ░▒▒▒▒▒▒▒▒▒▒▒      
+	 ░▒▒░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒      
+	 ░▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▓▓▒░    ░ 
+	 ░▒▒▒░░░░▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▒     ▒ 
+	 ░▒▒▒░░░▒▒▒▓▒▒▒▒▒▒▓▓▓▓▓▓▒    ░▒ 
+	 ░▒▒▒▒░▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▒    ░░ 
+	 ░▒▒▒▒▒▒▒░░▒▒▓▓▒▒▒▒▓▓▓▓▓▒    ░  
+	 ░▒▒▒▒▒▒▒░░░░▒░░░░░▓▓▓▓▒░░   ░  
+	  ▒▒▒▒▒▒▒▒░░░░░░▒▒▒▓▓▓▓▒░░ ░░░  
+	  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓░░░░░░░  
+	  ░▒▒▒▒▒▒▒░░▒▓▓▓▓▓▓▓▓▓▒░░░░░░░  
+	   ▒▒▒▒▒▒▒▒▒░▒▒▓▓▓▓▓▒▒░░░░░░▒░  
+	   ░▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒░░░░░░░▒▒   
+	    ▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░▒░   
+	     ▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▒░    
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░     
+	      ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░      
+	       ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒       
+	        ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░        
+	          ░▒▒▒▒▒▒▒▒▒▒░          
+	                                
+
+	Icon (128 x 128):
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+	                                                     ░░░░░░░░░░░░░░░░░░░░░                                                      
+	                                                 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                                 
+	                                              ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                              
+	                                           ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                           
+	                                         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                         
+	                                       ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                       
+	                                     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                     
+	                                   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ ░░░░░░                                   
+	                                 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   ░░░░                                  
+	                                ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    ░░░░                                
+	                              ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒░░░    ░░░                               
+	                 ░           ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒░     ░░░                             
+	                ░░          ░░░░░░░░▒▒▒▒▒▒▒▒░▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒      ░░ ░░                         
+	                ░░         ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒      ░░░▒░                        
+	               ░░░░      ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒       ░░▒▒                       
+	               ░░░░     ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒       ░░▒▒                      
+	              ░░░░░    ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒       ░░▒░                     
+	              ░░░░░░  ░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒░▒▒░░░░░░░░░▒▒▒▒▒       ░░▒░                    
+	             ░░░░░░▒▒░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░ ░▒▒▒░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒░░░░░░░░▒▒▒▒▒       ░░▒░░░                 
+	             ░░░░░▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░▒▒▒░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒░░▒▒░░░▒▒▒▒░       ░░▒░▒                 
+	             ░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░   ░▒▒▒░       ░▒░▒░                
+	            ░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░▒▒░░░░░░░░░░▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ░▒▒▒        ░░▒▒                
+	            ░▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒    ░▒░        ░▒▒░               
+	            ░▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒     ▒         ░▒▒               
+	            ▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒     ░         ▒▒               
+	            ▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░              ░▒░              
+	            ▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒               ░░              
+	            ▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒               ▒              
+	            ▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░              ░              
+	            ▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                             
+	            ▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                            
+	            ▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                            
+	           ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                           
+	           ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                           
+	          ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                           
+	          ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                          
+	         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                          
+	         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒░  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                         
+	        ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒░░░▒▒▒   ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                         
+	        ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒░░░        ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                         
+	       ░░░░░░░▒░▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒░░░░       ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▒                         
+	       ░░░░░░░▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒                         
+	       ░░░░░░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓░                        
+	      ░░░░░▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓░                  ░     
+	      ░░░░▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▓▓▓▒                  ░     
+	      ░░░▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒▒▒░ ░▓▓▒                 ░▒     
+	      ░░░▒▒▒▒▒▒▒░░▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▒▒▒  ▒▓▒                 ▒▒     
+	     ░░░▒▒▒▒▒▒▒▒░▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▒▒▒▒   ▓▒                ░▒▒     
+	     ░░░▒▒▒▒▒▒▒▒░▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▒▒▓▒   ░▓                ▒▒▒░    
+	     ░░▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▒    ▒                ▒▒▒░    
+	      ░▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ░                ▒▒▒░    
+	    ░ ░▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                    ░▒▒▒░    
+	      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                    ░▒▒▒░    
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                    ░▒▒▒░    
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                   ▒▒▒▒     
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▓▓▓▒▒▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                   ▒▒▒▒     
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░░░░░░░░░░▒▒▒▒▒▒▒▒▒▓▓▓▓▒▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                  ░▓▒▒░     
+	     ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒░░░░░░░░▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                  ░▓▒▒░     
+	     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                  ▒▓▓░░     
+	     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▒▒▒▒▒░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                  ▒▓▒░░     
+	     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▒▒▒▒░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░       ░░        ░▓▒░░░     
+	     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▒▒▒▒▒▒░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓      ░░░░        ░▒░░░░     
+	     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░▒▒▒▒▒▒▒▒░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░   ░░         ░░░░░░     
+	     ▒░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░▒▒▒▒▒▒▒░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░   ░░         ░░░░░░     
+	     ░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▒▒▒▒▒▒▒░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒░░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░▓▒░░░░   ░          ░░░░░      
+	     ░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ▓░░░░░   ░          ░░░░░      
+	       ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒░░░░░░░░░░░░░░▒▒▓▓▓▓▓▒▒░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒ ▒░░░░░             ░░░░░░      
+	       ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒ ░░░░░              ░░░░░░      
+	       ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░  ░░░░              ░░░░░       
+	       ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░  ░░░░           ░░░░░░░░       
+	       ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ░░░░      ░░░░░░░░░░░░░       
+	       ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒   ░░░░     ░░░░░░░░░░░░░        
+	        ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░   ░░░      ░░░░░░░░░░░░░        
+	        ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▒░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ░░░     ░░░░░░░░░░░░░         
+	        ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒    ░░░   ░░░░░░░░░░░░░░░         
+	        ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░    ░░░░░░░░░░░░░░░░░░░░░         
+	         ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░░░░░░░░░░░░░░░         
+	         ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░▒░         
+	         ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▓▓▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒         
+	          ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░ ░░░░░░░░░░░░░░░░░░░░▒▒▒         
+	          ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░ ░░░░░░░░░░░░░░░░░░░▒▒▒▒         
+	           ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░▒▓▒▒░         
+	           ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒░         
+	            ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░▒▓▒░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒▒          
+	            ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒▒          
+	             ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒▒░          
+	             ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▒▒▒           
+	              ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓▒▒░▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▒▒▒▒           
+	              ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒▒▒░           
+	               ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒▒▒░            
+	               ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▒▒▒▒▒▒             
+	                ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒░             
+	                 ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒░              
+	                  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒░               
+	                  ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒░                
+	                   ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒░                 
+	                    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▒░                  
+	                     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                   
+	                      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                     
+	                       ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                      
+	                       ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                       
+	                        ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░                        
+	                         ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░                         
+	                          ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░                         
+	                          ░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▒▒░░                          
+	                           ░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒▒▒░░                          
+	                           ░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▒▒░░                           
+	                            ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▒▒▒░░                            
+	                             ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒▒▒▒▒░░░                             
+	                               ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░                               
+	                                ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░                                
+	                                  ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░                                  
+	                                    ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░                                    
+	                                       ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░                                       
+	                                          ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░                                          
+	                                              ░░░░░▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░                                             
+	                                                   ░░░░░░░░░▒▒▒▒▒▒▒░░░░░░░░░░                                                   
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+	                                                                                                                                
+
+
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 33554523
+_NET_WM_WINDOW_TYPE(ATOM) = _NET_WM_WINDOW_TYPE_NORMAL
+_NET_WM_USER_TIME(CARDINAL) = 28218
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x200005a
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 200 by 200
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_CLASS(STRING) = "Toplevel", "Firefox"
+WM_ICON_NAME(STRING) = 
+_NET_WM_ICON_NAME(UTF8_STRING) = 
+WM_NAME(STRING) = 
+_NET_WM_NAME(UTF8_STRING) = 
+window
+ 0x200005a:
+window
+ 0x2000001:
+_NET_STARTUP_ID(UTF8_STRING) = "i3/dmenu_run/2756-2-darkmachine_TIME28218"
+WM_CLASS(STRING) = "firefox", "Firefox"
+WM_COMMAND(STRING) = { "firefox" }
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x2000002
+WM_CLIENT_LEADER(WINDOW): window id # 0x2000001
+_NET_WM_PID(CARDINAL) = 2918
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 10 by 10
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING
+WM_ICON_NAME(STRING) = "firefox"
+_NET_WM_ICON_NAME(UTF8_STRING) = "firefox"
+WM_NAME(STRING) = "Firefox"
+_NET_WM_NAME(UTF8_STRING) = "Firefox"
+window
+ 0x2000002:
+window
+ 0x120000c:
+window
+ 0x1600003:
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_ICON_NAME(STRING) = "xcompmgr"
+WM_NAME(STRING) = "xcompmgr"
+window
+ 0x1800005:
+_SCREENSAVER_ID(STRING) = "2853 (janusz@darkmachine)"
+_SCREENSAVER_VERSION(STRING) = "5.26"
+WM_NAME(STRING) = "screensaver"
+WM_CLASS(STRING) = "xscreensaver", "XScreenSaver"
+window
+ 0x1200001:
+_NET_STARTUP_ID(UTF8_STRING) = "i3/pa-applet/2756-0-darkmachine_TIME0"
+WM_CLASS(STRING) = "pa-applet", "Pa-applet"
+WM_COMMAND(STRING) = { "pa-applet" }
+_NET_WM_USER_TIME_WINDOW(WINDOW): window id # 0x1200002
+WM_CLIENT_LEADER(WINDOW): window id # 0x1200001
+_NET_WM_PID(CARDINAL) = 2834
+WM_LOCALE_NAME(STRING) = "pl_PL.UTF-8"
+WM_CLIENT_MACHINE(STRING) = "darkmachine"
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		program specified size: 10 by 10
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING
+WM_ICON_NAME(STRING) = "pa-applet"
+_NET_WM_ICON_NAME(UTF8_STRING) = "pa-applet"
+WM_NAME(STRING) = "pa-applet"
+_NET_WM_NAME(UTF8_STRING) = "pa-applet"
+window
+ 0x1200002:
+window
+ 0x1800001:
+_SCREENSAVER_ID(STRING) = "2853 (janusz@darkmachine)"
+_SCREENSAVER_VERSION(STRING) = "5.26"
+WM_NAME(STRING) = "screensaver"
+WM_CLASS(STRING) = "xscreensaver", "XScreenSaver"
+window
+ 0x800001:
+_DBUS_SESSION_BUS_PID(CARDINAL) = 2832
+_DBUS_SESSION_BUS_ADDRESS(STRING) = "unix:abstract=/tmp/dbus-1rm1dH4ir1,guid=eaa91b8893f61cc043fd41ea53fb6ecb"

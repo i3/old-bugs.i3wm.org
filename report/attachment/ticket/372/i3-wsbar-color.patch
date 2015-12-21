@@ -1,0 +1,27 @@
+--- i3-wsbar	2011-03-17 12:58:36.649242000 +0100
++++ /usr/bin/i3-wsbar	2011-04-08 14:48:06.645987249 +0200
+@@ -150,9 +150,21 @@
+         for my $ws (@{$workspaces}) {
+             next if $ws->{output} ne $name and !$show_all;
+ 
+-            my ($bg, $fg) = qw(333333 888888);
+-            ($bg, $fg) = qw(4c7899 ffffff) if $ws->{visible};
+-            ($bg, $fg) = qw(900000 ffffff) if $ws->{urgent};
++			my $unfocused_bg = $ENV{'I3_WSBAR_UNFOCUSED_BG'};
++			$unfocused_bg = ($unfocused_bg eq '') ? "333333" : $unfocused_bg;
++			my $unfocused_fg = $ENV{'I3_WSBAR_UNFOCUSED_FG'};
++			$unfocused_fg = ($unfocused_fg eq '') ? "888888" : $unfocused_fg;
++			my $focused_bg = $ENV{'I3_WSBAR_FOCUSED_BG'};
++			$focused_bg = ($focused_bg eq '') ? "4c7899" : $focused_bg;
++			my $focused_fg = $ENV{'I3_WSBAR_FOCUSED_FG'};
++			$focused_fg = ($focused_fg eq '') ? "ffffff" : $focused_fg;
++			my $urgent_bg = $ENV{'I3_WSBAR_URGENT_BG'};
++			$urgent_bg = ($urgent_bg eq '') ? "900000" : $urgent_bg;
++			my $urgent_fg = $ENV{'I3_WSBAR_URGENT_FG'};
++			$urgent_fg = ($urgent_fg eq '') ? "ffffff" : $urgent_fg;
++            my ($bg, $fg) = ($unfocused_bg, $unfocused_fg);
++            ($bg, $fg) = ($focused_bg, $focused_fg) if $ws->{visible};
++            ($bg, $fg) = ($urgent_bg, $urgent_fg) if $ws->{urgent};
+ 
+             my $cmd = q|i3-msg "| . $ws->{num} . q|"|;
+             my $name = $ws->{name};

@@ -1,0 +1,497 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #114 (coredump: when moving a floating window on another display)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/113" title="Ticket #113" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/114?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/114?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/114?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/115" title="Ticket #115" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="a320f74fffeb7e6d35640ed1";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/113" title="Ticket #113">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/115" title="Ticket #115">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2009-09-28T18%3A56%3A16%2B02%3A00&amp;precision=second" title="See timeline at 09/28/09 18:56:16">6 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2009-09-29T01%3A09%3A29%2B02%3A00&amp;precision=second" title="See timeline at 09/29/09 01:09:29">6 years ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/114" class="trac-id">#114</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">coredump: when moving a floating window on another display</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable"><a href="/report/query?status=!closed&amp;reporter=msi">msi</a></td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=3.c-next">3.c-next</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion" class="missing">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+Core was generated by `i3'.<br />
+Program terminated with signal 11, Segmentation fault.<br />
+<a class="missing ticket">#0</a>  0x0805269a in floating_assign_to_workspace (client=0x9a18738, new_workspace=0x9a16774) at src/floating.c:147<br />
+147                SLIST_REMOVE(&amp;(ws-&gt;focus_stack), client, Client, focus_clients);<br />
+</p>
+<p>
+(gdb) backtrace full<br />
+<a class="missing ticket">#0</a>  0x0805269a in floating_assign_to_workspace (client=0x9a18738, new_workspace=0x9a16774) at src/floating.c:147<br />
+</p>
+<blockquote>
+<p>
+curelm = 0x0<br />
+ws = 0x9a16718<br />
+</p>
+</blockquote>
+<p>
+<a class="closed ticket" href="/report/ticket/1" title="task: Design a logo/favicon (closed: fixed)">#1</a>  0x080529de in drag_window_callback (old_rect=0xbf80e440, new_x=1539, new_y=159) at src/floating.c:254<br />
+</p>
+<blockquote>
+<p>
+event = 0x9a18ae0<br />
+client = 0x9a18738<br />
+conn = 0x99fccf8<br />
+</p>
+</blockquote>
+<p>
+<a class="closed ticket" href="/report/ticket/2" title="defect: focus problems with firefox (or other gtk apps?) and right-clicking (closed: worksforme)">#2</a>  0x08052b5f in drag_pointer (conn=0x99fccf8, client=0x9a18738, event=0x9a18ae0, confine_to=0, border=BORDER_TOP, callback=0xbf80e4a8) at src/floating.c:371<br />
+</p>
+<blockquote>
+<p>
+root = &lt;value optimized out&gt;<br />
+old_rect = {x = 0, y = 0, width = 488, height = 331}<br />
+inside_event = 0x0<br />
+last_motion_notify = 0x9a18ab8<br />
+<span class="underline">PRETTY_FUNCTION</span> = "drag_pointer"<br />
+<span class="underline">FUNCTION</span> = "drag_pointer"<br />
+</p>
+</blockquote>
+<p>
+<a class="closed ticket" href="/report/ticket/3" title="task: Implement automatic snapping (closed: wontfix)">#3</a>  0x08052d48 in floating_drag_window () at src/floating.c:261<br />
+</p>
+<blockquote>
+<p>
+conn = 0x99fccf8<br />
+client = 0x9a18738<br />
+event = 0x9a18ae0<br />
+<span class="underline">FUNCTION</span> = "floating_drag_window"<br />
+</p>
+</blockquote>
+<p>
+<a class="closed ticket" href="/report/ticket/4" title="defect: Customly resized containers don’t re-distribute free space when cells ... (closed: fixed)">#4</a>  0x0804c1a4 in handle_button_press (ignored=0x0, conn=0x99fccf8, event=0x9a18ae0) at src/click.c:319<br />
+</p>
+<blockquote>
+<p>
+client = 0x9a18738<br />
+border_click = true<br />
+orientation = &lt;value optimized out&gt;<br />
+con = &lt;value optimized out&gt;<br />
+first = &lt;value optimized out&gt;<br />
+second = &lt;value optimized out&gt;<br />
+font = 0x0<br />
+ws = &lt;value optimized out&gt;<br />
+<span class="underline">FUNCTION</span> = "handle_button_press"<br />
+</p>
+</blockquote>
+<p>
+<a class="closed ticket" href="/report/ticket/5" title="defect: Resizing-windows sometimes are not rendered correctly. (closed: worksforme)">#5</a>  0xb782bf14 in xcb_event_handle () from /usr/lib/libxcb-event.so.1<br />
+No symbol table info available.<br />
+<a class="closed ticket" href="/report/ticket/6" title="task: Implement floating windows (closed: fixed)">#6</a>  0x08057940 in xcb_check_cb (loop=0xb76f82e0, w=0x9a161a8, revents=32768) at src/mainx.c:112<br />
+</p>
+<blockquote>
+<p>
+event = 0xb782de10<br />
+</p>
+</blockquote>
+<p>
+<a class="closed ticket" href="/report/ticket/7" title="defect: Firefox/Thunderbird: Drag'n'drop does not work (closed: fixed)">#7</a>  0xb76ef8f4 in ev_invoke_pending () from /usr/lib/libev.so.3<br />
+No symbol table info available.<br />
+<a class="closed ticket" href="/report/ticket/8" title="task: Implement a command for explicitly switching screens. (closed: fixed)">#8</a>  0xb76f5045 in ev_loop () from /usr/lib/libev.so.3<br />
+No symbol table info available.<br />
+<a class="missing ticket">#9</a>  0x08058dfe in main (argc=1, argv=0x0, env=0x0) at src/mainx.c:480<br />
+</p>
+<blockquote>
+<p>
+i = &lt;value optimized out&gt;<br />
+screens = 0<br />
+opt = &lt;value optimized out&gt;<br />
+override_configpath = 0x0<br />
+autostart = true<br />
+prophs = {head = 0x9a16bd8, def = {long_len = 0, handler = 0, data = 0x0}, evenths = 0x8070fa0}<br />
+atom_cookies = {{sequence = 4}, {sequence = 6}, {sequence = 7}, {sequence = 5}, {sequence = 8}, {sequence = 9}, {sequence = 11}, {sequence = 12}, {sequence = 13}, {sequence = 14}, {sequence = 15}, {<br />
+</p>
+<blockquote>
+<p>
+sequence = 10}, {sequence = 16}, {sequence = 17}, {sequence = 18}, {sequence = 19}, {sequence = 20}, {sequence = 21}}<br />
+</p>
+</blockquote>
+<p>
+option_index = 0<br />
+major = 1<br />
+minor = 0<br />
+error = 0<br />
+evBase = 96<br />
+errBase = 153<br />
+i1 = 144<br />
+loop = 0xb76f82e0<br />
+root_screen = &lt;value optimized out&gt;<br />
+values = <a class="missing report" title="report does not exist">{5374032}</a><br />
+exec = &lt;value optimized out&gt;<br />
+reply = &lt;value optimized out&gt;<br />
+screen = 0x9a0b778<br />
+long_options = {{name = 0x80677c5 "no-autostart", has_arg = 0, flag = 0x0, val = 97}, {name = 0x8064c07 "config", has_arg = 1, flag = 0x0, val = 99}, {name = 0x80677d2 "version", has_arg = 0, <br />
+</p>
+<blockquote>
+<p>
+flag = 0x0, val = 118}, {name = 0x80677da "help", has_arg = 0, flag = 0x0, val = 104}, {name = 0x0, has_arg = 0, flag = 0x0, val = 0}}<br />
+</p>
+</blockquote>
+<p>
+<span class="underline">FUNCTION</span> = "main"<br />
+</p>
+</blockquote>
+
+    </div>
+  </div>
+</div>
+          
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(2)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1254165168000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2009-09-28T21%3A12%3A48%2B02%3A00&amp;precision=second" title="See timeline at 09/28/09 21:12:48">6 years ago</a> by msi
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+seems like this happens when sending a floating window to another workspace too<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1254179369000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2009-09-29T01%3A09%3A29%2B02%3A00&amp;precision=second" title="See timeline at 09/29/09 01:09:29">6 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Fixed since revision 095de9eaabbb680cee893a8151c113fa682dd10c<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/114?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/114?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/114?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

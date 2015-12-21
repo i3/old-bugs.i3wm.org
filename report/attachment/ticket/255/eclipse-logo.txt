@@ -1,0 +1,27 @@
+xwininfo: Please select the window about which you
+          would like information by clicking the
+          mouse in that window.
+
+xwininfo: Window id: 0x2800003 "Eclipse "
+
+  Absolute upper-left X:  1922
+  Absolute upper-left Y:  14
+  Relative upper-left X:  2
+  Relative upper-left Y:  14
+  Width: 2044
+  Height: 552
+  Depth: 24
+  Visual: 0x21
+  Visual Class: TrueColor
+  Border width: 0
+  Class: InputOutput
+  Colormap: 0x20 (installed)
+  Bit Gravity State: NorthWestGravity
+  Window Gravity State: NorthWestGravity
+  Backing Store State: NotUseful
+  Save Under State: no
+  Map State: IsViewable
+  Override Redirect State: no
+  Corners:  +1922+14  -2+14  -2-634  +1922-634
+  -geometry 2044x552-0+0
+

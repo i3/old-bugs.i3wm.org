@@ -1,0 +1,72 @@
+
+i3 doesn't send an IPC event when a window is moed to a previously unused workspace,
+(unless the workspace is initialized for the first time), this means i3-wsbar
+doesn't update graphic display of populated workspaced if we move a client
+to a previously initialized, empty workspace.
+
+a new I3_IPC_EVENT_WORKSPACE change type, "unempty" is introduced to fix this,
+and is sent whenever we move a window/floating to a workspace which has no
+active windows.
+
+ys 20/02/11 (first contrib - i3 rocks!)
+===============================================================================
+diff -uNr i3-3.e-bf2.orig//docs/ipc i3-3.e-bf2.mod//docs/ipc
+--- i3-3.e-bf2.orig//docs/ipc	2011-01-19 22:26:43.000000000 +0200
++++ i3-3.e-bf2.mod//docs/ipc	2011-02-20 15:50:48.266510962 +0200
+@@ -268,7 +268,7 @@
+ 
+ This event consists of a single serialized map containing a property
+ +change (string)+ which indicates the type of the change ("focus", "init",
+-"empty", "urgent").
++"empty", "unempty", "urgent").
+ 
+ *Example:*
+ ---------------------
+diff -uNr i3-3.e-bf2.orig//docs/ipc.html i3-3.e-bf2.mod//docs/ipc.html
+--- i3-3.e-bf2.orig//docs/ipc.html	2011-01-19 22:26:43.000000000 +0200
++++ i3-3.e-bf2.mod//docs/ipc.html	2011-02-20 15:51:10.965511512 +0200
+@@ -938,7 +938,7 @@
+ <h3 id="_workspace_event">4.3. workspace event</h3><div style="clear:left"></div>
+ <div class="paragraph"><p>This event consists of a single serialized map containing a property
+ <tt>change (string)</tt> which indicates the type of the change ("focus", "init",
+-"empty", "urgent").</p></div>
++"empty", "unempty", "urgent").</p></div>
+ <div class="paragraph"><p><strong>Example:</strong></p></div>
+ <div class="listingblock">
+ <div class="content">
+diff -uNr i3-3.e-bf2.orig//src/commands.c i3-3.e-bf2.mod//src/commands.c
+--- i3-3.e-bf2.orig//src/commands.c	2011-02-20 15:45:22.593510518 +0200
++++ i3-3.e-bf2.mod//src/commands.c	2011-02-20 15:47:22.614511697 +0200
+@@ -621,6 +621,14 @@
+                 }
+         }
+ 
++        /* If after moving the fullscren window there are no elements in the focus stack of the the workspace
++         * then we have just populated a previously empty workspace and we notify of this event via IPC  
++         */
++        if ( SLIST_EMPTY(&(t_ws->focus_stack)) ) {
++                LOG("This workspace was Previously Empty.\n");
++                ipc_send_event("workspace", I3_IPC_EVENT_WORKSPACE, "{\"change\":\"unempty\"}");
++        }
++
+         DLOG("done\n");
+ 
+         render_layout(conn);
+@@ -701,6 +709,17 @@
+                 client_warp_pointer_into(conn, current_client);
+                 set_focus(conn, current_client, true);
+         }
++
++        /* If after moving the window the target workspace has only one element in it's focus stack
++         * and no fullscreen window is present  - then we have just populated a previously empty workspace, 
++         * and we should notify of this by IPC  
++         */
++        if ( !SLIST_EMPTY(&(t_ws->focus_stack)) 
++                && SLIST_NEXT(SLIST_FIRST(&(t_ws->focus_stack)),focus_clients) == NULL 
++                && t_ws->fullscreen_client == NULL) {
++                LOG("This workspace was Previously Empty.\n");
++                ipc_send_event("workspace", I3_IPC_EVENT_WORKSPACE, "{\"change\":\"unempty\"}");
++        }
+ }
+ 
+ /*

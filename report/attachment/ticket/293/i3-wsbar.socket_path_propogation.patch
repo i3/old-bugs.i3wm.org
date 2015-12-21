@@ -1,0 +1,27 @@
+Common subdirectories: i3/debian and i3-build/debian
+Common subdirectories: i3/docs and i3-build/docs
+Common subdirectories: i3/.git and i3-build/.git
+Only in i3-build: i3
+Common subdirectories: i3/i3-input and i3-build/i3-input
+Common subdirectories: i3/i3-msg and i3-build/i3-msg
+diff -u i3/i3-wsbar i3-build/i3-wsbar
+--- i3/i3-wsbar	2011-01-28 23:26:44.360004805 -0700
++++ i3-build/i3-wsbar	2011-02-03 16:53:33.140002554 -0700
+@@ -179,7 +179,9 @@
+             ($bg, $fg) = qw(4c7899 ffffff) if $ws->{visible};
+             ($bg, $fg) = qw(900000 ffffff) if $ws->{urgent};
+ 
+-            my $cmd = q|i3-msg "| . $ws->{num} . q|"|;
++            my $cmd = q|i3-msg|;
++            if ($socket_path) { $cmd = $cmd . q| -s "| . $socket_path . q|"|; }
++            $cmd = $cmd . q| "| . $ws->{num} . q|"|;
+             my $name = $ws->{name};
+ 
+             # Begin the clickable area
+Common subdirectories: i3/include and i3-build/include
+Only in i3-build: loglevels.tmp
+Common subdirectories: i3/man and i3-build/man
+Common subdirectories: i3/src and i3-build/src
+Common subdirectories: i3/testcases and i3-build/testcases
+Common subdirectories: i3/tests and i3-build/tests
+Common subdirectories: i3/website and i3-build/website

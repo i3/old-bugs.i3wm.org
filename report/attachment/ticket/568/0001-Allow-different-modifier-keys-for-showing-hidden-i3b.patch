@@ -1,0 +1,241 @@
+From 467af2619e6f92ea96cc534dbf886f6c5d0ada8d Mon Sep 17 00:00:00 2001
+From: dbp <platypus01@gmail.com>
+Date: Sun, 20 Nov 2011 07:08:01 -0800
+Subject: [PATCH 1/2] Allow different modifier keys for showing hidden i3bar.
+
+---
+ i3bar/src/config.c |   31 ++++++++++++++++++++++++++++++-
+ i3bar/src/xcb.c    |   40 ++++++++++++++++++++++++++++++++++------
+ include/config.h   |   11 ++++++++++-
+ src/cfgparse.l     |    9 ++++++++-
+ src/cfgparse.y     |   18 +++++++++++++++---
+ src/ipc.c          |   19 ++++++++++++++++---
+ 6 files changed, 113 insertions(+), 15 deletions(-)
+
+diff --git a/i3bar/src/config.c b/i3bar/src/config.c
+index 5f3338a..95b2b70 100644
+--- a/i3bar/src/config.c
++++ b/i3bar/src/config.c
+@@ -15,6 +15,8 @@
+ #include <yajl/yajl_parse.h>
+ #include <yajl/yajl_version.h>
+ 
++#include <X11/Xlib.h>
++
+ #include "common.h"
+ 
+ static char *cur_key;
+@@ -71,7 +73,34 @@ static int config_string_cb(void *params_, const unsigned char *val, unsigned in
+ 
+     if (!strcmp(cur_key, "mode")) {
+         DLOG("mode = %.*s, len = %d\n", len, val, len);
+-        config.hide_on_modifier = (len == 4 && !strncmp((const char*)val, "hide", strlen("hide")));
++        if (len == 5 && !strncmp((const char*)val, "shift", strlen("shift"))) {
++            config.hide_on_modifier = ShiftMask;
++            return 1;
++        }
++        if (len == 4 && !strncmp((const char*)val, "ctrl", strlen("ctrl"))) {
++            config.hide_on_modifier = ControlMask;
++            return 1;
++        }
++        if (len == 4 && !strncmp((const char*)val, "Mod", strlen("Mod"))) {
++            switch (val[3]) {
++                case '1':
++                    config.hide_on_modifier = Mod1Mask;
++                    return 1;
++                case '2':
++                    config.hide_on_modifier = Mod2Mask;
++                    return 1;
++                case '3':
++                    config.hide_on_modifier = Mod3Mask;
++                    return 1;
++                case '4':
++                    config.hide_on_modifier = Mod4Mask;
++                    return 1;
++                case '5':
++                    config.hide_on_modifier = Mod5Mask;
++                    return 1;
++            }
++        }
++        config.hide_on_modifier = 0;
+         return 1;
+     }
+ 
+diff --git a/i3bar/src/xcb.c b/i3bar/src/xcb.c
+index 29ffe1c..43b461d 100644
+--- a/i3bar/src/xcb.c
++++ b/i3bar/src/xcb.c
+@@ -751,19 +751,47 @@ void xkb_io_cb(struct ev_loop *loop, ev_io *watcher, int revents) {
+         }
+ 
+         unsigned int mods = ev.state.mods;
+-        modstate = mods & Mod4Mask;
++        modstate = mods & config.hide_on_modifier;
+     }
+ 
++#define DLOGMOD(modmask, status, barfunc) \
++    do { \
++        switch (modmask) { \
++            case ShiftMask: \
++                DLOG("ShiftMask got status!\n"); \
++                break; \
++            case ControlMask: \
++                DLOG("ControlMask got status!\n"); \
++                break; \
++            case Mod1Mask: \
++                DLOG("Mod1Mask got status!\n"); \
++                break; \
++            case Mod2Mask: \
++                DLOG("Mod2Mask got status!\n"); \
++                break; \
++            case Mod3Mask: \
++                DLOG("Mod3Mask got status!\n"); \
++                break; \
++            case Mod4Mask: \
++                DLOG("Mod4Mask got status!\n"); \
++                break; \
++            case Mod5Mask: \
++                DLOG("Mod5Mask got status!\n"); \
++                break; \
++        } \
++        barfunc(); \
++    } while (0)
++
+     if (modstate != mod_pressed) {
+         if (modstate == 0) {
+-            DLOG("Mod4 got released!\n");
+-            hide_bars();
++            DLOGMOD(config.hide_on_modifier, released, hide_bars);
+         } else {
+-            DLOG("Mod4 got pressed!\n");
+-            unhide_bars();
++            DLOGMOD(config.hide_on_modifier, pressed, unhide_bars);
+         }
+         mod_pressed = modstate;
+     }
++
++#undef DLOGMOD
+ }
+ 
+ /*
+@@ -1191,7 +1219,7 @@ void reconfig_windows() {
+             /* Black background */
+             values[0] = colors.bar_bg;
+             /* If hide_on_modifier is set, i3 is not supposed to manage our bar-windows */
+-            values[1] = config.hide_on_modifier;
++            values[1] = config.hide_on_modifier ? 1 : 0;
+             /* We enable the following EventMask fields:
+              * EXPOSURE, to get expose events (we have to re-draw then)
+              * SUBSTRUCTURE_REDIRECT, to get ConfigureRequests when the tray
+diff --git a/include/config.h b/include/config.h
+index b4128ca..7f71e6a 100644
+--- a/include/config.h
++++ b/include/config.h
+@@ -196,7 +196,16 @@ struct Barconfig {
+     char *socket_path;
+ 
+     /** Bar display mode (hide unless modifier is pressed or show in dock mode) */
+-    enum { M_DOCK = 0, M_HIDE = 1 } mode;
++    enum {
++        M_DOCK = 0,
++        M_SHIFT = 1,
++        M_CTRL = 3,
++        M_MOD1 = 4,
++        M_MOD2 = 5,
++        M_MOD3 = 6,
++        M_MOD4 = 7,
++        M_MOD5 = 8
++    } mode;
+ 
+     /** Bar position (bottom by default). */
+     enum { P_BOTTOM = 0, P_TOP = 1 } position;
+diff --git a/src/cfgparse.l b/src/cfgparse.l
+index 1566e24..e426fac 100644
+--- a/src/cfgparse.l
++++ b/src/cfgparse.l
+@@ -96,8 +96,15 @@ EOL     (\r?\n)
+ <BAR>tray_output                { WS_STRING; return TOK_BAR_TRAY_OUTPUT; }
+ <BAR>socket_path                { WS_STRING; return TOK_BAR_SOCKET_PATH; }
+ <BAR>mode                       { yy_push_state(BAR_MODE); return TOK_BAR_MODE; }
+-<BAR_MODE>hide                  { yy_pop_state(); return TOK_BAR_HIDE; }
+ <BAR_MODE>dock                  { yy_pop_state(); return TOK_BAR_DOCK; }
++<BAR_MODE>control               { yy_pop_state(); return TOK_BAR_CONTROL; }
++<BAR_MODE>ctrl                  { yy_pop_state(); return TOK_BAR_CONTROL; }
++<BAR_MODE>shift                 { yy_pop_state(); return TOK_BAR_SHIFT; }
++<BAR_MODE>Mod1                  { yy_pop_state(); return TOK_BAR_MOD1; }
++<BAR_MODE>Mod2                  { yy_pop_state(); return TOK_BAR_MOD2; }
++<BAR_MODE>Mod3                  { yy_pop_state(); return TOK_BAR_MOD3; }
++<BAR_MODE>Mod4                  { yy_pop_state(); return TOK_BAR_MOD4; }
++<BAR_MODE>Mod5                  { yy_pop_state(); return TOK_BAR_MOD5; }
+ <BAR>position                   { yy_push_state(BAR_POSITION); return TOK_BAR_POSITION; }
+ <BAR_POSITION>bottom            { yy_pop_state(); return TOK_BAR_BOTTOM; }
+ <BAR_POSITION>top               { yy_pop_state(); return TOK_BAR_TOP; }
+diff --git a/src/cfgparse.y b/src/cfgparse.y
+index 79da317..6257a2a 100644
+--- a/src/cfgparse.y
++++ b/src/cfgparse.y
+@@ -699,7 +699,13 @@ void parse_file(const char *f) {
+ %token                  TOK_BAR_TRAY_OUTPUT         "tray_output"
+ %token                  TOK_BAR_SOCKET_PATH         "socket_path"
+ %token                  TOK_BAR_MODE                "mode (bar)"
+-%token                  TOK_BAR_HIDE                "hide"
++%token                  TOK_BAR_SHIFT               "shift (bar)"
++%token                  TOK_BAR_CONTROL             "control (bar)"
++%token                  TOK_BAR_MOD1                "Mod1"
++%token                  TOK_BAR_MOD2                "Mod2"
++%token                  TOK_BAR_MOD3                "Mod3"
++%token                  TOK_BAR_MOD4                "Mod4"
++%token                  TOK_BAR_MOD5                "Mod5"
+ %token                  TOK_BAR_DOCK                "dock"
+ %token                  TOK_BAR_POSITION            "position"
+ %token                  TOK_BAR_BOTTOM              "bottom"
+@@ -1097,8 +1103,14 @@ bar_mode:
+     ;
+ 
+ bar_mode_mode:
+-    TOK_BAR_HIDE   { $$ = M_HIDE; }
+-    | TOK_BAR_DOCK { $$ = M_DOCK; }
++    TOK_BAR_SHIFT     { $$ = M_SHIFT; }
++    | TOK_BAR_CONTROL { $$ = M_CTRL; }
++    | TOK_BAR_MOD1    { $$ = M_MOD1; }
++    | TOK_BAR_MOD2    { $$ = M_MOD2; }
++    | TOK_BAR_MOD3    { $$ = M_MOD3; }
++    | TOK_BAR_MOD4    { $$ = M_MOD4; }
++    | TOK_BAR_MOD5    { $$ = M_MOD5; }
++    | TOK_BAR_DOCK    { $$ = M_DOCK; }
+     ;
+ 
+ bar_font:
+diff --git a/src/ipc.c b/src/ipc.c
+index fe1464e..f1e5a44 100644
+--- a/src/ipc.c
++++ b/src/ipc.c
+@@ -554,9 +554,22 @@ IPC_HANDLER(get_bar_config) {
+         YSTR_IF_SET(socket_path);
+ 
+         ystr("mode");
+-        if (config->mode == M_HIDE)
+-            ystr("hide");
+-        else ystr("dock");
++        if (config->mode == M_SHIFT)
++            ystr("shift");
++        else if (config->mode == M_CTRL)
++            ystr("ctrl");
++        else if (config->mode == M_MOD1)
++            ystr("Mod1");
++        else if (config->mode == M_MOD2)
++            ystr("Mod2");
++        else if (config->mode == M_MOD3)
++            ystr("Mod3");
++        else if (config->mode == M_MOD4)
++            ystr("Mod4");
++        else if (config->mode == M_MOD5)
++            ystr("Mod5");
++        else
++            ystr("dock");
+ 
+         ystr("position");
+         if (config->position == P_BOTTOM)
+-- 
+1.7.6.1
+

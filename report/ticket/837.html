@@ -1,0 +1,980 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #837 (Problem with mod key)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/836" title="Ticket #836" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/837?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/837?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/837?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/838" title="Ticket #838" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="afb6b70f44fa565a4ec1cb6e";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/836" title="Ticket #836">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/838" title="Ticket #838">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-10-04T19%3A31%3A24%2B02%3A00&amp;precision=second" title="See timeline at 10/04/12 19:31:24">2 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2012-10-20T13%3A02%3A33%2B02%3A00&amp;precision=second" title="See timeline at 10/20/12 13:02:33">2 years ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/837" class="trac-id">#837</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=invalid">invalid</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Problem with mod key</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">agkbill@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.3">4.3</a>
+        </td>
+        <th id="h_keywords">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+              <a href="/report/query?status=!closed&amp;keywords=~mod">mod</a> <a href="/report/query?status=!closed&amp;keywords=~key">key</a>
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion" class="missing">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Linux">Linux</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+              Archlinux
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+When I have been using i3 for some time (a couple of hours usually) I can no loger open dmenu, open a new terminal mod+enter. quit i3 mod+e. But when I relode config with mod+r i3 quit and I get back to the shell where I started X and i3.<br />
+I start i3 from .xinitrc<br />
+</p>
+<p>
+my config files:<br />
+</p>
+<p>
+# This file has been auto-generated by i3-config-wizard(1).<br />
+# It will not be overwritten, so edit it as you like.<br />
+#<br />
+# Should you change your keyboard layout somewhen, delete<br />
+# this file and re-run i3-config-wizard(1).<br />
+#<br />
+ <br />
+# i3 config file (v4)<br />
+#<br />
+# Please see <a class="ext-link" href="http://i3wm.org/docs/userguide.html"><span class="icon">​</span>http://i3wm.org/docs/userguide.html</a> for a complete reference!<br />
+</p>
+<p>
+set $mod Mod4<br />
+</p>
+<p>
+# Font for window titles. Will also be used by the bar unless a different font<br />
+# is used in the bar {} block below. ISO 10646 = Unicode<br />
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1<br />
+# The font above is very space-efficient, that is, it looks good, sharp and<br />
+# clear in small sizes. However, if you need a lot of unicode glyphs or<br />
+# right-to-left text rendering, you should instead use pango for rendering and<br />
+# chose an xft font, such as:<br />
+# font xft:DejaVu Sans Mono 10<br />
+</p>
+<p>
+# Use Mouse+$mod to drag floating windows to their wanted position<br />
+floating_modifier $mod<br />
+</p>
+<p>
+# start a terminal<br />
+bindsym $mod+Return exec i3-sensible-terminal<br />
+</p>
+<p>
+# kill focused window<br />
+bindsym $mod+Shift+q kill<br />
+</p>
+<p>
+# start dmenu (a program launcher)<br />
+#bindsym $mod+d exec dmenu_run<br />
+bindsym $mod+p exec "dmenu_run -b"<br />
+</p>
+<p>
+# change focus<br />
+bindsym $mod+j focus left<br />
+bindsym $mod+k focus down<br />
+bindsym $mod+l focus up<br />
+</p>
+<p>
+# ce 2012-09-30 add support for changing border style<br />
+# normal border (including window title)<br />
+# 1-pixel border (no window title)<br />
+# none to make the client borderless<br />
+</p>
+<p>
+bindsym $mod+t border normal<br />
+bindsym $mod+y border 1pixel<br />
+bindsym $mod+u border none<br />
+</p>
+<p>
+# ce 2012-09-30 Border style for new windows<br />
+new_window 1pixel<br />
+</p>
+<p>
+# alternatively, you can use the cursor keys:<br />
+bindsym $mod+Left focus left<br />
+bindsym $mod+Down focus down<br />
+bindsym $mod+Up focus up<br />
+bindsym $mod+Right focus right<br />
+</p>
+<p>
+# move focused window<br />
+bindsym $mod+Shift+j move left<br />
+bindsym $mod+Shift+k move down<br />
+bindsym $mod+Shift+l move up<br />
+bindsym $mod+Shift+colon move right<br />
+</p>
+<p>
+# alternatively, you can use the cursor keys:<br />
+bindsym $mod+Shift+Left move left<br />
+bindsym $mod+Shift+Down move down<br />
+bindsym $mod+Shift+Up move up<br />
+bindsym $mod+Shift+Right move right<br />
+</p>
+<p>
+# split in horizontal orientation<br />
+bindsym $mod+h split h<br />
+</p>
+<p>
+# split in vertical orientation<br />
+bindsym $mod+v split v<br />
+</p>
+<p>
+# enter fullscreen mode for the focused container<br />
+bindsym $mod+f fullscreen<br />
+</p>
+<p>
+# change container layout (stacked, tabbed, toggle split)<br />
+bindsym $mod+s layout stacking<br />
+bindsym $mod+w layout tabbed<br />
+bindsym $mod+e layout toggle split<br />
+</p>
+<p>
+# toggle tiling / floating<br />
+bindsym $mod+Shift+space floating toggle<br />
+</p>
+<p>
+# change focus between tiling / floating windows<br />
+bindsym $mod+space focus mode_toggle<br />
+</p>
+<p>
+# focus the parent container<br />
+bindsym $mod+a focus parent<br />
+</p>
+<p>
+# focus the child container<br />
+#bindcode $mod+d focus child<br />
+</p>
+<p>
+# switch to workspace<br />
+bindsym $mod+1 workspace 1<br />
+bindsym $mod+2 workspace 2<br />
+bindsym $mod+3 workspace 3<br />
+bindsym $mod+4 workspace 4<br />
+bindsym $mod+5 workspace 5<br />
+bindsym $mod+6 workspace 6<br />
+bindsym $mod+7 workspace 7<br />
+bindsym $mod+8 workspace 8<br />
+bindsym $mod+9 workspace 9<br />
+bindsym $mod+0 workspace 10<br />
+</p>
+<p>
+# move focused container to workspace<br />
+bindsym $mod+Shift+1 move container to workspace 1<br />
+bindsym $mod+Shift+2 move container to workspace 2<br />
+bindsym $mod+Shift+3 move container to workspace 3<br />
+bindsym $mod+Shift+4 move container to workspace 4<br />
+bindsym $mod+Shift+5 move container to workspace 5<br />
+bindsym $mod+Shift+6 move container to workspace 6<br />
+bindsym $mod+Shift+7 move container to workspace 7<br />
+bindsym $mod+Shift+8 move container to workspace 8<br />
+bindsym $mod+Shift+9 move container to workspace 9<br />
+bindsym $mod+Shift+0 move container to workspace 10<br />
+</p>
+<p>
+# ce 2012-09-29 Assigning workspace to output<br />
+workspace 1 output DVI-I-2<br />
+workspace 2 output DVI-I-3<br />
+</p>
+<p>
+# Assign XBMC Media Center to workspace 3<br />
+assign [class="<sup>Vlc$" instance="</sup>vlc$"] 2<br />
+assign [class="<sup>xbmc.bin$" instance="</sup>xbmc.bin$"] 2<br />
+</p>
+<p>
+# reload the configuration file<br />
+bindsym $mod+Shift+c reload<br />
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)<br />
+bindsym $mod+Shift+r restart<br />
+# exit i3 (logs you out of your X session)<br />
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X s<br />
+ession.' -b 'Yes, exit i3' 'i3-msg exit'"<br />
+</p>
+<p>
+# resize window (you can also use the mouse for that)<br />
+mode "resize" {<br />
+</p>
+<blockquote>
+<p>
+# These bindings trigger as soon as you enter the resize mode<br />
+</p>
+</blockquote>
+<blockquote>
+<p>
+# Pressing left will shrink the window’s width.<br />
+# Pressing right will grow the window’s width.<br />
+# Pressing up will shrink the window’s height.<br />
+# Pressing down will grow the window’s height.<br />
+bindsym j resize shrink width 1 px or 1 ppt<br />
+bindsym l resize grow height 1 px or 1 ppt<br />
+bindsym h resize shrink height 1 px or 1 ppt<br />
+bindsym k resize grow width 1 px or 1 ppt<br />
+</p>
+</blockquote>
+<blockquote>
+<p>
+# same bindings, but for the arrow keys<br />
+bindsym Left resize shrink width 1 px or 1 ppt<br />
+bindsym Down resize grow height 1 px or 1 ppt<br />
+bindsym Up resize shrink height 1 px or 1 ppt<br />
+bindsym Right resize grow width 1 px or 1 ppt<br />
+</p>
+</blockquote>
+<blockquote>
+<p>
+# back to normal: Enter or Escape<br />
+bindsym Return mode "default"<br />
+bindsym Escape mode "default"<br />
+</p>
+</blockquote>
+<p>
+}<br />
+</p>
+<p>
+bindsym $mod+r mode "resize"<br />
+</p>
+<p>
+# Start i3bar to display a workspace bar (plus the system information i3status<br />
+# finds out, if available)<br />
+bar {<br />
+</p>
+<blockquote>
+<p>
+status_command /home/christer/.i3/bin/measure-net-speed-i3status.bash<br />
+</p>
+</blockquote>
+<blockquote>
+<p>
+#ce 2012-09-29 hide statusbar by default<br />
+mode hide<br />
+#ce 2012-09-29 Set what modifier key to show the statusbar<br />
+modifier $mod<br />
+position top<br />
+</p>
+</blockquote>
+<p>
+}      <br />
+       <br />
+#exec xmobar -o /home/christer/.xmonad/xmobarrc<br />
+</p>
+<p>
+Please provide a detailed description of your problem.<br />
+ <br />
+Please reproduce the problem with the default configuration file (if impossible, attach your config file).<br />
+ <br />
+Please provide a logfile with full debug level (compress it), see <a class="ext-link" href="http://i3wm.org/docs/4.0/debugging.html"><span class="icon">​</span>http://i3wm.org/docs/4.0/debugging.html</a><br />
+</p>
+<p>
+================================================================<br />
+</p>
+<p>
+general {<br />
+</p>
+<blockquote>
+<p>
+output_format = "i3bar"<br />
+colors = true<br />
+interval = 5<br />
+</p>
+</blockquote>
+<p>
+}<br />
+ <br />
+order += "load"<br />
+order += "disk /home/christer/"<br />
+order += "disk /home/christer/devices-extern/movie-disk/"<br />
+order += "cpu_temperature 0"<br />
+order += "time"<br />
+</p>
+<p>
+load {<br />
+</p>
+<blockquote>
+<p>
+format = "%5min"<br />
+</p>
+</blockquote>
+<p>
+}<br />
+ <br />
+disk "/home/christer/" {<br />
+</p>
+<blockquote>
+<p>
+format = "~/ %free (%total)"<br />
+</p>
+</blockquote>
+<p>
+}<br />
+ <br />
+disk "/home/christer/devices-extern/movie-disk/" {<br />
+</p>
+<blockquote>
+<p>
+format = "movie-disk %free (%total)"<br />
+</p>
+</blockquote>
+<p>
+}<br />
+ <br />
+cpu_temperature 0 {<br />
+</p>
+<blockquote>
+<p>
+format = "T: %degrees °C"<br />
+path = "/sys/devices/platform/coretemp.0/temp2_input"<br />
+</p>
+</blockquote>
+<p>
+}<br />
+ <br />
+time {<br />
+</p>
+<blockquote>
+<p>
+format = "%Y-%m-%d %H:%M:%S"<br />
+</p>
+</blockquote>
+<p>
+}<br />
+ <br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(4)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/837/i3log-2012-10-04-16-50-02.gz" title="View attachment">i3log-2012-10-04-16-50-02.gz</a><a href="/report/raw-attachment/ticket/837/i3log-2012-10-04-16-50-02.gz" class="trac-rawlink" title="Download">​</a>
+       (<span title="185902 bytes">181.5 KB</span>) -
+      added by <em>agkbill@…</em> <a class="timeline" href="/report/timeline?from=2012-10-04T19%3A32%3A08%2B02%3A00&amp;precision=second" title="See timeline at 10/04/12 19:32:08">2 years ago</a>.
+  </dt>
+              <dd>
+                i3 logfile
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/837/i3log-2012-10-06-10-09-18.gz" title="View attachment">i3log-2012-10-06-10-09-18.gz</a><a href="/report/raw-attachment/ticket/837/i3log-2012-10-06-10-09-18.gz" class="trac-rawlink" title="Download">​</a>
+       (<span title="120685 bytes">117.9 KB</span>) -
+      added by <em>agkbill@…</em> <a class="timeline" href="/report/timeline?from=2012-10-06T10%3A51%3A11%2B02%3A00&amp;precision=second" title="See timeline at 10/06/12 10:51:11">2 years ago</a>.
+  </dt>
+              <dd>
+                logfile session where mod key stoped woprking
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/837/i3log-2012-10-08-16-06-28-tail" title="View attachment">i3log-2012-10-08-16-06-28-tail</a><a href="/report/raw-attachment/ticket/837/i3log-2012-10-08-16-06-28-tail" class="trac-rawlink" title="Download">​</a>
+       (<span title="4694 bytes">4.6 KB</span>) -
+      added by <em>agkbill@…</em> <a class="timeline" href="/report/timeline?from=2012-10-08T17%3A52%3A07%2B02%3A00&amp;precision=second" title="See timeline at 10/08/12 17:52:07">2 years ago</a>.
+  </dt>
+              <dd>
+                Tail of logfile when mod key stoped working
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/837/xauth-list-output" title="View attachment">xauth-list-output</a><a href="/report/raw-attachment/ticket/837/xauth-list-output" class="trac-rawlink" title="Download">​</a>
+       (<span title="2245 bytes">2.2 KB</span>) -
+      added by <em>agkbill@…</em> <a class="timeline" href="/report/timeline?from=2012-10-10T19%3A53%3A40%2B02%3A00&amp;precision=second" title="See timeline at 10/10/12 19:53:40">2 years ago</a>.
+  </dt>
+              <dd>
+                xauth list output. OK state and not working state
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/837/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(11)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-04T19%3A32%3A08%2B02%3A00&amp;precision=second" title="See timeline at 10/04/12 19:32:08">2 years ago</a> by agkbill@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/837/i3log-2012-10-04-16-50-02.gz"><em>i3log-2012-10-04-16-50-02.gz</em></a><a href="/report/raw-attachment/ticket/837/i3log-2012-10-04-16-50-02.gz" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+i3 logfile<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-06T10%3A51%3A11%2B02%3A00&amp;precision=second" title="See timeline at 10/06/12 10:51:11">2 years ago</a> by agkbill@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/837/i3log-2012-10-06-10-09-18.gz"><em>i3log-2012-10-06-10-09-18.gz</em></a><a href="/report/raw-attachment/ticket/837/i3log-2012-10-06-10-09-18.gz" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+logfile session where mod key stoped woprking<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-1-1349545552937156">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:4" class="follow-up">↓ 4</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-06T19%3A45%3A52%2B02%3A00&amp;precision=second" title="See timeline at 10/06/12 19:45:52">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This sounds like you have caps lock on by accident. Could you remap your caps lock key to something else (say, control) and see if this issue still arises?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1349550630772775">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:3" class="follow-up">↓ 3</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-06T21%3A10%3A30%2B02%3A00&amp;precision=second" title="See timeline at 10/06/12 21:10:30">2 years ago</a> by agkbill@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Some additional information.<br />
+If I try to open chromium Webb browser when mod key not working I get this:<br />
+</p>
+<p>
+[christer@localhost ~]$ chromium <br />
+Invalid MIT-MAGIC-COOKIE-1 key<br />
+(chromium:21896): Gtk-WARNING <strong>: cannot open display: :0<br />
+[christer@localhost ~]$<br />
+</strong></p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1349554891020618">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+        in reply to:
+    <a href="#comment:2">↑ 2</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-06T22%3A21%3A31%2B02%3A00&amp;precision=second" title="See timeline at 10/06/12 22:21:31">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/837#comment:2" title="Comment 2">agkbill@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Some additional information.<br />
+If I try to open chromium Webb browser when mod key not working I get this:<br />
+</p>
+<p>
+[christer@localhost ~]$ chromium <br />
+Invalid MIT-MAGIC-COOKIE-1 key<br />
+(chromium:21896): Gtk-WARNING <strong>: cannot open display: :0<br />
+</strong></p>
+</blockquote>
+<p>
+This sounds like your hostname has been changed, because the magic cookies depend on your hostname. Do you let dhclient set your hostname? If so, turn that off and retry.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-08T17%3A52%3A07%2B02%3A00&amp;precision=second" title="See timeline at 10/08/12 17:52:07">2 years ago</a> by agkbill@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/837/i3log-2012-10-08-16-06-28-tail"><em>i3log-2012-10-08-16-06-28-tail</em></a><a href="/report/raw-attachment/ticket/837/i3log-2012-10-08-16-06-28-tail" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Tail of logfile when mod key stoped working<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-10T19%3A53%3A40%2B02%3A00&amp;precision=second" title="See timeline at 10/10/12 19:53:40">2 years ago</a> by agkbill@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/837/xauth-list-output"><em>xauth-list-output</em></a><a href="/report/raw-attachment/ticket/837/xauth-list-output" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+xauth list output. OK state and not working state<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1350117723160121">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+        in reply to:
+    <a href="#comment:1">↑ 1</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-13T10%3A42%3A03%2B02%3A00&amp;precision=second" title="See timeline at 10/13/12 10:42:03">2 years ago</a> by agkbill@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+It looks like the cookies is not changing. I will see if my dhclient set hostname and if so turn it off.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1350148096111970">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-13T19%3A08%3A16%2B02%3A00&amp;precision=second" title="See timeline at 10/13/12 19:08:16">2 years ago</a> by agkbill@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I am using Netcfg, edited /etc/dhcpcd.conf<br />
+in line: <br />
+option domain_name_servers, domain_name, domain_search, host_name<br />
+I removed host_name.<br />
+option domain_name_servers, domain_name, domain_search<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1350730118227416">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-20T12%3A48%3A38%2B02%3A00&amp;precision=second" title="See timeline at 10/20/12 12:48:38">2 years ago</a> by agkbill@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+After changing /etc/dhcpcd.conf so the the dhcp client do not ask dhcp server for hostname I have not experienced the problem.<br />
+</p>
+<p>
+I also noticed that if I set hostname with "hostname Arch" for example I get the same problem that I can not open new windows in X.<br />
+</p>
+<p>
+It also seems to work OK if I use fixed IP, probably because then no hostname get assigned.<br />
+ <br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1350730953520720">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-10-20T13%3A02%3A33%2B02%3A00&amp;precision=second" title="See timeline at 10/20/12 13:02:33">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>invalid</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Alright, then the problem is as I suspected.<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/837?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/837?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/837?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

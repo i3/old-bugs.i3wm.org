@@ -1,0 +1,885 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #220 (No "truly" transparent urxvt terminal)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/219" title="Ticket #219" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/220?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/220?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/220?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/221" title="Ticket #221" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="9a86125275ca2f866c2708a2";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/219" title="Ticket #219">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/221" title="Ticket #221">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2010-05-02T19%3A05%3A40%2B02%3A00&amp;precision=second" title="See timeline at 05/02/10 19:05:40">5 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2012-06-21T10%3A23%3A15%2B02%3A00&amp;precision=second" title="See timeline at 06/21/12 10:23:15">3 years ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/220" class="trac-id">#220</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">No "truly" transparent urxvt terminal</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">runiq &lt;runiq@…&gt;</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=minor">minor</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=look-and-feel">look-and-feel</a>
+        </td>
+    </tr><tr>
+        <th id="h_version" class="missing">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version="></a>
+        </td>
+        <th id="h_keywords">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+              <a href="/report/query?status=!closed&amp;keywords=~transparency">transparency</a>
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion" class="missing">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Linux">Linux</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+              Arch Linux
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+I'm using cairo-compmgr for compositing and try to get a transparent terminal. My current settings work in (vanilla) dwm, xmonad and openbox, though not in i3, as it seems. (Screenshots attached for evidence.)<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(7)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/220/i3-screenshot-small.png" title="View attachment">i3-screenshot-small.png</a><a href="/report/raw-attachment/ticket/220/i3-screenshot-small.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="251567 bytes">245.7 KB</span>) -
+      added by <em>runiq &lt;runiq@…&gt;</em> <a class="timeline" href="/report/timeline?from=2010-05-02T19%3A11%3A14%2B02%3A00&amp;precision=second" title="See timeline at 05/02/10 19:11:14">5 years ago</a>.
+  </dt>
+              <dd>
+                Screenshot of i3 without transparent terminal.
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/220/openbox-screenshot-small.png" title="View attachment">openbox-screenshot-small.png</a><a href="/report/raw-attachment/ticket/220/openbox-screenshot-small.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="250796 bytes">244.9 KB</span>) -
+      added by <em>runiq &lt;runiq@…&gt;</em> <a class="timeline" href="/report/timeline?from=2010-05-02T19%3A11%3A49%2B02%3A00&amp;precision=second" title="See timeline at 05/02/10 19:11:49">5 years ago</a>.
+  </dt>
+              <dd>
+                Openbox with transparent terminal.
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/220/xmonad-screenshot-small.png" title="View attachment">xmonad-screenshot-small.png</a><a href="/report/raw-attachment/ticket/220/xmonad-screenshot-small.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="195366 bytes">190.8 KB</span>) -
+      added by <em>runiq &lt;runiq@…&gt;</em> <a class="timeline" href="/report/timeline?from=2010-05-02T19%3A12%3A07%2B02%3A00&amp;precision=second" title="See timeline at 05/02/10 19:12:07">5 years ago</a>.
+  </dt>
+              <dd>
+                Xmonad with transparent terminal.
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/220/i3-transparent.png" title="View attachment">i3-transparent.png</a><a href="/report/raw-attachment/ticket/220/i3-transparent.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="27242 bytes">26.6 KB</span>) -
+      added by <em>michael</em> <a class="timeline" href="/report/timeline?from=2010-05-24T22%3A49%3A55%2B02%3A00&amp;precision=second" title="See timeline at 05/24/10 22:49:55">5 years ago</a>.
+  </dt>
+              <dt>
+    <a href="/report/attachment/ticket/220/xmonad-working.png" title="View attachment">xmonad-working.png</a><a href="/report/raw-attachment/ticket/220/xmonad-working.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="157664 bytes">154.0 KB</span>) -
+      added by <em>snoggo@…</em> <a class="timeline" href="/report/timeline?from=2010-05-27T20%3A46%3A12%2B02%3A00&amp;precision=second" title="See timeline at 05/27/10 20:46:12">5 years ago</a>.
+  </dt>
+              <dd>
+                working in xmonad
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/220/i3-notworking.png" title="View attachment">i3-notworking.png</a><a href="/report/raw-attachment/ticket/220/i3-notworking.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="143692 bytes">140.3 KB</span>) -
+      added by <em>snoggo@…</em> <a class="timeline" href="/report/timeline?from=2010-05-27T20%3A46%3A32%2B02%3A00&amp;precision=second" title="See timeline at 05/27/10 20:46:32">5 years ago</a>.
+  </dt>
+              <dd>
+                not working in i3
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/220/i3-transset-df.png" title="View attachment">i3-transset-df.png</a><a href="/report/raw-attachment/ticket/220/i3-transset-df.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="57550 bytes">56.2 KB</span>) -
+      added by <em>snoggo@…</em> <a class="timeline" href="/report/timeline?from=2010-05-27T20%3A55%3A36%2B02%3A00&amp;precision=second" title="See timeline at 05/27/10 20:55:36">5 years ago</a>.
+  </dt>
+              <dd>
+                transset-df in i3 working
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/220/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(20)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-05-02T19%3A11%3A14%2B02%3A00&amp;precision=second" title="See timeline at 05/02/10 19:11:14">5 years ago</a> by runiq &lt;runiq@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/220/i3-screenshot-small.png"><em>i3-screenshot-small.png</em></a><a href="/report/raw-attachment/ticket/220/i3-screenshot-small.png" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Screenshot of i3 without transparent terminal.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-05-02T19%3A11%3A49%2B02%3A00&amp;precision=second" title="See timeline at 05/02/10 19:11:49">5 years ago</a> by runiq &lt;runiq@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/220/openbox-screenshot-small.png"><em>openbox-screenshot-small.png</em></a><a href="/report/raw-attachment/ticket/220/openbox-screenshot-small.png" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Openbox with transparent terminal.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-05-02T19%3A12%3A07%2B02%3A00&amp;precision=second" title="See timeline at 05/02/10 19:12:07">5 years ago</a> by runiq &lt;runiq@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/220/xmonad-screenshot-small.png"><em>xmonad-screenshot-small.png</em></a><a href="/report/raw-attachment/ticket/220/xmonad-screenshot-small.png" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Xmonad with transparent terminal.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-05-24T22%3A49%3A55%2B02%3A00&amp;precision=second" title="See timeline at 05/24/10 22:49:55">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/220/i3-transparent.png"><em>i3-transparent.png</em></a><a href="/report/raw-attachment/ticket/220/i3-transparent.png" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-1-1274734273000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-05-24T22%3A51%3A13%2B02%3A00&amp;precision=second" title="See timeline at 05/24/10 22:51:13">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Transparency works fine for me (using cairo-compmgr 0.3.0) - see the attached screenshot.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1274810728000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:3" class="follow-up">↓ 3</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-05-25T20%3A05%3A28%2B02%3A00&amp;precision=second" title="See timeline at 05/25/10 20:05:28">5 years ago</a> by snoggo@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Got the same problem here.<br />
+I'm running FreeBSD 8.0-p2, i3 2010-03-30, xcompmgr 1.1.5 and urxvt 9.07. (worked with xmonad)<br />
+</p>
+<p>
+inheritpixmap works fine but leaves ugly black borders.<br />
+</p>
+<p>
+If I could help you out with something, just tell me.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1274869458000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+        in reply to:
+    <a href="#comment:2">↑ 2</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-05-26T12%3A24%3A18%2B02%3A00&amp;precision=second" title="See timeline at 05/26/10 12:24:18">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/220#comment:2" title="Comment 2">snoggo@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Got the same problem here.<br />
+I'm running FreeBSD 8.0-p2, i3 2010-03-30, xcompmgr 1.1.5 and urxvt 9.07. (worked with xmonad)<br />
+</p>
+<p>
+inheritpixmap works fine but leaves ugly black borders.<br />
+</p>
+<p>
+If I could help you out with something, just tell me.<br />
+</p>
+</blockquote>
+<p>
+With which options do you start xcompmgr? Can you provide a screenshot of the settings working (xmonad) vs. not working (i3)?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-05-27T20%3A46%3A12%2B02%3A00&amp;precision=second" title="See timeline at 05/27/10 20:46:12">5 years ago</a> by snoggo@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/220/xmonad-working.png"><em>xmonad-working.png</em></a><a href="/report/raw-attachment/ticket/220/xmonad-working.png" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+working in xmonad<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-05-27T20%3A46%3A32%2B02%3A00&amp;precision=second" title="See timeline at 05/27/10 20:46:32">5 years ago</a> by snoggo@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/220/i3-notworking.png"><em>i3-notworking.png</em></a><a href="/report/raw-attachment/ticket/220/i3-notworking.png" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+not working in i3<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1274986513000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-05-27T20%3A55%3A13%2B02%3A00&amp;precision=second" title="See timeline at 05/27/10 20:55:13">5 years ago</a> by snoggo@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I've attached both screenshots.<br />
+Both times, I'm starting xcompmgr only with -n for simple client-side compositing.<br />
+Settings didn't change between screenshots. The only difference is that xcompmgr is called via .xinitrc in xmonad and via custom .startup in i3.<br />
+</p>
+<p>
+BTW: if I use transset-df, the transparency works well in i3. screenshot follows.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-05-27T20%3A55%3A36%2B02%3A00&amp;precision=second" title="See timeline at 05/27/10 20:55:36">5 years ago</a> by snoggo@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/220/i3-transset-df.png"><em>i3-transset-df.png</em></a><a href="/report/raw-attachment/ticket/220/i3-transset-df.png" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+transset-df in i3 working<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1275471153000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-06-02T11%3A32%3A33%2B02%3A00&amp;precision=second" title="See timeline at 06/02/10 11:32:33">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I can get it to work in i3 when using xcompmgr -c (shadows are visible immediately). Changing transparency with transset-df also works then. I am not very familiar with compositing but I don’t really see the issue here. Is using -n somehow important instead of using -c?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1275498154000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-06-02T19%3A02%3A34%2B02%3A00&amp;precision=second" title="See timeline at 06/02/10 19:02:34">5 years ago</a> by snoggo@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+xcompmgr -c performs client-side shadows and fuzzy edges and enables transparency support. To use the transparency, I have to run transset-df on every window I open up.<br />
+</p>
+<p>
+xcompmgr -n performs full client-side compositing (which also includes transparency support). To use the transparency, I just have to tell urxvt to use the alpha channel in its background color.<br />
+This is what the <a class="missing changeset" title="No default repository defined">[85]</a> is for in my .Xdefaults.<br />
+</p>
+<p>
+Another downside of -c is that - using transset-df - the border also gets transparent. This isn't very important to me.<br />
+</p>
+<p>
+I'm not sure if it helps, but xprop -frame shows _NET_WM_WINDOW_OPACITY(CARDINAL) = 1288490188 for an urxvt which I made transparent using transset-df. This property is not set if the window isn't transparent. Seems to me that i3 doesn't handle some kind of window hint from urxvt and it works using transset-df because the whole window (including the frame/border) gets this hint.<br />
+Maybe I'm wrong, I'm not much into window handling ;)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1275751978000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-06-05T17%3A32%3A58%2B02%3A00&amp;precision=second" title="See timeline at 06/05/10 17:32:58">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Hm, I cannot get that to work in xmonad. I have an .xsession which looks like this:<br />
+</p>
+<pre class="wiki">xcompmgr -n &amp;
+sleep 1
+exec xmonad
+</pre><p>
+My .Xresources contains urxvt.background: <a class="missing changeset" title="No default repository defined">[85]</a>black (also note that comments start with !, not with #, so you might want to fix that in your .Xdefaults). When I start two urxvts, they are not transparent. Any hints on what to change to get it working?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1275776160000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-06-06T00%3A16%3A00%2B02%3A00&amp;precision=second" title="See timeline at 06/06/10 00:16:00">5 years ago</a> by snoggo@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Oh, I'll fix it, thank you :)<br />
+</p>
+<p>
+I'm not sure if urxvt.depth has something to do with it. Mine is at 32 which may be non standard. I also compiled it with support for xterm 256 colors and afterimage, don't know if thats important.<br />
+Which version of xmonad are you running? I was running 0.9.1.<br />
+Which distribution are you using?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1275906003000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-06-07T12%3A20%3A03%2B02%3A00&amp;precision=second" title="See timeline at 06/07/10 12:20:03">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+You are right - the urxvt.depth: 32 was necessary to get it working. Let’s see if I can see what’s missing in i3 now…<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1275911090000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-06-07T13%3A44%3A50%2B02%3A00&amp;precision=second" title="See timeline at 06/07/10 13:44:50">5 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Hm, seems like this is a problem which has to do with reparenting. I will have a look at it when I am at home again.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1289750162000000">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2010-11-14T16%3A56%3A02%2B01%3A00&amp;precision=second" title="See timeline at 11/14/10 16:56:02">4 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I tried to create the windows with argb visual, but that failed. This post might help, but no time to implement it right now:<br />
+<a class="ext-link" href="http://efreedom.com/Question/1-3645632/Create-Window-Bit-Depth-32"><span class="icon">​</span>http://efreedom.com/Question/1-3645632/Create-Window-Bit-Depth-32</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-12-1314221025161440">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-08-24T23%3A23%3A45%2B02%3A00&amp;precision=second" title="See timeline at 08/24/11 23:23:45">4 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-version">
+      <strong class="trac-field-version">Version</strong>
+        <em>3.e</em> deleted
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Removing version 3.ε since this affects all versions of i3<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-13-1340266995024985">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:13" class="cnum">
+    <a href="#comment:13">comment:13</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-06-21T10%3A23%3A15%2B02%3A00&amp;precision=second" title="See timeline at 06/21/12 10:23:15">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I think this is fixed with the changes we had with 32 bit  visuals.<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/220?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/220?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/220?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

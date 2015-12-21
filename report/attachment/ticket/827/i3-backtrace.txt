@@ -1,0 +1,73 @@
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007fb9df63015b in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#0  0x00007fb9df63015b in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#1  0x00007fb9df5c74b8 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#2  0x00007fb9df5c58a1 in free () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#3  0x00007fb9df573cbe in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#4  0x00007fb9df5740b1 in setlocale () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#5  0x000000000043b117 in ?? ()
+No symbol table info available.
+#6  0x000000000043b307 in ?? ()
+No symbol table info available.
+#7  0x0000000000437f79 in ?? ()
+No symbol table info available.
+#8  0x00000000004383a4 in ?? ()
+No symbol table info available.
+#9  <signal handler called>
+No symbol table info available.
+#10 0x00007fb9df57d475 in raise () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#11 0x00007fb9df5806f0 in abort () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#12 0x00007fb9df5b732b in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#13 0x00007fb9df5c0b76 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#14 0x00007fb9df5c58ac in free () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#15 0x000000000041d3e5 in ?? ()
+No symbol table info available.
+#16 0x0000000000420081 in ?? ()
+No symbol table info available.
+#17 0x00000000004197e4 in ?? ()
+No symbol table info available.
+#18 0x000000000041c51f in ?? ()
+No symbol table info available.
+#19 0x000000000041cade in ?? ()
+No symbol table info available.
+#20 0x000000000041cf0f in ?? ()
+No symbol table info available.
+#21 0x000000000042a517 in ?? ()
+No symbol table info available.
+#22 0x0000000000426ef0 in ?? ()
+No symbol table info available.
+#23 0x000000000042c60c in ?? ()
+No symbol table info available.
+#24 0x00007fb9e01ba66f in ev_invoke_pending () from /usr/lib/libev.so.4
+No symbol table info available.
+#25 0x00007fb9e01bd6f5 in ev_run () from /usr/lib/libev.so.4
+No symbol table info available.
+#26 0x000000000042c4f4 in ?? ()
+No symbol table info available.
+#27 0x000000000042f87a in ?? ()
+No symbol table info available.
+#28 0x00007fb9df569ead in __libc_start_main () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#29 0x0000000000407f89 in ?? ()
+No symbol table info available.
+#30 0x00007fff4959b668 in ?? ()
+No symbol table info available.
+#31 0x000000000000001c in ?? ()
+No symbol table info available.
+#32 0x0000000000000001 in ?? ()
+No symbol table info available.
+#33 0x00007fff4959bd6a in ?? ()
+No symbol table info available.
+#34 0x0000000000000000 in ?? ()
+No symbol table info available.

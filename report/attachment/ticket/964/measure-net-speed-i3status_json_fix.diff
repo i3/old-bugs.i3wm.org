@@ -1,0 +1,13 @@
+diff --git a/measure-net-speed-i3status.bash.orig b/measure-net-speed-i3status.bash
+index 2924826..4c87976 100644
+--- a/measure-net-speed-i3status.bash.orig
++++ b/measure-net-speed-i3status.bash
+@@ -18,7 +18,7 @@
+ #   status_command measure-net-speed-i3status.bash
+ # }
+ 
+-i3status | (read line && echo $line && while :
++i3status | (read line && echo $line && read line && echo $line && while :
+ do
+   read line
+   dat=$(measure-net-speed.bash)

@@ -1,0 +1,123 @@
+#0  0x00007f5c3f4e747c in waitpid () from /lib/x86_64-linux-gnu/libpthread.so.0
+No symbol table info available.
+#1  0x000000000043c5a6 in backtrace () at ../i3-wm-4.8.1-1+g4.8-117/src/sighandler.c:111
+        tmpdir = 0x455cce "/tmp"
+        pid_parent = 2468
+        filename = 0x25198e0 "/tmp/i3-backtrace.2468.0.txt"
+        suffix = 1
+        bt = {st_dev = 4546224, st_ino = 181, st_nlink = 1, st_mode = 38783472, st_uid = 0, st_gid = 1, __pad0 = 91, st_rdev = 0, st_size = 0, st_blksize = 140034208908320, st_blocks = 0, st_atim = {tv_sec = 140736221611664, tv_nsec = 140034184817216}, st_mtim = {tv_sec = 140034225300261, tv_nsec = 38783504}, st_ctim = {tv_sec = 38901904, tv_nsec = 0}, __glibc_reserved = {140034208910756, 0, 140736221611664}}
+        pid_gdb = 17714
+        __FUNCTION__ = "backtrace"
+        status = 0
+#2  0x000000000043c985 in sig_handle_key_press (ignored=0x0, conn=0x24f6af0, event=0x2519890) at ../i3-wm-4.8.1-1+g4.8-117/src/sighandler.c:185
+        state = 0
+        sym = 98
+        __FUNCTION__ = "sig_handle_key_press"
+#3  0x000000000043cdd5 in handle_signal (sig=11, info=0x7fffb47f08b0, data=0x7fffb47f0780) at ../i3-wm-4.8.1-1+g4.8-117/src/sighandler.c:301
+        type = 2
+        __FUNCTION__ = "handle_signal"
+        action = {__sigaction_handler = {sa_handler = 0x0, sa_sigaction = 0x0}, sa_mask = {__val = {36029140623049024, 6701376, 140034172645593, 140736221611920, 4085, 6, 38693511504, 6701376, 140736221611872, 38752624, 140736221612591, 38755648, 140736221611904, 24, 140034215402640, 0}}, sa_flags = 0, sa_restorer = 0x0}
+        event = 0x2519890
+#4  <signal handler called>
+No symbol table info available.
+#5  0x00007f5c3f1b0aca in strlen () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#6  0x00007f5c3f1b080e in strdup () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#7  0x000000000040f3af in binding_copy (bind=0x2509700) at ../i3-wm-4.8.1-1+g4.8-117/src/bindings.c:389
+        ret = 0x251d060
+#8  0x000000000040f54d in run_binding (bind=0x2509700, con=0x0) at ../i3-wm-4.8.1-1+g4.8-117/src/bindings.c:428
+        command = 0x2518fc0 "exec sh -c \"(pidof geany > /dev/null || geany&)\"; scratchpad show"
+        bind_cp = 0x0
+        result = 0x40ec06 <get_binding+238>
+#9  0x000000000041b049 in handle_key_press (event=0x2519980) at ../i3-wm-4.8.1-1+g4.8-117/src/key_press.c:33
+        key_release = false
+        __FUNCTION__ = "handle_key_press"
+        bind = 0x2509700
+        result = 0x7f5c41aa63b6
+#10 0x000000000040b845 in handle_event (type=2, event=0x2519980) at ../i3-wm-4.8.1-1+g4.8-117/src/handlers.c:1256
+        __FUNCTION__ = "handle_event"
+#11 0x0000000000416106 in xcb_check_cb (loop=0x7f5c3fd7aa40, w=0x2519260, revents=32768) at ../i3-wm-4.8.1-1+g4.8-117/src/main.c:132
+        type = 2
+        event = 0x2519980
+        __FUNCTION__ = "xcb_check_cb"
+#12 0x00007f5c3fb71515 in ev_invoke_pending () from /usr/lib/x86_64-linux-gnu/libev.so.4
+No symbol table info available.
+#13 0x00007f5c3fb746b7 in ev_run () from /usr/lib/x86_64-linux-gnu/libev.so.4
+No symbol table info available.
+#14 0x0000000000415fee in ev_loop (loop=0x7f5c3fd7aa40, flags=0) at /usr/include/ev.h:826
+No locals.
+#15 0x000000000041960a in main (argc=4, argv=0x7fffb47f1538) at ../i3-wm-4.8.1-1+g4.8-117/src/main.c:816
+        i3_version = 0x44b5a0 "4.8-117-g8d031bf (2014-11-17, branch \"next\")"
+        override_configpath = 0x0
+        autostart = false
+        layout_path = 0x24f5ff0 "i3bar"
+        delete_layout_path = true
+        force_xinerama = false
+        fake_outputs = 0x0
+        disable_signalhandler = false
+        only_check_config = false
+        long_options = {{name = 0x44d0a0 "no-autostart", has_arg = 0, flag = 0x0, val = 97}, {name = 0x44d0ad "config", has_arg = 1, flag = 0x0, val = 99}, {name = 0x44d0b4 "version", has_arg = 0, flag = 0x0, val = 118}, {name = 0x44d0bc "moreversion", has_arg = 0, flag = 0x0, val = 109}, {name = 0x44d0c8 "more-version", has_arg = 0, flag = 0x0, val = 109}, {name = 0x44d0d5 "more_version", has_arg = 0, flag = 0x0, val = 109}, {name = 0x44d0e2 "help", has_arg = 0, flag = 0x0, val = 104}, {name = 0x44d0e7 "layout", has_arg = 1, flag = 0x0, val = 76}, {name = 0x44b8db "restart", has_arg = 1, flag = 0x0, val = 0}, {name = 0x44b722 "force-xinerama", has_arg = 0, flag = 0x0, val = 0}, {name = 0x44b731 "force_xinerama", has_arg = 0, flag = 0x0, val = 0}, {name = 0x44b857 "disable-signalhandler", has_arg = 0, flag = 0x0, val = 0}, {name = 0x44b89a "shmlog-size", has_arg = 1, flag = 0x0, val = 0}, {name = 0x44b8a6 "shmlog_size", has_arg = 1, flag = 0x0, val = 0}, {name = 0x44b86d "get-socketpath", has_arg = 0, flag = 0x0, val = 0}, {name = 0x44b87c "get_socketpath", has_arg = 0, flag = 0x0, val = 0}, {name = 0x44b8f0 "fake_outputs", has_arg = 1, flag = 0x0, val = 0}, {name = 0x44b8e3 "fake-outputs", has_arg = 1, flag = 0x0, val = 0}, {name = 0x44b920 "force-old-config-parser-v4.4-only", has_arg = 0, flag = 0x0, val = 0}, {name = 0x0, has_arg = 0, flag = 0x0, val = 0}}
+        option_index = 8
+        opt = -1
+        __FUNCTION__ = "main"
+        gcookie = {sequence = 5}
+        pointercookie = {sequence = 6}
+        cookie = {sequence = 9}
+        greply = 0x24f6120
+        _NET_SUPPORTED_cookie = {sequence = 11}
+        _NET_SUPPORTING_WM_CHECK_cookie = {sequence = 12}
+        _NET_WM_NAME_cookie = {sequence = 13}
+        _NET_WM_STATE_FULLSCREEN_cookie = {sequence = 14}
+        _NET_WM_STATE_DEMANDS_ATTENTION_cookie = {sequence = 15}
+        _NET_WM_STATE_MODAL_cookie = {sequence = 16}
+        _NET_WM_STATE_cookie = {sequence = 17}
+        _NET_WM_WINDOW_TYPE_cookie = {sequence = 18}
+        _NET_WM_WINDOW_TYPE_DOCK_cookie = {sequence = 19}
+        _NET_WM_WINDOW_TYPE_DIALOG_cookie = {sequence = 20}
+        _NET_WM_WINDOW_TYPE_UTILITY_cookie = {sequence = 21}
+        _NET_WM_WINDOW_TYPE_TOOLBAR_cookie = {sequence = 22}
+        _NET_WM_WINDOW_TYPE_SPLASH_cookie = {sequence = 23}
+        _NET_WM_DESKTOP_cookie = {sequence = 24}
+        _NET_WM_STRUT_PARTIAL_cookie = {sequence = 25}
+        _NET_CLIENT_LIST_cookie = {sequence = 26}
+        _NET_CLIENT_LIST_STACKING_cookie = {sequence = 27}
+        _NET_CURRENT_DESKTOP_cookie = {sequence = 28}
+        _NET_NUMBER_OF_DESKTOPS_cookie = {sequence = 29}
+        _NET_DESKTOP_NAMES_cookie = {sequence = 30}
+        _NET_DESKTOP_VIEWPORT_cookie = {sequence = 31}
+        _NET_ACTIVE_WINDOW_cookie = {sequence = 32}
+        _NET_CLOSE_WINDOW_cookie = {sequence = 33}
+        _NET_STARTUP_ID_cookie = {sequence = 34}
+        _NET_WORKAREA_cookie = {sequence = 35}
+        WM_PROTOCOLS_cookie = {sequence = 36}
+        WM_DELETE_WINDOW_cookie = {sequence = 37}
+        UTF8_STRING_cookie = {sequence = 38}
+        WM_STATE_cookie = {sequence = 39}
+        WM_CLIENT_LEADER_cookie = {sequence = 40}
+        WM_TAKE_FOCUS_cookie = {sequence = 41}
+        WM_WINDOW_ROLE_cookie = {sequence = 42}
+        I3_SOCKET_PATH_cookie = {sequence = 43}
+        I3_CONFIG_PATH_cookie = {sequence = 44}
+        I3_SYNC_cookie = {sequence = 45}
+        I3_SHMLOG_PATH_cookie = {sequence = 46}
+        I3_PID_cookie = {sequence = 47}
+        _NET_REQUEST_FRAME_EXTENTS_cookie = {sequence = 48}
+        _NET_FRAME_EXTENTS_cookie = {sequence = 49}
+        _MOTIF_WM_HINTS_cookie = {sequence = 50}
+        WM_CHANGE_STATE_cookie = {sequence = 51}
+        extreply = 0x24fcbd0
+        needs_tree_init = false
+        pointerreply = 0x24f60f0
+        output = 0x2518580
+        ipc_socket = 10
+        xcb_watcher = 0x2519290
+        xcb_prepare = 0x25192d0
+        action = {__sigaction_handler = {sa_handler = 0x41621f <handle_signal>, sa_sigaction = 0x41621f <handle_signal>}, sa_mask = {__val = {0 <repeats 16 times>}}, sa_flags = -1073741820, sa_restorer = 0x7fffb47f1530}
+        exec_always = 0x0
+        barconfig = 0x0
+A debugging session is active.
+
+	Inferior 1 [process 2468] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]

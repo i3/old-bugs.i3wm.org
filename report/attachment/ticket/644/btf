@@ -1,0 +1,134 @@
+Program terminated with signal 11, Segmentation fault.
+#0  0x00007f07f7085475 in raise () from /lib/x86_64-linux-gnu/libc.so.6
+(gdb) backtrace full
+#0  0x00007f07f7085475 in raise () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#1  0x00000000004305d7 in sig_handle_key_press (ignored=0x0, conn=0x2250480, event=0x22a6b50) at src/sighandler.c:80
+        state = 0
+        sym = 101
+        __FUNCTION__ = "sig_handle_key_press"
+#2  0x00000000004309dd in handle_signal (sig=11, info=0x7fffcc40e3f0, data=0x7fffcc40e2c0) at src/sighandler.c:185
+        type = 2
+        __FUNCTION__ = "handle_signal"
+        action = {__sigaction_handler = {sa_handler = 0, sa_sigaction = 0}, sa_mask = {__val = {140736620193056, 140736620193056, 
+              140736620193056, 35980416, 140736620192432, 35980440, 139672212343262, 18446744073709551615, 40684, 35980416, 140736620192480, 
+              35980440, 139672186474998, 1125921381679109, 40685, 35980416}}, sa_flags = 35984720, sa_restorer = 0x1}
+        crash_text_num = 6
+        height = 91
+        text_len = 46
+        longest_text = 0x22a9960
+        font_width = 322
+        width = 342
+        screen = 0x0
+        win = 10486030
+        event = 0x22a6b50
+#3  <signal handler called>
+No symbol table info available.
+#4  0x0000000000430d6c in start_application (command=0x22a4cf0 "/usr/bin/x-terminal-emulator", no_startup_id=false) at src/startup.c:102
+        timeout = 0x22a0f00
+        ws = 0x0
+        first_word = 0x22a3a70 "@\215*\002"
+        space = 0x0
+        sequence = 0x22a3a70
+        context = 0x22a95b0
+#5  0x0000000000415d7a in cmd_exec (current_match=0x6638e0, nosn=0x0, command=0x22a4cf0 "/usr/bin/x-terminal-emulator") at src/commands.c:865
+        no_startup_id = false
+        __FUNCTION__ = "cmd_exec"
+#6  0x00000000004174c9 in GENERATED_call (call_identifier=37) at include/GENERATED_call.h:302
+        output = 0x0
+#7  0x000000000041798b in next_state (token=0x662318) at src/commands_parser.c:185
+        __FUNCTION__ = "next_state"
+#8  0x0000000000417e72 in parse_command (input=0x226d250 "exec /usr/bin/x-terminal-emulator") at src/commands_parser.c:285
+        str = 0x22a4cf0 "/usr/bin/x-terminal-emulator"
+        beginning = 0x226d255 "/usr/bin/x-terminal-emulator"
+        ptr = 0x6629a0
+        __FUNCTION__ = "parse_command"
+        walk = 0x226d271 ""
+        len = 33
+        c = 1
+        token = 0x662318
+        token_handled = false
+#9  0x000000000041e7b9 in handle_key_press (event=0x22a4310) at src/handlers.c:121
+        __FUNCTION__ = "handle_key_press"
+        state_filtered = 64
+        bind = 0x2299d90
+        json_result = 0x7f07f70cd7ec "\203=\031\276\060"
+#10 0x000000000042089c in handle_event (type=2, event=0x22a4310) at src/handlers.c:1049
+No locals.
+#11 0x000000000042530b in xcb_check_cb (loop=0x7f07f7a2bca0, w=0x224f950, revents=32768) at src/main.c:131
+        type = 2
+        event = 0x22a4310
+        __FUNCTION__ = "xcb_check_cb"
+#12 0x00007f07f78224d1 in ev_invoke_pending () from /usr/lib/libev.so.4
+No symbol table info available.
+#13 0x00007f07f782751d in ev_run () from /usr/lib/libev.so.4
+No symbol table info available.
+#14 0x0000000000425200 in ev_loop (loop=0x7f07f7a2bca0, flags=0) at /usr/include/ev.h:810
+No locals.
+#15 0x0000000000427fb8 in main (argc=1, argv=0x7fffcc410098) at src/main.c:786
+        override_configpath = 0x0
+        autostart = true
+        layout_path = 0x0
+        delete_layout_path = false
+        force_xinerama = false
+        disable_signalhandler = false
+        long_options = {{name = 0x458b89 "", has_arg = 0, flag = 0x0, val = 97}, {name = 0x458b96 "nage.c", has_arg = 1, flag = 0x0, val = 99}, {
+            name = 0x458b9d "", has_arg = 0, flag = 0x0, val = 118}, {name = 0x458ba5 ":%d - Restoring geometry\n", has_arg = 0, flag = 0x0, 
+            val = 104}, {name = 0x458baa " Restoring geometry\n", has_arg = 1, flag = 0x0, val = 76}, {name = 0x4578bb "\n", has_arg = 1, 
+            flag = 0x0, val = 0}, {
+            name = 0x4576ff " This option should be avoided at all cost because it does not refresh the list of screens, so you cannot configure displays at runtime. Please check if your driver really does not support RandR and d"..., has_arg = 0, flag = 0x0, val = 0}, {
+            name = 0x45770e "ould be avoided at all cost because it does not refresh the list of screens, so you cannot configure displays at runtime. Please check if your driver really does not support RandR and disable this opt"..., has_arg = 0, flag = 0x0, val = 0}, {
+            name = 0x457837 "g-size", has_arg = 0, flag = 0x0, val = 0}, {name = 0x45787a "", has_arg = 1, flag = 0x0, val = 0}, {
+            name = 0x457886 " %s [-c configfile] [-d loglevel] [-a] [-v] [-V] [-C]\n", has_arg = 1, flag = 0x0, val = 0}, {name = 0x45784d "", 
+            has_arg = 0, flag = 0x0, val = 0}, {name = 0x45785c " log size to %d bytes\n", has_arg = 0, flag = 0x0, val = 0}, {name = 0x0, 
+            has_arg = 0, flag = 0x0, val = 0}}
+        option_index = 0
+        opt = -1
+        gcookie = {sequence = 5}
+        pointercookie = {sequence = 6}
+        mask = 2048
+        values = {5374032}
+        cookie = {sequence = 9}
+        greply = 0x224fa20
+        __FUNCTION__ = "main"
+        _NET_SUPPORTED_cookie = {sequence = 11}
+        _NET_SUPPORTING_WM_CHECK_cookie = {sequence = 12}
+        _NET_WM_NAME_cookie = {sequence = 13}
+        _NET_WM_STATE_FULLSCREEN_cookie = {sequence = 14}
+        _NET_WM_STATE_cookie = {sequence = 15}
+        _NET_WM_WINDOW_TYPE_cookie = {sequence = 16}
+        _NET_WM_WINDOW_TYPE_DOCK_cookie = {sequence = 17}
+        _NET_WM_WINDOW_TYPE_DIALOG_cookie = {sequence = 18}
+        _NET_WM_WINDOW_TYPE_UTILITY_cookie = {sequence = 19}
+        _NET_WM_WINDOW_TYPE_TOOLBAR_cookie = {sequence = 20}
+        _NET_WM_WINDOW_TYPE_SPLASH_cookie = {sequence = 21}
+        _NET_WM_DESKTOP_cookie = {sequence = 22}
+        _NET_WM_STRUT_PARTIAL_cookie = {sequence = 23}
+        _NET_CLIENT_LIST_STACKING_cookie = {sequence = 24}
+        _NET_CURRENT_DESKTOP_cookie = {sequence = 25}
+        _NET_ACTIVE_WINDOW_cookie = {sequence = 26}
+        _NET_WORKAREA_cookie = {sequence = 27}
+        _NET_STARTUP_ID_cookie = {sequence = 28}
+        WM_PROTOCOLS_cookie = {sequence = 29}
+        WM_DELETE_WINDOW_cookie = {sequence = 30}
+        UTF8_STRING_cookie = {sequence = 31}
+        WM_STATE_cookie = {sequence = 32}
+        WM_CLIENT_LEADER_cookie = {sequence = 33}
+        WM_TAKE_FOCUS_cookie = {sequence = 34}
+        WM_WINDOW_ROLE_cookie = {sequence = 35}
+        I3_SOCKET_PATH_cookie = {sequence = 36}
+        I3_CONFIG_PATH_cookie = {sequence = 37}
+        I3_SYNC_cookie = {sequence = 38}
+        I3_SHMLOG_PATH_cookie = {sequence = 39}
+        needs_tree_init = true
+        pointerreply = 0x224f9f0
+        output = 0x2276b40
+        ipc_socket = 9
+        xcb_watcher = 0x2276a80
+        xkb = 0x2276c00
+        xcb_check = 0x224f950
+        xcb_prepare = 0x226f9a0
+        action = {__sigaction_handler = {sa_handler = 0x425618 <handle_signal>, sa_sigaction = 0x425618 <handle_signal>}, sa_mask = {__val = {
+              0 <repeats 16 times>}}, sa_flags = -1073741820, sa_restorer = 0x7f07f7063800}
+        exec_always = 0x0
+        barconfig = 0x0

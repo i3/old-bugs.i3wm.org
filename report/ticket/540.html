@@ -1,0 +1,743 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #540 (workaround for borderless)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/539" title="Ticket #539" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/540?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/540?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/540?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/541" title="Ticket #541" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="de5b3279ffcc6a3ade0ce919";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/539" title="Ticket #539">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/541" title="Ticket #541">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2011-10-16T14%3A56%3A36%2B02%3A00&amp;precision=second" title="See timeline at 10/16/11 14:56:36">3 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2012-09-11T13%3A20%3A00%2B02%3A00&amp;precision=second" title="See timeline at 09/11/12 13:20:00">3 years ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2014-12-01T09%3A17%3A53%2B01%3A00&amp;precision=second" title="See timeline at 12/01/14 09:17:53">4 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/540" class="trac-id">#540</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=enhancement">enhancement</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">workaround for borderless</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable"><a href="/report/query?status=!closed&amp;reporter=motif">motif</a></td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=minor">minor</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=feature-request">feature-request</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.3">4.3</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion" class="missing">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Linux">Linux</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+New ticket created for the borderless problem/workaround described in ticket <a class="closed ticket" href="/report/ticket/535" title="defect: workaround for borderless &amp; float mode with mouse click, fix for i3bar ... (closed: invalid)">#535</a>.<br />
+</p>
+<p>
+To produce the problems:<br />
+</p>
+<ol><li>in i3 config, use for_window [class="urxvt"] border none.
+[unrelated: 
+</li></ol><blockquote>
+<p>
+i3 doesn't seem to be handling some window hints from urxvt correctly]<br />
+</p>
+</blockquote>
+<ol start="2"><li>use URxvt*inheritPixmap: true in .Xdefaults for enabling pseudo-transparency.
+</li></ol><ol start="3"><li>in i3, open up multiple urxvt instances, you will see the border gap filled
+with background color, in attached example, black.
+</li></ol><p>
+Attached i3log and screenshot.<br />
+Agreed with the comments about width/height_increment.<br />
+</p>
+<p>
+<a class="closed ticket" href="/report/ticket/535" title="defect: workaround for borderless &amp; float mode with mouse click, fix for i3bar ... (closed: invalid)">#535</a> history below:<br />
+</p>
+<blockquote>
+<p>
+b) When using for_window [class="&lt;any terminal&gt;"] border none, it doesn't really result in borderless window. Instead, width_increment and height_increment have caused a 'hidden border' being drawn with background color, as such, pseudo-transparency failed in the border area.<br />
+</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>
+What are the usages and significance of width_increment and height_increment?<br />
+Current workaround: comment out code associated with usage of the two variables with pre-configured values.<br />
+</p>
+</blockquote>
+</blockquote>
+<p>
+They are used for terminals where incrementing the size does only make sense if you increment by one character (width) or one line (height). Some other programs also use that (for example GIMP). Commenting this out is not a solution. Please create a separate ticket for this problem with detailed steps on how to reproduce it (and screenshots).<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(2)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/540/i3_borderless_bar.xcf" title="View attachment">i3_borderless_bar.xcf</a><a href="/report/raw-attachment/ticket/540/i3_borderless_bar.xcf" class="trac-rawlink" title="Download">​</a>
+       (<span title="311875 bytes">304.6 KB</span>) -
+      added by <em>motif</em> <a class="timeline" href="/report/timeline?from=2011-10-16T14%3A56%3A58%2B02%3A00&amp;precision=second" title="See timeline at 10/16/11 14:56:58">3 years ago</a>.
+  </dt>
+              <dt>
+    <a href="/report/attachment/ticket/540/0001-Added-and-implemented-sizehints-increment-disable-en.patch" title="View attachment">0001-Added-and-implemented-sizehints-increment-disable-en.patch</a><a href="/report/raw-attachment/ticket/540/0001-Added-and-implemented-sizehints-increment-disable-en.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="7922 bytes">7.7 KB</span>) -
+      added by <em>klaas@…</em> <a class="timeline" href="/report/timeline?from=2012-08-30T17%3A54%3A55%2B02%3A00&amp;precision=second" title="See timeline at 08/30/12 17:54:55">3 years ago</a>.
+  </dt>
+              <dd>
+                Proposed feature patch: sizehints increment disable|enable|toogle
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/540/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(13)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-10-16T14%3A56%3A58%2B02%3A00&amp;precision=second" title="See timeline at 10/16/11 14:56:58">3 years ago</a> by motif
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/540/i3_borderless_bar.xcf"><em>i3_borderless_bar.xcf</em></a><a href="/report/raw-attachment/ticket/540/i3_borderless_bar.xcf" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-1-1318769966397240">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-10-16T14%3A59%3A26%2B02%3A00&amp;precision=second" title="See timeline at 10/16/11 14:59:26">3 years ago</a> by motif
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+couldn't add i3log since it's generally larger than 1 MB<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1320783658138214">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-11-08T21%3A20%3A58%2B01%3A00&amp;precision=second" title="See timeline at 11/08/11 21:20:58">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-component">
+      <strong class="trac-field-component">Component</strong>
+        changed from <em>general</em> to <em>feature-request</em>
+    </li><li class="trac-field-priority">
+      <strong class="trac-field-priority">Priority</strong>
+        changed from <em>major</em> to <em>minor</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>accepted</em>
+    </li><li class="trac-field-type">
+      <strong class="trac-field-type">Type</strong>
+        changed from <em>defect</em> to <em>enhancement</em>
+    </li><li class="trac-field-version">
+      <strong class="trac-field-version">Version</strong>
+        changed from <em>4.0</em> to <em>4.1</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This is pretty much by design (of the implementation). I guess an acceptable way of achieving the wanted behaviour is to configure the window (in case it is borderless) to use less space than it normally would.<br />
+</p>
+<p>
+I will look into this, but not before the release of 4.1.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1320949101496149">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2011-11-10T19%3A18%3A21%2B01%3A00&amp;precision=second" title="See timeline at 11/10/11 19:18:21">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-version">
+      <strong class="trac-field-version">Version</strong>
+        changed from <em>4.1</em> to <em>4.2</em>
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-4-1332365808577202">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-03-21T22%3A36%3A48%2B01%3A00&amp;precision=second" title="See timeline at 03/21/12 22:36:48">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-version">
+      <strong class="trac-field-version">Version</strong>
+        changed from <em>4.2</em> to <em>4.3</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+-ETIME, moving to 4.3<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1333688222788568">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-04-06T06%3A57%3A02%2B02%3A00&amp;precision=second" title="See timeline at 04/06/12 06:57:02">3 years ago</a> by motif
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+saw 4.1 has quite # of enhancement and bug fixes, particularly like the floating windows focus capability and looks like the problems with properly vertical/horizontal split are resolved?.... <br />
+but still looking for borderless support, probably would wait for upgrade until this feature is there... :)<br />
+</p>
+<p>
+really like i3's performance btw, simple, clean, fully flexible and not bloated at all.... (though haven't tried 4.1.x yet)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-08-30T17%3A54%3A55%2B02%3A00&amp;precision=second" title="See timeline at 08/30/12 17:54:55">3 years ago</a> by klaas@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/540/0001-Added-and-implemented-sizehints-increment-disable-en.patch"><em>0001-Added-and-implemented-sizehints-increment-disable-en.patch</em></a><a href="/report/raw-attachment/ticket/540/0001-Added-and-implemented-sizehints-increment-disable-en.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Proposed feature patch: sizehints increment disable|enable|toogle<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1346342726039444">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-08-30T18%3A05%3A26%2B02%3A00&amp;precision=second" title="See timeline at 08/30/12 18:05:26">3 years ago</a> by klaas@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I attached a patch with a new command which can solve this issue:<br />
+As urxvt can actually handle width/height that are not "correct" with regard to *_increment by filling the space itself, we can actually ignore the size increment hints it sets and get a better results. To enable this in the configuration I added a command: "sizehints increment disable|enable|toggle".<br />
+This use case could be fixed like so: for_window [class="URxvt"] sizehints increment disable<br />
+</p>
+<p>
+There are some things I'm not entirely happy with:<br />
+</p>
+<ul><li>It has no effect on containers that have no window, but subcontainers: Should the command affect all leaf window containers?
+</li><li>I'm not sure I correctly forced a redraw of that container, or if I should.
+</li></ul>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1346855734811770">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-05T16%3A35%3A34%2B02%3A00&amp;precision=second" title="See timeline at 09/05/12 16:35:34">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>accepted</em> to <em>infoneeded</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Hey klaas,<br />
+</p>
+<p>
+Thanks for working on this. I’ve looked at your patch and while it works, I’m not very happy with it. Introducing a new command to work around things like that is really not worth it and I’d like to avoid cluttering i3 with X11 workarounds.<br />
+</p>
+<p>
+Instead, how about the following course of action? I’ve read that Openbox 3.4 does not honor the size increments in fullscreen mode (see <a class="ext-link" href="http://openbox.org/wiki/Help:Upgrading_to_3.4#Maximized_terminal_windows"><span class="icon">​</span>http://openbox.org/wiki/Help:Upgrading_to_3.4#Maximized_terminal_windows</a>) and that at least urxvt, xterm and gnome-terminal cope with that just fine (I additionally tested ROXterm, which also works). Openbox 3.4 was released several years ago and they still do it that way, so it can’t horribly break things.<br />
+</p>
+<p>
+Therefore, I suggest we just don’t honor resize increment hints in tiling mode ever (but for floating windows, like GIMP toolbars, which rely on it). What do you think?<br />
+</p>
+<p>
+Best regards,<br />
+Michael<br />
+</p>
+
+    </div>
+  <div class="trac-lastedit ">
+    Last edited <a class="timeline" href="/report/timeline?from=2012-09-05T16%3A38%3A19%2B02%3A00&amp;precision=second" title="See timeline at 09/05/12 16:38:19">3 years ago</a>
+        by michael
+      (<a href="/report/ticket/540?cversion=0&amp;cnum_hist=7#comment:7">previous</a>)
+      (<a href="/report/ticket/540?action=comment-diff&amp;cnum=7&amp;version=1">diff</a>)
+  </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1346856769955765">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-05T16%3A52%3A49%2B02%3A00&amp;precision=second" title="See timeline at 09/05/12 16:52:49">3 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+That would be perfect. I did not dare suggest that and didn't know that Openbox does it. In my opinion size increment hints are very much tied to a floating layout and there's no satisfying way to handle them in a tiling mode - except letting the application handle the extra space.<br />
+So I'm very much in favor of handling it that way. <br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1346859744367054">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-05T17%3A42%3A24%2B02%3A00&amp;precision=second" title="See timeline at 09/05/12 17:42:24">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded</em> to <em>assigned</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I’ve posted to the mailing list, unless any good reason comes up for NOT doing it, i3 v4.3 will ignore size increment hints.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1347362400267646">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-11T13%3A20%3A00%2B02%3A00&amp;precision=second" title="See timeline at 09/11/12 13:20:00">3 years ago</a> by Michael Stapelberg
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>assigned</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/40b12c0a"><span class="icon">​</span>http://c.i3wm.org/40b12c0a</a>:<br />
+Remove support for resize increment size hints for tiling windows<br />
+</p>
+<p>
+As discussed on the mailing list and the bugtracker.<br />
+</p>
+<p>
+fixes <a class="closed ticket" href="/report/ticket/540" title="enhancement: workaround for borderless (closed: fixed)">#540</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1417421873369420">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-12-01T09%3A17%3A53%2B01%3A00&amp;precision=second" title="See timeline at 12/01/14 09:17:53">4 months ago</a> by Robert.Siemer-i3wm.org@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+You asked for reasons to honor size increment hints some time ago. I’m surprised no-one spoke up yet.<br />
+</p>
+<p>
+i3 is all about screen space: If I have a terminal (or two: one above the other) next to a browser, I would like to snap to a size (when resizing with a mouse) where I lose no space in the terminal(s) which I could use better in the browser. When resizing “in steps” with the keyboard jumping to a point in this grid would be nice sometimes, too.<br />
+</p>
+<p>
+If there are competing increments, ignoring them all together is a good first approach.<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/540?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/540?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/540?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

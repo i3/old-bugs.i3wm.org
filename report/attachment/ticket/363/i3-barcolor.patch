@@ -1,0 +1,51 @@
+diff --git a/include/config.h b/include/config.h
+index a8c42fb..e943be4 100644
+--- a/include/config.h
++++ b/include/config.h
+@@ -119,6 +119,7 @@ struct Config {
+                 struct Colortriple urgent;
+         } client;
+         struct config_bar {
++                uint32_t background;
+                 struct Colortriple focused;
+                 struct Colortriple unfocused;
+                 struct Colortriple urgent;
+diff --git a/src/cfgparse.l b/src/cfgparse.l
+index 2d31913..df9671d 100644
+--- a/src/cfgparse.l
++++ b/src/cfgparse.l
+@@ -107,6 +107,7 @@ client.focused                  { BEGIN(COLOR_COND); yylval.color = &config.clie
+ client.focused_inactive         { BEGIN(COLOR_COND); yylval.color = &config.client.focused_inactive; return TOKCOLOR; }
+ client.unfocused                { BEGIN(COLOR_COND); yylval.color = &config.client.unfocused; return TOKCOLOR; }
+ client.urgent                   { BEGIN(COLOR_COND); yylval.color = &config.client.urgent; return TOKCOLOR; }
++bar.background                  { BEGIN(COLOR_COND); yylval.single_color = &config.bar.background; return TOKSINGLECOLOR; }
+ bar.focused                     { BEGIN(COLOR_COND); yylval.color = &config.bar.focused; return TOKCOLOR; }
+ bar.unfocused                   { BEGIN(COLOR_COND); yylval.color = &config.bar.unfocused; return TOKCOLOR; }
+ bar.urgent                      { BEGIN(COLOR_COND); yylval.color = &config.bar.urgent; return TOKCOLOR; }
+diff --git a/src/config.c b/src/config.c
+index 488b5fd..8890df7 100644
+--- a/src/config.c
++++ b/src/config.c
+@@ -372,6 +372,7 @@ void load_configuration(xcb_connection_t *conn, const char *override_configpath,
+         INIT_COLOR(config.client.focused_inactive, "#333333", "#5f676a", "#ffffff");
+         INIT_COLOR(config.client.unfocused, "#333333", "#222222", "#888888");
+         INIT_COLOR(config.client.urgent, "#2f343a", "#900000", "#ffffff");
++        config.bar.background = get_colorpixel(conn, "#000000");
+         INIT_COLOR(config.bar.focused, "#4c7899", "#285577", "#ffffff");
+         INIT_COLOR(config.bar.unfocused, "#333333", "#222222", "#888888");
+         INIT_COLOR(config.bar.urgent, "#2f343a", "#900000", "#ffffff");
+diff --git a/src/layout.c b/src/layout.c
+index c8a21bf..55002bb 100644
+--- a/src/layout.c
++++ b/src/layout.c
+@@ -598,8 +598,8 @@ static void render_internal_bar(xcb_connection_t *conn, Workspace *r_ws, int wid
+         Output *output = r_ws->output;
+         enum { SET_NORMAL = 0, SET_FOCUSED = 1 };
+ 
+-        /* Fill the whole bar in black */
+-        xcb_change_gc_single(conn, output->bargc, XCB_GC_FOREGROUND, get_colorpixel(conn, "#000000"));
++        /* Fill the whole bar with color */
++        xcb_change_gc_single(conn, output->bargc, XCB_GC_FOREGROUND, config.bar.background);
+         xcb_rectangle_t rect = {0, 0, width, height};
+         xcb_poly_fill_rectangle(conn, output->bar, output->bargc, 1, &rect);
+ 

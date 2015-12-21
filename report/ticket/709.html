@@ -1,0 +1,993 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #709 (Java application gets frequently blank windows)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/708" title="Ticket #708" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/709?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/709?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/709?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/710" title="Ticket #710" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="e2bb5367ac26c0f19a7ad163";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/708" title="Ticket #708">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/710" title="Ticket #710">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-05-16T09%3A01%3A32%2B02%3A00&amp;precision=second" title="See timeline at 05/16/12 09:01:32">3 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2013-07-27T15%3A08%3A32%2B02%3A00&amp;precision=second" title="See timeline at 07/27/13 15:08:32">20 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/709" class="trac-id">#709</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Java application gets frequently blank windows</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">lemaire.adrien@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.1">4.1</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion" class="missing">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+              Fandekasp
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+Problem with a java application. Will fail rendering after some time, while running with chromium and urxvt+tmux<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(6)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/709/cgoban_window_not_drawn.png" title="View attachment">cgoban_window_not_drawn.png</a><a href="/report/raw-attachment/ticket/709/cgoban_window_not_drawn.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="785610 bytes">767.2 KB</span>) -
+      added by <em>lemaire.adrien@…</em> <a class="timeline" href="/report/timeline?from=2012-05-16T09%3A03%3A26%2B02%3A00&amp;precision=second" title="See timeline at 05/16/12 09:03:26">3 years ago</a>.
+  </dt>
+              <dd>
+                example of window not rendered
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/709/i3log-2012-05-16-18-50-50" title="View attachment">i3log-2012-05-16-18-50-50</a><a href="/report/raw-attachment/ticket/709/i3log-2012-05-16-18-50-50" class="trac-rawlink" title="Download">​</a>
+       (<span title="488618 bytes">477.2 KB</span>) -
+      added by <em>lemaire.adrien@…</em> <a class="timeline" href="/report/timeline?from=2012-05-16T11%3A53%3A18%2B02%3A00&amp;precision=second" title="See timeline at 05/16/12 11:53:18">3 years ago</a>.
+  </dt>
+              <dd>
+                log for session with my custom log conf
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/709/config" title="View attachment">config</a><a href="/report/raw-attachment/ticket/709/config" class="trac-rawlink" title="Download">​</a>
+       (<span title="5450 bytes">5.3 KB</span>) -
+      added by <em>lemaire.adrien@…</em> <a class="timeline" href="/report/timeline?from=2012-05-16T11%3A55%3A38%2B02%3A00&amp;precision=second" title="See timeline at 05/16/12 11:55:38">3 years ago</a>.
+  </dt>
+              <dd>
+                personal i3 conf
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/709/i3-swing-bug.png" title="View attachment">i3-swing-bug.png</a><a href="/report/raw-attachment/ticket/709/i3-swing-bug.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="869 bytes">869 bytes</span>) -
+      added by <em>quark &lt;quark@…&gt;</em> <a class="timeline" href="/report/timeline?from=2012-05-19T20%3A12%3A02%2B02%3A00&amp;precision=second" title="See timeline at 05/19/12 20:12:02">3 years ago</a>.
+  </dt>
+              <dt>
+    <a href="/report/attachment/ticket/709/i3-swing-resized.png" title="View attachment">i3-swing-resized.png</a><a href="/report/raw-attachment/ticket/709/i3-swing-resized.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="4346 bytes">4.2 KB</span>) -
+      added by <em>quark &lt;quark@…&gt;</em> <a class="timeline" href="/report/timeline?from=2012-05-19T20%3A12%3A12%2B02%3A00&amp;precision=second" title="See timeline at 05/19/12 20:12:12">3 years ago</a>.
+  </dt>
+              <dt>
+    <a href="/report/attachment/ticket/709/tinyuml_trace.log.gz" title="View attachment">tinyuml_trace.log.gz</a><a href="/report/raw-attachment/ticket/709/tinyuml_trace.log.gz" class="trac-rawlink" title="Download">​</a>
+       (<span title="4242 bytes">4.1 KB</span>) -
+      added by <em>matt.garriott@…</em> <a class="timeline" href="/report/timeline?from=2013-04-11T16%3A58%3A24%2B02%3A00&amp;precision=second" title="See timeline at 04/11/13 16:58:24">2 years ago</a>.
+  </dt>
+              <dd>
+                Stack trace from swing app tinyuml.
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/709/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(23)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-05-16T09%3A03%3A26%2B02%3A00&amp;precision=second" title="See timeline at 05/16/12 09:03:26">3 years ago</a> by lemaire.adrien@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/709/cgoban_window_not_drawn.png"><em>cgoban_window_not_drawn.png</em></a><a href="/report/raw-attachment/ticket/709/cgoban_window_not_drawn.png" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+example of window not rendered<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-1-1337151874751053">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-05-16T09%3A04%3A34%2B02%3A00&amp;precision=second" title="See timeline at 05/16/12 09:04:34">3 years ago</a> by lemaire.adrien@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+log file is 6.8M . Will start another session while running immediately urxvt, I suspect it to help the bug coming sooner. Will upload the log file afterwards<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-05-16T11%3A53%3A18%2B02%3A00&amp;precision=second" title="See timeline at 05/16/12 11:53:18">3 years ago</a> by lemaire.adrien@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/709/i3log-2012-05-16-18-50-50"><em>i3log-2012-05-16-18-50-50</em></a><a href="/report/raw-attachment/ticket/709/i3log-2012-05-16-18-50-50" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+log for session with my custom log conf<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1337162079409315">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-05-16T11%3A54%3A39%2B02%3A00&amp;precision=second" title="See timeline at 05/16/12 11:54:39">3 years ago</a> by lemaire.adrien@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Bug always occur after some time with default conf, but log file is too big at this time.<br />
+Bug occurs much more faster with my custom conf (or is this pure coincidence ?)<br />
+</p>
+<p>
+I attach my custom conf as well in case<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-05-16T11%3A55%3A38%2B02%3A00&amp;precision=second" title="See timeline at 05/16/12 11:55:38">3 years ago</a> by lemaire.adrien@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/709/config"><em>config</em></a><a href="/report/raw-attachment/ticket/709/config" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+personal i3 conf<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-05-19T20%3A12%3A02%2B02%3A00&amp;precision=second" title="See timeline at 05/19/12 20:12:02">3 years ago</a> by quark &lt;quark@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/709/i3-swing-bug.png"><em>i3-swing-bug.png</em></a><a href="/report/raw-attachment/ticket/709/i3-swing-bug.png" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-05-19T20%3A12%3A12%2B02%3A00&amp;precision=second" title="See timeline at 05/19/12 20:12:12">3 years ago</a> by quark &lt;quark@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/709/i3-swing-resized.png"><em>i3-swing-resized.png</em></a><a href="/report/raw-attachment/ticket/709/i3-swing-resized.png" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-3-1337451234534596">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-05-19T20%3A13%3A54%2B02%3A00&amp;precision=second" title="See timeline at 05/19/12 20:13:54">3 years ago</a> by quark@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I also encounter this bug sometimes (randomly) in <a class="forbidden wiki" title="no permission to view this wiki page">TopCoder</a> Arena Java swing applet.<br />
+</p>
+<p>
+If the window is enlarged, partial content is shown as attchments i3-swing-* shown.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1339596465310460">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-06-13T16%3A07%3A45%2B02%3A00&amp;precision=second" title="See timeline at 06/13/12 16:07:45">3 years ago</a> by dakra-i3wm@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I have the same problem (i3 version:  4.2 (2012-04-25, branch "release-4.2") and (oracle) java version "1.6.0_32").<br />
+Most disturbing when working with popups (like settings/vcs) in the pycharm/intellij editor.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1352822925742762">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-11-13T17%3A08%3A45%2B01%3A00&amp;precision=second" title="See timeline at 11/13/12 17:08:45">2 years ago</a> by Klaas Boesche &lt;klaas-dev@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I have this bug too. Happens in floating as well as tiled windows. Seems to be random and reopening the window sometimes/rarely leads to it being shown correctly.<br />
+Happening here with current git version: i3 version 4.3-153-g305b6dd (2012-11-13, branch "next") and OpenJDK 1.7.0_09 on <a class="forbidden wiki" title="no permission to view this wiki page">ArchLinux</a> 64bit and in particular with Netbeans, but other Java programs as well.<br />
+Will have a look at my log as well...<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1352823231756728">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:7" class="follow-up">↓ 7</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-11-13T17%3A13%3A51%2B01%3A00&amp;precision=second" title="See timeline at 11/13/12 17:13:51">2 years ago</a> by Klaas Boesche &lt;klaas-dev@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+The right search terms help a lot when googling: <a class="ext-link" href="http://bababadalgharaghtakamminarronnkonnbro.blogspot.de/2012/07/topcoder-arena-resizing-bug-in.html"><span class="icon">​</span>http://bababadalgharaghtakamminarronnkonnbro.blogspot.de/2012/07/topcoder-arena-resizing-bug-in.html</a><br />
+It seems to be a deficiency of the JVMs which has to do with non-reparenting window managers. See the blog post or this: <a class="ext-link" href="http://tools.suckless.org/wmname"><span class="icon">​</span>http://tools.suckless.org/wmname</a> for workarounds.<br />
+So, not an i3 bug, can be closed?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1352981517342206">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+        in reply to:
+    <a href="#comment:6">↑ 6</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-11-15T13%3A11%3A57%2B01%3A00&amp;precision=second" title="See timeline at 11/15/12 13:11:57">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/709#comment:6" title="Comment 6">Klaas Boesche &lt;klaas-dev@…&gt;</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+The right search terms help a lot when googling: <a class="ext-link" href="http://bababadalgharaghtakamminarronnkonnbro.blogspot.de/2012/07/topcoder-arena-resizing-bug-in.html"><span class="icon">​</span>http://bababadalgharaghtakamminarronnkonnbro.blogspot.de/2012/07/topcoder-arena-resizing-bug-in.html</a><br />
+</p>
+</blockquote>
+<p>
+This post talks about non-reparenting window managers, but i3 is a reparenting window manager. That is, the post does not apply.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1363424551852159">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-03-16T10%3A02%3A31%2B01%3A00&amp;precision=second" title="See timeline at 03/16/13 10:02:31">2 years ago</a> by Anders Aagaard &lt;aagaande@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I run into this issue with intellij quite often.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1363957929862746">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-03-22T14%3A12%3A09%2B01%3A00&amp;precision=second" title="See timeline at 03/22/13 14:12:09">2 years ago</a> by xeen
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+workaround: restarting i3 in place (usually $mod+shift+r) renders the windows correctly for me. Most of the time this is easier than having to deal with the unreadable windows.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1365692247919853">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:11" class="follow-up">↓ 11</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-04-11T16%3A57%3A27%2B02%3A00&amp;precision=second" title="See timeline at 04/11/13 16:57:27">2 years ago</a> by matt.garriott@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I'm experiencing the same issue with a swing app called tinyuml <a class="ext-link" href="https://aur.archlinux.org/packages/tinyuml/"><span class="icon">​</span>https://aur.archlinux.org/packages/tinyuml/</a><br />
+I've attached a stack trace I received when the program started failing to render in the hopes that it will be helpful.<br />
+</p>
+<p>
+My System:<br />
+3.8.6-1-ARCH x64<br />
+i3 version 4.5.1-21-g0a3d42c (2013-03-27, branch "next")<br />
+</p>
+<p>
+Please let me know if I can provide any additional information.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-04-11T16%3A58%3A24%2B02%3A00&amp;precision=second" title="See timeline at 04/11/13 16:58:24">2 years ago</a> by matt.garriott@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/709/tinyuml_trace.log.gz"><em>tinyuml_trace.log.gz</em></a><a href="/report/raw-attachment/ticket/709/tinyuml_trace.log.gz" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Stack trace from swing app tinyuml.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1365694677395246">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+        in reply to:
+    <a href="#comment:10">↑ 10</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-04-11T17%3A37%3A57%2B02%3A00&amp;precision=second" title="See timeline at 04/11/13 17:37:57">2 years ago</a> by matt.garriott@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Looks like I may have jumped the gun a bit. I am able to cause the same rendering error while running openbox, so unless i3 and openbox share a common problem it is probably safe to disregard my previous comment.<br />
+</p>
+<p>
+Sorry about the false alarm.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-12-1368054160423349">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-05-09T01%3A02%3A40%2B02%3A00&amp;precision=second" title="See timeline at 05/09/13 01:02:40">23 months ago</a> by daniel@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+After some debugging and experimenting i think i found out whats causing the problem.<br />
+</p>
+<p>
+When you look closely at a window (like <a class="attachment" href="/report/attachment/ticket/709/cgoban_window_not_drawn.png" title="Attachment 'cgoban_window_not_drawn.png' in Ticket #709">attachment:cgoban_window_not_drawn.png</a><a class="trac-rawlink" href="/report/raw-attachment/ticket/709/cgoban_window_not_drawn.png" title="Download">​</a>) that's not painted you can notice a 10x10 pixel square (top left in the window) that actually shows the content that should be there.<br />
+</p>
+<p>
+In x.c, method<br />
+</p>
+<pre class="wiki">void x_con_init(Con *con, uint16_t depth) {
+    /* TODO: maybe create the window when rendering first? we could then even
+     * get the initial geometry right */
+</pre><p>
+you find the following lines of code<br />
+</p>
+<pre class="wiki">    Rect dims = { -15, -15, 10, 10 };
+    con-&gt;frame = create_window(conn, dims, depth, visual, XCB_WINDOW_CLASS_INPUT_OUTPUT, XCURSOR_CURSOR_POINTER, false, mask, values);
+</pre><p>
+Pay attention to the TODO in the method header and the initial size windows are created (10x10 pixel) initially. It seems like there is some race condition in the JVM that sometimes fail to handle windows that get created with a geometry that doesn't match the requested size.<br />
+</p>
+<p>
+Changing the code to <br />
+</p>
+<pre class="wiki">    Rect dims = { -15, -15, 2000, 2000 };
+    con-&gt;frame = create_window(conn, dims, depth, visual, XCB_WINDOW_CLASS_INPUT_OUTPUT, XCURSOR_CURSOR_POINTER, false, mask, values);
+</pre><p>
+solves the problem. At least for all windows that are smaller than 2000x2000 pixel.<br />
+</p>
+<p>
+After making that change, the code posted in <a class="closed ticket" href="/report/ticket/934" title="defect: JOptionPane.showMessageDialog shows empty Windows (closed: fixed)">#934</a> (<a class="closed ticket" href="/report/ticket/934#comment:3" title="Comment 3 for Ticket #934">comment:3:ticket:934</a>) always renders the popup. No random grey windows anymore.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-13-1370534953192499">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:13" class="cnum">
+    <a href="#comment:13">comment:13</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-06-06T18%3A09%3A13%2B02%3A00&amp;precision=second" title="See timeline at 06/06/13 18:09:13">22 months ago</a> by xeen
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I’ve been using the proposed workaround for about a month now and can’t remember seeing any blank windows.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-14-1370810399766483">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:14" class="cnum">
+    <a href="#comment:14">comment:14</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:15" class="follow-up">↓ 15</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-06-09T22%3A39%3A59%2B02%3A00&amp;precision=second" title="See timeline at 06/09/13 22:39:59">22 months ago</a> by robert
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I still get the issue with the proposed workaround. For me, changing need_reparent = true in x_con_init seems to fix the issue. At least in intellij and the dialog popup test from <a class="closed ticket" href="/report/ticket/934" title="defect: JOptionPane.showMessageDialog shows empty Windows (closed: fixed)">#934</a>.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-15-1371034072804990">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:15" class="cnum">
+    <a href="#comment:15">comment:15</a>
+  </span>
+        in reply to:
+    <a href="#comment:14">↑ 14</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:16" class="follow-up">↓ 16</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-06-12T12%3A47%3A52%2B02%3A00&amp;precision=second" title="See timeline at 06/12/13 12:47:52">22 months ago</a> by daniel@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/709#comment:14" title="Comment 14">robert</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+I still get the issue with the proposed workaround. For me, changing need_reparent = true in x_con_init seems to fix the issue. At least in intellij and the dialog popup test from <a class="closed ticket" href="/report/ticket/934" title="defect: JOptionPane.showMessageDialog shows empty Windows (closed: fixed)">#934</a>.<br />
+</p>
+</blockquote>
+<p>
+can you post some snippet of code to clarify what you have changed in your code, i'm not quite sure what you changed and would like to experiment a bit.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-16-1371043619014967">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:16" class="cnum">
+    <a href="#comment:16">comment:16</a>
+  </span>
+        in reply to:
+    <a href="#comment:15">↑ 15</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-06-12T15%3A26%3A59%2B02%3A00&amp;precision=second" title="See timeline at 06/12/13 15:26:59">22 months ago</a> by robert
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/709#comment:15" title="Comment 15">daniel@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/709#comment:14" title="Comment 14">robert</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+I still get the issue with the proposed workaround. For me, changing need_reparent = true in x_con_init seems to fix the issue. At least in intellij and the dialog popup test from <a class="closed ticket" href="/report/ticket/934" title="defect: JOptionPane.showMessageDialog shows empty Windows (closed: fixed)">#934</a>.<br />
+</p>
+</blockquote>
+<p>
+can you post some snippet of code to clarify what you have changed in your code, i'm not quite sure what you changed and would like to experiment a bit.<br />
+</p>
+</blockquote>
+<p>
+Yes, it differs a bit from 4.5.1 tag to master branch.<br />
+</p>
+<p>
+My change in 4.5.1 tag, you can compare this to master branch where the diff would be different.<br />
+</p>
+<pre class="wiki">diff --git a/src/x.c b/src/x.c
+index fcb63c3..70148d4 100644
+--- a/src/x.c
++++ b/src/x.c
+@@ -146,6 +146,7 @@ void x_con_init(Con *con, uint16_t depth) {
+     state-&gt;id = con-&gt;frame;
+     state-&gt;mapped = false;
+     state-&gt;initial = true;
++    state-&gt;need_reparent = true;
+     CIRCLEQ_INSERT_HEAD(&amp;state_head, state, state);
+     CIRCLEQ_INSERT_HEAD(&amp;old_state_head, state, old_state);
+     DLOG("adding new state for window id 0x%08x\n", state-&gt;id);
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-17-1374930512721188">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:17" class="cnum">
+    <a href="#comment:17">comment:17</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-27T15%3A08%3A32%2B02%3A00&amp;precision=second" title="See timeline at 07/27/13 15:08:32">20 months ago</a> by Michael Stapelberg
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/0c7a76c2"><span class="icon">​</span>http://c.i3wm.org/0c7a76c2</a>:<br />
+</p>
+<pre class="wiki">Handle the _NET_REQUEST_FRAME_EXTENTS ClientMessage (java compat)
+
+This ClientMessage can be used to estimate how big the window will be
+before opening it. Java always sends the ClientMessage and checks the
+atom that should be set by the window manager, but it seems that the
+fallback code path has a race condition.
+
+Let’s see if the situation gets better with this change. I have been
+running this patch for about two weeks and have not seen any issues with
+it.
+
+fixes #934
+fixes #709
+
+</pre>
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/709?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/709?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/709?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

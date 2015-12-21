@@ -1,0 +1,625 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1285 (Tray dissapeared after upgrade 4.7.2--&gt;4.8)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1284" title="Ticket #1284" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1285?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1285?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1285?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1286" title="Ticket #1286" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="a762f3bc16efd10e7f3d3d40";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1284" title="Ticket #1284">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1286" title="Ticket #1286">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2014-06-19T12%3A51%3A54%2B02%3A00&amp;precision=second" title="See timeline at 06/19/14 12:51:54">9 months ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2014-07-30T09%3A04%3A38%2B02%3A00&amp;precision=second" title="See timeline at 07/30/14 09:04:38">8 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1285" class="trac-id">#1285</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=duplicate">duplicate</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Tray dissapeared after upgrade 4.7.2--&gt;4.8</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">nenjordi@…</td>
+      <th id="h_owner" class="missing">Owned by:</th>
+      <td headers="h_owner"></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.8">4.8</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.8 (2014-06-15, branch "4.8")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+I'm unable to make the tray appear again.<br />
+</p>
+<p>
+In my config:<br />
+</p>
+<p>
+bar {<br />
+</p>
+<blockquote>
+<p>
+#status_command i3status                                                                                                               <br />
+status_command py3status -c ~/.config/i3status/config -i ~/.config/i3status/py3status_scripts/ -t 1<br />
+# Tray to primary monitor                                                                                                              <br />
+tray_output primary<br />
+</p>
+</blockquote>
+<blockquote>
+<p>
+colors {<br />
+</p>
+<blockquote>
+<p>
+background <a class="closed ticket" href="/report/ticket/200" title="enhancement: Add the ability to exec new clients without changing focus (closed: reporter_inactive)">#200</a>f0e                                                                                                                     <br />
+statusline #ffffff                                                                                                                     <br />
+separator #fa2007                                                                                                                      <br />
+</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>
+focused_workspace  #fa2007 #fa2007 #ffffff                                                                                             <br />
+active_workspace   <a class="missing ticket">#333333</a> #fa9084 #ffffff                                                                                             <br />
+inactive_workspace <a class="missing ticket">#333333</a> <a class="closed ticket" href="/report/ticket/4" title="defect: Customly resized containers don’t re-distribute free space when cells ... (closed: fixed)">#4</a>d1109 <a class="closed ticket" href="/report/ticket/999" title="defect: Cursor jumps to window (closed: duplicate)">#999</a>fdd                                                                                             <br />
+urgent_workspace   <a class="closed ticket" href="/report/ticket/2" title="defect: focus problems with firefox (or other gtk apps?) and right-clicking (closed: worksforme)">#2</a>f343a <a class="missing ticket">#900000</a> #ffffff                                                                                             <br />
+</p>
+</blockquote>
+<p>
+}<br />
+</p>
+</blockquote>
+<p>
+}<br />
+</p>
+<p>
+My primary monitor is set to LVDS1, but tray is not appearing either with multimonitor or with single monitor.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(6)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1403459274154793">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-22T19%3A47%3A54%2B02%3A00&amp;precision=second" title="See timeline at 06/22/14 19:47:54">9 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Put <tt>verbose true</tt> in your bar block, and run with <tt>i3bar --bar_id=bar-0</tt> to get the debug log for the bar.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1403516642284102">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-23T11%3A44%3A02%2B02%3A00&amp;precision=second" title="See timeline at 06/23/14 11:44:02">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I append the output. I also disabled my py3status and set i3status standard to avoid problems<br />
+</p>
+<p>
+[i3bar/src/config.c:159] background = bar_bg = <a class="closed ticket" href="/report/ticket/2" title="defect: focus problems with firefox (or other gtk apps?) and right-clicking (closed: worksforme)">#2</a>A1300<br />
+[i3bar/src/config.c:158] statusline = bar_fg = #ffffff<br />
+[i3bar/src/config.c:160] separator = sep_fg = #fa2007<br />
+[i3bar/src/config.c:161] focused_workspace_border = focus_ws_border = #A84B00<br />
+[i3bar/src/config.c:162] focused_workspace_bg = focus_ws_bg = #A84B00<br />
+[i3bar/src/config.c:163] focused_workspace_text = focus_ws_fg = #FFFF00<br />
+[i3bar/src/config.c:164] active_workspace_border = active_ws_border = <a class="missing ticket">#733300</a><br />
+[i3bar/src/config.c:165] active_workspace_bg = active_ws_bg = <a class="missing ticket">#733300</a><br />
+[i3bar/src/config.c:166] active_workspace_text = active_ws_fg = #C0C0C0<br />
+[i3bar/src/config.c:167] inactive_workspace_border = inactive_ws_border = <a class="missing ticket">#361800</a><br />
+[i3bar/src/config.c:168] inactive_workspace_bg = inactive_ws_bg = <a class="missing ticket">#361800</a><br />
+[i3bar/src/config.c:169] inactive_workspace_text = inactive_ws_fg = <a class="closed ticket" href="/report/ticket/999" title="defect: Cursor jumps to window (closed: duplicate)">#999</a>fdd<br />
+[i3bar/src/config.c:170] urgent_workspace_border = urgent_ws_border = <a class="closed ticket" href="/report/ticket/2" title="defect: focus problems with firefox (or other gtk apps?) and right-clicking (closed: worksforme)">#2</a>f343a<br />
+[i3bar/src/config.c:171] urgent_workspace_bg = urgent_ws_bg = <a class="missing ticket">#900000</a><br />
+[i3bar/src/config.c:172] urgent_workspace_text = urgent_ws_fg = #ffffff<br />
+[libi3] libi3/font.c Using X font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1<br />
+[i3bar/src/xcb.c:1122] Calculated Font-height: 13<br />
+[i3bar/src/xcb.c:1245] Setting bar_fg = #ffffff as _NET_SYSTEM_TRAY_COLORS<br />
+[i3bar/src/ipc.c:192] Got data!<br />
+[i3bar/src/ipc.c:63] Parsing Outputs-JSON...<br />
+[i3bar/src/ipc.c:65] Reconfiguring Windows...<br />
+[i3bar/src/xcb.c:1390] Re-allocating statusline-buffer, statusline_width = 0, root_screen-&gt;width_in_pixels = 1600<br />
+[i3bar/src/xcb.c:1441] Destroying window for output VIRTUAL1<br />
+[i3bar/src/xcb.c:1441] Destroying window for output DP1<br />
+[i3bar/src/xcb.c:1441] Destroying window for output HDMI1<br />
+[i3bar/src/xcb.c:1441] Destroying window for output VGA1<br />
+[i3bar/src/xcb.c:1446] Creating Window for output LVDS1<br />
+[i3bar/src/xcb.c:1682] Drawing Bars...<br />
+[i3bar/src/xcb.c:1690] Output VIRTUAL1 inactive, skipping...<br />
+[i3bar/src/xcb.c:1690] Output DP1 inactive, skipping...<br />
+[i3bar/src/xcb.c:1690] Output HDMI1 inactive, skipping...<br />
+[i3bar/src/xcb.c:1690] Output VGA1 inactive, skipping...<br />
+[i3bar/src/ipc.c:192] Got data!<br />
+[i3bar/src/ipc.c:54] Got Subscribe Reply: {"success":true}<br />
+[i3bar/src/ipc.c:192] Got data!<br />
+[i3bar/src/ipc.c:43] Got Workspace-Data!<br />
+[i3bar/src/workspaces.c:142] Got Workspace canonical: 1, name: '1', name_width: 7, glyphs: 1<br />
+[i3bar/src/workspaces.c:142] Got Workspace canonical: 3, name: '3', name_width: 7, glyphs: 1<br />
+[i3bar/src/workspaces.c:142] Got Workspace canonical: 9, name: '9', name_width: 7, glyphs: 1<br />
+[i3bar/src/xcb.c:1682] Drawing Bars...<br />
+[i3bar/src/xcb.c:1690] Output VIRTUAL1 inactive, skipping...<br />
+[i3bar/src/xcb.c:1690] Output DP1 inactive, skipping...<br />
+[i3bar/src/xcb.c:1690] Output HDMI1 inactive, skipping...<br />
+[i3bar/src/xcb.c:1690] Output VGA1 inactive, skipping...<br />
+[i3bar/src/xcb.c:1742] Drawing Button for WS 1 at x = 0, len = 7<br />
+[i3bar/src/xcb.c:1742] Drawing Button for WS 3 at x = 18, len = 7<br />
+[i3bar/src/xcb.c:1742] Drawing Button for WS 9 at x = 36, len = 7<br />
+[i3bar/src/child.c:362] Detecting input type based on buffer *{"version":1}<br />
+[<br />
+*<br />
+[i3bar/src/child.c:244] dumping statusline:<br />
+[i3bar/src/child.c:247] full_text = W: (100% at eduroam, 1 Mb/s) 155.54.7.8<br />
+[i3bar/src/child.c:248] color = <a class="missing ticket">#00</a>FF00<br />
+[i3bar/src/child.c:247] full_text = E: down<br />
+[i3bar/src/child.c:248] color = <a class="closed ticket" href="/report/ticket/4" title="defect: Customly resized containers don’t re-distribute free space when cells ... (closed: fixed)">#4</a>c4c4c<br />
+[i3bar/src/child.c:247] full_text = v6: no<br />
+[i3bar/src/child.c:248] color = <a class="closed ticket" href="/report/ticket/4" title="defect: Customly resized containers don’t re-distribute free space when cells ... (closed: fixed)">#4</a>c4c4c<br />
+[i3bar/src/child.c:247] full_text = VPN: no<br />
+[i3bar/src/child.c:248] color = <a class="closed ticket" href="/report/ticket/4" title="defect: Customly resized containers don’t re-distribute free space when cells ... (closed: fixed)">#4</a>c4c4c<br />
+[i3bar/src/child.c:247] full_text = 70 ºC<br />
+[i3bar/src/child.c:248] color = #FF0000<br />
+[i3bar/src/child.c:247] full_text = [BAT]<br />
+[i3bar/src/child.c:248] color = (null)<br />
+[i3bar/src/child.c:247] full_text = 23/06/2014 11:42<br />
+[i3bar/src/child.c:248] color = (null)<br />
+[i3bar/src/child.c:250] end of dump<br />
+[i3bar/src/xcb.c:1682] Drawing Bars...<br />
+[i3bar/src/xcb.c:1690] Output VIRTUAL1 inactive, skipping...<br />
+[i3bar/src/xcb.c:1690] Output DP1 inactive, skipping...<br />
+[i3bar/src/xcb.c:1690] Output HDMI1 inactive, skipping...<br />
+[i3bar/src/xcb.c:1690] Output VGA1 inactive, skipping...<br />
+[i3bar/src/xcb.c:1711] Printing statusline!<br />
+[i3bar/src/xcb.c:1742] Drawing Button for WS 1 at x = 0, len = 7<br />
+[i3bar/src/xcb.c:1742] Drawing Button for WS 3 at x = 18, len = 7<br />
+[i3bar/src/xcb.c:1742] Drawing Button for WS 9 at x = 36, len = 7<br />
+[i3bar/src/child.c:244] dumping statusline:<br />
+[i3bar/src/child.c:247] full_text = W: (100% at eduroam, 1 Mb/s) 155.54.7.8<br />
+[i3bar/src/child.c:248] color = <a class="missing ticket">#00</a>FF00<br />
+[i3bar/src/child.c:247] full_text = E: down<br />
+[i3bar/src/child.c:248] color = <a class="closed ticket" href="/report/ticket/4" title="defect: Customly resized containers don’t re-distribute free space when cells ... (closed: fixed)">#4</a>c4c4c<br />
+[i3bar/src/child.c:247] full_text = v6: no<br />
+[i3bar/src/child.c:248] color = <a class="closed ticket" href="/report/ticket/4" title="defect: Customly resized containers don’t re-distribute free space when cells ... (closed: fixed)">#4</a>c4c4c<br />
+[i3bar/src/child.c:247] full_text = VPN: no<br />
+[i3bar/src/child.c:248] color = <a class="closed ticket" href="/report/ticket/4" title="defect: Customly resized containers don’t re-distribute free space when cells ... (closed: fixed)">#4</a>c4c4c<br />
+[i3bar/src/child.c:247] full_text = 70 ºC<br />
+[i3bar/src/child.c:248] color = #FF0000<br />
+[i3bar/src/child.c:247] full_text = [BAT]<br />
+[i3bar/src/child.c:248] color = (null)<br />
+[i3bar/src/child.c:247] full_text = 23/06/2014 11:42<br />
+[i3bar/src/child.c:248] color = (null)<br />
+[i3bar/src/child.c:250] end of dump<br />
+[i3bar/src/xcb.c:1682] Drawing Bars...<br />
+[i3bar/src/xcb.c:1690] Output VIRTUAL1 inactive, skipping...<br />
+[i3bar/src/xcb.c:1690] Output DP1 inactive, skipping...<br />
+[i3bar/src/xcb.c:1690] Output HDMI1 inactive, skipping...<br />
+[i3bar/src/xcb.c:1690] Output VGA1 inactive, skipping...<br />
+[i3bar/src/xcb.c:1711] Printing statusline!<br />
+[i3bar/src/xcb.c:1742] Drawing Button for WS 1 at x = 0, len = 7<br />
+[i3bar/src/xcb.c:1742] Drawing Button for WS 3 at x = 18, len = 7<br />
+[i3bar/src/xcb.c:1742] Drawing Button for WS 9 at x = 36, len = 7<br />
+[i3bar/src/main.c:84] Got a SIGINT, stopping<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1403889462023605">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-27T19%3A17%3A42%2B02%3A00&amp;precision=second" title="See timeline at 06/27/14 19:17:42">9 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Can you please also provide the output of <tt>i3-msg -t get_outputs</tt>?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1406655303438019">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-29T19%3A35%3A03%2B02%3A00&amp;precision=second" title="See timeline at 07/29/14 19:35:03">8 months ago</a> by John Straw &lt;jestraw@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+For me, the tray is visible when i3 4.8.2 starts the first time, but if I restart i3 the tray disappears.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1406680718958723">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-30T02%3A38%3A38%2B02%3A00&amp;precision=second" title="See timeline at 07/30/14 02:38:38">8 months ago</a> by John Straw &lt;jestraw@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sorry, that's 4.8.  I misremembered what version I was running.  I might also be misunderstanding what is happening -- I think what's actually happening is that when i3 restarts, it kills all the programs which were displaying icons in the tray.  For example, I started nm-applet from an xterm and it displayed an icon in the tray.  Then when I restarted, I got this error:<br />
+</p>
+<pre class="wiki">(nm-applet:14887): Gdk-ERROR **: The program 'nm-applet' received an X Window System error.
+    This probably reflects a bug in the program.
+    The error was 'BadWindow (invalid Window parameter)'.
+      (Details: serial 1384 error_code 3 request_code 18 (core protocol) minor_code 0)
+</pre><p>
+If I restart those applications, they show their icons in the tray just fine.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1406703878035701">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-07-30T09%3A04%3A38%2B02%3A00&amp;precision=second" title="See timeline at 07/30/14 09:04:38">8 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>duplicate</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I think this is a duplicate of <a class="closed ticket" href="/report/ticket/1296" title="defect: Systray is randomly killed while an i3 restart (closed: fixed)">#1296</a>, and hence fixed in latest git.<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1285?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1285?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1285?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

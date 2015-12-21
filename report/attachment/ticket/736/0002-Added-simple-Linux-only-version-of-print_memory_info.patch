@@ -1,0 +1,194 @@
+From b343df28c9ffea7edfff52b3b2655ef9f233c9fd Mon Sep 17 00:00:00 2001
+From: Mateusz Loskot <mateusz@loskot.net>
+Date: Sun, 17 Jun 2012 03:44:33 +0100
+Subject: [PATCH 2/2] Added simple Linux-only version of print_memory_info()
+ implemented using sysinfo()
+
+---
+ i3status.c              |   12 ++++++
+ include/i3status.h      |    7 ++++
+ src/print_memory_info.c |   95 +++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 114 insertions(+)
+ create mode 100644 src/print_memory_info.c
+
+diff --git a/i3status.c b/i3status.c
+index f0767a0..518cbbe 100644
+--- a/i3status.c
++++ b/i3status.c
+@@ -250,6 +250,11 @@ int main(int argc, char *argv[]) {
+                 CFG_END()
+         };
+ 
++        cfg_opt_t memory_opts[] = {
++                CFG_STR("format", "%free", CFGF_NONE),
++                CFG_END()
++        };
++        
+         cfg_opt_t volume_opts[] = {
+                 CFG_STR("format", "♪: %volume", CFGF_NONE),
+                 CFG_STR("device", "default", CFGF_NONE),
+@@ -273,6 +278,7 @@ int main(int argc, char *argv[]) {
+                 CFG_SEC("ddate", ddate_opts, CFGF_NONE),
+                 CFG_SEC("load", load_opts, CFGF_NONE),
+                 CFG_SEC("cpu_usage", usage_opts, CFGF_NONE),
++                CFG_SEC("memory", memory_opts, CFGF_TITLE | CFGF_MULTI),
+                 CFG_END()
+         };
+ 
+@@ -430,6 +436,12 @@ int main(int argc, char *argv[]) {
+                                 SEC_CLOSE_MAP;
+                         }
+ 
++                        CASE_SEC_TITLE("memory") {
++                                SEC_OPEN_MAP("memory");
++                                print_memory_info(json_gen, buffer, title, cfg_getstr(sec, "format"));
++                                SEC_CLOSE_MAP;
++                        }
++
+                         CASE_SEC("load") {
+                                 SEC_OPEN_MAP("load");
+                                 print_load(json_gen, buffer, cfg_getstr(sec, "format"));
+diff --git a/include/i3status.h b/include/i3status.h
+index eb19d52..5856937 100644
+--- a/include/i3status.h
++++ b/include/i3status.h
+@@ -10,6 +10,7 @@ enum { O_DZEN2, O_XMOBAR, O_I3BAR, O_NONE } output_format;
+ #include <yajl/yajl_version.h>
+ #include <unistd.h>
+ #include <string.h>
++#include <stdint.h>
+ 
+ #define BEGINS_WITH(haystack, needle) (strncmp(haystack, needle, strlen(needle)) == 0)
+ #define max(a, b) ((a) > (b) ? (a) : (b))
+@@ -122,6 +123,8 @@ enum { O_DZEN2, O_XMOBAR, O_I3BAR, O_NONE } output_format;
+ 
+ typedef enum { CS_DISCHARGING, CS_CHARGING, CS_FULL } charging_status_t;
+ 
++typedef enum { MT_RAM, MT_SWAP } memory_type_t;
++
+ /* src/general.c */
+ char *skip_character(char *input, char character, int amount);
+ void die(const char *fmt, ...);
+@@ -135,6 +138,9 @@ char *endcolor() __attribute__ ((pure));
+ /* src/auto_detect_format.c */
+ char *auto_detect_format();
+ 
++/* src/print_bytes_human.c */
++int print_bytes_human(char *outwalk, uint64_t bytes);
++
+ void print_ipv6_info(yajl_gen json_gen, char *buffer, const char *format_up, const char *format_down);
+ void print_disk_info(yajl_gen json_gen, char *buffer, const char *path, const char *format);
+ void print_battery_info(yajl_gen json_gen, char *buffer, int number, const char *path, const char *format, int threshold, bool last_full_capacity);
+@@ -148,6 +154,7 @@ void print_cpu_usage(yajl_gen json_gen, char *buffer, const char *format);
+ void print_eth_info(yajl_gen json_gen, char *buffer, const char *interface, const char *format_up, const char *format_down);
+ void print_load(yajl_gen json_gen, char *buffer, const char *format);
+ void print_volume(yajl_gen json_gen, char *buffer, const char *fmt, const char *device, const char *mixer, int mixer_idx);
++void print_memory_info(yajl_gen json_gen, char *buffer, const char *title, const char *format);
+ bool process_runs(const char *path);
+ 
+ /* socket file descriptor for general purposes */
+diff --git a/src/print_memory_info.c b/src/print_memory_info.c
+new file mode 100644
+index 0000000..10023d1
+--- /dev/null
++++ b/src/print_memory_info.c
+@@ -0,0 +1,95 @@
++/*
++ * Copyright (c) 2012 Mateusz Loskot <mateusz at loskot dot net>
++ * 
++ * All rights reserved.
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions are met:
++ * 
++ * * Redistributions of source code must retain the above copyright notice, this
++ *   list of conditions and the following disclaimer.
++ * 
++ * * Redistributions in binary form must reproduce the above copyright notice,
++ *   this list of conditions and the following disclaimer in the documentation
++ *   and/or other materials provided with the distribution.
++ *
++ * * Neither the name of i3status nor the names of contributors
++ *   may be used to endorse or promote products derived from this software
++ *   without specific prior written permission.
++ * 
++ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
++ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
++ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
++ * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
++ * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
++ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
++ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
++ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
++ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
++ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
++ * POSSIBILITY OF SUCH DAMAGE.
++ */
++#include <stdio.h>
++#include <sys/sysinfo.h>
++
++#include "i3status.h"
++
++/* TODO: Fix for Linux pre-2.3.23 */
++
++/*
++ * Reads the memory utilization using Linux sysinfo() call.
++ *
++ */
++void print_memory_info(yajl_gen json_gen, char *buffer, const char *title, const char *format) {
++        char *outwalk = buffer;
++        uint64_t mem_unit = 0;
++        
++        INSTANCE(title);
++
++#if defined(LINUX)
++        const char *walk;
++
++        struct sysinfo info;
++        if (sysinfo(&info) == -1)
++                goto error;
++        mem_unit = (uint64_t)info.mem_unit;
++        
++        for (walk = format; *walk != '\0'; walk++) {
++                if (*walk != '%') {
++                        *(outwalk++) = *walk;
++                        continue;
++                }
++
++                /* Total usable main memory size */
++                if (BEGINS_WITH(walk+1, "total")) {
++                        outwalk += print_bytes_human(outwalk, (uint64_t)info.totalram * mem_unit);
++                        walk += strlen("total");
++                }
++                
++                /* Available memory size */
++                if (BEGINS_WITH(walk+1, "free")) {
++                        outwalk += print_bytes_human(outwalk, (uint64_t)info.freeram * mem_unit);
++                        walk += strlen("free");
++                }
++
++                /* Total swap space size */
++                if (BEGINS_WITH(walk+1, "swaptotal")) {
++                        outwalk += print_bytes_human(outwalk, (uint64_t)info.totalswap * mem_unit);
++                        walk += strlen("swaptotal");
++                }
++                
++                /* swap space still available */
++                if (BEGINS_WITH(walk+1, "swapfree")) {
++                        outwalk += print_bytes_human(outwalk, (uint64_t)info.freeswap * mem_unit);
++                        walk += strlen("swapfree");
++                }
++        }
++
++        *outwalk = '\0';
++        OUTPUT_FULL_TEXT(buffer);
++        return;
++#endif
++
++error:
++        OUTPUT_FULL_TEXT("cant read memory usage");
++        (void)fputs("i3status: Cannot read memory usage\n", stderr);
++}
+\ No newline at end of file
+-- 
+1.7.10.4
+

@@ -1,0 +1,212 @@
+10.07.2010 12:31:34 - Enabling debug loglevel all
+10.07.2010 12:31:34 - i3 version 3.e-bf1 (2010-06-09) starting
+10.07.2010 12:31:34 - src/config.c:parse_configuration:298 - Parsing configfile /home/christian/.i3/config
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+10.07.2010 12:31:34 - src/cfgparse.y:yyparse:366 - floating modifier = 8
+	Found binding mod8 with key 41 and command f
+	Found binding mod8 with key 43 and command s
+	Found binding mod8 with key 25 and command T
+	Found binding mod8 with key 26 and command d
+	Found binding mod9 with key 65 and command t
+	Found binding mod8 with key 28 and command focus ft
+	Found binding mod8 with key 44 and command h
+	Found binding mod8 with key 45 and command j
+	Found binding mod8 with key 46 and command k
+	Found binding mod8 with key 47 and command l
+	Found symbolic mod8 with key Left and command h
+	Found symbolic mod8 with key Down and command j
+	Found symbolic mod8 with key Up and command k
+	Found symbolic mod8 with key Right and command l
+	Found binding mod32 with key 44 and command wch
+	Found binding mod32 with key 45 and command wcj
+	Found binding mod32 with key 46 and command wck
+	Found binding mod32 with key 47 and command wcl
+	Found symbolic mod32 with key Left and command wch
+	Found symbolic mod32 with key Down and command wcj
+	Found symbolic mod32 with key Up and command wck
+	Found symbolic mod32 with key Right and command wcl
+	Found binding mod12 with key 44 and command sh
+	Found binding mod12 with key 45 and command sj
+	Found binding mod12 with key 46 and command sk
+	Found binding mod12 with key 47 and command sl
+	Found symbolic mod12 with key Left and command sh
+	Found symbolic mod12 with key Down and command sj
+	Found symbolic mod12 with key Up and command sk
+	Found symbolic mod12 with key Right and command sl
+	Found binding mod9 with key 44 and command mh
+	Found binding mod9 with key 45 and command mj
+	Found binding mod9 with key 46 and command mk
+	Found binding mod9 with key 47 and command ml
+	Found symbolic mod9 with key Left and command mh
+	Found symbolic mod9 with key Down and command mj
+	Found symbolic mod9 with key Up and command mk
+	Found symbolic mod9 with key Right and command ml
+	Found binding mod33 with key 44 and command wcmh
+	Found binding mod33 with key 45 and command wcmj
+	Found binding mod33 with key 46 and command wcmk
+	Found binding mod33 with key 47 and command wcml
+	Found binding mod8 with key 10 and command 1
+	Found binding mod8 with key 11 and command 2
+	Found binding mod8 with key 12 and command 3
+	Found binding mod8 with key 13 and command 4
+	Found binding mod8 with key 14 and command 5
+	Found binding mod8 with key 15 and command 6
+	Found binding mod8 with key 16 and command 7
+	Found binding mod8 with key 17 and command 8
+	Found binding mod8 with key 18 and command 9
+	Found binding mod8 with key 19 and command 10
+	Found binding mod9 with key 10 and command m1
+	Found binding mod9 with key 11 and command m2
+	Found binding mod9 with key 12 and command m3
+	Found binding mod9 with key 13 and command m4
+	Found binding mod9 with key 14 and command m5
+	Found binding mod9 with key 15 and command m6
+	Found binding mod9 with key 16 and command m7
+	Found binding mod9 with key 17 and command m8
+	Found binding mod9 with key 18 and command m9
+	Found binding mod9 with key 19 and command m10
+	Found binding mod8 with key 36 and command exec /usr/bin/xterm
+	Found binding mod9 with key 24 and command kill
+	Found binding mod8 with key 55 and command exec /usr/bin/dmenu_run
+	Found binding mod9 with key 26 and command exit
+	Found binding mod9 with key 27 and command restart
+10.07.2010 12:31:34 - src/config.c:translate_keysyms:176 - Translated symbol "Left" to 1 keycode
+10.07.2010 12:31:34 - src/config.c:translate_keysyms:176 - Translated symbol "Down" to 1 keycode
+10.07.2010 12:31:34 - src/config.c:translate_keysyms:176 - Translated symbol "Up" to 1 keycode
+10.07.2010 12:31:34 - src/config.c:translate_keysyms:176 - Translated symbol "Right" to 1 keycode
+10.07.2010 12:31:34 - src/config.c:translate_keysyms:176 - Translated symbol "Left" to 1 keycode
+10.07.2010 12:31:34 - src/config.c:translate_keysyms:176 - Translated symbol "Down" to 1 keycode
+10.07.2010 12:31:34 - src/config.c:translate_keysyms:176 - Translated symbol "Up" to 1 keycode
+10.07.2010 12:31:34 - src/config.c:translate_keysyms:176 - Translated symbol "Right" to 1 keycode
+10.07.2010 12:31:34 - src/config.c:translate_keysyms:176 - Translated symbol "Left" to 1 keycode
+10.07.2010 12:31:34 - src/config.c:translate_keysyms:176 - Translated symbol "Down" to 1 keycode
+10.07.2010 12:31:34 - src/config.c:translate_keysyms:176 - Translated symbol "Up" to 1 keycode
+10.07.2010 12:31:34 - src/config.c:translate_keysyms:176 - Translated symbol "Right" to 1 keycode
+10.07.2010 12:31:34 - src/config.c:translate_keysyms:176 - Translated symbol "Left" to 1 keycode
+10.07.2010 12:31:34 - src/config.c:translate_keysyms:176 - Translated symbol "Down" to 1 keycode
+10.07.2010 12:31:34 - src/config.c:translate_keysyms:176 - Translated symbol "Up" to 1 keycode
+10.07.2010 12:31:34 - src/config.c:translate_keysyms:176 - Translated symbol "Right" to 1 keycode
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 41
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 43
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 25
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 26
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 65
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 28
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 44
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 45
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 46
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 47
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 113
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 116
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 111
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 114
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 44
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 45
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 46
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 47
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 113
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 116
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 111
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 114
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 44
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 45
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 46
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 47
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 113
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 116
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 111
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 114
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 44
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 45
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 46
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 47
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 113
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 116
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 111
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 114
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 44
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 45
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 46
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 47
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 10
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 11
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 12
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 13
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 14
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 15
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 16
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 17
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 18
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 19
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 10
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 11
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 12
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 13
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 14
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 15
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 16
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 17
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 18
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 19
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 36
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 24
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 55
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 26
+10.07.2010 12:31:34 - src/config.c:grab_keycode_for_binding:86 - Grabbing 27
+10.07.2010 12:31:34 - src/mainx.c:main:533 - Checking for XRandR...
+10.07.2010 12:31:34 - src/randr.c:handle_output:319 - found output with name DVI-I-1
+10.07.2010 12:31:34 - src/randr.c:handle_output:353 - mode: 1680x1050+1280+0
+10.07.2010 12:31:34 - src/randr.c:handle_output:319 - found output with name DVI-I-2
+10.07.2010 12:31:34 - src/randr.c:handle_output:353 - mode: 1280x1024+0+0
+10.07.2010 12:31:34 - src/randr.c:randr_query_outputs:437 - output 0xe96550, position (1280, 0), checking for clones
+10.07.2010 12:31:34 - src/randr.c:randr_query_outputs:437 - output 0xe947d0, position (0, 0), checking for clones
+10.07.2010 12:31:34 - src/ewmh.c:ewmh_update_workarea:77 - Got 1 workspaces
+10.07.2010 12:31:34 - src/ewmh.c:ewmh_update_workarea:81 - storing 0: 0x0 with 0 x 0
+10.07.2010 12:31:34 - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+10.07.2010 12:31:34 - src/workspace.c:workspace_initialize:288 - old_output = (nil), ws->output = 0xe96550
+10.07.2010 12:31:34 - src/ewmh.c:ewmh_update_workarea:77 - Got 1 workspaces
+10.07.2010 12:31:34 - src/ewmh.c:ewmh_update_workarea:81 - storing 0: 1280x0 with 1680 x 1050
+10.07.2010 12:31:34 - src/randr.c:initialize_output:195 - initialized output at (1280, 0) with 1680 x 1050
+10.07.2010 12:31:34 - src/randr.c:initialize_output:197 - assigning configured workspaces to this output...
+10.07.2010 12:31:34 - src/workspace.c:get_first_workspace_for_output:326 - No existing free workspace found to assign, creating a new one
+10.07.2010 12:31:34 - src/workspace.c:workspace_get:48 - We need to initialize that one, last ws = 0
+10.07.2010 12:31:34 - src/workspace.c:workspace_get:51 - Creating new ws
+10.07.2010 12:31:34 - src/layout.c:render_workspace:726 - height is 1031
+10.07.2010 12:31:34 - src/layout.c:render_container:358 - height per client = 1031, rest = 0
+10.07.2010 12:31:34 - src/workspace.c:workspace_get:64 - done
+10.07.2010 12:31:34 - src/ewmh.c:ewmh_update_workarea:77 - Got 2 workspaces
+10.07.2010 12:31:34 - src/ewmh.c:ewmh_update_workarea:81 - storing 0: 1280x0 with 1680 x 1050
+10.07.2010 12:31:34 - src/ewmh.c:ewmh_update_workarea:81 - storing 1: 0x0 with 0 x 0
+10.07.2010 12:31:34 - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (1280x0, 1680, 1050)
+10.07.2010 12:31:34 - src/workspace.c:workspace_initialize:288 - old_output = (nil), ws->output = 0xe947d0
+10.07.2010 12:31:34 - src/ewmh.c:ewmh_update_workarea:77 - Got 2 workspaces
+10.07.2010 12:31:34 - src/ewmh.c:ewmh_update_workarea:81 - storing 0: 1280x0 with 1680 x 1050
+10.07.2010 12:31:34 - src/ewmh.c:ewmh_update_workarea:81 - storing 1: 0x0 with 1280 x 1024
+10.07.2010 12:31:34 - src/randr.c:initialize_output:195 - initialized output at (0, 0) with 1280 x 1024
+10.07.2010 12:31:34 - src/randr.c:initialize_output:197 - assigning configured workspaces to this output...
+10.07.2010 12:31:34 - src/layout.c:render_workspace:726 - height is 1031
+10.07.2010 12:31:34 - src/layout.c:render_container:358 - height per client = 1031, rest = 0
+10.07.2010 12:31:34 - src/layout.c:render_workspace:726 - height is 1005
+10.07.2010 12:31:34 - src/layout.c:render_container:358 - height per client = 1005, rest = 0
+10.07.2010 12:31:34 - src/randr.c:get_output_containing:105 - comparing x=1478 y=525 with x=1280 and y=0 width 1680 height 1050
+10.07.2010 12:31:34 - src/mainx.c:main:558 - Starting on 0xe3b0a0
+10.07.2010 12:31:34 - src/ipc.c:ipc_create_socket:506 - Creating IPC-socket at /home/christian/.i3/ipc.sock
+10.07.2010 12:31:34 - src/handlers.c:handle_expose_event:775 - window = 00600001
+10.07.2010 12:31:34 - src/layout.c:render_workspace:726 - height is 1031
+10.07.2010 12:31:34 - src/layout.c:render_container:358 - height per client = 1031, rest = 0
+10.07.2010 12:31:34 - src/layout.c:render_workspace:726 - height is 1005
+10.07.2010 12:31:34 - src/layout.c:render_container:358 - height per client = 1005, rest = 0
+10.07.2010 12:31:34 - src/handlers.c:handle_expose_event:775 - window = 00600005
+10.07.2010 12:31:34 - src/layout.c:render_workspace:726 - height is 1031
+10.07.2010 12:31:34 - src/layout.c:render_container:358 - height per client = 1031, rest = 0
+10.07.2010 12:31:34 - src/layout.c:render_workspace:726 - height is 1005
+10.07.2010 12:31:34 - src/layout.c:render_container:358 - height per client = 1005, rest = 0
+10.07.2010 12:31:36 - src/mainx.c:xkb_got_event:131 - Handling XKB event
+10.07.2010 12:31:36 - src/mainx.c:xkb_got_event:131 - Handling XKB event
+10.07.2010 12:31:36 - src/handlers.c:handle_key_press:91 - Keypress 26, state raw = 9
+10.07.2010 12:31:36 - src/handlers.c:handle_key_press:95 - (removed numlock, state = 9)
+10.07.2010 12:31:36 - src/handlers.c:handle_key_press:99 - (removed upper 8 bits, state = 9)
+10.07.2010 12:31:36 - src/handlers.c:handle_key_press:104 - (checked mode_switch, state 9)
+10.07.2010 12:31:36 - --- parsing command "exit" ---
+10.07.2010 12:31:36 - User issued exit-command, exiting without error.
+10.07.2010 12:31:36 - src/manage.c:restore_geometry:77 - Restoring geometry

@@ -1,0 +1,230 @@
+From 9de9760ace084f1de4ca501e418431bb78cddd05 Mon Sep 17 00:00:00 2001
+From: Klaas Boesche <boesche@cs.uni-saarland.de>
+Date: Fri, 6 Jul 2012 14:59:18 +0200
+Subject: [PATCH] Added and implemented 'sizehints increment
+ disable|enable|toggle' command fixed testcase 187: added
+ sizehints to expected output
+
+---
+ include/commands.h                    |  6 ++++++
+ include/data.h                        |  3 +++
+ parser-specs/commands.spec            | 10 ++++++++++
+ src/commands.c                        | 34 ++++++++++++++++++++++++++++++++--
+ src/con.c                             |  2 ++
+ src/handlers.c                        | 30 ++++++++++++++++--------------
+ src/ipc.c                             |  3 +++
+ testcases/t/187-commands-parser.t     |  2 +-
+ testcases/t/197-sizehints-increment.t | 20 ++++++++++++++++++++
+ 9 files changed, 93 insertions(+), 17 deletions(-)
+ create mode 100644 testcases/t/197-sizehints-increment.t
+
+diff --git a/include/commands.h b/include/commands.h
+index 37ee98d..1f6708b 100644
+--- a/include/commands.h
++++ b/include/commands.h
+@@ -271,4 +271,10 @@ void cmd_scratchpad_show(I3_CMD);
+  */
+ void cmd_rename_workspace(I3_CMD, char *old_name, char *new_name);
+ 
++/**
++ * Implementation of 'sizehints increment enable|disable|toggle'
++ *
++ */
++void cmd_sizehints_increment(I3_CMD, char *sizehints_increment_mode);
++
+ #endif
+diff --git a/include/data.h b/include/data.h
+index 6df3f6f..0325d68 100644
+--- a/include/data.h
++++ b/include/data.h
+@@ -473,6 +473,9 @@ struct Con {
+     int width_increment;
+     int height_increment;
+ 
++    /** Whether resizing this window will honor the size increment hints */
++    bool honor_increment;
++
+     struct Window *window;
+ 
+     /* Should this container be marked urgent? This gets set when the window
+diff --git a/parser-specs/commands.spec b/parser-specs/commands.spec
+index b4c9e00..eaf584a 100644
+--- a/parser-specs/commands.spec
++++ b/parser-specs/commands.spec
+@@ -35,6 +35,7 @@ state INITIAL:
+   'nop' -> NOP
+   'scratchpad' -> SCRATCHPAD
+   'mode' -> MODE
++  'sizehints' -> SIZEHINTS
+ 
+ state CRITERIA:
+   ctype = 'class' -> CRITERION
+@@ -294,3 +295,12 @@ state NOP:
+ state SCRATCHPAD:
+   'show'
+       -> call cmd_scratchpad_show()
++
++state SIZEHINTS:
++  'increment'
++      -> SIZEHINTS_INCREMENT
++
++# sizehints increment enable|disable|toggle
++state SIZEHINTS_INCREMENT:
++  increment = 'enable', 'disable', 'toggle'
++      -> call cmd_sizehints_increment($increment)
+diff --git a/src/commands.c b/src/commands.c
+index 00d8b97..b697fdd 100644
+--- a/src/commands.c
++++ b/src/commands.c
+@@ -1,5 +1,4 @@
+-#undef I3__FILE__
+-#define I3__FILE__ "commands.c"
++#line 2 "commands.c"
+ /*
+  * vim:ts=4:sw=4:expandtab
+  *
+@@ -1768,3 +1767,34 @@ void cmd_rename_workspace(I3_CMD, char *old_name, char *new_name) {
+ 
+     ipc_send_event("workspace", I3_IPC_EVENT_WORKSPACE, "{\"change\":\"rename\"}");
+ }
++
++/*
++ * Implementation of 'sizehints increment enable|disable|toggle'
++ *
++ */
++void cmd_sizehints_increment(I3_CMD, char *sizehints_increment_mode) {
++    owindow *current;
++
++    DLOG("sizehints_increment_mode=%s\n", sizehints_increment_mode);
++
++    HANDLE_EMPTY_MATCH;
++
++    TAILQ_FOREACH(current, &owindows, owindows) {
++        DLOG("matching: %p / %s\n", current->con, current->con->name);
++        if (strcmp(sizehints_increment_mode, "toggle") == 0) {
++            DLOG("should toggle sizehints increment mode\n");
++            current->con->honor_increment = !current->con->honor_increment;
++        } else {
++            DLOG("should switch sizehints increment mode to %s\n", sizehints_increment_mode);
++            if (strcmp(sizehints_increment_mode, "enable") == 0) {
++                current->con->honor_increment = true;
++            } else {
++                current->con->honor_increment = false;
++            }
++        }
++    }
++
++    cmd_output->needs_tree_render = true;
++    // XXX: default reply for now, make this a better reply
++    ysuccess(true);
++}
+diff --git a/src/con.c b/src/con.c
+index 0c82163..c68ef97 100644
+--- a/src/con.c
++++ b/src/con.c
+@@ -61,6 +61,8 @@ Con *con_new(Con *parent, i3Window *window) {
+     TAILQ_INIT(&(new->focus_head));
+     TAILQ_INIT(&(new->swallow_head));
+ 
++    new->honor_increment = true;
++
+     if (parent != NULL)
+         con_attach(new, parent, false);
+ 
+diff --git a/src/handlers.c b/src/handlers.c
+index 3154362..7c8c372 100644
+--- a/src/handlers.c
++++ b/src/handlers.c
+@@ -711,20 +711,22 @@ static bool handle_normal_hints(void *data, xcb_connection_t *conn, uint8_t stat
+     }
+ 
+     bool changed = false;
+-    if ((size_hints.flags & XCB_ICCCM_SIZE_HINT_P_RESIZE_INC)) {
+-        if (size_hints.width_inc > 0 && size_hints.width_inc < 0xFFFF)
+-            if (con->width_increment != size_hints.width_inc) {
+-                con->width_increment = size_hints.width_inc;
+-                changed = true;
+-            }
+-        if (size_hints.height_inc > 0 && size_hints.height_inc < 0xFFFF)
+-            if (con->height_increment != size_hints.height_inc) {
+-                con->height_increment = size_hints.height_inc;
+-                changed = true;
+-            }
+-
+-        if (changed)
+-            DLOG("resize increments changed\n");
++    if (con->honor_increment) {
++        if ((size_hints.flags & XCB_ICCCM_SIZE_HINT_P_RESIZE_INC)) {
++            if (size_hints.width_inc > 0 && size_hints.width_inc < 0xFFFF)
++                if (con->width_increment != size_hints.width_inc) {
++                    con->width_increment = size_hints.width_inc;
++                    changed = true;
++                }
++            if (size_hints.height_inc > 0 && size_hints.height_inc < 0xFFFF)
++                if (con->height_increment != size_hints.height_inc) {
++                    con->height_increment = size_hints.height_inc;
++                    changed = true;
++                }
++
++            if (changed)
++                DLOG("resize increments changed\n");
++        }
+     }
+ 
+     int base_width = 0, base_height = 0;
+diff --git a/src/ipc.c b/src/ipc.c
+index 1c6de79..3d26b05 100644
+--- a/src/ipc.c
++++ b/src/ipc.c
+@@ -254,6 +254,9 @@ void dump_node(yajl_gen gen, struct Con *con, bool inplace_restart) {
+             break;
+     }
+ 
++    ystr("honor_increment");
++    y(bool, con->honor_increment);
++
+     dump_rect(gen, "rect", con->rect);
+     dump_rect(gen, "window_rect", con->window_rect);
+     dump_rect(gen, "geometry", con->geometry);
+diff --git a/testcases/t/187-commands-parser.t b/testcases/t/187-commands-parser.t
+index 335c775..6673e1e 100644
+--- a/testcases/t/187-commands-parser.t
++++ b/testcases/t/187-commands-parser.t
+@@ -127,7 +127,7 @@ is(parser_calls("\nworkspace test"),
+ ################################################################################
+ 
+ is(parser_calls('unknown_literal'),
+-   "ERROR: Expected one of these tokens: <end>, '[', 'move', 'exec', 'exit', 'restart', 'reload', 'border', 'layout', 'append_layout', 'workspace', 'focus', 'kill', 'open', 'fullscreen', 'split', 'floating', 'mark', 'resize', 'rename', 'nop', 'scratchpad', 'mode'\n" .
++   "ERROR: Expected one of these tokens: <end>, '[', 'move', 'exec', 'exit', 'restart', 'reload', 'border', 'layout', 'append_layout', 'workspace', 'focus', 'kill', 'open', 'fullscreen', 'split', 'floating', 'mark', 'resize', 'rename', 'nop', 'scratchpad', 'mode', 'sizehints'\n" .
+    "ERROR: Your command: unknown_literal\n" .
+    "ERROR:               ^^^^^^^^^^^^^^^",
+    'error for unknown literal ok');
+diff --git a/testcases/t/197-sizehints-increment.t b/testcases/t/197-sizehints-increment.t
+new file mode 100644
+index 0000000..8d15c76
+--- /dev/null
++++ b/testcases/t/197-sizehints-increment.t
+@@ -0,0 +1,20 @@
++#!perl
++# vim:ts=4:sw=4:expandtab
++#
++#
++#
++use i3test;
++
++cmd 'sizehints increment enable';
++
++does_i3_live;
++
++cmd 'sizehints increment disable';
++
++does_i3_live;
++
++cmd 'sizehints increment toggle';
++
++does_i3_live;
++
++done_testing;
+-- 
+1.7.12
+

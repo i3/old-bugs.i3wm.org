@@ -1,0 +1,236 @@
+From c692512a91b27bf3735ac38b803997f1f68bd61a Mon Sep 17 00:00:00 2001
+From: Angelo Haller <angelo@szanni.org>
+Date: Wed, 16 Nov 2011 10:12:57 +0100
+Subject: [PATCH 2/3] Fix config parser to add border to ws tiles.
+
+---
+ i3bar/src/config.c |   16 ++++++++--------
+ include/config.h   |   16 ++++++++--------
+ src/cfgparse.l     |   11 ++++++-----
+ src/cfgparse.y     |   36 ++++++++++++++++++++----------------
+ src/config.c       |   16 ++++++++--------
+ src/ipc.c          |   16 ++++++++--------
+ 6 files changed, 58 insertions(+), 53 deletions(-)
+
+diff --git a/i3bar/src/config.c b/i3bar/src/config.c
+index d0e8813..97d16ac 100644
+--- a/i3bar/src/config.c
++++ b/i3bar/src/config.c
+@@ -124,18 +124,18 @@ static int config_string_cb(void *params_, const unsigned char *val, unsigned in
+ 
+     COLOR(statusline, bar_fg);
+     COLOR(background, bar_bg);
+-    COLOR(focused_workspace_text, focus_ws_fg);
+-    COLOR(focused_workspace_bg, focus_ws_bg);
+     COLOR(focused_workspace_border, focus_ws_border);
+-    COLOR(active_workspace_text, active_ws_fg);
+-    COLOR(active_workspace_bg, active_ws_bg);
++    COLOR(focused_workspace_background, focus_ws_bg);
++    COLOR(focused_workspace_text, focus_ws_fg);
+     COLOR(active_workspace_border, active_ws_border);
+-    COLOR(inactive_workspace_text, inactive_ws_fg);
+-    COLOR(inactive_workspace_bg, inactive_ws_bg);
++    COLOR(active_workspace_background, active_ws_bg);
++    COLOR(active_workspace_text, active_ws_fg);
+     COLOR(inactive_workspace_border, inactive_ws_border);
+-    COLOR(urgent_workspace_text, urgent_ws_fg);
+-    COLOR(urgent_workspace_bg, urgent_ws_bg);
++    COLOR(inactive_workspace_background, inactive_ws_bg);
++    COLOR(inactive_workspace_text, inactive_ws_fg);
+     COLOR(urgent_workspace_border, urgent_ws_border);
++    COLOR(urgent_workspace_background, urgent_ws_bg);
++    COLOR(urgent_workspace_text, urgent_ws_fg);
+ 
+     printf("got unexpected string %.*s for cur_key = %s\n", len, val, cur_key);
+ 
+diff --git a/include/config.h b/include/config.h
+index b52dcbf..59bc01f 100644
+--- a/include/config.h
++++ b/include/config.h
+@@ -220,21 +220,21 @@ struct Barconfig {
+         char *background;
+         char *statusline;
+ 
+-        char *focused_workspace_text;
+-        char *focused_workspace_bg;
+         char *focused_workspace_border;
++        char *focused_workspace_background;
++        char *focused_workspace_text;
+ 
+-        char *active_workspace_text;
+-        char *active_workspace_bg;
+         char *active_workspace_border;
++        char *active_workspace_background;
++        char *active_workspace_text;
+ 
+-        char *inactive_workspace_text;
+-        char *inactive_workspace_bg;
+         char *inactive_workspace_border;
++        char *inactive_workspace_background;
++        char *inactive_workspace_text;
+ 
+-        char *urgent_workspace_text;
+-        char *urgent_workspace_bg;
+         char *urgent_workspace_border;
++        char *urgent_workspace_background;
++        char *urgent_workspace_text;
+     } colors;
+ 
+     TAILQ_ENTRY(Barconfig) configs;
+diff --git a/src/cfgparse.l b/src/cfgparse.l
+index 1566e24..fd0c671 100644
+--- a/src/cfgparse.l
++++ b/src/cfgparse.l
+@@ -37,7 +37,8 @@ int yycolumn = 1;
+     yy_push_state(EAT_WHITESPACE); \
+ } while (0)
+ 
+-#define BAR_DOUBLE_COLOR do { \
++#define BAR_TRIPLE_COLOR do { \
++    yy_push_state(BAR_COLOR); \
+     yy_push_state(BAR_COLOR); \
+     yy_push_state(BAR_COLOR); \
+ } while (0)
+@@ -111,10 +112,10 @@ EOL     (\r?\n)
+ <BAR_COLORS>^[ \t]*#[^\n]*      { return TOKCOMMENT; }
+ <BAR_COLORS>background          { yy_push_state(BAR_COLOR); return TOK_BAR_COLOR_BACKGROUND; }
+ <BAR_COLORS>statusline          { yy_push_state(BAR_COLOR); return TOK_BAR_COLOR_STATUSLINE; }
+-<BAR_COLORS>focused_workspace   { BAR_DOUBLE_COLOR; return TOK_BAR_COLOR_FOCUSED_WORKSPACE; }
+-<BAR_COLORS>active_workspace    { BAR_DOUBLE_COLOR; return TOK_BAR_COLOR_ACTIVE_WORKSPACE; }
+-<BAR_COLORS>inactive_workspace  { BAR_DOUBLE_COLOR; return TOK_BAR_COLOR_INACTIVE_WORKSPACE; }
+-<BAR_COLORS>urgent_workspace    { BAR_DOUBLE_COLOR; return TOK_BAR_COLOR_URGENT_WORKSPACE; }
++<BAR_COLORS>focused_workspace   { BAR_TRIPLE_COLOR; return TOK_BAR_COLOR_FOCUSED_WORKSPACE; }
++<BAR_COLORS>active_workspace    { BAR_TRIPLE_COLOR; return TOK_BAR_COLOR_ACTIVE_WORKSPACE; }
++<BAR_COLORS>inactive_workspace  { BAR_TRIPLE_COLOR; return TOK_BAR_COLOR_INACTIVE_WORKSPACE; }
++<BAR_COLORS>urgent_workspace    { BAR_TRIPLE_COLOR; return TOK_BAR_COLOR_URGENT_WORKSPACE; }
+ <BAR_COLOR>#[0-9a-fA-F]+        { yy_pop_state(); yylval.string = sstrdup(yytext); return HEXCOLOR; }
+ <BAR,BAR_COLORS,BAR_MODE,BAR_POSITION>[a-zA-Z]+ { yylval.string = sstrdup(yytext); return WORD; }
+ 
+diff --git a/src/cfgparse.y b/src/cfgparse.y
+index 79da317..fd58b6e 100644
+--- a/src/cfgparse.y
++++ b/src/cfgparse.y
+@@ -1163,38 +1163,42 @@ bar_color_statusline:
+     ;
+ 
+ bar_color_focused_workspace:
+-    TOK_BAR_COLOR_FOCUSED_WORKSPACE HEXCOLOR HEXCOLOR
++    TOK_BAR_COLOR_FOCUSED_WORKSPACE HEXCOLOR HEXCOLOR HEXCOLOR
+     {
+-        DLOG("focused_ws = %s and %s\n", $2, $3);
+-        current_bar.colors.focused_workspace_text = $2;
+-        current_bar.colors.focused_workspace_bg = $3;
++        DLOG("focused_ws = %s, %s and %s\n", $2, $3, $4);
++        current_bar.colors.focused_workspace_border = $2;
++        current_bar.colors.focused_workspace_background = $3;
++        current_bar.colors.focused_workspace_text = $4;
+     }
+     ;
+ 
+ bar_color_active_workspace:
+-    TOK_BAR_COLOR_ACTIVE_WORKSPACE HEXCOLOR HEXCOLOR
++    TOK_BAR_COLOR_ACTIVE_WORKSPACE HEXCOLOR HEXCOLOR HEXCOLOR
+     {
+-        DLOG("active_ws = %s and %s\n", $2, $3);
+-        current_bar.colors.active_workspace_text = $2;
+-        current_bar.colors.active_workspace_bg = $3;
++        DLOG("active_ws = %s, %s and %s\n", $2, $3, $4);
++        current_bar.colors.active_workspace_border = $2;
++        current_bar.colors.active_workspace_background = $3;
++        current_bar.colors.active_workspace_text = $4;
+     }
+     ;
+ 
+ bar_color_inactive_workspace:
+-    TOK_BAR_COLOR_INACTIVE_WORKSPACE HEXCOLOR HEXCOLOR
++    TOK_BAR_COLOR_INACTIVE_WORKSPACE HEXCOLOR HEXCOLOR HEXCOLOR
+     {
+-        DLOG("inactive_ws = %s and %s\n", $2, $3);
+-        current_bar.colors.inactive_workspace_text = $2;
+-        current_bar.colors.inactive_workspace_bg = $3;
++        DLOG("inactive_ws = %s, %s and %s\n", $2, $3, $4);
++        current_bar.colors.inactive_workspace_border = $2;
++        current_bar.colors.inactive_workspace_background = $3;
++        current_bar.colors.inactive_workspace_text = $4;
+     }
+     ;
+ 
+ bar_color_urgent_workspace:
+-    TOK_BAR_COLOR_URGENT_WORKSPACE HEXCOLOR HEXCOLOR
++    TOK_BAR_COLOR_URGENT_WORKSPACE HEXCOLOR HEXCOLOR HEXCOLOR
+     {
+-        DLOG("urgent_ws = %s and %s\n", $2, $3);
+-        current_bar.colors.urgent_workspace_text = $2;
+-        current_bar.colors.urgent_workspace_bg = $3;
++        DLOG("urgent_ws = %s, %s and %s\n", $2, $3, $4);
++        current_bar.colors.urgent_workspace_border = $2;
++        current_bar.colors.urgent_workspace_background = $3;
++        current_bar.colors.urgent_workspace_text = $4;
+     }
+     ;
+ 
+diff --git a/src/config.c b/src/config.c
+index 55070e1..6da4c17 100644
+--- a/src/config.c
++++ b/src/config.c
+@@ -302,18 +302,18 @@ void load_configuration(xcb_connection_t *conn, const char *override_configpath,
+             FREE(barconfig->font);
+             FREE(barconfig->colors.background);
+             FREE(barconfig->colors.statusline);
+-            FREE(barconfig->colors.focused_workspace_text);
+-            FREE(barconfig->colors.focused_workspace_bg);
+             FREE(barconfig->colors.focused_workspace_border);
+-            FREE(barconfig->colors.active_workspace_text);
+-            FREE(barconfig->colors.active_workspace_bg);
++            FREE(barconfig->colors.focused_workspace_background);
++            FREE(barconfig->colors.focused_workspace_text);
+             FREE(barconfig->colors.active_workspace_border);
+-            FREE(barconfig->colors.inactive_workspace_text);
+-            FREE(barconfig->colors.inactive_workspace_bg);
++            FREE(barconfig->colors.active_workspace_background);
++            FREE(barconfig->colors.active_workspace_text);
+             FREE(barconfig->colors.inactive_workspace_border);
+-            FREE(barconfig->colors.urgent_workspace_text);
+-            FREE(barconfig->colors.urgent_workspace_bg);
++            FREE(barconfig->colors.inactive_workspace_background);
++            FREE(barconfig->colors.inactive_workspace_text);
+             FREE(barconfig->colors.urgent_workspace_border);
++            FREE(barconfig->colors.urgent_workspace_background);
++            FREE(barconfig->colors.urgent_workspace_text);
+             TAILQ_REMOVE(&barconfigs, barconfig, configs);
+             FREE(barconfig);
+         }
+diff --git a/src/ipc.c b/src/ipc.c
+index c26524e..65aa807 100644
+--- a/src/ipc.c
++++ b/src/ipc.c
+@@ -585,18 +585,18 @@ IPC_HANDLER(get_bar_config) {
+         y(map_open);
+         YSTR_IF_SET(background);
+         YSTR_IF_SET(statusline);
+-        YSTR_IF_SET(focused_workspace_text);
+-        YSTR_IF_SET(focused_workspace_bg);
+         YSTR_IF_SET(focused_workspace_border);
+-        YSTR_IF_SET(active_workspace_text);
+-        YSTR_IF_SET(active_workspace_bg);
++        YSTR_IF_SET(focused_workspace_background);
++        YSTR_IF_SET(focused_workspace_text);
+         YSTR_IF_SET(active_workspace_border);
+-        YSTR_IF_SET(inactive_workspace_text);
+-        YSTR_IF_SET(inactive_workspace_bg);
++        YSTR_IF_SET(active_workspace_background);
++        YSTR_IF_SET(active_workspace_text);
+         YSTR_IF_SET(inactive_workspace_border);
+-        YSTR_IF_SET(urgent_workspace_text);
+-        YSTR_IF_SET(urgent_workspace_bg);
++        YSTR_IF_SET(inactive_workspace_background);
++        YSTR_IF_SET(inactive_workspace_text);
+         YSTR_IF_SET(urgent_workspace_border);
++        YSTR_IF_SET(urgent_workspace_background);
++        YSTR_IF_SET(urgent_workspace_text);
+         y(map_close);
+ 
+ #undef YSTR_IF_SET
+-- 
+1.7.7.3
+

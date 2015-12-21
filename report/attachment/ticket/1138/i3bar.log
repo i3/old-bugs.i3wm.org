@@ -1,0 +1,288 @@
+[libi3] libi3/font.c Using Pango font Cousine, size 12
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1108] Calculated Font-height: 17
+[i3bar/src/xcb.c:1231] Setting bar_fg = #FFFFFF as _NET_SYSTEM_TRAY_COLORS
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:63] Parsing Outputs-JSON...
+[i3bar/src/ipc.c:65] Reconfiguring Windows...
+[i3bar/src/xcb.c:1375] Re-allocating statusline-buffer, statusline_width = 0, root_screen->width_in_pixels = 2970
+[i3bar/src/xcb.c:1427] Destroying window for output HDMI-0
+[i3bar/src/xcb.c:1432] Creating Window for output DVI-I-3
+[i3bar/src/xcb.c:1149] Initializing system tray functionality
+[i3bar/src/xcb.c:1231] Setting bar_fg = #FFFFFF as _NET_SYSTEM_TRAY_COLORS
+[i3bar/src/xcb.c:1427] Destroying window for output DVI-I-1
+[i3bar/src/xcb.c:1427] Destroying window for output DVI-I-0
+[i3bar/src/xcb.c:1432] Creating Window for output DVI-I-2
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[i3bar/src/xcb.c:1674] Output HDMI-0 inactive, skipping...
+[i3bar/src/xcb.c:1674] Output DVI-I-1 inactive, skipping...
+[i3bar/src/xcb.c:1674] Output DVI-I-0 inactive, skipping...
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:54] Got Subscribe Reply: {"success":true}
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 2: www, name_width: 60, glyphs: 6
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 10, glyphs: 1
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[i3bar/src/xcb.c:1674] Output HDMI-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 2: www at x = 0, len = 60
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1674] Output DVI-I-1 inactive, skipping...
+[i3bar/src/xcb.c:1674] Output DVI-I-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 10
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:475] _NET_SYSTEM_TRAY_OPCODE received
+[i3bar/src/xcb.c:518] xembed format = 32, len = 2
+[i3bar/src/xcb.c:520] xembed version = 1
+[i3bar/src/xcb.c:521] xembed flags = 1
+[i3bar/src/xcb.c:531] X window 00800046 requested docking
+[i3bar/src/xcb.c:542] using output DVI-I-2
+[i3bar/src/xcb.c:607] Mapping dock client
+[i3bar/src/xcb.c:455] Configuring tray window 00800046 to x=1901
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[i3bar/src/xcb.c:1674] Output HDMI-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 2: www at x = 0, len = 60
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1674] Output DVI-I-1 inactive, skipping...
+[i3bar/src/xcb.c:1674] Output DVI-I-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 10
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:664] MapNotify for window = 00800046, event = 00800046
+[i3bar/src/xcb.c:670] checking output DVI-I-3
+[i3bar/src/xcb.c:670] checking output DVI-I-2
+[i3bar/src/xcb.c:676] Tray client mapped (window ID 00800046). Adjusting tray.
+[i3bar/src/xcb.c:455] Configuring tray window 00800046 to x=1901
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[i3bar/src/xcb.c:1674] Output HDMI-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 2: www at x = 0, len = 60
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1674] Output DVI-I-1 inactive, skipping...
+[i3bar/src/xcb.c:1674] Output DVI-I-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 10
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:475] _NET_SYSTEM_TRAY_OPCODE received
+[i3bar/src/xcb.c:518] xembed format = 32, len = 2
+[i3bar/src/xcb.c:520] xembed version = 1
+[i3bar/src/xcb.c:521] xembed flags = 0
+[i3bar/src/xcb.c:531] X window 02000038 requested docking
+[i3bar/src/xcb.c:542] using output DVI-I-2
+[i3bar/src/xcb.c:610] Not mapping dock client yet
+[i3bar/src/xcb.c:455] Configuring tray window 02000038 to x=1901
+[i3bar/src/xcb.c:455] Configuring tray window 00800046 to x=1882
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[i3bar/src/xcb.c:1674] Output HDMI-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 2: www at x = 0, len = 60
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1674] Output DVI-I-1 inactive, skipping...
+[i3bar/src/xcb.c:1674] Output DVI-I-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 10
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:721] PropertyNotify
+[i3bar/src/xcb.c:721] PropertyNotify
+[i3bar/src/xcb.c:724] xembed_info updated
+[i3bar/src/xcb.c:763] xembed format = 32, len = 2
+[i3bar/src/xcb.c:765] xembed version = 1
+[i3bar/src/xcb.c:766] xembed flags = 1
+[i3bar/src/xcb.c:768] map-state now 1
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:126] Got Workspace Event!
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:126] Got Workspace Event!
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 2: www, name_width: 60, glyphs: 6
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 10, glyphs: 1
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 11: im, name_width: 60, glyphs: 6
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[i3bar/src/xcb.c:1674] Output HDMI-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 2: www at x = 0, len = 60
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1674] Output DVI-I-1 inactive, skipping...
+[i3bar/src/xcb.c:1674] Output DVI-I-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 10
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1726] Drawing Button for WS 11: im at x = 21, len = 60
+[i3bar/src/xcb.c:1742] WS 11: im is urgent!
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 2: www, name_width: 60, glyphs: 6
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 10, glyphs: 1
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 11: im, name_width: 60, glyphs: 6
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[i3bar/src/xcb.c:1674] Output HDMI-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 2: www at x = 0, len = 60
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1674] Output DVI-I-1 inactive, skipping...
+[i3bar/src/xcb.c:1674] Output DVI-I-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 10
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1726] Drawing Button for WS 11: im at x = 21, len = 60
+[i3bar/src/xcb.c:1742] WS 11: im is urgent!
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:721] PropertyNotify
+[i3bar/src/xcb.c:721] PropertyNotify
+[i3bar/src/xcb.c:786] ConfigureRequest for window = 02000038
+[i3bar/src/xcb.c:809] This is a tray window. x = 1901
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:126] Got Workspace Event!
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:126] Got Workspace Event!
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 2: www, name_width: 60, glyphs: 6
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 10, glyphs: 1
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 11: im, name_width: 60, glyphs: 6
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 12, name_width: 20, glyphs: 2
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[i3bar/src/xcb.c:1674] Output HDMI-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 2: www at x = 0, len = 60
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1674] Output DVI-I-1 inactive, skipping...
+[i3bar/src/xcb.c:1674] Output DVI-I-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 10
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1726] Drawing Button for WS 11: im at x = 21, len = 60
+[i3bar/src/xcb.c:1742] WS 11: im is urgent!
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1726] Drawing Button for WS 12 at x = 92, len = 20
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 2: www, name_width: 60, glyphs: 6
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 10, glyphs: 1
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 11: im, name_width: 60, glyphs: 6
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 12, name_width: 20, glyphs: 2
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[i3bar/src/xcb.c:1674] Output HDMI-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 2: www at x = 0, len = 60
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1674] Output DVI-I-1 inactive, skipping...
+[i3bar/src/xcb.c:1674] Output DVI-I-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 10
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1726] Drawing Button for WS 11: im at x = 21, len = 60
+[i3bar/src/xcb.c:1742] WS 11: im is urgent!
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1726] Drawing Button for WS 12 at x = 92, len = 20
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:126] Got Workspace Event!
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:126] Got Workspace Event!
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:126] Got Workspace Event!
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:126] Got Workspace Event!
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 2: www, name_width: 60, glyphs: 6
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 10, glyphs: 1
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 11: im, name_width: 60, glyphs: 6
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[i3bar/src/xcb.c:1674] Output HDMI-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 2: www at x = 0, len = 60
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1674] Output DVI-I-1 inactive, skipping...
+[i3bar/src/xcb.c:1674] Output DVI-I-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 10
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1726] Drawing Button for WS 11: im at x = 21, len = 60
+[i3bar/src/xcb.c:1742] WS 11: im is urgent!
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 2: www, name_width: 60, glyphs: 6
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 10, glyphs: 1
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 11: im, name_width: 60, glyphs: 6
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[i3bar/src/xcb.c:1674] Output HDMI-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 2: www at x = 0, len = 60
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1674] Output DVI-I-1 inactive, skipping...
+[i3bar/src/xcb.c:1674] Output DVI-I-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 10
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1726] Drawing Button for WS 11: im at x = 21, len = 60
+[i3bar/src/xcb.c:1742] WS 11: im is urgent!
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 2: www, name_width: 60, glyphs: 6
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 10, glyphs: 1
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 11: im, name_width: 60, glyphs: 6
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[i3bar/src/xcb.c:1674] Output HDMI-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 2: www at x = 0, len = 60
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1674] Output DVI-I-1 inactive, skipping...
+[i3bar/src/xcb.c:1674] Output DVI-I-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 10
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1726] Drawing Button for WS 11: im at x = 21, len = 60
+[i3bar/src/xcb.c:1742] WS 11: im is urgent!
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 2: www, name_width: 60, glyphs: 6
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 10, glyphs: 1
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 11: im, name_width: 60, glyphs: 6
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[i3bar/src/xcb.c:1674] Output HDMI-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 2: www at x = 0, len = 60
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1674] Output DVI-I-1 inactive, skipping...
+[i3bar/src/xcb.c:1674] Output DVI-I-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 10
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1726] Drawing Button for WS 11: im at x = 21, len = 60
+[i3bar/src/xcb.c:1742] WS 11: im is urgent!
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:126] Got Workspace Event!
+[i3bar/src/ipc.c:190] Got data!
+[i3bar/src/ipc.c:43] Got Workspace-Data!
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 2: www, name_width: 60, glyphs: 6
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 1, name_width: 10, glyphs: 1
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/workspaces.c:126] Got Workspace 11: im, name_width: 60, glyphs: 6
+[i3bar/src/xcb.c:1666] Drawing Bars...
+[i3bar/src/xcb.c:1674] Output HDMI-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 2: www at x = 0, len = 60
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1674] Output DVI-I-1 inactive, skipping...
+[i3bar/src/xcb.c:1674] Output DVI-I-0 inactive, skipping...
+[i3bar/src/xcb.c:1726] Drawing Button for WS 1 at x = 0, len = 10
+[libi3] libi3/font.c X11 root window dictates 95.037862 DPI
+[i3bar/src/xcb.c:1726] Drawing Button for WS 11: im at x = 21, len = 60
+[i3bar/src/xcb.c:1742

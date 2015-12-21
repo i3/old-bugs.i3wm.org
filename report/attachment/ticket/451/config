@@ -1,0 +1,266 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+# This config file uses keycodes (bindsym) and was written for the QWERTY
+# layout.
+#
+# To get a config file with the same key positions, but for your current
+# layout, use the i3-config-wizard
+#
+
+# font for window titles. ISO 10646 = Unicode
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+# use Mouse+Mod1 to drag floating windows to their wanted position
+floating_modifier Mod1
+
+# start a terminal
+bindsym Mod1+Return exec /usr/bin/urxvt
+
+# kill focused window
+bindsym Mod1+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym Mod1+d exec /usr/bin/dmenu_run -b -i -nb '#0A0A0A' -nf '#A0A0A0' -fn 'helvetica 9' -sb '#285577' -sf '#FFFFFF'
+
+# change focus
+bindsym Mod1+j focus left
+bindsym Mod1+k focus down
+bindsym Mod1+l focus up
+bindsym Mod1+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym Mod1+Left focus left
+bindsym Mod1+Down focus down
+bindsym Mod1+Up focus up
+bindsym Mod1+Right focus right
+
+# move focused window
+bindsym Mod1+Shift+j move left
+bindsym Mod1+Shift+k move down
+bindsym Mod1+Shift+l move up
+bindsym Mod1+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym Mod1+Shift+Left move left
+bindsym Mod1+Shift+Down move down
+bindsym Mod1+Shift+Up move up
+bindsym Mod1+Shift+Right move right
+
+# split in horizontal orientation
+bindsym Mod1+h split h
+
+# split in vertical orientation
+bindsym Mod1+v split v
+
+# enter fullscreen mode for the focused container
+bindsym Mod1+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym Mod1+s layout stacking
+bindsym Mod1+w layout tabbed
+bindsym Mod1+e layout default
+
+# toggle tiling / floating
+bindsym Mod1+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym Mod1+space focus mode_toggle
+
+# focus the parent container
+bindsym Mod1+a focus parent
+
+# focus the child container
+#bindsym Mod1+d focus child
+
+# switch to workspace
+bindsym Mod1+1 workspace 1
+bindsym Mod1+2 workspace 2
+bindsym Mod1+3 workspace 3
+bindsym Mod1+4 workspace 4
+bindsym Mod1+5 workspace 5
+bindsym Mod1+6 workspace 6
+bindsym Mod1+7 workspace 7
+bindsym Mod1+8 workspace 8
+bindsym Mod1+9 workspace 9
+bindsym Mod1+0 workspace 10
+
+# move focused container to workspace
+bindsym Mod1+Shift+1 move workspace 1
+bindsym Mod1+Shift+2 move workspace 2
+bindsym Mod1+Shift+3 move workspace 3
+bindsym Mod1+Shift+4 move workspace 4
+bindsym Mod1+Shift+5 move workspace 5
+bindsym Mod1+Shift+6 move workspace 6
+bindsym Mod1+Shift+7 move workspace 7
+bindsym Mod1+Shift+8 move workspace 8
+bindsym Mod1+Shift+9 move workspace 9
+bindsym Mod1+Shift+0 move workspace 10
+
+# reload the configuration file
+bindsym Mod1+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym Mod1+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym Mod1+Shift+e exit
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # They resize the border in the direction you pressed, e.g.
+        # when pressing left, the window is resized so that it has
+        # more space on its left
+
+        bindsym j               resize shrink left 10 px or 10 ppt
+        bindsym Shift+j         resize grow   left 10 px or 10 ppt
+
+        bindsym k               resize shrink down 10 px or 10 ppt
+        bindsym Shift+k         resize grow   down 10 px or 10 ppt
+
+        bindsym l               resize shrink up 10 px or 10 ppt
+        bindsym Shift+l         resize grow   up 10 px or 10 ppt
+
+        bindsym semicolon       resize shrink right 10 px or 10 ppt
+        bindsym Shift+semicolon resize grow   right 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink left 10 px or 10 ppt
+        bindsym Shift+Left  resize grow   left 10 px or 10 ppt
+
+        bindsym Down        resize shrink down 10 px or 10 ppt
+        bindsym Shift+Down  resize grow   down 10 px or 10 ppt
+
+        bindsym Up          resize shrink up 10 px or 10 ppt
+        bindsym Shift+Up    resize grow   up 10 px or 10 ppt
+
+        bindsym Right       resize shrink right 10 px or 10 ppt
+        bindsym Shift+Right resize grow   right 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym Mod1+r mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+#exec i3status | i3bar -d
+
+#######################################################################
+# automatically start i3-config-wizard to offer the user to create a
+# keysym-based config which used his favorite modifier (alt or windows)
+#
+# i3-config-wizard will not launch if there already is a config file
+# in ~/.i3/config.
+#
+# Please remove the following exec line:
+#######################################################################
+#exec i3-config-wizard
+
+# dmenu settings
+#set dmenu dmenu -b -i -nb '#333333' -nf '#a8a3f7' -fn 'terminus-10'
+#set dmenu dmenu -b -i -nb grey20 -nf '#a1b5cd' -fn '-*-dina-medium-r-normal-*-*-*-*-*-*-*-*-*'
+#set dmenu dmenu -b -i -nb '#0A0A0A' -nf '#A0A0A0' -fn 'helvetica 9' -sb '#285577' -sf '#FFFFFF'
+
+#################################################################
+# Socket							#
+#################################################################
+ipc-socket ~/.config/i3/ipc.sock
+
+#################################################################
+# Workspace Layout						#
+#################################################################
+workspace_layout default
+new_window 1pixel
+
+bindsym Mod1+t border normal
+bindsym Mod1+y border 1pixel
+bindsym Mod1+u border none
+bindsym Mod1+b border toggle
+
+bindsym Mod1+Tab workspace next
+bindsym Mod1+Shift+Tab workspace prev
+
+#################################################################
+# Workspace Colors						#
+#################################################################
+# Item				Border	Backgnd	Foregnd/Text 
+# ---------------------------------------------------------------
+								
+## arch linux colors ############################################
+#client.focused		        #1793D1	#1793D1	#FFFFFF
+#client.focused_inactive    	#666666 #666666 #FFFFFF
+#client.unfocused    		#333333 #333333	#FFFFFF
+#client.urgent        		#D11931 #D11931 #FFFFFF
+#bar.focused        		#1793D1 #1793D1 #FFFFFF
+#bar.unfocused        		#333333 #333333 #FFFFFF
+#bar.urgent        		#D11931 #D11931 #FFFFFF
+
+## freebsd colors ###############################################
+#client.focused        		#990000 #990000 #FFFFFF
+#client.focused_inactive    	#666666 #666666 #FFFFFF
+#client.unfocused    		#333333 #333333 #FFFFFF
+#client.urgent        		#D11931 #D11931 #FFFFFF
+#bar.focused        		#990000 #990000 #FFFFFF
+#bar.unfocused        		#333333 #333333 #FFFFFF
+#bar.urgent        		#D11931 #D11931 #FFFFFF
+
+## gentoo colors ################################################
+#client.focused        		#7A5ADA #7A5ADA #FFFFFF
+#client.focused_inactive    	#45347B #45347B #FFFFFF
+#client.unfocused    		#333333 #333333 #FFFFFF
+#client.urgent        		#D11931 #D11931 #FFFFFF
+#bar.focused        		#45347B #45347B #FFFFFF
+#bar.unfocused        		#DDDAEC #DDDAEC #45347B
+#bar.urgent        		#D11931 #D11931 #FFFFFF
+
+## red/maroon ###################################################
+#client.focused          	#990000 #990000 #FFFFFF
+#client.focused_inactive 	#660000 #660000 #AAAAAA
+#client.unfocused        	#110000 #110000 #666666
+#client.urgent           	#FFFF00 #FFFF00 #FF0000
+#bar.focused             	#990000 #990000 #FFFFFF
+#bar.unfocused           	#330000 #000000 #AAAAAA
+#bar.urgent              	#FF0000 #FFFF00 #000000
+
+## orange #######################################################
+client.focused            	#DA6F00 #DA6F00 #000000
+client.focused_inactive   	#333333 #333333 #999999
+client.unfocused          	#333333 #333333 #999999
+client.urgent             	#FF0000 #8C5665 #999999
+bar.focused               	#DA6F00 #000000 #999999
+bar.unfocused             	#333333 #000000 #999999
+bar.urgent                	#FF0000 #000000 #999999
+
+# Workspace names
+#workspace 1 main
+#workspace 2 web
+#workspace 3 code
+#workspace 4 music
+#workspace 5 vbox
+
+#################################################################
+# Autostart							#
+#################################################################
+
+exec i3bar -d -c 'conky -c ~/.config/conky/conky1liner' --color-bar-fg '#DA6F00' --color-focus-ws-bg '#DA6F00' --color-focus-ws-fg '#000000' --color-inactive-ws-bg '#FF9900' --color-inactive-ws-fg '#000000'
+exec xbindkeys -f ~/.config/xbindkeys/.xbindkeysrc
+exec urxvt -e screen -c ~/.config/screen/.screenrc
+#exec conky -c ~/.config/conky/.conkyrcstatic | dzen2 -h 16 -w 530 -ta r -x 1150 -y 1034 -fn '123-9' -bg black &
+#exec conky -c ~/.config/conky/.conkyrcupdating | dzen2 -h 16 -w 700 -ta c -x 450 -y 1034 -fn '123-9' -bg black &
+exec xcompmgr -cf -r 0 -D 6
+
+#################################################################
+# Assignments							#
+#################################################################
+
+assign "MPlayer" → ~
+assign deadbeef → ~4
+assign lxappearance → ~
+assign chromium → 2
+assign Firefox → 2
+assign xpad → ~
+assign VirtualBox → 5

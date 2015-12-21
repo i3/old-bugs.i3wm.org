@@ -1,0 +1,114 @@
+From 159540ce66a280660cee1e6c5f6181d0cda3fa64 Mon Sep 17 00:00:00 2001
+From: gmoroz <gmoroz@gmail.com>
+Date: Fri, 27 Apr 2012 05:20:58 +0200
+Subject: [PATCH 249/249] Implements tabs inside stacked titles.
+
+---
+ src/click.c  |   10 ++++++++++
+ src/render.c |    8 +++++---
+ src/x.c      |   14 ++++++++++----
+ 3 files changed, 25 insertions(+), 7 deletions(-)
+
+diff --git a/src/click.c b/src/click.c
+index ca2a103..ab5aa47 100644
+--- a/src/click.c
++++ b/src/click.c
+@@ -319,6 +319,16 @@ int handle_button_press(xcb_button_press_event_t *event) {
+         if (!rect_contains(child->deco_rect, event->event_x, event->event_y))
+             continue;
+ 
++        if (child->layout == L_TABBED) {
++            Con *cchild;
++            TAILQ_FOREACH(cchild, &(child->nodes_head), nodes) {
++                if (event->event_x < cchild->deco_rect.x ||
++                    event->event_x > cchild->deco_rect.x+cchild->deco_rect.width)
++                    continue;
++                return route_click(cchild, event, mod_pressed, CLICK_DECORATION);
++            }
++        }
++
+         return route_click(child, event, mod_pressed, CLICK_DECORATION);
+     }
+ 
+diff --git a/src/render.c b/src/render.c
+index 860219d..04e5bdf 100644
+--- a/src/render.c
++++ b/src/render.c
+@@ -348,9 +348,11 @@ void render_con(Con *con, bool render_fullscreen) {
+             child->deco_rect.x = x - con->rect.x + i * child->deco_rect.width;
+             child->deco_rect.y = y - con->rect.y;
+ 
+-            if (children > 1 || (child->border_style != BS_1PIXEL && child->border_style != BS_NONE)) {
+-                child->rect.y += deco_height;
+-                child->rect.height -= deco_height;
++            if (con->parent->layout == L_STACKED)
++                child->deco_rect.y = con->deco_rect.y;
++            else if (children > 1 || (child->border_style != BS_1PIXEL && child->border_style != BS_NONE)) {
++                    child->rect.y += deco_height;
++                    child->rect.height -= deco_height;
+             }
+         }
+ 
+diff --git a/src/x.c b/src/x.c
+index 08eb8fe..afc0241 100644
+--- a/src/x.c
++++ b/src/x.c
+@@ -307,7 +307,7 @@ void x_draw_decoration(Con *con) {
+      *  • floating containers (they don’t have a decoration)
+      */
+     if ((!leaf &&
+-         parent->layout != L_STACKED &&
++         (parent->layout != L_STACKED || con->layout == L_TABBED) &&
+          parent->layout != L_TABBED) ||
+         con->type == CT_FLOATING_CON)
+         return;
+@@ -322,6 +322,10 @@ void x_draw_decoration(Con *con) {
+     if (leaf && con->pixmap == XCB_NONE)
+         return;
+ 
++    /* Tabbed layout will get inserted in stack menu */
++    if (parent->layout == L_TABBED && parent->parent->layout == L_STACKED)
++        parent = parent->parent;
++
+     /* 1: build deco_params and compare with cache */
+     struct deco_render_params *p = scalloc(sizeof(struct deco_render_params));
+ 
+@@ -330,7 +334,7 @@ void x_draw_decoration(Con *con) {
+         p->color = &config.client.urgent;
+     else if (con == focused || con_inside_focused(con))
+         p->color = &config.client.focused;
+-    else if (con == TAILQ_FIRST(&(parent->focus_head)))
++    else if (con == TAILQ_FIRST(&(con->parent->focus_head)))
+         p->color = &config.client.focused_inactive;
+     else
+         p->color = &config.client.unfocused;
+@@ -562,6 +566,8 @@ void x_push_node(Con *con) {
+     Con *current;
+     con_state *state;
+     Rect rect = con->rect;
++    bool hide = con->parent && con->parent->layout == L_STACKED
++                            && con->layout == L_TABBED;
+ 
+     //DLOG("Pushing changes for node %p / %s\n", con, con->name);
+     state = state_for_frame(con->frame);
+@@ -586,7 +592,7 @@ void x_push_node(Con *con) {
+             }
+         }
+         rect.height = max_y + max_height;
+-        if (rect.height == 0)
++        if (rect.height == 0 || hide)
+             con->mapped = false;
+     }
+ 
+@@ -620,7 +626,7 @@ void x_push_node(Con *con) {
+     bool fake_notify = false;
+     /* Set new position if rect changed (and if height > 0) */
+     if (memcmp(&(state->rect), &rect, sizeof(Rect)) != 0 &&
+-        rect.height > 0) {
++        rect.height > 0 && !hide) {
+         /* We first create the new pixmap, then render to it, set it as the
+          * background and only afterwards change the window size. This reduces
+          * flickering. */
+-- 
+1.7.9
+

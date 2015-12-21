@@ -1,0 +1,15 @@
+diff --git a/src/x.c b/src/x.c
+index 8f0ae37..58b5296 100644
+--- a/src/x.c
++++ b/src/x.c
+@@ -918,8 +918,8 @@ void x_push_changes(Con *con) {
+ 
+             Output *current = get_output_containing(pointerreply->root_x, pointerreply->root_y);
+             Output *target = get_output_containing(mid_x, mid_y);
+-            if (current != target)
+-                xcb_warp_pointer(conn, XCB_NONE, root, 0, 0, 0, 0, mid_x, mid_y);
++//            if (current != target)
++//                xcb_warp_pointer(conn, XCB_NONE, root, 0, 0, 0, 0, mid_x, mid_y);
+         }
+         warp_to = NULL;
+     }

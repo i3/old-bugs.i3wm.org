@@ -1,0 +1,197 @@
+set $mod Mod4
+
+assign [class="URxvt" title="irc"] 1
+assign [class="Pidgin"] 1
+
+assign [class="Iceweasel"] 2
+assign [class="Firefox-bin"] 2
+assign [class="Navigator"] 2
+assign [class="Opera"] 2
+assign [class="Chromium-browser"] 2
+assign [class="Chromium"] 2
+
+assign [instance="Mail"] 3
+assign [class="Thunderbird"] 3
+assign [class="Icedove"] 3
+assign [class="Msgcompose"] 3
+
+assign [class="transmission-gtk"] 9
+assign [class="tr-main"] 9
+assign [title="JDownloader"] 9
+
+assign [class="URxvt" instance="CMUS"] 10
+assign [class="URxvt" title="^mplayer radio"] 10
+
+for_window [class="gimp"] floating enable
+for_window [class="Gcolor2"] floating enable
+for_window [class="Screenruler"] floating enable
+for_window [class="Screenruler"] border none
+for_window [class="Steam.exe"] floating enable
+
+
+bind 122 exec --no-startup-id /usr/bin/amixer set Master 1- && killall -USR1 i3status
+bind 123 exec --no-startup-id /usr/bin/amixer set Master 1+ && killall -USR1 i3status
+bind Control+Shift+49 exec /usr/bin/gnome-system-monitor
+
+bind 160 exec --no-startup-id /home/stefan/.aliases/lock.sh
+bind 244 exec --no-startup-id /home/stefan/.aliases/akku
+bind 150 exec --no-startup-id /home/stefan/.aliases/standby
+
+bind $mod+73 exec --no-startup-id /home/stefan/.aliases/vga-magic 1
+bind $mod+74 exec --no-startup-id /home/stefan/.aliases/vga-magic
+bind $mod+75 exec --no-startup-id /home/stefan/.aliases/vga-magic 0
+
+bind $mod+110 exec --no-startup-id /home/stefan/.aliases/brightness 100
+bind $mod+115 exec --no-startup-id /home/stefan/.aliases/brightness 0
+bind 233 exec --no-startup-id /home/stefan/.aliases/brightness +10
+bind 232 exec --no-startup-id /home/stefan/.aliases/brightness -10
+
+bind 173 exec --no-startup-id cmus-remote -r  # Prev
+bind 172 exec --no-startup-id cmus-remote -u  # Play/Pause
+bind 171 exec --no-startup-id cmus-remote -n  # Next
+
+bind $mod+114 exec --no-startup-id cmus-remote --seek +5  # Seek +5 secs
+bind $mod+113 exec --no-startup-id cmus-remote --seek -5  # Seek -5 secs
+
+bind 107 exec --no-startup-id /home/stefan/.aliases/screenshot
+bind Shift+107 exec /home/stefan/.aliases/screenshot-show-last
+bind 156 exec --no-startup-id /home/stefan/.aliases/cycle_keyboard
+
+bind $mod+96 exec --no-startup-id /home/stefan/.aliases/killall-firefox
+
+bind Mod1+Control+118 exec --no-startup-id /home/stefan/.aliases/switch-monitor-source
+
+bind $mod+33 [class="URxvt" title="CMUS"] focus; [class="Totem"] focus; [class="URxvt" title="^mp "] focus; [class="URxvt" title="^mplayer "] focus; [class="MPlayer"] focus
+
+
+for_window [class="Gedit" window_role="gedit-window-.*"] move scratchpad; scratchpad show
+
+bind 72 exec sh -c "(pidof gedit || gedit&)"; scratchpad show
+
+
+
+
+floating_modifier $mod
+
+bind $mod+36 exec urxvtcd
+
+bind $mod+Shift+24 kill
+
+bind $mod+54 exec /home/stefan/.i3/dmenu_wrapper.sh
+
+bind $mod+44 focus left
+bind $mod+45 focus down
+bind $mod+46 focus up
+bind $mod+47 focus right
+
+bind $mod+Shift+44 move left
+bind $mod+Shift+45 move down
+bind $mod+Shift+46 move up
+bind $mod+Shift+47 move right
+
+
+bind $mod+43 split h
+
+bind $mod+55 split v
+
+bind $mod+41 fullscreen
+
+bind $mod+39 layout stacking
+bind $mod+25 layout tabbed
+bind $mod+26 layout toggle split
+
+bind $mod+65 floating toggle
+
+bind $mod+shift+65 focus mode_toggle
+
+bind $mod+38 focus parent
+
+bind $mod+40 focus child
+
+bind $mod+10 workspace 1
+bind $mod+11 workspace 2
+bind $mod+12 workspace 3
+bind $mod+13 workspace 4
+bind $mod+14 workspace 5
+bind $mod+15 workspace 6
+bind $mod+16 workspace 7
+bind $mod+17 workspace 8
+bind $mod+18 workspace 9
+bind $mod+19 workspace 10
+bind $mod+Control+10 workspace 11
+bind $mod+Control+11 workspace 12
+bind $mod+Control+12 workspace 13
+bind $mod+Control+13 workspace 14
+bind $mod+Control+14 workspace 15
+bind $mod+Control+15 workspace 16
+bind $mod+Control+16 workspace 17
+bind $mod+Control+17 workspace 18
+bind $mod+Control+18 workspace 19
+bind $mod+Control+19 workspace 20
+
+bind $mod+Shift+10 move workspace 1; workspace 1
+bind $mod+Shift+11 move workspace 2; workspace 2
+bind $mod+Shift+12 move workspace 3; workspace 3
+bind $mod+Shift+13 move workspace 4; workspace 4
+bind $mod+Shift+14 move workspace 5; workspace 5
+bind $mod+Shift+15 move workspace 6; workspace 6
+bind $mod+Shift+16 move workspace 7; workspace 7
+bind $mod+Shift+17 move workspace 8; workspace 8
+bind $mod+Shift+18 move workspace 9; workspace 9
+bind $mod+Shift+19 move workspace 10; workspace 10
+bind $mod+Control+Shift+10 move workspace 11; workspace 11
+bind $mod+Control+Shift+11 move workspace 12; workspace 12
+bind $mod+Control+Shift+12 move workspace 13; workspace 13
+bind $mod+Control+Shift+13 move workspace 14; workspace 14
+bind $mod+Control+Shift+14 move workspace 15; workspace 15
+bind $mod+Control+Shift+15 move workspace 16; workspace 16
+bind $mod+Control+Shift+16 move workspace 17; workspace 17
+bind $mod+Control+Shift+17 move workspace 18; workspace 18
+bind $mod+Control+Shift+18 move workspace 19; workspace 19
+bind $mod+Control+Shift+19 move workspace 20; workspace 20
+
+bind $mod+Shift+54 reload
+bind $mod+Shift+27 restart
+
+bind Mod4+59 border normal
+bind Mod4+60 border pixel 2
+bind Mod4+61 border none
+
+
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+client.focused            #440000 #ff0000 #ffffff #ffd000
+client.focused_inactive   #006600 #008800 #ffffff #ffd000
+client.unfocused          #444444 #666666 #ffffff #ffd000
+client.urgent             #444400 #ffff00 #000000 #ffd000
+
+
+client.focused            #ffdc00 #ffdc00 #000000 #ff7500
+client.focused_inactive   #bf756d #bf756d #ffffff #bf756d
+client.unfocused          #666666 #666666 #ffffff #666666
+client.urgent             #01ff00 #01ff00 #000000 #01ff00
+
+
+new_window pixel 2
+
+force_display_urgency_hint 500 ms
+
+floating_minimum_size 1 x 1
+
+popup_during_fullscreen leave_fullscreen
+
+
+for_window [class="MPlayer"] border none
+for_window [class="URxvt" title="irc"] split v
+
+
+
+bar {
+	font -misc-fixed-medium-r-semicondensed--13-120--75-c-65-iso10646-1
+	status_command /home/stefan/.aliases/i3status-w-measure-net-speed
+}
+
+
+
+exec_always --no-startup-id xset -b
+

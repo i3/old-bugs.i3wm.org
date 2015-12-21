@@ -1,0 +1,216 @@
+Only in i3-build: i3
+Only in i3-build/i3-input: i3-input
+Only in i3-build/i3-msg: i3-msg
+diff -crB i3/include/data.h i3-build/include/data.h
+*** i3/include/data.h	2010-03-06 00:23:51.884307048 +0300
+--- i3-build/include/data.h	2010-03-07 21:17:57.687016566 +0300
+***************
+*** 71,78 ****
+          BIND_MOD2 = XCB_MOD_MASK_2,             /* (1 << 4) */
+          BIND_MOD3 = XCB_MOD_MASK_3,             /* (1 << 5) */
+          BIND_MOD4 = XCB_MOD_MASK_4,             /* (1 << 6) */
+!         BIND_MOD5 = XCB_MOD_MASK_5,             /* (1 << 7) */
+!         BIND_MODE_SWITCH = (1 << 8)
+  };
+  
+  /**
+--- 71,77 ----
+          BIND_MOD2 = XCB_MOD_MASK_2,             /* (1 << 4) */
+          BIND_MOD3 = XCB_MOD_MASK_3,             /* (1 << 5) */
+          BIND_MOD4 = XCB_MOD_MASK_4,             /* (1 << 6) */
+!         BIND_MOD5 = XCB_MOD_MASK_5              /* (1 << 7) */
+  };
+  
+  /**
+***************
+*** 270,276 ****
+          /** Keycode to bind */
+          uint32_t keycode;
+  
+!         /** Bitmask consisting of BIND_MOD_1, BIND_MODE_SWITCH, … */
+          uint32_t mods;
+  
+          /** Command, like in command mode */
+--- 269,275 ----
+          /** Keycode to bind */
+          uint32_t keycode;
+  
+!         /** Bitmask consisting of BIND_MOD_1, BIND_CONTROL, … */
+          uint32_t mods;
+  
+          /** Command, like in command mode */
+diff -crB i3/include/handlers.h i3-build/include/handlers.h
+*** i3/include/handlers.h	2010-03-02 23:39:03.600351164 +0300
+--- i3-build/include/handlers.h	2010-03-07 21:14:31.477077383 +0300
+***************
+*** 14,27 ****
+  #include <xcb/randr.h>
+  
+  /**
+-  * Due to bindings like Mode_switch + <a>, we need to bind some keys in
+-  * XCB_GRAB_MODE_SYNC.  Therefore, we just replay all key presses.
+-  *
+-  */
+- int handle_key_release(void *ignored, xcb_connection_t *conn,
+-                        xcb_key_release_event_t *event);
+- 
+- /**
+   * There was a key press. We compare this key code with our bindings table and
+   * pass the bound action to parse_command().
+   *
+--- 14,19 ----
+Only in i3-build/man: i3.1
+Only in i3-build/man: i3-msg.1
+diff -crB i3/src/cfgparse.l i3-build/src/cfgparse.l
+*** i3/src/cfgparse.l	2010-03-02 23:39:03.600351164 +0300
+--- i3-build/src/cfgparse.l	2010-03-07 21:12:22.857117724 +0300
+***************
+*** 112,118 ****
+  Mod3                            { yylval.number = BIND_MOD3; return MODIFIER; }
+  Mod4                            { yylval.number = BIND_MOD4; return MODIFIER; }
+  Mod5                            { yylval.number = BIND_MOD5; return MODIFIER; }
+- Mode_switch                     { yylval.number = BIND_MODE_SWITCH; return MODIFIER; }
+  control                         { return TOKCONTROL; }
+  ctrl                            { return TOKCONTROL; }
+  shift                           { return TOKSHIFT; }
+--- 112,117 ----
+Only in i3-build/src: cfgparse.output
+diff -crB i3/src/config.c i3-build/src/config.c
+*** i3/src/config.c	2010-03-02 23:39:03.610350968 +0300
+--- i3-build/src/config.c	2010-03-07 21:12:03.145973925 +0300
+***************
+*** 70,86 ****
+  
+  static void grab_keycode_for_binding(xcb_connection_t *conn, Binding *bind, uint32_t keycode) {
+          DLOG("Grabbing %d\n", keycode);
+!         if ((bind->mods & BIND_MODE_SWITCH) != 0)
+!                 xcb_grab_key(conn, 0, root, 0, keycode,
+!                         XCB_GRAB_MODE_SYNC, XCB_GRAB_MODE_SYNC);
+!         else {
+!                 /* Grab the key in all combinations */
+!                 #define GRAB_KEY(modifier) xcb_grab_key(conn, 0, root, modifier, keycode, \
+!                                                         XCB_GRAB_MODE_SYNC, XCB_GRAB_MODE_ASYNC)
+!                 GRAB_KEY(bind->mods);
+!                 GRAB_KEY(bind->mods | xcb_numlock_mask);
+!                 GRAB_KEY(bind->mods | xcb_numlock_mask | XCB_MOD_MASK_LOCK);
+!         }
+  }
+  
+  /*
+--- 70,84 ----
+  
+  static void grab_keycode_for_binding(xcb_connection_t *conn, Binding *bind, uint32_t keycode) {
+          DLOG("Grabbing %d\n", keycode);
+! 
+!         /* Grab the key in all combinations */
+!         #define GRAB_KEY(modifier) xcb_grab_key(conn, 0, root, modifier, keycode, \
+!                                                XCB_GRAB_MODE_SYNC, XCB_GRAB_MODE_ASYNC)
+! 
+!         GRAB_KEY(bind->mods);
+!         GRAB_KEY(bind->mods | xcb_numlock_mask);
+!         GRAB_KEY(bind->mods | XCB_MOD_MASK_LOCK);
+!         GRAB_KEY(bind->mods | xcb_numlock_mask | XCB_MOD_MASK_LOCK);
+  }
+  
+  /*
+diff -crB i3/src/handlers.c i3-build/src/handlers.c
+*** i3/src/handlers.c	2010-03-06 00:23:51.887640363 +0300
+--- i3-build/src/handlers.c	2010-03-07 21:16:39.526619155 +0300
+***************
+*** 82,98 ****
+  }
+  
+  /*
+-  * Due to bindings like Mode_switch + <a>, we need to bind some keys in XCB_GRAB_MODE_SYNC.
+-  * Therefore, we just replay all key presses.
+-  *
+-  */
+- int handle_key_release(void *ignored, xcb_connection_t *conn, xcb_key_release_event_t *event) {
+-         xcb_allow_events(conn, XCB_ALLOW_REPLAY_KEYBOARD, event->time);
+-         xcb_flush(conn);
+-         return 1;
+- }
+- 
+- /*
+   * There was a key press. We compare this key code with our bindings table and pass
+   * the bound action to parse_command().
+   *
+--- 82,87 ----
+***************
+*** 100,124 ****
+  int handle_key_press(void *ignored, xcb_connection_t *conn, xcb_key_press_event_t *event) {
+          DLOG("Keypress %d, state raw = %d\n", event->detail, event->state);
+  
+!         /* Remove the numlock bit, all other bits are modifiers we can bind to */
+          uint16_t state_filtered = event->state & ~(xcb_numlock_mask | XCB_MOD_MASK_LOCK);
+!         DLOG("(removed numlock, state = %d)\n", state_filtered);
+          /* Only use the lower 8 bits of the state (modifier masks) so that mouse
+           * button masks are filtered out */
+          state_filtered &= 0xFF;
+          DLOG("(removed upper 8 bits, state = %d)\n", state_filtered);
+  
+-         if (xkb_supported) {
+-                 /* We need to get the keysym group (There are group 1 to group 4, each holding
+-                    two keysyms (without shift and with shift) using Xkb because X fails to
+-                    provide them reliably (it works in Xephyr, it does not in real X) */
+-                 XkbStateRec state;
+-                 if (XkbGetState(xkbdpy, XkbUseCoreKbd, &state) == Success && (state.group+1) == 2)
+-                         state_filtered |= BIND_MODE_SWITCH;
+-         }
+- 
+-         DLOG("(checked mode_switch, state %d)\n", state_filtered);
+- 
+          /* Find the binding */
+          Binding *bind;
+          TAILQ_FOREACH(bind, bindings, bindings) {
+--- 89,102 ----
+  int handle_key_press(void *ignored, xcb_connection_t *conn, xcb_key_press_event_t *event) {
+          DLOG("Keypress %d, state raw = %d\n", event->detail, event->state);
+  
+!         /* Remove the numlock and capslock bits, all other bits are modifiers we can bind to */
+          uint16_t state_filtered = event->state & ~(xcb_numlock_mask | XCB_MOD_MASK_LOCK);
+!         DLOG("(removed numlock and capslock, state = %d)\n", state_filtered);
+          /* Only use the lower 8 bits of the state (modifier masks) so that mouse
+           * button masks are filtered out */
+          state_filtered &= 0xFF;
+          DLOG("(removed upper 8 bits, state = %d)\n", state_filtered);
+  
+          /* Find the binding */
+          Binding *bind;
+          TAILQ_FOREACH(bind, bindings, bindings) {
+***************
+*** 140,159 ****
+                  }
+          }
+  
+-         /* No match? Then it was an actively grabbed key, that is with Mode_switch, and
+-            the user did not press Mode_switch, so just pass it… */
+-         if (bind == TAILQ_END(bindings)) {
+-                 xcb_allow_events(conn, ReplayKeyboard, event->time);
+-                 xcb_flush(conn);
+-                 return 1;
+-         }
+- 
+          parse_command(conn, bind->command);
+-         if (state_filtered & BIND_MODE_SWITCH) {
+-                 DLOG("Mode_switch -> allow_events(SyncKeyboard)\n");
+-                 xcb_allow_events(conn, SyncKeyboard, event->time);
+-                 xcb_flush(conn);
+-         }
+          return 1;
+  }
+  
+--- 118,124 ----
+diff -crB i3/src/mainx.c i3-build/src/mainx.c
+*** i3/src/mainx.c	2010-03-06 00:23:51.887640363 +0300
+--- i3-build/src/mainx.c	2010-03-07 21:14:06.893960049 +0300
+***************
+*** 337,343 ****
+  
+          /* Key presses/releases are pretty obvious, I think */
+          xcb_event_set_key_press_handler(&evenths, handle_key_press, NULL);
+-         xcb_event_set_key_release_handler(&evenths, handle_key_release, NULL);
+  
+          /* Enter window = user moved his mouse over the window */
+          xcb_event_set_enter_notify_handler(&evenths, handle_enter_notify, NULL);
+--- 337,342 ----

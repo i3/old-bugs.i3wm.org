@@ -1,0 +1,343 @@
+[  1988.432] 
+X.Org X Server 1.8.0
+Release Date: 2010-04-02
+[  1988.432] X Protocol Version 11, Revision 0
+[  1988.432] Build Operating System: openSUSE SUSE LINUX
+[  1988.432] Current Operating System: Linux juffo-wup 2.6.34.10-0.2-desktop #1 SMP PREEMPT 2011-07-20 18:48:56 +0200 i686
+[  1988.432] Kernel command line: root=/dev/disk/by-id/ata-WDC_WD7500AAKS-00RBA0_WD-WCAPT0270596-part3 splash=silent quiet vga=0x346
+[  1988.432] Build Date: 07 June 2011  02:48:59AM
+[  1988.432]  
+[  1988.432] Current version of pixman: 0.18.0
+[  1988.432] 	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+[  1988.432] Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+[  1988.432] (==) Log file: "/var/log/Xorg.0.log", Time: Thu Aug 25 15:18:11 2011
+[  1988.433] (==) Using config file: "/etc/X11/xorg.conf"
+[  1988.433] (==) Using config directory: "/etc/X11/xorg.conf.d"
+[  1988.433] Parse error on line 26 of section Files in file /etc/X11/xorg.conf
+	Ignoring obsolete keyword "InputDevices".
+[  1988.433] Parse error on line 27 of section Files in file /etc/X11/xorg.conf
+	Ignoring obsolete keyword "InputDevices".
+[  1988.433] (==) ServerLayout "Layout[all]"
+[  1988.433] (**) |-->Screen "Screen[0]" (0)
+[  1988.433] (**) |   |-->Monitor "Monitor[0]"
+[  1988.434] (**) |   |-->Device "Device[0]"
+[  1988.434] (**) |-->Input Device "Keyboard[0]"
+[  1988.434] (**) |-->Input Device "Mouse[1]"
+[  1988.434] (**) Option "AllowMouseOpenFail" "on"
+[  1988.434] (**) Option "Xinerama" "off"
+[  1988.434] (**) Option "AllowEmptyInput" "False"
+[  1988.434] (**) Option "AutoAddDevices" "off"
+[  1988.434] (**) Not automatically adding devices
+[  1988.434] (==) Automatically enabling devices
+[  1988.434] (WW) The directory "/usr/share/fonts/local" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (WW) The directory "/usr/share/fonts/PEX" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (WW) The directory "/usr/share/fonts/latin2/misc" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (WW) The directory "/usr/share/fonts/latin2/75dpi" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (WW) The directory "/usr/share/fonts/latin2/100dpi" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (WW) The directory "/usr/share/fonts/latin2/Type1" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (WW) The directory "/usr/share/fonts/latin7/75dpi" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (WW) The directory "/usr/share/fonts/baekmuk" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (WW) The directory "/usr/share/fonts/kwintv" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (WW) The directory "/usr/share/fonts/ucs/misc" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (WW) The directory "/usr/share/fonts/ucs/75dpi" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (WW) The directory "/usr/share/fonts/ucs/100dpi" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (WW) The directory "/usr/share/fonts/hellas/misc" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (WW) The directory "/usr/share/fonts/hellas/75dpi" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (WW) The directory "/usr/share/fonts/hellas/100dpi" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (WW) The directory "/usr/share/fonts/hellas/Type1" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (WW) The directory "/usr/share/fonts/xtest" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (WW) The directory "/usr/share/fonts/TTF/" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (WW) The directory "/usr/share/fonts/OTF/" does not exist.
+[  1988.434] 	Entry deleted from font path.
+[  1988.434] (**) FontPath set to:
+	/usr/share/fonts/misc:unscaled,
+	/usr/share/fonts/75dpi:unscaled,
+	/usr/share/fonts/100dpi:unscaled,
+	/usr/share/fonts/Type1,
+	/usr/share/fonts/URW,
+	/usr/share/fonts/Speedo,
+	/usr/share/fonts/cyrillic,
+	/usr/share/fonts/japanese:unscaled,
+	/usr/share/fonts/truetype,
+	/usr/share/fonts/uni:unscaled,
+	/usr/share/fonts/CID,
+	/usr/share/fonts/misc/sgi:unscaled,
+	/opt/kde3/share/fonts,
+	/usr/share/fonts/misc:unscaled,
+	/usr/share/fonts/Type1/,
+	/usr/share/fonts/100dpi:unscaled,
+	/usr/share/fonts/75dpi:unscaled,
+	/usr/share/fonts/URW/,
+	/usr/share/fonts/cyrillic:unscaled,
+	/usr/share/fonts/misc/sgi:unscaled,
+	/usr/share/fonts/truetype/
+[  1988.434] (==) ModulePath set to "/usr/lib/xorg/modules/updates,/usr/lib/xorg/modules"
+[  1988.434] (II) Loader magic: 0x822eb40
+[  1988.434] (II) Module ABI versions:
+[  1988.434] 	X.Org ANSI C Emulation: 0.4
+[  1988.434] 	X.Org Video Driver: 7.0
+[  1988.434] 	X.Org XInput driver : 9.0
+[  1988.434] 	X.Org Server Extension : 3.0
+[  1988.444] (--) PCI:*(0:3:0:0) 10de:02e0:1682:2249 nVidia Corporation G73 [GeForce 7600 GT] rev 162, Mem @ 0xe5000000/16777216, 0xd0000000/268435456, 0xe6000000/16777216, BIOS @ 0x????????/131072
+[  1988.444] (WW) Open ACPI failed (/var/run/acpid.socket) (Connection refused)
+[  1988.444] (WW) Open ACPI failed (/var/run/acpid.socket) (Connection refused)
+[  1988.444] (II) "extmod" will be loaded. This was enabled by default and also specified in the config file.
+[  1988.444] (II) "dbe" will be loaded. This was enabled by default and also specified in the config file.
+[  1988.444] (II) "glx" will be loaded. This was enabled by default and also specified in the config file.
+[  1988.444] (II) "record" will be loaded by default.
+[  1988.444] (II) "dri" will be loaded by default.
+[  1988.444] (II) "dri2" will be loaded by default.
+[  1988.444] (II) LoadModule: "dbe"
+[  1988.445] (II) Loading /usr/lib/xorg/modules/extensions/libdbe.so
+[  1988.445] (II) Module dbe: vendor="X.Org Foundation"
+[  1988.445] 	compiled for 1.8.0, module version = 1.0.0
+[  1988.445] 	Module class: X.Org Server Extension
+[  1988.445] 	ABI class: X.Org Server Extension, version 3.0
+[  1988.445] (II) Loading extension DOUBLE-BUFFER
+[  1988.445] (II) LoadModule: "extmod"
+[  1988.445] (II) Loading /usr/lib/xorg/modules/extensions/libextmod.so
+[  1988.445] (II) Module extmod: vendor="X.Org Foundation"
+[  1988.445] 	compiled for 1.8.0, module version = 1.0.0
+[  1988.446] 	Module class: X.Org Server Extension
+[  1988.446] 	ABI class: X.Org Server Extension, version 3.0
+[  1988.446] (II) Loading extension MIT-SCREEN-SAVER
+[  1988.446] (II) Loading extension XFree86-VidModeExtension
+[  1988.446] (II) Loading extension XFree86-DGA
+[  1988.446] (II) Loading extension DPMS
+[  1988.446] (II) Loading extension XVideo
+[  1988.446] (II) Loading extension XVideo-MotionCompensation
+[  1988.446] (II) Loading extension X-Resource
+[  1988.446] (II) LoadModule: "glx"
+[  1988.446] (II) Loading /usr/lib/xorg/modules/extensions/libglx.so
+[  1988.489] (II) Module glx: vendor="NVIDIA Corporation"
+[  1988.489] 	compiled for 4.0.2, module version = 1.0.0
+[  1988.489] 	Module class: X.Org Server Extension
+[  1988.489] (II) NVIDIA GLX Module  260.19.29  Wed Dec  8 12:25:40 PST 2010
+[  1988.489] (II) Loading extension GLX
+[  1988.489] (II) LoadModule: "record"
+[  1988.490] (II) Loading /usr/lib/xorg/modules/extensions/librecord.so
+[  1988.490] (II) Module record: vendor="X.Org Foundation"
+[  1988.490] 	compiled for 1.8.0, module version = 1.13.0
+[  1988.490] 	Module class: X.Org Server Extension
+[  1988.490] 	ABI class: X.Org Server Extension, version 3.0
+[  1988.490] (II) Loading extension RECORD
+[  1988.490] (II) LoadModule: "dri"
+[  1988.490] (II) Loading /usr/lib/xorg/modules/extensions/libdri.so
+[  1988.490] (II) Module dri: vendor="X.Org Foundation"
+[  1988.490] 	compiled for 1.8.0, module version = 1.0.0
+[  1988.490] 	ABI class: X.Org Server Extension, version 3.0
+[  1988.490] (II) Loading extension XFree86-DRI
+[  1988.490] (II) LoadModule: "dri2"
+[  1988.491] (II) Loading /usr/lib/xorg/modules/extensions/libdri2.so
+[  1988.491] (II) Module dri2: vendor="X.Org Foundation"
+[  1988.491] 	compiled for 1.8.0, module version = 1.2.0
+[  1988.491] 	ABI class: X.Org Server Extension, version 3.0
+[  1988.491] (II) Loading extension DRI2
+[  1988.491] (II) LoadModule: "nvidia"
+[  1988.491] (II) Loading /usr/lib/xorg/modules/drivers/nvidia_drv.so
+[  1988.492] (II) Module nvidia: vendor="NVIDIA Corporation"
+[  1988.492] 	compiled for 4.0.2, module version = 1.0.0
+[  1988.492] 	Module class: X.Org Video Driver
+[  1988.492] (II) LoadModule: "kbd"
+[  1988.493] (II) Loading /usr/lib/xorg/modules/input/kbd_drv.so
+[  1988.493] (II) Module kbd: vendor="X.Org Foundation"
+[  1988.493] 	compiled for 1.8.0, module version = 1.4.0
+[  1988.493] 	Module class: X.Org XInput Driver
+[  1988.493] 	ABI class: X.Org XInput driver, version 9.0
+[  1988.493] (II) LoadModule: "mouse"
+[  1988.494] (II) Loading /usr/lib/xorg/modules/input/mouse_drv.so
+[  1988.494] (II) Module mouse: vendor="X.Org Foundation"
+[  1988.494] 	compiled for 1.8.0, module version = 1.5.0
+[  1988.494] 	Module class: X.Org XInput Driver
+[  1988.494] 	ABI class: X.Org XInput driver, version 9.0
+[  1988.494] (II) NVIDIA dlloader X Driver  260.19.29  Wed Dec  8 12:10:28 PST 2010
+[  1988.494] (II) NVIDIA Unified Driver for all Supported NVIDIA GPUs
+[  1988.494] (++) using VT number 7
+
+[  1988.543] (II) Primary Device is: PCI 03@00:00:0
+[  1988.543] (II) Loading sub module "fb"
+[  1988.543] (II) LoadModule: "fb"
+[  1988.544] (II) Loading /usr/lib/xorg/modules/libfb.so
+[  1988.544] (II) Module fb: vendor="X.Org Foundation"
+[  1988.544] 	compiled for 1.8.0, module version = 1.0.0
+[  1988.544] 	ABI class: X.Org ANSI C Emulation, version 0.4
+[  1988.544] (II) Loading sub module "wfb"
+[  1988.544] (II) LoadModule: "wfb"
+[  1988.545] (II) Loading /usr/lib/xorg/modules/libwfb.so
+[  1988.545] (II) Module wfb: vendor="X.Org Foundation"
+[  1988.545] 	compiled for 1.8.0, module version = 1.0.0
+[  1988.545] 	ABI class: X.Org ANSI C Emulation, version 0.4
+[  1988.545] (II) Loading sub module "ramdac"
+[  1988.545] (II) LoadModule: "ramdac"
+[  1988.545] (II) Module "ramdac" already built-in
+[  1988.545] (**) NVIDIA(0): Depth 24, (--) framebuffer bpp 32
+[  1988.546] (==) NVIDIA(0): RGB weight 888
+[  1988.546] (==) NVIDIA(0): Default visual is TrueColor
+[  1988.546] (==) NVIDIA(0): Using gamma correction (1.0, 1.0, 1.0)
+[  1988.546] (**) NVIDIA(0): Option "NoLogo" "true"
+[  1988.546] (**) NVIDIA(0): Option "RenderAccel" "true"
+[  1988.546] (**) NVIDIA(0): Enabling RENDER acceleration
+[  1988.546] (II) NVIDIA(0): Support for GLX with the Damage and Composite X extensions is
+[  1988.546] (II) NVIDIA(0):     enabled.
+[  1989.069] (II) NVIDIA(0): NVIDIA GPU GeForce 7600 GT (G73) at PCI:3:0:0 (GPU-0)
+[  1989.069] (--) NVIDIA(0): Memory: 262144 kBytes
+[  1989.069] (--) NVIDIA(0): VideoBIOS: 05.73.22.25.89
+[  1989.069] (II) NVIDIA(0): Detected AGP rate: 8X
+[  1989.070] (--) NVIDIA(0): Interlaced video modes are supported on this GPU
+[  1989.070] (--) NVIDIA(0): Connected display device(s) on GeForce 7600 GT at PCI:3:0:0
+[  1989.070] (--) NVIDIA(0):     PHILIPS 109B6 (CRT-1)
+[  1989.070] (--) NVIDIA(0): PHILIPS 109B6 (CRT-1): 400.0 MHz maximum pixel clock
+[  1989.070] (II) NVIDIA(0): Assigned Display Device: CRT-1
+[  1989.071] (WW) NVIDIA(0): No valid modes for "1280x800"; removing.
+[  1989.071] (WW) NVIDIA(0): No valid modes for "1280x768"; removing.
+[  1989.071] (WW) NVIDIA(0): No valid modes for "1280x720"; removing.
+[  1989.071] (WW) NVIDIA(0): No valid modes for "1280x600"; removing.
+[  1989.071] (WW) NVIDIA(0): No valid modes for "1024x600"; removing.
+[  1989.071] (WW) NVIDIA(0): No valid modes for "768x576"; removing.
+[  1989.071] (II) NVIDIA(0): Validated modes:
+[  1989.071] (II) NVIDIA(0):     "1280x1024"
+[  1989.071] (II) NVIDIA(0):     "1280x960"
+[  1989.071] (II) NVIDIA(0):     "1152x864"
+[  1989.071] (II) NVIDIA(0):     "1024x768"
+[  1989.071] (II) NVIDIA(0):     "800x600"
+[  1989.071] (II) NVIDIA(0):     "640x480"
+[  1989.071] (II) NVIDIA(0): Virtual screen size determined to be 1280 x 1024
+[  1989.073] (--) NVIDIA(0): DPI set to (90, 96); computed from "UseEdidDpi" X config
+[  1989.073] (--) NVIDIA(0):     option
+[  1989.073] (==) NVIDIA(0): Enabling 32-bit ARGB GLX visuals.
+[  1989.074] (--) Depth 24 pixmap format is 32 bpp
+[  1989.074] (II) NVIDIA(0): Initialized AGP GART.
+[  1989.093] (II) NVIDIA(0): ACPI: failed to connect to the ACPI event daemon; the daemon
+[  1989.093] (II) NVIDIA(0):     may not be running or the "AcpidSocketPath" X
+[  1989.093] (II) NVIDIA(0):     configuration option may not be set correctly.  When the
+[  1989.093] (II) NVIDIA(0):     ACPI event daemon is available, the NVIDIA X driver will
+[  1989.093] (II) NVIDIA(0):     try to use it to receive ACPI event notifications.  For
+[  1989.093] (II) NVIDIA(0):     details, please see the "ConnectToAcpid" and
+[  1989.093] (II) NVIDIA(0):     "AcpidSocketPath" X configuration options in Appendix B: X
+[  1989.093] (II) NVIDIA(0):     Config Options in the README.
+[  1989.093] (II) NVIDIA(0): Setting mode "1280x1024"
+[  1989.178] (II) Loading extension NV-GLX
+[  1989.213] (II) NVIDIA(0): Initialized OpenGL Acceleration
+[  1989.223] (==) NVIDIA(0): Disabling shared memory pixmaps
+[  1989.223] (II) NVIDIA(0): Initialized X Rendering Acceleration
+[  1989.223] (==) NVIDIA(0): Backing store disabled
+[  1989.223] (==) NVIDIA(0): Silken mouse enabled
+[  1989.223] (**) NVIDIA(0): DPMS enabled
+[  1989.223] (II) Loading extension NV-CONTROL
+[  1989.224] (II) Loading extension XINERAMA
+[  1989.224] (WW) NVIDIA(0): Option "CalcAlgorithm" is not used
+[  1989.224] (WW) NVIDIA(0): Option "PreferredMode" is not used
+[  1989.224] (II) Loading sub module "dri2"
+[  1989.224] (II) LoadModule: "dri2"
+[  1989.224] (II) Reloading /usr/lib/xorg/modules/extensions/libdri2.so
+[  1989.224] (II) NVIDIA(0): [DRI2] Setup complete
+[  1989.224] (==) RandR enabled
+[  1989.224] (II) Initializing built-in extension Generic Event Extension
+[  1989.224] (II) Initializing built-in extension SHAPE
+[  1989.224] (II) Initializing built-in extension MIT-SHM
+[  1989.224] (II) Initializing built-in extension XInputExtension
+[  1989.224] (II) Initializing built-in extension XTEST
+[  1989.224] (II) Initializing built-in extension BIG-REQUESTS
+[  1989.224] (II) Initializing built-in extension SYNC
+[  1989.224] (II) Initializing built-in extension XKEYBOARD
+[  1989.224] (II) Initializing built-in extension XC-MISC
+[  1989.224] (II) Initializing built-in extension SECURITY
+[  1989.224] (II) Initializing built-in extension XINERAMA
+[  1989.224] (II) Initializing built-in extension XFIXES
+[  1989.224] (II) Initializing built-in extension RENDER
+[  1989.224] (II) Initializing built-in extension RANDR
+[  1989.224] (II) Initializing built-in extension COMPOSITE
+[  1989.224] (II) Initializing built-in extension DAMAGE
+[  1989.228] (II) Initializing extension GLX
+[  1989.439] (II) XKB: reuse xkmfile /var/lib/xkb/compiled/server-02D8252E59564A234380F1E5417646A9DB3B7452.xkm
+[  1989.442] (**) Option "CoreKeyboard"
+[  1989.442] (**) Keyboard[0]: always reports core events
+[  1989.442] (**) Option "Protocol" "Standard"
+[  1989.442] (**) Keyboard[0]: Protocol: Standard
+[  1989.442] (**) Option "XkbRules" "xfree86"
+[  1989.442] (**) Keyboard[0]: XkbRules: "xfree86"
+[  1989.442] (**) Option "XkbModel" "pc101"
+[  1989.442] (**) Keyboard[0]: XkbModel: "pc101"
+[  1989.442] (**) Option "XkbLayout" "us"
+[  1989.442] (**) Keyboard[0]: XkbLayout: "us"
+[  1989.442] (**) Option "XkbOptions" "ctrl:swapcaps"
+[  1989.442] (**) Keyboard[0]: XkbOptions: "ctrl:swapcaps"
+[  1989.442] (**) Option "CustomKeycodes" "off"
+[  1989.442] (**) Keyboard[0]: CustomKeycodes disabled
+[  1989.442] (II) XINPUT: Adding extended input device "Keyboard[0]" (type: KEYBOARD)
+[  1989.446] (II) XKB: reuse xkmfile /var/lib/xkb/compiled/server-1D6764F7A9459AB2A574BB7529B25ADBAF5446B2.xkm
+[  1989.446] (**) Option "Protocol" "explorerps/2"
+[  1989.446] (**) Mouse[1]: Device: "/dev/input/mice"
+[  1989.446] (**) Mouse[1]: Protocol: "explorerps/2"
+[  1989.446] (**) Option "CorePointer"
+[  1989.446] (**) Mouse[1]: always reports core events
+[  1989.446] (**) Option "Device" "/dev/input/mice"
+[  1989.447] (**) Option "Buttons" "5"
+[  1989.447] (==) Mouse[1]: Emulate3Buttons, Emulate3Timeout: 50
+[  1989.447] (**) Option "ZAxisMapping" "4 5"
+[  1989.447] (**) Mouse[1]: ZAxisMapping: buttons 4 and 5
+[  1989.447] (**) Mouse[1]: Buttons: 9
+[  1989.447] (**) Mouse[1]: Sensitivity: 1
+[  1989.447] (II) XINPUT: Adding extended input device "Mouse[1]" (type: MOUSE)
+[  1989.447] (**) Mouse[1]: (accel) keeping acceleration scheme 1
+[  1989.447] (**) Mouse[1]: (accel) acceleration profile 0
+[  1989.447] (**) Mouse[1]: (accel) acceleration factor: 2.000
+[  1989.447] (**) Mouse[1]: (accel) acceleration threshold: 4
+[  1989.739] (II) Mouse[1]: ps2EnableDataReporting: succeeded
+[  1989.747] (II) config/udev: Adding input device Power Button (/dev/input/event3)
+[  1989.747] (II) AutoAddDevices is off - not adding device.
+[  1989.749] (II) config/udev: Adding input device Power Button (/dev/input/event2)
+[  1989.749] (II) AutoAddDevices is off - not adding device.
+[  1989.750] (II) config/udev: Adding input device Microsoft Microsoft 3-Button Mouse with IntelliEye(TM) (/dev/input/event1)
+[  1989.750] (II) AutoAddDevices is off - not adding device.
+[  1989.750] (II) config/udev: Adding input device Microsoft Microsoft 3-Button Mouse with IntelliEye(TM) (/dev/input/mouse0)
+[  1989.750] (II) AutoAddDevices is off - not adding device.
+[  1989.757] (II) config/udev: Adding input device AT Translated Set 2 keyboard (/dev/input/event0)
+[  1989.757] (II) AutoAddDevices is off - not adding device.
+[  1989.757] (II) config/udev: Adding input device PC Speaker (/dev/input/event4)
+[  1989.757] (II) AutoAddDevices is off - not adding device.
+[  1990.132] (II) XKB: reuse xkmfile /var/lib/xkb/compiled/server-C67A61B79924687C9A9BB08D9DB140FF485ACAF7.xkm
+[  1994.074] (II) XKB: reuse xkmfile /var/lib/xkb/compiled/server-ACE1CED8A577D1947A422EF7C31C3AF8260A4BB8.xkm
+[  4159.428] (WW) Open ACPI failed (/var/run/acpid.socket) (Connection refused)
+[  4159.792] (II) NVIDIA(0): Setting mode "1280x1024"
+[  4159.883] (II) NVIDIA(0): ACPI: failed to connect to the ACPI event daemon; the daemon
+[  4159.883] (II) NVIDIA(0):     may not be running or the "AcpidSocketPath" X
+[  4159.883] (II) NVIDIA(0):     configuration option may not be set correctly.  When the
+[  4159.883] (II) NVIDIA(0):     ACPI event daemon is available, the NVIDIA X driver will
+[  4159.883] (II) NVIDIA(0):     try to use it to receive ACPI event notifications.  For
+[  4159.883] (II) NVIDIA(0):     details, please see the "ConnectToAcpid" and
+[  4159.883] (II) NVIDIA(0):     "AcpidSocketPath" X configuration options in Appendix B: X
+[  4159.883] (II) NVIDIA(0):     Config Options in the README.
+[  4160.204] (II) Mouse[1]: ps2EnableDataReporting: succeeded
+[  4257.321] (WW) Open ACPI failed (/var/run/acpid.socket) (Connection refused)
+[  4257.495] (II) NVIDIA(0): Setting mode "1280x1024"
+[  4257.565] (II) NVIDIA(0): ACPI: failed to connect to the ACPI event daemon; the daemon
+[  4257.565] (II) NVIDIA(0):     may not be running or the "AcpidSocketPath" X
+[  4257.565] (II) NVIDIA(0):     configuration option may not be set correctly.  When the
+[  4257.565] (II) NVIDIA(0):     ACPI event daemon is available, the NVIDIA X driver will
+[  4257.565] (II) NVIDIA(0):     try to use it to receive ACPI event notifications.  For
+[  4257.565] (II) NVIDIA(0):     details, please see the "ConnectToAcpid" and
+[  4257.565] (II) NVIDIA(0):     "AcpidSocketPath" X configuration options in Appendix B: X
+[  4257.565] (II) NVIDIA(0):     Config Options in the README.
+[  4257.884] (II) Mouse[1]: ps2EnableDataReporting: succeeded

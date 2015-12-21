@@ -1,0 +1,91 @@
+From 54a1325b0ff33bcdfb1da7451e011b8f05babe69 Mon Sep 17 00:00:00 2001
+From: "Piotr S. Staszewski" <p.staszewski@gmail.com>
+Date: Fri, 11 Jan 2013 19:58:32 +0100
+Subject: [PATCH] Added new event id (I3_IPC_EVENT_WINDOW) so that a an IPC
+ client can subscribe to events on windows. Added a basic window event that
+ gets triggered when a window gets successfully reparented. This new event
+ also dumps the container data, so that IPC clients can get the initial window
+ name. IPC clients wishing to see window events should subscribe to 'window'.
+
+---
+ include/i3/ipc.h |  3 +++
+ src/manage.c     | 34 ++++++++++++++++++++++++++++++++++
+ 2 files changed, 37 insertions(+)
+
+diff --git a/include/i3/ipc.h b/include/i3/ipc.h
+index 93b2ae8..55d301c 100644
+--- a/include/i3/ipc.h
++++ b/include/i3/ipc.h
+@@ -87,4 +87,7 @@
+ /* The output event will be triggered upon mode changes */
+ #define I3_IPC_EVENT_MODE                       (I3_IPC_EVENT_MASK | 2)
+ 
++/* The output event will be triggered upon window changes */
++#define I3_IPC_EVENT_WINDOW                     (I3_IPC_EVENT_MASK | 3)
++
+ #endif
+diff --git a/src/manage.c b/src/manage.c
+index 2d102ee..3dfcb89 100644
+--- a/src/manage.c
++++ b/src/manage.c
+@@ -10,6 +10,9 @@
+  *
+  */
+ #include "all.h"
++#include "yajl_utils.h"
++
++#include <yajl/yajl_gen.h>
+ 
+ /*
+  * Go through all existing windows (if the window manager is restarted) and manage them
+@@ -69,6 +72,33 @@ void restore_geometry(void) {
+ }
+ 
+ /*
++ * Send "new" event. This consists of fields "window" and "container".
++ *
++ */
++static void ipc_send_window_new_event(Con *window) {
++    setlocale(LC_NUMERIC, "C");
++    yajl_gen gen = ygenalloc();
++
++    y(map_open);
++
++    ystr("window");
++    ystr("new");
++
++    ystr("container");
++    dump_node(gen, window, false);
++
++    y(map_close);
++
++    const unsigned char *payload;
++    ylength length;
++    y(get_buf, &payload, &length);
++ 
++    ipc_send_event("window", I3_IPC_EVENT_WINDOW, (const char *)payload);
++    y(free);
++    setlocale(LC_NUMERIC, "");
++}
++
++/*
+  * Do some sanity checks and then reparent the window.
+  *
+  */
+@@ -424,9 +454,13 @@ void manage_window(xcb_window_t window, xcb_get_window_attributes_cookie_t cooki
+     }
+     tree_render();
+ 
++    /* Send an event about window creation */
++    ipc_send_window_new_event(nc);
++
+ geom_out:
+     free(geom);
+ out:
+     free(attr);
+     return;
+ }
++
+-- 
+1.8.1
+

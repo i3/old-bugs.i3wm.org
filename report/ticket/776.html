@@ -1,0 +1,766 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #776 (move container to workspace back_and_forth)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/775" title="Ticket #775" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/776?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/776?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/776?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/777" title="Ticket #777" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="e88f23f3c3453702ad4975fd";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/775" title="Ticket #775">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/777" title="Ticket #777">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-08-17T14%3A48%3A05%2B02%3A00&amp;precision=second" title="See timeline at 08/17/12 14:48:05">3 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2012-09-22T13%3A39%3A16%2B02%3A00&amp;precision=second" title="See timeline at 09/22/12 13:39:16">3 years ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/776" class="trac-id">#776</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=enhancement">enhancement</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">move container to workspace back_and_forth</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">chrysn@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=minor">minor</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=feature-request">feature-request</a>
+        </td>
+    </tr><tr>
+        <th id="h_version" class="missing">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version="></a>
+        </td>
+        <th id="h_keywords">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+              <a href="/report/query?status=!closed&amp;keywords=~easy">easy</a>
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion" class="missing">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+              debian sid
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+the back_and_forth mechanism seems not to be compatible with the "move container" command. while "workspace back_and_forth" works as expected, binding a key to "move container to workspace back_and_forth" creates a workspace literally named "back_and_forth". i'd expect it to move the current container to the last active workspace.<br />
+</p>
+<p>
+it would be useful in situations when one wants to split a workspace into two workspaces and is experimenting with which windows best go where.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(6)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/776/0001-implement-movement-to-back_and_forth-closes-776.patch" title="View attachment">0001-implement-movement-to-back_and_forth-closes-776.patch</a><a href="/report/raw-attachment/ticket/776/0001-implement-movement-to-back_and_forth-closes-776.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="6336 bytes">6.2 KB</span>) -
+      added by <em>chrysn@…</em> <a class="timeline" href="/report/timeline?from=2012-09-04T12%3A56%3A01%2B02%3A00&amp;precision=second" title="See timeline at 09/04/12 12:56:01">3 years ago</a>.
+  </dt>
+              <dd>
+                first patch
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/776/0001-implement-movement-to-back_and_forth-closes-776.2.patch" title="View attachment">0001-implement-movement-to-back_and_forth-closes-776.2.patch</a><a href="/report/raw-attachment/ticket/776/0001-implement-movement-to-back_and_forth-closes-776.2.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="6418 bytes">6.3 KB</span>) -
+      added by <em>chrysn@…</em> <a class="timeline" href="/report/timeline?from=2012-09-04T13%3A11%3A10%2B02%3A00&amp;precision=second" title="See timeline at 09/04/12 13:11:10">3 years ago</a>.
+  </dt>
+              <dd>
+                same patch, rebased to the "next" branch
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/776/776.patch" title="View attachment">776.patch</a><a href="/report/raw-attachment/ticket/776/776.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="2403 bytes">2.3 KB</span>) -
+      added by <em>michael</em> <a class="timeline" href="/report/timeline?from=2012-09-04T17%3A48%3A53%2B02%3A00&amp;precision=second" title="See timeline at 09/04/12 17:48:53">3 years ago</a>.
+  </dt>
+              <dt>
+    <a href="/report/attachment/ticket/776/0001-fixes-776.patch" title="View attachment">0001-fixes-776.patch</a><a href="/report/raw-attachment/ticket/776/0001-fixes-776.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="8780 bytes">8.6 KB</span>) -
+      added by <em>chrysn@…</em> <a class="timeline" href="/report/timeline?from=2012-09-04T18%3A30%3A54%2B02%3A00&amp;precision=second" title="See timeline at 09/04/12 18:30:54">3 years ago</a>.
+  </dt>
+              <dd>
+                fix updated with michael's list of enhancements
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/776/0002-drop-dummy-variable-in-workspace_show_by_name.patch" title="View attachment">0002-drop-dummy-variable-in-workspace_show_by_name.patch</a><a href="/report/raw-attachment/ticket/776/0002-drop-dummy-variable-in-workspace_show_by_name.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="788 bytes">788 bytes</span>) -
+      added by <em>chrysn@…</em> <a class="timeline" href="/report/timeline?from=2012-09-04T18%3A31%3A47%2B02%3A00&amp;precision=second" title="See timeline at 09/04/12 18:31:47">3 years ago</a>.
+  </dt>
+              <dd>
+                fix the cause of sub-issue 6.
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/776/0001-fixes-776.2.patch" title="View attachment">0001-fixes-776.2.patch</a><a href="/report/raw-attachment/ticket/776/0001-fixes-776.2.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="9292 bytes">9.1 KB</span>) -
+      added by <em>chrysn@…</em> <a class="timeline" href="/report/timeline?from=2012-09-17T12%3A06%3A03%2B02%3A00&amp;precision=second" title="See timeline at 09/17/12 12:06:03">3 years ago</a>.
+  </dt>
+              <dd>
+                both patches merged and moved to next
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/776/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(14)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1346706138282287">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-03T23%3A02%3A18%2B02%3A00&amp;precision=second" title="See timeline at 09/03/12 23:02:18">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-component">
+      <strong class="trac-field-component">Component</strong>
+        changed from <em>general</em> to <em>feature-request</em>
+    </li><li class="trac-field-keywords">
+      <strong class="trac-field-keywords">Keywords</strong>
+        <em>easy</em> added
+    </li><li class="trac-field-version">
+      <strong class="trac-field-version">Version</strong>
+        <em>4.2</em> deleted
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I agree. Feel free to send a patch for this, it should be an easy target. In case you start working on it, please post a short comment here so that we don’t duplicate any work.<br />
+</p>
+<p>
+See <a class="ext-link" href="http://i3wm.org/docs/hacking-howto.html"><span class="icon">​</span>http://i3wm.org/docs/hacking-howto.html</a> and <a class="ext-link" href="http://i3wm.org/docs/testsuite.html"><span class="icon">​</span>http://i3wm.org/docs/testsuite.html</a>.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1346745420110111">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-04T09%3A57%3A00%2B02%3A00&amp;precision=second" title="See timeline at 09/04/12 09:57:00">3 years ago</a> by chrysn@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+i'm trying, will report back.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-04T12%3A56%3A01%2B02%3A00&amp;precision=second" title="See timeline at 09/04/12 12:56:01">3 years ago</a> by chrysn@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/776/0001-implement-movement-to-back_and_forth-closes-776.patch"><em>0001-implement-movement-to-back_and_forth-closes-776.patch</em></a><a href="/report/raw-attachment/ticket/776/0001-implement-movement-to-back_and_forth-closes-776.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+first patch<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1346756668966347">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-04T13%3A04%3A28%2B02%3A00&amp;precision=second" title="See timeline at 09/04/12 13:04:28">3 years ago</a> by chrysn@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+the patch above adds the implementation and documentation, but no test suite as i couldn't get it running easily (you might already have received my comment on <a class="ext-link" href="http://bugs.debian.org/603116"><span class="icon">​</span>http://bugs.debian.org/603116</a>).<br />
+</p>
+<p>
+a test case would have to be split in two parts like 176 -- once with and once without auto_back_and_forth; then, it would have to create a single window and (and that's the point where i'd have to have run the test cases to see how things work there) check whether the window was moved where it should.<br />
+</p>
+<p>
+it might be noteworthy that the new functions created, <tt>workspace_back_and_forth_get</tt> and <tt>maybe_autobackandforth_workspace</tt>, could possibly simplify the control flow of <tt>maybe_back_and_forth</tt> and related functions -- as of not being familiar with the project, i didn't want to refactor around too much.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-04T13%3A11%3A10%2B02%3A00&amp;precision=second" title="See timeline at 09/04/12 13:11:10">3 years ago</a> by chrysn@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/776/0001-implement-movement-to-back_and_forth-closes-776.2.patch"><em>0001-implement-movement-to-back_and_forth-closes-776.2.patch</em></a><a href="/report/raw-attachment/ticket/776/0001-implement-movement-to-back_and_forth-closes-776.2.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+same patch, rebased to the "next" branch<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1346773724288973">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-04T17%3A48%3A44%2B02%3A00&amp;precision=second" title="See timeline at 09/04/12 17:48:44">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Thanks for your patch. I implemented a test-case, then merged your patch, and now the tests are passing. Congratulations ;-).<br />
+</p>
+<p>
+Your code looks very clean, good job. I have a few minor comments on the patch before I’ll merge it:<br />
+</p>
+<ol><li>Please adopt my testcase and remove the comment about "no testsuite additions" :).
+</li><li>Please use "fixes <a class="closed ticket" href="/report/ticket/776" title="enhancement: move container to workspace back_and_forth (closed: fixed)">#776</a>" on a single line in your commit description, we have hooks in place to handle this.
+</li><li>code style issue: write "Con *maybe_auto_back_and_forth_workspace(" please (asterisk position and underscores). I know it’s a long name, but this makes it consistent with the configuration struct member.
+</li><li>code style issue: in maybe_auto_back_and_forth_workspace, please return early in the "return workspace;" case. That is: <tt>if (!config.workspace_auto_back_and_forth) return workspace;</tt> (on two separate lines of course). This is more consistent and saves one level of indention.
+</li><li>A better description for workspace_back_and_forth_get is "Returns the previously focused workspace con, or NULL if unavailable.". ("report" is very generic and "returns" is clearer. Also mention it’s the container, not its name)
+</li><li>In workspace_back_and_forth_get, you can just pass NULL instead of defining a dummy changed_num_workspaces variable :).
+</li><li>In docs/userguide, please make the sentence more complete, like this: "likewise, you can move containers to the previously focused workspace using +move container to workspace back_and_forth+".
+</li></ol><p>
+Thanks in advance,<br />
+Best regards,<br />
+Michael<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-04T17%3A48%3A53%2B02%3A00&amp;precision=second" title="See timeline at 09/04/12 17:48:53">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/776/776.patch"><em>776.patch</em></a><a href="/report/raw-attachment/ticket/776/776.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-04T18%3A30%3A54%2B02%3A00&amp;precision=second" title="See timeline at 09/04/12 18:30:54">3 years ago</a> by chrysn@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/776/0001-fixes-776.patch"><em>0001-fixes-776.patch</em></a><a href="/report/raw-attachment/ticket/776/0001-fixes-776.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+fix updated with michael's list of enhancements<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-04T18%3A31%3A47%2B02%3A00&amp;precision=second" title="See timeline at 09/04/12 18:31:47">3 years ago</a> by chrysn@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/776/0002-drop-dummy-variable-in-workspace_show_by_name.patch"><em>0002-drop-dummy-variable-in-workspace_show_by_name.patch</em></a><a href="/report/raw-attachment/ticket/776/0002-drop-dummy-variable-in-workspace_show_by_name.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+fix the cause of sub-issue 6.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1346921114137426">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-06T10%3A45%3A14%2B02%3A00&amp;precision=second" title="See timeline at 09/06/12 10:45:14">3 years ago</a> by chrysn@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+i just noticed that attaching a patch doesn't trigger a notification by itself, so here it is again: *ping*, the patch is ready against master.<br />
+</p>
+<p>
+the second patch removes a dummy variable for <tt>workspace_show_by_name</tt> that made me use one in the first place.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1347812686030390">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-16T18%3A24%3A46%2B02%3A00&amp;precision=second" title="See timeline at 09/16/12 18:24:46">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Hey chrsys,<br />
+</p>
+<p>
+thanks for updating the patch. Just two quick things:<br />
+</p>
+<ol><li>Please squash your commits so that I have one single patch-file to apply (unless the commits are separate things, which is not the case here).
+</li></ol><ol start="2"><li>You mention it’s ready against "master", but new features go into "next". Can you rebase?
+</li></ol><p>
+Since the release of i3 v4.3 is near, I’ll not merge this after the release is out.<br />
+</p>
+<p>
+Thanks,<br />
+Best regards,<br />
+Michael<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-17T12%3A06%3A03%2B02%3A00&amp;precision=second" title="See timeline at 09/17/12 12:06:03">3 years ago</a> by chrysn@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/776/0001-fixes-776.2.patch"><em>0001-fixes-776.2.patch</em></a><a href="/report/raw-attachment/ticket/776/0001-fixes-776.2.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+both patches merged and moved to next<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1347876469153952">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-17T12%3A07%3A49%2B02%3A00&amp;precision=second" title="See timeline at 09/17/12 12:07:49">3 years ago</a> by chrysn@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+done. the patches were merged and rebased onto next.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1348313956122018">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-22T13%3A39%3A16%2B02%3A00&amp;precision=second" title="See timeline at 09/22/12 13:39:16">3 years ago</a> by chrysn
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/e15e37f9"><span class="icon">​</span>http://c.i3wm.org/e15e37f9</a>:<br />
+fixes <a class="closed ticket" href="/report/ticket/776" title="enhancement: move container to workspace back_and_forth (closed: fixed)">#776</a><br />
+</p>
+<p>
+this implements both the "move container to workspace back_and_forth" command<br />
+and movements to the same workspace when auto_back_and_forth is set.<br />
+</p>
+<p>
+it includes documentation and test suite additions by michael.<br />
+</p>
+<p>
+it also simplifies the workspace_show_by_name function (making use of<br />
+workspace_get accepting NULL pointers).<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/776?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/776?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/776?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

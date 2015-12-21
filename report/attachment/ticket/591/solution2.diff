@@ -1,0 +1,29 @@
+diff --git a/src/tree.c b/src/tree.c
+index c398ee1..81c1ea2 100644
+--- a/src/tree.c
++++ b/src/tree.c
+@@ -340,24 +340,20 @@ bool tree_close(Con *con, kill_window_t kill_window, bool dont_kill_parent, bool
+ 
+     return true;
+ }
+ 
+ /*
+  * Closes the current container using tree_close().
+  *
+  */
+ void tree_close_con(kill_window_t kill_window) {
+     assert(focused != NULL);
+-    if (focused->type == CT_WORKSPACE) {
+-        LOG("Cannot close workspace\n");
+-        return;
+-    }
+ 
+     /* There *should* be no possibility to focus outputs / root container */
+     assert(focused->type != CT_OUTPUT);
+     assert(focused->type != CT_ROOT);
+ 
+     /* Kill con */
+     tree_close(focused, kill_window, false, false);
+ }
+ 
+ /*

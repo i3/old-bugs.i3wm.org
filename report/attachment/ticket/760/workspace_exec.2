@@ -1,0 +1,80 @@
+#!/usr/bin/env python
+
+# -*- coding: utf8 -*-
+# this script will check i3 for the currently opened workspace and chdir to
+# a configured path.
+#
+# you can use ~ and $FOO substitutions in the paths.
+#
+# first, workspaces that begin with whatever key you specified in name_to_dir
+# will be checked for. if none are found, the key will be searched for as a
+# substring.
+#
+# relative paths will be treated as relative to whatever i3s working directory
+# is when the exec command is executed.
+#
+# as long as you save this file as utf8 or correct the coding above, you can
+# put unicode characters in the names of the workspaces here. If your system
+# python is python2, you will need to put a u before the quotation marks,
+# like this:
+#
+#     u"☺": "~/fun/",
+#
+#################################
+#  installation
+#################################
+#
+# in your i3 config, change the keybindings that launch your terminal emulator
+# (or whatever other program you want to start in a separate directory) like
+# this:
+#
+#    bindsym $mod+Return exec workspace_exec i3-sensible-terminal
+#
+# change name_to_dir below to reflect what workspaces should get what paths.
+#
+# place this script somewhere in your $PATH, or put an absolute path in your
+# exec call in the i3 config.
+#
+# don't forget to set it executable with chmod +x workspace_exec
+
+name_to_dir = {
+            "6": "~/coding/",
+            "9": "~/build/",
+        }
+
+import os
+import sys
+
+try:
+    import subprocess
+    import json
+
+    workspace_string = subprocess.check_output("i3-msg -t get_workspaces".split(" "))
+
+    try:
+        workspacedata = json.loads(workspace_string)
+    except TypeError:
+        workspacedata = json.loads(workspace_string.decode("utf8"))
+
+    focused = [ws for ws in workspacedata if ws["focused"] == True]
+
+    wsname = focused[0]["name"]
+
+    found_something = None
+    for name in name_to_dir:
+        if name.startswith(wsname):
+            found_something = name_to_dir[wsname]
+            break
+
+    if found_something is None:
+        for name in name_to_dir:
+            if wsname in name:
+                found_something = name_to_dir[wsname]
+                break
+
+    if found_something:
+        path = os.path.expandvars(os.path.expanduser(found_something))
+        os.chdir(path)
+
+finally:
+    os.system(" ".join(sys.argv[1:]))

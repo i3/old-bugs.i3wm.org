@@ -1,0 +1,26 @@
+#0  0x00007f07f7085475 in raise () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00000000004305d7 in sig_handle_key_press (ignored=0x0, conn=0x2250480, 
+    event=0x22a6b50) at src/sighandler.c:80
+#2  0x00000000004309dd in handle_signal (sig=11, info=0x7fffcc40e3f0, 
+    data=0x7fffcc40e2c0) at src/sighandler.c:185
+#3  <signal handler called>
+#4  0x0000000000430d6c in start_application (
+    command=0x22a4cf0 "/usr/bin/x-terminal-emulator", no_startup_id=false)
+    at src/startup.c:102
+#5  0x0000000000415d7a in cmd_exec (current_match=0x6638e0, nosn=0x0, 
+    command=0x22a4cf0 "/usr/bin/x-terminal-emulator") at src/commands.c:865
+#6  0x00000000004174c9 in GENERATED_call (call_identifier=37)
+    at include/GENERATED_call.h:302
+#7  0x000000000041798b in next_state (token=0x662318) at src/commands_parser.c:185
+#8  0x0000000000417e72 in parse_command (
+    input=0x226d250 "exec /usr/bin/x-terminal-emulator") at src/commands_parser.c:285
+#9  0x000000000041e7b9 in handle_key_press (event=0x22a4310) at src/handlers.c:121
+#10 0x000000000042089c in handle_event (type=2, event=0x22a4310)
+    at src/handlers.c:1049
+#11 0x000000000042530b in xcb_check_cb (loop=0x7f07f7a2bca0, w=0x224f950, 
+    revents=32768) at src/main.c:131
+#12 0x00007f07f78224d1 in ev_invoke_pending () from /usr/lib/libev.so.4
+#13 0x00007f07f782751d in ev_run () from /usr/lib/libev.so.4
+#14 0x0000000000425200 in ev_loop (loop=0x7f07f7a2bca0, flags=0)
+    at /usr/include/ev.h:810
+#15 0x0000000000427fb8 in main (argc=1, argv=0x7fffcc410098) at src/main.c:786

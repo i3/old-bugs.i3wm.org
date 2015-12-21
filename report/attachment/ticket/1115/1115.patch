@@ -1,0 +1,180 @@
+diff --git a/i3bar/include/outputs.h b/i3bar/include/outputs.h
+index ad24978..13412ae 100644
+--- a/i3bar/include/outputs.h
++++ b/i3bar/include/outputs.h
+@@ -43,6 +43,8 @@ struct i3_output {
+     bool           primary;       /* If it is the primary output */
+     int            ws;            /* The number of the currently visible ws */
+     rect           rect;          /* The rect (relative to the root-win) */
++    int            physical_width;/* The physical width of the output */
++    int            physical_height;/* The physical height of the output */
+ 
+     xcb_window_t   bar;           /* The id of the bar of the output */
+     xcb_pixmap_t   buffer;        /* An extra pixmap for double-buffering */
+diff --git a/i3bar/src/outputs.c b/i3bar/src/outputs.c
+index db98670..4dcba85 100644
+--- a/i3bar/src/outputs.c
++++ b/i3bar/src/outputs.c
+@@ -101,6 +101,18 @@ static int outputs_integer_cb(void *params_, long val) {
+         return 1;
+     }
+ 
++    if (!strcmp(params->cur_key, "physical_width")) {
++        params->outputs_walk->physical_width = (int) val;
++        FREE(params->cur_key);
++        return 1;
++    }
++
++    if (!strcmp(params->cur_key, "physical_height")) {
++        params->outputs_walk->physical_height = (int) val;
++        FREE(params->cur_key);
++        return 1;
++    }
++
+     return 0;
+ }
+ 
+diff --git a/include/data.h b/include/data.h
+index ea1d324..ae2c636 100644
+--- a/include/data.h
++++ b/include/data.h
+@@ -302,6 +302,9 @@ struct xoutput {
+     /** x, y, width, height */
+     Rect rect;
+ 
++    int physical_width;
++    int physical_height;
++
+     TAILQ_ENTRY(xoutput) outputs;
+ };
+ 
+diff --git a/libi3/font.c b/libi3/font.c
+index 8239b1f..7a3b265 100644
+--- a/libi3/font.c
++++ b/libi3/font.c
+@@ -29,6 +29,7 @@ static xcb_visualtype_t *root_visual_type;
+ static double pango_font_red;
+ static double pango_font_green;
+ static double pango_font_blue;
++static double pango_font_dpi = 166.0;
+ 
+ /*
+  * Loads a Pango font description into an i3Font structure. Returns true
+@@ -56,7 +57,9 @@ static bool load_pango_font(i3Font *font, const char *desc) {
+     /* Create a dummy Pango layout to compute the font height */
+     cairo_surface_t *surface = cairo_xcb_surface_create(conn, root_screen->root, root_visual_type, 1, 1);
+     cairo_t *cr = cairo_create(surface);
+-    PangoLayout *layout = pango_cairo_create_layout(cr);
++    PangoContext *pc = pango_cairo_create_context(cr);
++    pango_cairo_context_set_resolution(pc, pango_font_dpi);
++    PangoLayout *layout = pango_layout_new(pc);
+     pango_layout_set_font_description(layout, font->specific.pango_desc);
+ 
+     /* Get the font height */
+@@ -66,6 +69,7 @@ static bool load_pango_font(i3Font *font, const char *desc) {
+ 
+     /* Free resources */
+     g_object_unref(layout);
++    g_object_unref(pc);
+     cairo_destroy(cr);
+     cairo_surface_destroy(surface);
+ 
+@@ -85,7 +89,9 @@ static void draw_text_pango(const char *text, size_t text_len,
+     cairo_surface_t *surface = cairo_xcb_surface_create(conn, drawable,
+             root_visual_type, x + max_width, y + savedFont->height);
+     cairo_t *cr = cairo_create(surface);
+-    PangoLayout *layout = pango_cairo_create_layout(cr);
++    PangoContext *pc = pango_cairo_create_context(cr);
++    pango_cairo_context_set_resolution(pc, pango_font_dpi);
++    PangoLayout *layout = pango_layout_new(pc);
+     pango_layout_set_font_description(layout, savedFont->specific.pango_desc);
+     pango_layout_set_width(layout, max_width * PANGO_SCALE);
+     pango_layout_set_wrap(layout, PANGO_WRAP_CHAR);
+@@ -100,6 +106,7 @@ static void draw_text_pango(const char *text, size_t text_len,
+ 
+     /* Free resources */
+     g_object_unref(layout);
++    g_object_unref(pc);
+     cairo_destroy(cr);
+     cairo_surface_destroy(surface);
+ }
+@@ -113,7 +120,9 @@ static int predict_text_width_pango(const char *text, size_t text_len) {
+     /* root_visual_type is cached in load_pango_font */
+     cairo_surface_t *surface = cairo_xcb_surface_create(conn, root_screen->root, root_visual_type, 1, 1);
+     cairo_t *cr = cairo_create(surface);
+-    PangoLayout *layout = pango_cairo_create_layout(cr);
++    PangoContext *pc = pango_cairo_create_context(cr);
++    pango_cairo_context_set_resolution(pc, pango_font_dpi);
++    PangoLayout *layout = pango_layout_new(pc);
+ 
+     /* Get the font width */
+     gint width;
+@@ -124,6 +133,7 @@ static int predict_text_width_pango(const char *text, size_t text_len) {
+ 
+     /* Free resources */
+     g_object_unref(layout);
++    g_object_unref(pc);
+     cairo_destroy(cr);
+     cairo_surface_destroy(surface);
+ 
+@@ -283,6 +293,18 @@ void set_font_colors(xcb_gcontext_t gc, uint32_t foreground, uint32_t background
+     }
+ }
+ 
++/*
++ * Defines the DPI to be used for forthcoming font calls.
++ *
++ */
++void set_dpi(double dpi) {
++#ifdef PANGO_SUPPORT
++    pango_font_dpi = dpi;
++#else
++    (void)dpi;
++#endif
++}
++
+ static int predict_text_width_xcb(const xcb_char2b_t *text, size_t text_len);
+ 
+ static void draw_text_xcb(const xcb_char2b_t *text, size_t text_len, xcb_drawable_t drawable,
+diff --git a/src/ipc.c b/src/ipc.c
+index 4c41465..0a3eda5 100644
+--- a/src/ipc.c
++++ b/src/ipc.c
+@@ -477,6 +477,11 @@ IPC_HANDLER(get_outputs) {
+         y(integer, output->rect.height);
+         y(map_close);
+ 
++        ystr("physical_width");
++        y(integer, output->physical_width);
++        ystr("physical_height");
++        y(integer, output->physical_height);
++
+         ystr("current_workspace");
+         Con *ws = NULL;
+         if (output->con && (ws = con_get_fullscreen_con(output->con, CF_OUTPUT)))
+diff --git a/src/randr.c b/src/randr.c
+index 1aef9c9..efc5fd1 100644
+--- a/src/randr.c
++++ b/src/randr.c
+@@ -235,6 +235,8 @@ void disable_randr(xcb_connection_t *conn) {
+     s->rect.y = 0;
+     s->rect.width = root_screen->width_in_pixels;
+     s->rect.height = root_screen->height_in_pixels;
++    s->physical_width = root_screen->width_in_millimeters;
++    s->physical_height = root_screen->height_in_millimeters;
+     s->name = "xroot-0";
+     output_init_con(s);
+     init_ws_for_output(s, output_get_content(s->con));
+@@ -561,6 +563,11 @@ static void handle_output(xcb_connection_t *conn, xcb_randr_output_t id,
+                    update_if_necessary(&(new->rect.height), crtc->height);
+     free(crtc);
+     new->active = (new->rect.width != 0 && new->rect.height != 0);
++
++    if (!xcb_randr_get_crtc_info_outputs_length(crtc)) {
++        DLOG("No output connected to CRTC\n");
++    }
++
+     if (!new->active) {
+         DLOG("width/height 0/0, disabling output\n");
+         return;
+

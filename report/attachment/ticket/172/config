@@ -1,0 +1,153 @@
+############################# Aliases and stuff ###############################
+# Modifier Key - see xmodmap
+set $win Mod4
+set $run Mod5
+
+# Key used for adjusting window sizes with mouse
+floating_modifier $win
+
+# Set the Interprocess Communication socket
+ipc-socket /tmp/i3-ipc.sock
+
+
+############################# Colors and fonts ###############################
+#Terminal, use with $terminal
+terminal urxvtc
+# Statusbar + titlebar font
+font -*-cure-*-*-*-*-*-*-*-*-*-*-*-*
+
+# colorclass             border  backgrnd text
+client.focused           #EEEEEE #000000 #EEEEEE
+client.focused_inactive  #EEEEEE #000000 #666666
+client.unfocused         #000000 #000000 #666666
+client.urgent            #000000 #EEEEEE #000000
+bar.focused              #000000 #000000 #EEEEEE
+bar.unfocused            #000000 #000000 #666666
+bar.urgent               #000000 #EEEEEE #000000
+
+
+############################# Workspaces and stuff ###############################
+# workspace <number> <name>
+workspace 1 NYU
+workspace 2 WWW
+workspace 3 TERM
+workspace 4 MEDIA
+
+
+############################# Window Management ###############################
+# Modes: fullscreen (f), stacking (s), tabbed (T), and default (d)
+bindsym $win+f f
+bindsym $win+s s
+bindsym $win+t T
+bindsym $win+d d
+
+# Toggle tiling/floating of the current window (t)
+bindsym $win+space t
+
+# Toggle between floating/tiling layer (ft)
+bindsym $win+control+space focus ft
+
+# <dir>: right (h), down (j), up (k), left (l)
+
+# Focus Clients: (<dir>)
+bindsym $win+h h
+bindsym $win+j j
+bindsym $win+k k
+bindsym $win+l l
+# Previous (pw) and Next (nw) workspaces
+bindsym control+Left pw
+bindsym control+Right nw
+
+# Focus Container: (wc<dir>)
+bindsym $win+Left wch
+bindsym $win+Down wcj
+bindsym $win+Up wck
+bindsym $win+Right wcl
+
+# Snap: (s<dir>)
+bindsym $win+shift+h sh
+bindsym $win+shift+j sj
+bindsym $win+shift+k sk
+bindsym $win+shift+l sl
+
+# Move (m<dir>)
+bindsym $win+control+h mh
+bindsym $win+control+j mj
+bindsym $win+control+k mk
+bindsym $win+control+l ml
+
+# Move Container (wcm<dir>)
+bindsym $win+control+Left wcmh
+bindsym $win+control+Down wcmj
+bindsym $win+control+Up wcmk
+bindsym $win+control+Right wcml
+
+# Workspaces ($win+1/2/…)
+bindsym $win+1 1
+bindsym $win+2 2
+bindsym $win+3 3
+bindsym $win+4 4
+bindsym $win+5 5
+bindsym $win+6 6
+bindsym $win+7 7
+bindsym $win+8 8
+bindsym $win+9 9
+bindsym $win+10 0
+
+# Move to Workspaces
+bindsym $win+control+1 m1
+bindsym $win+control+2 m2
+bindsym $win+control+3 m3
+bindsym $win+control+4 m4
+bindsym $win+control+5 m5
+bindsym $win+control+6 m6
+bindsym $win+control+7 m7
+bindsym $win+control+8 m8
+bindsym $win+control+9 m9
+bindsym $win+control+0 m10
+
+# Border: Normal (bn), No Title (bp), Borderless (bb), Toggle (bt)
+bindsym $win+b bt
+
+# End application (kill)
+bindsym $win+q kill
+
+# Restart i3 (restart)
+bindsym $win+control+q restart
+
+
+############################# Applications and such ###############################
+bindsym $run+t exec urxvtc
+bindsym $run+w exec wallpaperfy
+bindsym $run+h exec pcmanfm
+bindsym $run+f exec uzbl-browser
+bindsym $run+g exec gimp
+bindsym $run+m exec pymenu
+bindsym $run+p exec urxvtc -title weechat -e /home/kirby/bin/weechat
+bindsym $run+z exec filezilla
+bindsym $run+space exec dmenu_run
+bindsym XF86AudioMute exec ossvol -t
+bindsym XF86AudioRaiseVolume exec ossvol -i 2
+bindsym XF86AudioLowerVolume exec ossvol -d 2
+bindsym XF86AudioPlay exec cmus-remote -u
+bindsym XF86AudioPrev exec cmus-remote -r
+bindsym XF86AudioNext exec cmus-remote -n
+bindsym Print scrot
+
+
+############################# Startup programs ###############################
+
+
+############################# Application Rules ###############################
+# assign <class>/<title> <workspace>
+assign Filezilla 1
+assign Uzbl-core 2
+assign URxvt/weechat 3
+assign URxvt/cmus 3
+assign URxvt/rtorrent 3
+assign URxvt/server 3
+assign URxvt/htop 3
+assign Gimp ~4
+assign MPlayer ~
+
+

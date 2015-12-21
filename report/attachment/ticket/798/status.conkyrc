@@ -1,0 +1,17 @@
+update_interval 1.0
+out_to_x no   
+out_to_console yes
+uppercase no
+
+TEXT
+W: ${if_up wlan0}(${wireless_link_qual_perc wlan0}% at ${wireless_essid wlan0}) ${addr wlan0}${else}down${endif} | \
+E: ${if_up eth0}${addr eth0}${else}down${endif} | \
+$fs_free | \
+mem $mem | \
+cpu ${cpu cpu0}% $acpitemp° | \
+$loadavg | \
+$battery_short | \
+gpu ${execi 3 lspci -nnn | grep NVIDIA | awk '{print $14}' | tr -d ")"} | \
+vol ${exec amixer get Master | grep dB | awk '{print $4}' | tr -d "[]"}\
+${exec [[ -n `amixer get Master | grep off` ]] && echo " [M]"} | \
+${time %F %H:%M:%S}

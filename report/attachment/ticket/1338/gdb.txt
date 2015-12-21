@@ -1,0 +1,36 @@
+#0  0x00007f65be05dd67 in raise () from /usr/lib/libc.so.6
+#1  0x00007f65be05f118 in abort () from /usr/lib/libc.so.6
+#2  0x00007f65be056bdd in __assert_fail_base () from /usr/lib/libc.so.6
+#3  0x00007f65be056c92 in __assert_fail () from /usr/lib/libc.so.6
+#4  0x000000000040bd80 in con_fullscreen_permits_focusing ()
+#5  0x0000000000421b20 in cmd_focus ()
+#6  0x000000000040d431 in next_state.isra ()
+#7  0x000000000040e0c7 in parse_command ()
+#8  0x00000000004300d2 in run_assignments ()
+#9  0x00000000004115ec in manage_window ()
+#10 0x0000000000411ad6 in manage_existing_windows ()
+#11 0x0000000000408e8e in main ()
+#0  0x00007f65be05dd67 in raise () from /usr/lib/libc.so.6
+No symbol table info available.
+#1  0x00007f65be05f118 in abort () from /usr/lib/libc.so.6
+No symbol table info available.
+#2  0x00007f65be056bdd in __assert_fail_base () from /usr/lib/libc.so.6
+No symbol table info available.
+#3  0x00007f65be056c92 in __assert_fail () from /usr/lib/libc.so.6
+No symbol table info available.
+#4  0x000000000040bd80 in con_fullscreen_permits_focusing ()
+No symbol table info available.
+#5  0x0000000000421b20 in cmd_focus ()
+No symbol table info available.
+#6  0x000000000040d431 in next_state.isra ()
+No symbol table info available.
+#7  0x000000000040e0c7 in parse_command ()
+No symbol table info available.
+#8  0x00000000004300d2 in run_assignments ()
+No symbol table info available.
+#9  0x00000000004115ec in manage_window ()
+No symbol table info available.
+#10 0x0000000000411ad6 in manage_existing_windows ()
+No symbol table info available.
+#11 0x0000000000408e8e in main ()
+No symbol table info available.

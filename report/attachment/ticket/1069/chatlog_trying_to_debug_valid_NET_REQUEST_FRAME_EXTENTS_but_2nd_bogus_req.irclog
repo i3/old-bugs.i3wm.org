@@ -1,0 +1,29 @@
+2013-09-24 18:38:34	@xeen	sECuRE: wer hat dieses i3 eigentlich geschrieben? Selbst für sinnvolle geom bekomme ich 5x5 Pixel Fenster (statt 600x400 wie requested)
+2013-09-24 18:47:42	@xeen	hm. Er reicht die korrekte Größe bis runter in die render.c. Fragt sich nur, was dann passiert, weil die Window ID nicht mehr auftaucht
+2013-09-24 18:53:11	@xeen	sECuRE: http://bugs.i3wm.org/report/attachment/ticket/1069/correct_NET_REQUEST_FRAME_EXTENTS_but_second_bogus_request_with_josm_preferences.log       das ist mit dem NET_REQUEST_FRAME_EXTENTS Teil vorne dran, der gezeigte Ausschnitt beginnt logischerweise erst später
+2013-09-24 18:53:19	@xeen	aber da die Größe ja korrekt weitergegeben wird…
+2013-09-24 18:53:45	~sECuRE	der configure request ist okay, das siehst du hieran:
+2013-09-24 18:53:45	~sECuRE	2013-09-24 18:37:22 - manage.c:manage_window:267 - Initial geometry: (1101, 98, 778, 790)
+2013-09-24 18:54:33	~sECuRE	0x1cb0230 ist die container id
+2013-09-24 18:55:05	~sECuRE	2013-09-24 18:37:22 - x.c:x_push_node:708 - setting rect (1101, 98, 782, 792)
+2013-09-24 18:55:05	~sECuRE	2013-09-24 18:37:22 - x.c:x_push_node:727 - setting window rect (2, 0, 778, 790)
+2013-09-24 18:55:10	~sECuRE	hier stimmt die geometry auch noch
+2013-09-24 18:55:37	~sECuRE	2013-09-24 18:37:22 - handlers.c:handle_configure_request:297 - window 0x026004b4 wants to be at 0x0 with 1x1
+2013-09-24 18:55:40	~sECuRE	2013-09-24 18:37:22 - handlers.c:handle_configure_request:328 - Configure request!
+2013-09-24 18:55:43	~sECuRE	2013-09-24 18:37:22 - con.c:con_is_floating:412 - checking if con 0x1cb0230 is floating
+2013-09-24 18:55:46	~sECuRE	da ist der confreq mit müll
+2013-09-24 18:56:25	@xeen	ja, den habe ich übersehen… aber woher kommt der? Ist das ein neuer Request?
+2013-09-24 18:56:54	~sECuRE	ja
+2013-09-24 18:57:07	@xeen	oh gott, dann kommen da zwei Requests mehr oder weniger gleichzeitig rein
+2013-09-24 18:57:17	~sECuRE	schickt die anwendung aus irgendwelchen gründen
+2013-09-24 18:57:57	~sECuRE	ich denke in handle_configure_request() fehlt ein floating_check_size() call
+2013-09-24 18:57:59	~sECuRE	patches welcome
+2013-09-24 18:58:33	~sECuRE	aber die eigentlich frage ist natürlich warum die app auf 0x0 mit 1x1 sein will
+2013-09-24 18:58:47	~sECuRE	AFAIR ist das verhalten, wenn man kein _NET_REQUEST_FRAME_EXTENTS schickt
+2013-09-24 18:58:57	@xeen	schickt er in dem Fall aber :\
+2013-09-24 18:58:58	~sECuRE	da müsste man jetzt mal in den java-code schauen, oder xtracen, oder so
+
+
+…x11vis…
+2013-09-24 19:39:34	@xeen	http://p.nnev.de/3915 sagt er am Ende, ist das evtl. das Problem?
+2013-09-24 19:40:04	~sECuRE	ja, wenn er exceptions wirft ist alles zu spät, dann geht nichts mehr weiter ;)

@@ -1,0 +1,27 @@
+--- i3-dmenu-desktop	2012-12-22 14:08:14.905374242 +0100
++++ /tmp/i3-dmenu-desktop	2012-12-24 13:20:05.120375313 +0100
+@@ -205,6 +205,8 @@
+ for my $app (keys %apps) {
+     my $name = $apps{$app}->{Name};
+ 
++    say "location *" . $apps{$app}->{_Location} . "*, name *$name*, exec *" . $apps{$app}->{Exec} . "*";
++
+     # Don’t try to use .desktop files which don’t have Type=application
+     next if (!exists($apps{$app}->{Type}) ||
+              $apps{$app}->{Type} ne 'Application');
+@@ -245,6 +247,7 @@
+             $name = "$name ($inc)";
+         }
+ 
++        say "adding " . $apps{$app}->{_Location} . " to menu with name *$name*";
+         $choices{$name} = $app;
+     }
+ 
+@@ -255,6 +258,7 @@
+         my @keys = map { lc } keys %choices;
+         next if lc(basename($command)) ~~ @keys;
+ 
++        say "adding " . $apps{$app}->{_Location} . " to menu with cmd *" . basename($command) . "*";
+         $choices{basename($command)} = $app;
+     }
+ }

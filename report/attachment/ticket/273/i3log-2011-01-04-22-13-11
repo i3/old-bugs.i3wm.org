@@ -1,0 +1,1247 @@
+01/04/2011 10:13:11 PM - ERROR: Using Xinerama instead of RandR. This option should be avoided at all cost because it does not refresh the list of screens, so you cannot configure displays at runtime. Please check if your driver really does not support RandR and disable this option as soon as you can.
+01/04/2011 10:13:11 PM - Enabling debug loglevel all
+01/04/2011 10:13:11 PM - i3 (tree) version tree-pr1-19-g9713419 (2011-01-02, branch "tree") starting
+01/04/2011 10:13:11 PM - src/config.c:parse_configuration:241 - Parsing configfile /home/ollie/.config/i3/config
+01/04/2011 10:13:11 PM - src/cfgparse.y:yyparse:419 - new windows should start with border style 1
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+01/04/2011 10:13:11 PM - src/cfgparse.y:yyparse:366 - floating modifier = 8
+	Found symbolic mod9 with key Return and command open
+	Found symbolic mod8 with key Return and command exec /usr/bin/urxvt
+	Found symbolic mod8 with key h and command split h
+	Found symbolic mod8 with key v and command split v
+	Found symbolic mod8 with key f and command fullscreen
+	Found symbolic mod8 with key s and command layout stacking
+	Found symbolic mod8 with key w and command layout tabbed
+	Found symbolic mod8 with key l and command layout default
+	Found symbolic mod9 with key space and command mode toggle
+	Found symbolic mod8 with key u and command level up
+	Found symbolic mod8 with key c and command kill
+	Found symbolic mod8 with key y and command restore /home/michael/i3/layout.json
+	Found symbolic mod9 with key c and command restart
+	Found symbolic mod9 with key j and command reload
+	Found symbolic mod9 with key l and command exit
+	Found symbolic mod8 with key n and command prev h
+	Found symbolic mod8 with key r and command next v
+	Found symbolic mod8 with key t and command prev v
+	Found symbolic mod8 with key d and command next h
+	Found symbolic mod9 with key n and command move before h
+	Found symbolic mod9 with key r and command move before v
+	Found symbolic mod9 with key t and command move after v
+	Found symbolic mod9 with key d and command move after h
+	Found symbolic mod9 with key Left and command move before h
+	Found symbolic mod9 with key Right and command move after h
+	Found symbolic mod9 with key Down and command move before v
+	Found symbolic mod9 with key Up and command move after v
+	Found symbolic mod8 with key 1 and command workspace 1
+	Found symbolic mod8 with key 2 and command workspace 2
+	Found symbolic mod8 with key 3 and command workspace 3
+	Found symbolic mod8 with key 4 and command workspace 4
+	Found symbolic mod8 with key 5 and command workspace 5
+	Found symbolic mod9 with key 1 and command move workspace 1
+	Found symbolic mod9 with key 2 and command move workspace 2
+	Found symbolic mod9 with key 3 and command move workspace 3
+	Found symbolic mod9 with key 4 and command move workspace 4
+	Found symbolic mod9 with key 5 and command move workspace 5
+	Found binding mod0 with key 122 and command exec /usr/bin/amixer set "Front Speaker" 5-
+	Found binding mod0 with key 123 and command exec /usr/bin/amixer set "Front Speaker" 5+
+	Found binding mod0 with key 232 and command exec /usr/local/bin/brightness down
+	Found binding mod0 with key 233 and command exec /usr/local/bin/brightness up
+	Found symbolic mod8 with key p and command exec /usr/bin/dmenu_run -nb black -nf grey -fn '-*-terminus-*-r-normal-*-12-*-*-*-*-60-*-*'
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "Return" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "Return" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "h" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "v" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "f" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "s" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "w" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "l" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "space" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "u" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "c" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "y" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "c" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "j" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "l" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "n" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "r" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "t" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "d" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "n" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "r" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "t" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "d" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "Left" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "Right" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "Down" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "Up" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "1" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "2" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "3" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "4" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "5" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "1" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "2" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "3" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "4" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "5" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:translate_keysyms:118 - Translated symbol "p" to 1 keycode
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 36
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 36
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 43
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 55
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 41
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 39
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 25
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 46
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 65
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 30
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 54
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 29
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 54
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 44
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 46
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 57
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 27
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 28
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 40
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 57
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 27
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 28
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 40
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 113
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 114
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 116
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 111
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 10
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 11
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 12
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 13
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 14
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 10
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 11
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 12
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 13
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 14
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 122
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 123
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 232
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 233
+01/04/2011 10:13:11 PM - src/config.c:grab_keycode_for_binding:36 - Grabbing 33
+01/04/2011 10:13:11 PM - src/xinerama.c:query_screens:63 - Created new Xinerama screen xinerama-0 (0x24c7ab0)
+01/04/2011 10:13:11 PM - src/xinerama.c:query_screens:78 - found Xinerama screen: 1440 x 900 at 0 x 0
+01/04/2011 10:13:11 PM - opening window 0
+01/04/2011 10:13:11 PM - color #ff0000
+01/04/2011 10:13:11 PM - adding new state for window id 0x00600000
+01/04/2011 10:13:11 PM - opening window 1
+01/04/2011 10:13:11 PM - color #00FF00
+01/04/2011 10:13:11 PM - adding new state for window id 0x00600003
+01/04/2011 10:13:11 PM - opening window 2
+01/04/2011 10:13:11 PM - color #0000FF
+01/04/2011 10:13:11 PM - adding new state for window id 0x00600006
+01/04/2011 10:13:11 PM - src/con.c:con_attach:85 - it's a workspace. num = 1
+01/04/2011 10:13:11 PM - src/con.c:con_focus:160 - con_focus = 0x24d8cd0
+01/04/2011 10:13:11 PM - src/con.c:con_focus:160 - con_focus = 0x24d8ac0
+01/04/2011 10:13:11 PM - src/con.c:con_focus:174 - con_focus done = 0x24d8ac0
+01/04/2011 10:13:11 PM - src/con.c:con_focus:174 - con_focus done = 0x24d8cd0
+-- BEGIN RENDERING --
+output 0x24d8ac0 / xinerama-0
+currently rendering node 0x24d8ac0 / xinerama-0 / layout 0
+children: 1, orientation = 0
+01/04/2011 10:13:11 PM - got fs node: 0x24d8cd0
+01/04/2011 10:13:11 PM - raising in new stack: 0x24d8cd0 / 1
+currently rendering node 0x24d8cd0 / 1 / layout 0
+children: 0, orientation = 1
+-- level up
+01/04/2011 10:13:11 PM - 
+
+ PUSHING CHANGES
+
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d88d0 / root
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:387 - pushing name [i3 con] output xinerama-0 for con 0x24d8ac0
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - setting rect (0, 0, 1440, 0)
+01/04/2011 10:13:11 PM - Sending fake configure notify
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d8cd0 / 1
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:387 - pushing name [i3 con] workspace 1 for con 0x24d8cd0
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - setting rect (0, 0, 1440, 0)
+01/04/2011 10:13:11 PM - Sending fake configure notify
+01/04/2011 10:13:11 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x24d8cd0
+01/04/2011 10:13:11 PM - src/con.c:con_border_style:609 - this one is fullscreen! overriding BS_NONE
+01/04/2011 10:13:11 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:11 PM - -- PUSHING WINDOW STACK --
+01/04/2011 10:13:11 PM - stack: 0x00600000
+01/04/2011 10:13:11 PM - Stacking 0x00600003 above 0x00600000
+01/04/2011 10:13:11 PM - stack: 0x00600003
+01/04/2011 10:13:11 PM - Stacking 0x00600006 above 0x00600003
+01/04/2011 10:13:11 PM - stack: 0x00600006
+01/04/2011 10:13:11 PM - src/x.c:x_push_changes:592 - focused_id = 0x00000000, to_focus = 0x00600006
+01/04/2011 10:13:11 PM - src/x.c:x_push_changes:595 - Not updating focus (to 0x24d8cd0 / 1), focused window is not mapped.
+01/04/2011 10:13:11 PM - 
+
+ ENDING CHANGES
+
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d88d0 / root
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d8cd0 / 1
+01/04/2011 10:13:11 PM - old stack: 0x00600006
+01/04/2011 10:13:11 PM - old stack: 0x00600003
+01/04/2011 10:13:11 PM - old stack: 0x00600000
+-- END RENDERING --
+01/04/2011 10:13:11 PM - src/ipc.c:ipc_create_socket:603 - Creating IPC-socket at /home/ollie/.config/i3/ipc.sock
+---> looking at window 0x00600000
+01/04/2011 10:13:11 PM - map_state unviewable
+---> looking at window 0x00600003
+01/04/2011 10:13:11 PM - map_state unviewable
+---> looking at window 0x00600006
+01/04/2011 10:13:11 PM - map_state unviewable
+01/04/2011 10:13:11 PM - auto-starting sh /home/ollie/.fehbg
+01/04/2011 10:13:11 PM - executing: sh /home/ollie/.fehbg
+01/04/2011 10:13:11 PM - auto-starting /usr/bin/killall conky
+01/04/2011 10:13:11 PM - executing: /usr/bin/killall conky
+01/04/2011 10:13:11 PM - auto-starting /usr/bin/xsetroot -cursor_name left_ptr
+01/04/2011 10:13:11 PM - executing: /usr/bin/xsetroot -cursor_name left_ptr
+01/04/2011 10:13:11 PM - auto-starting /usr/bin/i3bar -m -s ~/.config/i3/ipc.sock -c /usr/bin/conky --color-inactive-ws-bg 333333 --color-active-ws-bg 666633 --color-bar-fg dddddd -f "-*-terminus-*-r-normal-*-12-*-*-*-*-60-*-*" > /dev/null 2>&1  
+01/04/2011 10:13:11 PM - executing: /usr/bin/i3bar -m -s ~/.config/i3/ipc.sock -c /usr/bin/conky --color-inactive-ws-bg 333333 --color-active-ws-bg 666633 --color-bar-fg dddddd -f "-*-terminus-*-r-normal-*-12-*-*-*-*-60-*-*" > /dev/null 2>&1  
+01/04/2011 10:13:11 PM - auto-starting /usr/bin/urxvtc
+01/04/2011 10:13:11 PM - executing: /usr/bin/urxvtc
+01/04/2011 10:13:11 PM - src/ipc.c:ipc_new_client:586 - IPC: new client connected
+01/04/2011 10:13:11 PM - src/ipc.c:ipc_receive_message:532 - IPC: n = 39
+01/04/2011 10:13:11 PM - src/ipc.c:add_subscription:390 - should add subscription to extra 0x24ffa60, sub workspace
+01/04/2011 10:13:11 PM - src/ipc.c:add_subscription:400 - client is now subscribed to:
+01/04/2011 10:13:11 PM - src/ipc.c:add_subscription:402 - event workspace
+01/04/2011 10:13:11 PM - src/ipc.c:add_subscription:403 - (done)
+01/04/2011 10:13:11 PM - src/ipc.c:add_subscription:390 - should add subscription to extra 0x24ffa60, sub output
+01/04/2011 10:13:11 PM - src/ipc.c:add_subscription:400 - client is now subscribed to:
+01/04/2011 10:13:11 PM - src/ipc.c:add_subscription:402 - event workspace
+01/04/2011 10:13:11 PM - src/ipc.c:add_subscription:402 - event output
+01/04/2011 10:13:11 PM - src/ipc.c:add_subscription:403 - (done)
+01/04/2011 10:13:11 PM - src/ipc.c:ipc_receive_message:532 - IPC: n = 14
+01/04/2011 10:13:11 PM - src/ipc.c:ipc_receive_message:532 - IPC: n = 14
+01/04/2011 10:13:11 PM - workspace visible? fs = 0x24d8cd0, ws = 0x24d8cd0
+01/04/2011 10:13:11 PM - src/handlers.c:handle_map_request:299 - window = 0x00400006, serial is 210.
+---> looking at window 0x00400006
+01/04/2011 10:13:11 PM - override_redirect is 0
+01/04/2011 10:13:11 PM - reparenting!
+01/04/2011 10:13:11 PM - WM_CLASS changed to urxvt (instance), URxvt (class)
+01/04/2011 10:13:11 PM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+01/04/2011 10:13:11 PM - _NET_WM_NAME changed to "urxvt"
+01/04/2011 10:13:11 PM - src/window.c:window_update_leader:106 - prop == NULL
+01/04/2011 10:13:11 PM - src/window.c:window_update_transient_for:125 - prop == NULL
+01/04/2011 10:13:11 PM - searching con for window 0x2500a80
+01/04/2011 10:13:11 PM - class == URxvt
+01/04/2011 10:13:11 PM - opening window 3
+01/04/2011 10:13:11 PM - color #ff00ff
+01/04/2011 10:13:11 PM - adding new state for window id 0x0060000a
+01/04/2011 10:13:11 PM - src/con.c:con_focus:160 - con_focus = 0x2508cb0
+01/04/2011 10:13:11 PM - src/con.c:con_focus:160 - con_focus = 0x24d8cd0
+01/04/2011 10:13:11 PM - src/con.c:con_focus:160 - con_focus = 0x24d8ac0
+01/04/2011 10:13:11 PM - src/con.c:con_focus:174 - con_focus done = 0x24d8ac0
+01/04/2011 10:13:11 PM - src/con.c:con_focus:174 - con_focus done = 0x24d8cd0
+01/04/2011 10:13:11 PM - src/con.c:con_focus:174 - con_focus done = 0x2508cb0
+01/04/2011 10:13:11 PM - src/manage.c:manage_window:184 - new container = 0x2508cb0
+01/04/2011 10:13:11 PM - resetting state 0x2500ac0 to initial
+-- BEGIN RENDERING --
+output 0x24d8ac0 / xinerama-0
+currently rendering node 0x24d8ac0 / xinerama-0 / layout 0
+children: 1, orientation = 0
+01/04/2011 10:13:11 PM - got fs node: 0x24d8cd0
+01/04/2011 10:13:11 PM - raising in new stack: 0x24d8cd0 / 1
+currently rendering node 0x24d8cd0 / 1 / layout 0
+children: 1, orientation = 1
+child at (0, 0) with (1440 x 900)
+x now 1440, y now 0
+01/04/2011 10:13:11 PM - raising in new stack: 0x2508cb0 / #ff00ff
+currently rendering node 0x2508cb0 / #ff00ff / layout 0
+children: 0, orientation = 0
+01/04/2011 10:13:11 PM - src/render.c:render_con:94 - child will be at 0x0 with size 1440x900
+-- level up
+-- level up
+01/04/2011 10:13:11 PM - 
+
+ PUSHING CHANGES
+
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d88d0 / root
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d8cd0 / 1
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:387 - pushing name [i3 con] container around 0x2500a80 for con 0x2508cb0
+01/04/2011 10:13:11 PM - setting rect (0, 0, 1440, 900)
+01/04/2011 10:13:11 PM - setting window rect (0, 0, 1440, 900)
+01/04/2011 10:13:11 PM - mapping child window (serial 236)
+01/04/2011 10:13:11 PM - mapping container (serial 237)
+01/04/2011 10:13:11 PM - Sending fake configure notify
+01/04/2011 10:13:11 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2508cb0
+01/04/2011 10:13:11 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:11 PM - -- PUSHING WINDOW STACK --
+01/04/2011 10:13:11 PM - stack: 0x00600000
+01/04/2011 10:13:11 PM - stack: 0x00600003
+01/04/2011 10:13:11 PM - stack: 0x00600006
+01/04/2011 10:13:11 PM - stack: 0x0060000a
+01/04/2011 10:13:11 PM - src/x.c:x_push_changes:592 - focused_id = 0x00000000, to_focus = 0x00400006
+01/04/2011 10:13:11 PM - Updating focus (focused: 0x2508cb0 / #ff00ff)
+01/04/2011 10:13:11 PM - 
+
+ ENDING CHANGES
+
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d88d0 / root
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d8cd0 / 1
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:11 PM - old stack: 0x0060000a
+01/04/2011 10:13:11 PM - old stack: 0x00600006
+01/04/2011 10:13:11 PM - old stack: 0x00600003
+01/04/2011 10:13:11 PM - old stack: 0x00600000
+-- END RENDERING --
+01/04/2011 10:13:11 PM - 
+
+ PUSHING CHANGES
+
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d88d0 / root
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d8cd0 / 1
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:11 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2508cb0
+01/04/2011 10:13:11 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:11 PM - -- PUSHING WINDOW STACK --
+01/04/2011 10:13:11 PM - stack: 0x00600000
+01/04/2011 10:13:11 PM - stack: 0x00600003
+01/04/2011 10:13:11 PM - stack: 0x00600006
+01/04/2011 10:13:11 PM - stack: 0x0060000a
+01/04/2011 10:13:11 PM - src/x.c:x_push_changes:592 - focused_id = 0x00400006, to_focus = 0x00400006
+01/04/2011 10:13:11 PM - 
+
+ ENDING CHANGES
+
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d88d0 / root
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d8cd0 / 1
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:11 PM - old stack: 0x0060000a
+01/04/2011 10:13:11 PM - old stack: 0x00600006
+01/04/2011 10:13:11 PM - old stack: 0x00600003
+01/04/2011 10:13:11 PM - old stack: 0x00600000
+01/04/2011 10:13:11 PM - src/handlers.c:handle_enter_notify:159 - enter_notify for 0060000a, mode = 0, detail 1, serial 237
+01/04/2011 10:13:11 PM - src/handlers.c:handle_enter_notify:160 - coordinates 720, 448
+01/04/2011 10:13:11 PM - src/handlers.c:handle_enter_notify:159 - enter_notify for 00400006, mode = 0, detail 0, serial 237
+01/04/2011 10:13:11 PM - src/handlers.c:handle_enter_notify:160 - coordinates 720, 448
+01/04/2011 10:13:11 PM - src/handlers.c:handle_normal_hints:717 - Minimum size: 9 (width) x 18 (height)
+01/04/2011 10:13:11 PM - src/handlers.c:handle_normal_hints:734 - resize increments changed
+-- BEGIN RENDERING --
+output 0x24d8ac0 / xinerama-0
+currently rendering node 0x24d8ac0 / xinerama-0 / layout 0
+children: 1, orientation = 0
+01/04/2011 10:13:11 PM - got fs node: 0x24d8cd0
+01/04/2011 10:13:11 PM - raising in new stack: 0x24d8cd0 / 1
+currently rendering node 0x24d8cd0 / 1 / layout 0
+children: 1, orientation = 1
+child at (0, 0) with (1440 x 900)
+x now 1440, y now 0
+01/04/2011 10:13:11 PM - raising in new stack: 0x2508cb0 / #ff00ff
+currently rendering node 0x2508cb0 / #ff00ff / layout 0
+children: 0, orientation = 0
+01/04/2011 10:13:11 PM - src/render.c:render_con:84 - Lost 0 pixel due to client's height_increment (18 px, base_height = 0)
+01/04/2011 10:13:11 PM - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (9 px, base_width = 0)
+01/04/2011 10:13:11 PM - src/render.c:render_con:94 - child will be at 0x0 with size 1440x900
+-- level up
+-- level up
+01/04/2011 10:13:11 PM - 
+
+ PUSHING CHANGES
+
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d88d0 / root
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d8cd0 / 1
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:11 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2508cb0
+01/04/2011 10:13:11 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:11 PM - -- PUSHING WINDOW STACK --
+01/04/2011 10:13:11 PM - stack: 0x00600000
+01/04/2011 10:13:11 PM - stack: 0x00600003
+01/04/2011 10:13:11 PM - stack: 0x00600006
+01/04/2011 10:13:11 PM - stack: 0x0060000a
+01/04/2011 10:13:11 PM - src/x.c:x_push_changes:592 - focused_id = 0x00400006, to_focus = 0x00400006
+01/04/2011 10:13:11 PM - 
+
+ ENDING CHANGES
+
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d88d0 / root
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d8cd0 / 1
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:11 PM - old stack: 0x0060000a
+01/04/2011 10:13:11 PM - old stack: 0x00600006
+01/04/2011 10:13:11 PM - old stack: 0x00600003
+01/04/2011 10:13:11 PM - old stack: 0x00600000
+-- END RENDERING --
+01/04/2011 10:13:11 PM - src/handlers.c:handle_normal_hints:717 - Minimum size: 9 (width) x 18 (height)
+-- BEGIN RENDERING --
+output 0x24d8ac0 / xinerama-0
+currently rendering node 0x24d8ac0 / xinerama-0 / layout 0
+children: 1, orientation = 0
+01/04/2011 10:13:11 PM - got fs node: 0x24d8cd0
+01/04/2011 10:13:11 PM - raising in new stack: 0x24d8cd0 / 1
+currently rendering node 0x24d8cd0 / 1 / layout 0
+children: 1, orientation = 1
+child at (0, 0) with (1440 x 900)
+x now 1440, y now 0
+01/04/2011 10:13:11 PM - raising in new stack: 0x2508cb0 / #ff00ff
+currently rendering node 0x2508cb0 / #ff00ff / layout 0
+children: 0, orientation = 0
+01/04/2011 10:13:11 PM - src/render.c:render_con:84 - Lost 0 pixel due to client's height_increment (18 px, base_height = 0)
+01/04/2011 10:13:11 PM - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (9 px, base_width = 0)
+01/04/2011 10:13:11 PM - src/render.c:render_con:94 - child will be at 0x0 with size 1440x900
+-- level up
+-- level up
+01/04/2011 10:13:11 PM - 
+
+ PUSHING CHANGES
+
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d88d0 / root
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d8cd0 / 1
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:11 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2508cb0
+01/04/2011 10:13:11 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:11 PM - -- PUSHING WINDOW STACK --
+01/04/2011 10:13:11 PM - stack: 0x00600000
+01/04/2011 10:13:11 PM - stack: 0x00600003
+01/04/2011 10:13:11 PM - stack: 0x00600006
+01/04/2011 10:13:11 PM - stack: 0x0060000a
+01/04/2011 10:13:11 PM - src/x.c:x_push_changes:592 - focused_id = 0x00400006, to_focus = 0x00400006
+01/04/2011 10:13:11 PM - 
+
+ ENDING CHANGES
+
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d88d0 / root
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d8cd0 / 1
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:11 PM - old stack: 0x0060000a
+01/04/2011 10:13:11 PM - old stack: 0x00600006
+01/04/2011 10:13:11 PM - old stack: 0x00600003
+01/04/2011 10:13:11 PM - old stack: 0x00600000
+-- END RENDERING --
+01/04/2011 10:13:11 PM - 
+
+ PUSHING CHANGES
+
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d88d0 / root
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d8cd0 / 1
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:11 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2508cb0
+01/04/2011 10:13:11 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:11 PM - -- PUSHING WINDOW STACK --
+01/04/2011 10:13:11 PM - stack: 0x00600000
+01/04/2011 10:13:11 PM - stack: 0x00600003
+01/04/2011 10:13:11 PM - stack: 0x00600006
+01/04/2011 10:13:11 PM - stack: 0x0060000a
+01/04/2011 10:13:11 PM - src/x.c:x_push_changes:592 - focused_id = 0x00400006, to_focus = 0x00400006
+01/04/2011 10:13:11 PM - 
+
+ ENDING CHANGES
+
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d88d0 / root
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d8cd0 / 1
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:11 PM - old stack: 0x0060000a
+01/04/2011 10:13:11 PM - old stack: 0x00600006
+01/04/2011 10:13:11 PM - old stack: 0x00600003
+01/04/2011 10:13:11 PM - old stack: 0x00600000
+01/04/2011 10:13:11 PM - _NET_WM_NAME changed to "tmux.2.zsh"
+01/04/2011 10:13:11 PM - 
+
+ PUSHING CHANGES
+
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d88d0 / root
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x24d8cd0 / 1
+01/04/2011 10:13:11 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:11 PM - Pushing changes for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:11 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2508cb0
+01/04/2011 10:13:11 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:11 PM - -- PUSHING WINDOW STACK --
+01/04/2011 10:13:11 PM - stack: 0x00600000
+01/04/2011 10:13:11 PM - stack: 0x00600003
+01/04/2011 10:13:11 PM - stack: 0x00600006
+01/04/2011 10:13:11 PM - stack: 0x0060000a
+01/04/2011 10:13:11 PM - src/x.c:x_push_changes:592 - focused_id = 0x00400006, to_focus = 0x00400006
+01/04/2011 10:13:11 PM - 
+
+ ENDING CHANGES
+
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d88d0 / root
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x24d8cd0 / 1
+01/04/2011 10:13:11 PM - Pushing changes (with unmaps) for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:11 PM - old stack: 0x0060000a
+01/04/2011 10:13:11 PM - old stack: 0x00600006
+01/04/2011 10:13:11 PM - old stack: 0x00600003
+01/04/2011 10:13:11 PM - old stack: 0x00600000
+01/04/2011 10:13:12 PM - src/handlers.c:handle_key_press:68 - Keypress 11, state raw = 9
+01/04/2011 10:13:12 PM - src/handlers.c:handle_key_press:72 - (removed numlock, state = 9)
+01/04/2011 10:13:12 PM - src/handlers.c:handle_key_press:76 - (removed upper 8 bits, state = 9)
+01/04/2011 10:13:12 PM - src/handlers.c:handle_key_press:81 - (checked mode_switch, state 9)
+should move window to workspace 2
+01/04/2011 10:13:12 PM - getting ws 2
+01/04/2011 10:13:12 PM - need to create this one
+01/04/2011 10:13:12 PM - got output 0x24d8ac0
+01/04/2011 10:13:12 PM - opening window 4
+01/04/2011 10:13:12 PM - color #00ffff
+01/04/2011 10:13:12 PM - adding new state for window id 0x0060000d
+01/04/2011 10:13:12 PM - num = 2
+01/04/2011 10:13:12 PM - src/con.c:con_attach:85 - it's a workspace. num = 2
+01/04/2011 10:13:12 PM - checking if con 0x2508cb0 is floating
+01/04/2011 10:13:12 PM - src/con.c:con_move_to_workspace:465 - Re-attaching container to 0x25190c0 / 2
+01/04/2011 10:13:12 PM - src/con.c:con_focus:160 - con_focus = 0x24d8cd0
+01/04/2011 10:13:12 PM - src/con.c:con_focus:160 - con_focus = 0x24d8ac0
+01/04/2011 10:13:12 PM - src/con.c:con_focus:174 - con_focus done = 0x24d8ac0
+01/04/2011 10:13:12 PM - src/con.c:con_focus:174 - con_focus done = 0x24d8cd0
+single command completely parsed, dropping state...
+done, json output = (null)
+-- BEGIN RENDERING --
+output 0x24d8ac0 / xinerama-0
+currently rendering node 0x24d8ac0 / xinerama-0 / layout 0
+children: 2, orientation = 0
+01/04/2011 10:13:12 PM - got fs node: 0x24d8cd0
+01/04/2011 10:13:12 PM - raising in new stack: 0x24d8cd0 / 1
+currently rendering node 0x24d8cd0 / 1 / layout 0
+children: 0, orientation = 1
+-- level up
+01/04/2011 10:13:12 PM - 
+
+ PUSHING CHANGES
+
+01/04/2011 10:13:12 PM - Pushing changes for node 0x24d88d0 / root
+01/04/2011 10:13:12 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:12 PM - Pushing changes for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:12 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:12 PM - Pushing changes for node 0x24d8cd0 / 1
+01/04/2011 10:13:12 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:12 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x24d8cd0
+01/04/2011 10:13:12 PM - src/con.c:con_border_style:609 - this one is fullscreen! overriding BS_NONE
+01/04/2011 10:13:12 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:12 PM - Pushing changes for node 0x25190c0 / 2
+01/04/2011 10:13:12 PM - src/x.c:x_push_node:387 - pushing name [i3 con] workspace 2 for con 0x25190c0
+01/04/2011 10:13:12 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:12 PM - Pushing changes for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:12 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2508cb0
+01/04/2011 10:13:12 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:12 PM - -- PUSHING WINDOW STACK --
+01/04/2011 10:13:12 PM - stack: 0x00600000
+01/04/2011 10:13:12 PM - stack: 0x00600003
+01/04/2011 10:13:12 PM - Stacking 0x0060000a above 0x00600003
+01/04/2011 10:13:12 PM - stack: 0x0060000a
+01/04/2011 10:13:12 PM - Stacking 0x0060000d above 0x0060000a
+01/04/2011 10:13:12 PM - stack: 0x0060000d
+01/04/2011 10:13:12 PM - Stacking 0x00600006 above 0x0060000d
+01/04/2011 10:13:12 PM - stack: 0x00600006
+01/04/2011 10:13:12 PM - src/x.c:x_push_changes:592 - focused_id = 0x00400006, to_focus = 0x00600006
+01/04/2011 10:13:12 PM - src/x.c:x_push_changes:595 - Not updating focus (to 0x24d8cd0 / 1), focused window is not mapped.
+01/04/2011 10:13:12 PM - 
+
+ ENDING CHANGES
+
+01/04/2011 10:13:12 PM - Pushing changes (with unmaps) for node 0x24d88d0 / root
+01/04/2011 10:13:12 PM - Pushing changes (with unmaps) for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:12 PM - Pushing changes (with unmaps) for node 0x24d8cd0 / 1
+01/04/2011 10:13:12 PM - Pushing changes (with unmaps) for node 0x25190c0 / 2
+01/04/2011 10:13:12 PM - Pushing changes (with unmaps) for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:12 PM - unmapping container (serial 253)
+01/04/2011 10:13:12 PM - src/x.c:x_push_node_unmaps:541 - ignore_unmap for con 0x2508cb0 (frame 0x0060000a) now 1
+01/04/2011 10:13:12 PM - old stack: 0x00600006
+01/04/2011 10:13:12 PM - old stack: 0x0060000d
+01/04/2011 10:13:12 PM - old stack: 0x0060000a
+01/04/2011 10:13:12 PM - old stack: 0x00600003
+01/04/2011 10:13:12 PM - old stack: 0x00600000
+-- END RENDERING --
+01/04/2011 10:13:12 PM - src/ipc.c:ipc_receive_message:532 - IPC: n = 14
+01/04/2011 10:13:12 PM - workspace visible? fs = 0x24d8cd0, ws = 0x24d8cd0
+01/04/2011 10:13:12 PM - workspace visible? fs = 0x24d8cd0, ws = 0x25190c0
+01/04/2011 10:13:12 PM - src/handlers.c:handle_unmap_notify_event:462 - UnmapNotify for 0x0060000a (received from 0x0060000a), serial 253
+01/04/2011 10:13:12 PM - src/handlers.c:handle_unmap_notify_event:474 - ignore_unmap = 0 for frame of container 0x2508cb0
+01/04/2011 10:13:12 PM - src/handlers.c:handle_enter_notify:159 - enter_notify for 0000015d, mode = 0, detail 2, serial 253
+01/04/2011 10:13:12 PM - src/handlers.c:handle_enter_notify:160 - coordinates 720, 448
+01/04/2011 10:13:13 PM - src/handlers.c:handle_key_press:68 - Keypress 11, state raw = 8
+01/04/2011 10:13:13 PM - src/handlers.c:handle_key_press:72 - (removed numlock, state = 8)
+01/04/2011 10:13:13 PM - src/handlers.c:handle_key_press:76 - (removed upper 8 bits, state = 8)
+01/04/2011 10:13:13 PM - src/handlers.c:handle_key_press:81 - (checked mode_switch, state 8)
+should switch to workspace 2
+01/04/2011 10:13:13 PM - getting ws 2
+01/04/2011 10:13:13 PM - switching to 0x25190c0
+01/04/2011 10:13:13 PM - workspace visible? fs = (nil), ws = 0x24d8cd0
+01/04/2011 10:13:13 PM - Closing old workspace (0x24d8cd0 / 1), it is empty
+01/04/2011 10:13:13 PM - src/tree.c:tree_close:173 - next = 0x2508cb0, focused = 0x24d8cd0
+01/04/2011 10:13:13 PM - src/tree.c:tree_close:175 - closing 0x24d8cd0, kill_window = 0
+01/04/2011 10:13:13 PM - checking if con 0x24d8cd0 is floating
+01/04/2011 10:13:13 PM - src/tree.c:tree_close:233 - focusing 0x2508cb0 / #ff00ff
+01/04/2011 10:13:13 PM - src/con.c:con_focus:160 - con_focus = 0x2508cb0
+01/04/2011 10:13:13 PM - src/con.c:con_focus:160 - con_focus = 0x25190c0
+01/04/2011 10:13:13 PM - src/con.c:con_focus:160 - con_focus = 0x24d8ac0
+01/04/2011 10:13:13 PM - src/con.c:con_focus:174 - con_focus done = 0x24d8ac0
+01/04/2011 10:13:13 PM - src/con.c:con_focus:174 - con_focus done = 0x25190c0
+01/04/2011 10:13:13 PM - src/con.c:con_focus:174 - con_focus done = 0x2508cb0
+01/04/2011 10:13:13 PM - src/con.c:con_focus:160 - con_focus = 0x2508cb0
+01/04/2011 10:13:13 PM - src/con.c:con_focus:160 - con_focus = 0x25190c0
+01/04/2011 10:13:13 PM - src/con.c:con_focus:160 - con_focus = 0x24d8ac0
+01/04/2011 10:13:13 PM - src/con.c:con_focus:174 - con_focus done = 0x24d8ac0
+01/04/2011 10:13:13 PM - src/con.c:con_focus:174 - con_focus done = 0x25190c0
+01/04/2011 10:13:13 PM - src/con.c:con_focus:174 - con_focus done = 0x2508cb0
+01/04/2011 10:13:13 PM - focused now = 0x2508cb0 / #ff00ff
+single command completely parsed, dropping state...
+done, json output = (null)
+-- BEGIN RENDERING --
+output 0x24d8ac0 / xinerama-0
+currently rendering node 0x24d8ac0 / xinerama-0 / layout 0
+children: 1, orientation = 0
+01/04/2011 10:13:13 PM - got fs node: 0x25190c0
+01/04/2011 10:13:13 PM - raising in new stack: 0x25190c0 / 2
+currently rendering node 0x25190c0 / 2 / layout 0
+children: 1, orientation = 1
+child at (0, 0) with (1440 x 900)
+x now 1440, y now 0
+01/04/2011 10:13:13 PM - raising in new stack: 0x2508cb0 / #ff00ff
+currently rendering node 0x2508cb0 / #ff00ff / layout 0
+children: 0, orientation = 0
+01/04/2011 10:13:13 PM - src/render.c:render_con:84 - Lost 0 pixel due to client's height_increment (18 px, base_height = 0)
+01/04/2011 10:13:13 PM - src/render.c:render_con:91 - Lost 0 pixel due to client's width_increment (9 px, base_width = 0)
+01/04/2011 10:13:13 PM - src/render.c:render_con:94 - child will be at 0x0 with size 1440x900
+-- level up
+-- level up
+01/04/2011 10:13:13 PM - 
+
+ PUSHING CHANGES
+
+01/04/2011 10:13:13 PM - Pushing changes for node 0x24d88d0 / root
+01/04/2011 10:13:13 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:13 PM - Pushing changes for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:13 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:13 PM - Pushing changes for node 0x25190c0 / 2
+01/04/2011 10:13:13 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:13 PM - setting rect (0, 0, 1440, 0)
+01/04/2011 10:13:13 PM - Sending fake configure notify
+01/04/2011 10:13:13 PM - Pushing changes for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:13 PM - mapping container (serial 257)
+01/04/2011 10:13:13 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2508cb0
+01/04/2011 10:13:13 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:13 PM - -- PUSHING WINDOW STACK --
+01/04/2011 10:13:13 PM - stack: 0x00600000
+01/04/2011 10:13:13 PM - stack: 0x00600003
+01/04/2011 10:13:13 PM - Stacking 0x0060000d above 0x00600003
+01/04/2011 10:13:13 PM - stack: 0x0060000d
+01/04/2011 10:13:13 PM - Stacking 0x0060000a above 0x0060000d
+01/04/2011 10:13:13 PM - stack: 0x0060000a
+01/04/2011 10:13:13 PM - src/x.c:x_push_changes:592 - focused_id = 0x00000000, to_focus = 0x00400006
+01/04/2011 10:13:13 PM - Updating focus (focused: 0x2508cb0 / #ff00ff)
+01/04/2011 10:13:13 PM - 
+
+ ENDING CHANGES
+
+01/04/2011 10:13:13 PM - Pushing changes (with unmaps) for node 0x24d88d0 / root
+01/04/2011 10:13:13 PM - Pushing changes (with unmaps) for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:13 PM - Pushing changes (with unmaps) for node 0x25190c0 / 2
+01/04/2011 10:13:13 PM - Pushing changes (with unmaps) for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:13 PM - old stack: 0x0060000a
+01/04/2011 10:13:13 PM - old stack: 0x0060000d
+01/04/2011 10:13:13 PM - old stack: 0x00600003
+01/04/2011 10:13:13 PM - old stack: 0x00600000
+-- END RENDERING --
+01/04/2011 10:13:13 PM - src/ipc.c:ipc_receive_message:532 - IPC: n = 28
+01/04/2011 10:13:13 PM - workspace visible? fs = 0x25190c0, ws = 0x25190c0
+01/04/2011 10:13:13 PM - src/ipc.c:ipc_receive_message:532 - IPC: n = 14
+01/04/2011 10:13:13 PM - workspace visible? fs = 0x25190c0, ws = 0x25190c0
+01/04/2011 10:13:13 PM - src/handlers.c:handle_destroy_notify_event:539 - destroy notify for 0x00600006, 0x00600006
+01/04/2011 10:13:13 PM - src/handlers.c:handle_unmap_notify_event:462 - UnmapNotify for 0x00600006 (received from 0x00600006), serial 254
+01/04/2011 10:13:13 PM - Not a managed window, ignoring UnmapNotify event
+01/04/2011 10:13:13 PM - src/handlers.c:handle_enter_notify:159 - enter_notify for 0060000a, mode = 0, detail 1, serial 257
+01/04/2011 10:13:13 PM - src/handlers.c:handle_enter_notify:160 - coordinates 720, 448
+01/04/2011 10:13:13 PM - src/handlers.c:handle_enter_notify:159 - enter_notify for 00400006, mode = 0, detail 1, serial 257
+01/04/2011 10:13:13 PM - src/handlers.c:handle_enter_notify:160 - coordinates 720, 448
+01/04/2011 10:13:14 PM - 
+
+ PUSHING CHANGES
+
+01/04/2011 10:13:14 PM - Pushing changes for node 0x24d88d0 / root
+01/04/2011 10:13:14 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:14 PM - Pushing changes for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:14 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:14 PM - Pushing changes for node 0x25190c0 / 2
+01/04/2011 10:13:14 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:14 PM - Pushing changes for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:14 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2508cb0
+01/04/2011 10:13:14 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:14 PM - -- PUSHING WINDOW STACK --
+01/04/2011 10:13:14 PM - stack: 0x00600000
+01/04/2011 10:13:14 PM - stack: 0x00600003
+01/04/2011 10:13:14 PM - stack: 0x0060000d
+01/04/2011 10:13:14 PM - stack: 0x0060000a
+01/04/2011 10:13:14 PM - src/x.c:x_push_changes:592 - focused_id = 0x00400006, to_focus = 0x00400006
+01/04/2011 10:13:14 PM - 
+
+ ENDING CHANGES
+
+01/04/2011 10:13:14 PM - Pushing changes (with unmaps) for node 0x24d88d0 / root
+01/04/2011 10:13:14 PM - Pushing changes (with unmaps) for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:14 PM - Pushing changes (with unmaps) for node 0x25190c0 / 2
+01/04/2011 10:13:14 PM - Pushing changes (with unmaps) for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:14 PM - old stack: 0x0060000a
+01/04/2011 10:13:14 PM - old stack: 0x0060000d
+01/04/2011 10:13:14 PM - old stack: 0x00600003
+01/04/2011 10:13:14 PM - old stack: 0x00600000
+01/04/2011 10:13:14 PM - _NET_WM_NAME changed to "tmux.4.irssi"
+01/04/2011 10:13:14 PM - 
+
+ PUSHING CHANGES
+
+01/04/2011 10:13:14 PM - Pushing changes for node 0x24d88d0 / root
+01/04/2011 10:13:14 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:14 PM - Pushing changes for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:14 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:14 PM - Pushing changes for node 0x25190c0 / 2
+01/04/2011 10:13:14 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:14 PM - Pushing changes for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:14 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2508cb0
+01/04/2011 10:13:14 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:14 PM - -- PUSHING WINDOW STACK --
+01/04/2011 10:13:14 PM - stack: 0x00600000
+01/04/2011 10:13:14 PM - stack: 0x00600003
+01/04/2011 10:13:14 PM - stack: 0x0060000d
+01/04/2011 10:13:14 PM - stack: 0x0060000a
+01/04/2011 10:13:14 PM - src/x.c:x_push_changes:592 - focused_id = 0x00400006, to_focus = 0x00400006
+01/04/2011 10:13:14 PM - 
+
+ ENDING CHANGES
+
+01/04/2011 10:13:14 PM - Pushing changes (with unmaps) for node 0x24d88d0 / root
+01/04/2011 10:13:14 PM - Pushing changes (with unmaps) for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:14 PM - Pushing changes (with unmaps) for node 0x25190c0 / 2
+01/04/2011 10:13:14 PM - Pushing changes (with unmaps) for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:14 PM - old stack: 0x0060000a
+01/04/2011 10:13:14 PM - old stack: 0x0060000d
+01/04/2011 10:13:14 PM - old stack: 0x00600003
+01/04/2011 10:13:14 PM - old stack: 0x00600000
+01/04/2011 10:13:24 PM - src/handlers.c:handle_key_press:68 - Keypress 12, state raw = 8
+01/04/2011 10:13:24 PM - src/handlers.c:handle_key_press:72 - (removed numlock, state = 8)
+01/04/2011 10:13:24 PM - src/handlers.c:handle_key_press:76 - (removed upper 8 bits, state = 8)
+01/04/2011 10:13:24 PM - src/handlers.c:handle_key_press:81 - (checked mode_switch, state 8)
+should switch to workspace 3
+01/04/2011 10:13:24 PM - getting ws 3
+01/04/2011 10:13:24 PM - need to create this one
+01/04/2011 10:13:24 PM - got output 0x24d8ac0
+01/04/2011 10:13:24 PM - opening window 5
+01/04/2011 10:13:24 PM - color #ffff00
+01/04/2011 10:13:24 PM - adding new state for window id 0x00600010
+01/04/2011 10:13:24 PM - num = 3
+01/04/2011 10:13:24 PM - src/con.c:con_attach:85 - it's a workspace. num = 3
+01/04/2011 10:13:24 PM - switching to 0x25192d0
+01/04/2011 10:13:24 PM - src/con.c:con_focus:160 - con_focus = 0x25192d0
+01/04/2011 10:13:24 PM - src/con.c:con_focus:160 - con_focus = 0x24d8ac0
+01/04/2011 10:13:24 PM - src/con.c:con_focus:174 - con_focus done = 0x24d8ac0
+01/04/2011 10:13:24 PM - src/con.c:con_focus:174 - con_focus done = 0x25192d0
+01/04/2011 10:13:24 PM - focused now = 0x25192d0 / 3
+single command completely parsed, dropping state...
+done, json output = (null)
+-- BEGIN RENDERING --
+output 0x24d8ac0 / xinerama-0
+currently rendering node 0x24d8ac0 / xinerama-0 / layout 0
+children: 2, orientation = 0
+01/04/2011 10:13:24 PM - got fs node: 0x25192d0
+01/04/2011 10:13:24 PM - raising in new stack: 0x25192d0 / 3
+currently rendering node 0x25192d0 / 3 / layout 0
+children: 0, orientation = 1
+-- level up
+01/04/2011 10:13:24 PM - 
+
+ PUSHING CHANGES
+
+01/04/2011 10:13:24 PM - Pushing changes for node 0x24d88d0 / root
+01/04/2011 10:13:24 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:24 PM - Pushing changes for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:24 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:24 PM - Pushing changes for node 0x25190c0 / 2
+01/04/2011 10:13:24 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:24 PM - Pushing changes for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:24 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2508cb0
+01/04/2011 10:13:24 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:24 PM - Pushing changes for node 0x25192d0 / 3
+01/04/2011 10:13:24 PM - src/x.c:x_push_node:387 - pushing name [i3 con] workspace 3 for con 0x25192d0
+01/04/2011 10:13:24 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:24 PM - setting rect (0, 0, 1440, 0)
+01/04/2011 10:13:24 PM - Sending fake configure notify
+01/04/2011 10:13:24 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x25192d0
+01/04/2011 10:13:24 PM - src/con.c:con_border_style:609 - this one is fullscreen! overriding BS_NONE
+01/04/2011 10:13:24 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:24 PM - -- PUSHING WINDOW STACK --
+01/04/2011 10:13:24 PM - stack: 0x00600000
+01/04/2011 10:13:24 PM - stack: 0x00600003
+01/04/2011 10:13:24 PM - stack: 0x0060000d
+01/04/2011 10:13:24 PM - stack: 0x0060000a
+01/04/2011 10:13:24 PM - stack: 0x00600010
+01/04/2011 10:13:24 PM - src/x.c:x_push_changes:592 - focused_id = 0x00400006, to_focus = 0x00600010
+01/04/2011 10:13:24 PM - src/x.c:x_push_changes:595 - Not updating focus (to 0x25192d0 / 3), focused window is not mapped.
+01/04/2011 10:13:24 PM - 
+
+ ENDING CHANGES
+
+01/04/2011 10:13:24 PM - Pushing changes (with unmaps) for node 0x24d88d0 / root
+01/04/2011 10:13:24 PM - Pushing changes (with unmaps) for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:24 PM - Pushing changes (with unmaps) for node 0x25190c0 / 2
+01/04/2011 10:13:24 PM - Pushing changes (with unmaps) for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:24 PM - unmapping container (serial 270)
+01/04/2011 10:13:24 PM - src/x.c:x_push_node_unmaps:541 - ignore_unmap for con 0x2508cb0 (frame 0x0060000a) now 1
+01/04/2011 10:13:24 PM - Pushing changes (with unmaps) for node 0x25192d0 / 3
+01/04/2011 10:13:24 PM - old stack: 0x00600010
+01/04/2011 10:13:24 PM - old stack: 0x0060000a
+01/04/2011 10:13:24 PM - old stack: 0x0060000d
+01/04/2011 10:13:24 PM - old stack: 0x00600003
+01/04/2011 10:13:24 PM - old stack: 0x00600000
+-- END RENDERING --
+01/04/2011 10:13:24 PM - src/ipc.c:ipc_receive_message:532 - IPC: n = 28
+01/04/2011 10:13:24 PM - workspace visible? fs = 0x25192d0, ws = 0x25190c0
+01/04/2011 10:13:24 PM - workspace visible? fs = 0x25192d0, ws = 0x25192d0
+01/04/2011 10:13:24 PM - src/ipc.c:ipc_receive_message:532 - IPC: n = 14
+01/04/2011 10:13:24 PM - workspace visible? fs = 0x25192d0, ws = 0x25190c0
+01/04/2011 10:13:24 PM - workspace visible? fs = 0x25192d0, ws = 0x25192d0
+01/04/2011 10:13:24 PM - src/handlers.c:handle_unmap_notify_event:462 - UnmapNotify for 0x0060000a (received from 0x0060000a), serial 270
+01/04/2011 10:13:24 PM - src/handlers.c:handle_unmap_notify_event:474 - ignore_unmap = 0 for frame of container 0x2508cb0
+01/04/2011 10:13:24 PM - src/handlers.c:handle_enter_notify:159 - enter_notify for 0000015d, mode = 0, detail 2, serial 270
+01/04/2011 10:13:24 PM - src/handlers.c:handle_enter_notify:160 - coordinates 720, 448
+01/04/2011 10:13:24 PM - src/handlers.c:handle_key_press:68 - Keypress 33, state raw = 8
+01/04/2011 10:13:24 PM - src/handlers.c:handle_key_press:72 - (removed numlock, state = 8)
+01/04/2011 10:13:24 PM - src/handlers.c:handle_key_press:76 - (removed upper 8 bits, state = 8)
+01/04/2011 10:13:24 PM - src/handlers.c:handle_key_press:81 - (checked mode_switch, state 8)
+should execute /usr/bin/dmenu_run -nb black -nf grey -fn '-*-terminus-*-r-normal-*-12-*-*-*-*-60-*-*'
+01/04/2011 10:13:24 PM - executing: /usr/bin/dmenu_run -nb black -nf grey -fn '-*-terminus-*-r-normal-*-12-*-*-*-*-60-*-*'
+single command completely parsed, dropping state...
+done, json output = (null)
+-- BEGIN RENDERING --
+output 0x24d8ac0 / xinerama-0
+currently rendering node 0x24d8ac0 / xinerama-0 / layout 0
+children: 2, orientation = 0
+01/04/2011 10:13:24 PM - got fs node: 0x25192d0
+01/04/2011 10:13:24 PM - raising in new stack: 0x25192d0 / 3
+currently rendering node 0x25192d0 / 3 / layout 0
+children: 0, orientation = 1
+-- level up
+01/04/2011 10:13:24 PM - 
+
+ PUSHING CHANGES
+
+01/04/2011 10:13:24 PM - Pushing changes for node 0x24d88d0 / root
+01/04/2011 10:13:24 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:24 PM - Pushing changes for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:24 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:24 PM - Pushing changes for node 0x25190c0 / 2
+01/04/2011 10:13:24 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:24 PM - Pushing changes for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:24 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2508cb0
+01/04/2011 10:13:24 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:24 PM - Pushing changes for node 0x25192d0 / 3
+01/04/2011 10:13:24 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:24 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x25192d0
+01/04/2011 10:13:24 PM - src/con.c:con_border_style:609 - this one is fullscreen! overriding BS_NONE
+01/04/2011 10:13:24 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:24 PM - -- PUSHING WINDOW STACK --
+01/04/2011 10:13:24 PM - stack: 0x00600000
+01/04/2011 10:13:24 PM - stack: 0x00600003
+01/04/2011 10:13:24 PM - stack: 0x0060000d
+01/04/2011 10:13:24 PM - stack: 0x0060000a
+01/04/2011 10:13:24 PM - stack: 0x00600010
+01/04/2011 10:13:24 PM - src/x.c:x_push_changes:592 - focused_id = 0x00400006, to_focus = 0x00600010
+01/04/2011 10:13:24 PM - src/x.c:x_push_changes:595 - Not updating focus (to 0x25192d0 / 3), focused window is not mapped.
+01/04/2011 10:13:24 PM - 
+
+ ENDING CHANGES
+
+01/04/2011 10:13:24 PM - Pushing changes (with unmaps) for node 0x24d88d0 / root
+01/04/2011 10:13:24 PM - Pushing changes (with unmaps) for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:24 PM - Pushing changes (with unmaps) for node 0x25190c0 / 2
+01/04/2011 10:13:24 PM - Pushing changes (with unmaps) for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:24 PM - Pushing changes (with unmaps) for node 0x25192d0 / 3
+01/04/2011 10:13:24 PM - old stack: 0x00600010
+01/04/2011 10:13:24 PM - old stack: 0x0060000a
+01/04/2011 10:13:24 PM - old stack: 0x0060000d
+01/04/2011 10:13:24 PM - old stack: 0x00600003
+01/04/2011 10:13:24 PM - old stack: 0x00600000
+-- END RENDERING --
+01/04/2011 10:13:28 PM - src/handlers.c:handle_configure_request:317 - window 0x00e00003 wants to be at 0x0 with 900x600
+01/04/2011 10:13:28 PM - src/handlers.c:handle_configure_request:322 - Configure request for unmanaged window, can do that.
+01/04/2011 10:13:28 PM - src/handlers.c:handle_map_request:299 - window = 0x00e00003, serial is 270.
+---> looking at window 0x00e00003
+01/04/2011 10:13:28 PM - override_redirect is 0
+01/04/2011 10:13:28 PM - reparenting!
+01/04/2011 10:13:28 PM - WM_CLASS changed to geany (instance), Geany (class)
+01/04/2011 10:13:28 PM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+01/04/2011 10:13:28 PM - _NET_WM_NAME changed to "untitled - Geany"
+01/04/2011 10:13:28 PM - src/window.c:window_update_leader:114 - Client leader changed to 00e00001
+01/04/2011 10:13:28 PM - src/window.c:window_update_transient_for:125 - prop == NULL
+01/04/2011 10:13:28 PM - searching con for window 0x25197a0
+01/04/2011 10:13:28 PM - class == Geany
+01/04/2011 10:13:28 PM - opening window 6
+01/04/2011 10:13:28 PM - color #aa0000
+01/04/2011 10:13:28 PM - adding new state for window id 0x00600013
+01/04/2011 10:13:28 PM - src/con.c:con_focus:160 - con_focus = 0x2519810
+01/04/2011 10:13:28 PM - src/con.c:con_focus:160 - con_focus = 0x25192d0
+01/04/2011 10:13:28 PM - src/con.c:con_focus:160 - con_focus = 0x24d8ac0
+01/04/2011 10:13:28 PM - src/con.c:con_focus:174 - con_focus done = 0x24d8ac0
+01/04/2011 10:13:28 PM - src/con.c:con_focus:174 - con_focus done = 0x25192d0
+01/04/2011 10:13:28 PM - src/con.c:con_focus:174 - con_focus done = 0x2519810
+01/04/2011 10:13:28 PM - src/manage.c:manage_window:184 - new container = 0x2519810
+01/04/2011 10:13:28 PM - resetting state 0x2519960 to initial
+-- BEGIN RENDERING --
+output 0x24d8ac0 / xinerama-0
+currently rendering node 0x24d8ac0 / xinerama-0 / layout 0
+children: 2, orientation = 0
+01/04/2011 10:13:28 PM - got fs node: 0x25192d0
+01/04/2011 10:13:28 PM - raising in new stack: 0x25192d0 / 3
+currently rendering node 0x25192d0 / 3 / layout 0
+children: 1, orientation = 1
+child at (0, 0) with (1440 x 900)
+x now 1440, y now 0
+01/04/2011 10:13:28 PM - raising in new stack: 0x2519810 / #aa0000
+currently rendering node 0x2519810 / #aa0000 / layout 0
+children: 0, orientation = 0
+01/04/2011 10:13:28 PM - src/render.c:render_con:94 - child will be at 0x0 with size 1440x900
+-- level up
+-- level up
+01/04/2011 10:13:28 PM - 
+
+ PUSHING CHANGES
+
+01/04/2011 10:13:28 PM - Pushing changes for node 0x24d88d0 / root
+01/04/2011 10:13:28 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:28 PM - Pushing changes for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:28 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:28 PM - Pushing changes for node 0x25190c0 / 2
+01/04/2011 10:13:28 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:28 PM - Pushing changes for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:28 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2508cb0
+01/04/2011 10:13:28 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:28 PM - Pushing changes for node 0x25192d0 / 3
+01/04/2011 10:13:28 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:28 PM - Pushing changes for node 0x2519810 / #aa0000
+01/04/2011 10:13:28 PM - src/x.c:x_push_node:387 - pushing name [i3 con] container around 0x25197a0 for con 0x2519810
+01/04/2011 10:13:28 PM - setting rect (0, 0, 1440, 900)
+01/04/2011 10:13:28 PM - setting window rect (0, 0, 1440, 900)
+01/04/2011 10:13:28 PM - mapping child window (serial 297)
+01/04/2011 10:13:28 PM - mapping container (serial 298)
+01/04/2011 10:13:28 PM - Sending fake configure notify
+01/04/2011 10:13:28 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2519810
+01/04/2011 10:13:28 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:28 PM - -- PUSHING WINDOW STACK --
+01/04/2011 10:13:28 PM - stack: 0x00600000
+01/04/2011 10:13:28 PM - stack: 0x00600003
+01/04/2011 10:13:28 PM - stack: 0x0060000d
+01/04/2011 10:13:28 PM - stack: 0x0060000a
+01/04/2011 10:13:28 PM - stack: 0x00600010
+01/04/2011 10:13:28 PM - stack: 0x00600013
+01/04/2011 10:13:28 PM - src/x.c:x_push_changes:592 - focused_id = 0x00400006, to_focus = 0x00e00003
+01/04/2011 10:13:28 PM - Updating focus (focused: 0x2519810 / #aa0000)
+01/04/2011 10:13:28 PM - 
+
+ ENDING CHANGES
+
+01/04/2011 10:13:28 PM - Pushing changes (with unmaps) for node 0x24d88d0 / root
+01/04/2011 10:13:28 PM - Pushing changes (with unmaps) for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:28 PM - Pushing changes (with unmaps) for node 0x25190c0 / 2
+01/04/2011 10:13:28 PM - Pushing changes (with unmaps) for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:28 PM - Pushing changes (with unmaps) for node 0x25192d0 / 3
+01/04/2011 10:13:28 PM - Pushing changes (with unmaps) for node 0x2519810 / #aa0000
+01/04/2011 10:13:28 PM - old stack: 0x00600013
+01/04/2011 10:13:28 PM - old stack: 0x00600010
+01/04/2011 10:13:28 PM - old stack: 0x0060000a
+01/04/2011 10:13:28 PM - old stack: 0x0060000d
+01/04/2011 10:13:28 PM - old stack: 0x00600003
+01/04/2011 10:13:28 PM - old stack: 0x00600000
+-- END RENDERING --
+01/04/2011 10:13:28 PM - 
+
+ PUSHING CHANGES
+
+01/04/2011 10:13:28 PM - Pushing changes for node 0x24d88d0 / root
+01/04/2011 10:13:28 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:28 PM - Pushing changes for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:28 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:28 PM - Pushing changes for node 0x25190c0 / 2
+01/04/2011 10:13:28 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:28 PM - Pushing changes for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:28 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2508cb0
+01/04/2011 10:13:28 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:28 PM - Pushing changes for node 0x25192d0 / 3
+01/04/2011 10:13:28 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:28 PM - Pushing changes for node 0x2519810 / #aa0000
+01/04/2011 10:13:28 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2519810
+01/04/2011 10:13:28 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:28 PM - -- PUSHING WINDOW STACK --
+01/04/2011 10:13:28 PM - stack: 0x00600000
+01/04/2011 10:13:28 PM - stack: 0x00600003
+01/04/2011 10:13:28 PM - stack: 0x0060000d
+01/04/2011 10:13:28 PM - stack: 0x0060000a
+01/04/2011 10:13:28 PM - stack: 0x00600010
+01/04/2011 10:13:28 PM - stack: 0x00600013
+01/04/2011 10:13:28 PM - src/x.c:x_push_changes:592 - focused_id = 0x00e00003, to_focus = 0x00e00003
+01/04/2011 10:13:28 PM - 
+
+ ENDING CHANGES
+
+01/04/2011 10:13:28 PM - Pushing changes (with unmaps) for node 0x24d88d0 / root
+01/04/2011 10:13:28 PM - Pushing changes (with unmaps) for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:28 PM - Pushing changes (with unmaps) for node 0x25190c0 / 2
+01/04/2011 10:13:28 PM - Pushing changes (with unmaps) for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:28 PM - Pushing changes (with unmaps) for node 0x25192d0 / 3
+01/04/2011 10:13:28 PM - Pushing changes (with unmaps) for node 0x2519810 / #aa0000
+01/04/2011 10:13:28 PM - old stack: 0x00600013
+01/04/2011 10:13:28 PM - old stack: 0x00600010
+01/04/2011 10:13:28 PM - old stack: 0x0060000a
+01/04/2011 10:13:28 PM - old stack: 0x0060000d
+01/04/2011 10:13:28 PM - old stack: 0x00600003
+01/04/2011 10:13:28 PM - old stack: 0x00600000
+01/04/2011 10:13:28 PM - src/handlers.c:handle_enter_notify:159 - enter_notify for 00600013, mode = 0, detail 1, serial 298
+01/04/2011 10:13:28 PM - src/handlers.c:handle_enter_notify:160 - coordinates 720, 448
+01/04/2011 10:13:28 PM - src/handlers.c:handle_enter_notify:159 - enter_notify for 00e00003, mode = 0, detail 0, serial 298
+01/04/2011 10:13:28 PM - src/handlers.c:handle_enter_notify:160 - coordinates 720, 448
+01/04/2011 10:13:30 PM - src/handlers.c:handle_configure_request:317 - window 0x00e00113 wants to be at 587x395 with 266x110
+01/04/2011 10:13:30 PM - src/handlers.c:handle_configure_request:322 - Configure request for unmanaged window, can do that.
+01/04/2011 10:13:30 PM - src/handlers.c:handle_configure_request:317 - window 0x00e00113 wants to be at 0x0 with 266x110
+01/04/2011 10:13:30 PM - src/handlers.c:handle_configure_request:322 - Configure request for unmanaged window, can do that.
+01/04/2011 10:13:30 PM - src/handlers.c:handle_map_request:299 - window = 0x00e00113, serial is 300.
+---> looking at window 0x00e00113
+01/04/2011 10:13:30 PM - override_redirect is 0
+01/04/2011 10:13:30 PM - reparenting!
+01/04/2011 10:13:30 PM - WM_CLASS changed to geany (instance), Geany (class)
+01/04/2011 10:13:30 PM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+01/04/2011 10:13:30 PM - _NET_WM_NAME changed to "Go to Line"
+01/04/2011 10:13:30 PM - src/window.c:window_update_leader:114 - Client leader changed to 00e00001
+01/04/2011 10:13:30 PM - src/window.c:window_update_transient_for:133 - Transient for changed to 00e00003
+01/04/2011 10:13:30 PM - searching con for window 0x2519d60
+01/04/2011 10:13:30 PM - class == Geany
+01/04/2011 10:13:30 PM - opening window 7
+01/04/2011 10:13:30 PM - color #00aa00
+01/04/2011 10:13:30 PM - adding new state for window id 0x00600016
+01/04/2011 10:13:30 PM - src/con.c:con_attach:127 - Inserting con = 0x2519da0 after last focused tiling con 0x2519810
+01/04/2011 10:13:30 PM - src/con.c:con_focus:160 - con_focus = 0x2519da0
+01/04/2011 10:13:30 PM - src/con.c:con_focus:160 - con_focus = 0x25192d0
+01/04/2011 10:13:30 PM - src/con.c:con_focus:160 - con_focus = 0x24d8ac0
+01/04/2011 10:13:30 PM - src/con.c:con_focus:174 - con_focus done = 0x24d8ac0
+01/04/2011 10:13:30 PM - src/con.c:con_focus:174 - con_focus done = 0x25192d0
+01/04/2011 10:13:30 PM - src/con.c:con_focus:174 - con_focus done = 0x2519da0
+01/04/2011 10:13:30 PM - src/manage.c:manage_window:184 - new container = 0x2519da0
+01/04/2011 10:13:30 PM - resetting state 0x2519ef0 to initial
+01/04/2011 10:13:30 PM - This window is a dialog window, setting floating
+01/04/2011 10:13:30 PM - geometry = 266 x 110
+01/04/2011 10:13:30 PM - checking if con 0x2519da0 is floating
+01/04/2011 10:13:30 PM - opening window 8
+01/04/2011 10:13:30 PM - color #0000aa
+01/04/2011 10:13:30 PM - adding new state for window id 0x00600019
+01/04/2011 10:13:30 PM - src/con.c:con_focus:160 - con_focus = 0x2519da0
+01/04/2011 10:13:30 PM - src/con.c:con_focus:160 - con_focus = 0x2519f80
+01/04/2011 10:13:30 PM - src/con.c:con_focus:160 - con_focus = 0x25192d0
+01/04/2011 10:13:30 PM - src/con.c:con_focus:160 - con_focus = 0x24d8ac0
+01/04/2011 10:13:30 PM - src/con.c:con_focus:174 - con_focus done = 0x24d8ac0
+01/04/2011 10:13:30 PM - src/con.c:con_focus:174 - con_focus done = 0x25192d0
+01/04/2011 10:13:30 PM - src/con.c:con_focus:174 - con_focus done = 0x2519f80
+01/04/2011 10:13:30 PM - src/con.c:con_focus:174 - con_focus done = 0x2519da0
+-- BEGIN RENDERING --
+output 0x24d8ac0 / xinerama-0
+currently rendering node 0x24d8ac0 / xinerama-0 / layout 0
+children: 2, orientation = 0
+01/04/2011 10:13:30 PM - got fs node: 0x25192d0
+01/04/2011 10:13:30 PM - raising in new stack: 0x25192d0 / 3
+currently rendering node 0x25192d0 / 3 / layout 0
+children: 1, orientation = 1
+child at (0, 0) with (1440 x 900)
+x now 1440, y now 0
+01/04/2011 10:13:30 PM - raising in new stack: 0x2519810 / #aa0000
+currently rendering node 0x2519810 / #aa0000 / layout 0
+children: 0, orientation = 0
+01/04/2011 10:13:30 PM - src/render.c:render_con:94 - child will be at 0x0 with size 1440x900
+-- level up
+01/04/2011 10:13:30 PM - render floating:
+01/04/2011 10:13:30 PM - floating child at (587,395) with 270 x 132
+01/04/2011 10:13:30 PM - raising in new stack: 0x2519f80 / #0000aa
+currently rendering node 0x2519f80 / #0000aa / layout 0
+children: 1, orientation = 0
+child at (587, 395) with (270 x 132)
+x now 587, y now 527
+01/04/2011 10:13:30 PM - raising in new stack: 0x2519da0 / #00aa00
+currently rendering node 0x2519da0 / #00aa00 / layout 0
+children: 0, orientation = 0
+01/04/2011 10:13:30 PM - src/render.c:render_con:94 - child will be at 0x0 with size 270x132
+-- level up
+-- level up
+-- level up
+01/04/2011 10:13:30 PM - 
+
+ PUSHING CHANGES
+
+01/04/2011 10:13:30 PM - Pushing changes for node 0x24d88d0 / root
+01/04/2011 10:13:30 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:30 PM - Pushing changes for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:30 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:30 PM - Pushing changes for node 0x25190c0 / 2
+01/04/2011 10:13:30 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:30 PM - Pushing changes for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:30 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2508cb0
+01/04/2011 10:13:30 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:30 PM - Pushing changes for node 0x25192d0 / 3
+01/04/2011 10:13:30 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:30 PM - Pushing changes for node 0x2519810 / #aa0000
+01/04/2011 10:13:30 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2519810
+01/04/2011 10:13:30 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:30 PM - Pushing changes for node 0x2519f80 / #0000aa
+01/04/2011 10:13:30 PM - src/x.c:x_push_node:387 - pushing name [i3 con] floatingcon around 0x2519da0 for con 0x2519f80
+01/04/2011 10:13:30 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:30 PM - setting rect (587, 395, 270, 0)
+01/04/2011 10:13:30 PM - Sending fake configure notify
+01/04/2011 10:13:30 PM - Pushing changes for node 0x2519da0 / #00aa00
+01/04/2011 10:13:30 PM - src/x.c:x_push_node:387 - pushing name [i3 con] container around 0x2519d60 for con 0x2519da0
+01/04/2011 10:13:30 PM - setting rect (587, 395, 270, 132)
+01/04/2011 10:13:30 PM - setting window rect (0, 0, 270, 132)
+01/04/2011 10:13:30 PM - mapping child window (serial 334)
+01/04/2011 10:13:30 PM - mapping container (serial 335)
+01/04/2011 10:13:30 PM - Sending fake configure notify
+01/04/2011 10:13:30 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2519da0
+01/04/2011 10:13:30 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:30 PM - -- PUSHING WINDOW STACK --
+01/04/2011 10:13:30 PM - stack: 0x00600000
+01/04/2011 10:13:30 PM - stack: 0x00600003
+01/04/2011 10:13:30 PM - stack: 0x0060000d
+01/04/2011 10:13:30 PM - stack: 0x0060000a
+01/04/2011 10:13:30 PM - stack: 0x00600010
+01/04/2011 10:13:30 PM - stack: 0x00600013
+01/04/2011 10:13:30 PM - Stacking 0x00600019 above 0x00600013
+01/04/2011 10:13:30 PM - stack: 0x00600019
+01/04/2011 10:13:30 PM - Stacking 0x00600016 above 0x00600019
+01/04/2011 10:13:30 PM - stack: 0x00600016
+01/04/2011 10:13:30 PM - src/x.c:x_push_changes:592 - focused_id = 0x00e00003, to_focus = 0x00e00113
+01/04/2011 10:13:30 PM - Updating focus (focused: 0x2519da0 / #00aa00)
+01/04/2011 10:13:30 PM - 
+
+ ENDING CHANGES
+
+01/04/2011 10:13:30 PM - Pushing changes (with unmaps) for node 0x24d88d0 / root
+01/04/2011 10:13:30 PM - Pushing changes (with unmaps) for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:30 PM - Pushing changes (with unmaps) for node 0x25190c0 / 2
+01/04/2011 10:13:30 PM - Pushing changes (with unmaps) for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:30 PM - Pushing changes (with unmaps) for node 0x25192d0 / 3
+01/04/2011 10:13:30 PM - Pushing changes (with unmaps) for node 0x2519810 / #aa0000
+01/04/2011 10:13:30 PM - Pushing changes (with unmaps) for node 0x2519f80 / #0000aa
+01/04/2011 10:13:30 PM - Pushing changes (with unmaps) for node 0x2519da0 / #00aa00
+01/04/2011 10:13:30 PM - old stack: 0x00600016
+01/04/2011 10:13:30 PM - old stack: 0x00600019
+01/04/2011 10:13:30 PM - old stack: 0x00600013
+01/04/2011 10:13:30 PM - old stack: 0x00600010
+01/04/2011 10:13:30 PM - old stack: 0x0060000a
+01/04/2011 10:13:30 PM - old stack: 0x0060000d
+01/04/2011 10:13:30 PM - old stack: 0x00600003
+01/04/2011 10:13:30 PM - old stack: 0x00600000
+-- END RENDERING --
+01/04/2011 10:13:30 PM - 
+
+ PUSHING CHANGES
+
+01/04/2011 10:13:30 PM - Pushing changes for node 0x24d88d0 / root
+01/04/2011 10:13:30 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:30 PM - Pushing changes for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:30 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:30 PM - Pushing changes for node 0x25190c0 / 2
+01/04/2011 10:13:30 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:30 PM - Pushing changes for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:30 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2508cb0
+01/04/2011 10:13:30 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:30 PM - Pushing changes for node 0x25192d0 / 3
+01/04/2011 10:13:30 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:30 PM - Pushing changes for node 0x2519810 / #aa0000
+01/04/2011 10:13:30 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2519810
+01/04/2011 10:13:30 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:30 PM - Pushing changes for node 0x2519f80 / #0000aa
+01/04/2011 10:13:30 PM - src/x.c:x_push_node:407 - Unmapping container because it does not contain anything atm.
+01/04/2011 10:13:30 PM - Pushing changes for node 0x2519da0 / #00aa00
+01/04/2011 10:13:30 PM - src/x.c:x_draw_decoration:242 - decoration should be rendered for con 0x2519da0
+01/04/2011 10:13:30 PM - src/x.c:x_draw_decoration:289 - border style not BS_NORMAL, aborting rendering of decoration
+01/04/2011 10:13:30 PM - -- PUSHING WINDOW STACK --
+01/04/2011 10:13:30 PM - stack: 0x00600000
+01/04/2011 10:13:30 PM - stack: 0x00600003
+01/04/2011 10:13:30 PM - stack: 0x0060000d
+01/04/2011 10:13:30 PM - stack: 0x0060000a
+01/04/2011 10:13:30 PM - stack: 0x00600010
+01/04/2011 10:13:30 PM - stack: 0x00600013
+01/04/2011 10:13:30 PM - stack: 0x00600019
+01/04/2011 10:13:30 PM - stack: 0x00600016
+01/04/2011 10:13:30 PM - src/x.c:x_push_changes:592 - focused_id = 0x00e00113, to_focus = 0x00e00113
+01/04/2011 10:13:30 PM - 
+
+ ENDING CHANGES
+
+01/04/2011 10:13:30 PM - Pushing changes (with unmaps) for node 0x24d88d0 / root
+01/04/2011 10:13:30 PM - Pushing changes (with unmaps) for node 0x24d8ac0 / xinerama-0
+01/04/2011 10:13:30 PM - Pushing changes (with unmaps) for node 0x25190c0 / 2
+01/04/2011 10:13:30 PM - Pushing changes (with unmaps) for node 0x2508cb0 / #ff00ff
+01/04/2011 10:13:30 PM - Pushing changes (with unmaps) for node 0x25192d0 / 3
+01/04/2011 10:13:30 PM - Pushing changes (with unmaps) for node 0x2519810 / #aa0000
+01/04/2011 10:13:30 PM - Pushing changes (with unmaps) for node 0x2519f80 / #0000aa
+01/04/2011 10:13:30 PM - Pushing changes (with unmaps) for node 0x2519da0 / #00aa00
+01/04/2011 10:13:30 PM - old stack: 0x00600016
+01/04/2011 10:13:30 PM - old stack: 0x00600019
+01/04/2011 10:13:30 PM - old stack: 0x00600013
+01/04/2011 10:13:30 PM - old stack: 0x00600010
+01/04/2011 10:13:30 PM - old stack: 0x0060000a
+01/04/2011 10:13:30 PM - old stack: 0x0060000d
+01/04/2011 10:13:30 PM - old stack: 0x00600003
+01/04/2011 10:13:30 PM - old stack: 0x00600000
+01/04/2011 10:13:30 PM - ClientMessage for window 0x00e00113
+01/04/2011 10:13:30 PM - src/handlers.c:handle_client_message:648 - atom in clientmessage is 340, fullscreen is 293
+01/04/2011 10:13:30 PM - src/handlers.c:handle_client_message:649 - not about fullscreen atom
+01/04/2011 10:13:30 PM - src/handlers.c:handle_enter_notify:159 - enter_notify for 00600016, mode = 0, detail 4, serial 335
+01/04/2011 10:13:30 PM - src/handlers.c:handle_enter_notify:160 - coordinates 133, 53
+01/04/2011 10:13:30 PM - src/handlers.c:handle_enter_notify:159 - enter_notify for 00e00113, mode = 0, detail 3, serial 335
+01/04/2011 10:13:30 PM - src/handlers.c:handle_enter_notify:160 - coordinates 133, 53
+01/04/2011 10:13:31 PM - src/handlers.c:handle_unmap_notify_event:462 - UnmapNotify for 0x00e00113 (received from 0x00e00113), serial 339
+01/04/2011 10:13:31 PM - src/tree.c:tree_close:173 - next = 0x2519f80, focused = 0x2519da0
+01/04/2011 10:13:31 PM - src/tree.c:tree_close:175 - closing 0x2519da0, kill_window = 0
+01/04/2011 10:13:31 PM - checking if con 0x2519da0 is floating
+01/04/2011 10:13:31 PM - src/tree.c:tree_close:209 - Container was floating, killing floating container
+01/04/2011 10:13:31 PM - src/con.c:con_next_focused:502 - selecting next for CT_FLOATING_CON
+01/04/2011 10:13:31 PM - src/con.c:con_next_focused:507 - no more floating containers for next = 0x25192d0, restoring workspace focus
+01/04/2011 10:13:31 PM - src/con.c:con_next_focused:511 - skipping container itself, we want the next client
+01/04/2011 10:13:31 PM - src/tree.c:tree_close:173 - next = 0x2519810, focused = 0x2519da0
+01/04/2011 10:13:31 PM - src/tree.c:tree_close:175 - closing 0x2519f80, kill_window = 0
+01/04/2011 10:13:31 PM - checking if con 0x2519f80 is floating
+01/04/2011 10:13:31 PM - src/tree.c:tree_close:237 - not focusing, was not mapped
+01/04/2011 10:13:31 PM - src/tree.c:tree_close:211 - parent container killed
+01/04/2011 10:13:31 PM - src/tree.c:tree_close:213 - This is the focused container, i need to find another one to focus. I start looking at ws = 0x25192d0
+01/04/2011 10:13:31 PM - src/tree.c:tree_close:215 - Alright, focusing 0x2508cb0
+01/04/2011 10:13:31 PM - src/tree.c:tree_close:233 - focusing 0x2508cb0 / #ff00ff
+01/04/2011 10:13:31 PM - src/con.c:con_focus:160 - con_focus = 0x2508cb0
+01/04/2011 10:13:31 PM - src/con.c:con_focus:160 - con_focus = 0x25190c0
+01/04/2011 10:13:31 PM - src/con.c:con_focus:160 - con_focus = 0x24d8ac0
+01/04/2011 10:13:31 PM - src/con.c:con_focus:174 - con_focus done = 0x24d8ac0
+01/04/2011 10:13:31 PM - src/con.c:con_focus:174 - con_focus done = 0x25190c0
+01/04/2011 10:13:31 PM - src/con.c:con_focus:174 - con_focus done = 0x2508cb0
+01/04/2011 10:13:31 PM - src/tree.c:tree_close:244 - Closing empty parent container
+01/04/2011 10:13:31 PM - src/tree.c:tree_close:173 - next = 0x2519810, focused = 0x2508cb0
+01/04/2011 10:13:31 PM - src/tree.c:tree_close:175 - closing 0x2519f80, kill_window = 0
+01/04/2011 10:13:31 PM - ERROR: No state found
+i3: src/x.c:61: state_for_frame: Assertion `0' failed.
+geany: Fatal IO error 104 (Connection reset by peer) on X server :0.

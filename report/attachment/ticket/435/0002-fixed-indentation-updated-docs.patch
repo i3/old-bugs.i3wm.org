@@ -1,0 +1,99 @@
+From 54e909ac5ef478f6a227a6062261c561fe932f86 Mon Sep 17 00:00:00 2001
+From: Claudio Marforio <marforio@gmail.com>
+Date: Tue, 12 Jul 2011 12:45:55 +0200
+Subject: [PATCH 2/2] fixed indentation, updated docs
+
+---
+ docs/userguide |   14 +++++++++-----
+ src/cfgparse.y |   12 ++++++------
+ src/main.c     |   12 ++++++------
+ 3 files changed, 21 insertions(+), 17 deletions(-)
+
+diff --git a/docs/userguide b/docs/userguide
+index 60d8d63..eb916a8 100644
+--- a/docs/userguide
++++ b/docs/userguide
+@@ -469,18 +469,22 @@ use it, it has to be a UTF-8 encoded arrow, not `->` or something like that.
+ 
+ === Automatically starting applications on i3 startup
+ 
+-By using the +exec+ keyword outside a keybinding, you can configure which
+-commands will be performed by i3 on initial startup (not when restarting i3
+-in-place however). These commands will be run in order.
++By using the +exec+ keyword outside a keybinding, you can configure
++which commands will be performed by i3 on initial startup. +exec+
++commands will not run when restarting i3, if you need a command to run
++also when restarting i3 you should use the +exec_always+
++keyword. These commands will be run in order.
+ 
+ *Syntax*:
+-------------
++-------------------
+ exec command
+-------------
++exec_always command
++-------------------
+ 
+ *Examples*:
+ --------------------------------
+ exec i3status | dzen2 -dock
++exec_always ~/my_script.sh
+ --------------------------------
+ 
+ [[workspace_screen]]
+diff --git a/src/cfgparse.y b/src/cfgparse.y
+index c85cfc2..a3aea46 100644
+--- a/src/cfgparse.y
++++ b/src/cfgparse.y
+@@ -591,7 +591,7 @@ line:
+     | ipcsocket
+     | restart_state
+     | exec
+-	| exec_always
++    | exec_always
+     | single_color
+     | color
+     | terminal
+@@ -1040,11 +1040,11 @@ exec:
+ 
+ exec_always:
+     TOKEXEC_ALWAYS STR
+-	{
+-	  struct Autostart *new = smalloc(sizeof(struct Autostart));
+-	  new->command = $2;
+-	  TAILQ_INSERT_TAIL(&autostarts_always, new, autostarts_always);
+-	}
++    {
++        struct Autostart *new = smalloc(sizeof(struct Autostart));
++        new->command = $2;
++        TAILQ_INSERT_TAIL(&autostarts_always, new, autostarts_always);
++    }
+     ;
+ 
+ terminal:
+diff --git a/src/main.c b/src/main.c
+index f0ad448..3ef394a 100644
+--- a/src/main.c
++++ b/src/main.c
+@@ -468,12 +468,12 @@ int main(int argc, char *argv[]) {
+         }
+     }
+ 
+-	/* Autostarting exec_always-lines */
+-	struct Autostart *exec_always;
+-	TAILQ_FOREACH(exec_always, &autostarts_always, autostarts_always) {
+-	  LOG("auto-starting (always!) %s\n", exec_always->command);
+-	  start_application(exec_always->command);
+-	}
++    /* Autostarting exec_always-lines */
++    struct Autostart *exec_always;
++    TAILQ_FOREACH(exec_always, &autostarts_always, autostarts_always) {
++        LOG("auto-starting (always!) %s\n", exec_always->command);
++        start_application(exec_always->command);
++    }
+ 
+     ev_loop(main_loop, 0);
+ }
+-- 
+1.7.4.1
+

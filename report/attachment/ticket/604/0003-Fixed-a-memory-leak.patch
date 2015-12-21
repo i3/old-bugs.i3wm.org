@@ -1,0 +1,24 @@
+From f723b32dda00e9ec43ee8820495273579a322257 Mon Sep 17 00:00:00 2001
+From: beauby <lucas.hosseini@gmail.com>
+Date: Thu, 9 Feb 2012 01:50:27 +0100
+Subject: [PATCH 3/3] Fixed a memory leak.
+
+---
+ i3-config-wizard/main.c |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+diff --git a/i3-config-wizard/main.c b/i3-config-wizard/main.c
+index 244f463..4bf6b5b 100644
+--- a/i3-config-wizard/main.c
++++ b/i3-config-wizard/main.c
+@@ -288,6 +288,7 @@ static void finish() {
+     FILE *ks_config = fopen(config_path, "w");
+     if (ks_config == NULL)
+         err(1, "Could not open output config file \"%s\"", config_path);
++    free(config_path);
+ 
+     char *line = NULL;
+     size_t len = 0;
+-- 
+1.7.9
+

@@ -1,0 +1,59 @@
+From 0473899ef4f2133072a6f8f0b36cb651e36646d5 Mon Sep 17 00:00:00 2001
+From: batman <batman@batz-laptop.localdomain>
+Date: Thu, 15 Apr 2010 15:14:29 -0700
+Subject: [PATCH] Added code to allow workspace to take an optional layout.
+
+---
+ src/cfgparse.y |   16 +++++++++++++---
+ 1 files changed, 13 insertions(+), 3 deletions(-)
+
+diff --git a/src/cfgparse.y b/src/cfgparse.y
+index 2774f05..d2d18dc 100644
+--- a/src/cfgparse.y
++++ b/src/cfgparse.y
+@@ -188,7 +188,7 @@ void parse_file(const char *f) {
+ 
+ %}
+ 
+-%expect 1
++%expect 2
+ %error-verbose
+ %lex-param { struct context *context }
+ 
+@@ -462,21 +462,31 @@ workspace:
+                         }
+                 }
+         }
+-        | TOKWORKSPACE WHITESPACE NUMBER WHITESPACE workspace_name
++        | TOKWORKSPACE WHITESPACE NUMBER WHITESPACE workspace_name optional_comtainer_mode
+         {
+                 int ws_num = $<number>3;
+                 if (ws_num < 1) {
+                         DLOG("Invalid workspace assignment, workspace number %d out of range\n", ws_num);
+                 } else {
+                         DLOG("workspace name to: %s\n", $<string>5);
++                        Workspace *ws = workspace_get(ws_num - 1);
+                         if ($<string>5 != NULL) {
+-                                workspace_set_name(workspace_get(ws_num - 1), $<string>5);
++                                workspace_set_name(ws, $<string>5);
+                                 free($<string>5);
+                         }
++                        DLOG("workspace mode to: %d\n", $<number>6);
++                        if ($<number>6 != MODE_DEFAULT && ws->table != NULL) {
++                                switch_layout_mode(global_conn, ws->table[0][0], $<number>6);
++                        }
+                 }
+         }
+         ;
+ 
++optional_comtainer_mode:
++        /* empty */                     { $<number>$ = MODE_DEFAULT; }
++        | WHITESPACE TOKCONTAINERMODE   { $<number>$ = $<number>2; }
++        ;
++
+ optional_workspace_name:
+         /* empty */                     { $<string>$ = NULL; }
+         | WHITESPACE workspace_name     { $<string>$ = $<string>2; }
+-- 
+1.7.0.5
+

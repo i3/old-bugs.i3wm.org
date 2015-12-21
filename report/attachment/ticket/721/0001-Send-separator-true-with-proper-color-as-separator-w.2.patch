@@ -1,0 +1,59 @@
+From 307667ca165b2bfb8e28b93a25da301d6751aedd Mon Sep 17 00:00:00 2001
+From: Vadim Atlygin <vadim.atlygin@gmail.com>
+Date: Fri, 8 Jun 2012 21:57:36 +1000
+Subject: [PATCH] Send {"separator": true} with proper color as separator when
+ output in i3bar format
+
+---
+ i3status.c   |    4 ++--
+ src/output.c |   12 ++++++++++--
+ 2 files changed, 12 insertions(+), 4 deletions(-)
+
+diff --git a/i3status.c b/i3status.c
+index f0767a0..df01e8e 100644
+--- a/i3status.c
++++ b/i3status.c
+@@ -357,7 +357,7 @@ int main(int argc, char *argv[]) {
+         if (output_format == O_I3BAR) {
+                 /* Initialize the i3bar protocol. See i3/docs/i3bar-protocol
+                  * for details. */
+-                printf("{\"version\":1}\n[\n");
++                printf("{\"version\":1.01}\n[\n");
+                 fflush(stdout);
+                 yajl_gen_array_open(json_gen);
+                 yajl_gen_clear(json_gen);
+@@ -390,7 +390,7 @@ int main(int argc, char *argv[]) {
+                         yajl_gen_array_open(json_gen);
+                 for (j = 0; j < cfg_size(cfg, "order"); j++) {
+                         if (j > 0)
+-                                print_seperator();
++                                print_seperator(json_gen);
+ 
+                         const char *current = cfg_getnstr(cfg, "order", j);
+ 
+diff --git a/src/output.c b/src/output.c
+index c4a2d27..3c37705 100644
+--- a/src/output.c
++++ b/src/output.c
+@@ -38,8 +38,16 @@ char *endcolor(void) {
+         else return "";
+ }
+ 
+-void print_seperator(void) {
+-        if (output_format == O_DZEN2)
++void print_seperator(yajl_gen json_gen) {
++        if (output_format == O_I3BAR) {
++                SEC_OPEN_MAP("separator");
++                const char *val = cfg_getstr(cfg_general, "color_separator");
++                yajl_gen_string(json_gen, (const unsigned char *)"color", strlen("color")); \
++                yajl_gen_string(json_gen, (const unsigned char *)val, strlen(val)); \
++                yajl_gen_string(json_gen, (const unsigned char *)"separator", strlen("separator"));
++                yajl_gen_bool(json_gen, 1);
++                SEC_CLOSE_MAP;
++        } else if (output_format == O_DZEN2)
+                 printf("^fg(%s)^p(5;-2)^ro(2)^p()^fg()^p(5)", cfg_getstr(cfg_general, "color_separator"));
+         else if (output_format == O_XMOBAR)
+                 printf("<fc=%s> | </fc>", cfg_getstr(cfg_general, "color_separator"));
+-- 
+1.7.9.5
+

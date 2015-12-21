@@ -1,0 +1,174 @@
+03/14/2010 01:15:20 PM - src/mainx.c:main:194 - i3 version 3.d-bf1 starting
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:443 - Floating modifiers = 8
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 41, symbol = (null), modifiers = 8, command = *f*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 43, symbol = (null), modifiers = 8, command = *s*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 25, symbol = (null), modifiers = 8, command = *T*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 26, symbol = (null), modifiers = 8, command = *d*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 65, symbol = (null), modifiers = 9, command = *t*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 28, symbol = (null), modifiers = 8, command = *focus ft*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 44, symbol = (null), modifiers = 8, command = *h*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 45, symbol = (null), modifiers = 8, command = *j*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 46, symbol = (null), modifiers = 8, command = *k*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 47, symbol = (null), modifiers = 8, command = *l*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 0, symbol = Left, modifiers = 8, command = *h*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 0, symbol = Down, modifiers = 8, command = *j*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 0, symbol = Up, modifiers = 8, command = *k*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 0, symbol = Right, modifiers = 8, command = *l*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 44, symbol = (null), modifiers = 32, command = *wch*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 45, symbol = (null), modifiers = 32, command = *wcj*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 46, symbol = (null), modifiers = 32, command = *wck*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 47, symbol = (null), modifiers = 32, command = *wcl*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 0, symbol = Left, modifiers = 32, command = *h*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 0, symbol = Down, modifiers = 32, command = *j*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 0, symbol = Up, modifiers = 32, command = *k*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 0, symbol = Right, modifiers = 32, command = *l*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 44, symbol = (null), modifiers = 12, command = *sh*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 45, symbol = (null), modifiers = 12, command = *sj*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 46, symbol = (null), modifiers = 12, command = *sk*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 47, symbol = (null), modifiers = 12, command = *sl*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 0, symbol = Left, modifiers = 12, command = *h*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 0, symbol = Down, modifiers = 12, command = *j*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 0, symbol = Up, modifiers = 12, command = *k*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 0, symbol = Right, modifiers = 12, command = *l*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 44, symbol = (null), modifiers = 9, command = *mh*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 45, symbol = (null), modifiers = 9, command = *mj*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 46, symbol = (null), modifiers = 9, command = *mk*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 47, symbol = (null), modifiers = 9, command = *ml*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 0, symbol = Left, modifiers = 9, command = *h*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 0, symbol = Down, modifiers = 9, command = *j*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 0, symbol = Up, modifiers = 9, command = *k*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 0, symbol = Right, modifiers = 9, command = *l*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 44, symbol = (null), modifiers = 33, command = *wcmh*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 45, symbol = (null), modifiers = 33, command = *wcmj*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 46, symbol = (null), modifiers = 33, command = *wcmk*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 47, symbol = (null), modifiers = 33, command = *wcml*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 10, symbol = (null), modifiers = 8, command = *1*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 11, symbol = (null), modifiers = 8, command = *2*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 12, symbol = (null), modifiers = 8, command = *3*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 13, symbol = (null), modifiers = 8, command = *4*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 14, symbol = (null), modifiers = 8, command = *5*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 15, symbol = (null), modifiers = 8, command = *6*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 16, symbol = (null), modifiers = 8, command = *7*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 17, symbol = (null), modifiers = 8, command = *8*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 18, symbol = (null), modifiers = 8, command = *9*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 19, symbol = (null), modifiers = 8, command = *10*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 10, symbol = (null), modifiers = 9, command = *m1*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 11, symbol = (null), modifiers = 9, command = *m2*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 12, symbol = (null), modifiers = 9, command = *m3*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 13, symbol = (null), modifiers = 9, command = *m4*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 14, symbol = (null), modifiers = 9, command = *m5*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 15, symbol = (null), modifiers = 9, command = *m6*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 16, symbol = (null), modifiers = 9, command = *m7*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 17, symbol = (null), modifiers = 9, command = *m8*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 18, symbol = (null), modifiers = 9, command = *m9*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 19, symbol = (null), modifiers = 9, command = *m10*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 36, symbol = (null), modifiers = 8, command = *exec /usr/bin/urxvt*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 24, symbol = (null), modifiers = 9, command = *kill*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 55, symbol = (null), modifiers = 8, command = *exec /usr/bin/dmenu_run*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 26, symbol = (null), modifiers = 9, command = *exit*
+03/14/2010 01:15:20 PM - src/config.c:load_configuration:417 - keycode = 27, symbol = (null), modifiers = 9, command = *restart*
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 41
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 43
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 25
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 26
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 65
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 28
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 44
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 45
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 46
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 47
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 113
+03/14/2010 01:15:20 PM - src/config.c:grab_all_keys:143 - Translated symbol "Left" to 1 keycode
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 116
+03/14/2010 01:15:20 PM - src/config.c:grab_all_keys:143 - Translated symbol "Down" to 1 keycode
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 111
+03/14/2010 01:15:20 PM - src/config.c:grab_all_keys:143 - Translated symbol "Up" to 1 keycode
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 114
+03/14/2010 01:15:20 PM - src/config.c:grab_all_keys:143 - Translated symbol "Right" to 1 keycode
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 44
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 45
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 46
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 47
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 113
+03/14/2010 01:15:20 PM - src/config.c:grab_all_keys:143 - Translated symbol "Left" to 1 keycode
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 116
+03/14/2010 01:15:20 PM - src/config.c:grab_all_keys:143 - Translated symbol "Down" to 1 keycode
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 111
+03/14/2010 01:15:20 PM - src/config.c:grab_all_keys:143 - Translated symbol "Up" to 1 keycode
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 114
+03/14/2010 01:15:20 PM - src/config.c:grab_all_keys:143 - Translated symbol "Right" to 1 keycode
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 44
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 45
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 46
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 47
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 113
+03/14/2010 01:15:20 PM - src/config.c:grab_all_keys:143 - Translated symbol "Left" to 1 keycode
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 116
+03/14/2010 01:15:20 PM - src/config.c:grab_all_keys:143 - Translated symbol "Down" to 1 keycode
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 111
+03/14/2010 01:15:20 PM - src/config.c:grab_all_keys:143 - Translated symbol "Up" to 1 keycode
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 114
+03/14/2010 01:15:20 PM - src/config.c:grab_all_keys:143 - Translated symbol "Right" to 1 keycode
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 44
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 45
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 46
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 47
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 113
+03/14/2010 01:15:20 PM - src/config.c:grab_all_keys:143 - Translated symbol "Left" to 1 keycode
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 116
+03/14/2010 01:15:20 PM - src/config.c:grab_all_keys:143 - Translated symbol "Down" to 1 keycode
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 111
+03/14/2010 01:15:20 PM - src/config.c:grab_all_keys:143 - Translated symbol "Up" to 1 keycode
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 114
+03/14/2010 01:15:20 PM - src/config.c:grab_all_keys:143 - Translated symbol "Right" to 1 keycode
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 44
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 45
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 46
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 47
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 10
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 11
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 12
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 13
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 14
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 15
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 16
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 17
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 18
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 19
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 10
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 11
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 12
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 13
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 14
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 15
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 16
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 17
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 18
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 19
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 36
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 24
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 55
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 26
+03/14/2010 01:15:20 PM - src/config.c:grab_keycode_for_binding:83 - Grabbing 27
+03/14/2010 01:15:20 PM - src/mainx.c:main:439 - Checking for Xinerama...
+03/14/2010 01:15:20 PM - src/xinerama.c:query_screens:223 - found Xinerama screen: 1280 x 800 at 0 x 0
+03/14/2010 01:15:20 PM - src/xinerama.c:initialize_screen:152 - that is virtual screen at 0 x 0 with 1280 x 800
+03/14/2010 01:15:20 PM - src/xinerama.c:get_screen_containing:78 - comparing x=640 y=400 with x=0 and y=0 width 1280 height 800
+03/14/2010 01:15:20 PM - src/mainx.c:main:458 - Starting on 164903064
+03/14/2010 01:15:20 PM - src/handlers.c:handle_expose_event:728 - window = 00600001
+03/14/2010 01:15:20 PM - src/layout.c:render_workspace:706 - height is 781
+03/14/2010 01:15:25 PM - src/handlers.c:handle_key_press:98 - Keypress 55, state raw = 8
+03/14/2010 01:15:25 PM - src/handlers.c:handle_key_press:102 - (removed numlock, state = 8)
+03/14/2010 01:15:25 PM - src/handlers.c:handle_key_press:106 - (removed upper 8 bits, state = 8)
+03/14/2010 01:15:25 PM - src/handlers.c:handle_key_press:115 - (checked mode_switch, state 8)
+03/14/2010 01:15:25 PM - src/commands.c:parse_command:865 - --- parsing command "exec /usr/bin/dmenu_run" ---
+03/14/2010 01:15:25 PM - src/commands.c:parse_command:878 - starting "/usr/bin/dmenu_run"
+/usr/bin/dmenu_path: line 17: cd: /usr/bin/perlbin/site: No such file or directory
+03/14/2010 01:15:30 PM - src/xinerama.c:get_screen_containing:78 - comparing x=640 y=400 with x=0 and y=0 width 1280 height 800
+03/14/2010 01:15:30 PM - src/xinerama.c:get_screen_containing:78 - comparing x=638 y=400 with x=0 and y=0 width 1280 height 800
+03/14/2010 01:15:31 PM - src/xinerama.c:get_screen_containing:78 - comparing x=634 y=401 with x=0 and y=0 width 1280 height 800
+03/14/2010 01:15:44 PM - src/mainx.c:xkb_got_event:123 - got xkb event, yay
+XIO:  fatal IO error 11 (Resource temporarily unavailable) on X server ":0.0"
+      after 8 requests (8 known processed) with 0 events remaining.
+XIO:  fatal IO error 11 (Resource temporarily unavailable) on X server ":0.0"
+      after 972 requests (972 known processed) with 0 events remaining.

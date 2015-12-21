@@ -1,0 +1,25 @@
+From 684baf92873f5a9fdc44b3aa1019626f8eea4a31 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Fernando=20Tarl=C3=A1=20Cardoso=20Lemos?= <fernandotcl@gmail.com>
+Date: Tue, 29 Jun 2010 20:08:21 -0300
+Subject: [PATCH] Don't leak skfd on errors. Don't spam stderr if the iface isn't present.
+
+---
+ src/print_wireless_info.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/src/print_wireless_info.c b/src/print_wireless_info.c
+index 50cf8e4..22a9c31 100644
+--- a/src/print_wireless_info.c
++++ b/src/print_wireless_info.c
+@@ -39,7 +39,7 @@ static int get_wireless_info(const char *interface, wireless_info_t *info) {
+ 
+         wireless_config wcfg;
+         if (iw_get_basic_config(skfd, interface, &wcfg) < 0) {
+-            perror("iw_get_basic_config");
++            close(skfd);
+             return 0;
+         }
+ 
+-- 
+1.7.1
+

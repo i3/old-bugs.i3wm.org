@@ -1,0 +1,958 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1013 (Bug while moving tabs in Eclipse)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1012" title="Ticket #1012" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1013?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1013?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1013?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1014" title="Ticket #1014" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="19de1763fb72b9bc178077a3";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1012" title="Ticket #1012">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1014" title="Ticket #1014">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2013-04-26T18%3A51%3A57%2B02%3A00&amp;precision=second" title="See timeline at 04/26/13 18:51:57">2 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2014-01-19T23%3A11%3A48%2B01%3A00&amp;precision=second" title="See timeline at 01/19/14 23:11:48">14 months ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2014-02-05T22%3A23%3A04%2B01%3A00&amp;precision=second" title="See timeline at 02/05/14 22:23:04">14 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1013" class="trac-id">#1013</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Bug while moving tabs in Eclipse</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">mariusm@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=TonyC">TonyC</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=minor">minor</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version" class="missing">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version="></a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.6-156-g812215c
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+While moving (by drag and drop) editor windows in Eclipse, the window gets image gets "corrupted" (see attached image). I have confirmed this doesn't happen with other window managers such as awesome.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(1)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/1013/i3_eclipse_bug.png" title="View attachment">i3_eclipse_bug.png</a><a href="/report/raw-attachment/ticket/1013/i3_eclipse_bug.png" class="trac-rawlink" title="Download">​</a>
+       (<span title="186105 bytes">181.7 KB</span>) -
+      added by <em>anonymous</em> <a class="timeline" href="/report/timeline?from=2013-04-26T18%3A52%3A24%2B02%3A00&amp;precision=second" title="See timeline at 04/26/13 18:52:24">2 years ago</a>.
+  </dt>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/1013/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(21)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-04-26T18%3A52%3A24%2B02%3A00&amp;precision=second" title="See timeline at 04/26/13 18:52:24">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1013/i3_eclipse_bug.png"><em>i3_eclipse_bug.png</em></a><a href="/report/raw-attachment/ticket/1013/i3_eclipse_bug.png" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-1-1367048312493580">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-04-27T09%3A38%3A32%2B02%3A00&amp;precision=second" title="See timeline at 04/27/13 09:38:32">2 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I have a hard time believing that this is i3-specific. Note that i3 does not do any rendering of window contents _at all_, so anything that happens inside a window is the application’s fault (as a general rule of thumb).<br />
+</p>
+<p>
+I won’t have time/motivation to investigate this in the near future, just FYI.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1367599185245170">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-05-03T18%3A39%3A45%2B02%3A00&amp;precision=second" title="See timeline at 05/03/13 18:39:45">2 years ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Yes, it is probably eclipse's fault, but somehow the problem only manifests itself when i3 is running. If I kill i3 and try to move tabs around in eclipse (with no window manager active), the image "corruption" does not happen.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1367948174749505">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-05-07T19%3A36%3A14%2B02%3A00&amp;precision=second" title="See timeline at 05/07/13 19:36:14">23 months ago</a> by lgunsch@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I use Sublime Text 2 (ST2), and recently, I have had troubles with tab moving as well when drag-and-drop moving tabs. My problem is somewhat different, so I am unsure if it is related or not. I should note that my ST2 instance has not changed in a long time, and this never use to happen with this version of ST2. It started happening after a recent update.<br />
+</p>
+<p>
+My normal setup is 4 ST2 windows in tabbed mode, each with a few tabs. On some window instances of ST2 if I drag and drop a tab in a window, it will attach to the window to the left (i3 tab to the left), rather then the currently focused window. It moves windows, rather then to the left and right within the ST2 window.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1373409982867955">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-10T00%3A46%3A22%2B02%3A00&amp;precision=second" title="See timeline at 07/10/13 00:46:22">21 months ago</a> by Klaas Boesche &lt;klaas-dev@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I'm also affected by this bug when I choose to drag some tabs in eclipse, however, for me it results in black windows with those green outlines.<br />
+Funnily enough, this seems to be a bug in Eclipse: <a class="ext-link" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=389491"><span class="icon">​</span>https://bugs.eclipse.org/bugs/show_bug.cgi?id=389491</a><br />
+But since this was only reported for Windows, nobody bothered to see if this occurs in Linux as well, so nobody fixed it in time for the recent Eclipse release. :D<br />
+</p>
+<p>
+So: Not an i3 bug.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1373483837176231">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-10T21%3A17%3A17%2B02%3A00&amp;precision=second" title="See timeline at 07/10/13 21:17:17">21 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>bug_somewhere_else</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+As the eclipse report says, please open a separate bug for eclipse on linux. Feel free to provide a link here.<br />
+</p>
+<p>
+Closing this report now.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1375121298515195">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-29T20%3A08%3A18%2B02%3A00&amp;precision=second" title="See timeline at 07/29/13 20:08:18">20 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I chnaged i3 to ignore windows with the _NET_WM_STATE_SKIP_TASKBAR property and it fixed the issue for me, now I can drag editor tabs in eclipse:<br />
+</p>
+<pre class="wiki">diff --git a/src/manage.c b/src/manage.c
+index a8d2e48..f203d93 100644
+--- a/src/manage.c
++++ b/src/manage.c
+@@ -305,6 +305,11 @@ void manage_window(xcb_window_t window, xcb_get_window_attributes_cookie_t cooki
+         cwindow-&gt;dock = W_NODOCK;
+         want_floating = true;
+     }
++    if (xcb_reply_contains_atom(state_reply, A__NET_WM_STATE_SKIP_TASKBAR)) {
++        /* ignore windows with _NET_WM_STATE_SKIP_TASKBAR state */
++        xcb_map_window(conn, window);
++        goto geom_out;
++    }
+     FREE(state_reply);
+ 
+     DLOG("Initial geometry: (%d, %d, %d, %d)\n", geom-&gt;x, geom-&gt;y, geom-&gt;width, geom-&gt;height);
+
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1388091353823212">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-26T21%3A55%3A53%2B01%3A00&amp;precision=second" title="See timeline at 12/26/13 21:55:53">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I would like to reopen this ticket because eclipse is working well with both openbox and dwm while it's seriously broken inside i3. Specifically:<br />
+</p>
+<ul><li>Eclipse 4.3.1 with Classic Theme (configured from <a class="forbidden wiki" title="no permission to view this wiki page">Window/Preferences</a>, filtering by "Appearance").
+</li></ul><ul><li>i3 4.6 or 4.7.
+</li></ul><p>
+In openbox and dwm a black frame is correctly shown where the drop will happen, while the rest of the window is intact. In i3 it's almost impossible to discern what the hell is going on.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1388092400196028">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-26T22%3A13%3A20%2B01%3A00&amp;precision=second" title="See timeline at 12/26/13 22:13:20">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Also, the simple patch suggested above (5 months ago) fixes the issue. Once applied the behavior in i3 is identical to the behavior in openbox or dwm.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1388154754062794">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-27T15%3A32%3A34%2B01%3A00&amp;precision=second" title="See timeline at 12/27/13 15:32:34">15 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        <em>bug_somewhere_else</em> deleted
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>closed</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Will look into it again at some point, currently busy.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1388165817496917">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-27T18%3A36%3A57%2B01%3A00&amp;precision=second" title="See timeline at 12/27/13 18:36:57">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Michael, a note of caution, anyway: the patch breaks other apps. For example, the "Are you sure?" dialog that pcmanfm shows before deleting a file is opened fine, but then two tiled windows replace the popup: the dialog itself, now tiled, and an empty frame showing the dialog title. Maybe the details are inacurate because I'm just remembering what I saw tonight at home, but it was something similar and as weird as that, completely reproducible. It could be just a matter of where I was placing the code fragment, I don't know. But both pcmanfm and eclipse work fine in dwm and openbox (I haven't tested this with other wms) so I think in this case i3 has something to do, besides the bug in eclipse itself.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1388187229024019">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-28T00%3A33%3A49%2B01%3A00&amp;precision=second" title="See timeline at 12/28/13 00:33:49">15 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-gitversion">
+      <strong class="trac-field-gitversion">git version</strong>
+        changed from <em>4.5.1-54-g0f6b5fe</em> to <em>4.6-156-g812215c</em>
+    </li><li class="trac-field-owner">
+      <strong class="trac-field-owner">Owner</strong>
+        changed from <em>michael</em> to <em>TonyC</em>
+    </li><li class="trac-field-priority">
+      <strong class="trac-field-priority">Priority</strong>
+        changed from <em>major</em> to <em>minor</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>assigned</em>
+    </li><li class="trac-field-version">
+      <strong class="trac-field-version">Version</strong>
+        <em>4.5.1</em> deleted
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Removing version so it gets attention.<br />
+</p>
+<p>
+I'm looking into this now. I hope I can fix it.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-12-1388209435765878">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-28T06%3A43%3A55%2B01%3A00&amp;precision=second" title="See timeline at 12/28/13 06:43:55">15 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>duplicate</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>assigned</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Ok I got it working.<br />
+</p>
+<p>
+Closing this as a duplicate of <a class="closed ticket" href="/report/ticket/832" title="enhancement: i3 doesn't respect _MOTIF_WM_HINTS (closed: fixed)">#832</a>. <br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-13-1388309138606981">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:13" class="cnum">
+    <a href="#comment:13">comment:13</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-29T10%3A25%3A38%2B01%3A00&amp;precision=second" title="See timeline at 12/29/13 10:25:38">15 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+<strong>Update:</strong><br />
+</p>
+<p>
+Sorry to get your hopes up, but I can't come up with a way to fix this that is clean enough for i3's coding standards. Implementing Motif hints helps a bit, but I can't get rid of the visual noise that comes with that overlay window.<br />
+</p>
+<p>
+The issue is that the overlay relies on transparency to draw those lines, and i3 does not support transparency on its managed windows. Transparency support has been rejected in the past. See <a class="closed ticket" href="/report/ticket/690" title="defect: Garbled background with transparent windows in vertical split containers (closed: wontfix)">#690</a>.<br />
+</p>
+<p>
+Double buffering will likely fix this issue (<a class="assigned ticket" href="/report/ticket/661" title="enhancement: real double buffering (assigned)">#661</a>) but compositing alone will not.<br />
+</p>
+<p>
+The root cause of this bug is within the Eclipse widget toolkit stack, maybe somewhere in awt. It is simply a mistake for that overlay window to ask to be managed by the window manager. It's kind of silly for that window to take focus from the main application and go through the whole process of being managed. Even if i3 supported transparency, it would be broken by i3 features like <tt>for_window</tt> commands and workspace assignments.<br />
+</p>
+<p>
+When the overlay is not managed, it works perfectly. If you are interested in resolving the issue, you should file a bug on the Eclipse project.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-14-1388338441318967">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:14" class="cnum">
+    <a href="#comment:14">comment:14</a>
+  </span>
+          <span>follow-ups:</span>
+    <a href="#comment:15" class="follow-up">↓ 15</a>
+    <a href="#comment:16" class="follow-up">↓ 16</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-29T18%3A34%3A01%2B01%3A00&amp;precision=second" title="See timeline at 12/29/13 18:34:01">15 months ago</a> by Carlos &lt;carlosjosepita@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+@TonyC Could you expand on the meaning of "i3's coding standards"? I find it surprising that dwm gets this right considering its ridiculously small code base but, at the same time, it seems to be too dirty for i3 to address it. Same thing for popular notification daemons, as xfce4's, which look garbled and I guess it's because of the same underlying problem (I use dunst, anyway). I've been working as a programmer for many years and I really understand the desire to keep your code clean and maintainable, but is it really worth not supporting popular tools that a tiny wm with elitist coding standards somehow manages to support without blaming other apps? I'm just asking, I don't want to sound harsh at all, probably you're right.  <br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-15-1388358579211185">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:15" class="cnum">
+    <a href="#comment:15">comment:15</a>
+  </span>
+        in reply to:
+    <a href="#comment:14">↑ 14</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-30T00%3A09%3A39%2B01%3A00&amp;precision=second" title="See timeline at 12/30/13 00:09:39">15 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1013#comment:14" title="Comment 14">Carlos &lt;carlosjosepita@…&gt;</a>:<br />
+This was closed because it addresses the issue on too high of a level, not because Eclipse is not supported. It's better to concentrate the discussion around the root causes like <a class="closed ticket" href="/report/ticket/832" title="enhancement: i3 doesn't respect _MOTIF_WM_HINTS (closed: fixed)">#832</a> and <a class="assigned ticket" href="/report/ticket/661" title="enhancement: real double buffering (assigned)">#661</a> than have a separate issue open for each application they affect. Calling our attention to this issue has been valuable because it adds due priority to these other issues.<br />
+</p>
+<p>
+When I said I can't fix it "cleanly", I meant a fix for this issue (in itself) would require code to specifically detect Eclipse overlays and not manage them, which is clearly quite patchy.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-16-1388522996133604">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:16" class="cnum">
+    <a href="#comment:16">comment:16</a>
+  </span>
+        in reply to:
+    <a href="#comment:14">↑ 14</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-31T21%3A49%3A56%2B01%3A00&amp;precision=second" title="See timeline at 12/31/13 21:49:56">15 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1013#comment:14" title="Comment 14">Carlos &lt;carlosjosepita@…&gt;</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+I find it surprising that dwm gets this right considering its ridiculously small code base<br />
+</p>
+</blockquote>
+<p>
+You already answered that question :). dwm’s code base is primarily small, not primarily beautiful and clean. I think dwm might “get it right” just because it is different enough than i3, i.e. for their approach of window management (which is non-reparenting, to name just one big difference) it may just not be a problem.<br />
+</p>
+<blockquote class="citation">
+<p>
+Same thing for popular notification daemons, as xfce4's, which look garbled<br />
+</p>
+</blockquote>
+<p>
+Well, for notification daemons, the situation is quite clear, isn’t it? xfce’s is broken, every other one works just fine. Also, if you objectively look at the issue, it really is xfce’s notification daemon’s fault (it doesn’t set the proper hints on its window(s)).<br />
+</p>
+<blockquote class="citation">
+<p>
+I really understand the desire to keep your code clean and maintainable, but is it really worth not supporting popular tools that a tiny wm with elitist coding standards somehow manages to support without blaming other apps?<br />
+</p>
+</blockquote>
+<p>
+I won’t answer that directly because I already addressed the dwm aspect earlier, and I think the comparison is not a good one because of that.<br />
+</p>
+<p>
+However, in order to fix this issue, we need to get to the root cause, as TonyC mentioned. We have never and will never implement kludgy hacks into i3 without understanding what they do and why they are required. So far, pursuing this path has always lead to small changes in how the protocol can be interpreted, and never in hardcoded exceptions/workarounds/hacks for specific programs or toolkits.<br />
+</p>
+<p>
+Also note that, AFAIK, most of our devs don’t use Eclipse, so this is not high priority.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-17-1389763799626370">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:17" class="cnum">
+    <a href="#comment:17">comment:17</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-15T06%3A29%3A59%2B01%3A00&amp;precision=second" title="See timeline at 01/15/14 06:29:59">15 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        <em>duplicate</em> deleted
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>closed</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This was a tough issue to address, but it turns out there actually was a way to fix it.<br />
+</p>
+<p>
+I've submitted a few patches that fix the Eclipse issue and the Xfce4-notifyd issue without affecting rendering time or introducing any hacky workarounds.<br />
+</p>
+<p>
+From now on, if you want a window to support transparency, set it to floating and borderless.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-18-1389821151711782">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:18" class="cnum">
+    <a href="#comment:18">comment:18</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-15T22%3A25%3A51%2B01%3A00&amp;precision=second" title="See timeline at 01/15/14 22:25:51">15 months ago</a> by Carlos &lt;carlosjosepita@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Thank you very much for your hard work and for being adamant about keeping the code free of adhoc patches despite the insistence of overanxious users like me :).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-19-1390169508849503">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:19" class="cnum">
+    <a href="#comment:19">comment:19</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-19T23%3A11%3A48%2B01%3A00&amp;precision=second" title="See timeline at 01/19/14 23:11:48">14 months ago</a> by Tony Crisci
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/6578976b"><span class="icon">​</span>http://c.i3wm.org/6578976b</a>:<br />
+</p>
+<pre class="wiki">Do not create container pixmap when not needed
+
+The pixmap of a borderless container will not be used (except for the
+titlebar in a stack or tabs). Make sure these containers do not have a
+pixmap because it can only get in the way.
+
+fixes #1013
+
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-20-1391635384212448">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:20" class="cnum">
+    <a href="#comment:20">comment:20</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-02-05T22%3A23%3A04%2B01%3A00&amp;precision=second" title="See timeline at 02/05/14 22:23:04">14 months ago</a> by Tony Crisci
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/d6b32971"><span class="icon">​</span>http://c.i3wm.org/d6b32971</a>:<br />
+</p>
+<pre class="wiki">Really do not create con pixmap when not needed
+
+The pixmap of a borderless leaf container will not be used except
+for the titlebar in a stack or tabs.
+
+Make sure these containers do not (really) have a pixmap because it can
+only get in the way.
+
+fixes #1013
+
+</pre>
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1013?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1013?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1013?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

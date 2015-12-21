@@ -1,0 +1,61 @@
+From 2f34e18142524e175109b332b6128720bd2d27bf Mon Sep 17 00:00:00 2001
+From: Tony Crisci <tony@dubstepdish.com>
+Date: Fri, 15 Nov 2013 08:47:54 -0500
+Subject: [PATCH] Fix Samantha's bug
+
+For some reason, when you are on another tty, `create_cursor` will not
+actually create the cursor. I think this is just quirky behavior in
+either XCB or the X server itself (why should it change anything whether
+or not the server has a visual representation on a monitor?).
+
+And then of course, when the pointer is grabbed, the grabber has
+control, including but not limited to the cursor itself. Reinitializing
+the grab giving the correctly made cursor will work.
+
+At the time of expose, the cursor can be created. The grab will override
+the previous one.
+
+I think this could be refactored so that creating the cursor and
+grabbing the inputs are done primarily asynchronously.
+---
+ i3lock.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/i3lock.c b/i3lock.c
+index 8c33ea4..a1a2f5d 100644
+--- a/i3lock.c
++++ b/i3lock.c
+@@ -34,6 +34,7 @@
+ #include "unlock_indicator.h"
+ #include "xinerama.h"
+ 
++static int curs_choice;
+ /* We need this for libxkbfile */
+ static Display *display;
+ char color[7] = "ffffff";
+@@ -509,6 +510,13 @@ static void xcb_check_cb(EV_P_ ev_check *w, int revents) {
+                 handle_visibility_notify(conn, (xcb_visibility_notify_event_t*)event);
+                 break;
+ 
++            case XCB_EXPOSE:
++                if (((xcb_expose_event_t*)event)->window == win) {
++                    cursor = create_cursor(conn, screen, win, curs_choice);
++                    grab_pointer_and_keyboard(conn, screen, cursor);
++                }
++                break;
++
+             case XCB_MAP_NOTIFY:
+                 if (!dont_fork) {
+                     /* After the first MapNotify, we never fork again. We don’t
+@@ -598,7 +606,7 @@ int main(int argc, char *argv[]) {
+     char *image_path = NULL;
+     int ret;
+     struct pam_conv conv = {conv_callback, NULL};
+-    int curs_choice = CURS_NONE;
++    curs_choice = CURS_NONE;
+     int o;
+     int optind = 0;
+     struct option longopts[] = {
+-- 
+1.8.4.2
+

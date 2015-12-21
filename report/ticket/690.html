@@ -1,0 +1,789 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #690 (Garbled background with transparent windows in vertical split containers)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/689" title="Ticket #689" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/690?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/690?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/690?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/691" title="Ticket #691" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="e638016bf0c05b807f329a03";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/689" title="Ticket #689">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/691" title="Ticket #691">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-04-24T04%3A58%3A24%2B02%3A00&amp;precision=second" title="See timeline at 04/24/12 04:58:24">3 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2012-06-21T10%3A33%3A17%2B02%3A00&amp;precision=second" title="See timeline at 06/21/12 10:33:17">3 years ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2013-07-12T12%3A19%3A45%2B02%3A00&amp;precision=second" title="See timeline at 07/12/13 12:19:45">21 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/690" class="trac-id">#690</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=wontfix">wontfix</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Garbled background with transparent windows in vertical split containers</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">kemurphy@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.1">4.1</a>
+        </td>
+        <th id="h_keywords">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+              <a href="/report/query?status=!closed&amp;keywords=~transparency">transparency</a> <a href="/report/query?status=!closed&amp;keywords=~xcompmgr">xcompmgr</a>
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              next
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Linux">Linux</a>
+        </td>
+    </tr><tr>
+        <th id="h_app">
+          X11 program:
+        </th>
+        <td headers="h_app">
+              xcompmgr + sakura, urxvt, lxterminal, gnome-terminal, evilvte, etc
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+              kemurphy
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+With any transparent window (I've tested with urxvt and many vte-based terminals), I get garbled backgrounds in some of them when they are in a vertical split container while running any compositing manager like xcompmgr or cairo-compmgr.  What's more curious is that the garbled background goes away if the window is moved to another workspace or if its container becomes anything that's not a vertical split, but if it goes back into a vertical split on it's original workspace, the garbled background comes back.<br />
+</p>
+<p>
+Steps to reproduce:<br />
+</p>
+<p>
+Start i3<br />
+Start xcompmgr<br />
+Switch to a clean workspace<br />
+Set its orientation to vertical and its layout to default<br />
+Launch two terminals with transparent backgrounds (I recommend sakura); the first one should get a garbled background.<br />
+</p>
+<p>
+With more than two windows, every window besides the most recently created window gets a garbled background.  If the most recently created window itself is turned into a split container, the second most recently created window's background gets cured (and this effect cascades up for each window you turn into a split container).<br />
+</p>
+<p>
+I've examined my own log files and nothing seems to indicate anything is going wrong, and this issue was reproduced by another person in the irc channel as well.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(3)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/690/0001-Fixes-for-true-transparency.patch" title="View attachment">0001-Fixes-for-true-transparency.patch</a><a href="/report/raw-attachment/ticket/690/0001-Fixes-for-true-transparency.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="23861 bytes">23.3 KB</span>) -
+      added by <em>kemurphy</em> <a class="timeline" href="/report/timeline?from=2012-07-04T14%3A37%3A13%2B02%3A00&amp;precision=second" title="See timeline at 07/04/12 14:37:13">3 years ago</a>.
+  </dt>
+              <dd>
+                Initial version of patch to fix this bug
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/690/0001-Fixes-for-true-transparency.2.patch" title="View attachment">0001-Fixes-for-true-transparency.2.patch</a><a href="/report/raw-attachment/ticket/690/0001-Fixes-for-true-transparency.2.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="31041 bytes">30.3 KB</span>) -
+      added by <em>kemurphy</em> <a class="timeline" href="/report/timeline?from=2012-07-05T00%3A37%3A55%2B02%3A00&amp;precision=second" title="See timeline at 07/05/12 00:37:55">3 years ago</a>.
+  </dt>
+              <dd>
+                updated for config/commandline switch
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/690/0001-Fixes-for-true-transparency.3.patch" title="View attachment">0001-Fixes-for-true-transparency.3.patch</a><a href="/report/raw-attachment/ticket/690/0001-Fixes-for-true-transparency.3.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="30735 bytes">30.0 KB</span>) -
+      added by <em>kemurphy</em> <a class="timeline" href="/report/timeline?from=2012-07-09T16%3A02%3A09%2B02%3A00&amp;precision=second" title="See timeline at 07/09/12 16:02:09">3 years ago</a>.
+  </dt>
+              <dd>
+                updated for better xcb usage
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/690/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(16)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1340267597181152">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-06-21T10%3A33%3A17%2B02%3A00&amp;precision=second" title="See timeline at 06/21/12 10:33:17">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>wontfix</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Transparency is not supported or endorsed by i3. One could say it's tolerated. Therefore closing wontfix. If you care about it, send a patch.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1340347550367058">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:3" class="follow-up">↓ 3</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-06-22T08%3A45%3A50%2B02%3A00&amp;precision=second" title="See timeline at 06/22/12 08:45:50">3 years ago</a> by kemurphy
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Okay, that's fine, I can understand that.  But i3 is the only window manager that exhibits this behavior, which makes me think there's something not right going on with the usage of xcb somewhere (in other words, it might be a correctness bug that doesn't just affect transparency).  If you don't want to fix it, that's totally cool, but would you mind taking a glance through the source to tell me where to look to do it myself?  It just seems like I'm not familiar enough with the workings of X11/xcb/i3 to track it down myself (and I had spent a lot of time looking before I filed this report).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1340358832063770">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+        in reply to:
+    <a href="#comment:2">↑ 2</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-06-22T11%3A53%3A52%2B02%3A00&amp;precision=second" title="See timeline at 06/22/12 11:53:52">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/690#comment:2" title="Comment 2">kemurphy</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Okay, that's fine, I can understand that.  But i3 is the only window manager that exhibits this behavior, which makes me think there's something not right going on with the usage of xcb somewhere (in other words, it might be a correctness bug that doesn't just affect transparency).<br />
+</p>
+</blockquote>
+<p>
+Unlikely. As far as I remember it’s just how we render things (overlaying stuff over other bits).<br />
+</p>
+<blockquote class="citation">
+<p>
+If you don't want to fix it, that's totally cool, but would you mind taking a glance through the source to tell me where to look to do it myself?  It just seems like I'm not familiar enough with the workings of X11/xcb/i3 to track it down myself (and I had spent a lot of time looking before I filed this report).<br />
+</p>
+</blockquote>
+<p>
+Start by reading the hacking-howto, then have a close look at how we render (src/render.c). You might want to enable show_debug_borders at the top of that file. And/or change some of the rendering code and see what happens. Also have a look at src/x.c, especially x_draw_decoration which should be somewhat understandable.<br />
+</p>
+<p>
+In case you have detail questions, feel free to ask them on IRC and stick around.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1341405283906890">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-07-04T14%3A34%3A43%2B02%3A00&amp;precision=second" title="See timeline at 07/04/12 14:34:43">3 years ago</a> by kemurphy
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Okay, I have a patch written.  Is there any reason you didn't opt to just always use a 32 bit visual if it's available, and fall back to the X11 default if it's not (or throws an error)?  This patch involves reverting 9d68d78 "Use 32bit visual only when needed."  That commit failed to realize that "needed" included the extra windows that i3 creates for title bars.  My patch also fixes windows not being transparent and not having borders after an i3 restart, and I think it also really simplifies src/x.c (drawing to the windows now only happens once, in a much saner manner than before).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-07-04T14%3A37%3A13%2B02%3A00&amp;precision=second" title="See timeline at 07/04/12 14:37:13">3 years ago</a> by kemurphy
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/690/0001-Fixes-for-true-transparency.patch"><em>0001-Fixes-for-true-transparency.patch</em></a><a href="/report/raw-attachment/ticket/690/0001-Fixes-for-true-transparency.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Initial version of patch to fix this bug<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1341411615746212">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-07-04T16%3A20%3A15%2B02%3A00&amp;precision=second" title="See timeline at 07/04/12 16:20:15">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+We cannot revert this commit because using 32-bit visuals when not necessary slows down drawing on my Thinkpad X200 considerably.<br />
+</p>
+<p>
+Can you post a different patch which doesn’t revert the commit please?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1341428263740579">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-07-04T20%3A57%3A43%2B02%3A00&amp;precision=second" title="See timeline at 07/04/12 20:57:43">3 years ago</a> by kemurphy
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Before I do that, can you at least try running with this patch on your machine to see if the slowdown is still there?  Remember, I streamlined the drawing process in x.c; things that were getting drawn 3 or 4 times to a pixmap and 2 or 3 more to the window are now only drawn once; it should make a noticeable difference for you if enabling 32bit visuals slows you down that much.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1341441449907696">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-07-05T00%3A37%3A29%2B02%3A00&amp;precision=second" title="See timeline at 07/05/12 00:37:29">3 years ago</a> by kemurphy
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Here's an updated patch that takes a config option or a command line switch to enable the alpha channel.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-07-05T00%3A37%3A55%2B02%3A00&amp;precision=second" title="See timeline at 07/05/12 00:37:55">3 years ago</a> by kemurphy
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/690/0001-Fixes-for-true-transparency.2.patch"><em>0001-Fixes-for-true-transparency.2.patch</em></a><a href="/report/raw-attachment/ticket/690/0001-Fixes-for-true-transparency.2.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+updated for config/commandline switch<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1341842389128761">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-07-09T15%3A59%3A49%2B02%3A00&amp;precision=second" title="See timeline at 07/09/12 15:59:49">3 years ago</a> by kemurphy
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+updated for better xcb usage<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-07-09T16%3A02%3A09%2B02%3A00&amp;precision=second" title="See timeline at 07/09/12 16:02:09">3 years ago</a> by kemurphy
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/690/0001-Fixes-for-true-transparency.3.patch"><em>0001-Fixes-for-true-transparency.3.patch</em></a><a href="/report/raw-attachment/ticket/690/0001-Fixes-for-true-transparency.3.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+updated for better xcb usage<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1343294728081459">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-07-26T11%3A25%3A28%2B02%3A00&amp;precision=second" title="See timeline at 07/26/12 11:25:28">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Thanks for updating the patch. Here are my comments:<br />
+</p>
+<ol><li>Please split this up into multiple files. One of them should simply revert the commit, the other one should contain your changes. Currently, this is hard to review at all.
+</li><li>You do several changes to x.c without explaining <strong>any</strong> of them. These questions immediately pop up for example: Why did you kill our rendering cache? Why did you move the pixmap creation code?
+</li><li>You also changed lines for formatting only:
+<pre class="wiki">uint32_t values[] = { 0 }; 
+xcb_create_gc(conn, con-&gt;pm_gc, con-&gt;pixmap, XCB_GC_GRAPHICS_EXPOSURES, values); 
+</pre></li></ol><p>
+to<br />
+</p>
+<pre class="wiki">xcb_create_gc(conn, con-&gt;pm_gc, con-&gt;pixmap, XCB_GC_GRAPHICS_EXPOSURES, (uint32_t[]) { 0 }); 
+</pre><p>
+Please don’t do that as it distracts from what your patch actually does.<br />
+</p>
+<p>
+Can you please update your patch in such a way that:<br />
+</p>
+<ol><li>You don’t do as many modifications as you do currently
+</li><li>it is clear what you do in each step?
+</li></ol><p>
+Ideally, this leads to multiple patches with understandable and clear commit messages stating what you changed, what the precise problem was and how it was fixed.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1343808566034679">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:11" class="follow-up">↓ 11</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-08-01T10%3A09%3A26%2B02%3A00&amp;precision=second" title="See timeline at 08/01/12 10:09:26">3 years ago</a> by kemurphy
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sure, though things just got pretty busy for me at my job, so it may be a week or two before I get to splitting it up.<br />
+</p>
+<p>
+The changes in x.c to remove the rendering cache were necessary because either it was bad/wrong, or it was good/correct and just did not play nicely with transparent windows.  (My intuition is it was a combination of both; some of the caching cases made sense and others looked rather dubious to me.  In fact, this is the kind of correctness issue I was suspicious of when I first reported the bug.)  After globally enabling 32-bit visuals, I noticed that windows in vertical splits no longer had the same stale pixmap data as described above, but they did have what appeared to be stale window decorations just hanging around behind the window.<br />
+</p>
+<p>
+I'd be happy to reimplement the cache as part of this patch set, if you'd like.  Without changes to x.c though, just enabling 32-bit visuals everywhere doesn't seem to be enough to make transparency work properly.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1343835143684172">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+        in reply to:
+    <a href="#comment:10">↑ 10</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-08-01T17%3A32%3A23%2B02%3A00&amp;precision=second" title="See timeline at 08/01/12 17:32:23">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/690#comment:10" title="Comment 10">kemurphy</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+I'd be happy to reimplement the cache as part of this patch set, if you'd like.  Without changes to x.c though, just enabling 32-bit visuals everywhere doesn't seem to be enough to make transparency work properly.<br />
+</p>
+</blockquote>
+<p>
+Yes. We are not going to lose the cache over transparency support :).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-12-1373624143993506">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-12T12%3A15%3A43%2B02%3A00&amp;precision=second" title="See timeline at 07/12/13 12:15:43">21 months ago</a> by geyslan@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Hi, I reproduced the same behavior. I'm using xompmgr in .xinitrc just before exec i3. Why? I want real transparency using uxrvt and some fading that avoid vsync tearing. To redraw the messed up window, just after the vertical splitting, I do mod+vertical again. It's a way.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-13-1373624385405216">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:13" class="cnum">
+    <a href="#comment:13">comment:13</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-07-12T12%3A19%3A45%2B02%3A00&amp;precision=second" title="See timeline at 07/12/13 12:19:45">21 months ago</a> by geyslan@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I have to add that using xcompmgr the drawing is much faster.<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/690?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/690?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/690?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

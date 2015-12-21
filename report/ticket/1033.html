@@ -1,0 +1,704 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1033 (Layout Script for a workspace)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1032" title="Ticket #1032" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1033?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1033?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1033?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1034" title="Ticket #1034" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="236050eb3e6a6e2e1c495813";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1032" title="Ticket #1032">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1034" title="Ticket #1034">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2013-06-19T15%3A32%3A54%2B02%3A00&amp;precision=second" title="See timeline at 06/19/13 15:32:54">22 months ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2013-12-01T20%3A36%3A18%2B01%3A00&amp;precision=second" title="See timeline at 12/01/13 20:36:18">16 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1033" class="trac-id">#1033</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=reporter_inactive">reporter_inactive</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Layout Script for a workspace</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">gentoo@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.5.1">4.5.1</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.5.1 (2013-03-18, branch "tags/4.5.1")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+When having an application that spawns multiple windows (pidgin could be an example, or presentation software like <a class="ext-link" href="https://github.com/vain/slinp"><span class="icon">​</span>slinp</a>) it would be nice to have something which automatically puts the windows in a given layout.<br />
+</p>
+<p>
+One idea to solve this is to have a layout script per workspace which is informed whenever a window is changed (NOTE: might be source of race conditions).<br />
+</p>
+<p>
+I therefore propose syntax like <tt>layout workspace "8: foobar" with $HOME/.i3/foobar.py</tt>. Then one could do stuff like:<br />
+</p>
+<pre class="wiki">assign [class=Pidgin] → im
+layout workspace im with $HOME/.i3/scripts/pidgin.py
+</pre><p>
+This would render the fragile "layouting via for_window" obsolete.<br />
+</p>
+<p>
+In a first version, the script could use i3-msg to do the handling. Later it might be an option to allow returning layout information via JSON (<br />
+</p>
+<pre class="wiki">{ "type" : "splith",
+  "nodes" : [ 
+  { "type" : "window", "id" : "1234", "size" : "0.66" },
+  { "type" : "splitv", "size" : "0.33", "nodes" :  […] }]}
+</pre><p>
+Instead of an extra config option, one could use the IPC subscription thingys. But unfortunately, they a) only send events for new windows and b) the event does not include the workspace.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(1)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/1033/i3.log.bz2" title="View attachment">i3.log.bz2</a><a href="/report/raw-attachment/ticket/1033/i3.log.bz2" class="trac-rawlink" title="Download">​</a>
+       (<span title="3110 bytes">3.0 KB</span>) -
+      added by <em>i3-new-ticket</em> <a class="timeline" href="/report/timeline?from=2013-06-19T15%3A32%3A54%2B02%3A00&amp;precision=second" title="See timeline at 06/19/13 15:32:54">22 months ago</a>.
+  </dt>
+              <dd>
+                desc2
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/1033/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(9)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-06-19T15%3A32%3A54%2B02%3A00&amp;precision=second" title="See timeline at 06/19/13 15:32:54">22 months ago</a> by i3-new-ticket
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1033/i3.log.bz2"><em>i3.log.bz2</em></a><a href="/report/raw-attachment/ticket/1033/i3.log.bz2" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+desc2<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-1-1371649033911926">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-06-19T15%3A37%3A13%2B02%3A00&amp;precision=second" title="See timeline at 06/19/13 15:37:13">22 months ago</a> by gentoo@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+If you deem something like this useful, I can try to add this to i3. Just don't want to spend much time on it, when you say "won't be merged anyway" :). Or if there are better suggestions on how to handle that.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1371669521419303">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-06-19T21%3A18%3A41%2B02%3A00&amp;precision=second" title="See timeline at 06/19/13 21:18:41">22 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+The long-standing idea on how to handle this is by having a command that can be used to append a particular piece of layout (stored in a .json file) in a particular place inside the layout tree (e.g. current workspace).<br />
+</p>
+<p>
+The containers loaded from the .json file would then “suck” matching windows (with a for_window like specification) into them. <br />
+</p>
+<p>
+I also thought about what you are proposing (a callback-like thing), but came to the conclusion that it’s too hard to implement in a sane way.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1371670068929841">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-06-19T21%3A27%3A48%2B02%3A00&amp;precision=second" title="See timeline at 06/19/13 21:27:48">22 months ago</a> by gentoo@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+This could also work, yes. Minor advantage of the callback solution: It might handle window-renames (I personally have one use case, where emacs spawns three windows ... but for <tt>for_window</tt> they all are named "Emacs" …)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1371720234269067">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:5" class="follow-up">↓ 5</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-06-20T11%3A23%3A54%2B02%3A00&amp;precision=second" title="See timeline at 06/20/13 11:23:54">22 months ago</a> by gentoo@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I gave this all a couple of thoughts: I see a couple of problems with the 'static .json approach'. For instance: What to do with windows not specified in there that the user pushed into the specified tree. Or when multiple windows match? If it is just going to be ignored: How should the user ask i3 to re-evaluate?<br />
+</p>
+<p>
+This all is somehow solvable, but this puts a lot of logic into i3 and probably needs a very complex json format. And in the end the user still might be unsatisfied, as his use case is not accounted for.<br />
+</p>
+<p>
+Hence I propose a <em>third</em> solution: Do not add anything at all in i3. Instead, enhance the current subscription system to allow 3rd party solutions to tackle this problem.<br />
+</p>
+<p>
+What would be needed is at least the additional events 'window unmapped' and 'window moved to different workspace'. 'window renamed' would be nice, but is optional.<br />
+</p>
+<p>
+The additional (and optional) json-layout-specification then can be rather short, as it only needs to speak about <em>existing</em> windows. Also it should not be a problem to just ignore a layout request when there is something odd about the json/layout.<br />
+</p>
+<p>
+Advantages I see:<br />
+</p>
+<ul><li>no additional logic in i3, except two (three) new events
+</li><li>i3 would still be <em>manual tiling</em> -- it cannot distinguish between the user pushing windows around and a script doing so
+</li><li>different 3rd party solutions can use different ways to solve it (different ways for different needs)
+</li><li>the 3rd party solutions have to take care of possible race conditions, event filtering and so on
+</li></ul>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1372583615189837">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+        in reply to:
+    <a href="#comment:4">↑ 4</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:6" class="follow-up">↓ 6</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-06-30T11%3A13%3A35%2B02%3A00&amp;precision=second" title="See timeline at 06/30/13 11:13:35">21 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1033#comment:4" title="Comment 4">gentoo@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+For instance: What to do with windows not specified in there that the user pushed into the specified tree.<br />
+</p>
+</blockquote>
+<p>
+I don’t get what you mean. If a window does not match any (JSON-loaded) specification, nothing happens.<br />
+</p>
+<blockquote class="citation">
+<p>
+Or when multiple windows match?<br />
+</p>
+</blockquote>
+<p>
+The user can specify whether he wants the first matching window or all matching windows to be assigned to a specific container.<br />
+</p>
+<blockquote class="citation">
+<p>
+If it is just going to be ignored: How should the user ask i3 to re-evaluate?<br />
+</p>
+</blockquote>
+<p>
+i3 evaluates these rules at all time (i.e. at all window property changes).<br />
+</p>
+<blockquote class="citation">
+<p>
+This all is somehow solvable, but this puts a lot of logic into i3 and probably needs a very complex json format. And in the end the user still might be unsatisfied, as his use case is not accounted for.<br />
+</p>
+</blockquote>
+<p>
+I don’t think the JSON will be very complex, but we can always try it and change it later, as long as we clearly mark it experimental.<br />
+</p>
+<blockquote class="citation">
+<p>
+Hence I propose a <em>third</em> solution: Do not add anything at all in i3. Instead, enhance the current subscription system to allow 3rd party solutions to tackle this problem.<br />
+</p>
+</blockquote>
+<p>
+This is inherently asynchronous, which makes for an unsatisfying experience, I think.<br />
+</p>
+<blockquote class="citation">
+<p>
+What would be needed is at least the additional events 'window unmapped' and 'window moved to different workspace'. 'window renamed' would be nice, but is optional.<br />
+</p>
+<p>
+The additional (and optional) json-layout-specification then can be rather short, as it only needs to speak about <em>existing</em> windows. Also it should not be a problem to just ignore a layout request when there is something odd about the json/layout.<br />
+</p>
+<p>
+Advantages I see:<br />
+</p>
+<ul><li>no additional logic in i3, except two (three) new events
+</li><li>i3 would still be <em>manual tiling</em> -- it cannot distinguish between the user pushing windows around and a script doing so
+</li><li>different 3rd party solutions can use different ways to solve it (different ways for different needs)
+</li><li>the 3rd party solutions have to take care of possible race conditions, event filtering and so on
+</li></ul></blockquote>
+<p>
+If you want to work on such a solution, I don’t object. I will neither promise to accept nor reject it at this point, though. Personally, I think what I have in mind is better, but I might be wrong. Having two separate approaches tackling the same problem could be beneficial in the end, no matter which one we end up using.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1372593909009266">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+        in reply to:
+    <a href="#comment:5">↑ 5</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:7" class="follow-up">↓ 7</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-06-30T14%3A05%3A09%2B02%3A00&amp;precision=second" title="See timeline at 06/30/13 14:05:09">21 months ago</a> by gentoo@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1033#comment:5" title="Comment 5">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/1033#comment:4" title="Comment 4">gentoo@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+For instance: What to do with windows not specified in there that the user pushed into the specified tree.<br />
+</p>
+</blockquote>
+<p>
+I don’t get what you mean. If a window does not match any (JSON-loaded) specification, nothing happens.<br />
+</p>
+</blockquote>
+<p>
+Ok, perhaps we are talking past each other.<br />
+</p>
+<p>
+I understood your approach like: You specify in JSON that (on workspace X) you want to have the following layout: <tt>(vsplit (hsplit 60 foo 40 bar) spam)</tt>, so that when you get a window matching "foo" it gets placed in the right place. <br />
+</p>
+<p>
+What I was now asking: Given such a layout, what does happen when you put a window "eggs" manually somewhere onto this workspace. How should i3 now interpret the layout? Where to put a new "foo" window? Should it reject moving "eggs" there? Should it drop handling this layout? Should it do some magic interpolation on how to modify the specified layout?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1372614540859279">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+        in reply to:
+    <a href="#comment:6">↑ 6</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-06-30T19%3A49%3A00%2B02%3A00&amp;precision=second" title="See timeline at 06/30/13 19:49:00">21 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1033#comment:6" title="Comment 6">gentoo@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+I understood your approach like: You specify in JSON that (on workspace X) you want to have the following layout: <tt>(vsplit (hsplit 60 foo 40 bar) spam)</tt>, so that when you get a window matching "foo" it gets placed in the right place. <br />
+</p>
+<p>
+What I was now asking: Given such a layout, what does happen when you put a window "eggs" manually somewhere onto this workspace. How should i3 now interpret the layout? Where to put a new "foo" window? Should it reject moving "eggs" there? Should it drop handling this layout? Should it do some magic interpolation on how to modify the specified layout?<br />
+</p>
+</blockquote>
+<p>
+i3 will create empty containers from your specification once, and the containers will try to suck in windows that match their specs until you close the container.<br />
+</p>
+<p>
+When you put an additional window on that workspace, nothing special happens, as all the other containers are not special in that sense either.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1385926578751681">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-01T20%3A36%3A18%2B01%3A00&amp;precision=second" title="See timeline at 12/01/13 20:36:18">16 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>reporter_inactive</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Closing due to inactivity<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1033?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1033?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1033?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

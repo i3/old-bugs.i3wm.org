@@ -1,0 +1,464 @@
+From 033d233ce8aff286acef9ddc5360cd126f496b49 Mon Sep 17 00:00:00 2001
+From: Michael Stapelberg <michael@stapelberg.de>
+Date: Sat, 13 Jul 2013 10:49:43 +0200
+Subject: [PATCH] set the _NET_WORKAREA hint (+test)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Previously, we did not set this hint at all because it was a poor fit
+for our workspace model. However, since i3 v4, this has changed but was
+never re-evaluated until now.
+
+Let’s try setting this hint and see what breaks, if anything. My hope is
+that various things should work even better now instead.
+
+fixes #1038
+fixes #1012
+fixes #786
+fixes #301
+fixes #539
+---
+ include/atoms.xmacro   |    1 +
+ include/ewmh.h         |   21 ++++++-
+ src/commands.c         |    5 ++
+ src/ewmh.c             |   67 +++++++++------------
+ src/handlers.c         |    1 +
+ src/main.c             |    2 +
+ src/manage.c           |    4 ++
+ src/tree.c             |    7 ++-
+ src/workspace.c        |    4 ++
+ testcases/t/515-ewmh.t |  156 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 10 files changed, 226 insertions(+), 42 deletions(-)
+ create mode 100644 testcases/t/515-ewmh.t
+
+diff --git a/include/atoms.xmacro b/include/atoms.xmacro
+index 205efa1..11e70ac 100644
+--- a/include/atoms.xmacro
++++ b/include/atoms.xmacro
+@@ -29,3 +29,4 @@ xmacro(I3_CONFIG_PATH)
+ xmacro(I3_SYNC)
+ xmacro(I3_SHMLOG_PATH)
+ xmacro(I3_PID)
++xmacro(_NET_NUMBER_OF_DESKTOPS)
+diff --git a/include/ewmh.h b/include/ewmh.h
+index 07ef661..fec2714 100644
+--- a/include/ewmh.h
++++ b/include/ewmh.h
+@@ -2,7 +2,7 @@
+  * vim:ts=4:sw=4:expandtab
+  *
+  * i3 - an improved dynamic tiling window manager
+- * © 2009-2011 Michael Stapelberg and contributors (see also: LICENSE)
++ * © 2009-2013 Michael Stapelberg and contributors (see also: LICENSE)
+  *
+  * ewmh.c: Get/set certain EWMH properties easily.
+  *
+@@ -46,4 +46,23 @@ void ewmh_update_client_list_stacking(xcb_window_t *stack, int num_windows);
+  */
+ void ewmh_setup_hints(void);
+ 
++/**
++ * Updates the _NET_WORKAREA hint which contains the geometry (position + size)
++ * of each workspace. Note that the workspaces contained in _NET_WORKAREA are a
++ * continuous list, so even if you use the workspaces 1, 3 and 5, you will get
++ * a list with 3 entries. Furthermore, the order of workspaces is not defined.
++ *
++ * We used to not set _NET_WORKAREA at all as a reaction to these bugs:
++ * http://bugs.i3wm.org/539
++ * http://bugs.i3wm.org/301
++ * But given that our code works differently by now, we should be able to
++ * properly set it.
++ *
++ * EWMH: Contains a geometry for each desktop. These geometries specify an area
++ * that is completely contained within the viewport. Work area SHOULD be used by
++ * desktop applications to place desktop icons appropriately.
++ *
++ */
++void ewmh_update_workarea(void);
++
+ #endif
+diff --git a/src/commands.c b/src/commands.c
+index 07af140..8b947a9 100644
+--- a/src/commands.c
++++ b/src/commands.c
+@@ -1239,6 +1239,11 @@ void cmd_move_workspace_to_output(I3_CMD, char *name) {
+             CALL(previously_visible_ws, on_remove_child);
+             break;
+         }
++
++        /* Update the _NET_WORKAREA, the workspace will have a new position. */
++        render_con(content, false);
++        render_con(old_content, false);
++        ewmh_update_workarea();
+     }
+ 
+     cmd_output->needs_tree_render = true;
+diff --git a/src/ewmh.c b/src/ewmh.c
+index 9021e1c..7fa138c 100644
+--- a/src/ewmh.c
++++ b/src/ewmh.c
+@@ -4,7 +4,7 @@
+  * vim:ts=4:sw=4:expandtab
+  *
+  * i3 - an improved dynamic tiling window manager
+- * © 2009-2011 Michael Stapelberg and contributors (see also: LICENSE)
++ * © 2009-2013 Michael Stapelberg and contributors (see also: LICENSE)
+  *
+  * ewmh.c: Get/set certain EWMH properties easily.
+  *
+@@ -50,11 +50,16 @@ void ewmh_update_active_window(xcb_window_t window) {
+ }
+ 
+ /*
+- * Updates the workarea for each desktop.
++ * Updates the _NET_WORKAREA hint which contains the geometry (position + size)
++ * of each workspace. Note that the workspaces contained in _NET_WORKAREA are a
++ * continuous list, so even if you use the workspaces 1, 3 and 5, you will get
++ * a list with 3 entries. Furthermore, the order of workspaces is not defined.
+  *
+- * This function is not called at the moment due to:
++ * We used to not set _NET_WORKAREA at all as a reaction to these bugs:
+  * http://bugs.i3wm.org/539
+  * http://bugs.i3wm.org/301
++ * But given that our code works differently by now, we should be able to
++ * properly set it.
+  *
+  * EWMH: Contains a geometry for each desktop. These geometries specify an area
+  * that is completely contained within the viewport. Work area SHOULD be used by
+@@ -62,55 +67,37 @@ void ewmh_update_active_window(xcb_window_t window) {
+  *
+  */
+ void ewmh_update_workarea(void) {
+-    int num_workspaces = 0, count = 0;
+-    Rect last_rect = {0, 0, 0, 0};
+-    Con *output;
++    uint32_t num_workspaces = 0;
++    Con *output, *ws;
+ 
+-    TAILQ_FOREACH(output, &(croot->nodes_head), nodes) {
+-        Con *ws;
+-        TAILQ_FOREACH(ws, &(output_get_content(output)->nodes_head), nodes) {
+-            /* Check if we need to initialize last_rect. The case that the
+-             * first workspace is all-zero may happen when the user
+-             * assigned workspace 2 for his first screen, for example. Thus
+-             * we need an initialized last_rect in the very first run of
+-             * the following loop. */
+-            if (last_rect.width == 0 && last_rect.height == 0 &&
+-                    ws->rect.width != 0 && ws->rect.height != 0) {
+-                memcpy(&last_rect, &(ws->rect), sizeof(Rect));
+-            }
+-            num_workspaces++;
+-        }
+-    }
++    TAILQ_FOREACH(output, &(croot->nodes_head), nodes)
++        TAILQ_FOREACH(ws, &(output_get_content(output)->nodes_head), nodes)
++            if (!con_is_internal(ws))
++                num_workspaces++;
+ 
+     DLOG("Got %d workspaces\n", num_workspaces);
+-    uint8_t *workarea = smalloc(sizeof(Rect) * num_workspaces);
++    xcb_change_property(conn, XCB_PROP_MODE_REPLACE, root,
++            A__NET_NUMBER_OF_DESKTOPS, XCB_ATOM_CARDINAL, 32, 1, &num_workspaces);
++
++    Rect *workarea = smalloc(sizeof(Rect) * num_workspaces);
++    Rect *walk = workarea;
+     TAILQ_FOREACH(output, &(croot->nodes_head), nodes) {
+-        Con *ws;
+         TAILQ_FOREACH(ws, &(output_get_content(output)->nodes_head), nodes) {
+-            DLOG("storing %d: %dx%d with %d x %d\n", count, ws->rect.x,
+-                 ws->rect.y, ws->rect.width, ws->rect.height);
+-            /* If a workspace is not yet initialized and thus its
+-             * dimensions are zero, we will instead put the dimensions
+-             * of the last workspace in the list. For example firefox
+-             * intersects all workspaces and does not cope so well with
+-             * an all-zero workspace. */
+-            if (ws->rect.width == 0 || ws->rect.height == 0) {
+-                DLOG("re-using last_rect (%dx%d, %d, %d)\n",
+-                     last_rect.x, last_rect.y, last_rect.width,
+-                     last_rect.height);
+-                memcpy(workarea + (sizeof(Rect) * count++), &last_rect, sizeof(Rect));
++            if (con_is_internal(ws))
+                 continue;
+-            }
+-            memcpy(workarea + (sizeof(Rect) * count++), &(ws->rect), sizeof(Rect));
+-            memcpy(&last_rect, &(ws->rect), sizeof(Rect));
++            DLOG("storing %dx%d with %d x %d\n", ws->rect.x,
++                 ws->rect.y, ws->rect.width, ws->rect.height);
++            assert(ws->rect.width > 0 && ws->rect.height > 0);
++            memcpy(walk, &(ws->rect), sizeof(Rect));
++            walk++;
+         }
+     }
++
+     xcb_change_property(conn, XCB_PROP_MODE_REPLACE, root,
+             A__NET_WORKAREA, XCB_ATOM_CARDINAL, 32,
+             num_workspaces * (sizeof(Rect) / sizeof(uint32_t)),
+-            workarea);
++            (uint8_t*)workarea);
+     free(workarea);
+-    xcb_flush(conn);
+ }
+ 
+ /*
+diff --git a/src/handlers.c b/src/handlers.c
+index 6be2a5b..4222177 100644
+--- a/src/handlers.c
++++ b/src/handlers.c
+@@ -390,6 +390,7 @@ static void handle_configure_request(xcb_configure_request_event_t *event) {
+ 
+             con->geometry.height = event->height;
+             tree_render();
++            ewmh_update_workarea();
+         }
+     }
+ 
+diff --git a/src/main.c b/src/main.c
+index bc3bb63..4779672 100644
+--- a/src/main.c
++++ b/src/main.c
+@@ -729,6 +729,8 @@ int main(int argc, char *argv[]) {
+ 
+     /* Set up i3 specific atoms like I3_SOCKET_PATH and I3_CONFIG_PATH */
+     x_set_i3_atoms();
++    ewmh_update_current_desktop();
++    ewmh_update_workarea();
+ 
+     struct ev_io *xcb_watcher = scalloc(sizeof(struct ev_io));
+     struct ev_io *xkb = scalloc(sizeof(struct ev_io));
+diff --git a/src/manage.c b/src/manage.c
+index f5bd76e..743a7f9 100644
+--- a/src/manage.c
++++ b/src/manage.c
+@@ -466,6 +466,10 @@ void manage_window(xcb_window_t window, xcb_get_window_attributes_cookie_t cooki
+     }
+     tree_render();
+ 
++    /* If this was a dock window, the _NET_WORKAREA has changed */
++    if (cwindow->dock)
++        ewmh_update_workarea();
++
+     /* Send an event about window creation */
+     ipc_send_window_new_event(nc);
+ 
+diff --git a/src/tree.c b/src/tree.c
+index 6d23750..08c4c32 100644
+--- a/src/tree.c
++++ b/src/tree.c
+@@ -303,9 +303,14 @@ bool tree_close(Con *con, kill_window_t kill_window, bool dont_kill_parent, bool
+      * Rendering has to be avoided when dont_kill_parent is set (when
+      * tree_close calls itself recursively) because the tree is in a
+      * non-renderable state during that time. */
+-    if (!dont_kill_parent)
++    if (!dont_kill_parent) {
+         tree_render();
+ 
++        /* In case we just detached a workspace or detached a dock client, we need
++         * to update the _NET_WORKAREA hint. */
++        ewmh_update_workarea();
++    }
++
+     /* kill the X11 part of this container */
+     x_con_kill(con);
+ 
+diff --git a/src/workspace.c b/src/workspace.c
+index af9325f..19e25f7 100644
+--- a/src/workspace.c
++++ b/src/workspace.c
+@@ -77,6 +77,7 @@ Con *workspace_get(const char *num, bool *created) {
+         FREE(workspace->name);
+         workspace->name = sstrdup(num);
+         workspace->workspace_layout = config.default_layout;
++        workspace->rect = content->rect;
+         /* We set ->num to the number if this workspace’s name begins with a
+          * positive number. Otherwise it’s a named ws and num will be -1. */
+         char *endptr = NULL;
+@@ -97,6 +98,7 @@ Con *workspace_get(const char *num, bool *created) {
+         ipc_send_event("workspace", I3_IPC_EVENT_WORKSPACE, "{\"change\":\"init\"}");
+         if (created != NULL)
+             *created = true;
++        ewmh_update_workarea();
+     }
+     else if (created != NULL) {
+         *created = false;
+@@ -216,6 +218,7 @@ Con *create_workspace_on_output(Output *output, Con *content) {
+     free(name);
+ 
+     ws->fullscreen_mode = CF_OUTPUT;
++    ws->rect = content->rect;
+ 
+     ws->workspace_layout = config.default_layout;
+     _workspace_apply_default_orientation(ws);
+@@ -458,6 +461,7 @@ static void _workspace_show(Con *workspace) {
+             LOG("Closing old workspace (%p / %s), it is empty\n", old, old->name);
+             tree_close(old, DONT_KILL_WINDOW, false, false);
+             ipc_send_event("workspace", I3_IPC_EVENT_WORKSPACE, "{\"change\":\"empty\"}");
++            ewmh_update_workarea();
+         }
+     }
+ 
+diff --git a/testcases/t/515-ewmh.t b/testcases/t/515-ewmh.t
+new file mode 100644
+index 0000000..eb5fff0
+--- /dev/null
++++ b/testcases/t/515-ewmh.t
+@@ -0,0 +1,156 @@
++#!perl
++# vim:ts=4:sw=4:expandtab
++#
++# Please read the following documents before working on tests:
++# • http://build.i3wm.org/docs/testsuite.html
++#   (or docs/testsuite)
++#
++# • http://build.i3wm.org/docs/lib-i3test.html
++#   (alternatively: perldoc ./testcases/lib/i3test.pm)
++#
++# • http://build.i3wm.org/docs/ipc.html
++#   (or docs/ipc)
++#
++# • http://onyxneon.com/books/modern_perl/modern_perl_a4.pdf
++#   (unless you are already familiar with Perl)
++#
++# This test ensures the EWMH hints _NET_CURRENT_DESKTOP,
++# _NET_NUMBER_OF_DESKTOPS and _NET_WORKAREA are set up properly.
++# Ticket: #1038
++# Bug still in: 4.5.1-101-g6241419
++use i3test i3_autostart => 0;
++use X11::XCB qw(PROP_MODE_REPLACE);
++
++# Ensure the pointer is at (0, 0) so that we really start on the first
++# (the left) workspace.
++$x->root->warp_pointer(0, 0);
++
++my $config = <<EOT;
++# i3 config file (v4)
++font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
++
++fake-outputs 1024x768+0+0
++#fake-outputs 1024x768+0+0,1024x768+1024+0
++EOT
++
++my $pid = launch_with_config($config);
++
++sub get_root_property {
++    my ($name, $type) = @_;
++
++    my $cookie = $x->get_property(
++        0, # _delete
++        $x->get_root_window(), # window
++        $x->atom(name => $name)->id, # property
++        $x->atom(name => $type)->id, # type
++        0, # offset
++        4096, # max length (TODO: unit?)
++    );
++    my $reply = $x->get_property_reply($cookie->{sequence});
++    my %mapping = (
++        32 => 'L',
++        16 => 'S',
++        8 => 'C',
++    );
++    die "Reply format " . $reply->{format} . " unsupported"
++        if !exists($mapping{$reply->{format}});
++    my $unpack_type = $mapping{$reply->{format}};
++    return unpack($unpack_type x $reply->{value_len}, $reply->{value});
++}
++
++################################################################################
++# 1: Verify the atoms are correctly set up with one workspace when starting.
++################################################################################
++
++is(get_root_property('_NET_CURRENT_DESKTOP', 'CARDINAL'), 1, '_NET_CURRENT_DESKTOP is 1');
++
++is(get_root_property('_NET_NUMBER_OF_DESKTOPS', 'CARDINAL'), 1, '_NET_NUMBER_OF_DESKTOPS is 1');
++
++my @workarea = get_root_property('_NET_WORKAREA', 'CARDINAL');
++is(@workarea, 4 * 1, '_NET_WORKAREA contains the correct amount of entries');
++
++is_deeply(\@workarea, [0, 0, 1024, 768], '_NET_WORKAREA contains the correct geometry');
++
++################################################################################
++# 2: Open an additional workspace and re-check
++################################################################################
++
++cmd 'open';
++cmd 'workspace 5';
++
++is(get_root_property('_NET_CURRENT_DESKTOP', 'CARDINAL'), 2, '_NET_CURRENT_DESKTOP is 2');
++
++is(get_root_property('_NET_NUMBER_OF_DESKTOPS', 'CARDINAL'), 2, '_NET_NUMBER_OF_DESKTOPS is 2');
++
++@workarea = get_root_property('_NET_WORKAREA', 'CARDINAL');
++is(@workarea, 4 * 2, '_NET_WORKAREA contains the correct amount of entries');
++
++is_deeply(\@workarea, [0, 0, 1024, 768, 0, 0, 1024, 768], '_NET_WORKAREA contains the correct geometry');
++
++################################################################################
++# 3: the same, but with a named workspace
++################################################################################
++
++cmd 'open';
++cmd 'workspace foobar';
++
++is(get_root_property('_NET_CURRENT_DESKTOP', 'CARDINAL'), 3, '_NET_CURRENT_DESKTOP is 3');
++
++is(get_root_property('_NET_NUMBER_OF_DESKTOPS', 'CARDINAL'), 3, '_NET_NUMBER_OF_DESKTOPS is 3');
++
++@workarea = get_root_property('_NET_WORKAREA', 'CARDINAL');
++is(@workarea, 4 * 3, '_NET_WORKAREA contains the correct amount of entries');
++
++is_deeply(\@workarea, [0, 0, 1024, 768, 0, 0, 1024, 768, 0, 0, 1024, 768], '_NET_WORKAREA contains the correct geometry');
++
++################################################################################
++# 4: verify _NET_CURRENT_DESKTOP changes
++################################################################################
++
++cmd 'open';
++cmd 'workspace 5';
++
++is(get_root_property('_NET_CURRENT_DESKTOP', 'CARDINAL'), 2, '_NET_CURRENT_DESKTOP is 2');
++
++is(get_root_property('_NET_NUMBER_OF_DESKTOPS', 'CARDINAL'), 3, '_NET_NUMBER_OF_DESKTOPS is 3');
++
++@workarea = get_root_property('_NET_WORKAREA', 'CARDINAL');
++is(@workarea, 4 * 3, '_NET_WORKAREA contains the correct amount of entries');
++
++is_deeply(\@workarea, [0, 0, 1024, 768, 0, 0, 1024, 768, 0, 0, 1024, 768], '_NET_WORKAREA contains the correct geometry');
++
++exit_gracefully($pid);
++
++################################################################################
++# 5: same for a multi-monitor environment
++################################################################################
++
++
++# TODO maybe later? _NET_DESKTOP_NAMES(UTF8_STRING) = "Workspace 1", "Workspace 2", "Workspace 3", "Workspace 4"
++# _NET_WORKAREA(CARDINAL) = 0, 0, 1920, 1200, 0, 0, 1920, 1200, 0, 0, 1920, 1200, 0, 0, 1920, 1200, 1920, 0, 1920, 1200
++# should we remove? _UNITY_NET_WORKAREA_REGION(CARDINAL) = 0, 0, 1920, 1176
++#
++
++$config = <<EOT;
++# i3 config file (v4)
++font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
++
++fake-outputs 1024x768+0+0,1024x768+1024+2
++EOT
++
++$pid = launch_with_config($config);
++
++cmd 'workspace 2';
++
++is(get_root_property('_NET_CURRENT_DESKTOP', 'CARDINAL'), 2, '_NET_CURRENT_DESKTOP is 2');
++
++is(get_root_property('_NET_NUMBER_OF_DESKTOPS', 'CARDINAL'), 2, '_NET_NUMBER_OF_DESKTOPS is 2');
++
++@workarea = get_root_property('_NET_WORKAREA', 'CARDINAL');
++is(@workarea, 4 * 2, '_NET_WORKAREA contains the correct amount of entries');
++
++is_deeply(\@workarea, [0, 0, 1024, 768, 1024, 2, 1024, 768], '_NET_WORKAREA contains the correct geometry');
++
++exit_gracefully($pid);
++
++done_testing;
+-- 
+1.7.10.4
+

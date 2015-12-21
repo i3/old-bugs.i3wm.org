@@ -1,0 +1,25 @@
+#0  0xffffe416 in __kernel_vsyscall ()
+#1  0x0055cdbb in __poll (fds=0x5f3ff4, nfds=1, timeout=-1) at ../sysdeps/unix/sysv/linux/poll.c:83
+#2  0x00de9d90 in _xcb_conn_wait (c=0x808bcd8, cond=0x808bcfc, vector=0x0, count=0x0) at ../../src/xcb_conn.c:316
+#3  0x00deb707 in xcb_wait_for_event (c=0x808bcd8) at ../../src/xcb_in.c:547
+#4  0x00819ff2 in xcb_event_wait_for_event_loop () from /usr/lib/libxcb-event.so.1
+#5  0x0806e233 in handle_signal (sig=11, info=0xbfb47b0c, data=0xbfb47b8c) at src/sighandler.c:208
+#6  <signal handler called>
+#7  0x08069f99 in con_descend_focused (con=0x0) at src/con.c:686
+#8  0x08062814 in floating_disable (con=0x8118718, automatic=false) at src/floating.c:179
+#9  0x08062933 in toggle_floating_mode (con=0x8118718, automatic=false) at src/floating.c:211
+#10 0x08053610 in cmdyyparse () at src/cmdparse.y:470
+#11 0x0805202e in parse_cmd (new=0x80a41e0 "mode toggle") at src/cmdparse.y:75
+#12 0x08064b1a in handle_key_press (ignored=0x0, conn=0x808bcd8, event=0x811aff0) at src/handlers.c:100
+#13 0x00819f15 in xcb_event_handle () from /usr/lib/libxcb-event.so.1
+#14 0x0805973f in xcb_check_cb (loop=0x80b9c98, w=0x80ba370, revents=32768) at src/main.c:69
+#15 0x004095d4 in ev_invoke_pending () from /usr/lib/libev.so.3
+#16 0x0040e9b0 in ev_loop () from /usr/lib/libev.so.3
+#17 0x0805b5b3 in main (argc=4, argv=0xbfb488c4) at src/main.c:518
+(gdb) frame 7
+#7  0x08069f99 in con_descend_focused (con=0x0) at src/con.c:686
+686         while (!TAILQ_EMPTY(&(next->focus_head)))
+(gdb) display &(next->focus_head)
+3: &(next->focus_head) = (struct focus_head *) 0xa4
+(gdb) display &(next)
+4: &(next) = (Con **) 0xbfb47e84

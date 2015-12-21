@@ -1,0 +1,980 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1335 (Respect win_gravity sizehint for floating windows)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1334" title="Ticket #1334" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1335?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1335?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1335?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1336" title="Ticket #1336" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="4db5f1f25c2512314495dbbc";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1334" title="Ticket #1334">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1336" title="Ticket #1336">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2014-08-02T04%3A39%3A13%2B02%3A00&amp;precision=second" title="See timeline at 08/02/14 04:39:13">8 months ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2014-08-27T17%3A59%3A54%2B02%3A00&amp;precision=second" title="See timeline at 08/27/14 17:59:54">7 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1335" class="trac-id">#1335</a>
+    <span class="trac-status">
+      <a href="/report/query?status=new">new</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Respect win_gravity sizehint for floating windows</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">lolilolicon@…</td>
+      <th id="h_owner" class="missing">Owned by:</th>
+      <td headers="h_owner"></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.8">4.8</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.8 (2014-06-15, branch "4.8")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+When a floating window with win_gravity sizehint set to <a class="forbidden wiki" title="no permission to view this wiki page">CenterGravity</a> and<br />
+XResizeWindow is called on it, i3 should keep the center of the window at<br />
+the here it is. Currently, i3 always keeps the <a class="forbidden wiki" title="no permission to view this wiki page">NorthWest</a> corner instead.<br />
+The documentation<a class="missing changeset" title="No default repository defined">[1]</a> talks about resizing a *parent* window, which makes<br />
+not sure if what I'm asking is a required behavior. BUT, I can confirm<br />
+that in Gnome, it works as I like it.<br />
+</p>
+<p>
+<a class="missing changeset" title="No default repository defined">[1]</a> <a class="ext-link" href="http://www.x.org/releases/X11R7.7/doc/libX11/libX11/libX11.html#Gravity_Attributes"><span class="icon">​</span>http://www.x.org/releases/X11R7.7/doc/libX11/libX11/libX11.html#Gravity_Attributes</a><br />
+</p>
+<p>
+The window I'm talking about is set up with something like this:<br />
+</p>
+<blockquote>
+<p>
+XSizeHints sizehints;<br />
+sizehints.flags = PWinGravity;<br />
+sizehints.win_gravity = <a class="forbidden wiki" title="no permission to view this wiki page">CenterGravity</a>;<br />
+XSetWMNormalHints(dpy, win, &amp;sizehints);<br />
+</p>
+</blockquote>
+<p>
+and later on change its size with<br />
+</p>
+<blockquote>
+<p>
+XResizeWindow(dpy, win, width, height);<br />
+</p>
+</blockquote>
+<p>
+Does this make sense to you? I'd like this because I added a that<br />
+<a class="forbidden wiki" title="no permission to view this wiki page">CenterGravity</a> bit to sxiv and a key binding to resize the window to fit<br />
+image size, and I don't want the perfectly centered window to change<br />
+positions after I press that key. Please consider this, thank you!<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(13)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1407494667116381">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:2" class="follow-up">↓ 2</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-08T12%3A44%3A27%2B02%3A00&amp;precision=second" title="See timeline at 08/08/14 12:44:27">8 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I can see where you are coming from.<br />
+</p>
+<p>
+However, note that this is the first time in 5 years that someone actually makes use of the gravity feature, and i3 does not care about gravity at all in its entire code.<br />
+</p>
+<p>
+Personally, I’d say the gravity feature is old and crufty, and rarely-used.<br />
+</p>
+<p>
+Would it be possible for you to change your code to not rely on that? I think that’d make it compatible with a wide range of niche window managers.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1407502680762822">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+        in reply to:
+    <a href="#comment:1">↑ 1</a>
+        ;
+          <span>follow-ups:</span>
+    <a href="#comment:3" class="follow-up">↓ 3</a>
+    <a href="#comment:4" class="follow-up">↓ 4</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-08T14%3A58%3A00%2B02%3A00&amp;precision=second" title="See timeline at 08/08/14 14:58:00">8 months ago</a> by lolilolicon@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1335#comment:1" title="Comment 1">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Would it be possible for you to change your code to not rely on that? I think that’d make it compatible with a wide range of niche window managers.<br />
+</p>
+</blockquote>
+<p>
+Yes, it seems possible to change my code to accommodate. But I have to change a simple <tt>XResizeWindow</tt> to first checking the sizehints myself with <tt>XGetWMNormalHints</tt>, followed by <tt>XGetGeometry</tt>, <tt>XTranslateCoordinates</tt>, and finally <tt>XMoveResizeWindow</tt>. It's not <em>that</em> much work, but it feels like a job more suitable for the window manager.<br />
+</p>
+<p>
+By default mpv (which also sets the win_gravity to <tt>CenterGravity</tt>) presents the same problem; fortunately, I was able to dig out the <tt>--force-window-position</tt> option. But then again, this feels like a lucky workaround.<br />
+</p>
+<p>
+Obviously, I won't always be able to find equivalent command line options, or to modify the source code, to make this work. That's why I really hope i3 will implement this support.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1407514121032383">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+        in reply to:
+    <a href="#comment:2">↑ 2</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-08T18%3A08%3A41%2B02%3A00&amp;precision=second" title="See timeline at 08/08/14 18:08:41">8 months ago</a> by lolilolicon@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1335#comment:2" title="Comment 2">lolilolicon@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/1335#comment:1" title="Comment 1">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Would it be possible for you to change your code to not rely on that? I think that’d make it compatible with a wide range of niche window managers.<br />
+</p>
+</blockquote>
+<p>
+Yes, it seems possible to change my code to accommodate. But I have to change a simple <tt>XResizeWindow</tt> to first checking the sizehints myself with <tt>XGetWMNormalHints</tt>, followed by <tt>XGetGeometry</tt>, <tt>XTranslateCoordinates</tt>, and finally <tt>XMoveResizeWindow</tt>. It's not <em>that</em> much work, but it feels like a job more suitable for the window manager.<br />
+</p>
+</blockquote>
+<p>
+Now as it turns out, for my code to work in both i3 and Gnome, I have to consider _NET_FRAME_EXTENTS too. Although the code seems to work, it's getting quite ugly, and I'm not quite sure why I need to plus/minus offsets differently depending on win_gravity in Gnome, all to cancel some offsetting done by Gnome's window manager...<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1407518747272930">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+        in reply to:
+    <a href="#comment:2">↑ 2</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:5" class="follow-up">↓ 5</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-08T19%3A25%3A47%2B02%3A00&amp;precision=second" title="See timeline at 08/08/14 19:25:47">8 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1335#comment:2" title="Comment 2">lolilolicon@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/1335#comment:1" title="Comment 1">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Would it be possible for you to change your code to not rely on that? I think that’d make it compatible with a wide range of niche window managers.<br />
+</p>
+</blockquote>
+<p>
+Yes, it seems possible to change my code to accommodate. But I have to change a simple <tt>XResizeWindow</tt> to first checking the sizehints myself with <tt>XGetWMNormalHints</tt>, followed by <tt>XGetGeometry</tt>, <tt>XTranslateCoordinates</tt>, and finally <tt>XMoveResizeWindow</tt>. It's not <em>that</em> much work, but it feels like a job more suitable for the window manager.<br />
+</p>
+</blockquote>
+<p>
+Why do you need to check the size hints?<br />
+</p>
+<p>
+Also, wouldn’t you already know the current geometry? You get <a class="forbidden wiki" title="no permission to view this wiki page">ConfigureNotify</a> events for every size/position change, so you could keep track of that.<br />
+</p>
+<blockquote class="citation">
+<p>
+By default mpv (which also sets the win_gravity to <tt>CenterGravity</tt>) presents the same problem; fortunately, I was able to dig out the <tt>--force-window-position</tt> option. But then again, this feels like a lucky workaround.<br />
+</p>
+</blockquote>
+<p>
+Never noticed this. I do wonder why you’re using mpv as a floating window at all, though, given that i3 is a tiling window manager which an emphasized dislike of floating windows for anything except for password dialog popups :).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1407523249547397">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+        in reply to:
+    <a href="#comment:4">↑ 4</a>
+        ;
+          <span>follow-ups:</span>
+    <a href="#comment:6" class="follow-up">↓ 6</a>
+    <a href="#comment:7" class="follow-up">↓ 7</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-08T20%3A40%3A49%2B02%3A00&amp;precision=second" title="See timeline at 08/08/14 20:40:49">8 months ago</a> by lolilolicon@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1335#comment:4" title="Comment 4">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/1335#comment:2" title="Comment 2">lolilolicon@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Yes, it seems possible to change my code to accommodate. But I have to change a simple <tt>XResizeWindow</tt> to first checking the sizehints myself with <tt>XGetWMNormalHints</tt>, followed by <tt>XGetGeometry</tt>, <tt>XTranslateCoordinates</tt>, and finally <tt>XMoveResizeWindow</tt>. It's not <em>that</em> much work, but it feels like a job more suitable for the window manager.<br />
+</p>
+</blockquote>
+<p>
+Why do you need to check the size hints?<br />
+</p>
+</blockquote>
+<p>
+To get the value win_gravity hint. This is a custom command (that can be bound to a keybinding) for sxiv that resizes the window to the size of the displayed image.<br />
+</p>
+<blockquote class="citation">
+<p>
+Also, wouldn’t you already know the current geometry? You get <a class="forbidden wiki" title="no permission to view this wiki page">ConfigureNotify</a> events for every size/position change, so you could keep track of that.<br />
+</p>
+</blockquote>
+<p>
+Yes, sxiv stores the window geometry on <tt>ConfigureNotify</tt>. But I still need to call <tt>XTranslateCoordinates</tt> because sxiv does not keep track of this.<br />
+</p>
+<blockquote class="citation">
+<blockquote class="citation">
+<p>
+By default mpv (which also sets the win_gravity to <tt>CenterGravity</tt>) presents the same problem; fortunately, I was able to dig out the <tt>--force-window-position</tt> option. But then again, this feels like a lucky workaround.<br />
+</p>
+</blockquote>
+<p>
+Never noticed this. I do wonder why you’re using mpv as a floating window at all, though, given that i3 is a tiling window manager which an emphasized dislike of floating windows for anything except for password dialog popups :).<br />
+</p>
+</blockquote>
+<p>
+I've always floated media players since I started using tiling window managers, dwm, xmonad, awesome, etc. A tiled window forces a size different than the actual video size, and leaves black bars around the video; I really dislike that. Floating window for small videos, fullscreen for HD content, that's what I usually do.<br />
+</p>
+<p>
+What is particularly sticky is what I mentioned in comment 3. To have to offset for _NET_FRAME_EXTENTS really turns my code into something out of a window manager.  I wonder what else could break this code now.<br />
+</p>
+<p>
+---<br />
+Now, I have some more test results on mpv and its <tt>--force-window-position</tt> option.<br />
+</p>
+<p>
+First, I have <tt>Alt+2</tt> bound to <tt>set window-scale 0.5</tt> in my mpv input.conf, which scales the mpv window to half the video size.<br />
+</p>
+<p>
+With <tt>--no-force-window-position</tt>: In Gnome, everything works; press <tt>Alt+2</tt> and the window is scaled and kept in the center. In i3, since gravity is ignored, the window is scaled but not kept in the center.<br />
+</p>
+<p>
+With <tt>--force-window-position</tt>: In i3, everything works; press <tt>Alt+2</tt> and the window is scaled and centered. In Gnome, when <tt>Alt+2</tt> is pressed, the window is scaled, but not centered; every time <tt>Alt+2</tt> is pressed, the window moves down 19 pixels; I recognize this bug, which only disappeared after I added the code to handle _NET_FRAME_EXTENTS in my own code.<br />
+</p>
+<p>
+Now consider that <tt>--no-force-window-position</tt> is the default behavior of mpv, and that is not without a good reason. It's best if the window manager can honor gravity hints and position the window as hinted, since it's one thing no application does better than the window manager.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1407529368999187">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+        in reply to:
+    <a href="#comment:5">↑ 5</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-08T22%3A22%3A48%2B02%3A00&amp;precision=second" title="See timeline at 08/08/14 22:22:48">8 months ago</a> by lolilolicon@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1335#comment:5" title="Comment 5">lolilolicon@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+With <tt>--force-window-position</tt>: In i3, everything works; press <tt>Alt+2</tt> and the window is scaled and centered.<br />
+</p>
+</blockquote>
+<p>
+Actually, nope. I was writing this in Gnome, didn't really test it in i3. In i3, press <tt>Alt+2</tt>, the window is scaled, but <em>not</em> centered. And it also moves too, slightly. Looks like mpv is really managing its window very poorly in this case.<br />
+</p>
+<p>
+What <tt>--force-window-position</tt> does help in i3 is that it keeps the window at center when you <em>switch to the next video</em> in the playlist.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1407534072717098">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+        in reply to:
+    <a href="#comment:5">↑ 5</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:8" class="follow-up">↓ 8</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-08T23%3A41%3A12%2B02%3A00&amp;precision=second" title="See timeline at 08/08/14 23:41:12">8 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1335#comment:5" title="Comment 5">lolilolicon@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/1335#comment:4" title="Comment 4">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/1335#comment:2" title="Comment 2">lolilolicon@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Yes, it seems possible to change my code to accommodate. But I have to change a simple <tt>XResizeWindow</tt> to first checking the sizehints myself with <tt>XGetWMNormalHints</tt>, followed by <tt>XGetGeometry</tt>, <tt>XTranslateCoordinates</tt>, and finally <tt>XMoveResizeWindow</tt>. It's not <em>that</em> much work, but it feels like a job more suitable for the window manager.<br />
+</p>
+</blockquote>
+<p>
+Why do you need to check the size hints?<br />
+</p>
+</blockquote>
+<p>
+To get the value win_gravity hint. This is a custom command (that can be bound to a keybinding) for sxiv that resizes the window to the size of the displayed image.<br />
+</p>
+</blockquote>
+<p>
+But why do you need to check the value of the gravity hint? Just never set it and assume it’s the default is what I’m proposing.<br />
+</p>
+<blockquote class="citation">
+<blockquote class="citation">
+<blockquote class="citation">
+<p>
+Also, wouldn’t you already know the current geometry? You get <a class="forbidden wiki" title="no permission to view this wiki page">ConfigureNotify</a> events for every size/position change, so you could keep track of that.<br />
+</p>
+</blockquote>
+</blockquote>
+<p>
+Yes, sxiv stores the window geometry on <tt>ConfigureNotify</tt>. But I still need to call <tt>XTranslateCoordinates</tt> because sxiv does not keep track of this.<br />
+</p>
+</blockquote>
+<p>
+Agreed.<br />
+</p>
+<blockquote class="citation">
+<p>
+What is particularly sticky is what I mentioned in comment 3. To have to offset for _NET_FRAME_EXTENTS really turns my code into something out of a window manager.  I wonder what else could break this code now.<br />
+</p>
+</blockquote>
+<p>
+But you don’t have to account for the borders. The border width is handled by the window manager upon <a class="forbidden wiki" title="no permission to view this wiki page">ConfigureRequests</a>.<br />
+</p>
+<p>
+I still maintain that it should be doable in your application to implement resizing/moving in a relatively straight-forward fashion without jumping through too many hoops.<br />
+</p>
+<p>
+Take your time to do some tests and figure it out, maybe sleep a night over it. If you, after implementing the most straight-forward way to avoid the center gravity, still think it’d be better to have this code in the window manager, post your code and I’ll reconsider.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1407542089622997">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+        in reply to:
+    <a href="#comment:7">↑ 7</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:13" class="follow-up">↓ 13</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-09T01%3A54%3A49%2B02%3A00&amp;precision=second" title="See timeline at 08/09/14 01:54:49">8 months ago</a> by lolilolicon@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1335#comment:7" title="Comment 7">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/1335#comment:5" title="Comment 5">lolilolicon@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/1335#comment:4" title="Comment 4">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Why do you need to check the size hints?<br />
+</p>
+</blockquote>
+<p>
+To get the value win_gravity hint. This is a custom command (that can be bound to a keybinding) for sxiv that resizes the window to the size of the displayed image.<br />
+</p>
+</blockquote>
+<p>
+But why do you need to check the value of the gravity hint? Just never set it and assume it’s the default is what I’m proposing.<br />
+</p>
+<blockquote class="citation">
+<p>
+What is particularly sticky is what I mentioned in comment 3. To have to offset for _NET_FRAME_EXTENTS really turns my code into something out of a window manager.  I wonder what else could break this code now.<br />
+</p>
+</blockquote>
+<p>
+But you don’t have to account for the borders. The border width is handled by the window manager upon <a class="forbidden wiki" title="no permission to view this wiki page">ConfigureRequests</a>.<br />
+</p>
+</blockquote>
+<p>
+There is a crucial difference between Gnome/mutter and i3 in handling <tt>XMoveResizeWindow()</tt>, which is all the reason why I had to add <tt>_NET_FRAME_EXTENTS</tt> handling in my code.<br />
+</p>
+<p>
+For example, say <tt>win</tt> is my application window, and its <tt>win_gravity</tt> is <tt>NorthWestGravity</tt>, now:<br />
+</p>
+<p>
+If I call <tt>XMoveResizeWindow(dpy, win, x, y, w, h)</tt> in i3, the top-left corner of <tt>win</tt> will be placed at <tt>(x, y)</tt>; straight-forward.<br />
+If I call <tt>XMoveResizeWindow(dpy, win, x, y, w, h)</tt> in Gnome, the top-left corner of the <tt>win</tt> will be placed at <tt>(x + frame_left, y + frame_top)</tt>; this is done so the top-left corner of the <em>frame</em> is placed at <tt>(x, y)</tt>.<br />
+</p>
+<p>
+This behavior of Gnome forces me to get the frame extents via <tt>_NET_FRAME_EXTENTS</tt>, <em>and</em> calculate the <tt>x</tt> and <tt>y</tt> that are to be passed to <tt>XMoveResizeWindow()</tt> according to <tt>win_gravity</tt>.<br />
+</p>
+<p>
+One more example, if the <tt>win_gravity</tt> of <tt>win</tt> is <tt>CenterGravity</tt>, and the current absolute coordinates of <tt>win</tt> is <tt>(x, y)</tt> (which I get from either monitoring <tt>ConfigureNotify</tt> events or <tt>XGetGeometry()</tt>).<br />
+Now in order to <em>keep <tt>win</tt> where it is</em>, what should I pass to <tt>XMoveResizeWindow()</tt>? The answer is <tt>XMoveResizeWindow(dpy, win, x + (frame_right - frame_left)/2, y + (frame_bottom - frame_top)/2, w, h)</tt>.<br />
+Maybe I should explain how I reached that value, say <tt>x_passed</tt> is the X coordinate passed to <tt>XMoveResizeWindow()</tt>, since the <tt>win_gravity</tt> is <tt>CenterGravity</tt>, Gnome/mutter will keep the coordinates of the center of <tt>win</tt> and later of the window frame at the same position. So we have:<br />
+</p>
+<pre class="wiki">x_center == x_passed + w/2 == (x - frame_left) + (frame_left + w + frame_right)/2
+y_center == y_passed + h/2 == (y - frame_top) + (frame_top + h + frame_bottom)/2
+</pre><p>
+And this turned out to work in Gnome/mutter.<br />
+</p>
+<blockquote class="citation">
+<p>
+I still maintain that it should be doable in your application to implement resizing/moving in a relatively straight-forward fashion without jumping through too many hoops.<br />
+</p>
+</blockquote>
+<p>
+Unless there is either a straight-forward way to get the correct coordinates to pass to <tt>XMoveResizeWindow()</tt>, or a better alternative to <tt>XMoveResizeWindow()</tt>, I can't find a more straight-forward way to satisfy both i3 and Gnome.<br />
+</p>
+<blockquote class="citation">
+<p>
+Take your time to do some tests and figure it out, maybe sleep a night over it. If you, after implementing the most straight-forward way to avoid the center gravity, still think it’d be better to have this code in the window manager, post your code and I’ll reconsider.<br />
+</p>
+</blockquote>
+<p>
+If the above turns out to be not clear or convincing enough, I will prepare a patch for sxiv so you can test it out.<br />
+</p>
+<p>
+Note that my code used to be a simple <tt>XResizeWindow(dpy, win, w, h)</tt> and the window positioning was handled automatically by Gnome according to <tt>win_gravity</tt>. If i3 did the same, I wouldn't have to go so far as to get to know stuff like <tt>_NET_FRAME_EXTENTS</tt>...<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1407544680260815">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-09T02%3A38%3A00%2B02%3A00&amp;precision=second" title="See timeline at 08/09/14 02:38:00">8 months ago</a> by lolilolicon@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+sxiv patch v1 <a class="ext-link" href="http://ix.io/dOu"><span class="icon">​</span>http://ix.io/dOu</a><br />
+sxiv patch v2 <a class="ext-link" href="http://ix.io/dOv"><span class="icon">​</span>http://ix.io/dOv</a><br />
+</p>
+<p>
+To test, see the note at the header of the files.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1407691113867726">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-10T19%3A18%3A33%2B02%3A00&amp;precision=second" title="See timeline at 08/10/14 19:18:33">8 months ago</a> by lolilolicon@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I added some logic in my code to check _NET_SUPPORTED for _NET_FRAME_EXTENTS support so it works more reliably.<br />
+</p>
+<p>
+Speaking of which, shouldn't i3 support <tt>_NET_FRAME_EXTENTS</tt> though? The EWMH spec states,<br />
+</p>
+<blockquote class="citation">
+<p>
+The Window Manager MUST set _NET_FRAME_EXTENTS to the extents of the window's frame.<br />
+</p>
+</blockquote>
+<p>
+I understand that this doesn't make much sense for tiled windows, but for floating windows it's kind of useful.<br />
+</p>
+<p>
+In any case, I wonder, is the application supposed to check and adapt in order to place its window where it wants? Now, if I want my application to work in as many window managers as possible, I probably have to do such things. But should i3 be one of those broken window managers that require such work on the application's part?<br />
+</p>
+<p>
+I will again quote the EWMH spec,<br />
+</p>
+<blockquote class="citation">
+<p>
+Window Managers MUST honor the win_gravity field of WM_NORMAL_HINTS for both <a class="forbidden wiki" title="no permission to view this wiki page">MapRequest</a> and <a class="forbidden wiki" title="no permission to view this wiki page">ConfigureRequest</a> events (ICCCM Version 2.0, §4.1.2.3 and §4.1.5)<br />
+</p>
+</blockquote>
+<p>
+Would it require too much effort to implement this?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1407695181135303">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-10T20%3A26%3A21%2B02%3A00&amp;precision=second" title="See timeline at 08/10/14 20:26:21">8 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I think the basic problem is <a class="infoneeded_new ticket" href="/report/ticket/1341" title="defect: Inconsistency in window frame offsetting (infoneeded_new)">#1341</a>, i.e. the “does-the-frame-count” question that seems to be handled differently in i3 than in other window managers.<br />
+</p>
+<p>
+Once that is fixed, I don’t think we need to bother with geometries.<br />
+</p>
+<p>
+That said, not sure when/if I’ll get around to looking into these (tedious) issues. Patches appreciated at <a class="ext-link" href="http://cr.i3wm.org/"><span class="icon">​</span>http://cr.i3wm.org/</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-12-1407698569757206">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-10T21%3A22%3A49%2B02%3A00&amp;precision=second" title="See timeline at 08/10/14 21:22:49">8 months ago</a> by lolilolicon@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Well, I took a look at <tt>src/handlers.c</tt>, the <tt>handle_configure_request()</tt> function is likely where work is needed to fix this. I haven't run this in debug mode to confirm, but by the looks of it, a simple <tt>XResizeWindow()</tt> would not make i3 do anything about the x y coordinates, which is where the problem lies. I don't think it'd be hard to add gravity logic here, but I don't know the structure of the codebase at all so I will not attempt it myself.<br />
+</p>
+<p>
+<a class="infoneeded_new ticket" href="/report/ticket/1341" title="defect: Inconsistency in window frame offsetting (infoneeded_new)">#1341</a> is related, but not that much. I think gravity handling can be fixed by itself, without considering the frame irregularity.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-13-1409155194505846">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:13" class="cnum">
+    <a href="#comment:13">comment:13</a>
+  </span>
+        in reply to:
+    <a href="#comment:8">↑ 8</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-08-27T17%3A59%3A54%2B02%3A00&amp;precision=second" title="See timeline at 08/27/14 17:59:54">7 months ago</a> by lolilolicon@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1335#comment:8" title="Comment 8">lolilolicon@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Note that my code used to be a simple <tt>XResizeWindow(dpy, win, w, h)</tt> and the window positioning was handled automatically by Gnome according to <tt>win_gravity</tt>. If i3 did the same, I wouldn't have to go so far as to get to know stuff like <tt>_NET_FRAME_EXTENTS</tt>...<br />
+</p>
+</blockquote>
+<p>
+For reference, adding this quote from the EWMH spec,<br />
+</p>
+<blockquote class="citation">
+<p>
+If an Application requests just a new size, its reference point does not move. So for example if client window has win_gravity <a class="forbidden wiki" title="no permission to view this wiki page">SouthEastGravity</a> and is resized, the bottom right corner of its frame will not move but instead the top left corner will be adjusted by the difference in size.<br />
+</p>
+</blockquote>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1335?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1335?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1335?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

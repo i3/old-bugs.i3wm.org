@@ -1,0 +1,137 @@
+From 5d5c5c373d3fc91556f9a537bd59f009df57f52a Mon Sep 17 00:00:00 2001
+From: Vadim Atlygin <vadim.atlygin@gmail.com>
+Date: Fri, 8 Jun 2012 21:55:46 +1000
+Subject: [PATCH] Add support for {"separator" : true} blocks
+
+---
+ i3bar/include/common.h |    5 ++++-
+ i3bar/src/child.c      |   21 ++++++++++++++++++---
+ i3bar/src/xcb.c        |   27 +++++++++++++--------------
+ 3 files changed, 35 insertions(+), 18 deletions(-)
+
+diff --git a/i3bar/include/common.h b/i3bar/include/common.h
+index 212b9dd..ee1d993 100644
+--- a/i3bar/include/common.h
++++ b/i3bar/include/common.h
+@@ -29,7 +29,10 @@ struct rect_t {
+ /* This data structure represents one JSON dictionary, multiple of these make
+  * up one status line. */
+ struct status_block {
+-    char *full_text;
++    union {
++        char *full_text;
++        char separator;
++    };
+ 
+     char *color;
+ 
+diff --git a/i3bar/src/child.c b/i3bar/src/child.c
+index c2be484..d45c7a6 100644
+--- a/i3bar/src/child.c
++++ b/i3bar/src/child.c
+@@ -80,7 +80,9 @@ static int stdin_start_array(void *context) {
+     struct status_block *first;
+     while (!TAILQ_EMPTY(&statusline_head)) {
+         first = TAILQ_FIRST(&statusline_head);
+-        FREE(first->full_text);
++        if (first->separator != 1) {
++            FREE(first->full_text);
++        }
+         FREE(first->color);
+         TAILQ_REMOVE(&statusline_head, first, blocks);
+         free(first);
+@@ -115,12 +117,24 @@ static int stdin_string(void *context, const unsigned char *val, size_t len) {
+ static int stdin_string(void *context, const unsigned char *val, unsigned int len) {
+ #endif
+     parser_ctx *ctx = context;
+-    if (strcasecmp(ctx->last_map_key, "full_text") == 0) {
++    if (strcasecmp(ctx->last_map_key, "full_text") == 0 && ctx->block.separator != 1) {
+         sasprintf(&(ctx->block.full_text), "%.*s", len, val);
+     }
+     if (strcasecmp(ctx->last_map_key, "color") == 0) {
+         sasprintf(&(ctx->block.color), "%.*s", len, val);
+     }
++    if (strcasecmp(ctx->last_map_key, "separator") == 0) {
++        ctx->block.separator = 1;
++    }
++    return 1;
++}
++
++static int stdin_boolean(void *context, int boolVal) {
++    parser_ctx *ctx = context;
++    if (strcasecmp(ctx->last_map_key, "separator") == 0 && boolVal) {
++        FREE(ctx->block.full_text);
++        ctx->block.separator = 1;
++    }
+     return 1;
+ }
+ 
+@@ -130,7 +144,7 @@ static int stdin_end_map(void *context) {
+     memcpy(new_block, &(ctx->block), sizeof(struct status_block));
+     /* Ensure we have a full_text set, so that when it is missing (or null),
+      * i3bar doesn’t crash and the user gets an annoying message. */
+-    if (!new_block->full_text)
++    if (new_block->separator != 1 && !new_block->full_text)
+         new_block->full_text = sstrdup("SPEC VIOLATION (null)");
+     TAILQ_INSERT_TAIL(&statusline_head, new_block, blocks);
+     return 1;
+@@ -253,6 +267,7 @@ void start_child(char *command) {
+     memset(&callbacks, '\0', sizeof(yajl_callbacks));
+     callbacks.yajl_map_key = stdin_map_key;
+     callbacks.yajl_string = stdin_string;
++    callbacks.yajl_boolean = stdin_boolean;
+     callbacks.yajl_start_array = stdin_start_array;
+     callbacks.yajl_end_array = stdin_end_array;
+     callbacks.yajl_start_map = stdin_start_map;
+diff --git a/i3bar/src/xcb.c b/i3bar/src/xcb.c
+index 205c08c..4347ca3 100644
+--- a/i3bar/src/xcb.c
++++ b/i3bar/src/xcb.c
+@@ -117,11 +117,12 @@ void refresh_statusline() {
+     /* Convert all blocks from UTF-8 to UCS-2 and predict the text width (in
+      * pixels). */
+     TAILQ_FOREACH(block, &statusline_head, blocks) {
+-        block->ucs2_full_text = (xcb_char2b_t*)convert_utf8_to_ucs2(block->full_text, &(block->glyph_count_full_text));
+-        block->width = predict_text_width((char*)block->ucs2_full_text, block->glyph_count_full_text, true);
+-        /* If this is not the last block, add some pixels for a separator. */
+-        if (TAILQ_NEXT(block, blocks) != NULL)
+-            block->width += 9;
++        if (block->separator == 1) {
++            block->width = 8;
++        } else {
++            block->ucs2_full_text = (xcb_char2b_t*)convert_utf8_to_ucs2(block->full_text, &(block->glyph_count_full_text));
++            block->width = predict_text_width((char*)block->ucs2_full_text, block->glyph_count_full_text, true);
++        }
+         statusline_width += block->width;
+     }
+ 
+@@ -140,19 +141,17 @@ void refresh_statusline() {
+     TAILQ_FOREACH(block, &statusline_head, blocks) {
+         uint32_t colorpixel = (block->color ? get_colorpixel(block->color) : colors.bar_fg);
+         set_font_colors(statusline_ctx, colorpixel, colors.bar_bg);
+-        draw_text((char*)block->ucs2_full_text, block->glyph_count_full_text,
+-                  true, statusline_pm, statusline_ctx, x, 0, block->width);
+-        x += block->width;
+ 
+-        if (TAILQ_NEXT(block, blocks) != NULL) {
+-            /* This is not the last block, draw a separator. */
+-            set_font_colors(statusline_ctx, get_colorpixel("#666666"), colors.bar_bg);
++        if (block->separator == 1) {
+             xcb_poly_line(xcb_connection, XCB_COORD_MODE_ORIGIN, statusline_pm,
+                           statusline_ctx, 2,
+-                          (xcb_point_t[]){ { x - 5, 2 }, { x - 5, font.height - 2 } });
++                          (xcb_point_t[]){ { x + 3, 2 }, { x + 3, font.height - 2 } });
++        } else {
++            draw_text((char*)block->ucs2_full_text, block->glyph_count_full_text,
++                      true, statusline_pm, statusline_ctx, x, 0, block->width);
++            FREE(block->ucs2_full_text);
+         }
+-
+-        FREE(block->ucs2_full_text);
++        x += block->width;
+     }
+ }
+ 
+-- 
+1.7.9.5
+

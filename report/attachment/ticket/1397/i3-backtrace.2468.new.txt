@@ -1,0 +1,41 @@
+#0  0x00007f23eb2a647c in waitpid () from /lib/x86_64-linux-gnu/libpthread.so.0
+No symbol table info available.
+#1  0x000000000043c5a6 in ?? ()
+No symbol table info available.
+#2  0x000000000043c985 in ?? ()
+No symbol table info available.
+#3  0x000000000043cdd5 in ?? ()
+No symbol table info available.
+#4  <signal handler called>
+No symbol table info available.
+#5  0x00007f23eaf6faca in strlen () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#6  0x00007f23eaf6f80e in strdup () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#7  0x000000000040f3af in ?? ()
+No symbol table info available.
+#8  0x000000000040f54d in ?? ()
+No symbol table info available.
+#9  0x000000000041b049 in ?? ()
+No symbol table info available.
+#10 0x000000000040b845 in ?? ()
+No symbol table info available.
+#11 0x0000000000416106 in ?? ()
+No symbol table info available.
+#12 0x00007f23eb930515 in ev_invoke_pending () from /usr/lib/x86_64-linux-gnu/libev.so.4
+No symbol table info available.
+#13 0x00007f23eb9336b7 in ev_run () from /usr/lib/x86_64-linux-gnu/libev.so.4
+No symbol table info available.
+#14 0x0000000000415fee in ?? ()
+No symbol table info available.
+#15 0x000000000041960a in ?? ()
+No symbol table info available.
+#16 0x00007f23eaf0fb45 in __libc_start_main () from /lib/x86_64-linux-gnu/libc.so.6
+No symbol table info available.
+#17 0x00000000004076f9 in ?? ()
+No symbol table info available.
+A debugging session is active.
+
+	Inferior 1 [process 2468] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]

@@ -1,0 +1,104 @@
+From 9b73f86e5cd1e611839538868f362e6e84681a05 Mon Sep 17 00:00:00 2001
+From: Vladimir Chizhov <master@mirlord.com>
+Date: Wed, 16 Nov 2011 14:17:19 +0400
+Subject: [PATCH] battery: added sys_name option
+
+It is now possible to explicitly specify a battery name under
+'/sys/class/power_supply' if it's not compatible with 'BAT<N>' pattern
+on your platform.
+
+Signed-off-by: Vladimir Chizhov <master@mirlord.com>
+---
+ i3status.c               |    3 ++-
+ include/i3status.h       |    2 +-
+ man/i3status.man         |    1 +
+ src/print_battery_info.c |   20 ++++++++++++++++++--
+ 4 files changed, 22 insertions(+), 4 deletions(-)
+
+diff --git a/i3status.c b/i3status.c
+index 523ba7e..098421a 100644
+--- a/i3status.c
++++ b/i3status.c
+@@ -209,6 +209,7 @@ int main(int argc, char *argv[]) {
+ 
+         cfg_opt_t battery_opts[] = {
+                 CFG_STR("format", "%status %percentage %remaining", CFGF_NONE),
++                CFG_STR("sys_name", NULL, CFGF_NONE),
+                 CFG_BOOL("last_full_capacity", false, CFGF_NONE),
+                 CFG_END()
+         };
+@@ -371,7 +372,7 @@ int main(int argc, char *argv[]) {
+                                 print_eth_info(title, cfg_getstr(sec, "format_up"), cfg_getstr(sec, "format_down"));
+ 
+                         CASE_SEC_TITLE("battery")
+-                                print_battery_info(atoi(title), cfg_getstr(sec, "format"), cfg_getbool(sec, "last_full_capacity"));
++                                print_battery_info(title, cfg_getstr(sec, "format"), cfg_getbool(sec, "last_full_capacity"), cfg_getstr(sec, "sys_name"));
+ 
+                         CASE_SEC_TITLE("run_watch")
+                                 print_run_watch(title, cfg_getstr(sec, "pidfile"), cfg_getstr(sec, "format"));
+diff --git a/include/i3status.h b/include/i3status.h
+index 125ca55..c93f4a0 100644
+--- a/include/i3status.h
++++ b/include/i3status.h
+@@ -64,7 +64,7 @@ char *auto_detect_format();
+ 
+ void print_ipv6_info(const char *format_up, const char *format_down);
+ void print_disk_info(const char *path, const char *format);
+-void print_battery_info(int number, const char *format, bool last_full_capacity);
++void print_battery_info(const char *title, const char *format, bool last_full_capacity, const char *sys_name);
+ void print_time(const char *format, struct tm *current_tm);
+ void print_ddate(const char *format, struct tm *current_tm);
+ const char *get_ip_addr();
+diff --git a/man/i3status.man b/man/i3status.man
+index 0666230..ac7b040 100644
+--- a/man/i3status.man
++++ b/man/i3status.man
+@@ -75,6 +75,7 @@ ethernet eth0 {
+ 
+ battery 0 {
+         format = "%status %percentage %remaining"
++        sys_name = "BAT0"
+ }
+ 
+ run_watch DHCP {
+diff --git a/src/print_battery_info.c b/src/print_battery_info.c
+index 36de3c8..d1006f3 100644
+--- a/src/print_battery_info.c
++++ b/src/print_battery_info.c
+@@ -17,7 +17,7 @@
+  * worn off your battery is.
+  *
+  */
+-void print_battery_info(int number, const char *format, bool last_full_capacity) {
++void print_battery_info(const char *title, const char *format, bool last_full_capacity, const char *sys_name) {
+         time_t empty_time;
+         struct tm *empty_tm;
+         char buf[1024];
+@@ -38,7 +38,23 @@ void print_battery_info(int number, const char *format, bool last_full_capacity)
+ 
+ #if defined(LINUX)
+         static char batpath[512];
+-        sprintf(batpath, "/sys/class/power_supply/BAT%d/uevent", number);
++
++        static char sys_battery_name[32];
++
++        if (sys_name != NULL) {
++            strcpy(sys_battery_name, sys_name);
++        } else {
++            // to be compatible with old behaviour {{{
++            char *err_p = NULL;
++            int number = strtol(title, &err_p, 10);
++            if (err_p == NULL) // correct number passed as a title
++                sprintf(sys_battery_name, "BAT%d", number);
++            else // probably a full sys_name passed as a title
++                strcpy(sys_battery_name, title);
++            // }}}
++        }
++
++        sprintf(batpath, "/sys/class/power_supply/%s/uevent", sys_battery_name);
+         if (!slurp(batpath, buf, sizeof(buf))) {
+                 printf("No battery");
+                 return;
+-- 
+1.7.7.3
+

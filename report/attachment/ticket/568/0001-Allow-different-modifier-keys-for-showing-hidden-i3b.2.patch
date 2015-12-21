@@ -1,0 +1,311 @@
+From aed897b4225349a4a0385d3d4b29b6a93a621199 Mon Sep 17 00:00:00 2001
+From: dbp <platypus01@gmail.com>
+Date: Sun, 11 Dec 2011 21:58:57 -0800
+Subject: [PATCH 1/2] Allow different modifier keys for showing hidden i3bar.
+
+---
+ i3bar/include/config.h |    1 +
+ i3bar/src/config.c     |   37 +++++++++++++++++++++++++++++++++++++
+ i3bar/src/xcb.c        |   38 +++++++++++++++++++++++++++++++++-----
+ include/config.h       |   12 ++++++++++++
+ src/cfgparse.l         |   14 ++++++++++++--
+ src/cfgparse.y         |   27 +++++++++++++++++++++++++++
+ src/ipc.c              |   30 ++++++++++++++++++++++++++++++
+ 7 files changed, 152 insertions(+), 7 deletions(-)
+
+diff --git a/i3bar/include/config.h b/i3bar/include/config.h
+index 1015cc5..4f6e885 100644
+--- a/i3bar/include/config.h
++++ b/i3bar/include/config.h
+@@ -20,6 +20,7 @@ typedef enum {
+ 
+ typedef struct config_t {
+     int          hide_on_modifier;
++    int          modifier;
+     position_t   position;
+     int          verbose;
+     struct xcb_color_strings_t colors;
+diff --git a/i3bar/src/config.c b/i3bar/src/config.c
+index 5f3338a..397162b 100644
+--- a/i3bar/src/config.c
++++ b/i3bar/src/config.c
+@@ -15,6 +15,8 @@
+ #include <yajl/yajl_parse.h>
+ #include <yajl/yajl_version.h>
+ 
++#include <X11/Xlib.h>
++
+ #include "common.h"
+ 
+ static char *cur_key;
+@@ -75,6 +77,41 @@ static int config_string_cb(void *params_, const unsigned char *val, unsigned in
+         return 1;
+     }
+ 
++    if (!strcmp(cur_key, "modifier")) {
++        DLOG("modifier = %.*s\n", len, val);
++        if (len == 5 && !strncmp((const char*)val, "shift", strlen("shift"))) {
++            config.modifier = ShiftMask;
++            return 1;
++        }
++        if (len == 4 && !strncmp((const char*)val, "ctrl", strlen("ctrl"))) {
++            config.modifier = ControlMask;
++            return 1;
++        }
++        if (len == 4 && !strncmp((const char*)val, "Mod", strlen("Mod"))) {
++            switch (val[3]) {
++                case '1':
++                    config.modifier = Mod1Mask;
++                    return 1;
++                case '2':
++                    config.modifier = Mod2Mask;
++                    return 1;
++                case '3':
++                    config.modifier = Mod3Mask;
++                    return 1;
++                /*
++                case '4':
++                    config.modifier = Mod4Mask;
++                    return 1;
++                */
++                case '5':
++                    config.modifier = Mod5Mask;
++                    return 1;
++            }
++        }
++        config.modifier = Mod4Mask;
++        return 1;
++    }
++
+     if (!strcmp(cur_key, "position")) {
+         DLOG("position = %.*s\n", len, val);
+         config.position = (len == 3 && !strncmp((const char*)val, "top", strlen("top")) ? POS_TOP : POS_BOT);
+diff --git a/i3bar/src/xcb.c b/i3bar/src/xcb.c
+index 29ffe1c..7385c83 100644
+--- a/i3bar/src/xcb.c
++++ b/i3bar/src/xcb.c
+@@ -751,19 +751,47 @@ void xkb_io_cb(struct ev_loop *loop, ev_io *watcher, int revents) {
+         }
+ 
+         unsigned int mods = ev.state.mods;
+-        modstate = mods & Mod4Mask;
++        modstate = mods & config.modifier;
+     }
+ 
++#define DLOGMOD(modmask, status, barfunc) \
++    do { \
++        switch (modmask) { \
++            case ShiftMask: \
++                DLOG("ShiftMask got " #status "!\n"); \
++                break; \
++            case ControlMask: \
++                DLOG("ControlMask got " #status "!\n"); \
++                break; \
++            case Mod1Mask: \
++                DLOG("Mod1Mask got " #status "!\n"); \
++                break; \
++            case Mod2Mask: \
++                DLOG("Mod2Mask got " #status "!\n"); \
++                break; \
++            case Mod3Mask: \
++                DLOG("Mod3Mask got " #status "!\n"); \
++                break; \
++            case Mod4Mask: \
++                DLOG("Mod4Mask got " #status "!\n"); \
++                break; \
++            case Mod5Mask: \
++                DLOG("Mod5Mask got " #status "!\n"); \
++                break; \
++        } \
++        barfunc(); \
++    } while (0)
++
+     if (modstate != mod_pressed) {
+         if (modstate == 0) {
+-            DLOG("Mod4 got released!\n");
+-            hide_bars();
++            DLOGMOD(config.modifier, released, hide_bars);
+         } else {
+-            DLOG("Mod4 got pressed!\n");
+-            unhide_bars();
++            DLOGMOD(config.modifier, pressed, unhide_bars);
+         }
+         mod_pressed = modstate;
+     }
++
++#undef DLOGMOD
+ }
+ 
+ /*
+diff --git a/include/config.h b/include/config.h
+index b4128ca..d71d2f4 100644
+--- a/include/config.h
++++ b/include/config.h
+@@ -198,6 +198,18 @@ struct Barconfig {
+     /** Bar display mode (hide unless modifier is pressed or show in dock mode) */
+     enum { M_DOCK = 0, M_HIDE = 1 } mode;
+ 
++    /** Bar modifier (to show bar when in hide mode). */
++    enum {
++        M_NONE = 0,
++        M_CONTROL = 1,
++        M_SHIFT = 2,
++        M_MOD1 = 3,
++        M_MOD2 = 4,
++        M_MOD3 = 5,
++        M_MOD4 = 6,
++        M_MOD5 = 7
++    } modifier;
++
+     /** Bar position (bottom by default). */
+     enum { P_BOTTOM = 0, P_TOP = 1 } position;
+ 
+diff --git a/src/cfgparse.l b/src/cfgparse.l
+index 1566e24..47dc595 100644
+--- a/src/cfgparse.l
++++ b/src/cfgparse.l
+@@ -59,6 +59,7 @@ EOL     (\r?\n)
+ %x BUFFER_LINE
+ %x BAR
+ %x BAR_MODE
++%x BAR_MODIFIER
+ %x BAR_POSITION
+ %x BAR_COLORS
+ %x BAR_COLOR
+@@ -88,7 +89,7 @@ EOL     (\r?\n)
+ }
+ 
+  /* This part of the lexer handles the bar {} blocks */
+-<BAR,BAR_MODE,BAR_POSITION,BAR_COLORS,BAR_COLOR>[ \t]+ { /* ignore whitespace */ ; }
++<BAR,BAR_MODE,BAR_MODIFIER,BAR_POSITION,BAR_COLORS,BAR_COLOR>[ \t]+ { /* ignore whitespace */ ; }
+ <BAR>"{"                        { return '{'; }
+ <BAR>"}"                        { yy_pop_state(); return '}'; }
+ <BAR>^[ \t]*#[^\n]*             { return TOKCOMMENT; }
+@@ -98,6 +99,15 @@ EOL     (\r?\n)
+ <BAR>mode                       { yy_push_state(BAR_MODE); return TOK_BAR_MODE; }
+ <BAR_MODE>hide                  { yy_pop_state(); return TOK_BAR_HIDE; }
+ <BAR_MODE>dock                  { yy_pop_state(); return TOK_BAR_DOCK; }
++<BAR>modifier                   { yy_push_state(BAR_MODIFIER); return TOK_BAR_MODIFIER; }
++<BAR_MODIFIER>control           { yy_pop_state(); return TOK_BAR_CONTROL; }
++<BAR_MODIFIER>ctrl              { yy_pop_state(); return TOK_BAR_CONTROL; }
++<BAR_MODIFIER>shift             { yy_pop_state(); return TOK_BAR_SHIFT; }
++<BAR_MODIFIER>Mod1              { yy_pop_state(); return TOK_BAR_MOD1; }
++<BAR_MODIFIER>Mod2              { yy_pop_state(); return TOK_BAR_MOD2; }
++<BAR_MODIFIER>Mod3              { yy_pop_state(); return TOK_BAR_MOD3; }
++<BAR_MODIFIER>Mod4              { yy_pop_state(); return TOK_BAR_MOD4; }
++<BAR_MODIFIER>Mod5              { yy_pop_state(); return TOK_BAR_MOD5; }
+ <BAR>position                   { yy_push_state(BAR_POSITION); return TOK_BAR_POSITION; }
+ <BAR_POSITION>bottom            { yy_pop_state(); return TOK_BAR_BOTTOM; }
+ <BAR_POSITION>top               { yy_pop_state(); return TOK_BAR_TOP; }
+@@ -116,7 +126,7 @@ EOL     (\r?\n)
+ <BAR_COLORS>inactive_workspace  { BAR_DOUBLE_COLOR; return TOK_BAR_COLOR_INACTIVE_WORKSPACE; }
+ <BAR_COLORS>urgent_workspace    { BAR_DOUBLE_COLOR; return TOK_BAR_COLOR_URGENT_WORKSPACE; }
+ <BAR_COLOR>#[0-9a-fA-F]+        { yy_pop_state(); yylval.string = sstrdup(yytext); return HEXCOLOR; }
+-<BAR,BAR_COLORS,BAR_MODE,BAR_POSITION>[a-zA-Z]+ { yylval.string = sstrdup(yytext); return WORD; }
++<BAR,BAR_COLORS,BAR_MODE,BAR_MODIFIER,BAR_POSITION>[a-zA-Z]+ { yylval.string = sstrdup(yytext); return WORD; }
+ 
+ 
+ 
+diff --git a/src/cfgparse.y b/src/cfgparse.y
+index 7a6a739..43426fc 100644
+--- a/src/cfgparse.y
++++ b/src/cfgparse.y
+@@ -706,6 +706,14 @@ void parse_file(const char *f) {
+ %token                  TOK_BAR_MODE                "mode (bar)"
+ %token                  TOK_BAR_HIDE                "hide"
+ %token                  TOK_BAR_DOCK                "dock"
++%token                  TOK_BAR_MODIFIER            "modifier (bar)"
++%token                  TOK_BAR_CONTROL             "shift (bar)"
++%token                  TOK_BAR_SHIFT               "control (bar)"
++%token                  TOK_BAR_MOD1                "Mod1"
++%token                  TOK_BAR_MOD2                "Mod2"
++%token                  TOK_BAR_MOD3                "Mod3"
++%token                  TOK_BAR_MOD4                "Mod4"
++%token                  TOK_BAR_MOD5                "Mod5"
+ %token                  TOK_BAR_POSITION            "position"
+ %token                  TOK_BAR_BOTTOM              "bottom"
+ %token                  TOK_BAR_TOP                 "top"
+@@ -745,6 +753,7 @@ void parse_file(const char *f) {
+ %type   <number>        popup_setting
+ %type   <number>        bar_position_position
+ %type   <number>        bar_mode_mode
++%type   <number>        bar_modifier_modifier
+ %type   <number>        optional_no_startup_id
+ %type   <string>        command
+ %type   <string>        word_or_number
+@@ -1038,6 +1047,7 @@ barline:
+     | bar_tray_output
+     | bar_position
+     | bar_mode
++    | bar_modifier
+     | bar_font
+     | bar_workspace_buttons
+     | bar_verbose
+@@ -1106,6 +1116,23 @@ bar_mode_mode:
+     | TOK_BAR_DOCK { $$ = M_DOCK; }
+     ;
+ 
++bar_modifier:
++    TOK_BAR_MODIFIER bar_modifier_modifier
++    {
++        DLOG("modifier %d\n", $2);
++        current_bar.modifier = $2;
++    };
++
++bar_modifier_modifier:
++    TOK_BAR_CONTROL { $$ = M_CONTROL; }
++    | TOK_BAR_SHIFT { $$ = M_SHIFT; }
++    | TOK_BAR_MOD1  { $$ = M_MOD1; }
++    | TOK_BAR_MOD2  { $$ = M_MOD2; }
++    | TOK_BAR_MOD3  { $$ = M_MOD3; }
++    | TOK_BAR_MOD4  { $$ = M_MOD4; }
++    | TOK_BAR_MOD5  { $$ = M_MOD5; }
++    ;
++
+ bar_font:
+     TOK_BAR_FONT STR
+     {
+diff --git a/src/ipc.c b/src/ipc.c
+index fe1464e..4ce45a1 100644
+--- a/src/ipc.c
++++ b/src/ipc.c
+@@ -558,6 +558,36 @@ IPC_HANDLER(get_bar_config) {
+             ystr("hide");
+         else ystr("dock");
+ 
++        ystr("modifier");
++        switch (config->modifier) {
++            case M_CONTROL:
++                ystr("ctrl");
++                break;
++            case M_SHIFT:
++                ystr("shift");
++                break;
++            case M_MOD1:
++                ystr("Mod1");
++                break;
++            case M_MOD2:
++                ystr("Mod2");
++                break;
++            case M_MOD3:
++                ystr("Mod3");
++                break;
++            /*
++            case M_MOD4:
++                ystr("Mod4");
++                break;
++            */
++            case M_MOD5:
++                ystr("Mod5");
++                break;
++            default:
++                ystr("Mod4");
++                break;
++        }
++
+         ystr("position");
+         if (config->position == P_BOTTOM)
+             ystr("bottom");
+-- 
+1.7.6.1
+

@@ -1,0 +1,83 @@
+From bd1d664a12a111584644b76e8365f5b2606e2cbb Mon Sep 17 00:00:00 2001
+From: Mateusz Loskot <mateusz@loskot.net>
+Date: Sun, 17 Jun 2012 03:43:43 +0100
+Subject: [PATCH 1/2] Moved print_bytes_human to separate file and make it
+ reusable as utility function.
+
+---
+ src/print_bytes_human.c |   28 ++++++++++++++++++++++++++++
+ src/print_disk_info.c   |   23 -----------------------
+ 2 files changed, 28 insertions(+), 23 deletions(-)
+ create mode 100644 src/print_bytes_human.c
+
+diff --git a/src/print_bytes_human.c b/src/print_bytes_human.c
+new file mode 100644
+index 0000000..aedd668
+--- /dev/null
++++ b/src/print_bytes_human.c
+@@ -0,0 +1,28 @@
++// vim:ts=8:expandtab
++#include <stdio.h>
++#include <stdint.h>
++
++#include "i3status.h"
++
++#define TERABYTE (1024ULL * 1024 * 1024 * 1024)
++#define GIGABYTE (1024ULL * 1024 * 1024)
++#define MEGABYTE (1024ULL * 1024)
++#define KILOBYTE (1024ULL)
++
++/*
++ * Prints the given amount of bytes in a human readable manner.
++ *
++ */
++int print_bytes_human(char *outwalk, uint64_t bytes) {
++        if (bytes > TERABYTE)
++                return sprintf(outwalk, "%.02f TB", (double)bytes / TERABYTE);
++        else if (bytes > GIGABYTE)
++                return sprintf(outwalk, "%.01f GB", (double)bytes / GIGABYTE);
++        else if (bytes > MEGABYTE)
++                return sprintf(outwalk, "%.01f MB", (double)bytes / MEGABYTE);
++        else if (bytes > KILOBYTE)
++                return sprintf(outwalk, "%.01f KB", (double)bytes / KILOBYTE);
++        else {
++                return sprintf(outwalk, "%.01f B", (double)bytes);
++        }
++}
+diff --git a/src/print_disk_info.c b/src/print_disk_info.c
+index 8bc8b41..dd0f927 100644
+--- a/src/print_disk_info.c
++++ b/src/print_disk_info.c
+@@ -15,29 +15,6 @@
+ 
+ #include "i3status.h"
+ 
+-#define TERABYTE (1024ULL * 1024 * 1024 * 1024)
+-#define GIGABYTE (1024ULL * 1024 * 1024)
+-#define MEGABYTE (1024ULL * 1024)
+-#define KILOBYTE (1024ULL)
+-
+-/*
+- * Prints the given amount of bytes in a human readable manner.
+- *
+- */
+-static int print_bytes_human(char *outwalk, uint64_t bytes) {
+-        if (bytes > TERABYTE)
+-                return sprintf(outwalk, "%.02f TB", (double)bytes / TERABYTE);
+-        else if (bytes > GIGABYTE)
+-                return sprintf(outwalk, "%.01f GB", (double)bytes / GIGABYTE);
+-        else if (bytes > MEGABYTE)
+-                return sprintf(outwalk, "%.01f MB", (double)bytes / MEGABYTE);
+-        else if (bytes > KILOBYTE)
+-                return sprintf(outwalk, "%.01f KB", (double)bytes / KILOBYTE);
+-        else {
+-                return sprintf(outwalk, "%.01f B", (double)bytes);
+-        }
+-}
+-
+ /*
+  * Does a statvfs and prints either free, used or total amounts of bytes in a
+  * human readable manner.
+-- 
+1.7.10.4
+

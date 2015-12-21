@@ -1,0 +1,25 @@
+From d7d3618f3aec1c1d825e22a4210b4c1655f9ffbd Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Fernando=20Tarl=C3=A1=20Cardoso=20Lemos?= <fernandotcl@gmail.com>
+Date: Sun, 20 Jun 2010 19:20:04 -0300
+Subject: [PATCH] Reset the color to the default color, don't harcode white.
+
+---
+ i3-wsbar |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/i3-wsbar b/i3-wsbar
+index 63583b0..21f70d6 100755
+--- a/i3-wsbar
++++ b/i3-wsbar
+@@ -177,7 +177,7 @@ sub update_output {
+             $out .= qq|^p(2)^pa(;2)|;
+         }
+ 
+-        $out .= qq|^p(_LOCK_X)^fg($dzen_bg)^r(${width}x17)^p(_UNLOCK_X)^fg(white)|;
++        $out .= qq|^p(_LOCK_X)^fg($dzen_bg)^r(${width}x17)^p(_UNLOCK_X)^fg()|;
+         $out .= qq|^p(+5)|;
+         $out .= $last_line if (!@input_on or $name ~~ @input_on);
+         $out .= "\n";
+-- 
+1.7.1
+

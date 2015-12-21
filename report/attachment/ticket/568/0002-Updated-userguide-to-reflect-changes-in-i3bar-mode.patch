@@ -1,0 +1,42 @@
+From 70e756e8cd4bdbb26db0eef04dc0d097bbd13ca8 Mon Sep 17 00:00:00 2001
+From: dbp <platypus01@gmail.com>
+Date: Sun, 20 Nov 2011 07:26:53 -0800
+Subject: [PATCH 2/2] Updated userguide to reflect changes in i3bar mode.
+
+---
+ docs/userguide |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/docs/userguide b/docs/userguide
+index 3d78d16..b4b6a95 100644
+--- a/docs/userguide
++++ b/docs/userguide
+@@ -818,8 +818,8 @@ status_command i3status --config ~/.i3status.conf
+ === Display mode
+ 
+ You can have i3bar either be visible permanently at one edge of the screen
+-(+dock+ mode) or make it show up when you press your modifier key (+hide+
+-mode).
++in +dock+ mode, or make it show up when you press a +Modifier+ key. The
++standard modifier keys are available (Mod1-Mod5, Shift, Control).
+ 
+ The hide mode maximizes screen space that can be used for actual windows. Also,
+ i3bar sends the +SIGSTOP+ and +SIGCONT+ signals to the statusline process to
+@@ -829,12 +829,12 @@ The default is dock mode.
+ 
+ *Syntax*:
+ ----------------
+-mode <dock|hide>
++mode <dock|<Modifier>>
+ ----------------
+ 
+ *Example*:
+ ----------------
+-mode hide
++mode Mod4
+ ----------------
+ 
+ === Position
+-- 
+1.7.6.1
+

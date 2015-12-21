@@ -1,0 +1,971 @@
+11/23/2011 10:45:17 PM - Enabling debug loglevel all
+11/23/2011 10:45:17 PM - i3 (tree) version 4.1 (2011-11-11, branch "release-4.1") starting
+11/23/2011 10:45:17 PM - src/config.c:parse_configuration:243 - Parsing configfile /home/sycamorex/.i3/config
+11/23/2011 10:45:17 PM - src/cfgparse.y:parse_file:485 - Got new variable $mod = Mod1
+deciding for version 4 due to this line: # i3 config file (v4)
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+11/23/2011 10:45:17 PM - src/cfgparse.y:yyparse:1204 - floating modifier = 8
+	Found keysym binding mod8 with key Return and command exec i3-sensible-terminal
+	Found keysym binding mod9 with key Q and command kill
+	Found keysym binding mod8 with key d and command exec dmenu_run
+	Found keysym binding mod8 with key j and command focus left
+	Found keysym binding mod8 with key k and command focus down
+	Found keysym binding mod8 with key l and command focus up
+	Found keysym binding mod8 with key semicolon and command focus right
+	Found keysym binding mod8 with key Left and command focus left
+	Found keysym binding mod8 with key Down and command focus down
+	Found keysym binding mod8 with key Up and command focus up
+	Found keysym binding mod8 with key Right and command focus right
+	Found keysym binding mod9 with key J and command move left
+	Found keysym binding mod9 with key K and command move down
+	Found keysym binding mod9 with key L and command move up
+	Found keysym binding mod9 with key colon and command move right
+	Found keysym binding mod9 with key Left and command move left
+	Found keysym binding mod9 with key Down and command move down
+	Found keysym binding mod9 with key Up and command move up
+	Found keysym binding mod9 with key Right and command move right
+	Found keysym binding mod8 with key h and command split h
+	Found keysym binding mod8 with key v and command split v
+	Found keysym binding mod8 with key f and command fullscreen
+	Found keysym binding mod8 with key s and command layout stacking
+	Found keysym binding mod8 with key w and command layout tabbed
+	Found keysym binding mod8 with key e and command layout default
+	Found keysym binding mod9 with key space and command floating toggle
+	Found keysym binding mod8 with key space and command focus mode_toggle
+	Found keysym binding mod8 with key a and command focus parent
+	Found keysym binding mod8 with key 1 and command workspace 1
+	Found keysym binding mod8 with key 2 and command workspace 2
+	Found keysym binding mod8 with key 3 and command workspace 3
+	Found keysym binding mod8 with key 4 and command workspace 4
+	Found keysym binding mod8 with key 5 and command workspace 5
+	Found keysym binding mod8 with key 6 and command workspace 6
+	Found keysym binding mod8 with key 7 and command workspace 7
+	Found keysym binding mod8 with key 8 and command workspace 8
+	Found keysym binding mod8 with key 9 and command workspace 9
+	Found keysym binding mod8 with key 0 and command workspace 10
+	Found keysym binding mod9 with key exclam and command move workspace 1
+	Found keysym binding mod9 with key at and command move workspace 2
+	Found keysym binding mod9 with key numbersign and command move workspace 3
+	Found keysym binding mod9 with key dollar and command move workspace 4
+	Found keysym binding mod9 with key percent and command move workspace 5
+	Found keysym binding mod9 with key asciicircum and command move workspace 6
+	Found keysym binding mod9 with key ampersand and command move workspace 7
+	Found keysym binding mod9 with key asterisk and command move workspace 8
+	Found keysym binding mod9 with key parenleft and command move workspace 9
+	Found keysym binding mod9 with key parenright and command move workspace 10
+	Found keysym binding mod9 with key C and command reload
+	Found keysym binding mod9 with key R and command restart
+	Found keysym binding mod9 with key E and command exit
+	Found keysym binding mod0 with key j and command resize shrink left 10 px or 10 ppt
+	Found keysym binding mod1 with key J and command resize grow   left 10 px or 10 ppt
+	Found keysym binding mod0 with key k and command resize shrink down 10 px or 10 ppt
+	Found keysym binding mod1 with key K and command resize grow   down 10 px or 10 ppt
+	Found keysym binding mod0 with key l and command resize shrink up 10 px or 10 ppt
+	Found keysym binding mod1 with key L and command resize grow   up 10 px or 10 ppt
+	Found keysym binding mod0 with key semicolon and command resize shrink right 10 px or 10 ppt
+	Found keysym binding mod1 with key colon and command resize grow   right 10 px or 10 ppt
+	Found keysym binding mod0 with key Left and command resize shrink left 10 px or 10 ppt
+	Found keysym binding mod1 with key Left and command resize grow   left 10 px or 10 ppt
+	Found keysym binding mod0 with key Down and command resize shrink down 10 px or 10 ppt
+	Found keysym binding mod1 with key Down and command resize grow   down 10 px or 10 ppt
+	Found keysym binding mod0 with key Up and command resize shrink up 10 px or 10 ppt
+	Found keysym binding mod1 with key Up and command resize grow   up 10 px or 10 ppt
+	Found keysym binding mod0 with key Right and command resize shrink right 10 px or 10 ppt
+	Found keysym binding mod1 with key Right and command resize grow   right 10 px or 10 ppt
+	Found keysym binding mod0 with key Return and command mode "default"
+	Found keysym binding mod0 with key Escape and command mode "default"
+	 now in mode resize
+	 current bindings = 0x679a40
+got binding on mods 0, keycode 0, symbol j, command resize shrink left 10 px or 10 ppt
+got binding on mods 1, keycode 0, symbol J, command resize grow   left 10 px or 10 ppt
+got binding on mods 0, keycode 0, symbol k, command resize shrink down 10 px or 10 ppt
+got binding on mods 1, keycode 0, symbol K, command resize grow   down 10 px or 10 ppt
+got binding on mods 0, keycode 0, symbol l, command resize shrink up 10 px or 10 ppt
+got binding on mods 1, keycode 0, symbol L, command resize grow   up 10 px or 10 ppt
+got binding on mods 0, keycode 0, symbol semicolon, command resize shrink right 10 px or 10 ppt
+got binding on mods 1, keycode 0, symbol colon, command resize grow   right 10 px or 10 ppt
+got binding on mods 0, keycode 0, symbol Left, command resize shrink left 10 px or 10 ppt
+got binding on mods 1, keycode 0, symbol Left, command resize grow   left 10 px or 10 ppt
+got binding on mods 0, keycode 0, symbol Down, command resize shrink down 10 px or 10 ppt
+got binding on mods 1, keycode 0, symbol Down, command resize grow   down 10 px or 10 ppt
+got binding on mods 0, keycode 0, symbol Up, command resize shrink up 10 px or 10 ppt
+got binding on mods 1, keycode 0, symbol Up, command resize grow   up 10 px or 10 ppt
+got binding on mods 0, keycode 0, symbol Right, command resize shrink right 10 px or 10 ppt
+got binding on mods 1, keycode 0, symbol Right, command resize grow   right 10 px or 10 ppt
+got binding on mods 0, keycode 0, symbol Return, command mode "default"
+got binding on mods 0, keycode 0, symbol Escape, command mode "default"
+	Found keysym binding mod8 with key r and command mode "resize"
+11/23/2011 10:45:17 PM - src/cfgparse.y:yyparse:1052 - should add status command i3status
+	 new bar configuration finished, saving.
+11/23/2011 10:45:17 PM - src/main.c:main:476 - root geometry reply: (0, 0) 1918 x 1121
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "Return" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "Q" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "d" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "j" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "k" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "l" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "semicolon" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "Left" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "Down" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "Up" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "Right" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "J" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "K" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "L" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "colon" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "Left" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "Down" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "Up" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "Right" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "h" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "v" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "f" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "s" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "w" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "e" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "space" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "space" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "a" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "1" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "2" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "3" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "4" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "5" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "6" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "7" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "8" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "9" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "0" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "exclam" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "at" to 2 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "numbersign" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "dollar" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "percent" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "asciicircum" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "ampersand" to 2 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "asterisk" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "parenleft" to 4 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "parenright" to 4 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "C" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "R" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "E" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:translate_keysyms:114 - Translated symbol "r" to 1 keycode
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 36
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 24
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 40
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 44
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 45
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 46
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 47
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 113
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 116
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 111
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 114
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 44
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 45
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 46
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 47
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 113
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 116
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 111
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 114
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 43
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 55
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 41
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 39
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 25
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 26
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 65
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 65
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 38
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 10
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 11
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 12
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 13
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 14
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 17
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 10
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 48
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 48
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 51
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 13
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 14
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 17
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 187
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 187
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 188
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 188
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 54
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 26
+11/23/2011 10:45:17 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+11/23/2011 10:45:17 PM - src/con.c:con_new:43 - opening window 0
+11/23/2011 10:45:17 PM - src/con.c:con_new:46 - color #ff0000
+11/23/2011 10:45:17 PM - src/x.c:x_con_init:112 - adding new state for window id 0x00400001
+11/23/2011 10:45:17 PM - src/main.c:main:584 - Checking for XRandR...
+11/23/2011 10:45:17 PM - src/randr.c:randr_query_outputs:648 - primary output is 00000000
+11/23/2011 10:45:17 PM - src/randr.c:handle_output:569 - found output with name VBOX0
+11/23/2011 10:45:17 PM - src/randr.c:handle_output:605 - mode: 1918x1121+0+0
+11/23/2011 10:45:17 PM - src/randr.c:randr_query_outputs:680 - output 0x676a20 / VBOX0, position (0, 0), checking for clones
+11/23/2011 10:45:17 PM - src/randr.c:randr_query_outputs:719 - Need to initialize a Con for output VBOX0
+11/23/2011 10:45:17 PM - src/randr.c:output_init_con:220 - init_con for output VBOX0
+11/23/2011 10:45:17 PM - src/con.c:con_new:43 - opening window 1
+11/23/2011 10:45:17 PM - src/con.c:con_new:46 - color #00FF00
+11/23/2011 10:45:17 PM - src/x.c:x_con_init:112 - adding new state for window id 0x00400002
+11/23/2011 10:45:17 PM - src/randr.c:output_init_con:255 - Changing layout, adding top/bottom dockarea
+11/23/2011 10:45:17 PM - src/con.c:con_new:43 - opening window 2
+11/23/2011 10:45:17 PM - src/con.c:con_new:46 - color #0000FF
+11/23/2011 10:45:17 PM - src/x.c:x_con_init:112 - adding new state for window id 0x00400003
+11/23/2011 10:45:17 PM - src/randr.c:output_init_con:273 - attaching
+11/23/2011 10:45:17 PM - src/randr.c:output_init_con:278 - adding main content container
+11/23/2011 10:45:17 PM - src/con.c:con_new:43 - opening window 3
+11/23/2011 10:45:17 PM - src/con.c:con_new:46 - color #ff00ff
+11/23/2011 10:45:17 PM - src/x.c:x_con_init:112 - adding new state for window id 0x00400004
+11/23/2011 10:45:17 PM - src/con.c:con_new:43 - opening window 4
+11/23/2011 10:45:17 PM - src/con.c:con_new:46 - color #00ffff
+11/23/2011 10:45:17 PM - src/x.c:x_con_init:112 - adding new state for window id 0x00400005
+11/23/2011 10:45:17 PM - src/randr.c:output_init_con:307 - attaching
+11/23/2011 10:45:17 PM - src/ewmh.c:ewmh_update_workarea:79 - Got 0 workspaces
+11/23/2011 10:45:17 PM - src/randr.c:randr_query_outputs:819 - Should add ws for output VBOX0
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:406 - Now adding a workspace
+11/23/2011 10:45:17 PM - src/con.c:con_new:43 - opening window 5
+11/23/2011 10:45:17 PM - src/con.c:con_new:46 - color #ffff00
+11/23/2011 10:45:17 PM - src/x.c:x_con_init:112 - adding new state for window id 0x00400006
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command exec i3-sensible-terminal
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command kill
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command exec dmenu_run
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command focus left
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command focus down
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command focus up
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command focus right
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command focus left
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command focus down
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command focus up
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command focus right
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command move left
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command move down
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command move up
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command move right
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command move left
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command move down
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command move up
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command move right
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command split h
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command split v
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command fullscreen
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command layout stacking
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command layout tabbed
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command layout default
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command floating toggle
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command focus mode_toggle
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command focus parent
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:417 - binding with command workspace 1
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:421 - relevant command = workspace 1
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:435 - trying name *1*
+11/23/2011 10:45:17 PM - Used number 1 for workspace with name 1
+11/23/2011 10:45:17 PM - src/con.c:con_attach:86 - it's a workspace. num = 1
+11/23/2011 10:45:17 PM - src/randr.c:init_ws_for_output:491 - Auto orientation. Workspace size set to (1918,1121), setting orientation to 1.
+11/23/2011 10:45:17 PM - src/con.c:con_focus:184 - con_focus = 0x6773c0
+11/23/2011 10:45:17 PM - src/con.c:con_focus:184 - con_focus = 0x676ef0
+11/23/2011 10:45:17 PM - src/con.c:con_focus:184 - con_focus = 0x676ae0
+11/23/2011 10:45:17 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering node 0x671270 / root / layout 0 / children 1 / orient 0
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering node 0x676ae0 / VBOX0 / layout 4 / children 3 / orient 0
+11/23/2011 10:45:17 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1918 x 0)
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering node 0x676ce0 / topdock / layout 3 / children 0 / orient 2
+11/23/2011 10:45:17 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1918 x 1121)
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering node 0x676ef0 / content / layout 0 / children 1 / orient 0
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x6773c0 / 1 / layout 0 / children 0 / orient 1
+11/23/2011 10:45:17 PM - src/render.c:render_l_output:93 - child at (0, 1121) with (1918 x 0)
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering node 0x677130 / bottomdock / layout 3 / children 0 / orient 2
+11/23/2011 10:45:17 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/23/2011 10:45:17 PM - src/x.c:x_push_node:518 - pushing name [i3 con] output VBOX0 for con 0x676ae0
+11/23/2011 10:45:17 PM - src/x.c:x_push_node:518 - pushing name [i3 con] content VBOX0 for con 0x676ef0
+11/23/2011 10:45:17 PM - src/x.c:x_push_node:518 - pushing name [i3 con] workspace 1 for con 0x6773c0
+11/23/2011 10:45:17 PM - src/x.c:x_push_node:518 - pushing name [i3 con] top dockarea VBOX0 for con 0x676ce0
+11/23/2011 10:45:17 PM - src/x.c:x_push_node:518 - pushing name [i3 con] bottom dockarea VBOX0 for con 0x677130
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:848 - Not updating focus (to 0x6773c0 / 1), focused window is not mapped.
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:877 - Still no window focused, better set focus to the root window
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/23/2011 10:45:17 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/23/2011 10:45:17 PM - src/main.c:main:594 - Pointer at 959, 560
+11/23/2011 10:45:17 PM - src/randr.c:get_output_containing:84 - comparing x=959 y=560 with x=0 and y=0 width 1918 height 1121
+11/23/2011 10:45:17 PM - src/con.c:con_focus:184 - con_focus = 0x6773c0
+11/23/2011 10:45:17 PM - src/con.c:con_focus:184 - con_focus = 0x676ef0
+11/23/2011 10:45:17 PM - src/con.c:con_focus:184 - con_focus = 0x676ae0
+11/23/2011 10:45:17 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering node 0x671270 / root / layout 0 / children 1 / orient 0
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering node 0x676ae0 / VBOX0 / layout 4 / children 3 / orient 0
+11/23/2011 10:45:17 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1918 x 0)
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering node 0x676ce0 / topdock / layout 3 / children 0 / orient 2
+11/23/2011 10:45:17 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1918 x 1121)
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering node 0x676ef0 / content / layout 0 / children 1 / orient 0
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x6773c0 / 1 / layout 0 / children 0 / orient 1
+11/23/2011 10:45:17 PM - src/render.c:render_l_output:93 - child at (0, 1121) with (1918 x 0)
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering node 0x677130 / bottomdock / layout 3 / children 0 / orient 2
+11/23/2011 10:45:17 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:848 - Not updating focus (to 0x6773c0 / 1), focused window is not mapped.
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:877 - Still no window focused, better set focus to the root window
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/23/2011 10:45:17 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/23/2011 10:45:17 PM - src/ipc.c:ipc_create_socket:851 - Creating IPC-socket at /tmp/i3-sycamorex/ipc-socket.17135
+11/23/2011 10:45:17 PM - src/main.c:main:623 - socket activation: no sockets passed
+11/23/2011 10:45:17 PM - Starting bar process: i3bar --bar_id=bar-efqphk --socket="/tmp/i3-sycamorex/ipc-socket.17135"
+11/23/2011 10:45:17 PM - executing: i3bar --bar_id=bar-efqphk --socket="/tmp/i3-sycamorex/ipc-socket.17135"
+11/23/2011 10:45:17 PM - src/ipc.c:ipc_new_client:832 - IPC: new client connected on fd 8
+11/23/2011 10:45:17 PM - src/ipc.c:ipc_receive_message:776 - IPC: n = 24
+11/23/2011 10:45:17 PM - IPC: looking for config for bar ID "bar-efqphk"
+11/23/2011 10:45:17 PM - src/ipc.c:ipc_receive_message:776 - IPC: n = 67
+11/23/2011 10:45:17 PM - src/ipc.c:ipc_receive_message:776 - IPC: n = 53
+11/23/2011 10:45:17 PM - src/ipc.c:add_subscription:628 - should add subscription to extra 0x65e130, sub workspace
+11/23/2011 10:45:17 PM - src/ipc.c:add_subscription:638 - client is now subscribed to:
+11/23/2011 10:45:17 PM - src/ipc.c:add_subscription:640 - event workspace
+11/23/2011 10:45:17 PM - src/ipc.c:add_subscription:641 - (done)
+11/23/2011 10:45:17 PM - src/ipc.c:add_subscription:628 - should add subscription to extra 0x65e130, sub output
+11/23/2011 10:45:17 PM - src/ipc.c:add_subscription:638 - client is now subscribed to:
+11/23/2011 10:45:17 PM - src/ipc.c:add_subscription:640 - event workspace
+11/23/2011 10:45:17 PM - src/ipc.c:add_subscription:640 - event output
+11/23/2011 10:45:17 PM - src/ipc.c:add_subscription:641 - (done)
+11/23/2011 10:45:17 PM - src/ipc.c:ipc_receive_message:776 - IPC: n = 14
+11/23/2011 10:45:17 PM - workspace visible? fs = 0x6773c0, ws = 0x6773c0
+11/23/2011 10:45:17 PM - src/handlers.c:handle_map_request:318 - window = 0x00800007, serial is 269.
+11/23/2011 10:45:17 PM - src/manage.c:manage_window:147 - Managing window 0x00800007
+11/23/2011 10:45:17 PM - WM_CLASS changed to i3bar (instance), i3bar (class)
+11/23/2011 10:45:17 PM - WM_NAME changed to "i3bar for output VBOX0"
+11/23/2011 10:45:17 PM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+11/23/2011 10:45:17 PM - src/window.c:window_update_name:56 - _NET_WM_NAME not specified, not changing
+11/23/2011 10:45:17 PM - src/window.c:window_update_leader:155 - CLIENT_LEADER not set.
+11/23/2011 10:45:17 PM - src/window.c:window_update_transient_for:179 - TRANSIENT_FOR not set.
+11/23/2011 10:45:17 PM - src/window.c:window_update_strut_partial:215 - Reserved pixels changed to: left = 0, right = 0, top = 0, bottom = 19
+11/23/2011 10:45:17 PM - src/window.c:window_update_role:228 - WM_WINDOW_ROLE not set.
+11/23/2011 10:45:17 PM - src/startup.c:startup_workspace_for_window:207 - No _NET_STARTUP_ID set on this window
+11/23/2011 10:45:17 PM - src/manage.c:manage_window:176 - startup workspace = (null)
+11/23/2011 10:45:17 PM - This window is of type dock
+11/23/2011 10:45:17 PM - src/randr.c:get_output_containing:84 - comparing x=0 y=1102 with x=0 and y=0 width 1918 height 1121
+11/23/2011 10:45:17 PM - src/manage.c:manage_window:189 - Starting search at output VBOX0
+11/23/2011 10:45:17 PM - src/manage.c:manage_window:198 - Bottom dock client
+11/23/2011 10:45:17 PM - src/manage.c:manage_window:214 - Initial geometry: (0, 1102, 1918, 19)
+11/23/2011 10:45:17 PM - Checking window 0x00800007 (class i3bar)
+11/23/2011 10:45:17 PM - dock status does not match
+11/23/2011 10:45:17 PM - Checking window 0x00800007 (class i3bar)
+11/23/2011 10:45:17 PM - dock status matches
+11/23/2011 10:45:17 PM - src/con.c:con_new:43 - opening window 6
+11/23/2011 10:45:17 PM - src/con.c:con_new:46 - color #aa0000
+11/23/2011 10:45:17 PM - src/x.c:x_con_init:112 - adding new state for window id 0x00400007
+11/23/2011 10:45:17 PM - src/manage.c:manage_window:261 - new container = 0x677b50
+11/23/2011 10:45:17 PM - src/x.c:x_reinit:129 - resetting state 0x677ae0 to initial
+11/23/2011 10:45:17 PM - src/manage.c:manage_window:278 - Not in fullscreen mode, focusing
+11/23/2011 10:45:17 PM - src/manage.c:manage_window:289 - dock, not focusing
+11/23/2011 10:45:17 PM - src/assignments.c:run_assignments:18 - Checking if any assignments match this window
+11/23/2011 10:45:17 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering node 0x671270 / root / layout 0 / children 1 / orient 0
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering node 0x676ae0 / VBOX0 / layout 4 / children 3 / orient 0
+11/23/2011 10:45:17 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1918 x 0)
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering node 0x676ce0 / topdock / layout 3 / children 0 / orient 2
+11/23/2011 10:45:17 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1918 x 1102)
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering node 0x676ef0 / content / layout 0 / children 1 / orient 0
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x6773c0 / 1 / layout 0 / children 0 / orient 1
+11/23/2011 10:45:17 PM - src/render.c:render_l_output:93 - child at (0, 1102) with (1918 x 19)
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering node 0x677130 / bottomdock / layout 3 / children 1 / orient 2
+11/23/2011 10:45:17 PM - src/render.c:render_con:335 - child at (0, 1102) with (1918 x 19)
+11/23/2011 10:45:17 PM - src/render.c:render_con:111 - Rendering node 0x677b50 / #aa0000 / layout 0 / children 0 / orient 0
+11/23/2011 10:45:17 PM - src/render.c:render_con:180 - child will be at 0x0 with size 1916x17
+11/23/2011 10:45:17 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/23/2011 10:45:17 PM - src/x.c:x_push_node:518 - pushing name [i3 con] container around 0x6768b0 for con 0x677b50
+11/23/2011 10:45:17 PM - src/x.c:x_push_node:611 - setting rect (0, 1102, 1918, 19)
+11/23/2011 10:45:17 PM - src/x.c:x_push_node:630 - setting window rect (0, 0, 1916, 17)
+11/23/2011 10:45:17 PM - src/x.c:x_push_node:660 - mapping child window (serial 303)
+11/23/2011 10:45:17 PM - src/x.c:x_push_node:674 - mapping container 00400007 (serial 305)
+11/23/2011 10:45:17 PM - src/x.c:x_push_node:681 - Sending fake configure notify
+11/23/2011 10:45:17 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (0, 1102, 1916, 17)
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:848 - Not updating focus (to 0x6773c0 / 1), focused window is not mapped.
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:877 - Still no window focused, better set focus to the root window
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/23/2011 10:45:17 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:848 - Not updating focus (to 0x6773c0 / 1), focused window is not mapped.
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:877 - Still no window focused, better set focus to the root window
+11/23/2011 10:45:17 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/23/2011 10:45:17 PM - ClientMessage for window 0x00000109
+11/23/2011 10:45:17 PM - src/handlers.c:handle_client_message:698 - unhandled clientmessage
+i3status: trying to auto-detect output_format setting
+i3status: auto-detected "none"
+Could not open "/sys/class/thermal/thermal_zone0/temp"
+[src/child.c:118] ERROR: Child (pid: 17138) unexpectedly exited with status 256
+11/23/2011 10:45:18 PM - src/handlers.c:handle_mapping_notify:297 - Received mapping_notify for keyboard or modifier mapping, re-grabbing keys
+11/23/2011 10:45:18 PM - src/config.c:ungrab_all_keys:27 - Ungrabbing all keys
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Return" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Q" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "d" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "j" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "k" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "l" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "semicolon" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Left" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Down" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Up" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Right" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "J" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "K" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "L" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "colon" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Left" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Down" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Up" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Right" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "h" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "v" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "f" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "s" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "w" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "e" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "space" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "space" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "a" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "1" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "2" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "3" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "4" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "5" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "6" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "7" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "8" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "9" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "0" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "exclam" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "at" to 2 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "numbersign" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "dollar" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "percent" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "asciicircum" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "ampersand" to 2 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "asterisk" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "parenleft" to 4 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "parenright" to 4 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "C" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "R" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "E" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "r" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 36
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 24
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 40
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 44
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 45
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 46
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 47
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 113
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 116
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 111
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 114
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 44
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 45
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 46
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 47
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 113
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 116
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 111
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 114
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 43
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 55
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 41
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 39
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 25
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 26
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 65
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 65
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 38
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 10
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 11
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 12
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 13
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 14
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 17
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 10
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 48
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 48
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 51
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 13
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 14
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 17
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 187
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 187
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 188
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 188
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 54
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 26
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+11/23/2011 10:45:18 PM - src/handlers.c:handle_mapping_notify:297 - Received mapping_notify for keyboard or modifier mapping, re-grabbing keys
+11/23/2011 10:45:18 PM - src/config.c:ungrab_all_keys:27 - Ungrabbing all keys
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Return" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Q" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "d" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "j" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "k" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "l" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "semicolon" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Left" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Down" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Up" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Right" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "J" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "K" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "L" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "colon" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Left" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Down" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Up" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "Right" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "h" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "v" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "f" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "s" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "w" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "e" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "space" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "space" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "a" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "1" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "2" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "3" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "4" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "5" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "6" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "7" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "8" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "9" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "0" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "exclam" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "at" to 2 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "numbersign" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "dollar" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "percent" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "asciicircum" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "ampersand" to 2 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "asterisk" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "parenleft" to 4 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "parenright" to 4 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "C" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "R" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "E" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:translate_keysyms:114 - Translated symbol "r" to 1 keycode
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 36
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 24
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 40
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 44
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 45
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 46
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 47
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 113
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 116
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 111
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 114
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 44
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 45
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 46
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 47
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 113
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 116
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 111
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 114
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 43
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 55
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 41
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 39
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 25
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 26
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 65
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 65
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 38
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 10
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 11
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 12
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 13
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 14
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 17
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 10
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 48
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 48
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 51
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 13
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 14
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 17
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 187
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 187
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 188
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 188
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 54
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 26
+11/23/2011 10:45:18 PM - src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+11/23/2011 10:45:18 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/23/2011 10:45:18 PM - src/handlers.c:handle_key_press:89 - Keypress 36, state raw = 8
+11/23/2011 10:45:18 PM - src/handlers.c:handle_key_press:93 - (removed numlock, state = 8)
+11/23/2011 10:45:18 PM - src/handlers.c:handle_key_press:97 - (removed upper 8 bits, state = 8)
+11/23/2011 10:45:18 PM - src/handlers.c:handle_key_press:102 - (checked mode_switch, state 8)
+11/23/2011 10:45:18 PM - COMMAND: *exec i3-sensible-terminal*
+anything else: *i*
+should execute i3-sensible-terminal, no_startup_id = 0
+11/23/2011 10:45:18 PM - startup id = i3/i3-sensible-terminal/17135-0-slack1_TIME1869251
+11/23/2011 10:45:18 PM - executing: i3-sensible-terminal
+single command completely parsed, dropping state...
+done, json output = (null)
+11/23/2011 10:45:18 PM - src/handlers.c:handle_destroy_notify_event:537 - destroy notify for 0x0040000a, 0x0040000a
+11/23/2011 10:45:18 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x0040000a (received from 0x0040000a), serial 690
+11/23/2011 10:45:18 PM - Not a managed window, ignoring UnmapNotify event
+Usage: which [options] [--] COMMAND [...]
+Write the full path of COMMAND(s) to standard output.
+
+  --version, -[vV] Print version and exit successfully.
+  --help,          Print this help and exit successfully.
+  --skip-dot       Skip directories in PATH that start with a dot.
+  --skip-tilde     Skip directories in PATH that start with a tilde.
+  --show-dot       Don't expand a dot to current directory in output.
+  --show-tilde     Output a tilde for HOME directory for non-root.
+  --tty-only       Stop processing options on the right if not on tty.
+  --all, -a        Print all matches in PATH, not just the first
+  --read-alias, -i Read list of aliases from stdin.
+  --skip-alias     Ignore option --read-alias; don't read stdin.
+  --read-functions Read shell functions from stdin.
+  --skip-functions Ignore option --read-functions; don't read stdin.
+
+Recommended use is to write the output of (alias; declare -f) to standard
+input, so that which can show aliases and shell functions. See which(1) for
+examples.
+
+If the options --read-alias and/or --read-functions are specified then the
+output can be a full alias or function definition, optionally followed by
+the full path of each command used inside of those.
+
+Report bugs to <which-bugs@gnu.org>.
+11/23/2011 10:45:19 PM - src/handlers.c:handle_configure_request:336 - window 0x00a0000d wants to be at 0x0 with 484x316
+11/23/2011 10:45:19 PM - src/handlers.c:handle_configure_request:341 - Configure request for unmanaged window, can do that.
+11/23/2011 10:45:19 PM - src/handlers.c:handle_map_request:318 - window = 0x00a0000d, serial is 691.
+11/23/2011 10:45:19 PM - src/manage.c:manage_window:147 - Managing window 0x00a0000d
+11/23/2011 10:45:19 PM - WM_CLASS changed to xterm (instance), XTerm (class)
+11/23/2011 10:45:19 PM - WM_NAME changed to "xterm"
+11/23/2011 10:45:19 PM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+11/23/2011 10:45:19 PM - src/window.c:window_update_name:56 - _NET_WM_NAME not specified, not changing
+11/23/2011 10:45:19 PM - src/window.c:window_update_leader:166 - Client leader changed to 00a0000d
+11/23/2011 10:45:19 PM - src/window.c:window_update_transient_for:179 - TRANSIENT_FOR not set.
+11/23/2011 10:45:19 PM - src/window.c:window_update_strut_partial:203 - _NET_WM_STRUT_PARTIAL not set.
+11/23/2011 10:45:19 PM - src/window.c:window_update_role:228 - WM_WINDOW_ROLE not set.
+11/23/2011 10:45:19 PM - src/startup.c:startup_workspace_for_window:207 - No _NET_STARTUP_ID set on this window
+11/23/2011 10:45:19 PM - src/startup.c:startup_workspace_for_window:213 - Checking leader window 0x00a0000d
+11/23/2011 10:45:19 PM - src/startup.c:startup_workspace_for_window:217 - No _NET_STARTUP_ID set on the leader either
+11/23/2011 10:45:19 PM - src/manage.c:manage_window:176 - startup workspace = (null)
+11/23/2011 10:45:19 PM - src/manage.c:manage_window:214 - Initial geometry: (0, 0, 484, 316)
+11/23/2011 10:45:19 PM - Checking window 0x00a0000d (class XTerm)
+11/23/2011 10:45:19 PM - dock status does not match
+11/23/2011 10:45:19 PM - Checking window 0x00a0000d (class XTerm)
+11/23/2011 10:45:19 PM - dock status does not match
+11/23/2011 10:45:19 PM - src/tree.c:tree_open_con:93 - con = 0x6773c0
+11/23/2011 10:45:19 PM - src/con.c:con_new:43 - opening window 7
+11/23/2011 10:45:19 PM - src/con.c:con_new:46 - color #00aa00
+11/23/2011 10:45:19 PM - src/x.c:x_con_init:112 - adding new state for window id 0x0040000b
+11/23/2011 10:45:19 PM - src/manage.c:manage_window:261 - new container = 0x67b5a0
+11/23/2011 10:45:19 PM - src/x.c:x_reinit:129 - resetting state 0x67b530 to initial
+11/23/2011 10:45:19 PM - src/manage.c:manage_window:278 - Not in fullscreen mode, focusing
+11/23/2011 10:45:19 PM - workspace visible? fs = 0x6773c0, ws = 0x6773c0
+11/23/2011 10:45:19 PM - src/con.c:con_focus:184 - con_focus = 0x67b5a0
+11/23/2011 10:45:19 PM - src/con.c:con_focus:184 - con_focus = 0x6773c0
+11/23/2011 10:45:19 PM - src/con.c:con_focus:184 - con_focus = 0x676ef0
+11/23/2011 10:45:19 PM - src/con.c:con_focus:184 - con_focus = 0x676ae0
+11/23/2011 10:45:19 PM - src/assignments.c:run_assignments:18 - Checking if any assignments match this window
+11/23/2011 10:45:19 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/23/2011 10:45:19 PM - src/render.c:render_con:111 - Rendering node 0x671270 / root / layout 0 / children 1 / orient 0
+11/23/2011 10:45:19 PM - src/render.c:render_con:111 - Rendering node 0x676ae0 / VBOX0 / layout 4 / children 3 / orient 0
+11/23/2011 10:45:19 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1918 x 0)
+11/23/2011 10:45:19 PM - src/render.c:render_con:111 - Rendering node 0x676ce0 / topdock / layout 3 / children 0 / orient 2
+11/23/2011 10:45:19 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1918 x 1102)
+11/23/2011 10:45:19 PM - src/render.c:render_con:111 - Rendering node 0x676ef0 / content / layout 0 / children 1 / orient 0
+11/23/2011 10:45:19 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x6773c0 / 1 / layout 0 / children 1 / orient 1
+11/23/2011 10:45:19 PM - src/render.c:render_con:335 - child at (0, 18) with (1918 x 1084)
+11/23/2011 10:45:19 PM - src/render.c:render_con:111 - Rendering node 0x67b5a0 / #00aa00 / layout 0 / children 0 / orient 0
+11/23/2011 10:45:19 PM - src/render.c:render_con:180 - child will be at 2x0 with size 1912x1080
+11/23/2011 10:45:19 PM - src/render.c:render_l_output:93 - child at (0, 1102) with (1918 x 19)
+11/23/2011 10:45:19 PM - src/render.c:render_con:111 - Rendering node 0x677130 / bottomdock / layout 3 / children 1 / orient 2
+11/23/2011 10:45:19 PM - src/render.c:render_con:335 - child at (0, 1102) with (1918 x 19)
+11/23/2011 10:45:19 PM - src/render.c:render_con:111 - Rendering node 0x677b50 / #aa0000 / layout 0 / children 0 / orient 0
+11/23/2011 10:45:19 PM - src/render.c:render_con:180 - child will be at 0x0 with size 1916x17
+11/23/2011 10:45:19 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/23/2011 10:45:19 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/23/2011 10:45:19 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/23/2011 10:45:19 PM - src/x.c:x_push_node:611 - setting rect (0, 0, 1918, 18)
+11/23/2011 10:45:19 PM - src/x.c:x_push_node:674 - mapping container 00400006 (serial 725)
+11/23/2011 10:45:19 PM - src/x.c:x_push_node:681 - Sending fake configure notify
+11/23/2011 10:45:19 PM - src/x.c:x_push_node:518 - pushing name [i3 con] container around 0x67b3e0 for con 0x67b5a0
+11/23/2011 10:45:19 PM - src/x.c:x_push_node:611 - setting rect (0, 18, 1918, 1084)
+11/23/2011 10:45:19 PM - src/x.c:x_push_node:630 - setting window rect (2, 0, 1912, 1080)
+11/23/2011 10:45:19 PM - src/x.c:x_push_node:660 - mapping child window (serial 746)
+11/23/2011 10:45:19 PM - src/x.c:x_push_node:674 - mapping container 0040000b (serial 748)
+11/23/2011 10:45:19 PM - src/x.c:x_push_node:681 - Sending fake configure notify
+11/23/2011 10:45:19 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (2, 18, 1912, 1080)
+11/23/2011 10:45:19 PM - src/x.c:x_push_changes:852 - Updating focus (focused: 0x67b5a0 / #00aa00)
+11/23/2011 10:45:19 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/23/2011 10:45:19 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/23/2011 10:45:19 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/23/2011 10:45:19 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/23/2011 10:45:19 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/23/2011 10:45:19 PM - src/handlers.c:handle_expose_event:626 - window = 00400006
+11/23/2011 10:45:19 PM - src/handlers.c:handle_expose_event:626 - window = 0040000b
+11/23/2011 10:45:19 PM - src/handlers.c:handle_focus_in:949 - focus change in, for window 0x00a0000d
+11/23/2011 10:45:19 PM - src/handlers.c:handle_focus_in:953 - That is con 0x67b5a0 / #00aa00
+11/23/2011 10:45:19 PM - src/handlers.c:handle_focus_in:957 - FocusIn event for grab/ungrab, ignoring
+11/23/2011 10:45:19 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/23/2011 10:45:24 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/23/2011 10:45:25 PM - src/handlers.c:handle_key_press:89 - Keypress 11, state raw = 8
+11/23/2011 10:45:25 PM - src/handlers.c:handle_key_press:93 - (removed numlock, state = 8)
+11/23/2011 10:45:25 PM - src/handlers.c:handle_key_press:97 - (removed upper 8 bits, state = 8)
+11/23/2011 10:45:25 PM - src/handlers.c:handle_key_press:102 - (checked mode_switch, state 8)
+11/23/2011 10:45:25 PM - COMMAND: *workspace 2*
+should switch to workspace 2
+11/23/2011 10:45:25 PM - Creating new workspace "2"
+11/23/2011 10:45:25 PM - got output 0x676ae0 with content 0x676ef0
+11/23/2011 10:45:25 PM - src/con.c:con_new:43 - opening window 8
+11/23/2011 10:45:25 PM - src/con.c:con_new:46 - color #0000aa
+11/23/2011 10:45:25 PM - src/x.c:x_con_init:112 - adding new state for window id 0x00400010
+11/23/2011 10:45:25 PM - num = 2
+11/23/2011 10:45:25 PM - src/workspace.c:workspace_get:73 - Auto orientation. Output resolution set to (0,0), setting orientation to 1.
+11/23/2011 10:45:25 PM - src/con.c:con_attach:86 - it's a workspace. num = 2
+11/23/2011 10:45:25 PM - switching to 0x67b990
+11/23/2011 10:45:25 PM - src/con.c:con_focus:184 - con_focus = 0x67b990
+11/23/2011 10:45:25 PM - src/con.c:con_focus:184 - con_focus = 0x676ef0
+11/23/2011 10:45:25 PM - src/con.c:con_focus:184 - con_focus = 0x676ae0
+11/23/2011 10:45:25 PM - focused now = 0x67b990 / 2
+11/23/2011 10:45:25 PM - src/ewmh.c:ewmh_update_workarea:79 - Got 2 workspaces
+11/23/2011 10:45:25 PM - src/ewmh.c:ewmh_update_workarea:85 - storing 0: 0x0 with 1918 x 1102
+11/23/2011 10:45:25 PM - src/ewmh.c:ewmh_update_workarea:85 - storing 1: 0x0 with 0 x 0
+11/23/2011 10:45:25 PM - src/ewmh.c:ewmh_update_workarea:94 - re-using last_rect (0x0, 1918, 1102)
+11/23/2011 10:45:25 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/23/2011 10:45:25 PM - src/render.c:render_con:111 - Rendering node 0x671270 / root / layout 0 / children 1 / orient 0
+11/23/2011 10:45:25 PM - src/render.c:render_con:111 - Rendering node 0x676ae0 / VBOX0 / layout 4 / children 3 / orient 0
+11/23/2011 10:45:25 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1918 x 0)
+11/23/2011 10:45:25 PM - src/render.c:render_con:111 - Rendering node 0x676ce0 / topdock / layout 3 / children 0 / orient 2
+11/23/2011 10:45:25 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1918 x 1102)
+11/23/2011 10:45:25 PM - src/render.c:render_con:111 - Rendering node 0x676ef0 / content / layout 0 / children 2 / orient 0
+11/23/2011 10:45:25 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x67b990 / 2 / layout 0 / children 0 / orient 1
+11/23/2011 10:45:25 PM - src/render.c:render_l_output:93 - child at (0, 1102) with (1918 x 19)
+11/23/2011 10:45:25 PM - src/render.c:render_con:111 - Rendering node 0x677130 / bottomdock / layout 3 / children 1 / orient 2
+11/23/2011 10:45:25 PM - src/render.c:render_con:335 - child at (0, 1102) with (1918 x 19)
+11/23/2011 10:45:25 PM - src/render.c:render_con:111 - Rendering node 0x677b50 / #aa0000 / layout 0 / children 0 / orient 0
+11/23/2011 10:45:25 PM - src/render.c:render_con:180 - child will be at 0x0 with size 1916x17
+11/23/2011 10:45:25 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/23/2011 10:45:25 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/23/2011 10:45:25 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/23/2011 10:45:25 PM - src/x.c:x_push_node:518 - pushing name [i3 con] workspace 2 for con 0x67b990
+11/23/2011 10:45:25 PM - src/x.c:x_push_changes:848 - Not updating focus (to 0x67b990 / 2), focused window is not mapped.
+11/23/2011 10:45:25 PM - src/x.c:x_push_changes:877 - Still no window focused, better set focus to the root window
+11/23/2011 10:45:25 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/23/2011 10:45:25 PM - src/x.c:x_push_node_unmaps:721 - unmapping container (serial 798)
+11/23/2011 10:45:25 PM - src/x.c:x_push_node_unmaps:721 - unmapping container (serial 800)
+11/23/2011 10:45:25 PM - src/x.c:x_push_node_unmaps:727 - ignore_unmap for con 0x67b5a0 (frame 0x0040000b) now 1
+11/23/2011 10:45:25 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+single command completely parsed, dropping state...
+done, json output = (null)
+11/23/2011 10:45:25 PM - src/ipc.c:ipc_receive_message:776 - IPC: n = 28
+11/23/2011 10:45:25 PM - workspace visible? fs = 0x67b990, ws = 0x6773c0
+11/23/2011 10:45:25 PM - workspace visible? fs = 0x67b990, ws = 0x67b990
+11/23/2011 10:45:25 PM - src/ipc.c:ipc_receive_message:776 - IPC: n = 14
+11/23/2011 10:45:25 PM - workspace visible? fs = 0x67b990, ws = 0x6773c0
+11/23/2011 10:45:25 PM - workspace visible? fs = 0x67b990, ws = 0x67b990
+11/23/2011 10:45:25 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x00400006 (received from 0x00400006), serial 798
+11/23/2011 10:45:25 PM - src/handlers.c:handle_unmap_notify_event:472 - ignore_unmap = 0 for frame of container 0x6773c0
+11/23/2011 10:45:25 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x0040000b (received from 0x0040000b), serial 800
+11/23/2011 10:45:25 PM - src/handlers.c:handle_unmap_notify_event:472 - ignore_unmap = 0 for frame of container 0x67b5a0
+11/23/2011 10:45:25 PM - src/handlers.c:handle_enter_notify:172 - enter_notify for 00000109, mode = 0, detail 2, serial 800
+11/23/2011 10:45:25 PM - src/handlers.c:handle_enter_notify:173 - coordinates 959, 560
+11/23/2011 10:45:25 PM - src/handlers.c:handle_enter_notify:194 - Getting screen at 959 x 560
+11/23/2011 10:45:25 PM - src/randr.c:get_output_containing:84 - comparing x=959 y=560 with x=0 and y=0 width 1918 height 1121
+11/23/2011 10:45:25 PM - src/workspace.c:_workspace_show:201 - Not switching, already there.
+11/23/2011 10:45:25 PM - src/con.c:con_focus:184 - con_focus = 0x67b990
+11/23/2011 10:45:25 PM - src/con.c:con_focus:184 - con_focus = 0x676ef0
+11/23/2011 10:45:25 PM - src/con.c:con_focus:184 - con_focus = 0x676ae0
+11/23/2011 10:45:25 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/23/2011 10:45:26 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/23/2011 10:45:26 PM - src/handlers.c:handle_key_press:89 - Keypress 10, state raw = 8
+11/23/2011 10:45:26 PM - src/handlers.c:handle_key_press:93 - (removed numlock, state = 8)
+11/23/2011 10:45:26 PM - src/handlers.c:handle_key_press:97 - (removed upper 8 bits, state = 8)
+11/23/2011 10:45:26 PM - src/handlers.c:handle_key_press:102 - (checked mode_switch, state 8)
+11/23/2011 10:45:26 PM - COMMAND: *workspace 1*
+should switch to workspace 1
+11/23/2011 10:45:26 PM - switching to 0x6773c0
+11/23/2011 10:45:26 PM - workspace visible? fs = 0x6773c0, ws = 0x67b990
+11/23/2011 10:45:26 PM - Closing old workspace (0x67b990 / 2), it is empty
+11/23/2011 10:45:26 PM - src/tree.c:tree_close:143 - next = 0x67b5a0, focused = 0x67b990
+11/23/2011 10:45:26 PM - src/tree.c:tree_close:145 - closing 0x67b990, kill_window = 0
+11/23/2011 10:45:26 PM - src/con.c:con_is_floating:339 - checking if con 0x67b990 is floating
+11/23/2011 10:45:26 PM - src/tree.c:tree_close:234 - focusing 0x67b5a0 / #00aa00
+11/23/2011 10:45:26 PM - src/con.c:con_focus:184 - con_focus = 0x67b5a0
+11/23/2011 10:45:26 PM - src/con.c:con_focus:184 - con_focus = 0x6773c0
+11/23/2011 10:45:26 PM - src/con.c:con_focus:184 - con_focus = 0x676ef0
+11/23/2011 10:45:26 PM - src/con.c:con_focus:184 - con_focus = 0x676ae0
+11/23/2011 10:45:26 PM - src/con.c:con_on_remove_child:1008 - on_remove_child
+11/23/2011 10:45:26 PM - src/con.c:con_focus:184 - con_focus = 0x67b5a0
+11/23/2011 10:45:26 PM - src/con.c:con_focus:184 - con_focus = 0x6773c0
+11/23/2011 10:45:26 PM - src/con.c:con_focus:184 - con_focus = 0x676ef0
+11/23/2011 10:45:26 PM - src/con.c:con_focus:184 - con_focus = 0x676ae0
+11/23/2011 10:45:26 PM - focused now = 0x67b5a0 / #00aa00
+11/23/2011 10:45:26 PM - src/ewmh.c:ewmh_update_workarea:79 - Got 1 workspaces
+11/23/2011 10:45:26 PM - src/ewmh.c:ewmh_update_workarea:85 - storing 0: 0x0 with 1918 x 1102
+11/23/2011 10:45:26 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/23/2011 10:45:26 PM - src/render.c:render_con:111 - Rendering node 0x671270 / root / layout 0 / children 1 / orient 0
+11/23/2011 10:45:26 PM - src/render.c:render_con:111 - Rendering node 0x676ae0 / VBOX0 / layout 4 / children 3 / orient 0
+11/23/2011 10:45:26 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1918 x 0)
+11/23/2011 10:45:26 PM - src/render.c:render_con:111 - Rendering node 0x676ce0 / topdock / layout 3 / children 0 / orient 2
+11/23/2011 10:45:26 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1918 x 1102)
+11/23/2011 10:45:26 PM - src/render.c:render_con:111 - Rendering node 0x676ef0 / content / layout 0 / children 1 / orient 0
+11/23/2011 10:45:26 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x6773c0 / 1 / layout 0 / children 1 / orient 1
+11/23/2011 10:45:26 PM - src/render.c:render_con:335 - child at (0, 18) with (1918 x 1084)
+11/23/2011 10:45:26 PM - src/render.c:render_con:111 - Rendering node 0x67b5a0 / #00aa00 / layout 0 / children 0 / orient 0
+11/23/2011 10:45:26 PM - src/render.c:render_con:180 - child will be at 2x0 with size 1912x1080
+11/23/2011 10:45:26 PM - src/render.c:render_l_output:93 - child at (0, 1102) with (1918 x 19)
+11/23/2011 10:45:26 PM - src/render.c:render_con:111 - Rendering node 0x677130 / bottomdock / layout 3 / children 1 / orient 2
+11/23/2011 10:45:26 PM - src/render.c:render_con:335 - child at (0, 1102) with (1918 x 19)
+11/23/2011 10:45:26 PM - src/render.c:render_con:111 - Rendering node 0x677b50 / #aa0000 / layout 0 / children 0 / orient 0
+11/23/2011 10:45:26 PM - src/render.c:render_con:180 - child will be at 0x0 with size 1916x17
+11/23/2011 10:45:26 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/23/2011 10:45:26 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/23/2011 10:45:26 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/23/2011 10:45:26 PM - src/x.c:x_push_node:674 - mapping container 00400006 (serial 814)
+11/23/2011 10:45:26 PM - src/x.c:x_push_node:674 - mapping container 0040000b (serial 818)
+11/23/2011 10:45:26 PM - src/x.c:x_push_changes:852 - Updating focus (focused: 0x67b5a0 / #00aa00)
+11/23/2011 10:45:26 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/23/2011 10:45:26 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+single command completely parsed, dropping state...
+done, json output = (null)
+11/23/2011 10:45:26 PM - src/handlers.c:handle_destroy_notify_event:537 - destroy notify for 0x00400010, 0x00400010
+11/23/2011 10:45:26 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x00400010 (received from 0x00400010), serial 801
+11/23/2011 10:45:26 PM - Not a managed window, ignoring UnmapNotify event
+11/23/2011 10:45:26 PM - ERROR: X11 Error received! sequence 0x322, error_code = 4
+11/23/2011 10:45:26 PM - ERROR: X11 Error received! sequence 0x323, error_code = 13
+11/23/2011 10:45:26 PM - src/ipc.c:ipc_receive_message:776 - IPC: n = 28
+11/23/2011 10:45:26 PM - workspace visible? fs = 0x6773c0, ws = 0x6773c0
+11/23/2011 10:45:26 PM - src/ipc.c:ipc_receive_message:776 - IPC: n = 14
+11/23/2011 10:45:26 PM - workspace visible? fs = 0x6773c0, ws = 0x6773c0
+11/23/2011 10:45:26 PM - src/handlers.c:handle_expose_event:626 - window = 00400006
+11/23/2011 10:45:26 PM - src/handlers.c:handle_expose_event:626 - window = 0040000b
+11/23/2011 10:45:26 PM - src/handlers.c:handle_focus_in:949 - focus change in, for window 0x00a0000d
+11/23/2011 10:45:26 PM - src/handlers.c:handle_focus_in:953 - That is con 0x67b5a0 / #00aa00
+11/23/2011 10:45:26 PM - src/handlers.c:handle_focus_in:957 - FocusIn event for grab/ungrab, ignoring
+11/23/2011 10:45:26 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/23/2011 10:45:31 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x00a0000d (received from 0x00a0000d), serial 833
+11/23/2011 10:45:31 PM - src/tree.c:tree_close:143 - next = 0x6773c0, focused = 0x67b5a0
+11/23/2011 10:45:31 PM - src/tree.c:tree_close:145 - closing 0x67b5a0, kill_window = 0
+11/23/2011 10:45:31 PM - src/con.c:con_is_floating:339 - checking if con 0x67b5a0 is floating
+11/23/2011 10:45:31 PM - src/tree.c:tree_close:234 - focusing 0x6773c0 / 1
+11/23/2011 10:45:31 PM - src/con.c:con_focus:184 - con_focus = 0x6773c0
+11/23/2011 10:45:31 PM - src/con.c:con_focus:184 - con_focus = 0x676ef0
+11/23/2011 10:45:31 PM - src/con.c:con_focus:184 - con_focus = 0x676ae0
+11/23/2011 10:45:31 PM - src/con.c:con_on_remove_child:1008 - on_remove_child
+11/23/2011 10:45:31 PM - workspace visible? fs = 0x6773c0, ws = 0x6773c0
+11/23/2011 10:45:31 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/23/2011 10:45:31 PM - src/render.c:render_con:111 - Rendering node 0x671270 / root / layout 0 / children 1 / orient 0
+11/23/2011 10:45:31 PM - src/render.c:render_con:111 - Rendering node 0x676ae0 / VBOX0 / layout 4 / children 3 / orient 0
+11/23/2011 10:45:31 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1918 x 0)
+11/23/2011 10:45:31 PM - src/render.c:render_con:111 - Rendering node 0x676ce0 / topdock / layout 3 / children 0 / orient 2
+11/23/2011 10:45:31 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1918 x 1102)
+11/23/2011 10:45:31 PM - src/render.c:render_con:111 - Rendering node 0x676ef0 / content / layout 0 / children 1 / orient 0
+11/23/2011 10:45:31 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x6773c0 / 1 / layout 0 / children 0 / orient 1
+11/23/2011 10:45:31 PM - src/render.c:render_l_output:93 - child at (0, 1102) with (1918 x 19)
+11/23/2011 10:45:31 PM - src/render.c:render_con:111 - Rendering node 0x677130 / bottomdock / layout 3 / children 1 / orient 2
+11/23/2011 10:45:31 PM - src/render.c:render_con:335 - child at (0, 1102) with (1918 x 19)
+11/23/2011 10:45:31 PM - src/render.c:render_con:111 - Rendering node 0x677b50 / #aa0000 / layout 0 / children 0 / orient 0
+11/23/2011 10:45:31 PM - src/render.c:render_con:180 - child will be at 0x0 with size 1916x17
+11/23/2011 10:45:31 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/23/2011 10:45:31 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/23/2011 10:45:31 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/23/2011 10:45:31 PM - src/x.c:x_push_changes:848 - Not updating focus (to 0x6773c0 / 1), focused window is not mapped.
+11/23/2011 10:45:31 PM - src/x.c:x_push_changes:877 - Still no window focused, better set focus to the root window
+11/23/2011 10:45:31 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/23/2011 10:45:31 PM - src/x.c:x_push_node_unmaps:721 - unmapping container (serial 846)
+11/23/2011 10:45:31 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/23/2011 10:45:31 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/23/2011 10:45:31 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/23/2011 10:45:31 PM - src/x.c:x_push_changes:848 - Not updating focus (to 0x6773c0 / 1), focused window is not mapped.
+11/23/2011 10:45:31 PM - src/x.c:x_push_changes:877 - Still no window focused, better set focus to the root window
+11/23/2011 10:45:31 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/23/2011 10:45:31 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x00a0000d (received from 0x0040000b), serial 833
+11/23/2011 10:45:31 PM - Not a managed window, ignoring UnmapNotify event
+11/23/2011 10:45:31 PM - src/handlers.c:handle_focus_in:949 - focus change in, for window 0x00a0000d
+11/23/2011 10:45:31 PM - src/handlers.c:handle_expose_event:626 - window = 0040000b
+11/23/2011 10:45:31 PM - expose event for unknown window, ignoring
+11/23/2011 10:45:31 PM - src/handlers.c:handle_enter_notify:172 - enter_notify for 0040000b, mode = 0, detail 2, serial 833
+11/23/2011 10:45:31 PM - src/handlers.c:handle_enter_notify:173 - coordinates 959, 542
+11/23/2011 10:45:31 PM - src/handlers.c:handle_enter_notify:194 - Getting screen at 959 x 560
+11/23/2011 10:45:31 PM - src/randr.c:get_output_containing:84 - comparing x=959 y=560 with x=0 and y=0 width 1918 height 1121
+11/23/2011 10:45:31 PM - src/workspace.c:_workspace_show:201 - Not switching, already there.
+11/23/2011 10:45:31 PM - src/con.c:con_focus:184 - con_focus = 0x6773c0
+11/23/2011 10:45:31 PM - src/con.c:con_focus:184 - con_focus = 0x676ef0
+11/23/2011 10:45:31 PM - src/con.c:con_focus:184 - con_focus = 0x676ae0
+11/23/2011 10:45:31 PM - src/handlers.c:handle_destroy_notify_event:537 - destroy notify for 0x00a0000d, 0x00a0000d
+11/23/2011 10:45:31 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x00a0000d (received from 0x00a0000d), serial 833
+11/23/2011 10:45:31 PM - Not a managed window, ignoring UnmapNotify event
+11/23/2011 10:45:31 PM - src/handlers.c:handle_destroy_notify_event:537 - destroy notify for 0x0040000b, 0x00a0000d
+11/23/2011 10:45:31 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x00a0000d (received from 0x0040000b), serial 833
+11/23/2011 10:45:31 PM - Not a managed window, ignoring UnmapNotify event
+11/23/2011 10:45:31 PM - src/main.c:xcb_check_cb:110 - Expected X11 Error received for sequence 342
+11/23/2011 10:45:31 PM - src/main.c:xcb_check_cb:110 - Expected X11 Error received for sequence 343
+11/23/2011 10:45:31 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x0040000b (received from 0x0040000b), serial 836
+11/23/2011 10:45:31 PM - Not a managed window, ignoring UnmapNotify event
+11/23/2011 10:45:31 PM - src/handlers.c:handle_enter_notify:172 - enter_notify for 00000109, mode = 0, detail 2, serial 836
+11/23/2011 10:45:31 PM - src/handlers.c:handle_enter_notify:173 - coordinates 959, 560
+11/23/2011 10:45:31 PM - src/handlers.c:handle_enter_notify:194 - Getting screen at 959 x 560
+11/23/2011 10:45:31 PM - src/randr.c:get_output_containing:84 - comparing x=959 y=560 with x=0 and y=0 width 1918 height 1121
+11/23/2011 10:45:31 PM - src/workspace.c:_workspace_show:201 - Not switching, already there.
+11/23/2011 10:45:31 PM - src/con.c:con_focus:184 - con_focus = 0x6773c0
+11/23/2011 10:45:31 PM - src/con.c:con_focus:184 - con_focus = 0x676ef0
+11/23/2011 10:45:31 PM - src/con.c:con_focus:184 - con_focus = 0x676ae0
+11/23/2011 10:45:31 PM - src/handlers.c:handle_destroy_notify_event:537 - destroy notify for 0x0040000b, 0x0040000b
+11/23/2011 10:45:31 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x0040000b (received from 0x0040000b), serial 836
+11/23/2011 10:45:31 PM - Not a managed window, ignoring UnmapNotify event
+11/23/2011 10:45:31 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x00400006 (received from 0x00400006), serial 846
+11/23/2011 10:45:31 PM - src/handlers.c:handle_unmap_notify_event:472 - ignore_unmap = 0 for frame of container 0x6773c0
+11/23/2011 10:45:32 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/23/2011 10:45:32 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/23/2011 10:45:32 PM - src/handlers.c:handle_key_press:89 - Keypress 26, state raw = 9
+11/23/2011 10:45:32 PM - src/handlers.c:handle_key_press:93 - (removed numlock, state = 9)
+11/23/2011 10:45:32 PM - src/handlers.c:handle_key_press:97 - (removed upper 8 bits, state = 9)
+11/23/2011 10:45:32 PM - src/handlers.c:handle_key_press:102 - (checked mode_switch, state 9)
+11/23/2011 10:45:32 PM - COMMAND: *exit*
+exit, bye bye

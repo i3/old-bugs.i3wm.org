@@ -1,0 +1,83 @@
+From 5cb1bb9dd049dc2b680825de6314ee3cda46cb0b Mon Sep 17 00:00:00 2001
+From: beauby <lucas.hosseini@gmail.com>
+Date: Fri, 10 Feb 2012 00:21:26 +0100
+Subject: [PATCH 1/3] Fixed the fgetln workaround
+
+---
+ i3-config-wizard/main.c |   30 ++++++++++++++++++++++++++----
+ 1 files changed, 26 insertions(+), 4 deletions(-)
+
+diff --git a/i3-config-wizard/main.c b/i3-config-wizard/main.c
+index cdce065..9f23db2 100644
+--- a/i3-config-wizard/main.c
++++ b/i3-config-wizard/main.c
+@@ -8,6 +8,17 @@
+  *                   keysyms.
+  *
+  */
++#if defined(__FreeBSD__)
++#include <sys/param.h>
++#endif
++
++/* For systems without get_line, fall back to fgetln */
++#if defined(__APPLE__) || (defined(__FreeBSD__) && __FreeBSD_version < 800000)
++#define USE_FGETLN
++#elif defined(__FreeBSD__)
++#define _WITH_GETLINE
++#endif
++
+ #include <ev.h>
+ #include <stdio.h>
+ #include <sys/types.h>
+@@ -283,7 +294,7 @@ static void finish() {
+ 
+     char *line = NULL;
+     size_t len = 0;
+-#if !defined(__APPLE__)
++#ifndef USE_FGETLN
+     ssize_t read;
+ #endif
+     bool head_of_file = true;
+@@ -296,10 +307,17 @@ static void finish() {
+     fputs("# this file and re-run i3-config-wizard(1).\n", ks_config);
+     fputs("#\n", ks_config);
+ 
+-#if defined(__APPLE__)
+-    while ((line = fgetln(kc_config, &len)) != NULL) {
++#ifdef USE_FGETLN
++    char *buf = NULL;
++    while ((buf = fgetln(kc_config, &len)) != NULL) {
++        /* fgetln does not return null-terminated strings */
++        if (line != NULL)
++            free(line);
++        sasprintf(&line, "%.*s", len, buf);
+ #else
+-    while ((read = getline(&line, &len, kc_config)) != -1) {
++    size_t linecap = 0;
++    while ((read = getline(&line, &linecap, kc_config)) != -1) {
++        len = strlen(line);
+ #endif
+         /* skip the warning block at the beginning of the input file */
+         if (head_of_file &&
+@@ -327,6 +345,7 @@ static void finish() {
+             fputs(line, ks_config);
+             continue;
+         }
++
+         char *result = rewrite_binding(walk);
+         fputs(result, ks_config);
+         free(result);
+@@ -336,7 +355,10 @@ static void finish() {
+     fflush(ks_config);
+     fsync(fileno(ks_config));
+ 
++#ifndef USE_FGETLN
+     free(line);
++#endif
++
+     fclose(kc_config);
+     fclose(ks_config);
+ 
+-- 
+1.7.9
+

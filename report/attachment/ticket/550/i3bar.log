@@ -1,0 +1,532 @@
+[src/xcb.c:803] Connected to xcb
+[src/xcb.c:1106] Got Atoms
+[src/xcb.c:951] Calculated Font-height: 12
+[src/ipc.c:157] Got data!
+[src/ipc.c:101] Got Subscribe Reply: {"success":true}
+[src/ipc.c:157] Got data!
+[src/ipc.c:110] Parsing Outputs-JSON...
+[src/ipc.c:112] Reconfiguring Windows...
+[src/xcb.c:1130] Re-allocating statusline-buffer, statusline_width = 0, xcb_screen->width_in_pixels = 1024
+[src/xcb.c:1181] Destroying window for output VGA1
+[src/xcb.c:1186] Creating Window for output LVDS1
+[src/ipc.c:157] Got data!
+[src/ipc.c:90] Got Workspace-Data!
+[src/workspaces.c:136] Got Workspace 5, name_width: 6, glyphs: 1
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/child.c:107] W: (100% at ) no IP | E: down | CHR 84.00% 00:27:47 | T: 63 °C | 01% | 0.20 | 2011-10-31 22:16:55
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/ipc.c:157] Got data!
+[src/ipc.c:139] Got Output Event!
+[src/ipc.c:157] Got data!
+[src/ipc.c:110] Parsing Outputs-JSON...
+[src/ipc.c:112] Reconfiguring Windows...
+[src/xcb.c:1130] Re-allocating statusline-buffer, statusline_width = 582, xcb_screen->width_in_pixels = 1024
+[src/xcb.c:1181] Destroying window for output VGA1
+[src/xcb.c:1347] Destroying buffer for output LVDS1[src/xcb.c:1350] Reconfiguring Window for output LVDS1 to 0,582
+[src/xcb.c:1356] Recreating buffer for output LVDS1[src/ipc.c:157] Got data!
+[src/ipc.c:90] Got Workspace-Data!
+[src/workspaces.c:136] Got Workspace 5, name_width: 6, glyphs: 1
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:439] _NET_SYSTEM_TRAY_OPCODE received
+[src/xcb.c:475] xembed format = 32, len = 2
+[src/xcb.c:477] xembed version = 1
+[src/xcb.c:478] xembed flags = 0
+[src/xcb.c:488] X window 01600004 requested docking
+[src/xcb.c:493] using output LVDS1
+[src/xcb.c:540] Not mapping dock client yet
+[src/xcb.c:419] Configuring tray window 01600004 to x=1010
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:594] xembed_info updated
+[src/xcb.c:631] xembed format = 32, len = 2
+[src/xcb.c:633] xembed version = 1
+[src/xcb.c:634] xembed flags = 1
+[src/xcb.c:636] map-state now 1
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:439] _NET_SYSTEM_TRAY_OPCODE received
+[src/xcb.c:475] xembed format = 32, len = 2
+[src/xcb.c:477] xembed version = 1
+[src/xcb.c:478] xembed flags = 0
+[src/xcb.c:488] X window 01600027 requested docking
+[src/xcb.c:493] using output LVDS1
+[src/xcb.c:540] Not mapping dock client yet
+[src/xcb.c:419] Configuring tray window 01600027 to x=1010
+[src/xcb.c:419] Configuring tray window 01600004 to x=996
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:594] xembed_info updated
+[src/xcb.c:631] xembed format = 32, len = 2
+[src/xcb.c:633] xembed version = 1
+[src/xcb.c:634] xembed flags = 1
+[src/xcb.c:636] map-state now 1
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:439] _NET_SYSTEM_TRAY_OPCODE received
+[src/xcb.c:475] xembed format = 32, len = 2
+[src/xcb.c:477] xembed version = 1
+[src/xcb.c:478] xembed flags = 0
+[src/xcb.c:488] X window 0160002a requested docking
+[src/xcb.c:493] using output LVDS1
+[src/xcb.c:540] Not mapping dock client yet
+[src/xcb.c:419] Configuring tray window 0160002a to x=1010
+[src/xcb.c:419] Configuring tray window 01600027 to x=996
+[src/xcb.c:419] Configuring tray window 01600004 to x=982
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:594] xembed_info updated
+[src/xcb.c:631] xembed format = 32, len = 2
+[src/xcb.c:633] xembed version = 1
+[src/xcb.c:634] xembed flags = 1
+[src/xcb.c:636] map-state now 1
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:562] UnmapNotify for window = 01600004, event = 01600004
+[src/xcb.c:568] checking output LVDS1
+[src/xcb.c:574] Removing tray client with window ID 01600004
+[src/xcb.c:419] Configuring tray window 0160002a to x=1010
+[src/xcb.c:419] Configuring tray window 01600027 to x=996
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:594] xembed_info updated
+[src/xcb.c:562] UnmapNotify for window = 01600027, event = 01600027
+[src/xcb.c:568] checking output LVDS1
+[src/xcb.c:574] Removing tray client with window ID 01600027
+[src/xcb.c:419] Configuring tray window 0160002a to x=1010
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:594] xembed_info updated
+[src/xcb.c:562] UnmapNotify for window = 0160002a, event = 0160002a
+[src/xcb.c:568] checking output LVDS1
+[src/xcb.c:574] Removing tray client with window ID 0160002a
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:594] xembed_info updated
+[src/xcb.c:439] _NET_SYSTEM_TRAY_OPCODE received
+[src/xcb.c:475] xembed format = 32, len = 2
+[src/xcb.c:477] xembed version = 1
+[src/xcb.c:478] xembed flags = 0
+[src/xcb.c:488] X window 01c00004 requested docking
+[src/xcb.c:493] using output LVDS1
+[src/xcb.c:540] Not mapping dock client yet
+[src/xcb.c:419] Configuring tray window 01c00004 to x=1010
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:594] xembed_info updated
+[src/xcb.c:631] xembed format = 32, len = 2
+[src/xcb.c:633] xembed version = 1
+[src/xcb.c:634] xembed flags = 1
+[src/xcb.c:636] map-state now 1
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:658] ConfigureRequest for window = 01c00004
+[src/xcb.c:679] This is a tray window. x = 1010
+[src/xcb.c:439] _NET_SYSTEM_TRAY_OPCODE received
+[src/xcb.c:475] xembed format = 32, len = 2
+[src/xcb.c:477] xembed version = 1
+[src/xcb.c:478] xembed flags = 0
+[src/xcb.c:488] X window 02000004 requested docking
+[src/xcb.c:493] using output LVDS1
+[src/xcb.c:540] Not mapping dock client yet
+[src/xcb.c:419] Configuring tray window 02000004 to x=1010
+[src/xcb.c:419] Configuring tray window 01c00004 to x=996
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:594] xembed_info updated
+[src/xcb.c:631] xembed format = 32, len = 2
+[src/xcb.c:633] xembed version = 1
+[src/xcb.c:634] xembed flags = 1
+[src/xcb.c:636] map-state now 1
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:658] ConfigureRequest for window = 02000004
+[src/xcb.c:679] This is a tray window. x = 1010
+[src/xcb.c:439] _NET_SYSTEM_TRAY_OPCODE received
+[src/xcb.c:475] xembed format = 32, len = 2
+[src/xcb.c:477] xembed version = 1
+[src/xcb.c:478] xembed flags = 0
+[src/xcb.c:488] X window 02c00003 requested docking
+[src/xcb.c:493] using output LVDS1
+[src/xcb.c:540] Not mapping dock client yet
+[src/xcb.c:419] Configuring tray window 02c00003 to x=1010
+[src/xcb.c:419] Configuring tray window 02000004 to x=996
+[src/xcb.c:419] Configuring tray window 01c00004 to x=982
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:439] _NET_SYSTEM_TRAY_OPCODE received
+[src/xcb.c:475] xembed format = 32, len = 2
+[src/xcb.c:477] xembed version = 1
+[src/xcb.c:478] xembed flags = 0
+[src/xcb.c:488] X window 03000003 requested docking
+[src/xcb.c:493] using output LVDS1
+[src/xcb.c:540] Not mapping dock client yet
+[src/xcb.c:419] Configuring tray window 03000003 to x=1010
+[src/xcb.c:419] Configuring tray window 02c00003 to x=996
+[src/xcb.c:419] Configuring tray window 02000004 to x=982
+[src/xcb.c:419] Configuring tray window 01c00004 to x=968
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:594] xembed_info updated
+[src/xcb.c:631] xembed format = 32, len = 2
+[src/xcb.c:633] xembed version = 1
+[src/xcb.c:634] xembed flags = 1
+[src/xcb.c:636] map-state now 1
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:594] xembed_info updated
+[src/xcb.c:631] xembed format = 32, len = 2
+[src/xcb.c:633] xembed version = 1
+[src/xcb.c:634] xembed flags = 1
+[src/xcb.c:636] map-state now 1
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:439] _NET_SYSTEM_TRAY_OPCODE received
+[src/xcb.c:475] xembed format = 32, len = 2
+[src/xcb.c:477] xembed version = 1
+[src/xcb.c:478] xembed flags = 0
+[src/xcb.c:488] X window 01e00003 requested docking
+[src/xcb.c:493] using output LVDS1
+[src/xcb.c:540] Not mapping dock client yet
+[src/xcb.c:419] Configuring tray window 01e00003 to x=1010
+[src/xcb.c:419] Configuring tray window 03000003 to x=996
+[src/xcb.c:419] Configuring tray window 02c00003 to x=982
+[src/xcb.c:419] Configuring tray window 02000004 to x=968
+[src/xcb.c:419] Configuring tray window 01c00004 to x=954
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/child.c:107] W: (100% at ) no IP | E: down | CHR 84.05% 00:32:10 | T: 66 °C | 86% | 1.47 | 2011-10-31 22:17:00
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:594] xembed_info updated
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:594] xembed_info updated
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:439] _NET_SYSTEM_TRAY_OPCODE received
+[src/xcb.c:475] xembed format = 32, len = 2
+[src/xcb.c:477] xembed version = 1
+[src/xcb.c:478] xembed flags = 0
+[src/xcb.c:488] X window 02800003 requested docking
+[src/xcb.c:493] using output LVDS1
+[src/xcb.c:540] Not mapping dock client yet
+[src/xcb.c:419] Configuring tray window 02800003 to x=1010
+[src/xcb.c:419] Configuring tray window 01e00003 to x=996
+[src/xcb.c:419] Configuring tray window 03000003 to x=982
+[src/xcb.c:419] Configuring tray window 02c00003 to x=968
+[src/xcb.c:419] Configuring tray window 02000004 to x=954
+[src/xcb.c:419] Configuring tray window 01c00004 to x=940
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:594] xembed_info updated
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:594] xembed_info updated
+[src/xcb.c:439] _NET_SYSTEM_TRAY_OPCODE received
+[src/xcb.c:475] xembed format = 32, len = 2
+[src/xcb.c:477] xembed version = 1
+[src/xcb.c:478] xembed flags = 1
+[src/xcb.c:488] X window 02800026 requested docking
+[src/xcb.c:493] using output LVDS1
+[src/xcb.c:537] Mapping dock client
+[src/xcb.c:419] Configuring tray window 02800026 to x=1010
+[src/xcb.c:419] Configuring tray window 02800003 to x=996
+[src/xcb.c:419] Configuring tray window 01e00003 to x=982
+[src/xcb.c:419] Configuring tray window 03000003 to x=968
+[src/xcb.c:419] Configuring tray window 02c00003 to x=954
+[src/xcb.c:419] Configuring tray window 02000004 to x=940
+[src/xcb.c:419] Configuring tray window 01c00004 to x=926
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:439] _NET_SYSTEM_TRAY_OPCODE received
+[src/xcb.c:475] xembed format = 32, len = 2
+[src/xcb.c:477] xembed version = 1
+[src/xcb.c:478] xembed flags = 0
+[src/xcb.c:488] X window 02a00004 requested docking
+[src/xcb.c:493] using output LVDS1
+[src/xcb.c:540] Not mapping dock client yet
+[src/xcb.c:419] Configuring tray window 02a00004 to x=1010
+[src/xcb.c:419] Configuring tray window 02800026 to x=996
+[src/xcb.c:419] Configuring tray window 02800003 to x=982
+[src/xcb.c:419] Configuring tray window 01e00003 to x=968
+[src/xcb.c:419] Configuring tray window 03000003 to x=954
+[src/xcb.c:419] Configuring tray window 02c00003 to x=940
+[src/xcb.c:419] Configuring tray window 02000004 to x=926
+[src/xcb.c:419] Configuring tray window 01c00004 to x=912
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:658] ConfigureRequest for window = 02800026
+[src/xcb.c:679] This is a tray window. x = 996
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:594] xembed_info updated
+[src/xcb.c:631] xembed format = 32, len = 2
+[src/xcb.c:633] xembed version = 1
+[src/xcb.c:634] xembed flags = 1
+[src/xcb.c:636] map-state now 1
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:658] ConfigureRequest for window = 02a00004
+[src/xcb.c:679] This is a tray window. x = 1010
+[src/child.c:107] W: (100% at ) no IP | E: down | CHR 84.07% 00:28:23 | T: 64 °C | 32% | 1.43 | 2011-10-31 22:17:05
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:439] _NET_SYSTEM_TRAY_OPCODE received
+[src/xcb.c:475] xembed format = 32, len = 2
+[src/xcb.c:477] xembed version = 1
+[src/xcb.c:478] xembed flags = 0
+[src/xcb.c:488] X window 01e00026 requested docking
+[src/xcb.c:493] using output LVDS1
+[src/xcb.c:540] Not mapping dock client yet
+[src/xcb.c:419] Configuring tray window 01e00026 to x=1010
+[src/xcb.c:419] Configuring tray window 02a00004 to x=996
+[src/xcb.c:419] Configuring tray window 02800026 to x=982
+[src/xcb.c:419] Configuring tray window 02800003 to x=968
+[src/xcb.c:419] Configuring tray window 01e00003 to x=954
+[src/xcb.c:419] Configuring tray window 03000003 to x=940
+[src/xcb.c:419] Configuring tray window 02c00003 to x=926
+[src/xcb.c:419] Configuring tray window 02000004 to x=912
+[src/xcb.c:419] Configuring tray window 01c00004 to x=898
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:594] xembed_info updated
+[src/xcb.c:631] xembed format = 32, len = 2
+[src/xcb.c:633] xembed version = 1
+[src/xcb.c:634] xembed flags = 1
+[src/xcb.c:636] map-state now 1
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:658] ConfigureRequest for window = 01e00026
+[src/xcb.c:679] This is a tray window. x = 1010
+[src/child.c:107] W: (100% at CHP) 192.168.0.37 | E: down | CHR 84.14% 00:26:14 | T: 64 °C | 19% | 1.31 | 2011-10-31 22:17:10
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/child.c:107] W: (100% at CHP) 192.168.0.37 | E: down | CHR 84.16% 00:27:57 | T: 63 °C | 18% | 1.21 | 2011-10-31 22:17:15
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/child.c:107] W: (100% at CHP) 192.168.0.37 | E: down | CHR 84.23% 00:25:54 | T: 62 °C | 03% | 1.11 | 2011-10-31 22:17:20
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/child.c:107] W: (100% at CHP) 192.168.0.37 | E: down | CHR 84.27% 00:26:04 | T: 62 °C | 04% | 1.02 | 2011-10-31 22:17:25
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/child.c:107] W: (100% at CHP) 192.168.0.37 | E: down | CHR 84.34% 00:28:08 | T: 64 °C | 21% | 0.94 | 2011-10-31 22:17:30
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/child.c:107] W: (100% at CHP) 192.168.0.37 | E: down | CHR 84.36% 00:27:47 | T: 64 °C | 30% | 0.95 | 2011-10-31 22:17:35
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/child.c:107] W: (100% at CHP) 192.168.0.37 | E: down | CHR 84.41% 00:26:06 | T: 63 °C | 14% | 1.03 | 2011-10-31 22:17:40
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/child.c:107] W: (100% at CHP) 192.168.0.37 | E: down | CHR 84.45% 00:26:02 | T: 62 °C | 05% | 0.95 | 2011-10-31 22:17:45
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/child.c:107] W: (100% at CHP) 192.168.0.37 | E: down | CHR 84.52% 00:25:58 | T: 62 °C | 03% | 0.87 | 2011-10-31 22:17:50
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/child.c:107] W: (100% at CHP) 192.168.0.37 | E: down | CHR 84.59% 00:25:19 | T: 62 °C | 03% | 0.80 | 2011-10-31 22:17:55
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:439] _NET_SYSTEM_TRAY_OPCODE received
+[src/xcb.c:475] xembed format = 32, len = 2
+[src/xcb.c:477] xembed version = 1
+[src/xcb.c:478] xembed flags = 0
+[src/xcb.c:488] X window 03a00024 requested docking
+[src/xcb.c:493] using output LVDS1
+[src/xcb.c:540] Not mapping dock client yet
+[src/xcb.c:419] Configuring tray window 03a00024 to x=1010
+[src/xcb.c:419] Configuring tray window 01e00026 to x=996
+[src/xcb.c:419] Configuring tray window 02a00004 to x=982
+[src/xcb.c:419] Configuring tray window 02800026 to x=968
+[src/xcb.c:419] Configuring tray window 02800003 to x=954
+[src/xcb.c:419] Configuring tray window 01e00003 to x=940
+[src/xcb.c:419] Configuring tray window 03000003 to x=926
+[src/xcb.c:419] Configuring tray window 02c00003 to x=912
+[src/xcb.c:419] Configuring tray window 02000004 to x=898
+[src/xcb.c:419] Configuring tray window 01c00004 to x=884
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/child.c:107] W: (100% at CHP) 192.168.0.37 | E: down | CHR 84.61% 00:26:09 | T: 64 °C | 17% | 0.74 | 2011-10-31 22:18:00
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:594] xembed_info updated
+[src/xcb.c:591] PropertyNotify
+[src/xcb.c:594] xembed_info updated
+[src/xcb.c:439] _NET_SYSTEM_TRAY_OPCODE received
+[src/xcb.c:488] X window 03a00027 requested docking
+[src/xcb.c:493] using output LVDS1
+[src/xcb.c:537] Mapping dock client
+[src/xcb.c:419] Configuring tray window 03a00027 to x=1010
+[src/xcb.c:419] Configuring tray window 03a00024 to x=996
+[src/xcb.c:419] Configuring tray window 01e00026 to x=982
+[src/xcb.c:419] Configuring tray window 02a00004 to x=968
+[src/xcb.c:419] Configuring tray window 02800026 to x=954
+[src/xcb.c:419] Configuring tray window 02800003 to x=940
+[src/xcb.c:419] Configuring tray window 01e00003 to x=926
+[src/xcb.c:419] Configuring tray window 03000003 to x=912
+[src/xcb.c:419] Configuring tray window 02c00003 to x=898
+[src/xcb.c:419] Configuring tray window 02000004 to x=884
+[src/xcb.c:419] Configuring tray window 01c00004 to x=870
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:439] _NET_SYSTEM_TRAY_OPCODE received
+[src/xcb.c:488] X window 03a0002b requested docking
+[src/xcb.c:493] using output LVDS1
+[src/xcb.c:537] Mapping dock client
+[src/xcb.c:419] Configuring tray window 03a0002b to x=1010
+[src/xcb.c:419] Configuring tray window 03a00027 to x=996
+[src/xcb.c:419] Configuring tray window 03a00024 to x=982
+[src/xcb.c:419] Configuring tray window 01e00026 to x=968
+[src/xcb.c:419] Configuring tray window 02a00004 to x=954
+[src/xcb.c:419] Configuring tray window 02800026 to x=940
+[src/xcb.c:419] Configuring tray window 02800003 to x=926
+[src/xcb.c:419] Configuring tray window 01e00003 to x=912
+[src/xcb.c:419] Configuring tray window 03000003 to x=898
+[src/xcb.c:419] Configuring tray window 02c00003 to x=884
+[src/xcb.c:419] Configuring tray window 02000004 to x=870
+[src/xcb.c:419] Configuring tray window 01c00004 to x=856
+[src/xcb.c:1379] Drawing Bars...
+[src/xcb.c:1387] Output VGA1 inactive, skipping...
+[src/xcb.c:1408] Printing statusline!
+[src/xcb.c:1441] Drawing Button for WS 5 at x = 0
+[src/xcb.c:439] _NET_SYSTEM_TRAY_OPCODE received
+[src/xcb.c:475] xembed format = 32, len = 2
+[src/xcb.c:477] xembed version = 1
+[src/xcb.c:478] xembed flags = 0
+[src/xcb.c:488] X window 03a0002e requested docking
+[src/xcb.c:493] using output LVDS1
+[src/xcb.c:540] Not mapping dock client yet
+[src/xcb.c:419] Configuring tray window 03a0002e to x=1010
+[src/xcb.c:419] Configuring tray window 03a0002b

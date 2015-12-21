@@ -1,0 +1,605 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1242 (Ignore KeyRelease events without KeyPress after mode switch)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1241" title="Ticket #1241" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1242?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1242?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1242?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1243" title="Ticket #1243" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="54870f2b032383c47bcd51d1";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1241" title="Ticket #1241">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1243" title="Ticket #1243">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2014-05-01T07%3A44%3A20%2B02%3A00&amp;precision=second" title="See timeline at 05/01/14 07:44:20">11 months ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2014-05-03T15%3A44%3A06%2B02%3A00&amp;precision=second" title="See timeline at 05/03/14 15:44:06">11 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1242" class="trac-id">#1242</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=works_as_intended">works_as_intended</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Ignore KeyRelease events without KeyPress after mode switch</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">edelkind-i3wm@…</td>
+      <th id="h_owner" class="missing">Owned by:</th>
+      <td headers="h_owner"></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=minor">minor</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.7.2">4.7.2</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.7.2-153-g812f1d2 (2014-04-30, branch "next")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <h4 id="Whatdidyoudo">What did you do?</h4>
+<pre class="wiki">mode "new" {
+    bindsym --release $mykey mode "busted"
+}
+bindsym $mykey mode "new"
+</pre><h4 id="Whatdidyousee">What did you see?</h4>
+<p>
+i3 switches to mode "new" when $mykey is pressed, and then to<br />
+"busted" when $mykey is released.<br />
+</p>
+<h4 id="Whatdidyouexpect">What did you expect?</h4>
+<p>
+i3 should switch to "new" when <tt>$mykey</tt> is pressed, and not trigger the <tt>--release</tt> key binding until after the key combination is pressed again.<br />
+</p>
+<h4 id="Progress">Progress</h4>
+<p>
+I'll submit a patch to correct this behavior.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(8)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1398923531154188">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-05-01T07%3A52%3A11%2B02%3A00&amp;precision=second" title="See timeline at 05/01/14 07:52:11">11 months ago</a> by Ari Edelkind &lt;edelkind-i3wm@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Patch uploaded:<br />
+<a class="ext-link" href="http://cr.i3wm.org/patch/530"><span class="icon">​</span>http://cr.i3wm.org/patch/530</a><br />
+</p>
+<p>
+As an aside, the tracking system automatically sets the priority to "major", but i expect that this bug is pretty minor for most people.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1398981655201577">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-05-02T00%3A00%3A55%2B02%3A00&amp;precision=second" title="See timeline at 05/02/14 00:00:55">11 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-priority">
+      <strong class="trac-field-priority">Priority</strong>
+        changed from <em>major</em> to <em>minor</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I think bindings are working as intended here.<br />
+</p>
+<p>
+Couldn't you just assign the binding to enter the <tt>new</tt> mode with <tt>--release</tt> to avoid these problems?<br />
+</p>
+<p>
+If you still think this is a bug, I think you should make a better case for why this change is needed.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1398984729861810">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-05-02T00%3A52%3A09%2B02%3A00&amp;precision=second" title="See timeline at 05/02/14 00:52:09">11 months ago</a> by Ari Edelkind &lt;edelkind-i3wm@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I don't see any use case for the current functionality, because if you want the key release to be immediately effective (that is, without a new keypress), you would put a <tt>--release</tt> binding in the old mode, without bothering to enter <tt>new</tt>.  I would think that a <tt>--release</tt> key binding always _implies_ a prior key press.<br />
+</p>
+<p>
+Yes, you could assign the binding to enter <tt>new</tt> with <tt>--release</tt>, but this seems like a workaround for odd functionality.<br />
+</p>
+<p>
+The issue may seem quite mild with key bindings as they are, simply because conflict is unlikely, but if you add patch <a class="ext-link" href="http://cr.i3wm.org/patch/531"><span class="icon">​</span>http://cr.i3wm.org/patch/531</a>, and bind on the release of Any key inside a mode, then the conflict always exists.  Additionally, the workaround is less viable: if the mode is entered with <tt>bindsym --release Mod1+n mode "new"</tt>, then <tt>new</tt> is entered when <tt>n</tt> is released, even if the modifier has not been released.  Once the modifier is released, another key release event is triggered.<br />
+</p>
+<p>
+That said, if you consider this behavior to be as desired, would it be preferable if i roll the functionality into <a class="ext-link" href="http://cr.i3wm.org/patch/531"><span class="icon">​</span>http://cr.i3wm.org/patch/531</a> (or post as a subsequent patch), and ignore the key release event only if the matched binding was for Any key?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1398985971857503">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:5" class="follow-up">↓ 5</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-05-02T01%3A12%3A51%2B02%3A00&amp;precision=second" title="See timeline at 05/02/14 01:12:51">11 months ago</a> by Ari Edelkind &lt;edelkind-i3wm@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Hmm, okay, i've come up with a potential use case:<br />
+</p>
+<pre class="wiki">mode "new" {
+    bindsym Mod1+o exec key.sh o
+    bindsym Mod1+p exec key.sh p
+
+    bindsym --release Alt_L mode "default"
+    bindsym --release Alt_R mode "default"
+}
+bindsym Mod1+n mode "new"
+</pre><p>
+Unfortunately, this also doesn't function as expected (i'll check why a little later).<br />
+</p>
+<p>
+Let me know if you think the proposal in the latter paragraph of my last comment sounds reasonable.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1398987807169005">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+        in reply to:
+    <a href="#comment:4">↑ 4</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-05-02T01%3A43%3A27%2B02%3A00&amp;precision=second" title="See timeline at 05/02/14 01:43:27">11 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1242#comment:4" title="Comment 4">Ari Edelkind &lt;edelkind-i3wm@…&gt;</a>:<br />
+</p>
+<p>
+We are doing <a class="closed ticket" href="/report/ticket/1210" title="enhancement: Add an IPC &#34;Command&#34; Event (now &#34;Binding&#34; Event) (closed: fixed)">#1210</a> for just this case and that will be the preferred method for implementing this in the future.<br />
+</p>
+<p>
+I don't think that binding to modifiers alone works right now. Most applications I have seen do not allow you to bind to modifiers alone, and there is probably a good reason for that. Someone trying to implement that will run into problems related to duplicate bindings.<br />
+</p>
+<p>
+The patch for binding to match any key is complex enough that it deserves its own issue to discuss how exactly it works. The code for bindings is changing very rapidly right now and I want to prevent our work from clashing as much as possible.<br />
+</p>
+<p>
+So if your use case depends on context from the "any" key binding, make that issue and discuss it there.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1398990399800708">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-05-02T02%3A26%3A39%2B02%3A00&amp;precision=second" title="See timeline at 05/02/14 02:26:39">11 months ago</a> by Ari Edelkind &lt;edelkind-i3wm@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Hi, Tony.  Okay, i'll create a ticket for the any-key patch.<br />
+</p>
+<p>
+Modifier binding doesn't work in the sense of <tt>bindsym Mod1 ...</tt>, but it works fine with specific keys, such as <tt>Alt_L</tt>.  In my example in <a class="ticket" href="/report/ticket/1242#comment:4" title="Comment 4">comment:4</a>, assuming that <tt>Alt_L</tt> is the appropriate modifier, and is the key depressed when one switches into the mode, the initial release does not trigger (which is what i meant when i said it doesn't function as expected) -- but if you subsequently press and release <tt>Alt_L</tt>, it triggers as planned.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1399006558996174">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-05-02T06%3A55%3A58%2B02%3A00&amp;precision=second" title="See timeline at 05/02/14 06:55:58">11 months ago</a> by Ari Edelkind &lt;edelkind-i3wm@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I've looked into why <a class="ticket" href="/report/ticket/1242#comment:4" title="Comment 4">comment:4</a> doesn't function as expected.  The reason is that xcb does not return the key event if it was not configured to grab that key at the time of depress.  As a separate issue, the key may or may not have the Mod1 modifier set when it's released.  As a workaround, the following will work:<br />
+</p>
+<pre class="wiki">bindsym --release Alt_L nop "Alt_L release"
+bindsym --release Alt_R nop "Alt_R release"
+mode "new" {
+    bindsym Mod1+o exec key.sh o
+    bindsym Mod1+p exec key.sh p
+
+    bindsym --release Alt_L mode "default"
+    bindsym --release Alt_R mode "default"
+    bindsym --release Mod1+Alt_L mode "default"
+    bindsym --release Mod1+Alt_R mode "default"
+}
+bindsym Mod1+n mode "new"
+
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1399124646601282">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-05-03T15%3A44%3A06%2B02%3A00&amp;precision=second" title="See timeline at 05/03/14 15:44:06">11 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>works_as_intended</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This is a pretty subtle issue in that most people don’t even know about the --release flag :). With the number of possibilities that our current binding configuration model provides, there are bound to be some ways of combining them that result in behavior like the issue you have run into.<br />
+</p>
+<p>
+However, I think it is cleaner to come up with a configuration file that properly combines the features (i.e. uses --release where appropriate) than to add a workaround using global variables in the code (like patch <a class="closed ticket" href="/report/ticket/531" title="enhancement: Layout modes do not persist in a workspace (closed: wontfix)">#531</a> does).<br />
+</p>
+<p>
+Therefore, I’ll mark this ticket as working_as_intended.<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1242?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1242?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1242?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

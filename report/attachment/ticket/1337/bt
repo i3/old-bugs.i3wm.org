@@ -1,0 +1,23 @@
+Thread 1 (Thread 0x7f6e866098c0 (LWP 26530)):
+#0  0x00007f6e8365c800 in __poll_nocancel () from /usr/lib/libc.so.6
+#1  0x00007f6e85d1a9b2 in ?? () from /usr/lib/libxcb.so.1
+#2  0x00007f6e85d1c52f in xcb_wait_for_event () from /usr/lib/libxcb.so.1
+#3  0x000000000042e744 in handle_signal ()
+#4  <signal handler called>
+#5  0x00007f6e835afd67 in raise () from /usr/lib/libc.so.6
+#6  0x00007f6e835b1118 in abort () from /usr/lib/libc.so.6
+#7  0x00007f6e835a8bdd in __assert_fail_base () from /usr/lib/libc.so.6
+#8  0x00007f6e835a8c92 in __assert_fail () from /usr/lib/libc.so.6
+#9  0x0000000000415390 in con_fullscreen_permits_focusing ()
+#10 0x0000000000415733 in con_move_to_workspace ()
+#11 0x000000000041f78c in cmd_move_con_to_workspace_name ()
+#12 0x000000000040d027 in next_state.isra ()
+#13 0x000000000040d8b3 in parse_command ()
+#14 0x000000000042f192 in run_assignments ()
+#15 0x0000000000410fd4 in manage_window ()
+#16 0x000000000040be2a in handle_event ()
+#17 0x0000000000412b16 in xcb_check_cb ()
+#18 0x00007f6e83fc05e5 in ev_invoke_pending () from /usr/lib/libev.so.4
+#19 0x00007f6e83fc3777 in ev_run () from /usr/lib/libev.so.4
+#20 0x0000000000409078 in main ()
+

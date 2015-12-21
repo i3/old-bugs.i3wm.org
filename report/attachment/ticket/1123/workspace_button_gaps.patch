@@ -1,0 +1,234 @@
+From d190fadd4b039340d6492dd8be1e138cb0fcc9b5 Mon Sep 17 00:00:00 2001
+From: Max Wagner <max.wagner01@gmail.com>
+Date: Wed, 21 Nov 2012 19:46:26 +0100
+Subject: [PATCH] Add gap between workspace buttons when they're semantically
+ separated
+
+---
+ i3bar/include/config.h      |  1 +
+ i3bar/src/config.c          | 21 ++++++++++++++++++++-
+ i3bar/src/xcb.c             | 24 ++++++++++++++++++------
+ include/config.h            |  3 +++
+ include/config_directives.h |  1 +
+ parser-specs/config.spec    |  5 +++++
+ src/config_directives.c     |  4 ++++
+ src/ipc.c                   |  3 +++
+ 8 files changed, 55 insertions(+), 7 deletions(-)
+
+diff --git a/i3bar/include/config.h b/i3bar/include/config.h
+index c648671..13a369b 100644
+--- a/i3bar/include/config.h
++++ b/i3bar/include/config.h
+@@ -31,6 +31,7 @@ typedef struct config_t {
+     char         *tray_output;
+     int          num_outputs;
+     char         **outputs;
++    int          button_gap;
+ 
+     /* Bar display mode (hide unless modifier is pressed or show in dock mode or always hide in invisible mode) */
+     enum { M_DOCK = 0, M_HIDE = 1, M_INVISIBLE = 2 } hide_on_modifier;
+diff --git a/i3bar/src/config.c b/i3bar/src/config.c
+index 5ac31b1..42b5c3a 100644
+--- a/i3bar/src/config.c
++++ b/i3bar/src/config.c
+@@ -188,6 +188,25 @@ static int config_string_cb(void *params_, const unsigned char *val, unsigned in
+     return 0;
+ }
+ 
++
++/*
++ * Parse an integer value
++ *
++ */
++#if YAJL_MAJOR >= 2
++static int config_integer_cb(void *params_, long long val) {
++#else
++static int config_integer_cb(void *params_, long val) {
++#endif
++    if (!strcmp(cur_key, "button_gap")) {
++        DLOG("button_gap = %lu\n", (long) val);
++        config.button_gap = val;
++        return 1;
++    }
++
++    return 0;
++}
++
+ /*
+  * Parse a boolean value
+  *
+@@ -218,7 +237,7 @@ static int config_boolean_cb(void *params_, int val) {
+ static yajl_callbacks outputs_callbacks = {
+     &config_null_cb,
+     &config_boolean_cb,
+-    NULL,
++    &config_integer_cb,
+     NULL,
+     NULL,
+     &config_string_cb,
+diff --git a/i3bar/src/xcb.c b/i3bar/src/xcb.c
+index cec7ab8..a1910d1 100644
+--- a/i3bar/src/xcb.c
++++ b/i3bar/src/xcb.c
+@@ -1677,8 +1677,10 @@ void draw_bars(bool unhide) {
+                           MIN(outputs_walk->rect.w - traypx - 4, statusline_width), font.height + 2);
+         }
+ 
++        int ws_list_gaps = 0;
+         if (!config.disable_ws) {
+             i3_ws *ws_walk;
++            i3_ws *last_ws = NULL;
+             TAILQ_FOREACH(ws_walk, outputs_walk->workspaces, tailq) {
+                 DLOG("Drawing Button for WS %s at x = %d, len = %d\n",
+                      i3string_as_utf8(ws_walk->name), i, ws_walk->name_width);
+@@ -1703,13 +1705,19 @@ void draw_bars(bool unhide) {
+                     border_color = colors.urgent_ws_border;
+                     unhide = true;
+                 }
++                /* count gaps in the ws list as we iterate over them */
++                if (last_ws && last_ws->num != ws_walk->num - 1)
++                    ws_list_gaps++;
++                last_ws = ws_walk;
++
+                 uint32_t mask = XCB_GC_FOREGROUND | XCB_GC_BACKGROUND;
+                 uint32_t vals_border[] = { border_color, border_color };
+                 xcb_change_gc(xcb_connection,
+                               outputs_walk->bargc,
+                               mask,
+                               vals_border);
+-                xcb_rectangle_t rect_border = { i, 1, ws_walk->name_width + 10, font.height + 4 };
++                xcb_rectangle_t rect_border = { ws_list_gaps * config.button_gap + i, 1,
++                                                ws_walk->name_width + 10, font.height + 4 };
+                 xcb_poly_fill_rectangle(xcb_connection,
+                                         outputs_walk->buffer,
+                                         outputs_walk->bargc,
+@@ -1720,7 +1728,8 @@ void draw_bars(bool unhide) {
+                               outputs_walk->bargc,
+                               mask,
+                               vals);
+-                xcb_rectangle_t rect = { i + 1, 2, ws_walk->name_width + 8, font.height + 2 };
++                xcb_rectangle_t rect = { ws_list_gaps * config.button_gap + i + 1, 2,
++                                         ws_walk->name_width + 8, font.height + 2 };
+                 xcb_poly_fill_rectangle(xcb_connection,
+                                         outputs_walk->buffer,
+                                         outputs_walk->bargc,
+@@ -1728,7 +1737,7 @@ void draw_bars(bool unhide) {
+                                         &rect);
+                 set_font_colors(outputs_walk->bargc, fg_color, bg_color);
+                 draw_text(ws_walk->name, outputs_walk->buffer, outputs_walk->bargc,
+-                          i + 5, 3, ws_walk->name_width);
++                          ws_list_gaps * config.button_gap + i + 5, 3, ws_walk->name_width);
+                 i += 10 + ws_walk->name_width + 1;
+ 
+             }
+@@ -1744,7 +1753,8 @@ void draw_bars(bool unhide) {
+                           outputs_walk->bargc,
+                           mask,
+                           vals_border);
+-            xcb_rectangle_t rect_border = { i, 1, binding.width + 10, font.height + 4 };
++            xcb_rectangle_t rect_border = { i + ws_list_gaps * config.button_gap, 1,
++                                            binding.width + 10, font.height + 4 };
+             xcb_poly_fill_rectangle(xcb_connection,
+                                     outputs_walk->buffer,
+                                     outputs_walk->bargc,
+@@ -1756,7 +1766,8 @@ void draw_bars(bool unhide) {
+                           outputs_walk->bargc,
+                           mask,
+                           vals);
+-            xcb_rectangle_t rect = { i + 1, 2, binding.width + 8, font.height + 2 };
++            xcb_rectangle_t rect = { ws_list_gaps * config.button_gap + i + 1, 2,
++                                     binding.width + 8, font.height + 2 };
+             xcb_poly_fill_rectangle(xcb_connection,
+                                     outputs_walk->buffer,
+                                     outputs_walk->bargc,
+@@ -1764,7 +1775,8 @@ void draw_bars(bool unhide) {
+                                     &rect);
+ 
+             set_font_colors(outputs_walk->bargc, fg_color, bg_color);
+-            draw_text(binding.name, outputs_walk->buffer, outputs_walk->bargc, i + 5, 3, binding.width);
++            draw_text(binding.name, outputs_walk->buffer, outputs_walk->bargc,
++                      ws_list_gaps * config.button_gap + i + 5, 3, binding.width);
+ 
+             unhide = true;
+         }
+diff --git a/include/config.h b/include/config.h
+index 4267dcf..1dfec3b 100644
+--- a/include/config.h
++++ b/include/config.h
+@@ -271,6 +271,9 @@ struct Barconfig {
+      * but we invert the bool for the same reason as hide_workspace_buttons.*/
+     bool hide_binding_mode_indicator;
+ 
++    /** Gap between buttons of workspaces that are numerically separated. */
++    uint32_t button_gap;
++
+     /** Enable verbose mode? Useful for debugging purposes. */
+     bool verbose;
+ 
+diff --git a/include/config_directives.h b/include/config_directives.h
+index 9569a7b..b2b56d3 100644
+--- a/include/config_directives.h
++++ b/include/config_directives.h
+@@ -76,6 +76,7 @@ CFGFUN(bar_color_single, const char *colorclass, const char *color);
+ CFGFUN(bar_status_command, const char *command);
+ CFGFUN(bar_binding_mode_indicator, const char *value);
+ CFGFUN(bar_workspace_buttons, const char *value);
++CFGFUN(bar_button_gap, const long button_gap);
+ CFGFUN(bar_finish);
+ 
+ #endif
+diff --git a/parser-specs/config.spec b/parser-specs/config.spec
+index dfd6401..ab6337c 100644
+--- a/parser-specs/config.spec
++++ b/parser-specs/config.spec
+@@ -358,6 +358,7 @@ state BAR:
+   'font'                   -> BAR_FONT
+   'binding_mode_indicator' -> BAR_BINDING_MODE_INDICATOR
+   'workspace_buttons'      -> BAR_WORKSPACE_BUTTONS
++  'button_gap'             -> BAR_BUTTON_GAP
+   'verbose'                -> BAR_VERBOSE
+   'colors'                 -> BAR_COLORS_BRACE
+   '}'
+@@ -420,6 +421,10 @@ state BAR_WORKSPACE_BUTTONS:
+   value = word
+       -> call cfg_bar_workspace_buttons($value); BAR
+ 
++state BAR_BUTTON_GAP:
++  value = number
++      -> call cfg_bar_button_gap(&value); BAR
++
+ state BAR_VERBOSE:
+   value = word
+       -> call cfg_bar_verbose($value); BAR
+diff --git a/src/config_directives.c b/src/config_directives.c
+index b28ad49..99dcc43 100644
+--- a/src/config_directives.c
++++ b/src/config_directives.c
+@@ -548,6 +548,10 @@ CFGFUN(bar_workspace_buttons, const char *value) {
+     current_bar.hide_workspace_buttons = !eval_boolstr(value);
+ }
+ 
++CFGFUN(bar_button_gap, const long button_gap) {
++    current_bar.button_gap = button_gap;
++}
++
+ CFGFUN(bar_finish) {
+     DLOG("\t new bar configuration finished, saving.\n");
+     /* Generate a unique ID for this bar if not already configured */
+diff --git a/src/ipc.c b/src/ipc.c
+index a928dba..f762edd 100644
+--- a/src/ipc.c
++++ b/src/ipc.c
+@@ -689,6 +689,9 @@ IPC_HANDLER(get_bar_config) {
+         ystr("binding_mode_indicator");
+         y(bool, !config->hide_binding_mode_indicator);
+ 
++        ystr("button_gap");
++        y(integer, config->button_gap);
++
+         ystr("verbose");
+         y(bool, config->verbose);
+ 
+-- 
+1.8.4.2
+

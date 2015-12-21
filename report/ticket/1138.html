@@ -1,0 +1,1229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1138 (Broken systray in 4.7)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1137" title="Ticket #1137" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1138?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1138?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1138?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1139" title="Ticket #1139" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="126e7e0fcc542bdeebe13a5c";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1137" title="Ticket #1137">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1139" title="Ticket #1139">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2013-12-23T21%3A33%3A24%2B01%3A00&amp;precision=second" title="See timeline at 12/23/13 21:33:24">15 months ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2014-01-01T11%3A11%3A14%2B01%3A00&amp;precision=second" title="See timeline at 01/01/14 11:11:14">15 months ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2014-04-07T17%3A41%3A02%2B02%3A00&amp;precision=second" title="See timeline at 04/07/14 17:41:02">12 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1138" class="trac-id">#1138</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Broken systray in 4.7</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">carlosjosepita@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=TonyC">TonyC</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=minor">minor</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.7">4.7</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.7 (2013-12-22, branch "tags/4.7")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+After upgrading to 4.7 the systray is completely black, although its size is correct. If I reload i3 with mod+shift+r the black space is replaced by the expected icons.<br />
+</p>
+<p>
+I tested this with and without status bar and with and without multiple monitors.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(4)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/1138/i3bar.log" title="View attachment">i3bar.log</a><a href="/report/raw-attachment/ticket/1138/i3bar.log" class="trac-rawlink" title="Download">​</a>
+       (<span title="16384 bytes">16.0 KB</span>) -
+      added by <em>TonyC</em> <a class="timeline" href="/report/timeline?from=2013-12-25T07%3A31%3A15%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 07:31:15">15 months ago</a>.
+  </dt>
+              <dd>
+                log for failing tray icon
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/1138/i3bar.2.log" title="View attachment">i3bar.2.log</a><a href="/report/raw-attachment/ticket/1138/i3bar.2.log" class="trac-rawlink" title="Download">​</a>
+       (<span title="20480 bytes">20.0 KB</span>) -
+      added by <em>anonymous</em> <a class="timeline" href="/report/timeline?from=2013-12-25T08%3A30%3A17%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 08:30:17">15 months ago</a>.
+  </dt>
+              <dt>
+    <a href="/report/attachment/ticket/1138/i3log" title="View attachment">i3log</a><a href="/report/raw-attachment/ticket/1138/i3log" class="trac-rawlink" title="Download">​</a>
+       (<span title="56215 bytes">54.9 KB</span>) -
+      added by <em>anonymous</em> <a class="timeline" href="/report/timeline?from=2013-12-25T16%3A05%3A16%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 16:05:16">15 months ago</a>.
+  </dt>
+              <dt>
+    <a href="/report/attachment/ticket/1138/0001-i3bar-Set-mapped-flag-on-trayclient-creation.patch" title="View attachment">0001-i3bar-Set-mapped-flag-on-trayclient-creation.patch</a><a href="/report/raw-attachment/ticket/1138/0001-i3bar-Set-mapped-flag-on-trayclient-creation.patch" class="trac-rawlink" title="Download">​</a>
+       (<span title="1447 bytes">1.4 KB</span>) -
+      added by <em>TonyC</em> <a class="timeline" href="/report/timeline?from=2013-12-26T06%3A42%3A54%2B01%3A00&amp;precision=second" title="See timeline at 12/26/13 06:42:54">15 months ago</a>.
+  </dt>
+              <dd>
+                proposed fix for tray client bug
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/1138/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(28)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1387832010186717">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-23T21%3A53%3A30%2B01%3A00&amp;precision=second" title="See timeline at 12/23/13 21:53:30">15 months ago</a> by Carlos &lt;carlosjosepita@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Also tested with huge fonts because of <a class="ext-link" href="https://bugzilla.gnome.org/show_bug.cgi?id=673749"><span class="icon">​</span>https://bugzilla.gnome.org/show_bug.cgi?id=673749</a> but to no avail.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1387837117748519">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-23T23%3A18%3A37%2B01%3A00&amp;precision=second" title="See timeline at 12/23/13 23:18:37">15 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-priority">
+      <strong class="trac-field-priority">Priority</strong>
+        changed from <em>major</em> to <em>minor</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+What applications are you having this problem with? Version information would be good to know too. Does it affect all applications (such as qt), or only GTK?<br />
+</p>
+<p>
+Also if you could please post a debug log for i3bar, that would help to shine some light on the issue. You can get the log by killing the i3bar process and starting a new one from the shell piping the output to a file:<br />
+</p>
+<pre class="wiki">$ pkill i3bar; i3bar --bar_id=0 &amp;&gt; ~/i3bar.log
+</pre><p>
+should work on the default setup.<br />
+</p>
+<p>
+Also note that multiple bar directives in the config are not supported with tray output.<br />
+</p>
+
+    </div>
+  <div class="trac-lastedit ">
+    Last edited <a class="timeline" href="/report/timeline?from=2014-01-27T06%3A12%3A33%2B01%3A00&amp;precision=second" title="See timeline at 01/27/14 06:12:33">14 months ago</a>
+        by TonyC
+      (<a href="/report/ticket/1138?cversion=1&amp;cnum_hist=2#comment:2">previous</a>)
+      (<a href="/report/ticket/1138?action=comment-diff&amp;cnum=2&amp;version=2">diff</a>)
+  </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1387841000595807">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-24T00%3A23%3A20%2B01%3A00&amp;precision=second" title="See timeline at 12/24/13 00:23:20">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Applications: newtwork manager, dropbox. Both gtk afaik. They're run from ~/.xinitrc as follows:<br />
+</p>
+<pre class="wiki">  ...
+  {
+    sleep 2
+    udiskie &amp;
+    nm-applet &amp;
+    dropboxd start &amp;
+  } &amp;
+  ...
+  exec i3
+</pre><p>
+This worked fine in 4.6.<br />
+</p>
+<p>
+Running (notice that bar id == "bar-0" and not "0" in my default config)<br />
+</p>
+<pre class="wiki">pkill i3bar; i3bar --bar_id=bar-0
+</pre><p>
+once i3 is running correctly shows the tray icons so I don't think the log will be useful for you to debug this. Anyway I'm pasting it below. Also, restarting i3 (mod+shift+r) makes the icons visible as I remarked before. The problem only happens when i3 itself launches i3bar during startup. It's not only that the icons are not visible but there is no reaction to mouse events either.<br />
+</p>
+<p>
+I don't have multiple bar directives in my config.<br />
+</p>
+<p>
+I've already seen the problems in two computers, both with up-to-date arch linux and i3 4.7.<br />
+</p>
+<p>
+i3bar log:<br />
+</p>
+<pre class="wiki">
+[huilen@archi ~]$ i3bar --bar_id=bar-0
+[libi3] libi3/font.c Using Pango font Sans Mono 9,FontAwesome, size 9
+[libi3] libi3/font.c X11 root window dictates 96.252632 DP
+[libi3] libi3/font.c X11 root window dictates 96.252632 DP
+[libi3] libi3/font.c X11 root window dictates 96.252632 DP
+kill: cannot find process "PID"
+[libi3] libi3/font.c X11 root window dictates 96.252632 DP
+[libi3] libi3/font.c X11 root window dictates 96.252632 DP
+[libi3] libi3/font.c X11 root window dictates 96.252632 DP
+[libi3] libi3/font.c X11 root window dictates 96.252632 DP
+[libi3] libi3/font.c X11 root window dictates 96.252632 DP
+[libi3] libi3/font.c X11 root window dictates 96.252632 DP
+[libi3] libi3/font.c X11 root window dictates 96.252632 DP
+[libi3] libi3/font.c X11 root window dictates 96.252632 DP
+...
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1387841470203567">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-24T00%3A31%3A10%2B01%3A00&amp;precision=second" title="See timeline at 12/24/13 00:31:10">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Another bit of information, hopefully useful: manually running another tray app (as volti, which is gtk also) when the tray is still black (that is, after i3 startup) doesn't make any icon visible but the systray does increase its width in proportion to the size of the new icon. At this point it's completely sure that i3bar is up and running so I don't the problem is due to a timing issue between the tray apps launched from .xinitrc and i3 bar.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1387882075182291">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-24T11%3A47%3A55%2B01%3A00&amp;precision=second" title="See timeline at 12/24/13 11:47:55">15 months ago</a> by ccfan@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+The problem with me is just GTK apps (dropbox, parcellite), Qt works fine (skype, spotify, vlc).<br />
+</p>
+<p>
+i3bar.log<br />
+</p>
+<pre class="wiki">[i3bar/src/xcb.c:528] ERROR: Window 01000136 violates the XEMBED protocol, _XEMBED_INFO not set
+i3status: trying to auto-detect output_format setting
+i3status: auto-detected "i3bar"
+[libi3] libi3/font.c Using Pango font Meslo LG S, size 11
+[libi3] libi3/font.c X11 root window dictates 86.920152 DPI
+[libi3] libi3/font.c X11 root window dictates 86.920152 DPI
+[libi3] libi3/font.c X11 root window dictates 86.920152 DPI
+[libi3] libi3/font.c X11 root window dictates 86.920152 DPI
+[libi3] libi3/font.c X11 root window dictates 86.920152 DPI
+[libi3] libi3/font.c X11 root window dictates 86.920152 DPI
+[libi3] libi3/font.c X11 root window dictates 86.920152 DPI
+[libi3] libi3/font.c X11 root window dictates 86.920152 DPI
+[libi3] libi3/font.c X11 root window dictates 86.920152 DPI
+[libi3] libi3/font.c X11 root window dictates 86.920152 DPI
+...
+</pre>
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-25T07%3A31%3A15%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 07:31:15">15 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1138/i3bar.log"><em>i3bar.log</em></a><a href="/report/raw-attachment/ticket/1138/i3bar.log" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+log for failing tray icon<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1387953718704141">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:10" class="follow-up">↓ 10</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-25T07%3A41%3A58%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 07:41:58">15 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I can't reproduce any of these issues on Arch with Xorg-server 1.14.5. What distro and xorg-server version are you using?<br />
+</p>
+<p>
+The above log comes from fireglow in the irc chat on FreeBSD Xorg version 1.12.4.<br />
+</p>
+<p>
+I think you have to put <tt>verbose true</tt> in your bar block to get meaningful bar debug output.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-25T08%3A30%3A17%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 08:30:17">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1138/i3bar.2.log"><em>i3bar.2.log</em></a><a href="/report/raw-attachment/ticket/1138/i3bar.2.log" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-7-1387956746190333">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-25T08%3A32%3A26%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 08:32:26">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I'm attaching the verbose log but, again, the bar shows the systray icons when I manually launch it after i3 startup.<br />
+</p>
+<pre class="wiki">&gt; uname -a
+
+Linux localhost 3.12.5-1-ARCH #1 SMP PREEMPT Thu Dec 12 13:32:40 CET 2013 i686 GNU/Linux
+</pre><pre class="wiki">&gt; pacman -Qs xorg | grep '^local'
+
+local/xf86-input-evdev 2.8.2-1 (xorg-drivers xorg)
+local/xf86-input-synaptics 1.7.2-1 (xorg-drivers xorg)
+local/xf86-video-intel 2.21.15-1 (xorg-drivers xorg)
+local/xorg-bdftopcf 1.0.4-1 (xorg xorg-apps)
+local/xorg-font-util 1.3.0-1 (xorg-fonts xorg)
+local/xorg-font-utils 7.6-3
+local/xorg-fonts-alias 1.0.3-1
+local/xorg-fonts-encodings 1.0.4-3 (xorg-fonts xorg)
+local/xorg-fonts-misc 1.0.1-2
+local/xorg-mkfontdir 1.0.7-1 (xorg xorg-apps)
+local/xorg-mkfontscale 1.1.1-1 (xorg-apps xorg)
+local/xorg-server 1.14.5-1 (xorg)
+local/xorg-server-common 1.14.5-1
+local/xorg-setxkbmap 1.3.0-1 (xorg-apps xorg)
+local/xorg-xauth 1.0.8-1 (xorg-apps xorg)
+local/xorg-xbacklight 1.2.0-1 (xorg-apps xorg)
+local/xorg-xev 1.2.1-1 (xorg-apps xorg)
+local/xorg-xfontsel 1.0.5-1
+local/xorg-xinit 1.3.3-3
+local/xorg-xkbcomp 1.2.4-1 (xorg-apps xorg)
+local/xorg-xmag 1.0.5-1
+local/xorg-xprop 1.2.2-1 (xorg-apps xorg)
+local/xorg-xpyb-git 20120808-3
+local/xorg-xrandr 1.4.1-1 (xorg-apps xorg)
+local/xorg-xrdb 1.1.0-1 (xorg-apps xorg)
+local/xorg-xset 1.2.3-1 (xorg-apps xorg)
+local/xorg-xsetroot 1.1.1-1 (xorg-apps xorg)
+local/xorg-xwininfo 1.1.3-1 (xorg-apps xorg)
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1387959384323785">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-25T09%3A16%3A24%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 09:16:24">15 months ago</a> by Anony Mouse
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I can confirm this as well.<br />
+</p>
+<p>
+It does seem to affect only GTK programs, as I could produce it only with pidgin, clipit and audacious. Meanwhile the tray icon of VLC, which is a QT program, is properly displayed.<br />
+</p>
+<p>
+I am using Arch Linux with xorg-server 1.14.5<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1387983892491408">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-25T16%3A04%3A52%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 16:04:52">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I've launched i3 as follows in my ~/.xinitrc<br />
+</p>
+<blockquote>
+<p>
+exec i3 -V &gt;&gt; /tmp/i3log 2&gt;&amp;1<br />
+</p>
+</blockquote>
+<p>
+I've also added the directive verbose true in the i3bar configuration block.<br />
+</p>
+<p>
+I'm attaching the resulting /tmp/i3log but it doesn't look as i3bar has written anything at all to it.<br />
+</p>
+<p>
+I would need your help to continue debugging this. The problem is that the log of i3bar <strong>after</strong> i3 has been launched is of no value because the problem doesn't happen anymore at that point. Instead, what I need is to produce a log of the i3bar instance launched by i3 itself as a part of its own startup sequence. And that I don't know how to do.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-25T16%3A05%3A16%2B01%3A00&amp;precision=second" title="See timeline at 12/25/13 16:05:16">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1138/i3log"><em>i3log</em></a><a href="/report/raw-attachment/ticket/1138/i3log" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-10-1388036458297021">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+        in reply to:
+    <a href="#comment:6">↑ 6</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-26T06%3A40%3A58%2B01%3A00&amp;precision=second" title="See timeline at 12/26/13 06:40:58">15 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1138#comment:6" title="Comment 6">TonyC</a>:<br />
+</p>
+<p>
+From fireglow's log, it seems like when we don't set the <tt>mapped</tt> flag explicitly when creating the trayclient memory structure (like we were doing before), it may initially end up being set to true. Then when it asks to be mapped later using the xembed protocol, we don't map it because the <tt>mapped</tt> flag has already been set.<br />
+</p>
+<p>
+I was under the impression that <tt>smalloc</tt> would initalize that flag to false, so I didn't think setting it explicitly was necessary, and maybe on some systems it is not.<br />
+</p>
+<p>
+I hope this patch resolves the issue. I would appreciate if anyone having problems with their tray would test this patch to see if this helps with the issue. If you need any help building i3, find me in the irc chat and I'll do what I can to help you out.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-26T06%3A42%3A54%2B01%3A00&amp;precision=second" title="See timeline at 12/26/13 06:42:54">15 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1138/0001-i3bar-Set-mapped-flag-on-trayclient-creation.patch"><em>0001-i3bar-Set-mapped-flag-on-trayclient-creation.patch</em></a><a href="/report/raw-attachment/ticket/1138/0001-i3bar-Set-mapped-flag-on-trayclient-creation.patch" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+proposed fix for tray client bug<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1388055949187496">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+          <span>follow-ups:</span>
+    <a href="#comment:12" class="follow-up">↓ 12</a>
+    <a href="#comment:16" class="follow-up">↓ 16</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-26T12%3A05%3A49%2B01%3A00&amp;precision=second" title="See timeline at 12/26/13 12:05:49">15 months ago</a> by Anony Mouse
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+@ TonyC<br />
+</p>
+<p>
+Thanks, I can confirm that the patch works fine, and the tray icon issue seems to be fixed.<br />
+</p>
+<p>
+But, I still notice lots of messages such as these:<br />
+</p>
+<pre class="wiki">[libi3] libi3/font.c X11 root window dictates 96.252632 DPI
+</pre><p>
+Basically dozens of such messages are being spewed every few seconds.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-12-1388058293089774">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+        in reply to:
+    <a href="#comment:11">↑ 11</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-26T12%3A44%3A53%2B01%3A00&amp;precision=second" title="See timeline at 12/26/13 12:44:53">15 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1138#comment:11" title="Comment 11">Anony Mouse</a>:<br />
+Thanks. I think those messages are related to drawing the statusline. That is a separate issue I can look into later.<br />
+</p>
+<p>
+I think a fix for this is going out in a dot release, so if anyone else can confirm this patch fixes the issue with the tray, it will make my pillow a little softer at night.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-13-1388067413412608">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:13" class="cnum">
+    <a href="#comment:13">comment:13</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-26T15%3A16%3A53%2B01%3A00&amp;precision=second" title="See timeline at 12/26/13 15:16:53">15 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+TonyC, malloc() (and smalloc) does not guarantee that memory is set to zero. Use calloc (i.e. scalloc in our code base) for that :).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-14-1388068551541166">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:14" class="cnum">
+    <a href="#comment:14">comment:14</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-26T15%3A35%3A51%2B01%3A00&amp;precision=second" title="See timeline at 12/26/13 15:35:51">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+The patch worked for me. I was also experiencing possibly related issues regarding non visible gtk systray icons when switching from single to dual screen, but that will have to wait until tonight at home to be tested. Thank you for your prompt answer.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-15-1388144056908200">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:15" class="cnum">
+    <a href="#comment:15">comment:15</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-27T12%3A34%3A16%2B01%3A00&amp;precision=second" title="See timeline at 12/27/13 12:34:16">15 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+This annoying bug also hits <br />
+Ubuntu 13.10<br />
+i3 version 4.7 (2013-12-22, branch "tags/4.7")<br />
+deb <a class="ext-link" href="http://debian.sur5r.net/i3/"><span class="icon">​</span>http://debian.sur5r.net/i3/</a> saucy universe<br />
+</p>
+<p>
+Looking forward for a packaged fix. :-)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-16-1388187416995617">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:16" class="cnum">
+    <a href="#comment:16">comment:16</a>
+  </span>
+        in reply to:
+    <a href="#comment:11">↑ 11</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:17" class="follow-up">↓ 17</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-28T00%3A36%3A56%2B01%3A00&amp;precision=second" title="See timeline at 12/28/13 00:36:56">15 months ago</a> by lkraav &lt;leho@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1138#comment:11" title="Comment 11">Anony Mouse</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Basically dozens of such messages are being spewed every few seconds.<br />
+</p>
+</blockquote>
+<p>
+See <a class="closed ticket" href="/report/ticket/1115" title="defect: i3 does not respect DPI setting (closed: fixed)">#1115</a> for the patch.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-17-1388209832642507">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:17" class="cnum">
+    <a href="#comment:17">comment:17</a>
+  </span>
+        in reply to:
+    <a href="#comment:16">↑ 16</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2013-12-28T06%3A50%3A32%2B01%3A00&amp;precision=second" title="See timeline at 12/28/13 06:50:32">15 months ago</a> by Anony Mouse
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1138#comment:16" title="Comment 16">lkraav &lt;leho@…&gt;</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+See <a class="closed ticket" href="/report/ticket/1115" title="defect: i3 does not respect DPI setting (closed: fixed)">#1115</a> for the patch.<br />
+</p>
+</blockquote>
+<p>
+Thanks for the heads up. The patch posted by michael fixes the problem.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-18-1388571074224838">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:18" class="cnum">
+    <a href="#comment:18">comment:18</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-01T11%3A11%3A14%2B01%3A00&amp;precision=second" title="See timeline at 01/01/14 11:11:14">15 months ago</a> by Tony Crisci
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/23b1da59"><span class="icon">​</span>http://c.i3wm.org/23b1da59</a>:<br />
+</p>
+<pre class="wiki">i3bar: Set `mapped` flag on trayclient creation
+
+When a trayclient is first created as a structure in memory, explicitly
+set the `mapped` flag to false. Otherwise it may initialize to `true` in
+some circumstances without actually being mapped, causing a request to
+be mapped from the client to be ignored.
+
+Create the trayclient in memory before handling a request to be mapped
+immediately.
+
+fixes #1138
+
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-19-1390797873413106">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:19" class="cnum">
+    <a href="#comment:19">comment:19</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-27T05%3A44%3A33%2B01%3A00&amp;precision=second" title="See timeline at 01/27/14 05:44:33">14 months ago</a> by Sascha Weaver &lt;wzyboy@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Hi,<br />
+</p>
+<p>
+it seems that patch "set mapped flag on trayclient creation" does not fix the bug. My systray works fine at version 4.6, and it does not show up any more after upgrading to 4.7. I tried 4.7.1 and 4.7.2 and it does not show up, also. When downgrading to 4.6, it works again.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-20-1390800056030070">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:20" class="cnum">
+    <a href="#comment:20">comment:20</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:21" class="follow-up">↓ 21</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-27T06%3A20%3A56%2B01%3A00&amp;precision=second" title="See timeline at 01/27/14 06:20:56">14 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+There is an unrelated gtk bug that may affect older distros where the icon will not show up if it is less than 30px by 30px. Try increasing your font size and see if that fixes it. Try and test qt tray icons as well if you can.<br />
+</p>
+<p>
+If that doesn't fix it, the problem may become clear from looking at your i3bar log from 4.7.2.<br />
+</p>
+<pre class="wiki">$ pkill i3bar; i3bar --bar_id=0 &amp;&gt; ~/i3bar.log
+</pre>
+    </div>
+  <div class="trac-lastedit ">
+    Last edited <a class="timeline" href="/report/timeline?from=2014-01-27T06%3A21%3A55%2B01%3A00&amp;precision=second" title="See timeline at 01/27/14 06:21:55">14 months ago</a>
+        by TonyC
+      (<a href="/report/ticket/1138?cversion=0&amp;cnum_hist=20#comment:20">previous</a>)
+      (<a href="/report/ticket/1138?action=comment-diff&amp;cnum=20&amp;version=1">diff</a>)
+  </div>
+
+              </div>
+              <div class="change" id="trac-change-21-1390803608720724">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:21" class="cnum">
+    <a href="#comment:21">comment:21</a>
+  </span>
+        in reply to:
+    <a href="#comment:20">↑ 20</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:22" class="follow-up">↓ 22</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-27T07%3A20%3A08%2B01%3A00&amp;precision=second" title="See timeline at 01/27/14 07:20:08">14 months ago</a> by Sascha Weaver &lt;wzyboy@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1138#comment:20" title="Comment 20">TonyC</a>:<br />
+</p>
+<p>
+Thanks. I am using Arch Linux which rolling updates so I think my GTK-related packages are up-to-date.<br />
+</p>
+<p>
+I run <tt>pkill i3bar; i3bar --bar_id=bar-0 &amp;&gt; ~/i3bar.log</tt> and start <a class="forbidden wiki" title="no permission to view this wiki page">StarDict</a> (a GTK program with a systray icon) and VLC (a Qt program with a systray icon), but I see no icons show up in systray. Here is what I have in <tt>~/i3bar.log</tt>:<br />
+</p>
+<pre class="wiki">[libi3] libi3/font.c Using Pango font Profont, size 8
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-22-1390869922833493">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:22" class="cnum">
+    <a href="#comment:22">comment:22</a>
+  </span>
+        in reply to:
+    <a href="#comment:21">↑ 21</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:23" class="follow-up">↓ 23</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-28T01%3A45%3A22%2B01%3A00&amp;precision=second" title="See timeline at 01/28/14 01:45:22">14 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1138#comment:21" title="Comment 21">Sascha Weaver &lt;wzyboy@…&gt;</a>:<br />
+</p>
+<p>
+I think you are being affected by <a class="closed ticket" href="/report/ticket/1144" title="enhancement: i3bar: No tray with `tray_output primary` when there is no primary output (closed: works_as_intended)">#1144</a>.<br />
+</p>
+<p>
+If you have a <tt>tray_output</tt> directive in your bar block, try removing it.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-23-1390874901179787">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:23" class="cnum">
+    <a href="#comment:23">comment:23</a>
+  </span>
+        in reply to:
+    <a href="#comment:22">↑ 22</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-01-28T03%3A08%3A21%2B01%3A00&amp;precision=second" title="See timeline at 01/28/14 03:08:21">14 months ago</a> by Sascha Weaver &lt;wzyboy@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1138#comment:22" title="Comment 22">TonyC</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/1138#comment:21" title="Comment 21">Sascha Weaver &lt;wzyboy@…&gt;</a>:<br />
+</p>
+<p>
+I think you are being affected by <a class="closed ticket" href="/report/ticket/1144" title="enhancement: i3bar: No tray with `tray_output primary` when there is no primary output (closed: works_as_intended)">#1144</a>.<br />
+</p>
+<p>
+If you have a <tt>tray_output</tt> directive in your bar block, try removing it.<br />
+</p>
+</blockquote>
+<p>
+Wow, it works! It turns out that in 4.7 i3bar shows a tray by default, not needing a "tray_output" directive any more. Thanks!<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-24-1396885262658555">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:24" class="cnum">
+    <a href="#comment:24">comment:24</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-04-07T17%3A41%3A02%2B02%3A00&amp;precision=second" title="See timeline at 04/07/14 17:41:02">12 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-owner">
+      <strong class="trac-field-owner">Owner</strong>
+        changed from <em>michael</em> to <em>TonyC</em>
+    </li>
+  </ul>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1138?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1138?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1138?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

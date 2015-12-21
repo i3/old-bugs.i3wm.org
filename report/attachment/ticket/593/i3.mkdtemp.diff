@@ -1,0 +1,15 @@
+--- i3-4.1/src/util.c	2011-11-11 23:41:20.000000000 +0100
++++ i3-4.1.new/src/util.c	2011-12-17 21:01:32.524157226 +0100
+@@ -238,7 +238,11 @@ char *get_process_filename(const char *p
+     if (dir == NULL) {
+         struct passwd *pw = getpwuid(getuid());
+         const char *username = pw ? pw->pw_name : "unknown";
+-        sasprintf(&dir, "/tmp/i3-%s", username);
++        sasprintf(&dir, "/tmp/i3-%s.XXXXXX", username);
++        char *tmp = mkdtemp(dir);
++        if (tmp == NULL)
++            perror("mkdtemp()");
++        dir = tmp;
+     } else {
+         char *tmp;
+         sasprintf(&tmp, "%s/i3", dir);

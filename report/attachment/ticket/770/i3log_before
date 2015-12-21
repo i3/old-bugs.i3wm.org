@@ -1,0 +1,1373 @@
+08/08/2012 19:36:11 - Enabling debug logging
+08/08/2012 19:36:11 - CORE DUMPS: You are running a development version of i3, so coredumps were automatically enabled (ulimit -c unlimited).
+08/08/2012 19:36:11 - CORE DUMPS: Your current working directory is "/home/julien".
+08/08/2012 19:36:11 - CORE DUMPS: Your core_pattern is: core
+08/08/2012 19:36:11 - i3 (tree) version 4.2-183-g506b7f4 (2012-08-06, branch "master-109-g506b7f4") starting
+08/08/2012 19:36:11 - ../i3-build/src/main.c:main:512 - root_depth = 24, visual_id = 0x00000021.
+08/08/2012 19:36:11 - Parsing configfile /home/julien/.i3/config
+deciding for version 4 due to this line: # i3 config file (v4)
+font -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
+08/08/2012 19:36:11 - ../i3-build/src/cfgparse.y:yyparse:1374 - floating modifier = 8
+	Found keysym binding mod8 with key Return and command exec urxvtc
+	Found keysym binding mod9 with key q and command kill
+	Found keysym binding mod8 with key d and command exec dmenu_run  -i -b -nb '#000000' -nf '#888888' -sb '#285577' -sf '#ffffff' -fn '-xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-1'
+	Found keysym binding mod8 with key j and command focus left
+	Found keysym binding mod8 with key k and command focus down
+	Found keysym binding mod8 with key l and command focus up
+	Found keysym binding mod8 with key semicolon and command focus right
+	Found keysym binding mod8 with key Left and command focus left
+	Found keysym binding mod8 with key Down and command focus down
+	Found keysym binding mod8 with key Up and command focus up
+	Found keysym binding mod8 with key Right and command focus right
+	Found keysym binding mod9 with key j and command move left
+	Found keysym binding mod9 with key k and command move down
+	Found keysym binding mod9 with key l and command move up
+	Found keysym binding mod9 with key semicolon and command move right
+	Found keysym binding mod9 with key Left and command move left
+	Found keysym binding mod9 with key Down and command move down
+	Found keysym binding mod9 with key Up and command move up
+	Found keysym binding mod9 with key Right and command move right
+	Found keysym binding mod8 with key h and command split h
+	Found keysym binding mod8 with key v and command split v
+	Found keysym binding mod8 with key f and command fullscreen
+	Found keysym binding mod8 with key s and command layout stacking
+	Found keysym binding mod8 with key w and command layout tabbed
+	Found keysym binding mod8 with key e and command layout toggle split
+	Found keysym binding mod9 with key space and command floating toggle
+	Found keysym binding mod8 with key space and command focus mode_toggle
+	Found keysym binding mod8 with key a and command focus parent
+	Found keysym binding mod8 with key 1 and command workspace 1
+	Found keysym binding mod8 with key 2 and command workspace 2
+	Found keysym binding mod8 with key 3 and command workspace 3
+	Found keysym binding mod8 with key 4 and command workspace 4
+	Found keysym binding mod8 with key 5 and command workspace 5
+	Found keysym binding mod8 with key 6 and command workspace 6
+	Found keysym binding mod8 with key 7 and command workspace 7
+	Found keysym binding mod8 with key 8 and command workspace 8
+	Found keysym binding mod8 with key 9 and command workspace 9
+	Found keysym binding mod8 with key 0 and command workspace 10
+	Found keysym binding mod9 with key 1 and command move workspace 1
+	Found keysym binding mod9 with key 2 and command move workspace 2
+	Found keysym binding mod9 with key 3 and command move workspace 3
+	Found keysym binding mod9 with key 4 and command move workspace 4
+	Found keysym binding mod9 with key 5 and command move workspace 5
+	Found keysym binding mod9 with key 6 and command move workspace 6
+	Found keysym binding mod9 with key 7 and command move workspace 7
+	Found keysym binding mod9 with key 8 and command move workspace 8
+	Found keysym binding mod9 with key 9 and command move workspace 9
+	Found keysym binding mod9 with key 0 and command move workspace 10
+	Found keysym binding mod9 with key c and command reload
+	Found keysym binding mod9 with key r and command restart
+	Found keysym binding mod9 with key e and command exit
+	Found keysym binding mod0 with key Left and command resize shrink left
+	Found keysym binding mod1 with key Left and command resize grow left
+	Found keysym binding mod0 with key Down and command resize grow down
+	Found keysym binding mod1 with key Down and command resize shrink down
+	Found keysym binding mod0 with key Up and command resize shrink up
+	Found keysym binding mod1 with key Up and command resize grow up
+	Found keysym binding mod0 with key Right and command resize grow right
+	Found keysym binding mod1 with key Right and command resize shrink right
+	Found keysym binding mod0 with key Return and command mode "default"
+	Found keysym binding mod0 with key Escape and command mode "default"
+	 now in mode resize
+	 current bindings = 0x8fa1620
+got binding on mods 0, keycode 0, symbol Left, command resize shrink left
+got binding on mods 1, keycode 0, symbol Left, command resize grow left
+got binding on mods 0, keycode 0, symbol Down, command resize grow down
+got binding on mods 1, keycode 0, symbol Down, command resize shrink down
+got binding on mods 0, keycode 0, symbol Up, command resize shrink up
+got binding on mods 1, keycode 0, symbol Up, command resize grow up
+got binding on mods 0, keycode 0, symbol Right, command resize grow right
+got binding on mods 1, keycode 0, symbol Right, command resize shrink right
+got binding on mods 0, keycode 0, symbol Return, command mode "default"
+got binding on mods 0, keycode 0, symbol Escape, command mode "default"
+	Found keysym binding mod8 with key r and command mode "resize"
+anything else: *i*
+08/08/2012 19:36:11 - ../i3-build/src/cfgparse.y:yyparse:1473 - checking word "no"
+08/08/2012 19:36:11 - ../i3-build/src/cfgparse.y:yyparse:1501 - focus follows mouse = 0
+08/08/2012 19:36:11 - ../i3-build/src/cfgparse.y:yyparse:1473 - checking word "yes"
+08/08/2012 19:36:11 - ../i3-build/src/cfgparse.y:yyparse:1533 - automatic workspace back-and-forth = 1
+08/08/2012 19:36:11 - ../i3-build/src/cfgparse.y:yyparse:1447 - new windows should start with border style 2
+08/08/2012 19:36:11 - ../i3-build/src/cfgparse.y:yyparse:1142 - should add status command i3status
+08/08/2012 19:36:11 - ../i3-build/src/cfgparse.y:yyparse:1193 - mode 1
+08/08/2012 19:36:11 - ../i3-build/src/cfgparse.y:yyparse:1223 - font -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
+	 new bar configuration finished, saving.
+	Found keysym binding mod64 with key i and command exec i3lock -b -c 000000 && echo mem > /sys/power/state
+	Found keysym binding mod65 with key q and command exec sudo shutdown -h now
+	Found keysym binding mod65 with key r and command exec sudo reboot
+	Found keycode binding mod0 with key 180 and command exec urxvt -e ranger #fn+F1
+	Found keycode binding mod0 with key 163 and command exec thunderbird #fn+F2
+	Found keycode binding mod0 with key 225 and command exec jumanji #fn+F3
+	Found keycode binding mod0 with key 148 and command exec libreoffice #fn+F7
+	Found keycode binding mod0 with key 169 and command exec eject #fn+F8
+	Found keycode binding mod0 with key 179 and command exec urxvt -e ncmpcpp #fn+F9
+	Found keycode binding mod0 with key 173 and command exec mpc prev #fn+F10
+	Found keycode binding mod0 with key 172 and command exec mpc toggle #fn+F11
+	Found keycode binding mod0 with key 171 and command exec mpc next #fn+F12
+	Found keysym binding mod0 with key XF86AudioMute and command exec amixer -q set Front 'mute'
+	Found keysym binding mod64 with key XF86AudioMute and command exec amixer -q set Front 'unmute'
+	Found keysym binding mod0 with key XF86AudioLowerVolume and command exec amixer -q set Master 2dB-
+	Found keysym binding mod0 with key XF86AudioRaiseVolume and command exec amixer -q set Master 2dB+
+	Found keysym binding mod64 with key x and command exec lolictrl -spc
+start
+criteria: class = Firefox
+match specification finished
+match parsed
+new assignment, using above criteria, to workspace 2
+start
+criteria: class = Thunderbird
+match specification finished
+match parsed
+new assignment, using above criteria, to workspace 2
+	Found keysym binding mod9 with key minus and command move scratchpad
+	Found keysym binding mod8 with key minus and command scratchpad show
+08/08/2012 19:36:11 - ../i3-build/src/main.c:main:548 - root geometry reply: (0, 0) 1280 x 1024
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Return" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "q" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "d" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "j" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "k" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "l" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "semicolon" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Left" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Down" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Up" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Right" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "j" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "k" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "l" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "semicolon" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Left" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Down" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Up" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Right" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "h" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "v" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "f" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "s" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "w" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "e" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "space" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "space" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "a" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "1" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "2" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "3" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "4" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "5" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "6" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "7" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "8" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "9" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "0" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "1" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "2" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "3" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "4" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "5" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "6" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "7" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "8" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "9" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "0" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "c" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "r" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "e" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "r" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "i" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "q" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "r" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "XF86AudioMute" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "XF86AudioMute" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "XF86AudioLowerVolume" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "XF86AudioRaiseVolume" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "x" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "minus" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "minus" to 1 keycode
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 36
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 38
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 40
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 44
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 45
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 46
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 59
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 113
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 116
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 111
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 114
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 44
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 45
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 46
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 59
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 113
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 116
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 111
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 114
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 43
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 55
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 41
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 39
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 52
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 26
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 65
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 65
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 24
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 10
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 11
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 12
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 13
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 14
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 17
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 10
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 11
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 12
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 13
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 14
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 17
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 54
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 26
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 31
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 38
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 180
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 163
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 225
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 148
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 169
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 179
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 173
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 172
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 171
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 121
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 121
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 122
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 123
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 53
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+08/08/2012 19:36:11 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_new:43 - opening window 0
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_new:46 - color #ff0000
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_con_init:149 - adding new state for window id 0x01000002
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_new:43 - opening window 1
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_new:46 - color #00FF00
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_con_init:149 - adding new state for window id 0x01000003
+08/08/2012 19:36:11 - ../i3-build/src/tree.c:_create___i3:37 - adding main content container
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_new:43 - opening window 2
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_new:46 - color #0000FF
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_con_init:149 - adding new state for window id 0x01000004
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_new:43 - opening window 3
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_new:46 - color #ff00ff
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_con_init:149 - adding new state for window id 0x01000005
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_attach:88 - it's a workspace. num = -1
+08/08/2012 19:36:11 - ../i3-build/src/main.c:main:655 - Checking for XRandR...
+08/08/2012 19:36:11 - ../i3-build/src/randr.c:randr_query_outputs:576 - primary output is 00000000
+08/08/2012 19:36:11 - ../i3-build/src/randr.c:handle_output:497 - found output with name DVI-I-1
+08/08/2012 19:36:11 - ../i3-build/src/randr.c:handle_output:497 - found output with name VGA-1
+08/08/2012 19:36:11 - ../i3-build/src/randr.c:handle_output:533 - mode: 1280x1024+0+0
+08/08/2012 19:36:11 - ../i3-build/src/randr.c:handle_output:497 - found output with name TV-1
+08/08/2012 19:36:11 - ../i3-build/src/randr.c:randr_query_outputs:608 - output 0x8f9bc50 / VGA-1, position (0, 0), checking for clones
+08/08/2012 19:36:11 - ../i3-build/src/randr.c:randr_query_outputs:647 - Need to initialize a Con for output VGA-1
+08/08/2012 19:36:11 - ../i3-build/src/randr.c:output_init_con:220 - init_con for output VGA-1
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_new:43 - opening window 4
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_new:46 - color #00ffff
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_con_init:149 - adding new state for window id 0x01000006
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_attach:153 - Inserting con = 0x8f9bea0 after last focused tiling con 0x8fa5120
+08/08/2012 19:36:11 - ../i3-build/src/randr.c:output_init_con:255 - Changing layout, adding top/bottom dockarea
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_new:43 - opening window 5
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_new:46 - color #ffff00
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_con_init:149 - adding new state for window id 0x01000007
+08/08/2012 19:36:11 - ../i3-build/src/randr.c:output_init_con:272 - attaching
+08/08/2012 19:36:11 - ../i3-build/src/randr.c:output_init_con:277 - adding main content container
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_new:43 - opening window 6
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_new:46 - color #aa0000
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_con_init:149 - adding new state for window id 0x01000008
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_new:43 - opening window 7
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_new:46 - color #00aa00
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_con_init:149 - adding new state for window id 0x01000009
+08/08/2012 19:36:11 - ../i3-build/src/randr.c:output_init_con:306 - attaching
+08/08/2012 19:36:11 - ../i3-build/src/randr.c:randr_query_outputs:756 - Should add ws for output VGA-1
+08/08/2012 19:36:11 - ../i3-build/src/randr.c:init_ws_for_output:416 - Now adding a workspace
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_new:43 - opening window 8
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_new:46 - color #0000aa
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_con_init:149 - adding new state for window id 0x0100000a
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command exec urxvtc
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command kill
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command exec dmenu_run  -i -b -nb '#000000' -nf '#888888' -sb '#285577' -sf '#ffffff' -fn '-xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-1'
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command focus left
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command focus down
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command focus up
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command focus right
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command focus left
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command focus down
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command focus up
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command focus right
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command move left
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command move down
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command move up
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command move right
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command move left
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command move down
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command move up
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command move right
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command split h
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command split v
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command fullscreen
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command layout stacking
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command layout tabbed
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command layout toggle split
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command floating toggle
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command focus mode_toggle
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command focus parent
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:119 - binding with command workspace 1
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:123 - relevant command = workspace 1
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:create_workspace_on_output:144 - trying name *1*
+08/08/2012 19:36:11 - Used number 1 for workspace with name 1
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_attach:88 - it's a workspace. num = 1
+08/08/2012 19:36:11 - ../i3-build/src/workspace.c:_workspace_apply_default_orientation:30 - Auto orientation. Workspace size set to (1280,1024), setting layout to 6.
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9c4a0
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9c190
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9bea0
+08/08/2012 19:36:11 - ../i3-build/src/tree.c:tree_render:437 - -- BEGIN RENDERING --
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa4fb8 / root / layout 6 / children 2
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa5120 / __i3 / layout 4 / children 1
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9bea0 / VGA-1 / layout 4 / children 3
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 0) with (1280 x 0)
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9bff8 / topdock / layout 3 / children 0
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 0) with (1280 x 1024)
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9c190 / content / layout 6 / children 1
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_con:111 - Rendering fullscreen node 0x8f9c4a0 / 1 / layout 6 / children 0
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 1024) with (1280 x 0)
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9c2f8 / bottomdock / layout 3 / children 0
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_con:247 - Rendering floating windows:
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_push_node:584 - pushing name [i3 con] output VGA-1 for con 0x8f9bea0
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_push_node:584 - pushing name [i3 con] content VGA-1 for con 0x8f9c190
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_push_node:584 - pushing name [i3 con] workspace 1 for con 0x8f9c4a0
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_push_node:584 - pushing name [i3 con] top dockarea VGA-1 for con 0x8f9bff8
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_push_node:584 - pushing name [i3 con] bottom dockarea VGA-1 for con 0x8f9c2f8
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_push_node:584 - pushing name [i3 con] pseudo-output __i3 for con 0x8fa5120
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_push_node:584 - pushing name [i3 con] content __i3 for con 0x8fa5278
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_push_node:584 - pushing name [i3 con] workspace __i3_scratch for con 0x8f9b5e0
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_push_changes:920 - Not updating focus (to 0x8f9c4a0 / 1), focused window is not mapped.
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_push_changes:957 - Still no window focused, better set focus to the root window
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:11 - ../i3-build/src/tree.c:tree_render:446 - -- END RENDERING --
+08/08/2012 19:36:11 - ../i3-build/src/main.c:main:664 - Pointer at 640, 512
+08/08/2012 19:36:11 - ../i3-build/src/randr.c:get_output_containing:84 - comparing x=640 y=512 with x=0 and y=0 width 1280 height 1024
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9c4a0
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9c190
+08/08/2012 19:36:11 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9bea0
+08/08/2012 19:36:11 - ../i3-build/src/tree.c:tree_render:437 - -- BEGIN RENDERING --
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa4fb8 / root / layout 6 / children 2
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa5120 / __i3 / layout 4 / children 1
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9bea0 / VGA-1 / layout 4 / children 3
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 0) with (1280 x 0)
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9bff8 / topdock / layout 3 / children 0
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 0) with (1280 x 1024)
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9c190 / content / layout 6 / children 1
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_con:111 - Rendering fullscreen node 0x8f9c4a0 / 1 / layout 6 / children 0
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 1024) with (1280 x 0)
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9c2f8 / bottomdock / layout 3 / children 0
+08/08/2012 19:36:11 - ../i3-build/src/render.c:render_con:247 - Rendering floating windows:
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_push_changes:920 - Not updating focus (to 0x8f9c4a0 / 1), focused window is not mapped.
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_push_changes:957 - Still no window focused, better set focus to the root window
+08/08/2012 19:36:11 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:11 - ../i3-build/src/tree.c:tree_render:446 - -- END RENDERING --
+08/08/2012 19:36:11 - ../i3-build/src/ipc.c:ipc_create_socket:988 - Creating IPC-socket at /tmp/i3-julien.4XhQUE/ipc-socket.734
+08/08/2012 19:36:11 - ../i3-build/src/main.c:main:695 - socket activation: no sockets passed
+08/08/2012 19:36:11 - auto-starting i3-config-wizard
+08/08/2012 19:36:11 - startup id = i3/i3-config-wizard/734-0-arch_TIME0
+08/08/2012 19:36:11 - executing: i3-config-wizard
+08/08/2012 19:36:11 - Starting bar process: i3bar --bar_id=bar-anosho --socket="/tmp/i3-julien.4XhQUE/ipc-socket.734"
+08/08/2012 19:36:11 - executing: i3bar --bar_id=bar-anosho --socket="/tmp/i3-julien.4XhQUE/ipc-socket.734"
+08/08/2012 19:36:11 - ../i3-build/src/handlers.c:handle_destroy_notify_event:485 - destroy notify for 0x0100000b, 0x0100000b
+08/08/2012 19:36:11 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x0100000b (received from 0x0100000b), serial 342
+08/08/2012 19:36:11 - Not a managed window, ignoring UnmapNotify event
+The config file "/home/julien/.i3/config" already exists. Exiting.
+08/08/2012 19:36:11 - ../i3-build/src/ipc.c:ipc_new_client:969 - IPC: new client connected on fd 9
+08/08/2012 19:36:11 - ../i3-build/src/ipc.c:ipc_receive_message:910 - IPC: n = 24
+08/08/2012 19:36:11 - IPC: looking for config for bar ID "bar-anosho"
+08/08/2012 19:36:11 - ../i3-build/src/ipc.c:ipc_receive_message:910 - IPC: n = 14
+08/08/2012 19:36:11 - ../i3-build/src/ipc.c:ipc_receive_message:910 - IPC: n = 39
+08/08/2012 19:36:11 - ../i3-build/src/ipc.c:add_subscription:761 - should add subscription to extra 0x8fa61d8, sub workspace
+08/08/2012 19:36:11 - ../i3-build/src/ipc.c:add_subscription:771 - client is now subscribed to:
+08/08/2012 19:36:11 - ../i3-build/src/ipc.c:add_subscription:773 - event workspace
+08/08/2012 19:36:11 - ../i3-build/src/ipc.c:add_subscription:774 - (done)
+08/08/2012 19:36:11 - ../i3-build/src/ipc.c:add_subscription:761 - should add subscription to extra 0x8fa61d8, sub output
+08/08/2012 19:36:11 - ../i3-build/src/ipc.c:add_subscription:771 - client is now subscribed to:
+08/08/2012 19:36:11 - ../i3-build/src/ipc.c:add_subscription:773 - event workspace
+08/08/2012 19:36:11 - ../i3-build/src/ipc.c:add_subscription:773 - event output
+08/08/2012 19:36:11 - ../i3-build/src/ipc.c:add_subscription:774 - (done)
+08/08/2012 19:36:11 - ../i3-build/src/ipc.c:ipc_receive_message:910 - IPC: n = 14
+08/08/2012 19:36:11 - workspace visible? fs = 0x8f9c4a0, ws = 0x8f9c4a0
+08/08/2012 19:36:11 - ClientMessage for window 0x00000196
+08/08/2012 19:36:11 - ../i3-build/src/handlers.c:handle_client_message:645 - unhandled clientmessage
+08/08/2012 19:36:12 - ../i3-build/src/handlers.c:handle_mapping_notify:252 - Received mapping_notify for keyboard or modifier mapping, re-grabbing keys
+08/08/2012 19:36:12 - ../i3-build/src/config.c:ungrab_all_keys:27 - Ungrabbing all keys
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Return" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "q" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "d" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "j" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "k" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "l" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "semicolon" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Left" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Down" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Up" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Right" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "j" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "k" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "l" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "semicolon" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Left" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Down" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Up" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Right" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "h" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "v" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "f" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "s" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "w" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "e" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "space" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "space" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "a" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "1" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "2" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "3" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "4" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "5" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "6" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "7" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "8" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "9" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "0" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "1" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "2" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "3" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "4" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "5" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "6" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "7" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "8" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "9" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "0" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "c" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "r" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "e" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "r" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "i" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "q" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "r" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "XF86AudioMute" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "XF86AudioMute" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "XF86AudioLowerVolume" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "XF86AudioRaiseVolume" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "x" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "minus" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "minus" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 36
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 38
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 40
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 44
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 45
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 46
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 59
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 113
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 116
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 111
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 114
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 44
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 45
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 46
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 59
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 113
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 116
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 111
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 114
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 43
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 55
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 41
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 39
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 52
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 26
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 65
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 65
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 24
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 10
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 11
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 12
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 13
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 14
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 17
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 10
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 11
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 12
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 13
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 14
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 17
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 54
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 26
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 31
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 38
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 180
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 163
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 225
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 148
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 169
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 179
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 173
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 172
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 171
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 121
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 121
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 122
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 123
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 53
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+08/08/2012 19:36:12 - ../i3-build/src/handlers.c:handle_mapping_notify:252 - Received mapping_notify for keyboard or modifier mapping, re-grabbing keys
+08/08/2012 19:36:12 - ../i3-build/src/config.c:ungrab_all_keys:27 - Ungrabbing all keys
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Return" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "q" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "d" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "j" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "k" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "l" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "semicolon" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Left" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Down" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Up" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Right" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "j" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "k" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "l" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "semicolon" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Left" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Down" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Up" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "Right" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "h" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "v" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "f" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "s" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "w" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "e" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "space" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "space" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "a" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "1" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "2" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "3" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "4" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "5" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "6" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "7" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "8" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "9" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "0" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "1" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "2" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "3" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "4" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "5" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "6" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "7" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "8" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "9" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "0" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "c" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "r" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "e" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "r" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "i" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "q" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "r" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "XF86AudioMute" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "XF86AudioMute" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "XF86AudioLowerVolume" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "XF86AudioRaiseVolume" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "x" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "minus" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:translate_keysyms:125 - Translated symbol "minus" to 1 keycode
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 36
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 38
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 40
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 44
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 45
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 46
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 59
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 113
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 116
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 111
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 114
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 44
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 45
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 46
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 59
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 113
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 116
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 111
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 114
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 43
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 55
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 41
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 39
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 52
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 26
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 65
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 65
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 24
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 10
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 11
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 12
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 13
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 14
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 17
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 10
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 11
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 12
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 13
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 14
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 16
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 17
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 18
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 19
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 54
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 26
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 31
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 38
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 27
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 180
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 163
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 225
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 148
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 169
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 179
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 173
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 172
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 171
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 121
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 121
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 122
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 123
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 53
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+08/08/2012 19:36:12 - ../i3-build/src/config.c:grab_keycode_for_binding:32 - Grabbing 15
+08/08/2012 19:36:12 - ../i3-build/src/main.c:xkb_got_event:147 - Handling XKB event
+08/08/2012 19:36:12 - ../i3-build/src/key_press.c:handle_key_press:236 - Keypress 40, state raw = 24
+08/08/2012 19:36:12 - ../i3-build/src/key_press.c:handle_key_press:240 - (removed numlock, state = 8)
+08/08/2012 19:36:12 - ../i3-build/src/key_press.c:handle_key_press:244 - (removed upper 8 bits, state = 8)
+08/08/2012 19:36:12 - ../i3-build/src/key_press.c:handle_key_press:249 - (checked mode_switch, state 8)
+08/08/2012 19:36:12 - ../i3-build/src/commands_parser.c:parse_command:207 - COMMAND: *exec dmenu_run  -i -b -nb '#000000' -nf '#888888' -sb '#285577' -sf '#ffffff' -fn '-xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-1'*
+08/08/2012 19:36:12 - ../i3-build/src/commands.c:cmd_criteria_init:209 - Initializing criteria, current_match = 0x80a64e0
+08/08/2012 19:36:12 - ../i3-build/src/commands.c:cmd_exec:1171 - should execute dmenu_run  -i -b -nb '#000000' -nf '#888888' -sb '#285577' -sf '#ffffff' -fn '-xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-1', no_startup_id = 0
+08/08/2012 19:36:12 - startup id = i3/dmenu_run/734-1-arch_TIME253019
+08/08/2012 19:36:12 - executing: dmenu_run  -i -b -nb '#000000' -nf '#888888' -sb '#285577' -sf '#ffffff' -fn '-xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-1'
+08/08/2012 19:36:12 - ../i3-build/src/commands.c:cmd_criteria_init:209 - Initializing criteria, current_match = 0x80a64e0
+08/08/2012 19:36:12 - ../i3-build/src/key_press.c:json_boolean:185 - Got bool: 1, success_key 1, nesting_level 1
+08/08/2012 19:36:12 - ../i3-build/src/handlers.c:handle_destroy_notify_event:485 - destroy notify for 0x0100000c, 0x0100000c
+08/08/2012 19:36:12 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x0100000c (received from 0x0100000c), serial 781
+08/08/2012 19:36:12 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:12 - ../i3-build/src/main.c:xkb_got_event:147 - Handling XKB event
+08/08/2012 19:36:15 - ../i3-build/src/main.c:xkb_got_event:147 - Handling XKB event
+08/08/2012 19:36:16 - ../i3-build/src/key_press.c:handle_key_press:236 - Keypress 11, state raw = 24
+08/08/2012 19:36:16 - ../i3-build/src/key_press.c:handle_key_press:240 - (removed numlock, state = 8)
+08/08/2012 19:36:16 - ../i3-build/src/key_press.c:handle_key_press:244 - (removed upper 8 bits, state = 8)
+08/08/2012 19:36:16 - ../i3-build/src/key_press.c:handle_key_press:249 - (checked mode_switch, state 8)
+08/08/2012 19:36:16 - ../i3-build/src/commands_parser.c:parse_command:207 - COMMAND: *workspace 2*
+08/08/2012 19:36:16 - ../i3-build/src/commands.c:cmd_criteria_init:209 - Initializing criteria, current_match = 0x80a64e0
+08/08/2012 19:36:16 - ../i3-build/src/commands.c:cmd_workspace_name:880 - should switch to workspace 2
+08/08/2012 19:36:16 - Creating new workspace "2"
+08/08/2012 19:36:16 - got output 0x8f9bea0 with content 0x8f9c190
+08/08/2012 19:36:16 - ../i3-build/src/con.c:con_new:43 - opening window 9
+08/08/2012 19:36:16 - ../i3-build/src/con.c:con_new:46 - color #aa00aa
+08/08/2012 19:36:16 - ../i3-build/src/x.c:x_con_init:149 - adding new state for window id 0x0100000d
+08/08/2012 19:36:16 - num = 2
+08/08/2012 19:36:16 - ../i3-build/src/workspace.c:_workspace_apply_default_orientation:30 - Auto orientation. Workspace size set to (1280,1024), setting layout to 6.
+08/08/2012 19:36:16 - ../i3-build/src/con.c:con_attach:88 - it's a workspace. num = 2
+08/08/2012 19:36:16 - switching to 0x8fa6d30
+08/08/2012 19:36:16 - workspace visible? fs = 0x8fa6d30, ws = 0x8f9c4a0
+08/08/2012 19:36:16 - Closing old workspace (0x8f9c4a0 / 1), it is empty
+08/08/2012 19:36:16 - ../i3-build/src/tree.c:tree_close:201 - next = 0x8fa6d30, focused = 0x8f9c4a0
+08/08/2012 19:36:16 - ../i3-build/src/tree.c:tree_close:203 - closing 0x8f9c4a0, kill_window = 0
+08/08/2012 19:36:16 - ../i3-build/src/con.c:con_is_floating:344 - checking if con 0x8f9c4a0 is floating
+08/08/2012 19:36:16 - ../i3-build/src/tree.c:tree_close:292 - focusing 0x8fa6d30 / 2
+08/08/2012 19:36:16 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8fa6d30
+08/08/2012 19:36:16 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9c190
+08/08/2012 19:36:16 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9bea0
+08/08/2012 19:36:16 - ../i3-build/src/con.c:con_on_remove_child:1197 - on_remove_child
+08/08/2012 19:36:16 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8fa6d30
+08/08/2012 19:36:16 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9c190
+08/08/2012 19:36:16 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9bea0
+08/08/2012 19:36:16 - focused now = 0x8fa6d30 / 2
+08/08/2012 19:36:16 - ../i3-build/src/commands.c:cmd_criteria_init:209 - Initializing criteria, current_match = 0x80a64e0
+08/08/2012 19:36:16 - ../i3-build/src/tree.c:tree_render:437 - -- BEGIN RENDERING --
+08/08/2012 19:36:16 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa4fb8 / root / layout 6 / children 2
+08/08/2012 19:36:16 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa5120 / __i3 / layout 4 / children 1
+08/08/2012 19:36:16 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9bea0 / VGA-1 / layout 4 / children 3
+08/08/2012 19:36:16 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 0) with (1280 x 0)
+08/08/2012 19:36:16 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9bff8 / topdock / layout 3 / children 0
+08/08/2012 19:36:16 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 0) with (1280 x 1024)
+08/08/2012 19:36:16 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9c190 / content / layout 6 / children 1
+08/08/2012 19:36:16 - ../i3-build/src/render.c:render_con:111 - Rendering fullscreen node 0x8fa6d30 / 2 / layout 6 / children 0
+08/08/2012 19:36:16 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 1024) with (1280 x 0)
+08/08/2012 19:36:16 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9c2f8 / bottomdock / layout 3 / children 0
+08/08/2012 19:36:16 - ../i3-build/src/render.c:render_con:247 - Rendering floating windows:
+08/08/2012 19:36:16 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:16 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:16 - ../i3-build/src/x.c:x_push_node:584 - pushing name [i3 con] workspace 2 for con 0x8fa6d30
+08/08/2012 19:36:16 - ../i3-build/src/x.c:x_push_changes:920 - Not updating focus (to 0x8fa6d30 / 2), focused window is not mapped.
+08/08/2012 19:36:16 - ../i3-build/src/x.c:x_push_changes:957 - Still no window focused, better set focus to the root window
+08/08/2012 19:36:16 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:16 - ../i3-build/src/tree.c:tree_render:446 - -- END RENDERING --
+08/08/2012 19:36:16 - ../i3-build/src/key_press.c:json_boolean:185 - Got bool: 1, success_key 1, nesting_level 1
+08/08/2012 19:36:16 - ../i3-build/src/handlers.c:handle_destroy_notify_event:485 - destroy notify for 0x0100000a, 0x0100000a
+08/08/2012 19:36:16 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x0100000a (received from 0x0100000a), serial 784
+08/08/2012 19:36:16 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:16 - ../i3-build/src/main.c:xcb_check_cb:125 - X11 Error received (probably harmless)! sequence 0x311, error_code = 4
+08/08/2012 19:36:16 - ../i3-build/src/main.c:xcb_check_cb:125 - X11 Error received (probably harmless)! sequence 0x312, error_code = 13
+08/08/2012 19:36:16 - ../i3-build/src/ipc.c:ipc_receive_message:910 - IPC: n = 42
+08/08/2012 19:36:16 - workspace visible? fs = 0x8fa6d30, ws = 0x8fa6d30
+08/08/2012 19:36:16 - ../i3-build/src/ipc.c:ipc_receive_message:910 - IPC: n = 28
+08/08/2012 19:36:16 - workspace visible? fs = 0x8fa6d30, ws = 0x8fa6d30
+08/08/2012 19:36:16 - ../i3-build/src/ipc.c:ipc_receive_message:910 - IPC: n = 14
+08/08/2012 19:36:16 - workspace visible? fs = 0x8fa6d30, ws = 0x8fa6d30
+08/08/2012 19:36:16 - ../i3-build/src/main.c:xkb_got_event:147 - Handling XKB event
+08/08/2012 19:36:17 - ../i3-build/src/main.c:xkb_got_event:147 - Handling XKB event
+i3status: trying to auto-detect output_format setting
+i3status: auto-detected "i3bar"
+08/08/2012 19:36:17 - ../i3-build/src/main.c:xkb_got_event:147 - Handling XKB event
+08/08/2012 19:36:22 - ../i3-build/src/main.c:xkb_got_event:147 - Handling XKB event
+08/08/2012 19:36:23 - ../i3-build/src/main.c:xkb_got_event:147 - Handling XKB event
+08/08/2012 19:36:23 - ../i3-build/src/startup.c:startup_monitor_event:181 - startup sequence i3/dmenu_run/734-1-arch_TIME253019 completed
+08/08/2012 19:36:23 - ../i3-build/src/handlers.c:handle_configure_request:293 - window 0x01a00081 wants to be at 0x0 with 1276x1004
+08/08/2012 19:36:23 - ../i3-build/src/handlers.c:handle_configure_request:298 - Configure request for unmanaged window, can do that.
+08/08/2012 19:36:23 - ClientMessage for window 0x01a00081
+08/08/2012 19:36:23 - ../i3-build/src/handlers.c:handle_client_message:602 - atom in clientmessage is 436, fullscreen is 375
+08/08/2012 19:36:23 - ../i3-build/src/handlers.c:handle_client_message:603 - not about fullscreen atom
+08/08/2012 19:36:23 - ../i3-build/src/handlers.c:handle_configure_request:293 - window 0x01a00081 wants to be at 0x0 with 1276x1004
+08/08/2012 19:36:23 - ../i3-build/src/handlers.c:handle_configure_request:298 - Configure request for unmanaged window, can do that.
+08/08/2012 19:36:23 - ../i3-build/src/handlers.c:handle_map_request:273 - window = 0x01a00081, serial is 793.
+08/08/2012 19:36:23 - ../i3-build/src/manage.c:manage_window:148 - Managing window 0x01a00081
+08/08/2012 19:36:23 - WM_CLASS changed to Mail (instance), Thunderbird (class)
+08/08/2012 19:36:23 - WM_NAME changed to "Mozilla Thunderbird"
+08/08/2012 19:36:23 - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+08/08/2012 19:36:23 - _NET_WM_NAME changed to "Mozilla Thunderbird"
+08/08/2012 19:36:23 - ../i3-build/src/window.c:window_update_leader:166 - Client leader changed to 01a00001
+08/08/2012 19:36:23 - ../i3-build/src/window.c:window_update_transient_for:179 - TRANSIENT_FOR not set.
+08/08/2012 19:36:23 - ../i3-build/src/window.c:window_update_strut_partial:203 - _NET_WM_STRUT_PARTIAL not set.
+08/08/2012 19:36:23 - WM_WINDOW_ROLE changed to "3pane"
+08/08/2012 19:36:23 - WM_HINTS.input changed to "1"
+08/08/2012 19:36:23 - ../i3-build/src/startup.c:startup_workspace_for_window:255 - WARNING: This sequence (ID €Åùmenu_run/734-1-arch_TIME253019) was not found
+08/08/2012 19:36:23 - ../i3-build/src/manage.c:manage_window:179 - startup workspace = (null)
+08/08/2012 19:36:23 - ../i3-build/src/manage.c:manage_window:217 - Initial geometry: (0, 0, 1276, 1004)
+08/08/2012 19:36:23 - Checking window 0x01a00081 (class Thunderbird)
+08/08/2012 19:36:23 - dock status does not match
+08/08/2012 19:36:23 - Checking window 0x01a00081 (class Thunderbird)
+08/08/2012 19:36:23 - dock status does not match
+08/08/2012 19:36:23 - Checking window 0x01a00081 (class Thunderbird)
+08/08/2012 19:36:23 - Regular expression "Firefox" does not match "Thunderbird"
+08/08/2012 19:36:23 - Checking window 0x01a00081 (class Thunderbird)
+08/08/2012 19:36:23 - Regular expression "Thunderbird" matches "Thunderbird"
+08/08/2012 19:36:23 - window class matches (Thunderbird)
+08/08/2012 19:36:23 - ../i3-build/src/assignments.c:assignment_for:77 - got a matching assignment (to 2)
+08/08/2012 19:36:23 - ../i3-build/src/manage.c:manage_window:230 - Assignment matches ((nil))
+08/08/2012 19:36:23 - ../i3-build/src/manage.c:manage_window:233 - focused on ws 2: 0x8fa6d30 / 2
+08/08/2012 19:36:23 - ../i3-build/src/con.c:con_new:43 - opening window 0
+08/08/2012 19:36:23 - ../i3-build/src/con.c:con_new:46 - color #ff0000
+08/08/2012 19:36:23 - ../i3-build/src/x.c:x_con_init:149 - adding new state for window id 0x0100000e
+08/08/2012 19:36:23 - ../i3-build/src/manage.c:manage_window:264 - new container = 0x8fa6500
+08/08/2012 19:36:23 - ../i3-build/src/x.c:x_reinit:166 - resetting state 0x8fa6608 to initial
+08/08/2012 19:36:23 - ../i3-build/src/manage.c:manage_window:281 - Not in fullscreen mode, focusing
+08/08/2012 19:36:23 - workspace visible? fs = 0x8fa6d30, ws = 0x8fa6d30
+08/08/2012 19:36:23 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8fa6500
+08/08/2012 19:36:23 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8fa6d30
+08/08/2012 19:36:23 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9c190
+08/08/2012 19:36:23 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9bea0
+08/08/2012 19:36:23 - ../i3-build/src/assignments.c:run_assignments:18 - Checking if any assignments match this window
+08/08/2012 19:36:23 - Checking window 0x01a00081 (class Thunderbird)
+08/08/2012 19:36:23 - Regular expression "Firefox" does not match "Thunderbird"
+08/08/2012 19:36:23 - Checking window 0x01a00081 (class Thunderbird)
+08/08/2012 19:36:23 - Regular expression "Thunderbird" matches "Thunderbird"
+08/08/2012 19:36:23 - window class matches (Thunderbird)
+08/08/2012 19:36:23 - ../i3-build/src/assignments.c:run_assignments:41 - matching assignment, would do:
+08/08/2012 19:36:23 - ../i3-build/src/tree.c:tree_render:437 - -- BEGIN RENDERING --
+08/08/2012 19:36:23 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa4fb8 / root / layout 6 / children 2
+08/08/2012 19:36:23 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa5120 / __i3 / layout 4 / children 1
+08/08/2012 19:36:23 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9bea0 / VGA-1 / layout 4 / children 3
+08/08/2012 19:36:23 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 0) with (1280 x 0)
+08/08/2012 19:36:23 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9bff8 / topdock / layout 3 / children 0
+08/08/2012 19:36:23 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 0) with (1280 x 1024)
+08/08/2012 19:36:23 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9c190 / content / layout 6 / children 1
+08/08/2012 19:36:23 - ../i3-build/src/render.c:render_con:111 - Rendering fullscreen node 0x8fa6d30 / 2 / layout 6 / children 1
+08/08/2012 19:36:23 - ../i3-build/src/render.c:render_con:372 - child at (0, 0) with (1280 x 1024)
+08/08/2012 19:36:23 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa6500 / #ff0000 / layout 6 / children 0
+08/08/2012 19:36:23 - ../i3-build/src/render.c:render_con:189 - child will be at 1x1 with size 1278x1022
+08/08/2012 19:36:23 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 1024) with (1280 x 0)
+08/08/2012 19:36:23 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9c2f8 / bottomdock / layout 3 / children 0
+08/08/2012 19:36:23 - ../i3-build/src/render.c:render_con:247 - Rendering floating windows:
+08/08/2012 19:36:23 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:23 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:23 - ../i3-build/src/x.c:x_push_node:584 - pushing name [i3 con] container around 0x8f9c4a0 for con 0x8fa6500
+08/08/2012 19:36:23 - ../i3-build/src/x.c:x_push_node:683 - setting rect (0, 0, 1280, 1024)
+08/08/2012 19:36:23 - ../i3-build/src/x.c:x_push_node:702 - setting window rect (1, 1, 1278, 1022)
+08/08/2012 19:36:23 - ../i3-build/src/x.c:x_push_node:732 - mapping child window (serial 839)
+08/08/2012 19:36:23 - ../i3-build/src/x.c:x_push_node:746 - mapping container 0100000e (serial 841)
+08/08/2012 19:36:23 - ../i3-build/src/x.c:x_push_node:753 - Sending fake configure notify
+08/08/2012 19:36:23 - ../i3-build/src/xcb.c:fake_absolute_configure_notify:101 - fake rect = (1, 1, 1278, 1022)
+08/08/2012 19:36:23 - ../i3-build/src/x.c:x_push_changes:928 - Updating focus by sending WM_TAKE_FOCUS to window 0x01a00081 (focused: 0x8fa6500 / #ff0000)
+08/08/2012 19:36:23 - ../i3-build/src/xcb.c:send_take_focus:124 - Sending WM_TAKE_FOCUS to the client
+08/08/2012 19:36:23 - ../i3-build/src/x.c:x_push_changes:931 - set_focus = 1
+08/08/2012 19:36:23 - ../i3-build/src/x.c:x_push_changes:935 - Updating focus (focused: 0x8fa6500 / #ff0000)
+08/08/2012 19:36:23 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:23 - ../i3-build/src/tree.c:tree_render:446 - -- END RENDERING --
+08/08/2012 19:36:23 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:23 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:23 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:23 - ../i3-build/src/handlers.c:handle_expose_event:569 - window = 0100000e
+08/08/2012 19:36:23 - ../i3-build/src/handlers.c:handle_expose_event:569 - window = 0100000e
+08/08/2012 19:36:23 - ../i3-build/src/handlers.c:handle_expose_event:569 - window = 0100000e
+08/08/2012 19:36:23 - ../i3-build/src/handlers.c:handle_expose_event:569 - window = 0100000e
+08/08/2012 19:36:24 - _NET_WM_NAME changed to "- Mozilla Thunderbird"
+08/08/2012 19:36:24 - ../i3-build/src/assignments.c:run_assignments:18 - Checking if any assignments match this window
+08/08/2012 19:36:24 - Checking window 0x01a00081 (class Thunderbird)
+08/08/2012 19:36:24 - Regular expression "Firefox" does not match "Thunderbird"
+08/08/2012 19:36:24 - Checking window 0x01a00081 (class Thunderbird)
+08/08/2012 19:36:24 - Regular expression "Thunderbird" matches "Thunderbird"
+08/08/2012 19:36:24 - window class matches (Thunderbird)
+08/08/2012 19:36:24 - ../i3-build/src/assignments.c:run_assignments:33 - This assignment already ran for the given window, not executing it again.
+08/08/2012 19:36:24 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:24 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:24 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:24 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:24 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:24 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:25 - _NET_WM_NAME changed to "Courrier entrant - julienkoesten@aol.com - Mozilla Thunderbird"
+08/08/2012 19:36:25 - ../i3-build/src/assignments.c:run_assignments:18 - Checking if any assignments match this window
+08/08/2012 19:36:25 - Checking window 0x01a00081 (class Thunderbird)
+08/08/2012 19:36:25 - Regular expression "Firefox" does not match "Thunderbird"
+08/08/2012 19:36:25 - Checking window 0x01a00081 (class Thunderbird)
+08/08/2012 19:36:25 - Regular expression "Thunderbird" matches "Thunderbird"
+08/08/2012 19:36:25 - window class matches (Thunderbird)
+08/08/2012 19:36:25 - ../i3-build/src/assignments.c:run_assignments:33 - This assignment already ran for the given window, not executing it again.
+08/08/2012 19:36:25 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:25 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:25 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:25 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:25 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:25 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:25 - ../i3-build/src/handlers.c:handle_hints:797 - Ignoring urgency flag for current client
+08/08/2012 19:36:25 - WM_HINTS.input changed to "1"
+08/08/2012 19:36:25 - ../i3-build/src/handlers.c:handle_hints:797 - Ignoring urgency flag for current client
+08/08/2012 19:36:25 - WM_HINTS.input changed to "1"
+08/08/2012 19:36:26 - ../i3-build/src/handlers.c:handle_configure_request:293 - window 0x01a00138 wants to be at 321x429 with 636x163
+08/08/2012 19:36:26 - ../i3-build/src/handlers.c:handle_configure_request:298 - Configure request for unmanaged window, can do that.
+08/08/2012 19:36:26 - ../i3-build/src/handlers.c:handle_configure_request:293 - window 0x01a00138 wants to be at 321x429 with 200x200
+08/08/2012 19:36:26 - ../i3-build/src/handlers.c:handle_configure_request:298 - Configure request for unmanaged window, can do that.
+08/08/2012 19:36:26 - ClientMessage for window 0x01a00138
+08/08/2012 19:36:26 - ../i3-build/src/handlers.c:handle_client_message:602 - atom in clientmessage is 436, fullscreen is 375
+08/08/2012 19:36:26 - ../i3-build/src/handlers.c:handle_client_message:603 - not about fullscreen atom
+08/08/2012 19:36:26 - ../i3-build/src/handlers.c:handle_configure_request:293 - window 0x01a00138 wants to be at 0x0 with 200x200
+08/08/2012 19:36:26 - ../i3-build/src/handlers.c:handle_configure_request:298 - Configure request for unmanaged window, can do that.
+08/08/2012 19:36:26 - ../i3-build/src/handlers.c:handle_map_request:273 - window = 0x01a00138, serial is 894.
+08/08/2012 19:36:26 - ../i3-build/src/manage.c:manage_window:148 - Managing window 0x01a00138
+08/08/2012 19:36:26 - WM_CLASS changed to Dialog (instance), Thunderbird (class)
+08/08/2012 19:36:26 - ../i3-build/src/window.c:window_update_name_legacy:108 - WM_NAME not set (_NET_WM_NAME is what you want anyways).
+08/08/2012 19:36:26 - ../i3-build/src/window.c:window_update_name:56 - _NET_WM_NAME not specified, not changing
+08/08/2012 19:36:26 - ../i3-build/src/window.c:window_update_leader:166 - Client leader changed to 01a00001
+08/08/2012 19:36:26 - ../i3-build/src/window.c:window_update_transient_for:190 - Transient for changed to 01a00081
+08/08/2012 19:36:26 - ../i3-build/src/window.c:window_update_strut_partial:203 - _NET_WM_STRUT_PARTIAL not set.
+08/08/2012 19:36:26 - ../i3-build/src/window.c:window_update_role:228 - WM_WINDOW_ROLE not set.
+08/08/2012 19:36:26 - WM_HINTS.input changed to "1"
+08/08/2012 19:36:26 - ../i3-build/src/startup.c:startup_workspace_for_window:217 - No _NET_STARTUP_ID set on this window
+08/08/2012 19:36:26 - ../i3-build/src/startup.c:startup_workspace_for_window:223 - Checking leader window 0x01a00001
+08/08/2012 19:36:26 - ../i3-build/src/startup.c:startup_workspace_for_window:255 - WARNING: This sequence (ID Ðfúmenu_run/734-1-arch_TIME253019) was not found
+08/08/2012 19:36:26 - ../i3-build/src/manage.c:manage_window:179 - startup workspace = (null)
+08/08/2012 19:36:26 - ../i3-build/src/manage.c:manage_window:217 - Initial geometry: (321, 429, 636, 163)
+08/08/2012 19:36:26 - Checking window 0x01a00138 (class Thunderbird)
+08/08/2012 19:36:26 - dock status does not match
+08/08/2012 19:36:26 - Checking window 0x01a00138 (class Thunderbird)
+08/08/2012 19:36:26 - dock status does not match
+08/08/2012 19:36:26 - Checking window 0x01a00138 (class Thunderbird)
+08/08/2012 19:36:26 - Regular expression "Firefox" does not match "Thunderbird"
+08/08/2012 19:36:26 - Checking window 0x01a00138 (class Thunderbird)
+08/08/2012 19:36:26 - Regular expression "Thunderbird" matches "Thunderbird"
+08/08/2012 19:36:26 - window class matches (Thunderbird)
+08/08/2012 19:36:26 - ../i3-build/src/assignments.c:assignment_for:77 - got a matching assignment (to 2)
+08/08/2012 19:36:26 - ../i3-build/src/manage.c:manage_window:230 - Assignment matches ((nil))
+08/08/2012 19:36:26 - ../i3-build/src/manage.c:manage_window:233 - focused on ws 2: 0x8fa6500 / #ff0000
+08/08/2012 19:36:26 - ../i3-build/src/con.c:con_new:43 - opening window 1
+08/08/2012 19:36:26 - ../i3-build/src/con.c:con_new:46 - color #00FF00
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_con_init:149 - adding new state for window id 0x01000011
+08/08/2012 19:36:26 - ../i3-build/src/con.c:con_attach:153 - Inserting con = 0x8fa6960 after last focused tiling con 0x8fa6500
+08/08/2012 19:36:26 - ../i3-build/src/manage.c:manage_window:264 - new container = 0x8fa6960
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_reinit:166 - resetting state 0x8fa6a68 to initial
+08/08/2012 19:36:26 - ../i3-build/src/manage.c:manage_window:281 - Not in fullscreen mode, focusing
+08/08/2012 19:36:26 - workspace visible? fs = 0x8fa6d30, ws = 0x8fa6d30
+08/08/2012 19:36:26 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8fa6960
+08/08/2012 19:36:26 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8fa6d30
+08/08/2012 19:36:26 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9c190
+08/08/2012 19:36:26 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9bea0
+08/08/2012 19:36:26 - This window is a dialog window, setting floating
+08/08/2012 19:36:26 - This window is transiert for another window, setting floating
+08/08/2012 19:36:26 - ../i3-build/src/manage.c:manage_window:348 - geometry = 636 x 163
+08/08/2012 19:36:26 - ../i3-build/src/con.c:con_is_floating:344 - checking if con 0x8fa6960 is floating
+08/08/2012 19:36:26 - ../i3-build/src/con.c:con_new:43 - opening window 2
+08/08/2012 19:36:26 - ../i3-build/src/con.c:con_new:46 - color #0000FF
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_con_init:149 - adding new state for window id 0x01000012
+08/08/2012 19:36:26 - ../i3-build/src/floating.c:floating_enable:124 - Original rect: (0, 0) with 0 x 0
+08/08/2012 19:36:26 - ../i3-build/src/floating.c:floating_enable:125 - Geometry = (321, 429) with 636 x 163
+08/08/2012 19:36:26 - ../i3-build/src/randr.c:get_output_containing:84 - comparing x=321 y=429 with x=0 and y=0 width 1280 height 1024
+08/08/2012 19:36:26 - ../i3-build/src/floating.c:floating_enable:220 - Floating rect: (321, 429) with 640 x 184
+08/08/2012 19:36:26 - ../i3-build/src/floating.c:floating_enable:237 - Corrected y = 410 (deco_height = 19)
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa6ab8 / #0000FF / layout 6 / children 1
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:372 - child at (321, 428) with (640 x 166)
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa6960 / #00FF00 / layout 6 / children 0
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:189 - child will be at 2x0 with size 636x164
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa6960 / #00FF00 / layout 6 / children 0
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:189 - child will be at 2x0 with size 636x164
+08/08/2012 19:36:26 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8fa6960
+08/08/2012 19:36:26 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8fa6ab8
+08/08/2012 19:36:26 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8fa6d30
+08/08/2012 19:36:26 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9c190
+08/08/2012 19:36:26 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9bea0
+08/08/2012 19:36:26 - ../i3-build/src/randr.c:get_output_containing:84 - comparing x=641 y=502 with x=0 and y=0 width 1280 height 1024
+08/08/2012 19:36:26 - ../i3-build/src/floating.c:floating_maybe_reassign_ws:347 - still the same ws
+08/08/2012 19:36:26 - ../i3-build/src/randr.c:get_output_containing:84 - comparing x=321 y=410 with x=0 and y=0 width 1280 height 1024
+08/08/2012 19:36:26 - ../i3-build/src/assignments.c:run_assignments:18 - Checking if any assignments match this window
+08/08/2012 19:36:26 - Checking window 0x01a00138 (class Thunderbird)
+08/08/2012 19:36:26 - Regular expression "Firefox" does not match "Thunderbird"
+08/08/2012 19:36:26 - Checking window 0x01a00138 (class Thunderbird)
+08/08/2012 19:36:26 - Regular expression "Thunderbird" matches "Thunderbird"
+08/08/2012 19:36:26 - window class matches (Thunderbird)
+08/08/2012 19:36:26 - ../i3-build/src/assignments.c:run_assignments:41 - matching assignment, would do:
+08/08/2012 19:36:26 - ../i3-build/src/tree.c:tree_render:437 - -- BEGIN RENDERING --
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa4fb8 / root / layout 6 / children 2
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa5120 / __i3 / layout 4 / children 1
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9bea0 / VGA-1 / layout 4 / children 3
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 0) with (1280 x 0)
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9bff8 / topdock / layout 3 / children 0
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 0) with (1280 x 1024)
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9c190 / content / layout 6 / children 1
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:111 - Rendering fullscreen node 0x8fa6d30 / 2 / layout 6 / children 1
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:372 - child at (0, 0) with (1280 x 1024)
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa6500 / #ff0000 / layout 6 / children 0
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:189 - child will be at 1x1 with size 1278x1022
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 1024) with (1280 x 0)
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9c2f8 / bottomdock / layout 3 / children 0
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:247 - Rendering floating windows:
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:278 - floating child at (321,410) with 640 x 184
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa6ab8 / #0000FF / layout 6 / children 1
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:372 - child at (321, 428) with (640 x 166)
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa6960 / #00FF00 / layout 6 / children 0
+08/08/2012 19:36:26 - ../i3-build/src/render.c:render_con:189 - child will be at 2x0 with size 636x164
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_node:584 - pushing name [i3 con] floatingcon around 0x8fa6960 for con 0x8fa6ab8
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_node:683 - setting rect (321, 410, 640, 18)
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_node:746 - mapping container 01000012 (serial 934)
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_node:753 - Sending fake configure notify
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_node:584 - pushing name [i3 con] container around 0x8fa6868 for con 0x8fa6960
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_node:683 - setting rect (321, 428, 640, 166)
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_node:702 - setting window rect (2, 0, 636, 164)
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_node:732 - mapping child window (serial 957)
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_node:746 - mapping container 01000011 (serial 959)
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_node:753 - Sending fake configure notify
+08/08/2012 19:36:26 - ../i3-build/src/xcb.c:fake_absolute_configure_notify:101 - fake rect = (323, 428, 636, 164)
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_changes:928 - Updating focus by sending WM_TAKE_FOCUS to window 0x01a00138 (focused: 0x8fa6960 / #00FF00)
+08/08/2012 19:36:26 - ../i3-build/src/xcb.c:send_take_focus:124 - Sending WM_TAKE_FOCUS to the client
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_changes:931 - set_focus = 1
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_changes:935 - Updating focus (focused: 0x8fa6960 / #00FF00)
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:26 - ../i3-build/src/tree.c:tree_render:446 - -- END RENDERING --
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:26 - ../i3-build/src/handlers.c:handle_expose_event:569 - window = 01000012
+08/08/2012 19:36:26 - ../i3-build/src/handlers.c:handle_expose_event:569 - window = 01000011
+08/08/2012 19:36:26 - ../i3-build/src/handlers.c:handle_expose_event:569 - window = 01000011
+08/08/2012 19:36:26 - ../i3-build/src/handlers.c:handle_expose_event:569 - window = 01000011
+08/08/2012 19:36:26 - _NET_WM_NAME changed to "Saisissez votre mot de passe"
+08/08/2012 19:36:26 - ../i3-build/src/assignments.c:run_assignments:18 - Checking if any assignments match this window
+08/08/2012 19:36:26 - Checking window 0x01a00138 (class Thunderbird)
+08/08/2012 19:36:26 - Regular expression "Firefox" does not match "Thunderbird"
+08/08/2012 19:36:26 - Checking window 0x01a00138 (class Thunderbird)
+08/08/2012 19:36:26 - Regular expression "Thunderbird" matches "Thunderbird"
+08/08/2012 19:36:26 - window class matches (Thunderbird)
+08/08/2012 19:36:26 - ../i3-build/src/assignments.c:run_assignments:33 - This assignment already ran for the given window, not executing it again.
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:26 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:26 - ../i3-build/src/handlers.c:handle_hints:797 - Ignoring urgency flag for current client
+08/08/2012 19:36:26 - WM_HINTS.input changed to "1"
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x01a00138 (received from 0x01a00138), serial 1032
+08/08/2012 19:36:28 - ../i3-build/src/tree.c:tree_close:201 - next = 0x8fa6ab8, focused = 0x8fa6960
+08/08/2012 19:36:28 - ../i3-build/src/tree.c:tree_close:203 - closing 0x8fa6960, kill_window = 0
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_is_floating:344 - checking if con 0x8fa6960 is floating
+08/08/2012 19:36:28 - ../i3-build/src/tree.c:tree_close:263 - Container was floating, killing floating container
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_next_focused:742 - selecting next for CT_FLOATING_CON
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_next_focused:744 - next = (nil)
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_next_focused:747 - using prev, next = (nil)
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_next_focused:752 - no more floating containers for next = 0x8fa6d30, restoring workspace focus
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_next_focused:756 - skipping container itself, we want the next client
+08/08/2012 19:36:28 - ../i3-build/src/tree.c:tree_close:201 - next = 0x8fa6500, focused = 0x8fa6960
+08/08/2012 19:36:28 - ../i3-build/src/tree.c:tree_close:203 - closing 0x8fa6ab8, kill_window = 0
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_is_floating:344 - checking if con 0x8fa6ab8 is floating
+08/08/2012 19:36:28 - ../i3-build/src/tree.c:tree_close:292 - focusing 0x8fa6500 / #ff0000
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8fa6500
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8fa6d30
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9c190
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9bea0
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_on_remove_child:1197 - on_remove_child
+08/08/2012 19:36:28 - ../i3-build/src/tree.c:tree_close:265 - parent container killed
+08/08/2012 19:36:28 - ../i3-build/src/tree.c:tree_close:286 - No next container, i will just exit now
+08/08/2012 19:36:28 - ../i3-build/src/tree.c:tree_render:437 - -- BEGIN RENDERING --
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa4fb8 / root / layout 6 / children 2
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa5120 / __i3 / layout 4 / children 1
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9bea0 / VGA-1 / layout 4 / children 3
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 0) with (1280 x 0)
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9bff8 / topdock / layout 3 / children 0
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 0) with (1280 x 1024)
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9c190 / content / layout 6 / children 1
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering fullscreen node 0x8fa6d30 / 2 / layout 6 / children 1
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:372 - child at (0, 0) with (1280 x 1024)
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa6500 / #ff0000 / layout 6 / children 0
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:189 - child will be at 1x1 with size 1278x1022
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 1024) with (1280 x 0)
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9c2f8 / bottomdock / layout 3 / children 0
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:247 - Rendering floating windows:
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:928 - Updating focus by sending WM_TAKE_FOCUS to window 0x01a00081 (focused: 0x8fa6500 / #ff0000)
+08/08/2012 19:36:28 - ../i3-build/src/xcb.c:send_take_focus:124 - Sending WM_TAKE_FOCUS to the client
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:931 - set_focus = 1
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:935 - Updating focus (focused: 0x8fa6500 / #ff0000)
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:28 - ../i3-build/src/tree.c:tree_render:446 - -- END RENDERING --
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x01a00138 (received from 0x01000011), serial 1032
+08/08/2012 19:36:28 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_expose_event:569 - window = 01000011
+08/08/2012 19:36:28 - expose event for unknown window, ignoring
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_enter_notify:126 - enter_notify for 01000011, mode = 0, detail 2, serial 1032
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_enter_notify:127 - coordinates 319, 84
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_enter_notify:135 - Event ignored
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x01a00138 (received from 0x00000196), serial 1032
+08/08/2012 19:36:28 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_destroy_notify_event:485 - destroy notify for 0x01a00138, 0x01a00138
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x01a00138 (received from 0x01a00138), serial 1032
+08/08/2012 19:36:28 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_destroy_notify_event:485 - destroy notify for 0x01000011, 0x01a00138
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x01a00138 (received from 0x01000011), serial 1032
+08/08/2012 19:36:28 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:28 - ../i3-build/src/main.c:xcb_check_cb:121 - Expected X11 Error received for sequence 40a
+08/08/2012 19:36:28 - ../i3-build/src/main.c:xcb_check_cb:121 - Expected X11 Error received for sequence 40b
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x01000011 (received from 0x01000011), serial 1036
+08/08/2012 19:36:28 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_enter_notify:126 - enter_notify for 0100000e, mode = 0, detail 4, serial 1036
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_enter_notify:127 - coordinates 640, 512
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_destroy_notify_event:485 - destroy notify for 0x01000011, 0x01000011
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x01000011 (received from 0x01000011), serial 1036
+08/08/2012 19:36:28 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x01000012 (received from 0x01000012), serial 1039
+08/08/2012 19:36:28 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_destroy_notify_event:485 - destroy notify for 0x01000012, 0x01000012
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x01000012 (received from 0x01000012), serial 1039
+08/08/2012 19:36:28 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_hints:797 - Ignoring urgency flag for current client
+08/08/2012 19:36:28 - WM_HINTS.input changed to "1"
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_configure_request:293 - window 0x01a00c41 wants to be at 332x429 with 613x163
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_configure_request:298 - Configure request for unmanaged window, can do that.
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_configure_request:293 - window 0x01a00c41 wants to be at 332x429 with 200x200
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_configure_request:298 - Configure request for unmanaged window, can do that.
+08/08/2012 19:36:28 - ClientMessage for window 0x01a00c41
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_client_message:602 - atom in clientmessage is 436, fullscreen is 375
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_client_message:603 - not about fullscreen atom
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_configure_request:293 - window 0x01a00c41 wants to be at 0x0 with 200x200
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_configure_request:298 - Configure request for unmanaged window, can do that.
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_map_request:273 - window = 0x01a00c41, serial is 1062.
+08/08/2012 19:36:28 - ../i3-build/src/manage.c:manage_window:148 - Managing window 0x01a00c41
+08/08/2012 19:36:28 - WM_CLASS changed to Dialog (instance), Thunderbird (class)
+08/08/2012 19:36:28 - ../i3-build/src/window.c:window_update_name_legacy:108 - WM_NAME not set (_NET_WM_NAME is what you want anyways).
+08/08/2012 19:36:28 - ../i3-build/src/window.c:window_update_name:56 - _NET_WM_NAME not specified, not changing
+08/08/2012 19:36:28 - ../i3-build/src/window.c:window_update_leader:166 - Client leader changed to 01a00001
+08/08/2012 19:36:28 - ../i3-build/src/window.c:window_update_transient_for:190 - Transient for changed to 01a00081
+08/08/2012 19:36:28 - ../i3-build/src/window.c:window_update_strut_partial:203 - _NET_WM_STRUT_PARTIAL not set.
+08/08/2012 19:36:28 - ../i3-build/src/window.c:window_update_role:228 - WM_WINDOW_ROLE not set.
+08/08/2012 19:36:28 - WM_HINTS.input changed to "1"
+08/08/2012 19:36:28 - ../i3-build/src/startup.c:startup_workspace_for_window:217 - No _NET_STARTUP_ID set on this window
+08/08/2012 19:36:28 - ../i3-build/src/startup.c:startup_workspace_for_window:223 - Checking leader window 0x01a00001
+08/08/2012 19:36:28 - ../i3-build/src/startup.c:startup_workspace_for_window:255 - WARNING: This sequence (ID ) was not found
+08/08/2012 19:36:28 - ../i3-build/src/manage.c:manage_window:179 - startup workspace = (null)
+08/08/2012 19:36:28 - ../i3-build/src/manage.c:manage_window:217 - Initial geometry: (332, 429, 613, 163)
+08/08/2012 19:36:28 - Checking window 0x01a00c41 (class Thunderbird)
+08/08/2012 19:36:28 - dock status does not match
+08/08/2012 19:36:28 - Checking window 0x01a00c41 (class Thunderbird)
+08/08/2012 19:36:28 - dock status does not match
+08/08/2012 19:36:28 - Checking window 0x01a00c41 (class Thunderbird)
+08/08/2012 19:36:28 - Regular expression "Firefox" does not match "Thunderbird"
+08/08/2012 19:36:28 - Checking window 0x01a00c41 (class Thunderbird)
+08/08/2012 19:36:28 - Regular expression "Thunderbird" matches "Thunderbird"
+08/08/2012 19:36:28 - window class matches (Thunderbird)
+08/08/2012 19:36:28 - ../i3-build/src/assignments.c:assignment_for:77 - got a matching assignment (to 2)
+08/08/2012 19:36:28 - ../i3-build/src/manage.c:manage_window:230 - Assignment matches ((nil))
+08/08/2012 19:36:28 - ../i3-build/src/manage.c:manage_window:233 - focused on ws 2: 0x8fa6500 / #ff0000
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_new:43 - opening window 3
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_new:46 - color #ff00ff
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_con_init:149 - adding new state for window id 0x01000017
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_attach:153 - Inserting con = 0x8fa6960 after last focused tiling con 0x8fa6500
+08/08/2012 19:36:28 - ../i3-build/src/manage.c:manage_window:264 - new container = 0x8fa6960
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_reinit:166 - resetting state 0x8f9c570 to initial
+08/08/2012 19:36:28 - ../i3-build/src/manage.c:manage_window:281 - Not in fullscreen mode, focusing
+08/08/2012 19:36:28 - workspace visible? fs = 0x8fa6d30, ws = 0x8fa6d30
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8fa6960
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8fa6d30
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9c190
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9bea0
+08/08/2012 19:36:28 - This window is a dialog window, setting floating
+08/08/2012 19:36:28 - This window is transiert for another window, setting floating
+08/08/2012 19:36:28 - ../i3-build/src/manage.c:manage_window:348 - geometry = 613 x 163
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_is_floating:344 - checking if con 0x8fa6960 is floating
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_new:43 - opening window 4
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_new:46 - color #00ffff
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_con_init:149 - adding new state for window id 0x01000018
+08/08/2012 19:36:28 - ../i3-build/src/floating.c:floating_enable:124 - Original rect: (0, 0) with 0 x 0
+08/08/2012 19:36:28 - ../i3-build/src/floating.c:floating_enable:125 - Geometry = (332, 429) with 613 x 163
+08/08/2012 19:36:28 - ../i3-build/src/randr.c:get_output_containing:84 - comparing x=332 y=429 with x=0 and y=0 width 1280 height 1024
+08/08/2012 19:36:28 - ../i3-build/src/floating.c:floating_enable:220 - Floating rect: (332, 429) with 617 x 184
+08/08/2012 19:36:28 - ../i3-build/src/floating.c:floating_enable:237 - Corrected y = 410 (deco_height = 19)
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa6a68 / #00ffff / layout 6 / children 1
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:372 - child at (332, 428) with (617 x 166)
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa6960 / #ff00ff / layout 6 / children 0
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:189 - child will be at 2x0 with size 613x164
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa6960 / #ff00ff / layout 6 / children 0
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:189 - child will be at 2x0 with size 613x164
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8fa6960
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8fa6a68
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8fa6d30
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9c190
+08/08/2012 19:36:28 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9bea0
+08/08/2012 19:36:28 - ../i3-build/src/randr.c:get_output_containing:84 - comparing x=640 y=502 with x=0 and y=0 width 1280 height 1024
+08/08/2012 19:36:28 - ../i3-build/src/floating.c:floating_maybe_reassign_ws:347 - still the same ws
+08/08/2012 19:36:28 - ../i3-build/src/randr.c:get_output_containing:84 - comparing x=332 y=410 with x=0 and y=0 width 1280 height 1024
+08/08/2012 19:36:28 - ../i3-build/src/assignments.c:run_assignments:18 - Checking if any assignments match this window
+08/08/2012 19:36:28 - Checking window 0x01a00c41 (class Thunderbird)
+08/08/2012 19:36:28 - Regular expression "Firefox" does not match "Thunderbird"
+08/08/2012 19:36:28 - Checking window 0x01a00c41 (class Thunderbird)
+08/08/2012 19:36:28 - Regular expression "Thunderbird" matches "Thunderbird"
+08/08/2012 19:36:28 - window class matches (Thunderbird)
+08/08/2012 19:36:28 - ../i3-build/src/assignments.c:run_assignments:41 - matching assignment, would do:
+08/08/2012 19:36:28 - ../i3-build/src/tree.c:tree_render:437 - -- BEGIN RENDERING --
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa4fb8 / root / layout 6 / children 2
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa5120 / __i3 / layout 4 / children 1
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9bea0 / VGA-1 / layout 4 / children 3
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 0) with (1280 x 0)
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9bff8 / topdock / layout 3 / children 0
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 0) with (1280 x 1024)
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9c190 / content / layout 6 / children 1
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering fullscreen node 0x8fa6d30 / 2 / layout 6 / children 1
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:372 - child at (0, 0) with (1280 x 1024)
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa6500 / #ff0000 / layout 6 / children 0
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:189 - child will be at 1x1 with size 1278x1022
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 1024) with (1280 x 0)
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9c2f8 / bottomdock / layout 3 / children 0
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:247 - Rendering floating windows:
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:278 - floating child at (332,410) with 617 x 184
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa6a68 / #00ffff / layout 6 / children 1
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:372 - child at (332, 428) with (617 x 166)
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa6960 / #ff00ff / layout 6 / children 0
+08/08/2012 19:36:28 - ../i3-build/src/render.c:render_con:189 - child will be at 2x0 with size 613x164
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_node:584 - pushing name [i3 con] floatingcon around 0x8fa6960 for con 0x8fa6a68
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_node:683 - setting rect (332, 410, 617, 18)
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_node:746 - mapping container 01000018 (serial 1102)
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_node:753 - Sending fake configure notify
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_node:584 - pushing name [i3 con] container around 0x8f9c500 for con 0x8fa6960
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_node:683 - setting rect (332, 428, 617, 166)
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_node:702 - setting window rect (2, 0, 613, 164)
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_node:732 - mapping child window (serial 1125)
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_node:746 - mapping container 01000017 (serial 1127)
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_node:753 - Sending fake configure notify
+08/08/2012 19:36:28 - ../i3-build/src/xcb.c:fake_absolute_configure_notify:101 - fake rect = (334, 428, 613, 164)
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:928 - Updating focus by sending WM_TAKE_FOCUS to window 0x01a00c41 (focused: 0x8fa6960 / #ff00ff)
+08/08/2012 19:36:28 - ../i3-build/src/xcb.c:send_take_focus:124 - Sending WM_TAKE_FOCUS to the client
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:931 - set_focus = 1
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:935 - Updating focus (focused: 0x8fa6960 / #ff00ff)
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:28 - ../i3-build/src/tree.c:tree_render:446 - -- END RENDERING --
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_expose_event:569 - window = 01000018
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_expose_event:569 - window = 01000017
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_expose_event:569 - window = 01000017
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_expose_event:569 - window = 01000017
+08/08/2012 19:36:28 - _NET_WM_NAME changed to "Saisissez votre mot de passe"
+08/08/2012 19:36:28 - ../i3-build/src/assignments.c:run_assignments:18 - Checking if any assignments match this window
+08/08/2012 19:36:28 - Checking window 0x01a00c41 (class Thunderbird)
+08/08/2012 19:36:28 - Regular expression "Firefox" does not match "Thunderbird"
+08/08/2012 19:36:28 - Checking window 0x01a00c41 (class Thunderbird)
+08/08/2012 19:36:28 - Regular expression "Thunderbird" matches "Thunderbird"
+08/08/2012 19:36:28 - window class matches (Thunderbird)
+08/08/2012 19:36:28 - ../i3-build/src/assignments.c:run_assignments:33 - This assignment already ran for the given window, not executing it again.
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:28 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:28 - ../i3-build/src/handlers.c:handle_hints:797 - Ignoring urgency flag for current client
+08/08/2012 19:36:28 - WM_HINTS.input changed to "1"
+08/08/2012 19:36:29 - ../i3-build/src/main.c:xkb_got_event:147 - Handling XKB event
+08/08/2012 19:36:29 - ../i3-build/src/main.c:xkb_got_event:147 - Handling XKB event
+08/08/2012 19:36:31 - ../i3-build/src/main.c:xkb_got_event:147 - Handling XKB event
+08/08/2012 19:36:31 - ../i3-build/src/main.c:xkb_got_event:147 - Handling XKB event
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x01a00c41 (received from 0x01a00c41), serial 1200
+08/08/2012 19:36:33 - ../i3-build/src/tree.c:tree_close:201 - next = 0x8fa6a68, focused = 0x8fa6960
+08/08/2012 19:36:33 - ../i3-build/src/tree.c:tree_close:203 - closing 0x8fa6960, kill_window = 0
+08/08/2012 19:36:33 - ../i3-build/src/con.c:con_is_floating:344 - checking if con 0x8fa6960 is floating
+08/08/2012 19:36:33 - ../i3-build/src/tree.c:tree_close:263 - Container was floating, killing floating container
+08/08/2012 19:36:33 - ../i3-build/src/con.c:con_next_focused:742 - selecting next for CT_FLOATING_CON
+08/08/2012 19:36:33 - ../i3-build/src/con.c:con_next_focused:744 - next = (nil)
+08/08/2012 19:36:33 - ../i3-build/src/con.c:con_next_focused:747 - using prev, next = (nil)
+08/08/2012 19:36:33 - ../i3-build/src/con.c:con_next_focused:752 - no more floating containers for next = 0x8fa6d30, restoring workspace focus
+08/08/2012 19:36:33 - ../i3-build/src/con.c:con_next_focused:756 - skipping container itself, we want the next client
+08/08/2012 19:36:33 - ../i3-build/src/tree.c:tree_close:201 - next = 0x8fa6500, focused = 0x8fa6960
+08/08/2012 19:36:33 - ../i3-build/src/tree.c:tree_close:203 - closing 0x8fa6a68, kill_window = 0
+08/08/2012 19:36:33 - ../i3-build/src/con.c:con_is_floating:344 - checking if con 0x8fa6a68 is floating
+08/08/2012 19:36:33 - ../i3-build/src/tree.c:tree_close:292 - focusing 0x8fa6500 / #ff0000
+08/08/2012 19:36:33 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8fa6500
+08/08/2012 19:36:33 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8fa6d30
+08/08/2012 19:36:33 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9c190
+08/08/2012 19:36:33 - ../i3-build/src/con.c:con_focus:186 - con_focus = 0x8f9bea0
+08/08/2012 19:36:33 - ../i3-build/src/con.c:con_on_remove_child:1197 - on_remove_child
+08/08/2012 19:36:33 - ../i3-build/src/tree.c:tree_close:265 - parent container killed
+08/08/2012 19:36:33 - ../i3-build/src/tree.c:tree_close:286 - No next container, i will just exit now
+08/08/2012 19:36:33 - ../i3-build/src/tree.c:tree_render:437 - -- BEGIN RENDERING --
+08/08/2012 19:36:33 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa4fb8 / root / layout 6 / children 2
+08/08/2012 19:36:33 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa5120 / __i3 / layout 4 / children 1
+08/08/2012 19:36:33 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9bea0 / VGA-1 / layout 4 / children 3
+08/08/2012 19:36:33 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 0) with (1280 x 0)
+08/08/2012 19:36:33 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9bff8 / topdock / layout 3 / children 0
+08/08/2012 19:36:33 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 0) with (1280 x 1024)
+08/08/2012 19:36:33 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9c190 / content / layout 6 / children 1
+08/08/2012 19:36:33 - ../i3-build/src/render.c:render_con:111 - Rendering fullscreen node 0x8fa6d30 / 2 / layout 6 / children 1
+08/08/2012 19:36:33 - ../i3-build/src/render.c:render_con:372 - child at (0, 0) with (1280 x 1024)
+08/08/2012 19:36:33 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8fa6500 / #ff0000 / layout 6 / children 0
+08/08/2012 19:36:33 - ../i3-build/src/render.c:render_con:189 - child will be at 1x1 with size 1278x1022
+08/08/2012 19:36:33 - ../i3-build/src/render.c:render_l_output:93 - child at (0, 1024) with (1280 x 0)
+08/08/2012 19:36:33 - ../i3-build/src/render.c:render_con:111 - Rendering node 0x8f9c2f8 / bottomdock / layout 3 / children 0
+08/08/2012 19:36:33 - ../i3-build/src/render.c:render_con:247 - Rendering floating windows:
+08/08/2012 19:36:33 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:33 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:33 - ../i3-build/src/x.c:x_push_changes:928 - Updating focus by sending WM_TAKE_FOCUS to window 0x01a00081 (focused: 0x8fa6500 / #ff0000)
+08/08/2012 19:36:33 - ../i3-build/src/xcb.c:send_take_focus:124 - Sending WM_TAKE_FOCUS to the client
+08/08/2012 19:36:33 - ../i3-build/src/x.c:x_push_changes:931 - set_focus = 1
+08/08/2012 19:36:33 - ../i3-build/src/x.c:x_push_changes:935 - Updating focus (focused: 0x8fa6500 / #ff0000)
+08/08/2012 19:36:33 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:33 - ../i3-build/src/tree.c:tree_render:446 - -- END RENDERING --
+08/08/2012 19:36:33 - ../i3-build/src/x.c:x_push_changes:832 - -- PUSHING WINDOW STACK --
+08/08/2012 19:36:33 - ../i3-build/src/x.c:x_push_changes:885 - PUSHING CHANGES
+08/08/2012 19:36:33 - ../i3-build/src/x.c:x_push_changes:963 - ENDING CHANGES
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x01a00c41 (received from 0x01000017), serial 1200
+08/08/2012 19:36:33 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_expose_event:569 - window = 01000017
+08/08/2012 19:36:33 - expose event for unknown window, ignoring
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_enter_notify:126 - enter_notify for 01000017, mode = 0, detail 2, serial 1200
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_enter_notify:127 - coordinates 308, 84
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_enter_notify:135 - Event ignored
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x01a00c41 (received from 0x00000196), serial 1200
+08/08/2012 19:36:33 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_destroy_notify_event:485 - destroy notify for 0x01a00c41, 0x01a00c41
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x01a00c41 (received from 0x01a00c41), serial 1200
+08/08/2012 19:36:33 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_destroy_notify_event:485 - destroy notify for 0x01000017, 0x01a00c41
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x01a00c41 (received from 0x01000017), serial 1200
+08/08/2012 19:36:33 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:33 - ../i3-build/src/main.c:xcb_check_cb:121 - Expected X11 Error received for sequence 4b2
+08/08/2012 19:36:33 - ../i3-build/src/main.c:xcb_check_cb:121 - Expected X11 Error received for sequence 4b3
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x01000017 (received from 0x01000017), serial 1204
+08/08/2012 19:36:33 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_enter_notify:126 - enter_notify for 0100000e, mode = 0, detail 4, serial 1204
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_enter_notify:127 - coordinates 640, 512
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_destroy_notify_event:485 - destroy notify for 0x01000017, 0x01000017
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x01000017 (received from 0x01000017), serial 1204
+08/08/2012 19:36:33 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x01000018 (received from 0x01000018), serial 1207
+08/08/2012 19:36:33 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_destroy_notify_event:485 - destroy notify for 0x01000018, 0x01000018
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x01000018 (received from 0x01000018), serial 1207
+08/08/2012 19:36:33 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:33 - ../i3-build/src/handlers.c:handle_hints:797 - Ignoring urgency flag for current client
+08/08/2012 19:36:33 - WM_HINTS.input changed to "1"
+08/08/2012 19:36:39 - ../i3-build/src/main.c:xkb_got_event:147 - Handling XKB event
+08/08/2012 19:36:39 - ../i3-build/src/main.c:xkb_got_event:147 - Handling XKB event
+08/08/2012 19:36:39 - ../i3-build/src/handlers.c:handle_focus_in:889 - focus change in, for window 0x01a00081
+08/08/2012 19:36:39 - ../i3-build/src/handlers.c:handle_focus_in:893 - That is con 0x8fa6500 / #ff0000
+08/08/2012 19:36:39 - ../i3-build/src/handlers.c:handle_focus_in:897 - FocusIn event for grab/ungrab, ignoring
+08/08/2012 19:36:39 - ../i3-build/src/key_press.c:handle_key_press:236 - Keypress 38, state raw = 81
+08/08/2012 19:36:39 - ../i3-build/src/key_press.c:handle_key_press:240 - (removed numlock, state = 65)
+08/08/2012 19:36:39 - ../i3-build/src/key_press.c:handle_key_press:244 - (removed upper 8 bits, state = 65)
+08/08/2012 19:36:39 - ../i3-build/src/key_press.c:handle_key_press:249 - (checked mode_switch, state 65)
+08/08/2012 19:36:39 - ../i3-build/src/commands_parser.c:parse_command:207 - COMMAND: *exec sudo shutdown -h now*
+08/08/2012 19:36:39 - ../i3-build/src/commands.c:cmd_criteria_init:209 - Initializing criteria, current_match = 0x80a64e0
+08/08/2012 19:36:39 - ../i3-build/src/commands.c:cmd_exec:1171 - should execute sudo shutdown -h now, no_startup_id = 0
+08/08/2012 19:36:39 - startup id = i3/sudo/734-2-arch_TIME279990
+08/08/2012 19:36:39 - executing: sudo shutdown -h now
+08/08/2012 19:36:39 - ../i3-build/src/commands.c:cmd_criteria_init:209 - Initializing criteria, current_match = 0x80a64e0
+08/08/2012 19:36:39 - ../i3-build/src/key_press.c:json_boolean:185 - Got bool: 1, success_key 1, nesting_level 1
+08/08/2012 19:36:39 - ../i3-build/src/handlers.c:handle_destroy_notify_event:485 - destroy notify for 0x0100001d, 0x0100001d
+08/08/2012 19:36:39 - ../i3-build/src/handlers.c:handle_unmap_notify_event:418 - UnmapNotify for 0x0100001d (received from 0x0100001d), serial 1237
+08/08/2012 19:36:39 - Not a managed window, ignoring UnmapNotify event
+08/08/2012 19:36:39 - ../i3-build/src/handlers.c:handle_focus_in:889 - focus change in, for window 0x01a00081
+08/08/2012 19:36:40 - ../i3-build/src/handlers.c:handle_focus_in:893 - That is con 0x8fa6500 / #ff0000
+08/08/2012 19:36:40 - ../i3-build/src/handlers.c:handle_focus_in:897 - FocusIn event for grab/ungrab, ignoring
+08/08/2012 19:36:40 - ../i3-build/src/handlers.c:handle_hints:797 - Ignoring urgency flag for current client
+08/08/2012 19:36:40 - WM_HINTS.input changed to "1"
+08/08/2012 19:36:40 - ../i3-build/src/main.c:xkb_got_event:147 - Handling XKB event
+08/08/2012 19:36:40 - ../i3-build/src/main.c:xkb_got_event:147 - Handling XKB event
+08/08/2012 19:36:40 - ../i3-build/src/handlers.c:handle_expose_event:569 - window = 0100000e
+08/08/2012 19:36:40 - ../i3-build/src/handlers.c:handle_expose_event:569 - window = 0100000e
+08/08/2012 19:36:40 - ../i3-build/src/handlers.c:handle_expose_event:569 - window = 0100000e
+Received signal 1, terminating
+Closing SHM log "/i3-log-734"
+g_dbus_connection_real_closed: Remote peer vanished with error: Underlying GIOStream returned 0 bytes on an async read (g-io-error-quark, 0). Exiting.
+/bin/bash : ligne 1 :   746 ComplÃ©tÃ©              thunderbird

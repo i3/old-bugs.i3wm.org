@@ -1,0 +1,108 @@
+From 4204724caddddc50b1242294c7918e21a633e22a Mon Sep 17 00:00:00 2001
+From: Peter Bui <pnutzh4x0r@gmail.com>
+Date: Mon, 8 Aug 2011 17:28:19 -0400
+Subject: [PATCH] BUG-396: Implement move output <RANDR-OUTPUT> command
+
+Also add support for move output <up|down|left|right> and update
+userguide about the new command.
+---
+ docs/userguide |    5 +++++
+ src/cmdparse.l |    1 +
+ src/cmdparse.y |   46 ++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 52 insertions(+), 0 deletions(-)
+
+diff --git a/docs/userguide b/docs/userguide
+index 4a11cb1..be76b24 100644
+--- a/docs/userguide
++++ b/docs/userguide
+@@ -759,6 +759,11 @@ You can also switch to the next and previous workspace with the commands
+ workspace 1, 3, 4 and 9 and you want to cycle through them with a single key
+ combination.
+ 
++To move a container to another xrandr output such as +LVDS1+ or +VGA1+, you can
++use the +move output+ command followed by the name of the target output.  You
++may also use +left+, +right+, +up+, +down+ instead of the xrandr output name to
++move to the the next output in the specified direction.
++
+ *Examples*:
+ -------------------------
+ bindsym mod+1 workspace 1
+diff --git a/src/cmdparse.l b/src/cmdparse.l
+index 6c756b0..c7c64e3 100644
+--- a/src/cmdparse.l
++++ b/src/cmdparse.l
+@@ -123,6 +123,7 @@ floating                        { return TOK_FLOATING; }
+ toggle                          { return TOK_TOGGLE; }
+ mode_toggle                     { return TOK_MODE_TOGGLE; }
+ workspace                       { WS_STRING; return TOK_WORKSPACE; }
++output                          { WS_STRING; return TOK_OUTPUT; }
+ focus                           { return TOK_FOCUS; }
+ move                            { return TOK_MOVE; }
+ open                            { return TOK_OPEN; }
+diff --git a/src/cmdparse.y b/src/cmdparse.y
+index 32558f2..2131172 100644
+--- a/src/cmdparse.y
++++ b/src/cmdparse.y
+@@ -149,6 +149,7 @@ bool definitelyGreaterThan(float a, float b, float epsilon) {
+ %token              TOK_ENABLE          "enable"
+ %token              TOK_DISABLE         "disable"
+ %token              TOK_WORKSPACE       "workspace"
++%token              TOK_OUTPUT          "output"
+ %token              TOK_TOGGLE          "toggle"
+ %token              TOK_FOCUS           "focus"
+ %token              TOK_MOVE            "move"
+@@ -704,6 +705,51 @@ move:
+ 
+         tree_render();
+     }
++    | TOK_MOVE TOK_OUTPUT STR
++    {
++        owindow *current;
++
++        printf("should move window to output %s", $3);
++
++        HANDLE_EMPTY_MATCH;
++
++        /* get the output */
++        Output *current_output = NULL;
++        Output *output;
++
++        TAILQ_FOREACH(current, &owindows, owindows)
++            current_output = get_output_containing(current->con->rect.x, current->con->rect.y);
++
++        assert(current_output != NULL);
++
++        if (strcasecmp($3, "up") == 0)
++            output = get_output_next(D_UP, current_output);
++        else if (strcasecmp($3, "down") == 0)
++            output = get_output_next(D_DOWN, current_output);
++        else if (strcasecmp($3, "left") == 0)
++            output = get_output_next(D_LEFT, current_output);
++        else if (strcasecmp($3, "right") == 0)
++            output = get_output_next(D_RIGHT, current_output);
++        else
++            output = get_output_by_name($3);
++        free($3);
++
++        if (!output)
++            return 0;
++
++        /* get visible workspace on output */
++        Con *ws = NULL;
++        GREP_FIRST(ws, output_get_content(output->con), workspace_is_visible(child));
++        if (!ws)
++            return 0;
++
++        TAILQ_FOREACH(current, &owindows, owindows) {
++            printf("matching: %p / %s\n", current->con, current->con->name);
++            con_move_to_workspace(current->con, ws);
++        }
++
++        tree_render();
++    }
+     ;
+ 
+ append_layout:
+-- 
+1.7.6
+

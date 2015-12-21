@@ -1,0 +1,144 @@
+# This configuration uses Mod1 and Mod3. Make sure they are mapped properly using xev(1)
+# and xmodmap(1). Usually, Mod1 is Alt (Alt_L) and Mod3 is Windows (Super_L)
+
+# ISO 10646 = Unicode
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+# Use Mouse+Mod1 to drag floating windows to their wanted position
+floating_modifier Mod1
+
+# Fullscreen (Mod1+f)
+bind Mod1+41 f
+
+# Stacking (Mod1+h)
+bind Mod1+43 s
+
+# Tabbed (Mod1+w)
+bind Mod1+25 T
+
+# Default (Mod1+e)
+bind Mod1+26 d
+
+# Toggle tiling/floating of the current window (Mod1+Shift+Space)
+bind Mod1+Shift+65 t
+
+# Go into the tiling layer / floating layer, depending on whether
+# the current window is tiling / floating (Mod1+t)
+bind Mod1+28 focus ft
+
+# Focus (Mod1+j/k/l/;)
+bind Mod1+44 h
+bind Mod1+45 j
+bind Mod1+46 k
+bind Mod1+47 l
+# (alternatively, you can use the cursor keys:)
+bindsym Mod1+Left h
+bindsym Mod1+Down j
+bindsym Mod1+Up k
+bindsym Mod1+Right l
+
+# Focus Container (Mod3+j/k/l/;)
+bind Mod3+44 wch
+bind Mod3+45 wcj
+bind Mod3+46 wck
+bind Mod3+47 wcl
+# (alternatively, you can use the cursor keys:)
+bindsym Mod3+Left wch
+bindsym Mod3+Down wcj
+bindsym Mod3+Up wck
+bindsym Mod3+Right wcl
+
+# Snap (Mod1+Control+j/k/l/;)
+bind Mod1+Control+44 sh
+bind Mod1+Control+45 sj
+bind Mod1+Control+46 sk
+bind Mod1+Control+47 sl
+# (alternatively, you can use the cursor keys:)
+bindsym Mod1+Control+Left sh
+bindsym Mod1+Control+Down sj
+bindsym Mod1+Control+Up sk
+bindsym Mod1+Control+Right sl
+
+# Move (Mod1+Shift+j/k/l/;)
+bind Mod1+Shift+44 mh
+bind Mod1+Shift+45 mj
+bind Mod1+Shift+46 mk
+bind Mod1+Shift+47 ml
+# (alternatively, you can use the cursor keys:)
+bindsym Mod1+Shift+Left mh
+bindsym Mod1+Shift+Down mj
+bindsym Mod1+Shift+Up mk
+bindsym Mod1+Shift+Right ml
+
+# Move Container (Mod3+Shift+j/k/l/;)
+bind Mod3+Shift+44 wcmh
+bind Mod3+Shift+45 wcmj
+bind Mod3+Shift+46 wcmk
+bind Mod3+Shift+47 wcml
+
+# Workspaces (Mod1+1/2/…)
+bind Mod1+10 1
+bind Mod1+11 2
+bind Mod1+12 3
+bind Mod1+13 4
+bind Mod1+14 5
+bind Mod1+15 6
+bind Mod1+16 7
+bind Mod1+17 8
+bind Mod1+18 9
+bind Mod1+19 10
+
+# Move to Workspaces
+bind Mod1+Shift+10 m1
+bind Mod1+Shift+11 m2
+bind Mod1+Shift+12 m3
+bind Mod1+Shift+13 m4
+bind Mod1+Shift+14 m5
+bind Mod1+Shift+15 m6
+bind Mod1+Shift+16 m7
+bind Mod1+Shift+17 m8
+bind Mod1+Shift+18 m9
+bind Mod1+Shift+19 m10
+
+# Mod1+Enter starts a new terminal
+bind Mod1+36 exec /usr/bin/x-terminal-emulator
+
+# Mod1+Shift+q kills the current client
+bind Mod1+Shift+24 kill
+
+# Mod1+v starts dmenu and launches the selected application
+# for now, we don’t have a launcher of our own.
+bind Mod1+55 exec /usr/bin/dmenu_run
+
+# Mod1+Shift+e exits i3
+bind Mod1+Shift+26 exit
+
+# Mod1+Shift+r restarts i3 inplace
+bind Mod1+Shift+27 restart
+
+# The IPC interface allows programs like an external workspace bar
+# (i3-wsbar) or i3-msg (can be used to "remote-control" i3) to work.
+ipc-socket ~/.i3/ipc.sock
+
+workspace 1 output VGA1
+workspace 2 output VGA1
+workspace 3 output VGA1
+workspace 4 output VGA1
+workspace 5 output VGA1
+
+workspace 5 output DVI1
+workspace 6 output DVI1
+workspace 7 output DVI1
+workspace 8 output DVI1
+workspace 9 output DVI1
+
+mode "ignore" {
+	bindsym	Mod1+Shift+i mode default
+}
+
+
+bindsym	Mod1+Shift+i mode ignore
+
+exec xrdb ~/.Xdefaults
+exec i3status | DISPLAY=:0 dzen2 -w 1200 -ta r -y 1005 -x 60 -bg black
+exec xrandr --output DVI1 --mode 1920x1080 --right-of VGA1

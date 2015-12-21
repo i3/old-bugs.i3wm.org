@@ -1,0 +1,2238 @@
+2014-01-04 22:10:11 - Regular expression "irc" does not match "i3-msg "workspace 1; append_layout .i3/save-ws-1-broken"     (stefan@xeen:pts/0)"
+2014-01-04 22:10:11 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:11 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:11 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:11 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:11 - con.c:con_is_floating:412 - checking if con 0x9c7050 is floating
+2014-01-04 22:10:11 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:11 - ipc.c:ipc_new_client:955 - IPC: new client connected on fd 10
+2014-01-04 22:10:11 - IPC: received: *workspace 1; append_layout .i3/save-ws-1-broken*
+2014-01-04 22:10:11 - commands_parser.c:parse_command:209 - COMMAND: *workspace 1; append_layout .i3/save-ws-1-broken*
+2014-01-04 22:10:11 - commands.c:cmd_criteria_init:259 - Initializing criteria, current_match = 0x65bba0
+2014-01-04 22:10:11 - commands.c:cmd_workspace_name:982 - should switch to workspace 1
+2014-01-04 22:10:11 - workspace.c:_workspace_show:405 - Setting previous_workspace_name = 4
+2014-01-04 22:10:11 - workspace.c:_workspace_show:411 - switching to 0x983bd0 / 1
+2014-01-04 22:10:11 - con.c:con_focus:214 - con_focus = 0x984520
+2014-01-04 22:10:11 - con.c:con_focus:214 - con_focus = 0x984370
+2014-01-04 22:10:11 - con.c:con_focus:214 - con_focus = 0x984170
+2014-01-04 22:10:11 - con.c:con_focus:214 - con_focus = 0x983d80
+2014-01-04 22:10:11 - con.c:con_focus:214 - con_focus = 0x983bd0
+2014-01-04 22:10:11 - con.c:con_focus:214 - con_focus = 0x9c1a50
+2014-01-04 22:10:11 - con.c:con_focus:214 - con_focus = 0x9bdfa0
+2014-01-04 22:10:11 - con.c:con_focus:214 - con_focus = 0x974130
+2014-01-04 22:10:11 - workspace.c:_workspace_show:448 - old = 0x9c7700 / 4
+2014-01-04 22:10:11 - focused now = 0x984520 / [mosh] sECuRE 1:freenode 8:sECuRE
+2014-01-04 22:10:11 - commands.c:cmd_criteria_init:259 - Initializing criteria, current_match = 0x65bba0
+2014-01-04 22:10:11 - Appending layout ".i3/save-ws-1-broken"
+2014-01-04 22:10:11 - read 2174 bytes
+2014-01-04 22:10:11 - start of map, last_key = swallows
+2014-01-04 22:10:11 - con.c:con_new_skeleton:64 - opening window 0
+2014-01-04 22:10:11 - con.c:con_new_skeleton:67 - color #ff0000
+2014-01-04 22:10:11 - key: border
+2014-01-04 22:10:11 - string: pixel for key border
+2014-01-04 22:10:11 - key: floating
+2014-01-04 22:10:11 - string: auto_off for key floating
+2014-01-04 22:10:11 - key: geometry
+2014-01-04 22:10:11 - start of map, last_key = geometry
+2014-01-04 22:10:11 - key: height
+2014-01-04 22:10:11 - int 777 for key height
+2014-01-04 22:10:11 - load_layout.c:json_int:343 - rect now: (0, 0, 0, 777)
+2014-01-04 22:10:11 - key: width
+2014-01-04 22:10:11 - int 199 for key width
+2014-01-04 22:10:11 - load_layout.c:json_int:343 - rect now: (0, 0, 199, 777)
+2014-01-04 22:10:11 - key: x
+2014-01-04 22:10:11 - int 0 for key x
+2014-01-04 22:10:11 - load_layout.c:json_int:343 - rect now: (0, 0, 199, 777)
+2014-01-04 22:10:11 - key: y
+2014-01-04 22:10:11 - int 0 for key y
+2014-01-04 22:10:11 - load_layout.c:json_int:343 - rect now: (0, 0, 199, 777)
+2014-01-04 22:10:11 - end of map
+2014-01-04 22:10:11 - key: name
+2014-01-04 22:10:11 - string: Buddy List for key name
+2014-01-04 22:10:11 - key: percent
+2014-01-04 22:10:11 - double 0.116146 for key percent
+2014-01-04 22:10:11 - key: swallows
+2014-01-04 22:10:11 - start of map, last_key = swallows
+2014-01-04 22:10:11 - creating new swallow
+2014-01-04 22:10:11 - key: class
+2014-01-04 22:10:11 - string: ^Pidgin$ for key class
+2014-01-04 22:10:11 - key: window_role
+2014-01-04 22:10:11 - string: ^buddy_list$ for key window_role
+2014-01-04 22:10:11 - end of map
+2014-01-04 22:10:11 - end of array
+2014-01-04 22:10:11 - key: type
+2014-01-04 22:10:11 - string: con for key type
+2014-01-04 22:10:11 - end of map
+2014-01-04 22:10:11 - load_layout.c:json_end_map:72 - Setting layout = L_SPLITH
+2014-01-04 22:10:11 - attaching
+2014-01-04 22:10:11 - Creating window
+2014-01-04 22:10:11 - x.c:x_con_init:151 - adding new state for window id 0x02a00334
+2014-01-04 22:10:11 - start of map, last_key = type
+2014-01-04 22:10:11 - con.c:con_new_skeleton:64 - opening window 1
+2014-01-04 22:10:11 - con.c:con_new_skeleton:67 - color #00FF00
+2014-01-04 22:10:11 - key: border
+2014-01-04 22:10:11 - string: pixel for key border
+2014-01-04 22:10:11 - key: floating
+2014-01-04 22:10:11 - string: auto_off for key floating
+2014-01-04 22:10:11 - key: layout
+2014-01-04 22:10:11 - string: splitv for key layout
+2014-01-04 22:10:11 - key: percent
+2014-01-04 22:10:11 - double 0.883854 for key percent
+2014-01-04 22:10:11 - key: swallows
+2014-01-04 22:10:11 - start of map, last_key = swallows
+2014-01-04 22:10:11 - creating new swallow
+2014-01-04 22:10:11 - end of map
+2014-01-04 22:10:11 - end of array
+2014-01-04 22:10:11 - key: type
+2014-01-04 22:10:11 - string: con for key type
+2014-01-04 22:10:11 - key: nodes
+2014-01-04 22:10:11 - start of map, last_key = nodes
+2014-01-04 22:10:11 - con.c:con_new_skeleton:64 - opening window 2
+2014-01-04 22:10:11 - con.c:con_new_skeleton:67 - color #0000FF
+2014-01-04 22:10:11 - key: border
+2014-01-04 22:10:11 - string: pixel for key border
+2014-01-04 22:10:11 - key: floating
+2014-01-04 22:10:11 - string: auto_off for key floating
+2014-01-04 22:10:11 - key: layout
+2014-01-04 22:10:11 - string: splitv for key layout
+2014-01-04 22:10:11 - key: percent
+2014-01-04 22:10:11 - int 1 for key percent
+2014-01-04 22:10:11 - key: swallows
+2014-01-04 22:10:11 - start of map, last_key = swallows
+2014-01-04 22:10:11 - creating new swallow
+2014-01-04 22:10:11 - end of map
+2014-01-04 22:10:11 - end of array
+2014-01-04 22:10:11 - key: type
+2014-01-04 22:10:11 - string: con for key type
+2014-01-04 22:10:11 - key: nodes
+2014-01-04 22:10:11 - start of map, last_key = nodes
+2014-01-04 22:10:11 - con.c:con_new_skeleton:64 - opening window 3
+2014-01-04 22:10:11 - con.c:con_new_skeleton:67 - color #ff00ff
+2014-01-04 22:10:11 - key: border
+2014-01-04 22:10:11 - string: pixel for key border
+2014-01-04 22:10:11 - key: floating
+2014-01-04 22:10:11 - string: auto_off for key floating
+2014-01-04 22:10:11 - key: geometry
+2014-01-04 22:10:11 - start of map, last_key = geometry
+2014-01-04 22:10:11 - key: height
+2014-01-04 22:10:11 - int 318 for key height
+2014-01-04 22:10:11 - load_layout.c:json_int:343 - rect now: (0, 0, 0, 318)
+2014-01-04 22:10:11 - key: width
+2014-01-04 22:10:11 - int 566 for key width
+2014-01-04 22:10:11 - load_layout.c:json_int:343 - rect now: (0, 0, 566, 318)
+2014-01-04 22:10:11 - key: x
+2014-01-04 22:10:11 - int 0 for key x
+2014-01-04 22:10:11 - load_layout.c:json_int:343 - rect now: (0, 0, 566, 318)
+2014-01-04 22:10:11 - key: y
+2014-01-04 22:10:11 - int 0 for key y
+2014-01-04 22:10:11 - load_layout.c:json_int:343 - rect now: (0, 0, 566, 318)
+2014-01-04 22:10:11 - end of map
+2014-01-04 22:10:11 - key: name
+2014-01-04 22:10:11 - string: zsh for key name
+2014-01-04 22:10:11 - key: percent
+2014-01-04 22:10:11 - double 0.500000 for key percent
+2014-01-04 22:10:11 - key: swallows
+2014-01-04 22:10:11 - start of map, last_key = swallows
+2014-01-04 22:10:11 - creating new swallow
+2014-01-04 22:10:11 - key: class
+2014-01-04 22:10:11 - string: ^URxvt$ for key class
+2014-01-04 22:10:11 - key: instance
+2014-01-04 22:10:11 - string: ^IRC$ for key instance
+2014-01-04 22:10:11 - end of map
+2014-01-04 22:10:11 - end of array
+2014-01-04 22:10:11 - key: type
+2014-01-04 22:10:11 - string: con for key type
+2014-01-04 22:10:11 - end of map
+2014-01-04 22:10:11 - load_layout.c:json_end_map:72 - Setting layout = L_SPLITH
+2014-01-04 22:10:11 - attaching
+2014-01-04 22:10:11 - Creating window
+2014-01-04 22:10:11 - x.c:x_con_init:151 - adding new state for window id 0x02a00335
+2014-01-04 22:10:11 - start of map, last_key = type
+2014-01-04 22:10:11 - con.c:con_new_skeleton:64 - opening window 4
+2014-01-04 22:10:11 - con.c:con_new_skeleton:67 - color #00ffff
+2014-01-04 22:10:11 - key: border
+2014-01-04 22:10:11 - string: pixel for key border
+2014-01-04 22:10:11 - key: floating
+2014-01-04 22:10:11 - string: auto_off for key floating
+2014-01-04 22:10:11 - key: geometry
+2014-01-04 22:10:11 - start of map, last_key = geometry
+2014-01-04 22:10:11 - key: height
+2014-01-04 22:10:11 - int 1057 for key height
+2014-01-04 22:10:11 - load_layout.c:json_int:343 - rect now: (0, 0, 0, 1057)
+2014-01-04 22:10:11 - key: width
+2014-01-04 22:10:11 - int 636 for key width
+2014-01-04 22:10:11 - load_layout.c:json_int:343 - rect now: (0, 0, 636, 1057)
+2014-01-04 22:10:11 - key: x
+2014-01-04 22:10:11 - int 0 for key x
+2014-01-04 22:10:11 - load_layout.c:json_int:343 - rect now: (0, 0, 636, 1057)
+2014-01-04 22:10:11 - key: y
+2014-01-04 22:10:11 - int 0 for key y
+2014-01-04 22:10:11 - load_layout.c:json_int:343 - rect now: (0, 0, 636, 1057)
+2014-01-04 22:10:11 - end of map
+2014-01-04 22:10:11 - key: name
+2014-01-04 22:10:11 - string: Michael Stapelberg for key name
+2014-01-04 22:10:11 - key: percent
+2014-01-04 22:10:11 - double 0.500000 for key percent
+2014-01-04 22:10:11 - key: swallows
+2014-01-04 22:10:11 - start of map, last_key = swallows
+2014-01-04 22:10:11 - creating new swallow
+2014-01-04 22:10:11 - key: class
+2014-01-04 22:10:11 - string: ^Pidgin$ for key class
+2014-01-04 22:10:11 - key: window_role
+2014-01-04 22:10:11 - string: ^conversation$ for key window_role
+2014-01-04 22:10:11 - end of map
+2014-01-04 22:10:11 - end of array
+2014-01-04 22:10:11 - key: type
+2014-01-04 22:10:11 - string: con for key type
+2014-01-04 22:10:11 - end of map
+2014-01-04 22:10:11 - load_layout.c:json_end_map:72 - Setting layout = L_SPLITH
+2014-01-04 22:10:11 - attaching
+2014-01-04 22:10:11 - Creating window
+2014-01-04 22:10:11 - x.c:x_con_init:151 - adding new state for window id 0x02a00336
+2014-01-04 22:10:11 - end of array
+2014-01-04 22:10:11 - end of map
+2014-01-04 22:10:11 - attaching
+2014-01-04 22:10:11 - Creating window
+2014-01-04 22:10:11 - x.c:x_con_init:151 - adding new state for window id 0x02a00337
+2014-01-04 22:10:11 - end of array
+2014-01-04 22:10:11 - end of map
+2014-01-04 22:10:11 - attaching
+2014-01-04 22:10:11 - Creating window
+2014-01-04 22:10:11 - x.c:x_con_init:151 - adding new state for window id 0x02a00338
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering node 0x974130 / root / layout 6 / children 2
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering node 0x974330 / __i3 / layout 4 / children 1
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering node 0x9bdfa0 / DP2 / layout 4 / children 3
+2014-01-04 22:10:11 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 0)
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering node 0x9c18e0 / topdock / layout 3 / children 0
+2014-01-04 22:10:11 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering node 0x9c1a50 / content / layout 6 / children 6
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering fullscreen node 0x983bd0 / 1 / layout 6 / children 1
+2014-01-04 22:10:11 - render.c:render_con:410 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering node 0x983d80 / Buddy List / layout 6 / children 2
+2014-01-04 22:10:11 - render.c:render_con:410 - child at (0, 0) with (223 x 1061)
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering node 0x983f30 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:11 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:11 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:11 - con.c:con_is_floating:412 - checking if con 0x983f30 is floating
+2014-01-04 22:10:11 - render.c:render_con:201 - child will be at 2x2 with size 219x1057
+2014-01-04 22:10:11 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering node 0x984170 / #ffff00 / layout 5 / children 1
+2014-01-04 22:10:11 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering node 0x984370 / #aa0000 / layout 5 / children 2
+2014-01-04 22:10:11 - render.c:render_con:410 - child at (223, 0) with (1697 x 531)
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering node 0x984520 / [mosh] sECuRE 1:freenode 8:sECuRE / layout 6 / children 2
+2014-01-04 22:10:11 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:11 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:11 - con.c:con_is_floating:412 - checking if con 0x984520 is floating
+2014-01-04 22:10:11 - render.c:render_con:201 - child will be at 2x2 with size 1693x527
+2014-01-04 22:10:11 - render.c:render_con:410 - child at (223, 0) with (198 x 531)
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering node 0x9c6db0 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:11 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering node 0x9c9510 / #00FF00 / layout 5 / children 1
+2014-01-04 22:10:11 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering node 0x9c9760 / #0000FF / layout 5 / children 2
+2014-01-04 22:10:11 - render.c:render_con:410 - child at (421, 0) with (1499 x 266)
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering node 0x9c9940 / zsh / layout 6 / children 0
+2014-01-04 22:10:11 - render.c:render_con:410 - child at (421, 266) with (1499 x 265)
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering node 0x9c9c20 / Michael Stapelberg / layout 6 / children 0
+2014-01-04 22:10:11 - render.c:render_con:410 - child at (223, 531) with (1697 x 530)
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering node 0x984c80 / Johannes Erath / layout 6 / children 0
+2014-01-04 22:10:11 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:11 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:11 - con.c:con_is_floating:412 - checking if con 0x984c80 is floating
+2014-01-04 22:10:11 - render.c:render_con:201 - child will be at 2x2 with size 1693x526
+2014-01-04 22:10:11 - render.c:render_l_output:112 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering node 0x9c1c30 / bottomdock / layout 3 / children 1
+2014-01-04 22:10:11 - render.c:render_con:410 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:11 - render.c:render_con:130 - Rendering node 0x9b7700 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:11 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:11 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:11 - render.c:render_con:201 - child will be at 0x0 with size 1920x19
+2014-01-04 22:10:11 - render.c:render_con:258 - Rendering floating windows:
+2014-01-04 22:10:11 - restore_layout.c:open_placeholder_window:204 - Created placeholder window 0x02000000 for leaf container 0x9c6db0 / Buddy List
+2014-01-04 22:10:11 - restore_layout.c:update_placeholder_contents:163 - con 0x9c6db0 (placeholder 0x02000000) line 0: [class="^Pidgin$" window_role="^buddy_list$"]
+2014-01-04 22:10:11 - restore_layout.c:open_placeholder_window:204 - Created placeholder window 0x02000003 for leaf container 0x9c9940 / zsh
+2014-01-04 22:10:11 - restore_layout.c:update_placeholder_contents:163 - con 0x9c9940 (placeholder 0x02000003) line 0: [class="^URxvt$" instance="^IRC$"]
+2014-01-04 22:10:12 - restore_layout.c:open_placeholder_window:204 - Created placeholder window 0x02000006 for leaf container 0x9c9c20 / Michael Stapelberg
+2014-01-04 22:10:12 - restore_layout.c:update_placeholder_contents:163 - con 0x9c9c20 (placeholder 0x02000006) line 0: [class="^Pidgin$" window_role="^conversation$"]
+2014-01-04 22:10:12 - commands.c:cmd_criteria_init:259 - Initializing criteria, current_match = 0x65bba0
+2014-01-04 22:10:12 - tree.c:tree_render:514 - -- BEGIN RENDERING --
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x974130 / root / layout 6 / children 2
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x974330 / __i3 / layout 4 / children 1
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9bdfa0 / DP2 / layout 4 / children 3
+2014-01-04 22:10:12 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 0)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c18e0 / topdock / layout 3 / children 0
+2014-01-04 22:10:12 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c1a50 / content / layout 6 / children 6
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering fullscreen node 0x983bd0 / 1 / layout 6 / children 1
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x983d80 / Buddy List / layout 6 / children 2
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (0, 0) with (223 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x983f30 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x983f30 is floating
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 2x2 with size 219x1057
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x984170 / #ffff00 / layout 5 / children 1
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x984370 / #aa0000 / layout 5 / children 2
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 0) with (1697 x 531)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x984520 / [mosh] sECuRE 1:freenode 8:sECuRE / layout 6 / children 2
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x984520 is floating
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 2x2 with size 1693x527
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 0) with (198 x 531)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c6db0 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c9510 / #00FF00 / layout 5 / children 1
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c9760 / #0000FF / layout 5 / children 2
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (421, 0) with (1499 x 266)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c9940 / zsh / layout 6 / children 0
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (421, 266) with (1499 x 265)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c9c20 / Michael Stapelberg / layout 6 / children 0
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 531) with (1697 x 530)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x984c80 / Johannes Erath / layout 6 / children 0
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x984c80 is floating
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 2x2 with size 1693x526
+2014-01-04 22:10:12 - render.c:render_l_output:112 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c1c30 / bottomdock / layout 3 / children 1
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9b7700 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 0x0 with size 1920x19
+2014-01-04 22:10:12 - render.c:render_con:258 - Rendering floating windows:
+2014-01-04 22:10:12 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:12 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:12 - x.c:x_push_node:770 - mapping container 02a0004e (serial 895899)
+2014-01-04 22:10:12 - x.c:x_push_node:770 - mapping container 02a00051 (serial 895903)
+2014-01-04 22:10:12 - x.c:x_push_node:770 - mapping container 02a0004d (serial 895907)
+2014-01-04 22:10:12 - x.c:x_push_changes:963 - Updating focus (focused: 0x984520 / [mosh] sECuRE 1:freenode 8:sECuRE) to X11 window 0x00c0f803
+2014-01-04 22:10:12 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:12 - x.c:x_push_node_unmaps:817 - unmapping container 0x9c7050 / #aa00aa (serial 895924)
+2014-01-04 22:10:12 - x.c:x_push_node_unmaps:823 - ignore_unmap for con 0x9c7050 (frame 0x02a00331) now 1
+2014-01-04 22:10:12 - tree.c:tree_render:523 - -- END RENDERING --
+2014-01-04 22:10:12 - handlers.c:handle_map_request:277 - window = 0x02000000, serial is 43882.
+2014-01-04 22:10:12 - manage.c:manage_window:193 - Managing window 0x02000000
+2014-01-04 22:10:12 - window.c:window_update_class:21 - WM_CLASS not set.
+2014-01-04 22:10:12 - window.c:window_update_name_legacy:90 - WM_NAME not set (_NET_WM_NAME is what you want anyways).
+2014-01-04 22:10:12 - _NET_WM_NAME changed to "Buddy List"
+2014-01-04 22:10:12 - window.c:window_update_leader:127 - CLIENT_LEADER not set.
+2014-01-04 22:10:12 - window.c:window_update_transient_for:151 - TRANSIENT_FOR not set.
+2014-01-04 22:10:12 - window.c:window_update_strut_partial:175 - _NET_WM_STRUT_PARTIAL not set.
+2014-01-04 22:10:12 - window.c:window_update_role:200 - WM_WINDOW_ROLE not set.
+2014-01-04 22:10:12 - window.c:window_update_hints:236 - WM_HINTS not set.
+2014-01-04 22:10:12 - startup.c:startup_sequence_get:269 - No _NET_STARTUP_ID set on window 0x02000000
+2014-01-04 22:10:12 - manage.c:manage_window:229 - startup workspace = (null)
+2014-01-04 22:10:12 - manage.c:manage_window:267 - Initial geometry: (223, 0, 198, 531)
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - dock status does not match
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - match made by window id (33554432)
+2014-01-04 22:10:12 - manage.c:manage_window:324 - Removing match 0x9c3be0 from container 0x9c6db0
+2014-01-04 22:10:12 - manage.c:manage_window:329 - new container = 0x9c6db0
+2014-01-04 22:10:12 - x.c:x_reinit:168 - resetting state 0x9c5220 to initial
+2014-01-04 22:10:12 - manage.c:manage_window:360 - Not in fullscreen mode, focusing
+2014-01-04 22:10:12 - workspace visible? fs = 0x983bd0, ws = 0x983bd0
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x9c6db0
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x984520
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x984370
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x984170
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x983d80
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x983bd0
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x9c1a50
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x9bdfa0
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x974130
+2014-01-04 22:10:12 - assignments.c:run_assignments:20 - Checking if any assignments match this window
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Regular expression "JDownloader" does not match "Buddy List"
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Regular expression "share-qrcode-float" does not match "Buddy List"
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Regular expression "Lyrics Viewer™" does not match "Buddy List"
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000000 (class (null))
+2014-01-04 22:10:12 - workspace visible? fs = 0x983bd0, ws = 0x983bd0
+2014-01-04 22:10:12 - tree.c:tree_render:514 - -- BEGIN RENDERING --
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x974130 / root / layout 6 / children 2
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x974330 / __i3 / layout 4 / children 1
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9bdfa0 / DP2 / layout 4 / children 3
+2014-01-04 22:10:12 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 0)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c18e0 / topdock / layout 3 / children 0
+2014-01-04 22:10:12 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c1a50 / content / layout 6 / children 6
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering fullscreen node 0x983bd0 / 1 / layout 6 / children 1
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x983d80 / Buddy List / layout 6 / children 2
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (0, 0) with (223 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x983f30 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x983f30 is floating
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 2x2 with size 219x1057
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x984170 / #ffff00 / layout 5 / children 1
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x984370 / #aa0000 / layout 5 / children 2
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 0) with (1697 x 531)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x984520 / [mosh] sECuRE 1:freenode 8:sECuRE / layout 6 / children 2
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x984520 is floating
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 2x2 with size 1693x527
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 0) with (198 x 531)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c6db0 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x9c6db0 is floating
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 2x2 with size 194x527
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c9510 / #00FF00 / layout 5 / children 1
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c9760 / #0000FF / layout 5 / children 2
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (421, 0) with (1499 x 266)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c9940 / zsh / layout 6 / children 0
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (421, 266) with (1499 x 265)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c9c20 / Michael Stapelberg / layout 6 / children 0
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 531) with (1697 x 530)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x984c80 / Johannes Erath / layout 6 / children 0
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x984c80 is floating
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 2x2 with size 1693x526
+2014-01-04 22:10:12 - render.c:render_l_output:112 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c1c30 / bottomdock / layout 3 / children 1
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9b7700 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 0x0 with size 1920x19
+2014-01-04 22:10:12 - render.c:render_con:258 - Rendering floating windows:
+2014-01-04 22:10:12 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:12 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:12 - x.c:x_push_node:609 - pushing name [i3 con] container around 0x9c8110 for con 0x9c6db0
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x9c6db0 is floating
+2014-01-04 22:10:12 - x.c:x_push_node:708 - setting rect (223, 0, 198, 531)
+2014-01-04 22:10:12 - x.c:x_push_node:727 - setting window rect (2, 2, 194, 527)
+2014-01-04 22:10:12 - x.c:x_push_node:756 - mapping child window (serial 895970)
+2014-01-04 22:10:12 - x.c:x_push_node:770 - mapping container 02a00334 (serial 895972)
+2014-01-04 22:10:12 - x.c:x_push_node:777 - Sending fake configure notify
+2014-01-04 22:10:12 - xcb.c:fake_absolute_configure_notify:104 - fake rect = (225, 2, 194, 527)
+2014-01-04 22:10:12 - x.c:x_push_changes:963 - Updating focus (focused: 0x9c6db0 / Buddy List) to X11 window 0x02000000
+2014-01-04 22:10:12 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:12 - tree.c:tree_render:523 - -- END RENDERING --
+2014-01-04 22:10:12 - con.c:con_set_urgency:1558 - Ignoring urgency flag for current client
+2014-01-04 22:10:12 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:12 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:12 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:12 - handlers.c:handle_map_request:277 - window = 0x02000003, serial is 43897.
+2014-01-04 22:10:12 - manage.c:manage_window:193 - Managing window 0x02000003
+2014-01-04 22:10:12 - window.c:window_update_class:21 - WM_CLASS not set.
+2014-01-04 22:10:12 - window.c:window_update_name_legacy:90 - WM_NAME not set (_NET_WM_NAME is what you want anyways).
+2014-01-04 22:10:12 - _NET_WM_NAME changed to "zsh"
+2014-01-04 22:10:12 - window.c:window_update_leader:127 - CLIENT_LEADER not set.
+2014-01-04 22:10:12 - window.c:window_update_transient_for:151 - TRANSIENT_FOR not set.
+2014-01-04 22:10:12 - window.c:window_update_strut_partial:175 - _NET_WM_STRUT_PARTIAL not set.
+2014-01-04 22:10:12 - window.c:window_update_role:200 - WM_WINDOW_ROLE not set.
+2014-01-04 22:10:12 - window.c:window_update_hints:236 - WM_HINTS not set.
+2014-01-04 22:10:12 - startup.c:startup_sequence_get:269 - No _NET_STARTUP_ID set on window 0x02000003
+2014-01-04 22:10:12 - manage.c:manage_window:229 - startup workspace = (null)
+2014-01-04 22:10:12 - manage.c:manage_window:267 - Initial geometry: (421, 0, 1499, 266)
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - dock status does not match
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - manage.c:manage_window:324 - Removing match 0x9c9680 from container 0x9c9510
+2014-01-04 22:10:12 - manage.c:manage_window:329 - new container = 0x9c9510
+2014-01-04 22:10:12 - x.c:x_reinit:168 - resetting state 0x9c9fe0 to initial
+2014-01-04 22:10:12 - manage.c:manage_window:360 - Not in fullscreen mode, focusing
+2014-01-04 22:10:12 - workspace visible? fs = 0x983bd0, ws = 0x983bd0
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x9c9510
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x984520
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x984370
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x984170
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x983d80
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x983bd0
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x9c1a50
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x9bdfa0
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x974130
+2014-01-04 22:10:12 - assignments.c:run_assignments:20 - Checking if any assignments match this window
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Regular expression "JDownloader" does not match "zsh"
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Regular expression "share-qrcode-float" does not match "zsh"
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Regular expression "Lyrics Viewer™" does not match "zsh"
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000003 (class (null))
+2014-01-04 22:10:12 - workspace visible? fs = 0x983bd0, ws = 0x983bd0
+2014-01-04 22:10:12 - tree.c:tree_render:514 - -- BEGIN RENDERING --
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x974130 / root / layout 6 / children 2
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x974330 / __i3 / layout 4 / children 1
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9bdfa0 / DP2 / layout 4 / children 3
+2014-01-04 22:10:12 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 0)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c18e0 / topdock / layout 3 / children 0
+2014-01-04 22:10:12 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c1a50 / content / layout 6 / children 6
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering fullscreen node 0x983bd0 / 1 / layout 6 / children 1
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x983d80 / Buddy List / layout 6 / children 2
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (0, 0) with (223 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x983f30 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x983f30 is floating
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 2x2 with size 219x1057
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x984170 / #ffff00 / layout 5 / children 1
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x984370 / #aa0000 / layout 5 / children 2
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 0) with (1697 x 531)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x984520 / [mosh] sECuRE 1:freenode 8:sECuRE / layout 6 / children 2
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x984520 is floating
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 2x2 with size 1693x527
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 0) with (198 x 531)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c6db0 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x9c6db0 is floating
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 2x2 with size 194x527
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c9510 / #00FF00 / layout 5 / children 1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x9c9510 is floating
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 2x2 with size 1495x527
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c9760 / #0000FF / layout 5 / children 2
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (421, 0) with (1499 x 266)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c9940 / zsh / layout 6 / children 0
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (421, 266) with (1499 x 265)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c9c20 / Michael Stapelberg / layout 6 / children 0
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 531) with (1697 x 530)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x984c80 / Johannes Erath / layout 6 / children 0
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x984c80 is floating
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 2x2 with size 1693x526
+2014-01-04 22:10:12 - render.c:render_l_output:112 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c1c30 / bottomdock / layout 3 / children 1
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9b7700 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 0x0 with size 1920x19
+2014-01-04 22:10:12 - render.c:render_con:258 - Rendering floating windows:
+2014-01-04 22:10:12 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:12 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:12 - x.c:x_push_node:609 - pushing name [i3 con] container around 0x9caf80 for con 0x9c9510
+2014-01-04 22:10:12 - x.c:x_push_node:708 - setting rect (421, 0, 1499, 531)
+2014-01-04 22:10:12 - x.c:x_push_node:727 - setting window rect (2, 2, 1495, 527)
+2014-01-04 22:10:12 - x.c:x_push_node:756 - mapping child window (serial 896041)
+2014-01-04 22:10:12 - x.c:x_push_node:770 - mapping container 02a00338 (serial 896043)
+2014-01-04 22:10:12 - x.c:x_push_node:777 - Sending fake configure notify
+2014-01-04 22:10:12 - xcb.c:fake_absolute_configure_notify:104 - fake rect = (423, 2, 1495, 527)
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x9c6db0 is floating
+2014-01-04 22:10:12 - x.c:x_push_changes:963 - Updating focus (focused: 0x9c9510 / #00FF00) to X11 window 0x02000003
+2014-01-04 22:10:12 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:12 - tree.c:tree_render:523 - -- END RENDERING --
+2014-01-04 22:10:12 - con.c:con_set_urgency:1558 - Ignoring urgency flag for current client
+2014-01-04 22:10:12 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:12 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:12 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:12 - handlers.c:handle_map_request:277 - window = 0x02000006, serial is 43901.
+2014-01-04 22:10:12 - manage.c:manage_window:193 - Managing window 0x02000006
+2014-01-04 22:10:12 - window.c:window_update_class:21 - WM_CLASS not set.
+2014-01-04 22:10:12 - window.c:window_update_name_legacy:90 - WM_NAME not set (_NET_WM_NAME is what you want anyways).
+2014-01-04 22:10:12 - _NET_WM_NAME changed to "Michael Stapelberg"
+2014-01-04 22:10:12 - window.c:window_update_leader:127 - CLIENT_LEADER not set.
+2014-01-04 22:10:12 - window.c:window_update_transient_for:151 - TRANSIENT_FOR not set.
+2014-01-04 22:10:12 - window.c:window_update_strut_partial:175 - _NET_WM_STRUT_PARTIAL not set.
+2014-01-04 22:10:12 - window.c:window_update_role:200 - WM_WINDOW_ROLE not set.
+2014-01-04 22:10:12 - window.c:window_update_hints:236 - WM_HINTS not set.
+2014-01-04 22:10:12 - startup.c:startup_sequence_get:269 - No _NET_STARTUP_ID set on window 0x02000006
+2014-01-04 22:10:12 - manage.c:manage_window:229 - startup workspace = (null)
+2014-01-04 22:10:12 - manage.c:manage_window:267 - Initial geometry: (421, 266, 1499, 265)
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - dock status does not match
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - manage.c:manage_window:324 - Removing match 0x9c96f0 from container 0x9c9760
+2014-01-04 22:10:12 - manage.c:manage_window:329 - new container = 0x9c9760
+2014-01-04 22:10:12 - x.c:x_reinit:168 - resetting state 0x9c9f70 to initial
+2014-01-04 22:10:12 - manage.c:manage_window:360 - Not in fullscreen mode, focusing
+2014-01-04 22:10:12 - workspace visible? fs = 0x983bd0, ws = 0x983bd0
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x9c9760
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x9c9510
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x984520
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x984370
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x984170
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x983d80
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x983bd0
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x9c1a50
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x9bdfa0
+2014-01-04 22:10:12 - con.c:con_focus:214 - con_focus = 0x974130
+2014-01-04 22:10:12 - assignments.c:run_assignments:20 - Checking if any assignments match this window
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Regular expression "JDownloader" does not match "Michael Stapelberg"
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Regular expression "share-qrcode-float" does not match "Michael Stapelberg"
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Regular expression "Lyrics Viewer™" does not match "Michael Stapelberg"
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - Checking window 0x02000006 (class (null))
+2014-01-04 22:10:12 - workspace visible? fs = 0x983bd0, ws = 0x983bd0
+2014-01-04 22:10:12 - tree.c:tree_render:514 - -- BEGIN RENDERING --
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x974130 / root / layout 6 / children 2
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x974330 / __i3 / layout 4 / children 1
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9bdfa0 / DP2 / layout 4 / children 3
+2014-01-04 22:10:12 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 0)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c18e0 / topdock / layout 3 / children 0
+2014-01-04 22:10:12 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c1a50 / content / layout 6 / children 6
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering fullscreen node 0x983bd0 / 1 / layout 6 / children 1
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x983d80 / Buddy List / layout 6 / children 2
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (0, 0) with (223 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x983f30 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x983f30 is floating
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 2x2 with size 219x1057
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x984170 / #ffff00 / layout 5 / children 1
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x984370 / #aa0000 / layout 5 / children 2
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 0) with (1697 x 531)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x984520 / [mosh] sECuRE 1:freenode 8:sECuRE / layout 6 / children 2
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x984520 is floating
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 2x2 with size 1693x527
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 0) with (198 x 531)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c6db0 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x9c6db0 is floating
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 2x2 with size 194x527
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c9510 / #00FF00 / layout 5 / children 1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x9c9510 is floating
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 2x2 with size 1495x527
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c9760 / #0000FF / layout 5 / children 2
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x9c9760 is floating
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 2x2 with size 1495x527
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (421, 0) with (1499 x 266)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c9940 / zsh / layout 6 / children 0
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (421, 266) with (1499 x 265)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c9c20 / Michael Stapelberg / layout 6 / children 0
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (223, 531) with (1697 x 530)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x984c80 / Johannes Erath / layout 6 / children 0
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - con.c:con_is_floating:412 - checking if con 0x984c80 is floating
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 2x2 with size 1693x526
+2014-01-04 22:10:12 - render.c:render_l_output:112 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9c1c30 / bottomdock / layout 3 / children 1
+2014-01-04 22:10:12 - render.c:render_con:410 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:12 - render.c:render_con:130 - Rendering node 0x9b7700 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:12 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:12 - render.c:render_con:201 - child will be at 0x0 with size 1920x19
+2014-01-04 22:10:12 - render.c:render_con:258 - Rendering floating windows:
+2014-01-04 22:10:12 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:12 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:12 - x.c:x_push_node:609 - pushing name [i3 con] container around 0x9cb580 for con 0x9c9760
+2014-01-04 22:10:12 - x.c:x_push_node:708 - setting rect (421, 0, 1499, 531)
+2014-01-04 22:10:12 - x.c:x_push_node:727 - setting window rect (2, 2, 1495, 527)
+2014-01-04 22:10:12 - x.c:x_push_node:756 - mapping child window (serial 896125)
+2014-01-04 22:10:12 - x.c:x_push_node:770 - mapping container 02a00337 (serial 896127)
+2014-01-04 22:10:12 - x.c:x_push_node:777 - Sending fake configure notify
+2014-01-04 22:10:12 - xcb.c:fake_absolute_configure_notify:104 - fake rect = (423, 2, 1495, 527)
+2014-01-04 22:10:12 - x.c:x_push_changes:963 - Updating focus (focused: 0x9c9760 / #0000FF) to X11 window 0x02000006
+2014-01-04 22:10:12 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:12 - tree.c:tree_render:523 - -- END RENDERING --
+2014-01-04 22:10:12 - con.c:con_set_urgency:1558 - Ignoring urgency flag for current client
+2014-01-04 22:10:12 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:12 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:12 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a0004e
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a0004e
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a0004e
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a0004e
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a00051
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a00051
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a00051
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a00051
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a0004d
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a0004d
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a0004d
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a0004d
+2014-01-04 22:10:12 - handlers.c:handle_unmap_notify_event:454 - UnmapNotify for 0x02a00331 (received from 0x02a00331), serial 43956
+2014-01-04 22:10:12 - handlers.c:handle_unmap_notify_event:470 - ignore_unmap = 0 for frame of container 0x9c7050
+2014-01-04 22:10:12 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:12 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:12 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:12 - _NET_WM_NAME changed to "~/.i3     (stefan@xeen:pts/0)"
+2014-01-04 22:10:12 - assignments.c:run_assignments:20 - Checking if any assignments match this window
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:12 - window class matches (URxvt)
+2014-01-04 22:10:12 - Regular expression "irc" does not match "~/.i3     (stefan@xeen:pts/0)"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "Pidgin" does not match "URxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "Iceweasel" does not match "URxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "Firefox-bin" does not match "URxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "Navigator" does not match "URxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "Opera" does not match "URxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "Chromium-browser" does not match "URxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "Chromium" does not match "URxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "Mail" does not match "urxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "Thunderbird" does not match "URxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "Icedove" does not match "URxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "Msgcompose" does not match "URxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "transmission-gtk" does not match "URxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "tr-main" does not match "URxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "JDownloader" does not match "~/.i3     (stefan@xeen:pts/0)"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:12 - window class matches (URxvt)
+2014-01-04 22:10:12 - Regular expression "CMUS" does not match "urxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:12 - window class matches (URxvt)
+2014-01-04 22:10:12 - Regular expression "^mplayer radio" does not match "~/.i3     (stefan@xeen:pts/0)"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "gimp" does not match "URxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "Gcolor2" does not match "URxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "Screenruler" does not match "URxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "Screenruler" does not match "URxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "share-qrcode-float" does not match "~/.i3     (stefan@xeen:pts/0)"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "Lyrics Viewer™" does not match "~/.i3     (stefan@xeen:pts/0)"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "Gedit" does not match "URxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "MPlayer" does not match "URxvt"
+2014-01-04 22:10:12 - Checking window 0x00c0fa49 (class URxvt)
+2014-01-04 22:10:12 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:12 - window class matches (URxvt)
+2014-01-04 22:10:12 - Regular expression "irc" does not match "~/.i3     (stefan@xeen:pts/0)"
+2014-01-04 22:10:12 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:12 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:12 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a00334
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a00334
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a00334
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a00334
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a00338
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a00338
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a00338
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a00338
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a00337
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a00337
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a00337
+2014-01-04 22:10:12 - handlers.c:handle_expose_event:605 - window = 02a00337
+2014-01-04 22:10:12 - restore_layout.c:restore_handle_event:347 - Received unhandled X11 event of type 21
+2014-01-04 22:10:12 - restore_layout.c:configure_notify:314 - ConfigureNotify: window 0x02000000 has now width=194, height=527 (con 0x9c6db0)
+2014-01-04 22:10:12 - restore_layout.c:update_placeholder_contents:163 - con 0x9c6db0 (placeholder 0x02000000) line 0: [class="^Pidgin$" window_role="^buddy_list$"]
+2014-01-04 22:10:12 - restore_layout.c:restore_handle_event:347 - Received unhandled X11 event of type 19
+2014-01-04 22:10:12 - restore_layout.c:expose_event:285 - refreshing window 0x02000000 contents (con 0x9c6db0)
+2014-01-04 22:10:12 - restore_layout.c:configure_notify:314 - ConfigureNotify: window 0x02000000 has now width=194, height=527 (con 0x9c6db0)
+2014-01-04 22:10:12 - restore_layout.c:update_placeholder_contents:163 - con 0x9c6db0 (placeholder 0x02000000) line 0: [class="^Pidgin$" window_role="^buddy_list$"]
+2014-01-04 22:10:12 - restore_layout.c:restore_handle_event:347 - Received unhandled X11 event of type 21
+2014-01-04 22:10:12 - restore_layout.c:configure_notify:314 - ConfigureNotify: window 0x02000003 has now width=1495, height=527 (con 0x9c9940)
+2014-01-04 22:10:12 - restore_layout.c:update_placeholder_contents:163 - con 0x9c9940 (placeholder 0x02000003) line 0: [class="^URxvt$" instance="^IRC$"]
+2014-01-04 22:10:12 - restore_layout.c:update_placeholder_contents:158 - This swallows specification is not serializable?!
+2014-01-04 22:10:12 - restore_layout.c:restore_handle_event:347 - Received unhandled X11 event of type 19
+2014-01-04 22:10:12 - restore_layout.c:expose_event:285 - refreshing window 0x02000003 contents (con 0x9c9940)
+2014-01-04 22:10:12 - restore_layout.c:configure_notify:314 - ConfigureNotify: window 0x02000003 has now width=1495, height=527 (con 0x9c9940)
+2014-01-04 22:10:12 - restore_layout.c:update_placeholder_contents:163 - con 0x9c9940 (placeholder 0x02000003) line 0: [class="^URxvt$" instance="^IRC$"]
+2014-01-04 22:10:12 - restore_layout.c:update_placeholder_contents:158 - This swallows specification is not serializable?!
+2014-01-04 22:10:12 - restore_layout.c:restore_handle_event:347 - Received unhandled X11 event of type 21
+2014-01-04 22:10:12 - restore_layout.c:configure_notify:314 - ConfigureNotify: window 0x02000006 has now width=1495, height=527 (con 0x9c9c20)
+2014-01-04 22:10:12 - restore_layout.c:update_placeholder_contents:163 - con 0x9c9c20 (placeholder 0x02000006) line 0: [class="^Pidgin$" window_role="^conversation$"]
+2014-01-04 22:10:12 - restore_layout.c:update_placeholder_contents:158 - This swallows specification is not serializable?!
+2014-01-04 22:10:12 - restore_layout.c:restore_handle_event:347 - Received unhandled X11 event of type 19
+2014-01-04 22:10:12 - restore_layout.c:expose_event:285 - refreshing window 0x02000006 contents (con 0x9c9c20)
+2014-01-04 22:10:12 - restore_layout.c:configure_notify:314 - ConfigureNotify: window 0x02000006 has now width=1495, height=527 (con 0x9c9c20)
+2014-01-04 22:10:12 - restore_layout.c:update_placeholder_contents:163 - con 0x9c9c20 (placeholder 0x02000006) line 0: [class="^Pidgin$" window_role="^conversation$"]
+2014-01-04 22:10:12 - restore_layout.c:update_placeholder_contents:158 - This swallows specification is not serializable?!
+2014-01-04 22:10:12 - workspace visible? fs = 0x983bd0, ws = 0x983bd0
+2014-01-04 22:10:12 - workspace visible? fs = 0x983bd0, ws = 0x985130
+2014-01-04 22:10:12 - workspace visible? fs = 0x983bd0, ws = 0x985800
+2014-01-04 22:10:12 - workspace visible? fs = 0x983bd0, ws = 0x9c7700
+2014-01-04 22:10:12 - workspace visible? fs = 0x983bd0, ws = 0x9aac40
+2014-01-04 22:10:12 - workspace visible? fs = 0x983bd0, ws = 0x987500
+2014-01-04 22:10:12 - [libi3] ERROR: IPC: received EOF instead of reply
+2014-01-04 22:10:12 - ipc.c:ipc_receive_message:916 - IPC: client disconnected
+2014-01-04 22:10:14 - click.c:handle_button_press:308 - Button 0 pressed on window 0x02000006
+2014-01-04 22:10:14 - click.c:handle_button_press:314 - floating_mod = 0, detail = 1
+2014-01-04 22:10:14 - click.c:route_click:170 - --> click properties: mod = 0, destination = 2
+2014-01-04 22:10:14 - click.c:route_click:171 - --> OUTCOME = 0x9c9760
+2014-01-04 22:10:14 - click.c:route_click:172 - type = 2, name = #0000FF
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x9c9760
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x9c9510
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x984520
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x984370
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x984170
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x983d80
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x983bd0
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x9c1a50
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x9bdfa0
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x974130
+2014-01-04 22:10:14 - tree.c:tree_render:514 - -- BEGIN RENDERING --
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x974130 / root / layout 6 / children 2
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x974330 / __i3 / layout 4 / children 1
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9bdfa0 / DP2 / layout 4 / children 3
+2014-01-04 22:10:14 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 0)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9c18e0 / topdock / layout 3 / children 0
+2014-01-04 22:10:14 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9c1a50 / content / layout 6 / children 6
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering fullscreen node 0x983bd0 / 1 / layout 6 / children 1
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x983d80 / Buddy List / layout 6 / children 2
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (0, 0) with (223 x 1061)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x983f30 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:14 - con.c:con_is_floating:412 - checking if con 0x983f30 is floating
+2014-01-04 22:10:14 - render.c:render_con:201 - child will be at 2x2 with size 219x1057
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x984170 / #ffff00 / layout 5 / children 1
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x984370 / #aa0000 / layout 5 / children 2
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (223, 0) with (1697 x 531)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x984520 / [mosh] sECuRE 1:freenode 8:sECuRE / layout 6 / children 2
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:14 - con.c:con_is_floating:412 - checking if con 0x984520 is floating
+2014-01-04 22:10:14 - render.c:render_con:201 - child will be at 2x2 with size 1693x527
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (223, 0) with (198 x 531)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9c6db0 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:14 - con.c:con_is_floating:412 - checking if con 0x9c6db0 is floating
+2014-01-04 22:10:14 - render.c:render_con:201 - child will be at 2x2 with size 194x527
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9c9510 / #00FF00 / layout 5 / children 1
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:14 - con.c:con_is_floating:412 - checking if con 0x9c9510 is floating
+2014-01-04 22:10:14 - render.c:render_con:201 - child will be at 2x2 with size 1495x527
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9c9760 / #0000FF / layout 5 / children 2
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:14 - con.c:con_is_floating:412 - checking if con 0x9c9760 is floating
+2014-01-04 22:10:14 - render.c:render_con:201 - child will be at 2x2 with size 1495x527
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (421, 0) with (1499 x 266)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9c9940 / zsh / layout 6 / children 0
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (421, 266) with (1499 x 265)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9c9c20 / Michael Stapelberg / layout 6 / children 0
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (223, 531) with (1697 x 530)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x984c80 / Johannes Erath / layout 6 / children 0
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:14 - con.c:con_is_floating:412 - checking if con 0x984c80 is floating
+2014-01-04 22:10:14 - render.c:render_con:201 - child will be at 2x2 with size 1693x526
+2014-01-04 22:10:14 - render.c:render_l_output:112 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9c1c30 / bottomdock / layout 3 / children 1
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9b7700 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:14 - render.c:render_con:201 - child will be at 0x0 with size 1920x19
+2014-01-04 22:10:14 - render.c:render_con:258 - Rendering floating windows:
+2014-01-04 22:10:14 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:14 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:14 - x.c:x_push_changes:963 - Updating focus (focused: 0x9c9760 / #0000FF) to X11 window 0x02000006
+2014-01-04 22:10:14 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:14 - tree.c:tree_render:523 - -- END RENDERING --
+2014-01-04 22:10:14 - click.c:handle_button_press:308 - Button 0 pressed on window 0x02a00337
+2014-01-04 22:10:14 - click.c:handle_button_press:314 - floating_mod = 0, detail = 1
+2014-01-04 22:10:14 - click.c:route_click:170 - --> click properties: mod = 0, destination = 0
+2014-01-04 22:10:14 - click.c:route_click:171 - --> OUTCOME = 0x9c9760
+2014-01-04 22:10:14 - click.c:route_click:172 - type = 2, name = #0000FF
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x9c9760
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x9c9510
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x984520
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x984370
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x984170
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x983d80
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x983bd0
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x9c1a50
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x9bdfa0
+2014-01-04 22:10:14 - con.c:con_focus:214 - con_focus = 0x974130
+2014-01-04 22:10:14 - click.c:route_click:287 - Trying to resize (tiling)
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:14 - con.c:con_is_floating:412 - checking if con 0x9c9760 is floating
+2014-01-04 22:10:14 - click.c:tiling_resize:125 - BORDER x = 664, y = 290 for con 0x9c9760, window 0x02a00337
+2014-01-04 22:10:14 - click.c:tiling_resize:126 - checks for right >= 1497
+2014-01-04 22:10:14 - tree.c:tree_render:514 - -- BEGIN RENDERING --
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x974130 / root / layout 6 / children 2
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x974330 / __i3 / layout 4 / children 1
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9bdfa0 / DP2 / layout 4 / children 3
+2014-01-04 22:10:14 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 0)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9c18e0 / topdock / layout 3 / children 0
+2014-01-04 22:10:14 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9c1a50 / content / layout 6 / children 6
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering fullscreen node 0x983bd0 / 1 / layout 6 / children 1
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x983d80 / Buddy List / layout 6 / children 2
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (0, 0) with (223 x 1061)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x983f30 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:14 - con.c:con_is_floating:412 - checking if con 0x983f30 is floating
+2014-01-04 22:10:14 - render.c:render_con:201 - child will be at 2x2 with size 219x1057
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x984170 / #ffff00 / layout 5 / children 1
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x984370 / #aa0000 / layout 5 / children 2
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (223, 0) with (1697 x 531)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x984520 / [mosh] sECuRE 1:freenode 8:sECuRE / layout 6 / children 2
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:14 - con.c:con_is_floating:412 - checking if con 0x984520 is floating
+2014-01-04 22:10:14 - render.c:render_con:201 - child will be at 2x2 with size 1693x527
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (223, 0) with (198 x 531)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9c6db0 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:14 - con.c:con_is_floating:412 - checking if con 0x9c6db0 is floating
+2014-01-04 22:10:14 - render.c:render_con:201 - child will be at 2x2 with size 194x527
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9c9510 / #00FF00 / layout 5 / children 1
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:14 - con.c:con_is_floating:412 - checking if con 0x9c9510 is floating
+2014-01-04 22:10:14 - render.c:render_con:201 - child will be at 2x2 with size 1495x527
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9c9760 / #0000FF / layout 5 / children 2
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:14 - con.c:con_is_floating:412 - checking if con 0x9c9760 is floating
+2014-01-04 22:10:14 - render.c:render_con:201 - child will be at 2x2 with size 1495x527
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (421, 0) with (1499 x 266)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9c9940 / zsh / layout 6 / children 0
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (421, 266) with (1499 x 265)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9c9c20 / Michael Stapelberg / layout 6 / children 0
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (223, 531) with (1697 x 530)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x984c80 / Johannes Erath / layout 6 / children 0
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:14 - con.c:con_is_floating:412 - checking if con 0x984c80 is floating
+2014-01-04 22:10:14 - render.c:render_con:201 - child will be at 2x2 with size 1693x526
+2014-01-04 22:10:14 - render.c:render_l_output:112 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9c1c30 / bottomdock / layout 3 / children 1
+2014-01-04 22:10:14 - render.c:render_con:410 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:14 - render.c:render_con:130 - Rendering node 0x9b7700 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:14 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:14 - render.c:render_con:201 - child will be at 0x0 with size 1920x19
+2014-01-04 22:10:14 - render.c:render_con:258 - Rendering floating windows:
+2014-01-04 22:10:14 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:14 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:14 - x.c:x_push_changes:963 - Updating focus (focused: 0x9c9760 / #0000FF) to X11 window 0x02000006
+2014-01-04 22:10:14 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:14 - tree.c:tree_render:523 - -- END RENDERING --
+2014-01-04 22:10:14 - handlers.c:handle_enter_notify:129 - enter_notify for 02a00337, mode = 1, detail 2, serial 44291
+2014-01-04 22:10:14 - handlers.c:handle_enter_notify:130 - coordinates 664, 290
+2014-01-04 22:10:14 - handlers.c:handle_enter_notify:132 - This was not a normal notify, ignoring
+2014-01-04 22:10:15 - main.c:xkb_got_event:174 - Handling XKB event
+2014-01-04 22:10:15 - key_press.c:handle_key_press:78 - KeyPress 36, state raw = 64
+2014-01-04 22:10:15 - key_press.c:handle_key_press:82 - (removed numlock, state = 64)
+2014-01-04 22:10:15 - key_press.c:handle_key_press:86 - (removed upper 8 bits, state = 64)
+2014-01-04 22:10:15 - key_press.c:handle_key_press:91 - (checked mode_switch, state 64)
+2014-01-04 22:10:15 - commands_parser.c:parse_command:209 - COMMAND: *exec urxvtcd*
+2014-01-04 22:10:15 - commands.c:cmd_criteria_init:259 - Initializing criteria, current_match = 0x65bba0
+2014-01-04 22:10:15 - commands.c:cmd_exec:1325 - should execute urxvtcd, no_startup_id = 0
+2014-01-04 22:10:15 - startup id = i3/urxvtcd/12829-94-xeen_TIME354027309
+2014-01-04 22:10:15 - executing: urxvtcd
+2014-01-04 22:10:15 - commands.c:cmd_criteria_init:259 - Initializing criteria, current_match = 0x65bba0
+2014-01-04 22:10:15 - key_press.c:json_boolean:25 - Got bool: 1, parse_error_key 0, nesting_level 1
+2014-01-04 22:10:15 - handlers.c:handle_destroy_notify_event:521 - destroy notify for 0x02a0033f, 0x02a0033f
+2014-01-04 22:10:15 - handlers.c:handle_unmap_notify_event:454 - UnmapNotify for 0x02a0033f (received from 0x02a0033f), serial 44347
+2014-01-04 22:10:15 - Not a managed window, ignoring UnmapNotify event
+2014-01-04 22:10:15 - handlers.c:handle_configure_request:297 - window 0x00c0fa5b wants to be at 0x0 with 566x318
+2014-01-04 22:10:15 - handlers.c:handle_configure_request:302 - Configure request for unmanaged window, can do that.
+2014-01-04 22:10:15 - handlers.c:handle_map_request:277 - window = 0x00c0fa5b, serial is 44349.
+2014-01-04 22:10:15 - manage.c:manage_window:193 - Managing window 0x00c0fa5b
+2014-01-04 22:10:15 - WM_CLASS changed to urxvt (instance), URxvt (class)
+2014-01-04 22:10:15 - WM_NAME changed to "urxvt"
+2014-01-04 22:10:15 - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+2014-01-04 22:10:15 - _NET_WM_NAME changed to "urxvt"
+2014-01-04 22:10:15 - window.c:window_update_leader:127 - CLIENT_LEADER not set.
+2014-01-04 22:10:15 - window.c:window_update_transient_for:151 - TRANSIENT_FOR not set.
+2014-01-04 22:10:15 - window.c:window_update_strut_partial:175 - _NET_WM_STRUT_PARTIAL not set.
+2014-01-04 22:10:15 - window.c:window_update_role:200 - WM_WINDOW_ROLE not set.
+2014-01-04 22:10:15 - WM_HINTS.input changed to "1"
+2014-01-04 22:10:15 - manage.c:manage_window:229 - startup workspace = 1
+2014-01-04 22:10:15 - manage.c:manage_window:267 - Initial geometry: (0, 0, 566, 318)
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - dock status does not match
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "^Pidgin$" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "^URxvt$" matches "URxvt"
+2014-01-04 22:10:15 - window class matches (URxvt)
+2014-01-04 22:10:15 - Regular expression "^IRC$" does not match "urxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - window id does not match
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "^Pidgin$" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - window id does not match
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - dock status does not match
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:15 - window class matches (URxvt)
+2014-01-04 22:10:15 - Regular expression "irc" does not match "urxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Pidgin" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Iceweasel" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Firefox-bin" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Navigator" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Opera" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Chromium-browser" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Chromium" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Mail" does not match "urxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Thunderbird" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Icedove" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Msgcompose" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "transmission-gtk" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "tr-main" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "JDownloader" does not match "urxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:15 - window class matches (URxvt)
+2014-01-04 22:10:15 - Regular expression "CMUS" does not match "urxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:15 - window class matches (URxvt)
+2014-01-04 22:10:15 - Regular expression "^mplayer radio" does not match "urxvt"
+2014-01-04 22:10:15 - manage.c:manage_window:298 - Using workspace on which this application was started (1)
+2014-01-04 22:10:15 - manage.c:manage_window:300 - focused on ws 1: 0x9c9760 / #0000FF
+2014-01-04 22:10:15 - con.c:con_new_skeleton:64 - opening window 5
+2014-01-04 22:10:15 - con.c:con_new_skeleton:67 - color #ffff00
+2014-01-04 22:10:15 - con.c:con_attach:179 - Inserting con = 0x9cb070 after last focused tiling con 0x9c9760
+2014-01-04 22:10:15 - x.c:x_con_init:151 - adding new state for window id 0x02a00340
+2014-01-04 22:10:15 - manage.c:manage_window:329 - new container = 0x9cb070
+2014-01-04 22:10:15 - restore_layout.c:restore_kill_placeholder:275 - 0x00c0fa5b is not a placeholder window, ignoring.
+2014-01-04 22:10:15 - manage.c:manage_window:332 - Uh?! Container without a placeholder, but with a window, has swallowed this to-be-managed window?!
+2014-01-04 22:10:15 - x.c:x_reinit:168 - resetting state 0x9c7e50 to initial
+2014-01-04 22:10:15 - manage.c:manage_window:360 - Not in fullscreen mode, focusing
+2014-01-04 22:10:15 - workspace visible? fs = 0x983bd0, ws = 0x983bd0
+2014-01-04 22:10:15 - con.c:con_focus:214 - con_focus = 0x9cb070
+2014-01-04 22:10:15 - con.c:con_focus:214 - con_focus = 0x9c9510
+2014-01-04 22:10:15 - con.c:con_focus:214 - con_focus = 0x984520
+2014-01-04 22:10:15 - con.c:con_focus:214 - con_focus = 0x984370
+2014-01-04 22:10:15 - con.c:con_focus:214 - con_focus = 0x984170
+2014-01-04 22:10:15 - con.c:con_focus:214 - con_focus = 0x983d80
+2014-01-04 22:10:15 - con.c:con_focus:214 - con_focus = 0x983bd0
+2014-01-04 22:10:15 - con.c:con_focus:214 - con_focus = 0x9c1a50
+2014-01-04 22:10:15 - con.c:con_focus:214 - con_focus = 0x9bdfa0
+2014-01-04 22:10:15 - con.c:con_focus:214 - con_focus = 0x974130
+2014-01-04 22:10:15 - assignments.c:run_assignments:20 - Checking if any assignments match this window
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:15 - window class matches (URxvt)
+2014-01-04 22:10:15 - Regular expression "irc" does not match "urxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Pidgin" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Iceweasel" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Firefox-bin" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Navigator" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Opera" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Chromium-browser" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Chromium" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Mail" does not match "urxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Thunderbird" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Icedove" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Msgcompose" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "transmission-gtk" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "tr-main" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "JDownloader" does not match "urxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:15 - window class matches (URxvt)
+2014-01-04 22:10:15 - Regular expression "CMUS" does not match "urxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:15 - window class matches (URxvt)
+2014-01-04 22:10:15 - Regular expression "^mplayer radio" does not match "urxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "gimp" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Gcolor2" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Screenruler" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Screenruler" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "share-qrcode-float" does not match "urxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Lyrics Viewer™" does not match "urxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "Gedit" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "MPlayer" does not match "URxvt"
+2014-01-04 22:10:15 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:15 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:15 - window class matches (URxvt)
+2014-01-04 22:10:15 - Regular expression "irc" does not match "urxvt"
+2014-01-04 22:10:15 - workspace visible? fs = 0x983bd0, ws = 0x983bd0
+2014-01-04 22:10:15 - tree.c:tree_render:514 - -- BEGIN RENDERING --
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x974130 / root / layout 6 / children 2
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x974330 / __i3 / layout 4 / children 1
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x9bdfa0 / DP2 / layout 4 / children 3
+2014-01-04 22:10:15 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 0)
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x9c18e0 / topdock / layout 3 / children 0
+2014-01-04 22:10:15 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x9c1a50 / content / layout 6 / children 6
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering fullscreen node 0x983bd0 / 1 / layout 6 / children 1
+2014-01-04 22:10:15 - render.c:render_con:410 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x983d80 / Buddy List / layout 6 / children 2
+2014-01-04 22:10:15 - render.c:render_con:410 - child at (0, 0) with (223 x 1061)
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x983f30 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:15 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:15 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:15 - con.c:con_is_floating:412 - checking if con 0x983f30 is floating
+2014-01-04 22:10:15 - render.c:render_con:201 - child will be at 2x2 with size 219x1057
+2014-01-04 22:10:15 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x984170 / #ffff00 / layout 5 / children 1
+2014-01-04 22:10:15 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x984370 / #aa0000 / layout 5 / children 2
+2014-01-04 22:10:15 - render.c:render_con:410 - child at (223, 0) with (1697 x 531)
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x984520 / [mosh] sECuRE 1:freenode 8:sECuRE / layout 6 / children 2
+2014-01-04 22:10:15 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:15 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:15 - con.c:con_is_floating:412 - checking if con 0x984520 is floating
+2014-01-04 22:10:15 - render.c:render_con:201 - child will be at 2x2 with size 1693x527
+2014-01-04 22:10:15 - render.c:render_con:410 - child at (223, 0) with (198 x 531)
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x9c6db0 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:15 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:15 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:15 - con.c:con_is_floating:412 - checking if con 0x9c6db0 is floating
+2014-01-04 22:10:15 - render.c:render_con:201 - child will be at 2x2 with size 194x527
+2014-01-04 22:10:15 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x9c9510 / #00FF00 / layout 5 / children 2
+2014-01-04 22:10:15 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:15 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:15 - con.c:con_is_floating:412 - checking if con 0x9c9510 is floating
+2014-01-04 22:10:15 - render.c:render_con:201 - child will be at 2x2 with size 1495x527
+2014-01-04 22:10:15 - render.c:render_con:410 - child at (421, 0) with (1499 x 266)
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x9c9760 / #0000FF / layout 5 / children 2
+2014-01-04 22:10:15 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:15 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:15 - con.c:con_is_floating:412 - checking if con 0x9c9760 is floating
+2014-01-04 22:10:15 - render.c:render_con:201 - child will be at 2x2 with size 1495x262
+2014-01-04 22:10:15 - render.c:render_con:410 - child at (421, 0) with (1499 x 133)
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x9c9940 / zsh / layout 6 / children 0
+2014-01-04 22:10:15 - render.c:render_con:410 - child at (421, 133) with (1499 x 133)
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x9c9c20 / Michael Stapelberg / layout 6 / children 0
+2014-01-04 22:10:15 - render.c:render_con:410 - child at (421, 266) with (1499 x 265)
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x9cb070 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:15 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:15 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:15 - con.c:con_is_floating:412 - checking if con 0x9cb070 is floating
+2014-01-04 22:10:15 - render.c:render_con:201 - child will be at 2x2 with size 1495x261
+2014-01-04 22:10:15 - render.c:render_con:410 - child at (223, 531) with (1697 x 530)
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x984c80 / Johannes Erath / layout 6 / children 0
+2014-01-04 22:10:15 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:15 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:15 - con.c:con_is_floating:412 - checking if con 0x984c80 is floating
+2014-01-04 22:10:15 - render.c:render_con:201 - child will be at 2x2 with size 1693x526
+2014-01-04 22:10:15 - render.c:render_l_output:112 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x9c1c30 / bottomdock / layout 3 / children 1
+2014-01-04 22:10:15 - render.c:render_con:410 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:15 - render.c:render_con:130 - Rendering node 0x9b7700 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:15 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:15 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:15 - render.c:render_con:201 - child will be at 0x0 with size 1920x19
+2014-01-04 22:10:15 - render.c:render_con:258 - Rendering floating windows:
+2014-01-04 22:10:15 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:15 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:15 - x.c:x_push_node:609 - pushing name [i3 con] container around 0x9cb2e0 for con 0x9cb070
+2014-01-04 22:10:15 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:15 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:15 - con.c:con_is_floating:412 - checking if con 0x9cb070 is floating
+2014-01-04 22:10:15 - x.c:x_push_node:708 - setting rect (421, 266, 1499, 265)
+2014-01-04 22:10:15 - x.c:x_push_node:727 - setting window rect (2, 2, 1495, 261)
+2014-01-04 22:10:15 - x.c:x_push_node:756 - mapping child window (serial 896371)
+2014-01-04 22:10:15 - x.c:x_push_node:770 - mapping container 02a00340 (serial 896373)
+2014-01-04 22:10:15 - x.c:x_push_node:777 - Sending fake configure notify
+2014-01-04 22:10:15 - xcb.c:fake_absolute_configure_notify:104 - fake rect = (423, 268, 1495, 261)
+2014-01-04 22:10:15 - x.c:x_push_node:708 - setting rect (421, 0, 1499, 266)
+2014-01-04 22:10:15 - x.c:x_push_node:727 - setting window rect (2, 2, 1495, 262)
+2014-01-04 22:10:15 - x.c:x_push_node:777 - Sending fake configure notify
+2014-01-04 22:10:15 - xcb.c:fake_absolute_configure_notify:104 - fake rect = (423, 2, 1495, 262)
+2014-01-04 22:10:15 - x.c:x_push_changes:963 - Updating focus (focused: 0x9cb070 / #ffff00) to X11 window 0x00c0fa5b
+2014-01-04 22:10:15 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:15 - tree.c:tree_render:523 - -- END RENDERING --
+2014-01-04 22:10:15 - con.c:con_set_urgency:1558 - Ignoring urgency flag for current client
+2014-01-04 22:10:15 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:15 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:15 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:15 - startup.c:startup_monitor_event:237 - startup sequence i3/urxvtcd/12829-94-xeen_TIME354027309 completed
+2014-01-04 22:10:15 - startup.c:startup_monitor_event:243 - Will delete startup sequence i3/urxvtcd/12829-94-xeen_TIME354027309 at timestamp 1388869845
+2014-01-04 22:10:15 - startup.c:startup_monitor_event:246 - No more startup sequences running, changing root window cursor to default pointer.
+2014-01-04 22:10:15 - restore_layout.c:configure_notify:314 - ConfigureNotify: window 0x02000006 has now width=1495, height=262 (con 0x9c9c20)
+2014-01-04 22:10:15 - restore_layout.c:update_placeholder_contents:163 - con 0x9c9c20 (placeholder 0x02000006) line 0: [class="^Pidgin$" window_role="^conversation$"]
+2014-01-04 22:10:15 - restore_layout.c:update_placeholder_contents:158 - This swallows specification is not serializable?!
+2014-01-04 22:10:15 - restore_layout.c:expose_event:285 - refreshing window 0x02000006 contents (con 0x9c9c20)
+2014-01-04 22:10:15 - restore_layout.c:configure_notify:314 - ConfigureNotify: window 0x02000006 has now width=1495, height=262 (con 0x9c9c20)
+2014-01-04 22:10:15 - restore_layout.c:update_placeholder_contents:163 - con 0x9c9c20 (placeholder 0x02000006) line 0: [class="^Pidgin$" window_role="^conversation$"]
+2014-01-04 22:10:15 - restore_layout.c:update_placeholder_contents:158 - This swallows specification is not serializable?!
+2014-01-04 22:10:16 - handlers.c:handle_expose_event:605 - window = 02a00340
+2014-01-04 22:10:16 - handlers.c:handle_expose_event:605 - window = 02a00340
+2014-01-04 22:10:16 - handlers.c:handle_expose_event:605 - window = 02a00340
+2014-01-04 22:10:16 - handlers.c:handle_expose_event:605 - window = 02a00340
+2014-01-04 22:10:16 - handlers.c:handle_normal_hints:786 - Minimum size: 13 (width) x 19 (height)
+2014-01-04 22:10:16 - handlers.c:handle_normal_hints:803 - resize increments changed
+2014-01-04 22:10:16 - handlers.c:handle_normal_hints:824 - client's base_height changed to 6
+2014-01-04 22:10:16 - handlers.c:handle_normal_hints:825 - client's base_width changed to 6
+2014-01-04 22:10:16 - tree.c:tree_render:514 - -- BEGIN RENDERING --
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x974130 / root / layout 6 / children 2
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x974330 / __i3 / layout 4 / children 1
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9bdfa0 / DP2 / layout 4 / children 3
+2014-01-04 22:10:16 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 0)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9c18e0 / topdock / layout 3 / children 0
+2014-01-04 22:10:16 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9c1a50 / content / layout 6 / children 6
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering fullscreen node 0x983bd0 / 1 / layout 6 / children 1
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x983d80 / Buddy List / layout 6 / children 2
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (0, 0) with (223 x 1061)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x983f30 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - con.c:con_is_floating:412 - checking if con 0x983f30 is floating
+2014-01-04 22:10:16 - render.c:render_con:201 - child will be at 2x2 with size 219x1057
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x984170 / #ffff00 / layout 5 / children 1
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x984370 / #aa0000 / layout 5 / children 2
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (223, 0) with (1697 x 531)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x984520 / [mosh] sECuRE 1:freenode 8:sECuRE / layout 6 / children 2
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - con.c:con_is_floating:412 - checking if con 0x984520 is floating
+2014-01-04 22:10:16 - render.c:render_con:201 - child will be at 2x2 with size 1693x527
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (223, 0) with (198 x 531)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9c6db0 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - con.c:con_is_floating:412 - checking if con 0x9c6db0 is floating
+2014-01-04 22:10:16 - render.c:render_con:201 - child will be at 2x2 with size 194x527
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9c9510 / #00FF00 / layout 5 / children 2
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - con.c:con_is_floating:412 - checking if con 0x9c9510 is floating
+2014-01-04 22:10:16 - render.c:render_con:201 - child will be at 2x2 with size 1495x527
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (421, 0) with (1499 x 266)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9c9760 / #0000FF / layout 5 / children 2
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - con.c:con_is_floating:412 - checking if con 0x9c9760 is floating
+2014-01-04 22:10:16 - render.c:render_con:201 - child will be at 2x2 with size 1495x262
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (421, 0) with (1499 x 133)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9c9940 / zsh / layout 6 / children 0
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (421, 133) with (1499 x 133)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9c9c20 / Michael Stapelberg / layout 6 / children 0
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (421, 266) with (1499 x 265)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9cb070 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - con.c:con_is_floating:412 - checking if con 0x9cb070 is floating
+2014-01-04 22:10:16 - render.c:render_con:201 - child will be at 2x2 with size 1495x261
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (223, 531) with (1697 x 530)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x984c80 / Johannes Erath / layout 6 / children 0
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - con.c:con_is_floating:412 - checking if con 0x984c80 is floating
+2014-01-04 22:10:16 - render.c:render_con:201 - child will be at 2x2 with size 1693x526
+2014-01-04 22:10:16 - render.c:render_l_output:112 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9c1c30 / bottomdock / layout 3 / children 1
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9b7700 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - render.c:render_con:201 - child will be at 0x0 with size 1920x19
+2014-01-04 22:10:16 - render.c:render_con:258 - Rendering floating windows:
+2014-01-04 22:10:16 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:16 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:16 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:16 - tree.c:tree_render:523 - -- END RENDERING --
+2014-01-04 22:10:16 - handlers.c:handle_normal_hints:786 - Minimum size: 13 (width) x 19 (height)
+2014-01-04 22:10:16 - key_press.c:handle_key_press:78 - KeyRelease 36, state raw = 64
+2014-01-04 22:10:16 - key_press.c:handle_key_press:82 - (removed numlock, state = 64)
+2014-01-04 22:10:16 - key_press.c:handle_key_press:86 - (removed upper 8 bits, state = 64)
+2014-01-04 22:10:16 - key_press.c:handle_key_press:91 - (checked mode_switch, state 64)
+2014-01-04 22:10:16 - key_press.c:handle_key_press:102 - no match, new state_filtered = 64
+2014-01-04 22:10:16 - key_press.c:handle_key_press:110 - Could not lookup key binding (modifiers 64, keycode 36)
+2014-01-04 22:10:16 - handlers.c:handle_focus_in:950 - focus change in, for window 0x00c0fa5b
+2014-01-04 22:10:16 - handlers.c:handle_focus_in:954 - That is con 0x9cb070 / #ffff00
+2014-01-04 22:10:16 - handlers.c:handle_focus_in:958 - FocusIn event for grab/ungrab, ignoring
+2014-01-04 22:10:16 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:16 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:16 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:16 - _NET_WM_NAME changed to "~     (stefan@xeen:pts/2)"
+2014-01-04 22:10:16 - assignments.c:run_assignments:20 - Checking if any assignments match this window
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:16 - window class matches (URxvt)
+2014-01-04 22:10:16 - Regular expression "irc" does not match "~     (stefan@xeen:pts/2)"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "Pidgin" does not match "URxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "Iceweasel" does not match "URxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "Firefox-bin" does not match "URxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "Navigator" does not match "URxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "Opera" does not match "URxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "Chromium-browser" does not match "URxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "Chromium" does not match "URxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "Mail" does not match "urxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "Thunderbird" does not match "URxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "Icedove" does not match "URxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "Msgcompose" does not match "URxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "transmission-gtk" does not match "URxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "tr-main" does not match "URxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "JDownloader" does not match "~     (stefan@xeen:pts/2)"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:16 - window class matches (URxvt)
+2014-01-04 22:10:16 - Regular expression "CMUS" does not match "urxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:16 - window class matches (URxvt)
+2014-01-04 22:10:16 - Regular expression "^mplayer radio" does not match "~     (stefan@xeen:pts/2)"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "gimp" does not match "URxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "Gcolor2" does not match "URxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "Screenruler" does not match "URxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "Screenruler" does not match "URxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "share-qrcode-float" does not match "~     (stefan@xeen:pts/2)"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "Lyrics Viewer™" does not match "~     (stefan@xeen:pts/2)"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "Gedit" does not match "URxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "MPlayer" does not match "URxvt"
+2014-01-04 22:10:16 - Checking window 0x00c0fa5b (class URxvt)
+2014-01-04 22:10:16 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:16 - window class matches (URxvt)
+2014-01-04 22:10:16 - Regular expression "irc" does not match "~     (stefan@xeen:pts/2)"
+2014-01-04 22:10:16 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:16 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - con.c:con_is_floating:412 - checking if con 0x9cb070 is floating
+2014-01-04 22:10:16 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:16 - key_press.c:handle_key_press:78 - KeyPress 25, state raw = 64
+2014-01-04 22:10:16 - key_press.c:handle_key_press:82 - (removed numlock, state = 64)
+2014-01-04 22:10:16 - key_press.c:handle_key_press:86 - (removed upper 8 bits, state = 64)
+2014-01-04 22:10:16 - key_press.c:handle_key_press:91 - (checked mode_switch, state 64)
+2014-01-04 22:10:16 - commands_parser.c:parse_command:209 - COMMAND: *layout tabbed*
+2014-01-04 22:10:16 - commands.c:cmd_criteria_init:259 - Initializing criteria, current_match = 0x65bba0
+2014-01-04 22:10:16 - commands.c:cmd_layout:1573 - changing layout to tabbed (2)
+2014-01-04 22:10:16 - con.c:con_set_layout:1216 - con_set_layout(0x9cb070, 2), con->type = 2
+2014-01-04 22:10:16 - commands.c:cmd_criteria_init:259 - Initializing criteria, current_match = 0x65bba0
+2014-01-04 22:10:16 - tree.c:tree_render:514 - -- BEGIN RENDERING --
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x974130 / root / layout 6 / children 2
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x974330 / __i3 / layout 4 / children 1
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9bdfa0 / DP2 / layout 4 / children 3
+2014-01-04 22:10:16 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 0)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9c18e0 / topdock / layout 3 / children 0
+2014-01-04 22:10:16 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9c1a50 / content / layout 6 / children 6
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering fullscreen node 0x983bd0 / 1 / layout 6 / children 1
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x983d80 / Buddy List / layout 6 / children 2
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (0, 0) with (223 x 1061)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x983f30 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - con.c:con_is_floating:412 - checking if con 0x983f30 is floating
+2014-01-04 22:10:16 - render.c:render_con:201 - child will be at 2x2 with size 219x1057
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x984170 / #ffff00 / layout 5 / children 1
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x984370 / #aa0000 / layout 5 / children 2
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (223, 0) with (1697 x 531)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x984520 / [mosh] sECuRE 1:freenode 8:sECuRE / layout 6 / children 2
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - con.c:con_is_floating:412 - checking if con 0x984520 is floating
+2014-01-04 22:10:16 - render.c:render_con:201 - child will be at 2x2 with size 1693x527
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (223, 0) with (198 x 531)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9c6db0 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - con.c:con_is_floating:412 - checking if con 0x9c6db0 is floating
+2014-01-04 22:10:16 - render.c:render_con:201 - child will be at 2x2 with size 194x527
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9c9510 / #00FF00 / layout 2 / children 2
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - con.c:con_is_floating:412 - checking if con 0x9c9510 is floating
+2014-01-04 22:10:16 - render.c:render_con:201 - child will be at 2x2 with size 1495x527
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (421, 18) with (1499 x 513)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9c9760 / #0000FF / layout 5 / children 2
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - con.c:con_is_floating:412 - checking if con 0x9c9760 is floating
+2014-01-04 22:10:16 - render.c:render_con:201 - child will be at 2x0 with size 1495x511
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (421, 18) with (1499 x 257)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9c9940 / zsh / layout 6 / children 0
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (421, 275) with (1499 x 256)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9c9c20 / Michael Stapelberg / layout 6 / children 0
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (421, 18) with (1499 x 513)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9cb070 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - con.c:con_is_floating:412 - checking if con 0x9cb070 is floating
+2014-01-04 22:10:16 - render.c:render_con:201 - child will be at 2x0 with size 1495x511
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9cb070 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - con.c:con_is_floating:412 - checking if con 0x9cb070 is floating
+2014-01-04 22:10:16 - render.c:render_con:201 - child will be at 2x0 with size 1495x511
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (223, 531) with (1697 x 530)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x984c80 / Johannes Erath / layout 6 / children 0
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - con.c:con_is_floating:412 - checking if con 0x984c80 is floating
+2014-01-04 22:10:16 - render.c:render_con:201 - child will be at 2x2 with size 1693x526
+2014-01-04 22:10:16 - render.c:render_l_output:112 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9c1c30 / bottomdock / layout 3 / children 1
+2014-01-04 22:10:16 - render.c:render_con:410 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:16 - render.c:render_con:130 - Rendering node 0x9b7700 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - render.c:render_con:201 - child will be at 0x0 with size 1920x19
+2014-01-04 22:10:16 - render.c:render_con:258 - Rendering floating windows:
+2014-01-04 22:10:16 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:16 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - con.c:con_is_floating:412 - checking if con 0x9cb070 is floating
+2014-01-04 22:10:16 - x.c:x_push_node:708 - setting rect (421, 18, 1499, 513)
+2014-01-04 22:10:16 - x.c:x_push_node:727 - setting window rect (2, 0, 1495, 511)
+2014-01-04 22:10:16 - x.c:x_push_node:777 - Sending fake configure notify
+2014-01-04 22:10:16 - xcb.c:fake_absolute_configure_notify:104 - fake rect = (423, 18, 1495, 511)
+2014-01-04 22:10:16 - x.c:x_push_node:708 - setting rect (421, 18, 1499, 513)
+2014-01-04 22:10:16 - x.c:x_push_node:727 - setting window rect (2, 0, 1495, 511)
+2014-01-04 22:10:16 - x.c:x_push_node:777 - Sending fake configure notify
+2014-01-04 22:10:16 - xcb.c:fake_absolute_configure_notify:104 - fake rect = (423, 18, 1495, 511)
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:16 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:16 - con.c:con_is_floating:412 - checking if con 0x9cb070 is floating
+2014-01-04 22:10:16 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:16 - tree.c:tree_render:523 - -- END RENDERING --
+2014-01-04 22:10:16 - key_press.c:json_boolean:25 - Got bool: 1, parse_error_key 0, nesting_level 1
+2014-01-04 22:10:16 - restore_layout.c:expose_event:285 - refreshing window 0x02000003 contents (con 0x9c9940)
+2014-01-04 22:10:16 - restore_layout.c:expose_event:285 - refreshing window 0x02000003 contents (con 0x9c9940)
+2014-01-04 22:10:16 - restore_layout.c:configure_notify:314 - ConfigureNotify: window 0x02000006 has now width=1495, height=511 (con 0x9c9c20)
+2014-01-04 22:10:16 - restore_layout.c:update_placeholder_contents:163 - con 0x9c9c20 (placeholder 0x02000006) line 0: [class="^Pidgin$" window_role="^conversation$"]
+2014-01-04 22:10:16 - restore_layout.c:update_placeholder_contents:158 - This swallows specification is not serializable?!
+2014-01-04 22:10:16 - restore_layout.c:configure_notify:314 - ConfigureNotify: window 0x02000006 has now width=1495, height=511 (con 0x9c9c20)
+2014-01-04 22:10:16 - restore_layout.c:update_placeholder_contents:163 - con 0x9c9c20 (placeholder 0x02000006) line 0: [class="^Pidgin$" window_role="^conversation$"]
+2014-01-04 22:10:16 - restore_layout.c:update_placeholder_contents:158 - This swallows specification is not serializable?!
+2014-01-04 22:10:16 - handlers.c:handle_normal_hints:786 - Minimum size: 13 (width) x 19 (height)
+2014-01-04 22:10:16 - handlers.c:handle_normal_hints:786 - Minimum size: 13 (width) x 19 (height)
+2014-01-04 22:10:16 - key_press.c:handle_key_press:78 - KeyRelease 25, state raw = 64
+2014-01-04 22:10:16 - key_press.c:handle_key_press:82 - (removed numlock, state = 64)
+2014-01-04 22:10:16 - key_press.c:handle_key_press:86 - (removed upper 8 bits, state = 64)
+2014-01-04 22:10:16 - key_press.c:handle_key_press:91 - (checked mode_switch, state 64)
+2014-01-04 22:10:16 - key_press.c:handle_key_press:102 - no match, new state_filtered = 64
+2014-01-04 22:10:16 - key_press.c:handle_key_press:110 - Could not lookup key binding (modifiers 64, keycode 25)
+2014-01-04 22:10:16 - handlers.c:handle_focus_in:950 - focus change in, for window 0x00c0fa5b
+2014-01-04 22:10:16 - handlers.c:handle_focus_in:954 - That is con 0x9cb070 / #ffff00
+2014-01-04 22:10:16 - handlers.c:handle_focus_in:958 - FocusIn event for grab/ungrab, ignoring
+2014-01-04 22:10:17 - handlers.c:handle_focus_in:950 - focus change in, for window 0x02000003
+2014-01-04 22:10:17 - handlers.c:handle_focus_in:954 - That is con 0x9c9510 / #00FF00
+2014-01-04 22:10:17 - handlers.c:handle_focus_in:958 - FocusIn event for grab/ungrab, ignoring
+2014-01-04 22:10:17 - key_press.c:handle_key_press:78 - KeyPress 36, state raw = 64
+2014-01-04 22:10:17 - key_press.c:handle_key_press:82 - (removed numlock, state = 64)
+2014-01-04 22:10:17 - key_press.c:handle_key_press:86 - (removed upper 8 bits, state = 64)
+2014-01-04 22:10:17 - key_press.c:handle_key_press:91 - (checked mode_switch, state 64)
+2014-01-04 22:10:17 - commands_parser.c:parse_command:209 - COMMAND: *exec urxvtcd*
+2014-01-04 22:10:17 - commands.c:cmd_criteria_init:259 - Initializing criteria, current_match = 0x65bba0
+2014-01-04 22:10:17 - commands.c:cmd_exec:1325 - should execute urxvtcd, no_startup_id = 0
+2014-01-04 22:10:17 - startup id = i3/urxvtcd/12829-95-xeen_TIME354028973
+2014-01-04 22:10:17 - executing: urxvtcd
+2014-01-04 22:10:17 - commands.c:cmd_criteria_init:259 - Initializing criteria, current_match = 0x65bba0
+2014-01-04 22:10:17 - key_press.c:json_boolean:25 - Got bool: 1, parse_error_key 0, nesting_level 1
+2014-01-04 22:10:17 - handlers.c:handle_destroy_notify_event:521 - destroy notify for 0x02a00343, 0x02a00343
+2014-01-04 22:10:17 - handlers.c:handle_unmap_notify_event:454 - UnmapNotify for 0x02a00343 (received from 0x02a00343), serial 44665
+2014-01-04 22:10:17 - Not a managed window, ignoring UnmapNotify event
+2014-01-04 22:10:17 - handlers.c:handle_configure_request:297 - window 0x00c0fa6d wants to be at 0x0 with 566x318
+2014-01-04 22:10:17 - handlers.c:handle_configure_request:302 - Configure request for unmanaged window, can do that.
+2014-01-04 22:10:17 - handlers.c:handle_map_request:277 - window = 0x00c0fa6d, serial is 44667.
+2014-01-04 22:10:17 - manage.c:manage_window:193 - Managing window 0x00c0fa6d
+2014-01-04 22:10:17 - WM_CLASS changed to urxvt (instance), URxvt (class)
+2014-01-04 22:10:17 - WM_NAME changed to "urxvt"
+2014-01-04 22:10:17 - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+2014-01-04 22:10:17 - _NET_WM_NAME changed to "urxvt"
+2014-01-04 22:10:17 - window.c:window_update_leader:127 - CLIENT_LEADER not set.
+2014-01-04 22:10:17 - window.c:window_update_transient_for:151 - TRANSIENT_FOR not set.
+2014-01-04 22:10:17 - window.c:window_update_strut_partial:175 - _NET_WM_STRUT_PARTIAL not set.
+2014-01-04 22:10:17 - window.c:window_update_role:200 - WM_WINDOW_ROLE not set.
+2014-01-04 22:10:17 - WM_HINTS.input changed to "1"
+2014-01-04 22:10:17 - manage.c:manage_window:229 - startup workspace = 1
+2014-01-04 22:10:17 - manage.c:manage_window:267 - Initial geometry: (0, 0, 566, 318)
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - dock status does not match
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "^Pidgin$" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "^URxvt$" matches "URxvt"
+2014-01-04 22:10:17 - window class matches (URxvt)
+2014-01-04 22:10:17 - Regular expression "^IRC$" does not match "urxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - window id does not match
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "^Pidgin$" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - window id does not match
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - dock status does not match
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:17 - window class matches (URxvt)
+2014-01-04 22:10:17 - Regular expression "irc" does not match "urxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Pidgin" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Iceweasel" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Firefox-bin" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Navigator" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Opera" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Chromium-browser" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Chromium" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Mail" does not match "urxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Thunderbird" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Icedove" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Msgcompose" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "transmission-gtk" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "tr-main" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "JDownloader" does not match "urxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:17 - window class matches (URxvt)
+2014-01-04 22:10:17 - Regular expression "CMUS" does not match "urxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:17 - window class matches (URxvt)
+2014-01-04 22:10:17 - Regular expression "^mplayer radio" does not match "urxvt"
+2014-01-04 22:10:17 - manage.c:manage_window:298 - Using workspace on which this application was started (1)
+2014-01-04 22:10:17 - manage.c:manage_window:300 - focused on ws 1: 0x9cb070 / #ffff00
+2014-01-04 22:10:17 - con.c:con_new_skeleton:64 - opening window 6
+2014-01-04 22:10:17 - con.c:con_new_skeleton:67 - color #aa0000
+2014-01-04 22:10:17 - con.c:con_attach:179 - Inserting con = 0x9cb6b0 after last focused tiling con 0x9cb070
+2014-01-04 22:10:17 - x.c:x_con_init:151 - adding new state for window id 0x02a00344
+2014-01-04 22:10:17 - manage.c:manage_window:329 - new container = 0x9cb6b0
+2014-01-04 22:10:17 - restore_layout.c:restore_kill_placeholder:275 - 0x00c0fa6d is not a placeholder window, ignoring.
+2014-01-04 22:10:17 - manage.c:manage_window:332 - Uh?! Container without a placeholder, but with a window, has swallowed this to-be-managed window?!
+2014-01-04 22:10:17 - x.c:x_reinit:168 - resetting state 0x9cb1e0 to initial
+2014-01-04 22:10:17 - manage.c:manage_window:360 - Not in fullscreen mode, focusing
+2014-01-04 22:10:17 - workspace visible? fs = 0x983bd0, ws = 0x983bd0
+2014-01-04 22:10:17 - con.c:con_focus:214 - con_focus = 0x9cb6b0
+2014-01-04 22:10:17 - con.c:con_focus:214 - con_focus = 0x9c9510
+2014-01-04 22:10:17 - con.c:con_focus:214 - con_focus = 0x984520
+2014-01-04 22:10:17 - con.c:con_focus:214 - con_focus = 0x984370
+2014-01-04 22:10:17 - con.c:con_focus:214 - con_focus = 0x984170
+2014-01-04 22:10:17 - con.c:con_focus:214 - con_focus = 0x983d80
+2014-01-04 22:10:17 - con.c:con_focus:214 - con_focus = 0x983bd0
+2014-01-04 22:10:17 - con.c:con_focus:214 - con_focus = 0x9c1a50
+2014-01-04 22:10:17 - con.c:con_focus:214 - con_focus = 0x9bdfa0
+2014-01-04 22:10:17 - con.c:con_focus:214 - con_focus = 0x974130
+2014-01-04 22:10:17 - assignments.c:run_assignments:20 - Checking if any assignments match this window
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:17 - window class matches (URxvt)
+2014-01-04 22:10:17 - Regular expression "irc" does not match "urxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Pidgin" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Iceweasel" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Firefox-bin" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Navigator" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Opera" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Chromium-browser" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Chromium" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Mail" does not match "urxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Thunderbird" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Icedove" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Msgcompose" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "transmission-gtk" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "tr-main" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "JDownloader" does not match "urxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:17 - window class matches (URxvt)
+2014-01-04 22:10:17 - Regular expression "CMUS" does not match "urxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:17 - window class matches (URxvt)
+2014-01-04 22:10:17 - Regular expression "^mplayer radio" does not match "urxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "gimp" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Gcolor2" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Screenruler" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Screenruler" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "share-qrcode-float" does not match "urxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Lyrics Viewer™" does not match "urxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Gedit" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "MPlayer" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:17 - window class matches (URxvt)
+2014-01-04 22:10:17 - Regular expression "irc" does not match "urxvt"
+2014-01-04 22:10:17 - workspace visible? fs = 0x983bd0, ws = 0x983bd0
+2014-01-04 22:10:17 - tree.c:tree_render:514 - -- BEGIN RENDERING --
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x974130 / root / layout 6 / children 2
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x974330 / __i3 / layout 4 / children 1
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9bdfa0 / DP2 / layout 4 / children 3
+2014-01-04 22:10:17 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 0)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9c18e0 / topdock / layout 3 / children 0
+2014-01-04 22:10:17 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9c1a50 / content / layout 6 / children 6
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering fullscreen node 0x983bd0 / 1 / layout 6 / children 1
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x983d80 / Buddy List / layout 6 / children 2
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (0, 0) with (223 x 1061)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x983f30 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x983f30 is floating
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 2x2 with size 219x1057
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x984170 / #ffff00 / layout 5 / children 1
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x984370 / #aa0000 / layout 5 / children 2
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (223, 0) with (1697 x 531)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x984520 / [mosh] sECuRE 1:freenode 8:sECuRE / layout 6 / children 2
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x984520 is floating
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 2x2 with size 1693x527
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (223, 0) with (198 x 531)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9c6db0 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x9c6db0 is floating
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 2x2 with size 194x527
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9c9510 / #00FF00 / layout 2 / children 3
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x9c9510 is floating
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 2x2 with size 1495x527
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (421, 18) with (1499 x 513)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9c9760 / #0000FF / layout 5 / children 2
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x9c9760 is floating
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 2x0 with size 1495x511
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (421, 18) with (1499 x 257)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9c9940 / zsh / layout 6 / children 0
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (421, 275) with (1499 x 256)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9c9c20 / Michael Stapelberg / layout 6 / children 0
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (421, 18) with (1499 x 513)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9cb070 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x9cb070 is floating
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 2x0 with size 1495x511
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (421, 18) with (1499 x 513)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9cb6b0 / #aa0000 / layout 6 / children 0
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x9cb6b0 is floating
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 2x0 with size 1495x511
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9cb6b0 / #aa0000 / layout 6 / children 0
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x9cb6b0 is floating
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 2x0 with size 1495x511
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (223, 531) with (1697 x 530)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x984c80 / Johannes Erath / layout 6 / children 0
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x984c80 is floating
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 2x2 with size 1693x526
+2014-01-04 22:10:17 - render.c:render_l_output:112 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9c1c30 / bottomdock / layout 3 / children 1
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9b7700 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 0x0 with size 1920x19
+2014-01-04 22:10:17 - render.c:render_con:258 - Rendering floating windows:
+2014-01-04 22:10:17 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:17 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:17 - x.c:x_push_node:609 - pushing name [i3 con] container around 0x9c8080 for con 0x9cb6b0
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x9cb6b0 is floating
+2014-01-04 22:10:17 - x.c:x_push_node:708 - setting rect (421, 18, 1499, 513)
+2014-01-04 22:10:17 - x.c:x_push_node:727 - setting window rect (2, 0, 1495, 511)
+2014-01-04 22:10:17 - x.c:x_push_node:756 - mapping child window (serial 896700)
+2014-01-04 22:10:17 - x.c:x_push_node:770 - mapping container 02a00344 (serial 896702)
+2014-01-04 22:10:17 - x.c:x_push_node:777 - Sending fake configure notify
+2014-01-04 22:10:17 - xcb.c:fake_absolute_configure_notify:104 - fake rect = (423, 18, 1495, 511)
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x9cb070 is floating
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x9cb6b0 is floating
+2014-01-04 22:10:17 - x.c:x_push_changes:963 - Updating focus (focused: 0x9cb6b0 / #aa0000) to X11 window 0x00c0fa6d
+2014-01-04 22:10:17 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:17 - tree.c:tree_render:523 - -- END RENDERING --
+2014-01-04 22:10:17 - con.c:con_set_urgency:1558 - Ignoring urgency flag for current client
+2014-01-04 22:10:17 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:17 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:17 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:17 - startup.c:startup_monitor_event:237 - startup sequence i3/urxvtcd/12829-95-xeen_TIME354028973 completed
+2014-01-04 22:10:17 - startup.c:startup_monitor_event:243 - Will delete startup sequence i3/urxvtcd/12829-95-xeen_TIME354028973 at timestamp 1388869847
+2014-01-04 22:10:17 - startup.c:startup_monitor_event:246 - No more startup sequences running, changing root window cursor to default pointer.
+2014-01-04 22:10:17 - handlers.c:handle_normal_hints:786 - Minimum size: 13 (width) x 19 (height)
+2014-01-04 22:10:17 - handlers.c:handle_normal_hints:803 - resize increments changed
+2014-01-04 22:10:17 - handlers.c:handle_normal_hints:824 - client's base_height changed to 6
+2014-01-04 22:10:17 - handlers.c:handle_normal_hints:825 - client's base_width changed to 6
+2014-01-04 22:10:17 - tree.c:tree_render:514 - -- BEGIN RENDERING --
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x974130 / root / layout 6 / children 2
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x974330 / __i3 / layout 4 / children 1
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9bdfa0 / DP2 / layout 4 / children 3
+2014-01-04 22:10:17 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 0)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9c18e0 / topdock / layout 3 / children 0
+2014-01-04 22:10:17 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9c1a50 / content / layout 6 / children 6
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering fullscreen node 0x983bd0 / 1 / layout 6 / children 1
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x983d80 / Buddy List / layout 6 / children 2
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (0, 0) with (223 x 1061)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x983f30 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x983f30 is floating
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 2x2 with size 219x1057
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x984170 / #ffff00 / layout 5 / children 1
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (223, 0) with (1697 x 1061)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x984370 / #aa0000 / layout 5 / children 2
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (223, 0) with (1697 x 531)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x984520 / [mosh] sECuRE 1:freenode 8:sECuRE / layout 6 / children 2
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x984520 is floating
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 2x2 with size 1693x527
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (223, 0) with (198 x 531)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9c6db0 / Buddy List / layout 6 / children 0
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x9c6db0 is floating
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 2x2 with size 194x527
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (421, 0) with (1499 x 531)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9c9510 / #00FF00 / layout 2 / children 3
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x9c9510 is floating
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 2x2 with size 1495x527
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (421, 18) with (1499 x 513)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9c9760 / #0000FF / layout 5 / children 2
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x9c9760 is floating
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 2x0 with size 1495x511
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (421, 18) with (1499 x 257)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9c9940 / zsh / layout 6 / children 0
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (421, 275) with (1499 x 256)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9c9c20 / Michael Stapelberg / layout 6 / children 0
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (421, 18) with (1499 x 513)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9cb070 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x9cb070 is floating
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 2x0 with size 1495x511
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (421, 18) with (1499 x 513)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9cb6b0 / #aa0000 / layout 6 / children 0
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x9cb6b0 is floating
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 2x0 with size 1495x511
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9cb6b0 / #aa0000 / layout 6 / children 0
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x9cb6b0 is floating
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 2x0 with size 1495x511
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (223, 531) with (1697 x 530)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x984c80 / Johannes Erath / layout 6 / children 0
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x984c80 is floating
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 2x2 with size 1693x526
+2014-01-04 22:10:17 - render.c:render_l_output:112 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9c1c30 / bottomdock / layout 3 / children 1
+2014-01-04 22:10:17 - render.c:render_con:410 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:17 - render.c:render_con:130 - Rendering node 0x9b7700 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - render.c:render_con:201 - child will be at 0x0 with size 1920x19
+2014-01-04 22:10:17 - render.c:render_con:258 - Rendering floating windows:
+2014-01-04 22:10:17 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:17 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:17 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:17 - tree.c:tree_render:523 - -- END RENDERING --
+2014-01-04 22:10:17 - handlers.c:handle_normal_hints:786 - Minimum size: 13 (width) x 19 (height)
+2014-01-04 22:10:17 - key_press.c:handle_key_press:78 - KeyRelease 36, state raw = 64
+2014-01-04 22:10:17 - key_press.c:handle_key_press:82 - (removed numlock, state = 64)
+2014-01-04 22:10:17 - key_press.c:handle_key_press:86 - (removed upper 8 bits, state = 64)
+2014-01-04 22:10:17 - key_press.c:handle_key_press:91 - (checked mode_switch, state 64)
+2014-01-04 22:10:17 - key_press.c:handle_key_press:102 - no match, new state_filtered = 64
+2014-01-04 22:10:17 - key_press.c:handle_key_press:110 - Could not lookup key binding (modifiers 64, keycode 36)
+2014-01-04 22:10:17 - handlers.c:handle_focus_in:950 - focus change in, for window 0x00c0fa6d
+2014-01-04 22:10:17 - handlers.c:handle_focus_in:954 - That is con 0x9cb6b0 / #aa0000
+2014-01-04 22:10:17 - handlers.c:handle_focus_in:958 - FocusIn event for grab/ungrab, ignoring
+2014-01-04 22:10:17 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:17 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:17 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:17 - _NET_WM_NAME changed to "~     (stefan@xeen:pts/5)"
+2014-01-04 22:10:17 - assignments.c:run_assignments:20 - Checking if any assignments match this window
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:17 - window class matches (URxvt)
+2014-01-04 22:10:17 - Regular expression "irc" does not match "~     (stefan@xeen:pts/5)"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Pidgin" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Iceweasel" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Firefox-bin" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Navigator" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Opera" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Chromium-browser" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Chromium" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Mail" does not match "urxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Thunderbird" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Icedove" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Msgcompose" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "transmission-gtk" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "tr-main" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "JDownloader" does not match "~     (stefan@xeen:pts/5)"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:17 - window class matches (URxvt)
+2014-01-04 22:10:17 - Regular expression "CMUS" does not match "urxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:17 - window class matches (URxvt)
+2014-01-04 22:10:17 - Regular expression "^mplayer radio" does not match "~     (stefan@xeen:pts/5)"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "gimp" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Gcolor2" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Screenruler" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Screenruler" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "share-qrcode-float" does not match "~     (stefan@xeen:pts/5)"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Lyrics Viewer™" does not match "~     (stefan@xeen:pts/5)"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "Gedit" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "MPlayer" does not match "URxvt"
+2014-01-04 22:10:17 - Checking window 0x00c0fa6d (class URxvt)
+2014-01-04 22:10:17 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:17 - window class matches (URxvt)
+2014-01-04 22:10:17 - Regular expression "irc" does not match "~     (stefan@xeen:pts/5)"
+2014-01-04 22:10:17 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:17 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:17 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:17 - con.c:con_is_floating:412 - checking if con 0x9cb6b0 is floating
+2014-01-04 22:10:17 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:18 - main.c:xkb_got_event:174 - Handling XKB event
+2014-01-04 22:10:20 - main.c:xkb_got_event:174 - Handling XKB event
+2014-01-04 22:10:20 - handlers.c:handle_focus_in:950 - focus change in, for window 0x02000003
+2014-01-04 22:10:20 - handlers.c:handle_focus_in:954 - That is con 0x9c9510 / #00FF00
+2014-01-04 22:10:20 - handlers.c:handle_focus_in:958 - FocusIn event for grab/ungrab, ignoring
+2014-01-04 22:10:20 - key_press.c:handle_key_press:78 - KeyPress 17, state raw = 64
+2014-01-04 22:10:20 - key_press.c:handle_key_press:82 - (removed numlock, state = 64)
+2014-01-04 22:10:20 - key_press.c:handle_key_press:86 - (removed upper 8 bits, state = 64)
+2014-01-04 22:10:20 - key_press.c:handle_key_press:91 - (checked mode_switch, state 64)
+2014-01-04 22:10:20 - commands_parser.c:parse_command:209 - COMMAND: *workspace 8*
+2014-01-04 22:10:20 - commands.c:cmd_criteria_init:259 - Initializing criteria, current_match = 0x65bba0
+2014-01-04 22:10:20 - commands.c:cmd_workspace_name:982 - should switch to workspace 8
+2014-01-04 22:10:20 - workspace.c:_workspace_show:405 - Setting previous_workspace_name = 1
+2014-01-04 22:10:20 - workspace.c:_workspace_show:411 - switching to 0x9aac40 / 8
+2014-01-04 22:10:20 - con.c:con_focus:214 - con_focus = 0x9c2410
+2014-01-04 22:10:20 - con.c:con_focus:214 - con_focus = 0x9c3a70
+2014-01-04 22:10:20 - con.c:con_focus:214 - con_focus = 0x9c1f30
+2014-01-04 22:10:20 - con.c:con_focus:214 - con_focus = 0x9aac40
+2014-01-04 22:10:20 - con.c:con_focus:214 - con_focus = 0x9c1a50
+2014-01-04 22:10:20 - con.c:con_focus:214 - con_focus = 0x9bdfa0
+2014-01-04 22:10:20 - con.c:con_focus:214 - con_focus = 0x974130
+2014-01-04 22:10:20 - workspace.c:_workspace_show:448 - old = 0x983bd0 / 1
+2014-01-04 22:10:20 - focused now = 0x9c2410 / #0000FF
+2014-01-04 22:10:20 - commands.c:cmd_criteria_init:259 - Initializing criteria, current_match = 0x65bba0
+2014-01-04 22:10:20 - tree.c:tree_render:514 - -- BEGIN RENDERING --
+2014-01-04 22:10:20 - render.c:render_con:130 - Rendering node 0x974130 / root / layout 6 / children 2
+2014-01-04 22:10:20 - render.c:render_con:130 - Rendering node 0x974330 / __i3 / layout 4 / children 1
+2014-01-04 22:10:20 - render.c:render_con:130 - Rendering node 0x9bdfa0 / DP2 / layout 4 / children 3
+2014-01-04 22:10:20 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 0)
+2014-01-04 22:10:20 - render.c:render_con:130 - Rendering node 0x9c18e0 / topdock / layout 3 / children 0
+2014-01-04 22:10:20 - render.c:render_l_output:112 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:20 - render.c:render_con:130 - Rendering node 0x9c1a50 / content / layout 6 / children 6
+2014-01-04 22:10:20 - render.c:render_con:130 - Rendering fullscreen node 0x9aac40 / 8 / layout 6 / children 1
+2014-01-04 22:10:20 - render.c:render_con:410 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:20 - render.c:render_con:130 - Rendering node 0x9c1f30 / #aa00aa / layout 5 / children 1
+2014-01-04 22:10:20 - render.c:render_con:410 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:20 - render.c:render_con:130 - Rendering node 0x9c3a70 / #ff00ff / layout 2 / children 1
+2014-01-04 22:10:20 - render.c:render_con:410 - child at (0, 0) with (1920 x 1061)
+2014-01-04 22:10:20 - render.c:render_con:130 - Rendering node 0x9c2410 / #0000FF / layout 6 / children 0
+2014-01-04 22:10:20 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:20 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:20 - con.c:con_is_floating:412 - checking if con 0x9c2410 is floating
+2014-01-04 22:10:20 - render.c:render_con:201 - child will be at 2x2 with size 1916x1057
+2014-01-04 22:10:20 - render.c:render_con:130 - Rendering node 0x9c2410 / #0000FF / layout 6 / children 0
+2014-01-04 22:10:20 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:20 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:20 - con.c:con_is_floating:412 - checking if con 0x9c2410 is floating
+2014-01-04 22:10:20 - render.c:render_con:201 - child will be at 2x2 with size 1916x1057
+2014-01-04 22:10:20 - render.c:render_l_output:112 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:20 - render.c:render_con:130 - Rendering node 0x9c1c30 / bottomdock / layout 3 / children 1
+2014-01-04 22:10:20 - render.c:render_con:410 - child at (0, 1061) with (1920 x 19)
+2014-01-04 22:10:20 - render.c:render_con:130 - Rendering node 0x9b7700 / #ffff00 / layout 6 / children 0
+2014-01-04 22:10:20 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:20 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:20 - render.c:render_con:201 - child will be at 0x0 with size 1920x19
+2014-01-04 22:10:20 - render.c:render_con:258 - Rendering floating windows:
+2014-01-04 22:10:20 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:20 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:20 - x.c:x_push_node:770 - mapping container 02a002d0 (serial 896941)
+2014-01-04 22:10:20 - x.c:x_push_node:770 - mapping container 02a002cd (serial 896945)
+2014-01-04 22:10:20 - x.c:x_push_changes:963 - Updating focus (focused: 0x9c2410 / #0000FF) to X11 window 0x00c0f9ef
+2014-01-04 22:10:20 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:20 - x.c:x_push_node_unmaps:817 - unmapping container 0x983f30 / Buddy List (serial 896978)
+2014-01-04 22:10:20 - x.c:x_push_node_unmaps:823 - ignore_unmap for con 0x983f30 (frame 0x02a0004d) now 1
+2014-01-04 22:10:20 - x.c:x_push_node_unmaps:817 - unmapping container 0x984520 / [mosh] sECuRE 1:freenode 8:sECuRE (serial 896980)
+2014-01-04 22:10:20 - x.c:x_push_node_unmaps:823 - ignore_unmap for con 0x984520 (frame 0x02a0004e) now 1
+2014-01-04 22:10:20 - x.c:x_push_node_unmaps:817 - unmapping container 0x9c6db0 / Buddy List (serial 896982)
+2014-01-04 22:10:20 - x.c:x_push_node_unmaps:823 - ignore_unmap for con 0x9c6db0 (frame 0x02a00334) now 1
+2014-01-04 22:10:20 - x.c:x_push_node_unmaps:817 - unmapping container 0x9c9510 / #00FF00 (serial 896984)
+2014-01-04 22:10:20 - x.c:x_push_node_unmaps:823 - ignore_unmap for con 0x9c9510 (frame 0x02a00338) now 1
+2014-01-04 22:10:20 - x.c:x_push_node_unmaps:817 - unmapping container 0x9c9760 / #0000FF (serial 896986)
+2014-01-04 22:10:20 - x.c:x_push_node_unmaps:823 - ignore_unmap for con 0x9c9760 (frame 0x02a00337) now 1
+2014-01-04 22:10:20 - x.c:x_push_node_unmaps:817 - unmapping container 0x9cb070 / #ffff00 (serial 896988)
+2014-01-04 22:10:20 - x.c:x_push_node_unmaps:823 - ignore_unmap for con 0x9cb070 (frame 0x02a00340) now 1
+2014-01-04 22:10:20 - x.c:x_push_node_unmaps:817 - unmapping container 0x9cb6b0 / #aa0000 (serial 896990)
+2014-01-04 22:10:20 - x.c:x_push_node_unmaps:823 - ignore_unmap for con 0x9cb6b0 (frame 0x02a00344) now 1
+2014-01-04 22:10:20 - x.c:x_push_node_unmaps:817 - unmapping container 0x984c80 / Johannes Erath (serial 896992)
+2014-01-04 22:10:20 - x.c:x_push_node_unmaps:823 - ignore_unmap for con 0x984c80 (frame 0x02a00051) now 1
+2014-01-04 22:10:20 - tree.c:tree_render:523 - -- END RENDERING --
+2014-01-04 22:10:20 - key_press.c:json_boolean:25 - Got bool: 1, parse_error_key 0, nesting_level 1
+2014-01-04 22:10:20 - workspace visible? fs = 0x9aac40, ws = 0x983bd0
+2014-01-04 22:10:20 - workspace visible? fs = 0x9aac40, ws = 0x985130
+2014-01-04 22:10:20 - workspace visible? fs = 0x9aac40, ws = 0x985800
+2014-01-04 22:10:20 - workspace visible? fs = 0x9aac40, ws = 0x9c7700
+2014-01-04 22:10:20 - workspace visible? fs = 0x9aac40, ws = 0x9aac40
+2014-01-04 22:10:20 - workspace visible? fs = 0x9aac40, ws = 0x987500
+2014-01-04 22:10:20 - handlers.c:handle_expose_event:605 - window = 02a002d0
+2014-01-04 22:10:20 - handlers.c:handle_expose_event:605 - window = 02a002cd
+2014-01-04 22:10:20 - handlers.c:handle_expose_event:605 - window = 02a002cd
+2014-01-04 22:10:20 - handlers.c:handle_expose_event:605 - window = 02a002cd
+2014-01-04 22:10:20 - handlers.c:handle_expose_event:605 - window = 02a002cd
+2014-01-04 22:10:20 - handlers.c:handle_unmap_notify_event:454 - UnmapNotify for 0x02a0004d (received from 0x02a0004d), serial 45010
+2014-01-04 22:10:20 - handlers.c:handle_unmap_notify_event:470 - ignore_unmap = 0 for frame of container 0x983f30
+2014-01-04 22:10:20 - handlers.c:handle_unmap_notify_event:454 - UnmapNotify for 0x02a0004e (received from 0x02a0004e), serial 45012
+2014-01-04 22:10:20 - handlers.c:handle_unmap_notify_event:470 - ignore_unmap = 0 for frame of container 0x984520
+2014-01-04 22:10:20 - handlers.c:handle_unmap_notify_event:454 - UnmapNotify for 0x02a00334 (received from 0x02a00334), serial 45014
+2014-01-04 22:10:20 - handlers.c:handle_unmap_notify_event:470 - ignore_unmap = 0 for frame of container 0x9c6db0
+2014-01-04 22:10:20 - handlers.c:handle_unmap_notify_event:454 - UnmapNotify for 0x02a00338 (received from 0x02a00338), serial 45016
+2014-01-04 22:10:20 - handlers.c:handle_unmap_notify_event:470 - ignore_unmap = 0 for frame of container 0x9c9510
+2014-01-04 22:10:20 - handlers.c:handle_unmap_notify_event:454 - UnmapNotify for 0x02a00337 (received from 0x02a00337), serial 45018
+2014-01-04 22:10:20 - handlers.c:handle_unmap_notify_event:470 - ignore_unmap = 0 for frame of container 0x9c9760
+2014-01-04 22:10:20 - handlers.c:handle_unmap_notify_event:454 - UnmapNotify for 0x02a00340 (received from 0x02a00340), serial 45020
+2014-01-04 22:10:20 - handlers.c:handle_unmap_notify_event:470 - ignore_unmap = 0 for frame of container 0x9cb070
+2014-01-04 22:10:20 - handlers.c:handle_unmap_notify_event:454 - UnmapNotify for 0x02a00344 (received from 0x02a00344), serial 45022
+2014-01-04 22:10:20 - handlers.c:handle_unmap_notify_event:470 - ignore_unmap = 0 for frame of container 0x9cb6b0
+2014-01-04 22:10:20 - handlers.c:handle_unmap_notify_event:454 - UnmapNotify for 0x02a00051 (received from 0x02a00051), serial 45024
+2014-01-04 22:10:20 - handlers.c:handle_unmap_notify_event:470 - ignore_unmap = 0 for frame of container 0x984c80
+2014-01-04 22:10:20 - key_press.c:handle_key_press:78 - KeyRelease 17, state raw = 64
+2014-01-04 22:10:20 - key_press.c:handle_key_press:82 - (removed numlock, state = 64)
+2014-01-04 22:10:20 - key_press.c:handle_key_press:86 - (removed upper 8 bits, state = 64)
+2014-01-04 22:10:20 - key_press.c:handle_key_press:91 - (checked mode_switch, state 64)
+2014-01-04 22:10:20 - key_press.c:handle_key_press:102 - no match, new state_filtered = 64
+2014-01-04 22:10:20 - key_press.c:handle_key_press:110 - Could not lookup key binding (modifiers 64, keycode 17)
+2014-01-04 22:10:20 - handlers.c:handle_focus_in:950 - focus change in, for window 0x00c0f9ef
+2014-01-04 22:10:20 - handlers.c:handle_focus_in:954 - That is con 0x9c2410 / #0000FF
+2014-01-04 22:10:20 - handlers.c:handle_focus_in:958 - FocusIn event for grab/ungrab, ignoring
+2014-01-04 22:10:21 - main.c:xkb_got_event:174 - Handling XKB event
+2014-01-04 22:10:21 - main.c:xkb_got_event:174 - Handling XKB event
+2014-01-04 22:10:21 - main.c:xkb_got_event:174 - Handling XKB event
+2014-01-04 22:10:24 - main.c:xkb_got_event:174 - Handling XKB event
+2014-01-04 22:10:26 - main.c:xkb_got_event:174 - Handling XKB event
+2014-01-04 22:10:28 - main.c:xkb_got_event:174 - Handling XKB event
+2014-01-04 22:10:28 - main.c:xkb_got_event:174 - Handling XKB event
+2014-01-04 22:10:31 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:31 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:31 - x.c:x_push_changes:991 - ENDING CHANGES
+2014-01-04 22:10:31 - _NET_WM_NAME changed to "i3-dump-log | grep 22:10 > broken-windows     (stefan@xeen:pts/3)"
+2014-01-04 22:10:31 - assignments.c:run_assignments:20 - Checking if any assignments match this window
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:31 - window class matches (URxvt)
+2014-01-04 22:10:31 - Regular expression "irc" does not match "i3-dump-log | grep 22:10 > broken-windows     (stefan@xeen:pts/3)"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "Pidgin" does not match "URxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "Iceweasel" does not match "URxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "Firefox-bin" does not match "URxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "Navigator" does not match "URxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "Opera" does not match "URxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "Chromium-browser" does not match "URxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "Chromium" does not match "URxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "Mail" does not match "urxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "Thunderbird" does not match "URxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "Icedove" does not match "URxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "Msgcompose" does not match "URxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "transmission-gtk" does not match "URxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "tr-main" does not match "URxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "JDownloader" does not match "i3-dump-log | grep 22:10 > broken-windows     (stefan@xeen:pts/3)"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:31 - window class matches (URxvt)
+2014-01-04 22:10:31 - Regular expression "CMUS" does not match "urxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:31 - window class matches (URxvt)
+2014-01-04 22:10:31 - Regular expression "^mplayer radio" does not match "i3-dump-log | grep 22:10 > broken-windows     (stefan@xeen:pts/3)"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "gimp" does not match "URxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "Gcolor2" does not match "URxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "Screenruler" does not match "URxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "Screenruler" does not match "URxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "share-qrcode-float" does not match "i3-dump-log | grep 22:10 > broken-windows     (stefan@xeen:pts/3)"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "Lyrics Viewer™" does not match "i3-dump-log | grep 22:10 > broken-windows     (stefan@xeen:pts/3)"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "Gedit" does not match "URxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "MPlayer" does not match "URxvt"
+2014-01-04 22:10:31 - Checking window 0x00c0f9ef (class URxvt)
+2014-01-04 22:10:31 - Regular expression "URxvt" matches "URxvt"
+2014-01-04 22:10:31 - window class matches (URxvt)
+2014-01-04 22:10:31 - Regular expression "irc" does not match "i3-dump-log | grep 22:10 > broken-windows     (stefan@xeen:pts/3)"
+2014-01-04 22:10:31 - x.c:x_push_changes:856 - -- PUSHING WINDOW STACK --
+2014-01-04 22:10:31 - x.c:x_push_changes:909 - PUSHING CHANGES
+2014-01-04 22:10:31 - con.c:con_border_style_rect:1077 - The border width for con is set to: -1
+2014-01-04 22:10:31 - con.c:con_border_style_rect:1081 - Effective border width is set to: 2
+2014-01-04 22:10:31 - con.c:con_is_floating:412 - checking if con 0x9c2410 is floating
+2014-01-04 22:10:31 - x.c:x_push_changes:991 - ENDING CHANGES

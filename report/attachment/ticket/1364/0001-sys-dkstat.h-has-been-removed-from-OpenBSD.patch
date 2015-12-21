@@ -1,0 +1,29 @@
+From 8357380d2d8596d16ac4f803079afe3ef7252705 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Wed, 17 Sep 2014 20:22:36 +0200
+Subject: [PATCH] sys/dkstat.h has been removed from OpenBSD
+
+---
+ src/print_cpu_usage.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/print_cpu_usage.c b/src/print_cpu_usage.c
+index 26a9d4f..bf16a5e 100644
+--- a/src/print_cpu_usage.c
++++ b/src/print_cpu_usage.c
+@@ -10,8 +10,12 @@
+ #include <sys/param.h>
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
++#if defined(__OpenBSD__)
++#include <sys/sched.h>
++#else
+ #include <sys/dkstat.h>
+ #endif
++#endif
+ 
+ #if defined(__DragonFly__)
+ #include <sys/param.h>
+-- 
+2.1.0
+

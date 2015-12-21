@@ -1,0 +1,456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #702 (SIGSEGV in i3bar)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/701" title="Ticket #701" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/702?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/702?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/702?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/703" title="Ticket #703" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="6d6b0a550a965361bd6b23c9";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/701" title="Ticket #701">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/703" title="Ticket #703">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-05-10T19%3A42%3A44%2B02%3A00&amp;precision=second" title="See timeline at 05/10/12 19:42:44">3 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2012-05-10T19%3A48%3A45%2B02%3A00&amp;precision=second" title="See timeline at 05/10/12 19:48:45">3 years ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/702" class="trac-id">#702</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=duplicate">duplicate</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">SIGSEGV in i3bar</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable"><a href="/report/query?status=!closed&amp;reporter=notch">notch</a></td>
+      <th id="h_owner" class="missing">Owned by:</th>
+      <td headers="h_owner"></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=i3bar">i3bar</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.2">4.2</a>
+        </td>
+        <th id="h_keywords">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+              <a href="/report/query?status=!closed&amp;keywords=~sigsegv">sigsegv</a> <a href="/report/query?status=!closed&amp;keywords=~i3bar">i3bar</a> <a href="/report/query?status=!closed&amp;keywords=~i3status">i3status</a>
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion" class="missing">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Linux">Linux</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+              Archlinux
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+Today I upgraded i3status (2.4-2 -&gt; 2.5-1) and my i3 stopped working. Syslog said it is i3bar segfaulting.<br />
+</p>
+<p>
+$ gdb /usr/bin/i3bar core <br />
+GNU gdb (GDB) 7.4.1<br />
+Copyright (C) 2012 Free Software Foundation, Inc.<br />
+License GPLv3+: GNU GPL version 3 or later &lt;<a class="ext-link" href="http://gnu.org/licenses/gpl.html"><span class="icon">​</span>http://gnu.org/licenses/gpl.html</a>&gt;<br />
+This is free software: you are free to change and redistribute it.<br />
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"<br />
+and "show warranty" for details.<br />
+This GDB was configured as "i686-pc-linux-gnu".<br />
+For bug reporting instructions, please see:<br />
+&lt;<a class="ext-link" href="http://www.gnu.org/software/gdb/bugs/"><span class="icon">​</span>http://www.gnu.org/software/gdb/bugs/</a>&gt;...<br />
+Reading symbols from /usr/bin/i3bar...done.<br />
+[New LWP 17083]<br />
+</p>
+<p>
+warning: Can't read pathname for load map: Input/output error.<br />
+Core was generated by `i3bar --bar_id bar-hpcnuh'.<br />
+Program terminated with signal 11, Segmentation fault.<br />
+<a class="missing ticket">#0</a>  0xb7442066 in <span class="underline">strlen_sse2_bsf () from /lib/libc.so.6<br />
+(gdb) backtrace full<br />
+<a class="missing ticket">#0</a>  0xb7442066 in </span>strlen_sse2_bsf () from /lib/libc.so.6<br />
+No symbol table info available.<br />
+<a class="closed ticket" href="/report/ticket/1" title="task: Design a logo/favicon (closed: fixed)">#1</a>  0x08051e93 in convert_utf8_to_ucs2 (input=0x0, real_strlen=0x9c5f704) at ucs2_conversion.c:65<br />
+</p>
+<blockquote>
+<p>
+input_size = 10<br />
+buffer_size = 0<br />
+buffer = 0x79<br />
+output_size = 3073122312<br />
+output = 0xb72c2104<br />
+rc = 3073124016<br />
+</p>
+</blockquote>
+<p>
+<a class="closed ticket" href="/report/ticket/2" title="defect: focus problems with firefox (or other gtk apps?) and right-clicking (closed: worksforme)">#2</a>  0x0804cedf in refresh_statusline () at src/xcb.c:120<br />
+</p>
+<blockquote>
+<p>
+block = 0x9c5f6f8<br />
+old_statusline_width = 0<br />
+rect = {x = -3992, y = 2501, width = 5970, height = 2504}<br />
+x = 163943448<br />
+</p>
+</blockquote>
+<p>
+<a class="closed ticket" href="/report/ticket/3" title="task: Implement automatic snapping (closed: wontfix)">#3</a>  0x08050a88 in draw_bars () at src/xcb.c:1407<br />
+</p>
+<blockquote>
+<p>
+i = 0<br />
+outputs_walk = 0x2d2<br />
+</p>
+</blockquote>
+<p>
+<a class="closed ticket" href="/report/ticket/4" title="defect: Customly resized containers don’t re-distribute free space when cells ... (closed: fixed)">#4</a>  0x08051764 in stdin_io_cb (loop=0xb7571500, watcher=0x9c5f560, revents=1) at src/child.c:225<br />
+</p>
+<blockquote>
+<p>
+fd = 0<br />
+n = -1<br />
+rec = 722<br />
+buffer_len = 1024<br />
+buffer = 0x9c81480 "[{\"name\":\"ipv6\",\"full_text\":\"no IPv6\"},{\"name\":\"disk_info\",\"instance\":\"/\",\"full_text\":\"3.8 GB\"},{\"name\":\"run_watch\",\"instance\":\"/var/run/dhclient*.pid\",\"color\":\"#FF0000\",\"full_text\":\"DHCP: no\"},{\"name"...<br />
+json_input = 0x9c81480 "[{\"name\":\"ipv6\",\"full_text\":\"no IPv6\"},{\"name\":\"disk_info\",\"instance\":\"/\",\"full_text\":\"3.8 GB\"},{\"name\":\"run_watch\",\"instance\":\"/var/run/dhclient*.pid\",\"color\":\"#FF0000\",\"full_text\":\"DHCP: no\"},{\"name"...<br />
+</p>
+</blockquote>
+<p>
+<a class="closed ticket" href="/report/ticket/5" title="defect: Resizing-windows sometimes are not rendered correctly. (closed: worksforme)">#5</a>  0xb7566901 in ev_invoke_pending () from /usr/lib/libev.so.4<br />
+No symbol table info available.<br />
+<a class="closed ticket" href="/report/ticket/6" title="task: Implement floating windows (closed: fixed)">#6</a>  0xb7569ab3 in ev_run () from /usr/lib/libev.so.4<br />
+No symbol table info available.<br />
+<a class="closed ticket" href="/report/ticket/7" title="defect: Firefox/Thunderbird: Drag'n'drop does not work (closed: fixed)">#7</a>  0x0804c8d0 in ev_loop (loop=0xb7571500, flags=0) at /usr/include/ev.h:820<br />
+No locals.<br />
+<a class="closed ticket" href="/report/ticket/8" title="task: Implement a command for explicitly switching screens. (closed: fixed)">#8</a>  0x0804cdf7 in main (argc=3, argv=0xbfc43774) at src/main.c:151<br />
+</p>
+<blockquote>
+<p>
+opt = -1<br />
+option_index = 1<br />
+socket_path = 0x9c5f408 "/tmp/i3-notch.p0THXJ/ipc-socket.9039"<br />
+i3_default_sock_path = 0x80536d3 "/tmp/i3-ipc.sock"<br />
+long_opt = {{name = 0x80537d8 "socket", has_arg = 1, flag = 0x0, val = 115}, {name = 0x8053743 "bar_id", has_arg = 1, flag = 0x0, val = 0}, {<br />
+</p>
+<blockquote>
+<p>
+name = 0x80537df "help", has_arg = 0, flag = 0x0, val = 104}, {name = 0x80537e4 "version", has_arg = 0, flag = 0x0, val = 118}, {name = 0x0, <br />
+has_arg = 0, flag = 0x0, val = 0}}<br />
+</p>
+</blockquote>
+<p>
+atom_sock_path = 0x9c5f408 "/tmp/i3-notch.p0THXJ/ipc-socket.9039"<br />
+sig_term = 0x9c5f0c0<br />
+sig_int = 0x9c5f0a0<br />
+sig_hup = 0x9c5f080<br />
+</p>
+</blockquote>
+
+    </div>
+  </div>
+</div>
+          
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(1)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1336672125034614">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-05-10T19%3A48%3A45%2B02%3A00&amp;precision=second" title="See timeline at 05/10/12 19:48:45">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>duplicate</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Duplicate of <a class="closed ticket" href="/report/ticket/701" title="defect: i3bar segmentation fault (closed: fixed)">#701</a><br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/702?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/702?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/702?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

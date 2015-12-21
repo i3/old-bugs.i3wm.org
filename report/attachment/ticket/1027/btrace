@@ -1,0 +1,21 @@
+#0  0x00007fe6bb87aa98 in poll () from /lib64/libc.so.6
+#1  0x00007fe6be203e1a in ?? () from /usr/lib64/libxcb.so.1
+#2  0x00007fe6be20561f in xcb_wait_for_event () from /usr/lib64/libxcb.so.1
+#3  0x0000000000432386 in handle_signal (sig=6, info=0x7fff6cc717b0, data=0x7fff6cc71680) at ../i3-4.5.1/src/sighandler.c:299
+#4  <signal handler called>
+#5  0x00007fe6bb7d0b65 in raise () from /lib64/libc.so.6
+#6  0x00007fe6bb7d1fdb in abort () from /lib64/libc.so.6
+#7  0x00007fe6bb7c9c4e in ?? () from /lib64/libc.so.6
+#8  0x00007fe6bb7c9cf2 in __assert_fail () from /lib64/libc.so.6
+#9  0x00000000004380dd in con_fullscreen_permits_focusing (con=0x1935940) at ../i3-4.5.1/src/con.c:1460
+#10 0x0000000000412e85 in cmd_focus (current_match=0x6599c0 <current_match>, cmd_output=0x659a30 <subcommand_output>) at ../i3-4.5.1/src/commands.c:1420
+#11 0x0000000000425e3a in GENERATED_call (call_identifier=71, result=0x659a30 <subcommand_output>) at include/GENERATED_command_call.h:574
+#12 0x000000000042602c in next_state (token=0x656270 <tokens_FOCUS+240>) at ../i3-4.5.1/src/commands_parser.c:192
+#13 0x000000000042650c in parse_command (input=0x1937150 "[class=\"^Thunderbird$\"] focus") at ../i3-4.5.1/src/commands_parser.c:317
+#14 0x0000000000417f30 in handle_key_press (event=0x194d8c0) at ../i3-4.5.1/src/key_press.c:116
+#15 0x00000000004349e1 in handle_event (type=2, event=0x194d8c0) at ../i3-4.5.1/src/handlers.c:1041
+#16 0x0000000000421f00 in xcb_check_cb (loop=0x7fe6bc6bd9a0, w=0x18bfd30, revents=32768) at ../i3-4.5.1/src/main.c:136
+#17 0x00007fe6bc4b4a7f in ev_invoke_pending () from /usr/lib64/libev.so.4
+#18 0x00007fe6bc4b7aed in ev_run () from /usr/lib64/libev.so.4
+#19 0x0000000000421de8 in ev_loop (loop=0x7fe6bc6bd9a0, flags=0) at /usr/include/ev.h:820
+#20 0x0000000000424eea in main (argc=2, argv=0x7fff6cc737f8) at ../i3-4.5.1/src/main.c:854

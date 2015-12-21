@@ -1,0 +1,80 @@
+From fe7dc1140685ce26bcc0c86d41849817a0f03867 Mon Sep 17 00:00:00 2001
+From: Julius Plenz <julius@plenz.com>
+Date: Fri, 10 Aug 2012 13:20:44 +0200
+Subject: [PATCH 1/2] Improve "find neighbour output" algorithm
+
+Now two outputs are considered "next to each other in direction D_*" if their x
+or y coordinate is within the range of the other's x or y *border*, i.e. if
+they share at least one line or column of pixels. With this patch, i3 will
+correctly select between S1 and S2 in this setup:
+
+    +----+
+    |    |--------+      i3 focus output left
+    | S1 |   S2   |      i3 focus output right
+    |    |--------+
+    +----+
+
+See also http://bugs.i3wm.org/report/ticket/771
+
+Signed-off-by: Julius Plenz <julius@plenz.com>
+---
+ src/randr.c |   16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+diff --git a/src/randr.c b/src/randr.c
+index d29ce12..7cc0d0d 100644
+--- a/src/randr.c
++++ b/src/randr.c
+@@ -99,7 +99,7 @@ Output *get_output_containing(int x, int y) {
+  *
+  */
+ Output *get_output_most(direction_t direction, Output *current) {
+-    Output *output, *candidate = NULL;
++    Output *output, *candidate = current;
+     int position = 0;
+     TAILQ_FOREACH(output, &outputs, outputs) {
+         if (!output->active)
+@@ -114,11 +114,13 @@ Output *get_output_most(direction_t direction, Output *current) {
+             break;
+ 
+         if (((direction == D_UP) || (direction == D_DOWN)) &&
+-            (current->rect.x != output->rect.x))
++            (current->rect.x >= output->rect.x + output->rect.width ||
++             current->rect.x + current->rect.width <= output->rect.x))
+             continue;
+ 
+         if (((direction == D_LEFT) || (direction == D_RIGHT)) &&
+-            (current->rect.y != output->rect.y))
++            (current->rect.y >= output->rect.y + output->rect.height ||
++             current->rect.y + current->rect.height <= output->rect.y))
+             continue;
+ 
+         switch (direction) {
+@@ -150,11 +152,13 @@ Output *get_output_next(direction_t direction, Output *current) {
+             continue;
+ 
+         if (((direction == D_UP) || (direction == D_DOWN)) &&
+-            (current->rect.x != output->rect.x))
++            (current->rect.x >= output->rect.x + output->rect.width ||
++             current->rect.x + current->rect.width <= output->rect.x))
+             continue;
+ 
+         if (((direction == D_LEFT) || (direction == D_RIGHT)) &&
+-            (current->rect.y != output->rect.y))
++            (current->rect.y >= output->rect.y + output->rect.height ||
++             current->rect.y + current->rect.height <= output->rect.y))
+             continue;
+ 
+         switch (direction) {
+@@ -181,7 +185,7 @@ Output *get_output_next(direction_t direction, Output *current) {
+         }
+     }
+ 
+-    return candidate;
++    return candidate ? candidate : current;
+ }
+ 
+ /*
+-- 
+1.7.10.4
+

@@ -1,0 +1,915 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #803 (Fix signal handler)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/802" title="Ticket #802" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/803?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/803?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/803?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/804" title="Ticket #804" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="f51da76d82999903b16d200a";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/802" title="Ticket #802">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/804" title="Ticket #804">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2012-09-17T17%3A50%3A37%2B02%3A00&amp;precision=second" title="See timeline at 09/17/12 17:50:37">3 years ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2012-09-21T16%3A48%3A29%2B02%3A00&amp;precision=second" title="See timeline at 09/21/12 16:48:29">3 years ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2012-09-23T14%3A34%3A06%2B02%3A00&amp;precision=second" title="See timeline at 09/23/12 14:34:06">3 years ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/803" class="trac-id">#803</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Fix signal handler</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">Markus Elfring &lt;elfring@…&gt;</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=michael">michael</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.2">4.2</a>
+        </td>
+        <th id="h_keywords">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+              <a href="/report/query?status=!closed&amp;keywords=~signal">signal</a> <a href="/report/query?status=!closed&amp;keywords=~handling">handling</a>
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              17f4b97214ad97495b5683d308a15d51c580213a
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+The functions "fprintf" and "fflush" do not belong to <a class="ext-link" href="https://www.securecoding.cert.org/confluence/display/seccode/SIG30-C.+Call+only+asynchronous-safe+functions+within+signal+handlers"><span class="icon">​</span>the list of async-signal-safe functions</a>.<br />
+See section "2.4.3 Signal Actions" from the document "<a class="ext-link" href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/V2_chap02.html#tag_15_04_03"><span class="icon">​</span>2.4 Signal Concepts</a>".<br />
+</p>
+<p>
+I guess that a different program design will be needed for your function "<a class="missing source">handle_signal</a>".<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(18)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1347903111237858">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:2" class="follow-up">↓ 2</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-17T19%3A31%3A51%2B02%3A00&amp;precision=second" title="See timeline at 09/17/12 19:31:51">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>wontfix</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I’m not convinced that this applies to our code:<br />
+</p>
+<pre class="wiki">When a signal occurs, the normal flow of control of a program is interrupted. If a signal 
+occurs that is being trapped by a signal handler, that handler is invoked. When it is 
+finished, execution continues at the point at which the signal occurred. This arrangement 
+can cause problems if the signal handler invokes a library function that was being executed 
+at the time of the signal.
+</pre><p>
+But, our code handles signals in such a way that it will never return. Thus the class of errors which is described above will not happen.<br />
+</p>
+<p>
+In case you disagree, feel free to reply.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1347986294773476">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+        in reply to:
+    <a href="#comment:1">↑ 1</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-18T18%3A38%3A14%2B02%3A00&amp;precision=second" title="See timeline at 09/18/12 18:38:14">3 years ago</a> by Markus Elfring &lt;elfring@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        <em>wontfix</em> deleted
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>closed</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/803#comment:1" title="Comment 1">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Thus the class of errors which is described above will not happen.<br />
+</p>
+</blockquote>
+<p>
+I would appreciate that your signal handler implementation would not depend on behaviour which <a class="ext-link" href="http://stackoverflow.com/questions/3366307/why-is-malloc-not-async-signal-safe"><span class="icon">​</span>is eventually undefined</a>. Would you like to reduce or avoid the probability for deadlocks here?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1348044086908867">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:4" class="follow-up">↓ 4</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-19T10%3A41%3A26%2B02%3A00&amp;precision=second" title="See timeline at 09/19/12 10:41:26">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Could you please point me to where exactly we are using <tt>malloc</tt> in a signal handler?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1348048554366905">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+        in reply to:
+    <a href="#comment:3">↑ 3</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-19T11%3A55%3A54%2B02%3A00&amp;precision=second" title="See timeline at 09/19/12 11:55:54">3 years ago</a> by Markus Elfring &lt;elfring@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/803#comment:3" title="Comment 3">michael</a>:<br />
+</p>
+<p>
+Can it be that a specific implementation of the function "<a class="missing source">fprintf</a>" will eventually call also "malloc" for the requested output?<br />
+</p>
+<p>
+Do you care for the "special" case when <a class="ext-link" href="http://stackoverflow.com/questions/3941271/why-are-malloc-and-printf-said-as-non-reentrant#answer-3941563"><span class="icon">​</span>this function will try to use the same locks</a> that were acquired outside the signal handling context before?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1348238909770725">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:6" class="follow-up">↓ 6</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-21T16%3A48%3A29%2B02%3A00&amp;precision=second" title="See timeline at 09/21/12 16:48:29">3 years ago</a> by Michael Stapelberg
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/514265b5"><span class="icon">​</span>http://c.i3wm.org/514265b5</a>:<br />
+Use ev_signal to avoid async-unsafe functions (Thanks Markus)<br />
+</p>
+<p>
+Functions such as fprintf() might be unsafe to use in a signal handler,<br />
+see <a class="ext-link" href="http://stackoverflow.com/questions/3941271/#answer-3941563"><span class="icon">​</span>http://stackoverflow.com/questions/3941271/#answer-3941563</a><br />
+</p>
+<p>
+By using ev_signal, libev will use a tiny signal handler which just<br />
+passes on the information and then calls (outside of the signal handler)<br />
+our callback function which can use fprintf() and other unsafe<br />
+functions.<br />
+</p>
+<p>
+fixes <a class="closed ticket" href="/report/ticket/803" title="defect: Fix signal handler (closed: fixed)">#803</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1348246868016403">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+        in reply to:
+    <a href="#comment:5">↑ 5</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:7" class="follow-up">↓ 7</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-21T19%3A01%3A08%2B02%3A00&amp;precision=second" title="See timeline at 09/21/12 19:01:08">3 years ago</a> by Markus Elfring &lt;elfring@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/803#comment:5" title="Comment 5">Michael Stapelberg</a>:<br />
+</p>
+<p>
+Thanks for your changes.<br />
+</p>
+<p>
+I'm sorry. - But I have got the impression that this patch alone might be not enough and therefore incomplete if you <a class="ext-link" href="http://software.schmorp.de/pkg/libev.html"><span class="icon">​</span>introduce an other software dependency</a> for the discussed task.<br />
+</p>
+<p>
+Does it make still sense to keep the function call "raise(sig)" after this source code adjustment?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1348266321769481">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+        in reply to:
+    <a href="#comment:6">↑ 6</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:8" class="follow-up">↓ 8</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-22T00%3A25%3A21%2B02%3A00&amp;precision=second" title="See timeline at 09/22/12 00:25:21">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/803#comment:6" title="Comment 6">Markus Elfring &lt;elfring@…&gt;</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+I'm sorry. - But I have got the impression that this patch alone might be not enough and therefore incomplete if you <a class="ext-link" href="http://software.schmorp.de/pkg/libev.html"><span class="icon">​</span>introduce an other software dependency</a> for the discussed task.<br />
+</p>
+</blockquote>
+<p>
+What?! libev is not another dependency, we use it since forever.<br />
+</p>
+<blockquote class="citation">
+<p>
+Does it make still sense to keep the function call "raise(sig)" after this source code adjustment?<br />
+</p>
+</blockquote>
+<p>
+Yes it does, why would it not?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1348299494603991">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+        in reply to:
+    <a href="#comment:7">↑ 7</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:9" class="follow-up">↓ 9</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-22T09%3A38%3A14%2B02%3A00&amp;precision=second" title="See timeline at 09/22/12 09:38:14">3 years ago</a> by Markus Elfring &lt;elfring@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/803#comment:7" title="Comment 7">michael</a>:<br />
+</p>
+<p>
+Thanks for the clarification that the software "libev" belongs to your essential tools.<br />
+Is the issue "<a class="ext-link" href="http://pod.tst.eu/http://cvs.schmorp.de/libev/ev.pod#The_special_problem_of_threads_signa"><span class="icon">​</span>signal receiver thread</a>" relevant for your programs?<br />
+</p>
+<p>
+I imagine that there are clearer ways for program termination after the affected callback function is not executed in a signal handling context any more than to reraise a signal.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1348303875908419">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+        in reply to:
+    <a href="#comment:8">↑ 8</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:10" class="follow-up">↓ 10</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-22T10%3A51%3A15%2B02%3A00&amp;precision=second" title="See timeline at 09/22/12 10:51:15">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/803#comment:8" title="Comment 8">Markus Elfring &lt;elfring@…&gt;</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/803#comment:7" title="Comment 7">michael</a>:<br />
+</p>
+<p>
+Thanks for the clarification that the software "libev" belongs to your essential tools.<br />
+Is the issue "<a class="ext-link" href="http://pod.tst.eu/http://cvs.schmorp.de/libev/ev.pod#The_special_problem_of_threads_signa"><span class="icon">​</span>signal receiver thread</a>" relevant for your programs?<br />
+</p>
+</blockquote>
+<p>
+No, we don’t use threads, as you could have easily checked. Why are you not reading our source closely and complain about it?<br />
+</p>
+<blockquote class="citation">
+<p>
+I imagine that there are clearer ways for program termination after the affected callback function is not executed in a signal handling context any more than to reraise a signal.<br />
+</p>
+</blockquote>
+<p>
+In fact, I tried using <tt>_exit()</tt>, but that will not reflect the fact that the program was killed by a signal, which I consider important. If you "imagine" that there are clearer ways, then would you mind actually sharing them?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1348306291860705">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+        in reply to:
+    <a href="#comment:9">↑ 9</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:11" class="follow-up">↓ 11</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-22T11%3A31%3A31%2B02%3A00&amp;precision=second" title="See timeline at 09/22/12 11:31:31">3 years ago</a> by Markus Elfring &lt;elfring@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/803#comment:9" title="Comment 9">michael</a>:<br />
+</p>
+<p>
+I am reading your source files and documentation to some degree at the moment. Would you like to consider the application of multi-threading any further here?<br />
+</p>
+<p>
+The reraise might be still "convenient" since the addition of the macro "HANDLE_SIGNAL_EV". I find an alternative would be to register two callback functions there, wouldn't it?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1348310865493259">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+        in reply to:
+    <a href="#comment:10">↑ 10</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:12" class="follow-up">↓ 12</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-22T12%3A47%3A45%2B02%3A00&amp;precision=second" title="See timeline at 09/22/12 12:47:45">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/803#comment:10" title="Comment 10">Markus Elfring &lt;elfring@…&gt;</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Replying to <a class="ticket" href="/report/ticket/803#comment:9" title="Comment 9">michael</a>:<br />
+</p>
+<p>
+I am reading your source files and documentation to some degree at the moment. Would you like to consider the application of multi-threading any further here?<br />
+</p>
+<p>
+The reraise might be still "convenient" since the addition of the macro "HANDLE_SIGNAL_EV". I find an alternative would be to register two callback functions there, wouldn't it?<br />
+</p>
+</blockquote>
+<p>
+I don’t get what you mean.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-12-1348338367042172">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+        in reply to:
+    <a href="#comment:11">↑ 11</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-22T20%3A26%3A07%2B02%3A00&amp;precision=second" title="See timeline at 09/22/12 20:26:07">3 years ago</a> by Markus Elfring &lt;elfring@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/803#comment:11" title="Comment 11">michael</a>:<br />
+</p>
+<p>
+The comments in this source file indicate that you would like to distinguish between events that would usually trigger the action "core dump" or "regular program termination". I imagine that you want eventually also to execute a callback function that adapts more to this difference instead of <a class="ext-link" href="http://www.gnu.org/software/libc/manual/html_node/Termination-in-Handler.html"><span class="icon">​</span>returning to a default action by a signal reraise</a>.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-13-1348346225046628">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:13" class="cnum">
+    <a href="#comment:13">comment:13</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:14" class="follow-up">↓ 14</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-22T22%3A37%3A05%2B02%3A00&amp;precision=second" title="See timeline at 09/22/12 22:37:05">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I still don’t get what you are trying to say me. Can you be more clear please?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-14-1348379452006762">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:14" class="cnum">
+    <a href="#comment:14">comment:14</a>
+  </span>
+        in reply to:
+    <a href="#comment:13">↑ 13</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-23T07%3A50%3A52%2B02%3A00&amp;precision=second" title="See timeline at 09/23/12 07:50:52">3 years ago</a> by Markus Elfring &lt;elfring@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/803#comment:13" title="Comment 13">michael</a>:<br />
+</p>
+<p>
+I suggest to consider the use of more callback functions for the catched signals eventually.<br />
+</p>
+<p>
+I have also got the feeling that it makes a significant difference whether the signal reraise is executed within a signal handler or an other "ordinary" callback function.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-15-1348393481112053">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:15" class="cnum">
+    <a href="#comment:15">comment:15</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:16" class="follow-up">↓ 16</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-23T11%3A44%3A41%2B02%3A00&amp;precision=second" title="See timeline at 09/23/12 11:44:41">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+And why would I use more than one callback when the code works fine with one?<br />
+</p>
+<p>
+And where exactly is the difference between raising a signal in a handler and any other part of the code?<br />
+</p>
+<p>
+Can you PLEASE be more specific and not only post vague stuff all the time.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-16-1348399324020279">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:16" class="cnum">
+    <a href="#comment:16">comment:16</a>
+  </span>
+        in reply to:
+    <a href="#comment:15">↑ 15</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-23T13%3A22%3A04%2B02%3A00&amp;precision=second" title="See timeline at 09/23/12 13:22:04">3 years ago</a> by Markus Elfring &lt;elfring@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/803#comment:15" title="Comment 15">michael</a>:<br />
+</p>
+<p>
+I do not see so far that the affected <a class="ext-link" href="http://stackoverflow.com/questions/5290540/sigaction-why-dont-we-have-to-reset-the-handler"><span class="icon">​</span>signal handlers will be reset</a> to their default actions before the current callback function might be executed again. The previous approach passed the flag "<a class="ext-link" href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/sigaction.html"><span class="icon">​</span>SA_RESETHAND</a>" explicitly.<br />
+Does there exist a risk now that your function "handle_signal" will be executed in an (endless) loop?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-17-1348402811616084">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:17" class="cnum">
+    <a href="#comment:17">comment:17</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:18" class="follow-up">↓ 18</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-23T14%3A20%3A11%2B02%3A00&amp;precision=second" title="See timeline at 09/23/12 14:20:11">3 years ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+The signal handlers are reset by <tt>ev_signal_stop(loop, w);</tt>. Do you seriously think I’d commit code without testing it first?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-18-1348403646423891">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:18" class="cnum">
+    <a href="#comment:18">comment:18</a>
+  </span>
+        in reply to:
+    <a href="#comment:17">↑ 17</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2012-09-23T14%3A34%3A06%2B02%3A00&amp;precision=second" title="See timeline at 09/23/12 14:34:06">3 years ago</a> by Markus Elfring &lt;elfring@…&gt;
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/803#comment:17" title="Comment 17">michael</a>:<br />
+</p>
+<p>
+I'm sorry that I could not distil the information from the corresponding API documentation that the function "ev_signal_stop" does also something which is eqivalent to the flag "SA_RESETHAND".<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/803?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/803?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/803?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

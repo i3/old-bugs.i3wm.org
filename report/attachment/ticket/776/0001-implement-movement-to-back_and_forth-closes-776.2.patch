@@ -1,0 +1,208 @@
+From f162e08525defd81c41e4278b735356853a713c4 Mon Sep 17 00:00:00 2001
+From: chrysn <chrysn@fsfe.org>
+Date: Tue, 4 Sep 2012 10:51:18 +0200
+Subject: [PATCH] implement movement to back_and_forth (closes #776)
+
+this implements both the "move container to workspace back_and_forth" command
+and movements to the same workspace when auto_back_and_forth is set.
+
+it includes documentation, but no testsuite additions.
+---
+ docs/userguide             |    4 ++-
+ include/commands.h         |    6 +++++
+ include/workspace.h        |    6 +++++
+ parser-specs/commands.spec |    2 ++
+ src/commands.c             |   58 ++++++++++++++++++++++++++++++++++++++++++++
+ src/workspace.c            |   17 +++++++++++++
+ 6 files changed, 92 insertions(+), 1 deletion(-)
+
+diff --git a/docs/userguide b/docs/userguide
+index bc89480..207bd3a 100644
+--- a/docs/userguide
++++ b/docs/userguide
+@@ -1365,7 +1365,8 @@ container to the next/previous workspace and +move container to workspace curren
+ 
+ [[back_and_forth]]
+ To switch back to the previously focused workspace, use +workspace
+-back_and_forth+.
++back_and_forth+; likewise, you can move containers using +move container to
++workspace back_and_forth+.
+ 
+ To move a container to another xrandr output such as +LVDS1+ or +VGA1+, you can
+ use the +move container to output+ command followed by the name of the target
+@@ -1401,6 +1402,7 @@ bindsym mod+Shift+2 move container to workspace 2
+ 
+ # switch between the current and the previously focused one
+ bindsym mod+b workspace back_and_forth
++bindsym mod+Shift+b move container to workspace back_and_forth
+ 
+ # move the whole workspace to the next output
+ bindsym mod+x move workspace to output right
+diff --git a/include/commands.h b/include/commands.h
+index 37ee98d..3ad8e32 100644
+--- a/include/commands.h
++++ b/include/commands.h
+@@ -56,6 +56,12 @@ void cmd_criteria_add(I3_CMD, char *ctype, char *cvalue);
+ void cmd_move_con_to_workspace(I3_CMD, char *which);
+ 
+ /**
++ * Implementation of 'move [window|container] [to] workspace back_and_forth'.
++ *
++ */
++void cmd_move_con_to_workspace_back_and_forth(I3_CMD);
++
++/**
+  * Implementation of 'move [window|container] [to] workspace <name>'.
+  *
+  */
+diff --git a/include/workspace.h b/include/workspace.h
+index 1b25b42..32ea413 100644
+--- a/include/workspace.h
++++ b/include/workspace.h
+@@ -95,6 +95,12 @@ Con* workspace_prev_on_output(void);
+  */
+ void workspace_back_and_forth(void);
+ 
++/**
++ * Report the previously focused workspace, or NULL if unavailable.
++ *
++ */
++Con *workspace_back_and_forth_get(void);
++
+ 
+ #if 0
+ /**
+diff --git a/parser-specs/commands.spec b/parser-specs/commands.spec
+index b4c9e00..2c46e66 100644
+--- a/parser-specs/commands.spec
++++ b/parser-specs/commands.spec
+@@ -243,6 +243,8 @@ state MOVE_WORKSPACE:
+       -> MOVE_WORKSPACE_TO_OUTPUT
+   workspace = 'next', 'prev', 'next_on_output', 'prev_on_output', 'current'
+       -> call cmd_move_con_to_workspace($workspace)
++  'back_and_forth'
++      -> call cmd_move_con_to_workspace_back_and_forth()
+   'number'
+       -> MOVE_WORKSPACE_NUMBER
+   workspace = string
+diff --git a/src/commands.c b/src/commands.c
+index 00d8b97..7a3e5aa 100644
+--- a/src/commands.c
++++ b/src/commands.c
+@@ -99,6 +99,28 @@ static bool maybe_back_and_forth(struct CommandResult *cmd_output, char *name) {
+     return true;
+ }
+ 
++/*
++ * Return the passed workspace unless it is the current one and auto back and
++ * forth is enabled, in which case the back_and_forth workspace is returned.
++ */
++static Con* maybe_autobackandforth_workspace(Con *workspace) {
++    Con *current, *baf;
++
++    if (config.workspace_auto_back_and_forth) {
++        current = con_get_workspace(focused);
++
++        if (current == workspace) {
++            baf = workspace_back_and_forth_get();
++            if (baf != NULL) {
++                DLOG("Substituting workspace with back_and_forth, as it is focused.\n");
++                return baf;
++            }
++        }
++    }
++
++    return workspace;
++}
++
+ // This code is commented out because we might recycle it for popping up error
+ // messages on parser errors.
+ #if 0
+@@ -400,6 +422,38 @@ void cmd_move_con_to_workspace(I3_CMD, char *which) {
+     ysuccess(true);
+ }
+ 
++/**
++ * Implementation of 'move [window|container] [to] workspace back_and_forth'.
++ *
++ */
++void cmd_move_con_to_workspace_back_and_forth(I3_CMD) {
++    owindow *current;
++    Con *ws;
++
++    ws = workspace_back_and_forth_get();
++
++    if (ws == NULL) {
++        y(map_open);
++        ystr("success");
++        y(bool, false);
++        ystr("error");
++        ystr("No workspace was previously active.");
++        y(map_close);
++        return;
++    }
++
++    HANDLE_EMPTY_MATCH;
++
++    TAILQ_FOREACH(current, &owindows, owindows) {
++        DLOG("matching: %p / %s\n", current->con, current->con->name);
++        con_move_to_workspace(current->con, ws, true, false);
++    }
++
++    cmd_output->needs_tree_render = true;
++    // XXX: default reply for now, make this a better reply
++    ysuccess(true);
++}
++
+ /*
+  * Implementation of 'move [window|container] [to] workspace <name>'.
+  *
+@@ -432,6 +486,8 @@ void cmd_move_con_to_workspace_name(I3_CMD, char *name) {
+     /* get the workspace */
+     Con *ws = workspace_get(name, NULL);
+ 
++    ws = maybe_autobackandforth_workspace(ws);
++
+     HANDLE_EMPTY_MATCH;
+ 
+     TAILQ_FOREACH(current, &owindows, owindows) {
+@@ -489,6 +545,8 @@ void cmd_move_con_to_workspace_number(I3_CMD, char *which) {
+         workspace = workspace_get(which, NULL);
+     }
+ 
++    workspace = maybe_autobackandforth_workspace(workspace);
++
+     HANDLE_EMPTY_MATCH;
+ 
+     TAILQ_FOREACH(current, &owindows, owindows) {
+diff --git a/src/workspace.c b/src/workspace.c
+index 8533118..5f7c694 100644
+--- a/src/workspace.c
++++ b/src/workspace.c
+@@ -663,6 +663,23 @@ void workspace_back_and_forth(void) {
+     workspace_show_by_name(previous_workspace_name);
+ }
+ 
++/*
++ * Report the previously focused workspace, or NULL if unavailable.
++ *
++ */
++Con *workspace_back_and_forth_get(void) {
++    if (!previous_workspace_name) {
++        DLOG("no previous workspace name set.");
++        return NULL;
++    }
++
++    Con *workspace;
++    bool changed_num_workspaces;
++    workspace = workspace_get(previous_workspace_name, &changed_num_workspaces);
++
++    return workspace;
++}
++
+ static bool get_urgency_flag(Con *con) {
+     Con *child;
+     TAILQ_FOREACH(child, &(con->nodes_head), nodes)
+-- 
+1.7.10.4
+

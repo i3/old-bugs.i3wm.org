@@ -1,0 +1,31 @@
+From ba2768d89133fcc279191080ce32140de36c95f3 Mon Sep 17 00:00:00 2001
+From: Ewgenij Starostin <ewgenij@ewgenij-starostin.name>
+Date: Fri, 4 May 2012 05:34:13 +0200
+Subject: [PATCH] Handle %d with non-default CPU temperature path.
+
+---
+ src/print_cpu_temperature.c |    7 ++++---
+ 1 files changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/src/print_cpu_temperature.c b/src/print_cpu_temperature.c
+index 41c3c9c..742a102 100644
+--- a/src/print_cpu_temperature.c
++++ b/src/print_cpu_temperature.c
+@@ -38,10 +38,11 @@ void print_cpu_temperature_info(yajl_gen json_gen, char *buffer, int zone, const
+         char *outwalk = buffer;
+         static char buf[16];
+ 
+-        if (path == NULL) {
++        if (path == NULL)
+                 asprintf(&thermal_zone, THERMAL_ZONE, zone);
+-                path = thermal_zone;
+-        }
++        else
++                asprintf(&thermal_zone, path, zone);
++        path = thermal_zone;
+ 
+         INSTANCE(path);
+ 
+-- 
+1.7.8.6
+

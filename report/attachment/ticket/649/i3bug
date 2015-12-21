@@ -1,0 +1,30 @@
+{{{
+% i3 --version
+i3 version 4.1.2-337-g17b477d (2012-04-22, branch "next") © 2009-2012 Michael Stapelberg and contributors
+}}}
+
+Issue can be reproduced as follows: 
+
+{{{
+------------------------
+|                      |
+|                      |
+------------------------
+|          |           |
+|   term   |           |
+|          |           |
+------------------------
+}}}
+
+execute the following command in term: 
+
+{{{
+% i3-msg focus parent && i3-msg fullscreen && i3-msg focus child                                             
+
+[{"success": true}]
+[{"success": true}]
+[{"sucess": false}]
+}}}
+
+
+

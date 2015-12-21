@@ -1,0 +1,48 @@
+diff --git a/i3status.c b/i3status.c
+index 523ba7e..f576d30 100644
+--- a/i3status.c
++++ b/i3status.c
+@@ -252,6 +252,12 @@ int main(int argc, char *argv[]) {
+                 CFG_END()
+         };
+ 
++        cfg_opt_t pipe_opts[] = {
++                CFG_BOOL("break_on_line", 0, CFGF_NONE),
++                CFG_INT("max_size", 32, CFGF_NONE),
++                CFG_END()
++        };
++
+         cfg_opt_t opts[] = {
+                 CFG_STR_LIST("order", "{}", CFGF_NONE),
+                 CFG_SEC("general", general_opts, CFGF_NONE),
+@@ -267,6 +273,7 @@ int main(int argc, char *argv[]) {
+                 CFG_SEC("ddate", ddate_opts, CFGF_NONE),
+                 CFG_SEC("load", load_opts, CFGF_NONE),
+                 CFG_SEC("cpu_usage", usage_opts, CFGF_NONE),
++                CFG_SEC("pipe", pipe_opts, CFGF_NONE),
+                 CFG_END()
+         };
+ 
+@@ -399,6 +406,10 @@ int main(int argc, char *argv[]) {
+ 
+                         CASE_SEC("cpu_usage")
+                                 print_cpu_usage(cfg_getstr(sec, "format"));
++
++                        CASE_SEC("pipe")
++                                print_pipe(cfg_getbool(sec, "break_on_line"),
++                                           cfg_getint(sec, "max_size"));
+                 }
+                 printf("\n");
+                 fflush(stdout);
+diff --git a/include/i3status.h b/include/i3status.h
+index 125ca55..39d76e1 100644
+--- a/include/i3status.h
++++ b/include/i3status.h
+@@ -76,6 +76,7 @@ void print_eth_info(const char *interface, const char *format_up, const char *fo
+ void print_load();
+ void print_volume(const char *fmt, const char *device, const char *mixer, int mixer_idx);
+ bool process_runs(const char *path);
++void print_pipe(bool break_on_line, int max_size);
+ 
+ /* socket file descriptor for general purposes */
+ extern int general_socket;

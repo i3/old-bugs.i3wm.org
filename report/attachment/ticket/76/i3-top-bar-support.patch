@@ -1,0 +1,159 @@
+diff --git a/include/data.h b/include/data.h
+index a8b31d3..66dc644 100644
+--- a/include/data.h
++++ b/include/data.h
+@@ -426,9 +426,9 @@ struct Client {
+          * with the usual decorations */
+         bool borderless;
+ 
+-        /** If a client is set as a dock, it is placed at the very bottom of
+-         * the screen and its requested size is used */
+-        bool dock;
++        /** If a client is set as a dock, it is placed at top or bottom edge
++         * of the screen and its requested size is used. */
++        enum { DOCK_NONE = 0, DOCK_TOP = 1, DOCK_BOTTOM = 2} dock;
+ 
+         /** True if the client set the urgency flag in its WM_HINTS property */
+         bool urgent;
+diff --git a/include/workspace.h b/include/workspace.h
+index dae245c..e2c5e50 100644
+--- a/include/workspace.h
++++ b/include/workspace.h
+@@ -107,4 +107,16 @@ int workspace_width(Workspace *ws);
+  */
+ int workspace_height(Workspace *ws);
+ 
++/*
++ * Returns the x position of the workspace.
++ *
++ */
++int workspace_pos_x(Workspace *ws);
++
++/*
++ * Returns the y position of the workspace.
++ *
++ */
++int workspace_pos_y(Workspace *ws);
++
+ #endif
+diff --git a/src/layout.c b/src/layout.c
+index 3c7d2ff..067954f 100644
+--- a/src/layout.c
++++ b/src/layout.c
+@@ -574,13 +574,16 @@ void render_container(xcb_connection_t *conn, Container *container) {
+         }
+ }
+ 
+-static void render_bars(xcb_connection_t *conn, Workspace *r_ws, int width, int *height) {
++static void render_bars(xcb_connection_t *conn, Workspace *r_ws, int width, int *height_bottom) {
+         Client *client;
++        int height_top = 0;
++        /* workspace_pos_y() returns the total height used by the top bars */
++        *height_bottom += workspace_pos_y(r_ws);
+         SLIST_FOREACH(client, &(r_ws->output->dock_clients), dock_clients) {
+-                DLOG("client is at %d, should be at %d\n", client->rect.y, *height);
++                DLOG("client is at %d, should be at %d\n", client->rect.y, client->dock == DOCK_TOP ? height_top : *height_bottom);
+                 if (client->force_reconfigure |
+                     update_if_necessary(&(client->rect.x), r_ws->rect.x) |
+-                    update_if_necessary(&(client->rect.y), *height))
++                    update_if_necessary(&(client->rect.y), client->dock == DOCK_TOP ? height_top : *height_bottom))
+                         reposition_client(conn, client);
+ 
+                 if (client->force_reconfigure |
+@@ -590,7 +593,10 @@ static void render_bars(xcb_connection_t *conn, Workspace *r_ws, int width, int
+ 
+                 client->force_reconfigure = false;
+                 DLOG("desired_height = %d\n", client->desired_height);
+-                *height += client->desired_height;
++                if(client->dock == DOCK_TOP)
++                        height_top += client->desired_height;
++                else
++                        *height_bottom += client->desired_height;
+         }
+ }
+ 
+@@ -680,25 +686,18 @@ void ignore_enter_notify_forall(xcb_connection_t *conn, Workspace *workspace, bo
+  */
+ void render_workspace(xcb_connection_t *conn, Output *output, Workspace *r_ws) {
+         i3Font *font = load_font(conn, config.font);
+-        int width = r_ws->rect.width;
+-        int height = r_ws->rect.height;
++        int width = workspace_width(r_ws);
++        int height = workspace_height(r_ws);
+ 
+-        /* Reserve space for dock clients */
+         Client *client;
+-        SLIST_FOREACH(client, &(output->dock_clients), dock_clients)
+-                height -= client->desired_height;
+-
+-        /* Space for the internal bar */
+-        if (!config.disable_workspace_bar)
+-                height -= (font->height + 6);
+ 
+         int xoffset[r_ws->rows];
+         int yoffset[r_ws->cols];
+         /* Initialize offsets */
+         for (int cols = 0; cols < r_ws->cols; cols++)
+-                yoffset[cols] = r_ws->rect.y;
++                yoffset[cols] = r_ws->rect.y + workspace_pos_y(r_ws);
+         for (int rows = 0; rows < r_ws->rows; rows++)
+-                xoffset[rows] = r_ws->rect.x;
++                xoffset[rows] = r_ws->rect.x + workspace_pos_x(r_ws);
+ 
+         ignore_enter_notify_forall(conn, r_ws, true);
+ 
+diff --git a/src/manage.c b/src/manage.c
+index 06f4e66..d1e99ab 100644
+--- a/src/manage.c
++++ b/src/manage.c
+@@ -280,7 +280,7 @@ void reparent_window(xcb_connection_t *conn, xcb_window_t child,
+                                                         t_out->name, x, y);
+                                         new->workspace = t_out->current_workspace;
+                                 }
+-                                new->dock = true;
++                                new->dock = (y < c_ws->rect.height/2) ? DOCK_TOP : DOCK_BOTTOM;
+                                 new->borderless = true;
+                                 new->titlebar_position = TITLEBAR_OFF;
+                                 new->force_reconfigure = true;
+@@ -317,8 +317,7 @@ void reparent_window(xcb_connection_t *conn, xcb_window_t child,
+                 if (preply != NULL && preply->value_len > 0 && (strut = xcb_get_property_value(preply))) {
+                         /* We only use a subset of the provided values, namely the reserved space at the top/bottom
+                            of the screen. This is because the only possibility for bars is at to be at the top/bottom
+-                           with maximum horizontal size.
+-                           TODO: bars at the top */
++                           with maximum horizontal size. */
+                         new->desired_height = strut[3];
+                         if (new->desired_height == 0) {
+                                 DLOG("Client wanted to be 0 pixels high, using the window's height (%d)\n", original_height);
+diff --git a/src/workspace.c b/src/workspace.c
+index c950df8..4f51889 100644
+--- a/src/workspace.c
++++ b/src/workspace.c
+@@ -475,3 +475,27 @@ int workspace_height(Workspace *ws) {
+ 
+         return height;
+ }
++
++/*
++ * Returns the x position of the workspace.
++ *
++ */
++int workspace_pos_x(Workspace *ws) {
++        return 0;
++}
++
++/*
++ * Returns the y position of the workspace.
++ *
++ */
++int workspace_pos_y(Workspace *ws) {
++        int y = 0;
++
++        /* Reserve space for DOCK_TOP bars */
++        Client *client;
++        SLIST_FOREACH(client, &(ws->output->dock_clients), dock_clients)
++                if(client->dock == DOCK_TOP)
++                        y += client->desired_height;
++
++        return y;
++}

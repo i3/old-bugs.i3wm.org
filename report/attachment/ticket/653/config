@@ -1,0 +1,182 @@
+# needed for dual-monitor setup with nVidia card
+force_xinerama yes
+
+# set modifier to Super key
+set $mod Mod4
+
+focus_follows_mouse no
+floating_modifier $mod
+
+# class                 border  backgr. text
+
+# light theme
+client.focused          #8aa3b8 #8aa3b8 #ffffff
+client.unfocused        #dbdbdb #dbdbdb #2c2c2c
+client.focused_inactive	#dbdbdb #dbdbdb #2c2c2c
+client.urgent           #900000 #900000 #ffff00
+
+# darker theme, more X-esque
+client.focused          #2A51B0 #1C3571 #FFFFFF
+client.focused_inactive #5f676a #5f676a #ffffff
+client.unfocused        #222222 #222222 #888888
+client.urgent           #900000 #900000 #ffff00
+
+# font for window titles. ISO 10646 = Unicode
+font -misc-fixed-medium-*-normal-*-14-*-*-*-*-*-iso10646-*
+
+# custom application shortcuts
+bindsym Mod4+F1 exec gnome-terminal
+bindsym Mod4+F2 exec gvim
+bindsym Mod1+F2 exec dmenu_run -p 'command:' -nb '#151515' -nf '#888888' -l 10 -fn '-misc-fixed-medium-*-normal-*-14-*-*-*-*-*-*-*' 
+
+# i3 shortcuts
+bindsym Mod1+F4 kill
+
+bindsym $mod+Shift+C reload
+bindsym $mod+Shift+R restart
+bindsym $mod+Shift+E exec ~/.i3/dmenu_session.sh
+bindsym $mod+b border toggle
+
+# change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout default
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+u focus parent
+bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace "1: Chat"
+bindsym $mod+2 workspace "2: Web"
+bindsym $mod+3 workspace "3: Code"
+bindsym $mod+4 workspace "4: Misc"
+bindsym $mod+5 workspace "5: FM"
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace "9: Music"
+bindsym $mod+0 workspace 10
+bindsym Ctrl+Mod1+Left workspace prev
+bindsym Ctrl+Mod1+Right workspace next
+
+# bind to numpad as well
+#bindsym KP_1 workspace "1: Chat"
+#bindsym KP_2 workspace "2: Web"
+#bindsym KP_3 workspace "3: Code"
+#bindsym KP_4 workspace "4: Misc"
+#bindsym KP_5 workspace "5: FM"
+#bindsym KP_6 workspace 6
+#bindsym KP_7 workspace 7
+#bindsym KP_8 workspace 8
+#bindsym KP_9 workspace "9: Music"
+#bindsym KP_0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+exclam move workspace "1: Chat"
+bindsym $mod+Shift+at move workspace "2: Web"
+bindsym $mod+Shift+numbersign move workspace "3: Code"
+bindsym $mod+Shift+dollar move workspace "4: Misc"
+bindsym $mod+Shift+percent move workspace "5: FM"
+bindsym $mod+Shift+asciicircum move workspace 6
+bindsym $mod+Shift+ampersand move workspace 7
+bindsym $mod+Shift+asterisk move workspace 8
+bindsym $mod+Shift+parenleft move workspace "9: Music"
+bindsym $mod+Shift+parenright move workspace 10
+
+# assign windows to workspaces
+assign [class="Pidgin"] 1: Chat
+assign [title="IRC Chat"] 1: Chat
+assign [class="Google-chrome"] 2: Web
+assign [class="Sunflower"] 5: FM
+assign [class="Rhythmbox"] 9: Music
+assign [class="Gimp"] 4: Misc
+assign [class="Bcompare"] 4: Misc
+# assign [class="Gvim"] 3: Code
+
+# remove window title from chrome, we don't need this
+for_window [class="Google-chrome"] border 1pixel
+
+# resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+
+mode "resize" {
+	bindsym Left resize grow left 10 px or 10 ppt
+	bindsym Shift+Left resize shrink left 10 px or 10 ppt
+
+	bindsym Down resize grow down 10 px or 10 ppt
+	bindsym Shift+Down resize shrink down 10 px or 10 ppt
+
+	bindsym Up resize grow up 10 px or 10 ppt
+	bindsym Shift+Up resize shrink up 10 px or 10 ppt
+
+	bindsym Right resize grow right 10 px or 10 ppt
+	bindsym Shift+Right resize shrink right 10 px or 10 ppt
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+
+bar {
+	# we use conky for status bar
+	status_command conky -c ~/.i3/conkyrc
+	font -misc-fixed-medium-*-normal-*-14-*-*-*-*-*-*-*
+
+	colors {
+		# light theme
+		background #dbdbdb
+		statusline #666666
+
+		focused_workspace  #ffffff #8aa3b8 
+		active_workspace   #2c2c2c #dbdbdb 
+		inactive_workspace #2c2c2c  #dbdbdb  
+		urgent_workspace   #ffff00 #900000
+
+		# darker theme, more X-esque
+		background #000000
+		statusline #A0A0A0
+
+		focused_workspace  #FFFFFF #2A51B0
+		active_workspace   #FFFFFF #333333
+		inactive_workspace #888888 #151515
+		urgent_workspace   #FFFF00 #900000
+	}
+}
+
+exec nitrogen --restore
+exec gnome-settings-daemon
+exec bluetooth-applet
+exec nm-applet
+exec ~/.mouse.sh
+exec gnome-terminal -e irssi -t "IRC Chat"
+exec pidgin
+exec sleep 5; google-chrome

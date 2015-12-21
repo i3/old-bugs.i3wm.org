@@ -1,0 +1,32 @@
+From a00f570fb9b227332c81a9f4f6179dfe2454ae3b Mon Sep 17 00:00:00 2001
+From: Sebastian Ullrich <sebasti@nullrich.de>
+Date: Mon, 20 Aug 2012 12:36:10 +0200
+Subject: [PATCH] Fix #729: "move workspace number n" doesn't create ws
+
+---
+ src/commands.c | 9 +--------
+ 1 file changed, 1 insertion(+), 8 deletions(-)
+
+diff --git a/src/commands.c b/src/commands.c
+index 728a1d6..1eee027 100644
+--- a/src/commands.c
++++ b/src/commands.c
+@@ -486,14 +486,7 @@ void cmd_move_con_to_workspace_number(I3_CMD, char *which) {
+             child->num == parsed_num);
+ 
+     if (!workspace) {
+-        y(map_open);
+-        ystr("success");
+-        y(bool, false);
+-        ystr("error");
+-        // TODO: better error message
+-        ystr("No such workspace");
+-        y(map_close);
+-        return;
++        workspace = workspace_get(which, NULL);
+     }
+ 
+     HANDLE_EMPTY_MATCH;
+-- 
+1.7.11.5
+

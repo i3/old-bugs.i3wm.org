@@ -1,0 +1,31 @@
+From 570f2a7420570fc71697ca0f06b07932478243ff Mon Sep 17 00:00:00 2001
+From: Jonas Cleve <mail@jonascleve.de>
+Date: Sat, 4 May 2013 16:22:29 +0200
+Subject: [PATCH] fix #1017: i3status uses generic battery instance
+
+---
+ src/print_battery_info.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/print_battery_info.c b/src/print_battery_info.c
+index 3fc31e0..03bacdf 100644
+--- a/src/print_battery_info.c
++++ b/src/print_battery_info.c
+@@ -55,11 +55,11 @@ void print_battery_info(yajl_gen json_gen, char *buffer, int number, const char
+         memset(emptytimebuf, '\0', sizeof(emptytimebuf));
+         memset(consumptionbuf, '\0', sizeof(consumptionbuf));
+ 
+-        INSTANCE(path);
+-
+-#if defined(LINUX)
+         static char batpath[512];
+         sprintf(batpath, path, number);
++        INSTANCE(batpath);
++
++#if defined(LINUX)
+         if (!slurp(batpath, buf, sizeof(buf))) {
+                 OUTPUT_FULL_TEXT(format_down);
+                 return;
+-- 
+1.8.2.2
+

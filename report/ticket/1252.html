@@ -1,0 +1,1418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1252 (libi3 error IPC received EOF instead of reply)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1251" title="Ticket #1251" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1252?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1252?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1252?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1253" title="Ticket #1253" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="493d6a541c42850c7de33399";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1251" title="Ticket #1251">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1253" title="Ticket #1253">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2014-06-05T16%3A01%3A54%2B02%3A00&amp;precision=second" title="See timeline at 06/05/14 16:01:54">10 months ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2014-06-13T14%3A49%3A45%2B02%3A00&amp;precision=second" title="See timeline at 06/13/14 14:49:45">10 months ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2014-06-14T08%3A23%3A26%2B02%3A00&amp;precision=second" title="See timeline at 06/14/14 08:23:26">10 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1252" class="trac-id">#1252</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">libi3 error IPC received EOF instead of reply</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable"><a href="/report/query?status=!closed&amp;reporter=i3-new-ticket">i3-new-ticket</a></td>
+      <th id="h_owner" class="missing">Owned by:</th>
+      <td headers="h_owner"></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.7.2">4.7.2</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.7.2 (2014-01-23, branch "tags/4.7.2")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+Hello,<br />
+</p>
+<p>
+My Specs:<br />
+</p>
+<hr />
+<p>
+Slackware 14.1 x86_64<br />
+i3 4.7.2<br />
+i3status 2.8<br />
+dmenu 4.5<br />
+xorg-server-1.14.3<br />
+Nvidia GTX660M - drivers 331.67<br />
+</p>
+<p>
+I see this message when I log out of i3 to the console;<br />
+</p>
+<p>
+libi3 error IPC received EOF instead of reply<br />
+</p>
+<p>
+Since it's saying 'error' I wanted to report this, I have no idea where it's coming from, and i3 seems to be running just fine. But seeing it say an error, I thought I should report this if it's a bug, and hopefully this can be figured out and fixed.<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(1)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/1252/i3log.tar.bz2" title="View attachment">i3log.tar.bz2</a><a href="/report/raw-attachment/ticket/1252/i3log.tar.bz2" class="trac-rawlink" title="Download">​</a>
+       (<span title="499 bytes">499 bytes</span>) -
+      added by <em>i3-new-ticket</em> <a class="timeline" href="/report/timeline?from=2014-06-05T16%3A01%3A54%2B02%3A00&amp;precision=second" title="See timeline at 06/05/14 16:01:54">10 months ago</a>.
+  </dt>
+              <dd>
+                desc2
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/1252/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(26)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-05T16%3A01%3A54%2B02%3A00&amp;precision=second" title="See timeline at 06/05/14 16:01:54">10 months ago</a> by i3-new-ticket
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1252/i3log.tar.bz2"><em>i3log.tar.bz2</em></a><a href="/report/raw-attachment/ticket/1252/i3log.tar.bz2" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+desc2<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-1-1402001399268592">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-05T22%3A49%3A59%2B02%3A00&amp;precision=second" title="See timeline at 06/05/14 22:49:59">10 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>works_as_intended</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This is fine. When you log out of i3, i3 closes all IPC connections, so the libraries get an error and programs connected to i3 die. This is all expected. If you feel strongly about not seeing an error, feel free to send patches to <a class="ext-link" href="http://cr.i3wm.org/"><span class="icon">​</span>http://cr.i3wm.org/</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1402022501268964">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:3" class="follow-up">↓ 3</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-06T04%3A41%3A41%2B02%3A00&amp;precision=second" title="See timeline at 06/06/14 04:41:41">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I just noticed when I use this script to toggle/hide the statusbar it's also giving me the same types of error messages...<br />
+</p>
+<p>
+#!/bin/bash<br />
+if <a class="forbidden wiki" title="no permission to view this wiki page"> grep invisible) </a><br />
+then i3-msg bar mode invisible &amp;<br />
+else i3-msg bar mode dock &amp;<br />
+fi<br />
+exit 0<br />
+</p>
+<p>
+I'll see the messages like this toggling/hide the statusbar;<br />
+</p>
+<p>
+06/05/2014 04:29:04 PM - [libi3] ERROR: IPC received EOF instead of reply<br />
+[{"success":true}]<br />
+06/05/2014 04:29:04 PM - [libi3] ERROR: IPC received EOF instead of reply<br />
+window id as int = 23068675<br />
+</p>
+<p>
+Now that I see this message playing with the statusbar I get the feeling the original message I see when logging out is due to the statusbar as well.<br />
+</p>
+<p>
+Below is my conf I'm using;<br />
+</p>
+<hr />
+<p>
+# This file has been auto-generated by i3-config-wizard(1).<br />
+# It will not be overwritten, so edit it as you like.<br />
+#<br />
+# Should you change your keyboard layout somewhen, delete<br />
+# this file and re-run i3-config-wizard(1).<br />
+#<br />
+</p>
+<p>
+# i3 config file (v4)<br />
+#<br />
+# Please see <a class="ext-link" href="http://i3wm.org/docs/userguide.html"><span class="icon">​</span>http://i3wm.org/docs/userguide.html</a> for a complete reference!<br />
+</p>
+<p>
+set $mod Mod4<br />
+</p>
+<p>
+# Font for window titles. Will also be used by the bar unless a different font<br />
+# is used in the bar {} block below. ISO 10646 = Unicode<br />
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1<br />
+# The font above is very space-efficient, that is, it looks good, sharp and<br />
+# clear in small sizes. However, if you need a lot of unicode glyphs or<br />
+# right-to-left text rendering, you should instead use pango for rendering and<br />
+# chose a <a class="forbidden wiki" title="no permission to view this wiki page">FreeType</a> font, such as:<br />
+# font pango:DejaVu Sans Mono 10<br />
+font pango:Aller Light 9<br />
+</p>
+<p>
+# Use Mouse+$mod to drag floating windows to their wanted position<br />
+floating_modifier $mod<br />
+</p>
+<p>
+# start a terminal<br />
+bindsym $mod+Return exec i3-sensible-terminal<br />
+</p>
+<p>
+# kill focused window<br />
+#bindsym $mod+Shift+q kill  #(Original binding)<br />
+bindsym $mod+q kill<br />
+</p>
+<p>
+# start dmenu (a program launcher)<br />
+bindsym $mod+d exec --no-startup-id dmenu_run -fn 'Aller Light-9.5'<br />
+# There also is the (new) i3-dmenu-desktop which only displays applications<br />
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that<br />
+# installed.<br />
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop<br />
+</p>
+<p>
+# change focus<br />
+bindsym $mod+j focus left<br />
+bindsym $mod+k focus down<br />
+bindsym $mod+l focus up<br />
+bindsym $mod+semicolon focus right<br />
+</p>
+<p>
+# alternatively, you can use the cursor keys:<br />
+bindsym $mod+Left focus left<br />
+bindsym $mod+Down focus down<br />
+bindsym $mod+Up focus up<br />
+bindsym $mod+Right focus right<br />
+</p>
+<p>
+# move focused window<br />
+bindsym $mod+Shift+j move left<br />
+bindsym $mod+Shift+k move down<br />
+bindsym $mod+Shift+l move up<br />
+bindsym $mod+Shift+semicolon move right<br />
+</p>
+<p>
+# alternatively, you can use the cursor keys:<br />
+bindsym $mod+Shift+Left move left<br />
+bindsym $mod+Shift+Down move down<br />
+bindsym $mod+Shift+Up move up<br />
+bindsym $mod+Shift+Right move right<br />
+</p>
+<p>
+# split in horizontal orientation<br />
+bindsym $mod+h split h<br />
+</p>
+<p>
+# split in vertical orientation<br />
+bindsym $mod+v split v<br />
+</p>
+<p>
+# enter fullscreen mode for the focused container<br />
+bindsym $mod+f fullscreen<br />
+</p>
+<p>
+# change container layout (stacked, tabbed, toggle split)<br />
+bindsym $mod+s layout stacking<br />
+bindsym $mod+w layout tabbed<br />
+bindsym $mod+e layout toggle split<br />
+</p>
+<p>
+# toggle tiling / floating<br />
+bindsym $mod+Shift+space floating toggle<br />
+</p>
+<p>
+# change focus between tiling / floating windows<br />
+bindsym $mod+space focus mode_toggle<br />
+</p>
+<p>
+# focus the parent container<br />
+bindsym $mod+a focus parent<br />
+</p>
+<p>
+# focus the child container<br />
+#bindsym $mod+d focus child<br />
+</p>
+<p>
+# switch to workspace<br />
+bindsym $mod+1 workspace 1<br />
+bindsym $mod+2 workspace 2<br />
+bindsym $mod+3 workspace 3<br />
+bindsym $mod+4 workspace 4<br />
+bindsym $mod+5 workspace 5<br />
+bindsym $mod+6 workspace 6<br />
+bindsym $mod+7 workspace 7<br />
+bindsym $mod+8 workspace 8<br />
+bindsym $mod+9 workspace 9<br />
+bindsym $mod+0 workspace 10<br />
+</p>
+<p>
+# move focused container to workspace<br />
+bindsym $mod+Shift+1 move container to workspace 1<br />
+bindsym $mod+Shift+2 move container to workspace 2<br />
+bindsym $mod+Shift+3 move container to workspace 3<br />
+bindsym $mod+Shift+4 move container to workspace 4<br />
+bindsym $mod+Shift+5 move container to workspace 5<br />
+bindsym $mod+Shift+6 move container to workspace 6<br />
+bindsym $mod+Shift+7 move container to workspace 7<br />
+bindsym $mod+Shift+8 move container to workspace 8<br />
+bindsym $mod+Shift+9 move container to workspace 9<br />
+bindsym $mod+Shift+0 move container to workspace 10<br />
+</p>
+<p>
+# reload the configuration file<br />
+bindsym $mod+Shift+c reload<br />
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)<br />
+bindsym $mod+Shift+r restart<br />
+# exit i3 (logs you out of your X session)<br />
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"<br />
+</p>
+<p>
+# resize window (you can also use the mouse for that)<br />
+mode "resize" {<br />
+</p>
+<blockquote>
+<p>
+# These bindings trigger as soon as you enter the resize mode<br />
+</p>
+</blockquote>
+<blockquote>
+<p>
+# Pressing left will shrink the window’s width.<br />
+# Pressing right will grow the window’s width.<br />
+# Pressing up will shrink the window’s height.<br />
+# Pressing down will grow the window’s height.<br />
+bindsym j resize shrink width 10 px or 10 ppt<br />
+bindsym k resize grow height 10 px or 10 ppt<br />
+bindsym l resize shrink height 10 px or 10 ppt<br />
+bindsym semicolon resize grow width 10 px or 10 ppt<br />
+</p>
+</blockquote>
+<blockquote>
+<p>
+# same bindings, but for the arrow keys<br />
+bindsym Left resize shrink width 10 px or 10 ppt<br />
+bindsym Down resize grow height 10 px or 10 ppt<br />
+bindsym Up resize shrink height 10 px or 10 ppt<br />
+bindsym Right resize grow width 10 px or 10 ppt<br />
+</p>
+</blockquote>
+<blockquote>
+<p>
+# back to normal: Enter or Escape<br />
+bindsym Return mode "default"<br />
+bindsym Escape mode "default"<br />
+</p>
+</blockquote>
+<p>
+}<br />
+</p>
+<p>
+bindsym $mod+r mode "resize"<br />
+</p>
+<p>
+# Start i3bar to display a workspace bar (plus the system information i3status<br />
+# finds out, if available)<br />
+bar {<br />
+</p>
+<blockquote>
+<p>
+status_command i3status<br />
+</p>
+</blockquote>
+<p>
+}<br />
+</p>
+<p>
+#### RULES FOR SPECIFIC APPLICATIONS ####<br />
+</p>
+<p>
+# by APPLICATION (WM_CLASS)<br />
+# Note: class is typically useful for applying custom settings to<br />
+#       to entire applications, including child windows. If this<br />
+#       isn't want you want see the ROLE section, below.<br />
+# Tip: To find out what these values might be run:<br />
+#       xprop | grep -i 'class'<br />
+for_window [class="Bleachbit"] floating enable border pixel 1<br />
+for_window [class="CMST - Connman System Tray"] floating enable border pixel 1<br />
+for_window [class="Deadbeef"] floating enable border pixel 1<br />
+for_window [class="feh"] floating enable border pixel 1<br />
+for_window [class="Firefox"] floating enable border pixel 1<br />
+for_window [class="Fslint-gui"] floating enable border pixel 1<br />
+for_window [class="Geany"] floating enable<br />
+for_window [class="Ghb"] floating enable border pixel 1<br />
+for_window [class="Gimp"] floating enable<br />
+for_window [class="Hexchat"] floating enable border pixel 1<br />
+for_window [class="URxvt"] border pixel 1<br />
+for_window [class="Keepassx"] floating enable border pixel 1<br />
+for_window [class="Kid3-qt"] floating enable border pixel 1<br />
+for_window [class="Lxappearance"] floating enable border pixel 1<br />
+for_window [class="mpv"] floating enable border pixel 1<br />
+for_window [class="Nvidia-settings"] floating enable border pixel 1<br />
+for_window [class="Qpdfview"] floating enable border pixel 1<br />
+for_window [class="Spacefm"] floating enable border pixel 1<br />
+for_window [class="Steam"] floating enable<br />
+for_window [class="Transmission-gtk"] floating enable border pixel 1<br />
+for_window [class="URxvt" title="(?i)(weechat|htop)"] floating enable, border pixel 1<br />
+for_window [class="Viewnior"] floating enable border pixel 1<br />
+for_window [class="<a class="forbidden wiki" title="no permission to view this wiki page">VirtualBox</a>"] floating enable border pixel 1<br />
+for_window [class="XCalc"] floating enable<br />
+for_window [class="Xfce4-notifyd-config"] floating enable border pixel 1<br />
+for_window [class="Xfce4-notifyd"] floating enable border pixel 1<br />
+for_window [class="Yad"] floating enable<br />
+</p>
+<p>
+# by ROLE (WM_WINDOW_ROLE)<br />
+# Note: window_role is Typically useful for effecting child windows<br />
+#       such as instant messaging converstations, email composition<br />
+#       windows, etc.<br />
+# Tip: To find out what these values might be run:<br />
+#       xprop | grep -i 'role'#<br />
+for_window [window_role="conversation"] floating enable, border normal<br />
+for_window [window_role="Msgcompose"] floating enable, border normal<br />
+</p>
+<p>
+#### RULES FOR KEY SHORTCUT APPLICATION START ####<br />
+</p>
+<p>
+bindsym $mod+F1 exec --no-startup-id feh --zoom fill -g 800x600 "/home/foo/Wallpaper/"<br />
+bindsym $mod+F2 exec --no-startup-id urxvt -geometry 120x35 -e weechat<br />
+bindsym $mod+F12 exec --no-startup-id /home/foo/.i3/scripts/i3exit.sh<br />
+bindsym $mod+F11 exec --no-startup-id sudo /root/.urxvtcd<br />
+bindsym $mod+b exec --no-startup-id /home/foo/.i3/scripts/toggle_bar.sh<br />
+</p>
+<p>
+#### AUTOSTART APPLICATIONS ####<br />
+exec --no-startup-id /home/foo/.conky/conky_start.sh<br />
+exec --no-startup-id /usr/bin/xbindkeys<br />
+</p>
+<hr />
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1402038727449184">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+        in reply to:
+    <a href="#comment:2">↑ 2</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-06T09%3A12%3A07%2B02%3A00&amp;precision=second" title="See timeline at 06/06/14 09:12:07">10 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1252#comment:2" title="Comment 2">anonymous</a>:<br />
+</p>
+<pre class="wiki">#!/bin/bash
+if [[ -z $(i3-msg -t get_bar_config bar-0 | grep invisible) ]]
+then i3-msg bar mode invisible &amp;
+else i3-msg bar mode dock &amp;
+fi
+exit 0
+</pre><p>
+Why the &amp; at the end of the commands?<br />
+</p>
+<p>
+The error message appears every time an IPC client disconnects. Again, if you care, submit a patch.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1402097310543912">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-07T01%3A28%3A30%2B02%3A00&amp;precision=second" title="See timeline at 06/07/14 01:28:30">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Hi michael,<br />
+</p>
+<p>
+Sorry I've just started using i3 so I'm a bit new here to what is going on.<br />
+</p>
+<p>
+I didn't make the dock hide script I just found it online.<br />
+</p>
+<p>
+What is/are these IPC clients, since I'm only logging out of i3 is all of this normal, if it is, then why have it fill up the console if this is not an error?<br />
+</p>
+<p>
+I'm not a coder, but it would really be great if this could be patched not to fill the console if it's not important.<br />
+</p>
+<p>
+thank you<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1402097460433801">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-07T01%3A31%3A00%2B02%3A00&amp;precision=second" title="See timeline at 06/07/14 01:31:00">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Forgot to mention, these messages are really flooding the console;<br />
+</p>
+<p>
+window id as int = 23068675<br />
+</p>
+<p>
+I personally need to use my console logging back and forth from i3 for various reasons and I need to see what's going on with my console, and it makes it really hard have it flooded with messages like this window id...<br />
+</p>
+<p>
+I hope in time the i3 developers can please fix this, not sure there's any reaon to see these messages?<br />
+</p>
+<p>
+thank you very much<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1402097715912313">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-07T01%3A35%3A15%2B02%3A00&amp;precision=second" title="See timeline at 06/07/14 01:35:15">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sorry michael, I see you explained the IPC;<br />
+</p>
+<p>
+This is fine. When you log out of i3, i3 closes all IPC connections, so the libraries get an error and programs connected to i3 die. This is all expected. If you feel strongly about not seeing an error, feel free to send patches to ​<a class="ext-link" href="http://cr.i3wm.org/"><span class="icon">​</span>http://cr.i3wm.org/</a><br />
+</p>
+<p>
+Ok so if this is all fine and normal, then why even log it to the console and call it an error? Sorry if I'm seeming dense here, but all the things I've learned in Linux, errors are not normal and anything normal isn't typically then logged calling it an error.<br />
+</p>
+<p>
+As I mentioned, if it's all fine and normal, then why even have this log to the console, seems pointless, no?<br />
+</p>
+<p>
+Again thank you very much for your time and help in this matter, but I truly hope the i3 team can please get these messages, along with the window id as int = from filling the console, since it seems unnecessary<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1402103098509026">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-07T03%3A04%3A58%2B02%3A00&amp;precision=second" title="See timeline at 06/07/14 03:04:58">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I'm also getting a lot of this constantly flooding the console too;<br />
+</p>
+<p>
+rect now: (0,0,0,0)<br />
+rect now: (0,0,0,0)<br />
+rect now: (0,0,0,0)<br />
+rect now: (0,0,0,0)<br />
+append tree using root<br />
+new root =0x1ed29d0<br />
+out = 0x1ed29d0<br />
+ws = 0x1ed3570<br />
+</p>
+<p>
+windows id as int =29360131<br />
+windows id as int =32325568<br />
+windows id as int =65354543<br />
+windows id as int =43243433<br />
+windows id as int =65656634<br />
+</p>
+<p>
+The rect now: sections really get crazy with mass amounts of this going on...<br />
+</p>
+<p>
+thanks again...<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1402228582530381">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-08T13%3A56%3A22%2B02%3A00&amp;precision=second" title="See timeline at 06/08/14 13:56:22">10 months ago</a> by Tony Crisci
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        changed from <em>works_as_intended</em> to <em>fixed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/7e564713"><span class="icon">​</span>http://c.i3wm.org/7e564713</a>:<br />
+</p>
+<pre class="wiki">Don't ELOG ipc EOF
+
+Receiving EOF from a client is not an error, but rather a standard way a
+client may disconnect from the IPC. This should rather be logged from
+a consumer of the libi3 ipc_recv_message() function as a normal client
+disconnect event.
+
+fixes #1252
+
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1402259334411981">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-08T22%3A28%3A54%2B02%3A00&amp;precision=second" title="See timeline at 06/08/14 22:28:54">10 months ago</a> by Michael Stapelberg
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/617afc67"><span class="icon">​</span>http://c.i3wm.org/617afc67</a>:<br />
+</p>
+<pre class="wiki">replace remaining printf()s with D?LOG
+
+fixes #1252
+
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1402364803799066">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-10T03%3A46%3A43%2B02%3A00&amp;precision=second" title="See timeline at 06/10/14 03:46:43">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I just patched i3 and these two patches appear to be working great!<br />
+</p>
+<p>
+Nice clean tty/console! :)<br />
+</p>
+<p>
+THANKS<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1402443677856120">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-11T01%3A41%3A17%2B02%3A00&amp;precision=second" title="See timeline at 06/11/14 01:41:17">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        <em>fixed</em> deleted
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>closed</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Regarding stopping logging to the tty/console I'm also seeing these messages;<br />
+</p>
+<p>
+[i3bar/src/xcb.c:528] ERROR window 01a0004b violates the XEMBED Protocol _XEMBED_INFO not set<br />
+</p>
+<p>
+Should these types of messages also been cleaned up and not logging out to the tty/console?<br />
+</p>
+<p>
+Thank you<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-12-1402465116576780">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-11T07%3A38%3A36%2B02%3A00&amp;precision=second" title="See timeline at 06/11/14 07:38:36">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I just noticed the console is also filling up with massive amounts of these messages too, which I thought would no longer be sent to the console with this patch;<br />
+</p>
+<p>
+rect now: (0,0,0,0)<br />
+rect now: (0,0,0,0)<br />
+rect now: (0,0,0,0)<br />
+rect now: (0,0,0,0)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-13-1402471269137349">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:13" class="cnum">
+    <a href="#comment:13">comment:13</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-11T09%3A21%3A09%2B02%3A00&amp;precision=second" title="See timeline at 06/11/14 09:21:09">10 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <blockquote class="citation">
+<p>
+[i3bar/src/xcb.c:528] ERROR window 01a0004b violates the XEMBED Protocol _XEMBED_INFO not set<br />
+Should these types of messages also been cleaned up and not logging out to the tty/console?<br />
+</p>
+</blockquote>
+<p>
+No, those are errors.<br />
+</p>
+<blockquote class="citation">
+<p>
+rect now: (0,0,0,0)<br />
+</p>
+</blockquote>
+<p>
+I don’t see these. Are you sure you use the most recent version? Grepping for “rect now” in the source reveals only one location, and there we use DLOG, so it will not appear on your console.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-14-1402471398491826">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:14" class="cnum">
+    <a href="#comment:14">comment:14</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-11T09%3A23%3A18%2B02%3A00&amp;precision=second" title="See timeline at 06/11/14 09:23:18">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+most recent version, yes 4.7.2<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-15-1402472713512451">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:15" class="cnum">
+    <a href="#comment:15">comment:15</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-11T09%3A45%3A13%2B02%3A00&amp;precision=second" title="See timeline at 06/11/14 09:45:13">10 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+4.7.2 is not the most recent version. Run i3 --moreversion. You should get an output like this:<br />
+</p>
+<pre class="wiki">Binary i3 version:  4.7.2-191-g8ece995 (2014-06-11, branch "next") © 2009-2014 Michael Stapelberg and contributors
+Running i3 version: 4.7.2-191-g8ece995 (2014-06-11, branch "next") (pid 3105)
+</pre><p>
+Otherwise, you don’t have the necessary commit.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-16-1402474845866432">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:16" class="cnum">
+    <a href="#comment:16">comment:16</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-11T10%3A20%3A45%2B02%3A00&amp;precision=second" title="See timeline at 06/11/14 10:20:45">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I was thinking most recent version...<br />
+</p>
+<p>
+I'll clone from git...<br />
+</p>
+<p>
+thanks<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-17-1402568056276652">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:17" class="cnum">
+    <a href="#comment:17">comment:17</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-12T12%3A14%3A16%2B02%3A00&amp;precision=second" title="See timeline at 06/12/14 12:14:16">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Next from GIT is very buggy, to much for me to deal with on a production machine.<br />
+</p>
+<p>
+I need to just stick to 4.7.2 it's a lot more stable, for now all I'm concerned with is all the info that's getting spewed to the console, otherwise things are running much better...<br />
+</p>
+<p>
+I'm going to install 4.7.2 back and let you know how these patches work.<br />
+</p>
+<p>
+Thanks<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-18-1402571365902383">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:18" class="cnum">
+    <a href="#comment:18">comment:18</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-12T13%3A09%3A25%2B02%3A00&amp;precision=second" title="See timeline at 06/12/14 13:09:25">10 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+What?! the version that’s currently in “next” is supposed to be released as-is in a few days. If you see any bugs that you have not seen in 4.7.2, please report them ASAP!<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-19-1402579412404706">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:19" class="cnum">
+    <a href="#comment:19">comment:19</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-12T15%3A23%3A32%2B02%3A00&amp;precision=second" title="See timeline at 06/12/14 15:23:32">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+<a class="ext-link" href="http://bugs.i3wm.org/query/ticket/1260"><span class="icon">​</span>http://bugs.i3wm.org/query/ticket/1260</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-20-1402620345586688">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:20" class="cnum">
+    <a href="#comment:20">comment:20</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-13T02%3A45%3A45%2B02%3A00&amp;precision=second" title="See timeline at 06/13/14 02:45:45">10 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>infoneeded_new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This is fixed. Make a new issue on the bug tracker for other issues.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-21-1402657822701065">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:21" class="cnum">
+    <a href="#comment:21">comment:21</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-13T13%3A10%3A22%2B02%3A00&amp;precision=second" title="See timeline at 06/13/14 13:10:22">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        <em>fixed</em> deleted
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>closed</em> to <em>new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+The console is filling up again with different messages, I thought releated to not having it do?<br />
+</p>
+<p>
+These messages I reported on <a class="closed ticket" href="/report/ticket/1261" title="defect: ERROR: No output found at destination coordinates (closed: duplicate)">#1261</a> also fill up the tty/console<br />
+</p>
+<p>
+<a class="ext-link" href="http://bugs.i3wm.org/query/ticket/1261"><span class="icon">​</span>http://bugs.i3wm.org/query/ticket/1261</a><br />
+</p>
+<p>
+ERROR: No output found at destination coordinates, centering floating window on current ws<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-22-1402657859944795">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:22" class="cnum">
+    <a href="#comment:22">comment:22</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-13T13%3A10%3A59%2B02%3A00&amp;precision=second" title="See timeline at 06/13/14 13:10:59">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sorry <a class="closed ticket" href="/report/ticket/1264" title="defect: ERROR: No output found at destination coordinates... (closed: invalid)">#1264</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-23-1402659219510972">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:23" class="cnum">
+    <a href="#comment:23">comment:23</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-13T13%3A33%3A39%2B02%3A00&amp;precision=second" title="See timeline at 06/13/14 13:33:39">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Hi TonyC,<br />
+</p>
+<p>
+I'm trying to not make this confusing, originally it was about a message, but it was also about that message filling up in the console, and later I kept replying to this post about more messages I started to see filling up in the console after I originally posted this, and I've now noticed this happening for the message in <a class="closed ticket" href="/report/ticket/1264" title="defect: ERROR: No output found at destination coordinates... (closed: invalid)">#1264</a> going to the console.<br />
+</p>
+<p>
+I just wanted to clarify this, I didn't think to open up other reports just to get messages out of the console.<br />
+</p>
+<p>
+THANKS<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-24-1402663785333875">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:24" class="cnum">
+    <a href="#comment:24">comment:24</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-13T14%3A49%3A45%2B02%3A00&amp;precision=second" title="See timeline at 06/13/14 14:49:45">10 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+Please don’t keep reopening tickets, this is really annoying.<br />
+</p>
+<p>
+If you see ERRORs on your console, those are ERRORs. It is intended that they show up.<br />
+</p>
+<p>
+We have eliminated all printf()s that could write directly to your console. This bug _is_ fixed. This is my last word on this bug.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-25-1402727006742612">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:25" class="cnum">
+    <a href="#comment:25">comment:25</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-14T08%3A23%3A26%2B02%3A00&amp;precision=second" title="See timeline at 06/14/14 08:23:26">10 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Sorry I'm trying my best here...<br />
+</p>
+<p>
+thanks<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1252?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1252?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1252?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

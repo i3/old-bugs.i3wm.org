@@ -1,0 +1,31 @@
+From d1d456b54036e9e650cf44c86abcb401c901b311 Mon Sep 17 00:00:00 2001
+From: Peter Bui <pnutzh4x0r@gmail.com>
+Date: Mon, 8 Aug 2011 17:55:37 -0400
+Subject: [PATCH] Fix focus when switching to same workspace.
+
+If we have a single window on a workspace and we switch to the same
+worksapce, focus_next will be the workspace container, rather than the
+current window, so simply call con_descend_focused to ensure we set the
+focus to a window.
+---
+ src/con.c |    4 +++-
+ 1 files changed, 3 insertions(+), 1 deletions(-)
+
+diff --git a/src/con.c b/src/con.c
+index b8b652b..f42d831 100644
+--- a/src/con.c
++++ b/src/con.c
+@@ -607,7 +607,9 @@ void con_move_to_workspace(Con *con, Con *workspace) {
+         workspace_is_visible(workspace)) {
+         DLOG("Moved to a different output, focusing target\n");
+     } else {
+-        con_focus(focus_next);
++        /* Descend focus stack in case focus_next is a workspace which can
++         * occur if we move to the same workspace. */
++        con_focus(con_descend_focused(focus_next));
+     }
+ 
+     CALL(parent, on_remove_child);
+-- 
+1.7.6
+

@@ -1,0 +1,165 @@
+From 525c60c9da1d035ef3abc9d0342832d9084a427c Mon Sep 17 00:00:00 2001
+From: Antoine Millet <antoine@inaps.org>
+Date: Sun, 2 Dec 2012 13:20:06 +0100
+Subject: [PATCH] i3bar: add min_width and align keys to blocks
+
+---
+ docs/i3bar-protocol    |   11 +++++++++++
+ i3bar/include/common.h |   12 +++++++++++-
+ i3bar/src/child.c      |   24 ++++++++++++++++++++++++
+ i3bar/src/xcb.c        |   28 +++++++++++++++++++++++++---
+ 4 files changed, 71 insertions(+), 4 deletions(-)
+
+diff --git a/docs/i3bar-protocol b/docs/i3bar-protocol
+index 21ba9aa..4d7a774 100644
+--- a/docs/i3bar-protocol
++++ b/docs/i3bar-protocol
+@@ -116,6 +116,15 @@ color::
+ 	when it is associated.
+ 	Colors are specified in hex (like in HTML), starting with a leading
+ 	hash sign. For example, +#ff0000+ means red.
++min_width::
++	The minimum width (in pixels) of the block. If the content of the +full_text+
++	key take less space than the specified min_width, the block will be padded to
++	the left or the right side, according to the +align+ key.
++	This is useful when you want to prevent the whole status line to shift when
++	value take more or space between each iteration.
++align::
++	Align text on the +center+ (default), +right+ or +left+ when the minimum
++	width is not reached.
+ name and instance::
+ 	Every block should have a unique +name+ (string) entry so that it can
+ 	be easily identified in scripts which process the output. i3bar
+@@ -148,6 +157,8 @@ An example of a block which uses all possible entries follows:
+  "full_text": "E: 10.0.0.1 (1000 Mbit/s)",
+  "short_text": "10.0.0.1",
+  "color": "#00ff00",
++ "min_width": 300,
++ "align": "right",
+  "urgent": false,
+  "name": "ethernet",
+  "instance": "eth0"
+diff --git a/i3bar/include/common.h b/i3bar/include/common.h
+index 6f8a7b2..ed59207 100644
+--- a/i3bar/include/common.h
++++ b/i3bar/include/common.h
+@@ -29,14 +29,24 @@ struct rect_t {
+ 
+ /* This data structure represents one JSON dictionary, multiple of these make
+  * up one status line. */
++typedef enum {
++    ALIGN_LEFT,
++    ALIGN_CENTER,
++    ALIGN_RIGHT
++} blockalign_t;
++
+ struct status_block {
+     i3String *full_text;
+ 
+     char *color;
++    uint32_t min_width;
++    blockalign_t align;
+ 
+-    /* The amount of pixels necessary to render this block. This variable is
++    /* The amount of pixels necessary to render this block. These variables are
+      * only temporarily used in refresh_statusline(). */
+     uint32_t width;
++    uint32_t x_offset;
++    uint32_t x_append;
+ 
+     TAILQ_ENTRY(status_block) blocks;
+ };
+diff --git a/i3bar/src/child.c b/i3bar/src/child.c
+index 058ddb7..91a773d 100644
+--- a/i3bar/src/child.c
++++ b/i3bar/src/child.c
+@@ -121,6 +121,29 @@ static int stdin_string(void *context, const unsigned char *val, unsigned int le
+     if (strcasecmp(ctx->last_map_key, "color") == 0) {
+         sasprintf(&(ctx->block.color), "%.*s", len, val);
+     }
++    if (strcasecmp(ctx->last_map_key, "align") == 0) {
++        if (len == strlen("left") && !strncmp((const char*)val, "left", strlen("left"))) {
++            ctx->block.align = ALIGN_LEFT;
++        }
++        else if (len == strlen("right") && !strncmp((const char*)val, "right", strlen("right"))) {
++            ctx->block.align = ALIGN_RIGHT;
++        }
++        else {
++            ctx->block.align = ALIGN_CENTER;
++        }
++    }
++    return 1;
++}
++
++#if YAJL_MAJOR >= 2
++static int stdin_integer(void *context, long long val) {
++#else
++static int stdin_integer(void *context, long val) {
++#endif
++    parser_ctx *ctx = context;
++    if (strcasecmp(ctx->last_map_key, "min_width") == 0) {
++        ctx->block.min_width = (uint32_t)val;
++    }
+     return 1;
+ }
+ 
+@@ -256,6 +279,7 @@ void start_child(char *command) {
+     memset(&callbacks, '\0', sizeof(yajl_callbacks));
+     callbacks.yajl_map_key = stdin_map_key;
+     callbacks.yajl_string = stdin_string;
++    callbacks.yajl_integer = stdin_integer;
+     callbacks.yajl_start_array = stdin_start_array;
+     callbacks.yajl_end_array = stdin_end_array;
+     callbacks.yajl_start_map = stdin_start_map;
+diff --git a/i3bar/src/xcb.c b/i3bar/src/xcb.c
+index 861925b..951e8a8 100644
+--- a/i3bar/src/xcb.c
++++ b/i3bar/src/xcb.c
+@@ -120,10 +120,32 @@ void refresh_statusline(void) {
+             continue;
+ 
+         block->width = predict_text_width(block->full_text);
++
++        /* Compute offset and append for text aligment in min_width. */
++        if (block->min_width <= block->width) {
++            block->x_offset = 0;
++            block->x_append = 0;
++        }
++        else {
++            uint32_t padding_width = block->min_width - block->width;
++            switch (block->align) {
++                case ALIGN_LEFT:
++                    block->x_append = padding_width;
++                    break;
++                case ALIGN_RIGHT:
++                    block->x_offset = padding_width;
++                    break;
++                case ALIGN_CENTER:
++                    block->x_offset = padding_width / 2;
++                    block->x_append = padding_width / 2 + padding_width % 2;
++                    break;
++            }
++        }
++
+         /* If this is not the last block, add some pixels for a separator. */
+         if (TAILQ_NEXT(block, blocks) != NULL)
+             block->width += 9;
+-        statusline_width += block->width;
++        statusline_width += block->width + block->x_offset + block->x_append;
+     }
+ 
+     /* If the statusline is bigger than our screen we need to make sure that
+@@ -144,8 +166,8 @@ void refresh_statusline(void) {
+ 
+         uint32_t colorpixel = (block->color ? get_colorpixel(block->color) : colors.bar_fg);
+         set_font_colors(statusline_ctx, colorpixel, colors.bar_bg);
+-        draw_text(block->full_text, statusline_pm, statusline_ctx, x, 0, block->width);
+-        x += block->width;
++        draw_text(block->full_text, statusline_pm, statusline_ctx, x + block->x_offset, 0, block->width);
++        x += block->width + block->x_offset + block->x_append;
+ 
+         if (TAILQ_NEXT(block, blocks) != NULL) {
+             /* This is not the last block, draw a separator. */
+-- 
+1.7.10.4
+

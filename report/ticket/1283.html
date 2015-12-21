@@ -1,0 +1,949 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1283 (i got an workspace "__i3_scratch" and i3 thinks there are multiple monitors.)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1282" title="Ticket #1282" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1283?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1283?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1283?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1284" title="Ticket #1284" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="42cdadca442c5da0abc0cdbd";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1282" title="Ticket #1282">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1284" title="Ticket #1284">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2014-06-19T07%3A42%3A01%2B02%3A00&amp;precision=second" title="See timeline at 06/19/14 07:42:01">9 months ago</a></p>
+    <p>Closed <a class="timeline" href="/report/timeline?from=2014-06-24T09%3A02%3A35%2B02%3A00&amp;precision=second" title="See timeline at 06/24/14 09:02:35">9 months ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2014-06-25T22%3A38%3A53%2B02%3A00&amp;precision=second" title="See timeline at 06/25/14 22:38:53">9 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1283" class="trac-id">#1283</a>
+    <span class="trac-status">
+      <a href="/report/query?status=closed">closed</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+    <span class="trac-resolution">
+      (<a href="/report/query?status=closed&amp;resolution=fixed">fixed</a>)
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">i got an workspace "__i3_scratch" and i3 thinks there are multiple monitors.</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">kaersten.m@…</td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/report/query?status=!closed&amp;owner=TonyC">TonyC</a></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.8">4.8</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.8 (2014-06-15, branch "4.8")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+I'am using Linux Arch 3.14.6-1-ARCH and after reboot i login and use "startx" to start my xsession with i3, but after the last patch i3 behaves as if there where multiple displays enabled.<br />
+If i move something to the scratchpad the i3-bar display a "<span class="underline">i3_scratch" workspace<br />
+</span></p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(4)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/1283/i3.log.bz2" title="View attachment">i3.log.bz2</a><a href="/report/raw-attachment/ticket/1283/i3.log.bz2" class="trac-rawlink" title="Download">​</a>
+       (<span title="17825 bytes">17.4 KB</span>) -
+      added by <em>i3-new-ticket</em> <a class="timeline" href="/report/timeline?from=2014-06-19T07%3A42%3A02%2B02%3A00&amp;precision=second" title="See timeline at 06/19/14 07:42:02">9 months ago</a>.
+  </dt>
+              <dd>
+                desc2
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/1283/.xinitrc" title="View attachment">.xinitrc</a><a href="/report/raw-attachment/ticket/1283/.xinitrc" class="trac-rawlink" title="Download">​</a>
+       (<span title="305 bytes">305 bytes</span>) -
+      added by <em>anonymous</em> <a class="timeline" href="/report/timeline?from=2014-06-19T07%3A42%3A45%2B02%3A00&amp;precision=second" title="See timeline at 06/19/14 07:42:45">9 months ago</a>.
+  </dt>
+              <dd>
+                xinitrc
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/1283/checkMonitors.sh" title="View attachment">checkMonitors.sh</a><a href="/report/raw-attachment/ticket/1283/checkMonitors.sh" class="trac-rawlink" title="Download">​</a>
+       (<span title="294 bytes">294 bytes</span>) -
+      added by <em>anonymous</em> <a class="timeline" href="/report/timeline?from=2014-06-19T07%3A43%3A41%2B02%3A00&amp;precision=second" title="See timeline at 06/19/14 07:43:41">9 months ago</a>.
+  </dt>
+              <dd>
+                script to check for hdmi connection (runs before i3 launches)
+              </dd>
+              <dt>
+    <a href="/report/attachment/ticket/1283/i3.log_after_i3_exit_startx.bz2" title="View attachment">i3.log_after_i3_exit_startx.bz2</a><a href="/report/raw-attachment/ticket/1283/i3.log_after_i3_exit_startx.bz2" class="trac-rawlink" title="Download">​</a>
+       (<span title="11438 bytes">11.2 KB</span>) -
+      added by <em>anonymous</em> <a class="timeline" href="/report/timeline?from=2014-06-19T07%3A48%3A23%2B02%3A00&amp;precision=second" title="See timeline at 06/19/14 07:48:23">9 months ago</a>.
+  </dt>
+              <dd>
+                i3 log after "i3 exit" and "startx" &gt; i3 behaves as it shuld ;)
+              </dd>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/1283/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(19)</span></h3>
+          <div id="changelog">
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-19T07%3A42%3A02%2B02%3A00&amp;precision=second" title="See timeline at 06/19/14 07:42:02">9 months ago</a> by i3-new-ticket
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1283/i3.log.bz2"><em>i3.log.bz2</em></a><a href="/report/raw-attachment/ticket/1283/i3.log.bz2" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+desc2<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-19T07%3A42%3A45%2B02%3A00&amp;precision=second" title="See timeline at 06/19/14 07:42:45">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1283/.xinitrc"><em>.xinitrc</em></a><a href="/report/raw-attachment/ticket/1283/.xinitrc" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+xinitrc<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-19T07%3A43%3A41%2B02%3A00&amp;precision=second" title="See timeline at 06/19/14 07:43:41">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1283/checkMonitors.sh"><em>checkMonitors.sh</em></a><a href="/report/raw-attachment/ticket/1283/checkMonitors.sh" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+script to check for hdmi connection (runs before i3 launches)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-1-1403156751595822">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-19T07%3A45%3A51%2B02%3A00&amp;precision=second" title="See timeline at 06/19/14 07:45:51">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I'am using Linux Arch 3.14.6-1-ARCH and after reboot i login and use "startx" to start my xsession with i3, but after the last patch i3 behaves as if there where multiple displays enabled.<br />
+If i move something to the scratchpad the i3-bar display a "i3_scratch" workspace<br />
+</p>
+<p>
+after i3 exit and startx i3 behaves as it shuld<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-19T07%3A48%3A23%2B02%3A00&amp;precision=second" title="See timeline at 06/19/14 07:48:23">9 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1283/i3.log_after_i3_exit_startx.bz2"><em>i3.log_after_i3_exit_startx.bz2</em></a><a href="/report/raw-attachment/ticket/1283/i3.log_after_i3_exit_startx.bz2" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+i3 log after "i3 exit" and "startx" &gt; i3 behaves as it shuld ;)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1403512645350243">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-23T10%3A37%3A25%2B02%3A00&amp;precision=second" title="See timeline at 06/23/14 10:37:25">9 months ago</a> by p.staszewski@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Also have the problem that i3 seems to see multiple monitors (no <tt>__i3_scratch</tt> workspace though). It seems to be some sort of a race condition as sometime it happens (e.g. three reboots before this one), and sometimes it doesn't (i.e. this boot).<br />
+</p>
+<p>
+Relevant files:<br />
+</p>
+<ul><li>.xinitrc - <a class="ext-link" href="http://ix.io/d6i"><span class="icon">​</span>http://ix.io/d6i</a>
+</li><li>hdmi1.sh - <a class="ext-link" href="http://ix.io/d6j"><span class="icon">​</span>http://ix.io/d6j</a>
+</li></ul><p>
+OS and versions:<br />
+</p>
+<ul><li>Uname: <tt>Linux swordfish 3.15.1-1-ARCH #1 SMP PREEMPT Tue Jun 17 09:32:20 CEST 2014 x86_64 GNU/Linux</tt> (Arch Linux)
+</li><li>Packages: 
+<ul><li>i3-wm 4.8-2
+</li><li>xf86-video-intel 2.99.912-1
+</li><li>intel-dri 10.2.1-2
+</li></ul></li></ul><p>
+Hardware: ThinkPad x220 - Sandybridge, SNA and i915 driver. External monitor over DisplayPort to HDMI cable.<br />
+</p>
+<p>
+This has <strong>never happened</strong> with version 4.7 or before. Also it <strong>doesn't seem</strong> to happen if HDMI1 is not connected during boot. The scripts and configs are also exactly the same.<br />
+</p>
+<p>
+Also I've tested live adding another input over VGA1 - works as it should when I connect and enable the output via <tt>xrandr --output VGA1 --mode 1024x768 --right-of HDMI1</tt>. However turning the output off via <tt>xrandr --output VGA1 --off</tt> <strong>doesn't work</strong> - both HDMI1 and VGA1 turn off, so I'm left with no output, but everything else is working as I managed to turn off the machine (i.e. was already in terminal, typed <tt>reboot</tt> and it worked as intended).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1403513413665470">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-23T10%3A50%3A13%2B02%3A00&amp;precision=second" title="See timeline at 06/23/14 10:50:13">9 months ago</a> by p.staszewski@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+As suggested by Tucos on IRC here is the output of <tt>i3-msg -t get_outputs</tt> when <strong>i3 is working fine</strong>: <a class="ext-link" href="http://ix.io/d6n"><span class="icon">​</span>http://ix.io/d6n</a><br />
+</p>
+<p>
+I'll add the output when i3 doesn't work fine probably at the next reboot...<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1403542790041892">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-23T18%3A59%3A50%2B02%3A00&amp;precision=second" title="See timeline at 06/23/14 18:59:50">9 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+I think this issue is config-specific. Post logs so I can see if there is something they have in common to cause the problem.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-5-1403546791810902">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-23T20%3A06%3A31%2B02%3A00&amp;precision=second" title="See timeline at 06/23/14 20:06:31">9 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Steps to reproduce from <a class="closed ticket" href="/report/ticket/1289" title="defect: Closing scratchpad window sometimes creates weird workspace (closed: duplicate)">#1289</a>:<br />
+</p>
+<blockquote class="citation">
+<ol><li>Define some scratchpad window and create an instance, eg
+<pre class="wiki">for_window [instance="^scratchterm$"] floating enable, move scratchpad
+bindsym $mod+z [instance="^scratchterm$"] scratchpad show
+</pre><tt>$ x-terminal-emulator -name scratchterm</tt>
+</li></ol><ol start="2"><li>Close this window. If there's a single tiled window on the current
+workspace, it is marked as "focused inactive".
+</li></ol><ol start="3"><li>Switch to another workspace, eg "3". This workspace now becomes unusable.
+<ol class="loweralpha"><li>When trying to focus it, the currently focused workspace will be greyed
+out in i3bar, but it is still a little bit highlighted compared to other
+workspaces.
+</li><li>Creating new windows while focusing the haunted workspace will not show
+them, but their processes are running.
+</li><li>Creating new workspaces is impossible; you can only focus existing
+workspaces with windows.
+</li><li>Switching to a non-existing workspace with a higher number from a
+haunted workspace seems to move the haunted workspace, eg 2 is haunted,
+I focus 2, then try to focus non-existing workspace 3 (nothing happens),
+I successfully switch 4 (which has windows), and now workspace 2 is
+cured and 3 is haunted.
+</li></ol></li></ol><p>
+And there's more to it, eg I have somehow managed to get "<span class="underline">i3_scratch"<br />
+displayed to the right of my workspace list in i3bar, but I can't reproduce<br />
+that right now.<br />
+</span></p>
+<p>
+I first encountered this bug today after updating to version 4.8 yesterday.<br />
+</p>
+</blockquote>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-6-1403546837372180">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-23T20%3A07%3A17%2B02%3A00&amp;precision=second" title="See timeline at 06/23/14 20:07:17">9 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-owner">
+      <strong class="trac-field-owner">Owner</strong>
+        set to <em>TonyC</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>assigned</em>
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-7-1403549412598608">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-23T20%3A50%3A12%2B02%3A00&amp;precision=second" title="See timeline at 06/23/14 20:50:12">9 months ago</a> by p.staszewski@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+My current i3 config: <a class="ext-link" href="http://ix.io/d32"><span class="icon">​</span>http://ix.io/d32</a><br />
+</p>
+<p>
+Relevant lines extracted:<br />
+</p>
+<pre class="wiki">for_window [class="Leafpad"] floating enable; move scratchpad
+bindsym $mod+n [class="Leafpad"] scratchpad show
+bindsym $mod+Shift+G move scratchpad
+bindsym $mod+g scratchpad show
+</pre><p>
+<tt>Leafpad</tt> is executed at the end of i3 config via an external script.<br />
+</p>
+<p>
+Please note that <tt>__i3_scratch</tt> <em>doesn't show up</em> in my case.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1403593355798989">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-24T09%3A02%3A35%2B02%3A00&amp;precision=second" title="See timeline at 06/24/14 09:02:35">9 months ago</a> by Tony Crisci
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-resolution">
+      <strong class="trac-field-resolution">Resolution</strong>
+        set to <em>fixed</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>assigned</em> to <em>closed</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+This ticket was fixed in commit <a class="ext-link" href="http://c.i3wm.org/1d100d6e"><span class="icon">​</span>http://c.i3wm.org/1d100d6e</a>:<br />
+</p>
+<pre class="wiki">Bugfix: don't focus unmapped container on manage
+
+A window may become unmapped on manage when an assignment command unmaps
+the window, such as moving it to the scratchpad or killing it.
+
+This can cause i3 focus to be an unmapped window and different than X
+focus which can lead to complications
+
+fixes #1283
+
+</pre>
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1403593408577795">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:10" class="follow-up">↓ 10</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-24T09%3A03%3A28%2B02%3A00&amp;precision=second" title="See timeline at 06/24/14 09:03:28">9 months ago</a> by francis.moro@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+It happens here and it's 100% reproductible. No external monitor is plugged at all. I can see the '<span class="underline">i3_scratch' workspace when the scratchpad is hidden and the navigation through the workspaces is totally broken.<br />
+</span></p>
+<p>
+My log can be found here: <a class="ext-link" href="http://bugs.i3wm.org/report/ticket/1290"><span class="icon">​</span>http://bugs.i3wm.org/report/ticket/1290</a><br />
+</p>
+<p>
+Thanks<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1403594542647341">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+        in reply to:
+    <a href="#comment:9">↑ 9</a>
+        ;
+          <span>follow-up:</span>
+    <a href="#comment:11" class="follow-up">↓ 11</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-24T09%3A22%3A22%2B02%3A00&amp;precision=second" title="See timeline at 06/24/14 09:22:22">9 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1283#comment:9" title="Comment 9">francis.moro@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+It happens here and it's 100% reproductible. No external monitor is plugged at all. I can see the '<span class="underline">i3_scratch' workspace when the scratchpad is hidden and the navigation through the workspaces is totally broken.<br />
+</span></p>
+<p>
+My log can be found here: <a class="ext-link" href="http://bugs.i3wm.org/report/ticket/1290"><span class="icon">​</span>http://bugs.i3wm.org/report/ticket/1290</a><br />
+</p>
+<p>
+Thanks<br />
+</p>
+</blockquote>
+<p>
+Can you please upgrade to the latest version of our git repository (“master” or “next” branch are both okay), post your output of i3 --moreversion and verify the bug is fixed?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-11-1403679809865662">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:11" class="cnum">
+    <a href="#comment:11">comment:11</a>
+  </span>
+        in reply to:
+    <a href="#comment:10">↑ 10</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-25T09%3A03%3A29%2B02%3A00&amp;precision=second" title="See timeline at 06/25/14 09:03:29">9 months ago</a> by francis.moro@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1283#comment:10" title="Comment 10">michael</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+Can you please upgrade to the latest version of our git repository (“master” or “next” branch are both okay), post your output of i3 --moreversion and verify the bug is fixed?<br />
+</p>
+</blockquote>
+<p>
+I don't really know how to build/install i3 from source and don't really want to install all the build deps it relies on my travelling system.<br />
+</p>
+<p>
+However if you could provide an Archlinux package I would be glad to give it a test.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-12-1403680174858638">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:12" class="cnum">
+    <a href="#comment:12">comment:12</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:13" class="follow-up">↓ 13</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-25T09%3A09%3A34%2B02%3A00&amp;precision=second" title="See timeline at 06/25/14 09:09:34">9 months ago</a> by TonyC
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+An AUR package is available as <tt>i3-git</tt> <a class="ext-link" href="https://aur.archlinux.org/packages/i3-git/"><span class="icon">​</span>https://aur.archlinux.org/packages/i3-git/</a><br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-13-1403724490343044">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:13" class="cnum">
+    <a href="#comment:13">comment:13</a>
+  </span>
+        in reply to:
+    <a href="#comment:12">↑ 12</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-25T21%3A28%3A10%2B02%3A00&amp;precision=second" title="See timeline at 06/25/14 21:28:10">9 months ago</a> by francis.moro@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1283#comment:12" title="Comment 12">TonyC</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+An AUR package is available as <tt>i3-git</tt> <a class="ext-link" href="https://aur.archlinux.org/packages/i3-git/"><span class="icon">​</span>https://aur.archlinux.org/packages/i3-git/</a><br />
+</p>
+</blockquote>
+<p>
+Thanks a lot ! and I confirm that i3-git fixes my issue :)<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-14-1403727007631559">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:14" class="cnum">
+    <a href="#comment:14">comment:14</a>
+  </span>
+          <span>follow-up:</span>
+    <a href="#comment:15" class="follow-up">↓ 15</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-25T22%3A10%3A07%2B02%3A00&amp;precision=second" title="See timeline at 06/25/14 22:10:07">9 months ago</a> by francis.moro@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+BTW, i3-save-tree doesn't work on archlinux because some dependencies are missing:<br />
+</p>
+<ul><li>perl-anyevent-i3
+</li><li>perl-json-xs
+</li></ul><p>
+you might want to fix the i3-wm/i3-git package.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-15-1403728733266645">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:15" class="cnum">
+    <a href="#comment:15">comment:15</a>
+  </span>
+        in reply to:
+    <a href="#comment:14">↑ 14</a>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-06-25T22%3A38%3A53%2B02%3A00&amp;precision=second" title="See timeline at 06/25/14 22:38:53">9 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Replying to <a class="ticket" href="/report/ticket/1283#comment:14" title="Comment 14">francis.moro@…</a>:<br />
+</p>
+<blockquote class="citation">
+<p>
+BTW, i3-save-tree doesn't work on archlinux because some dependencies are missing:<br />
+</p>
+<ul><li>perl-anyevent-i3
+</li><li>perl-json-xs
+</li></ul><p>
+you might want to fix the i3-wm/i3-git package.<br />
+</p>
+</blockquote>
+<p>
+These are optdeps. If you want to complain about that, please do so at arch linux. We don’t maintain that package.<br />
+</p>
+<p>
+Thanks for confirming that the fix works for you.<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1283?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1283?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1283?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,395 @@
+03/19/2010 09:33:08 AM - Enabling debug loglevel all
+03/19/2010 09:33:08 AM - i3 version 3.d-190-g1680071 (2010-03-17) starting
+03/19/2010 09:33:08 AM - src/config.c:parse_configuration:283 - Parsing configfile /home/dfsteen/.i3/config
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+03/19/2010 09:33:08 AM - src/cfgparse.y:yyparse:356 - floating modifier = 64
+	Found symbolic mod64 with key f and command f
+	Found symbolic mod64 with key y and command s
+	Found symbolic mod64 with key w and command T
+	Found symbolic mod64 with key e and command d
+	Found symbolic mod65 with key space and command t
+	Found symbolic mod64 with key t and command focus ft
+	Found symbolic mod64 with key h and command h
+	Found symbolic mod64 with key j and command j
+	Found symbolic mod64 with key k and command k
+	Found symbolic mod64 with key l and command l
+	Found symbolic mod64 with key Tab and command l
+	Found symbolic mod65 with key Tab and command h
+	Found symbolic mod64 with key Left and command h
+	Found symbolic mod64 with key Down and command j
+	Found symbolic mod64 with key Up and command k
+	Found symbolic mod64 with key Right and command l
+	Found symbolic mod32 with key h and command wch
+	Found symbolic mod32 with key j and command wcj
+	Found symbolic mod32 with key k and command wck
+	Found symbolic mod32 with key l and command wcl
+	Found symbolic mod32 with key Left and command h
+	Found symbolic mod32 with key Down and command j
+	Found symbolic mod32 with key Up and command k
+	Found symbolic mod32 with key Right and command l
+	Found symbolic mod68 with key h and command sh
+	Found symbolic mod68 with key j and command sj
+	Found symbolic mod68 with key k and command sk
+	Found symbolic mod68 with key l and command sl
+	Found symbolic mod68 with key Left and command h
+	Found symbolic mod68 with key Down and command j
+	Found symbolic mod68 with key Up and command k
+	Found symbolic mod68 with key Right and command l
+	Found symbolic mod65 with key h and command mh
+	Found symbolic mod65 with key j and command mj
+	Found symbolic mod65 with key k and command mk
+	Found symbolic mod65 with key l and command ml
+	Found symbolic mod65 with key Left and command h
+	Found symbolic mod65 with key Down and command j
+	Found symbolic mod65 with key Up and command k
+	Found symbolic mod65 with key Right and command l
+	Found symbolic mod33 with key h and command wcmh
+	Found symbolic mod33 with key j and command wcmj
+	Found symbolic mod33 with key k and command wcmk
+	Found symbolic mod33 with key l and command wcml
+	Found binding mod64 with key 10 and command 1
+	Found binding mod64 with key 11 and command 2
+	Found binding mod64 with key 12 and command 3
+	Found binding mod64 with key 13 and command 4
+	Found binding mod64 with key 14 and command 5
+	Found binding mod64 with key 15 and command 6
+	Found binding mod64 with key 16 and command 7
+	Found binding mod64 with key 17 and command 8
+	Found binding mod64 with key 18 and command 9
+	Found binding mod64 with key 19 and command 10
+	Found binding mod65 with key 10 and command m1
+	Found binding mod65 with key 11 and command m2
+	Found binding mod65 with key 12 and command m3
+	Found binding mod65 with key 13 and command m4
+	Found binding mod65 with key 14 and command m5
+	Found binding mod65 with key 15 and command m6
+	Found binding mod65 with key 16 and command m7
+	Found binding mod65 with key 17 and command m8
+	Found binding mod65 with key 18 and command m9
+	Found binding mod65 with key 19 and command m10
+	Found symbolic mod65 with key m and command mode resize
+	Found symbolic mod0 with key j and command resize left +10
+	Found symbolic mod1 with key j and command resize left -10
+	Found symbolic mod0 with key k and command resize bottom +10
+	Found symbolic mod1 with key k and command resize bottom -10
+	Found symbolic mod0 with key i and command resize top +10
+	Found symbolic mod1 with key i and command resize top -10
+	Found symbolic mod0 with key l and command resize right +10
+	Found symbolic mod1 with key l and command resize right -10
+	Found symbolic mod0 with key Return and command mode default
+	 now in mode resize
+	 current bindings = 0x88e0298
+got binding on mods 0, keycode 0, symbol j, command resize left +10
+got binding on mods 1, keycode 0, symbol j, command resize left -10
+got binding on mods 0, keycode 0, symbol k, command resize bottom +10
+got binding on mods 1, keycode 0, symbol k, command resize bottom -10
+got binding on mods 0, keycode 0, symbol i, command resize top +10
+got binding on mods 1, keycode 0, symbol i, command resize top -10
+got binding on mods 0, keycode 0, symbol l, command resize right +10
+got binding on mods 1, keycode 0, symbol l, command resize right -10
+got binding on mods 0, keycode 0, symbol Return, command mode default
+	Found symbolic mod64 with key Return and command exec /usr/bin/x-terminal-emulator -bg black -fg green -vb
+	Found symbolic mod65 with key c and command kill
+	Found symbolic mod64 with key r and command exec /usr/bin/dmenu_run
+	Found symbolic mod64 with key s and command exec sleep 0.2; i3-input -p 'exec /usr/local/bin/i3_ssh.sh '  -P 'ssh: '
+	Found symbolic mod64 with key p and command exec sleep 0.2; i3-input -p 'exec /usr/local/bin/phonebook.sh ' -P 'name: '
+	Found symbolic mod65 with key q and command exit
+	Found symbolic mod64 with key q and command restart
+03/19/2010 09:33:08 AM - ERROR: 
+03/19/2010 09:33:08 AM - ERROR: CONFIG: syntax error, unexpected <string>
+03/19/2010 09:33:08 AM - ERROR: CONFIG: in file "/home/dfsteen/.i3/config", line 157:
+03/19/2010 09:33:08 AM - ERROR: CONFIG:   workspace 1 output DVI-1 term
+03/19/2010 09:33:08 AM - ERROR: CONFIG:                           ^^^^^
+03/19/2010 09:33:08 AM - ERROR: 
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:48 - We need to initialize that one, last ws = 0
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:51 - Creating new ws
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:64 - done
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:77 - Got 2 workspaces
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 0: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 1: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:48 - We need to initialize that one, last ws = 1
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:51 - Creating new ws
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:64 - done
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:77 - Got 3 workspaces
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 0: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 1: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 2: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:48 - We need to initialize that one, last ws = 2
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:51 - Creating new ws
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:64 - done
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:77 - Got 4 workspaces
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 0: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 1: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 2: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 3: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:48 - We need to initialize that one, last ws = 3
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:51 - Creating new ws
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:64 - done
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:77 - Got 5 workspaces
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 0: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 1: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 2: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 3: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 4: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:48 - We need to initialize that one, last ws = 4
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:51 - Creating new ws
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:64 - done
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:77 - Got 6 workspaces
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 0: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 1: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 2: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 3: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 4: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 5: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:48 - We need to initialize that one, last ws = 5
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:51 - Creating new ws
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:64 - done
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:77 - Got 7 workspaces
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 0: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 1: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 2: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 3: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 4: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 5: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 6: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:48 - We need to initialize that one, last ws = 6
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:51 - Creating new ws
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:64 - done
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:77 - Got 8 workspaces
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 0: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 1: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 2: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 3: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 4: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 5: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 6: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 7: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:48 - We need to initialize that one, last ws = 7
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:51 - Creating new ws
+03/19/2010 09:33:08 AM - src/workspace.c:workspace_get:64 - done
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:77 - Got 9 workspaces
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 0: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 1: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 2: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 3: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 4: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 5: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 6: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 7: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 8: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+assignment of xterm
+  to 1
+  floating = 0
+assignment of Navigator
+  to 2
+  floating = 0
+assignment of pidgin
+  to 8
+  floating = 0
+assignment of Mail
+  to 4
+  floating = 0
+assignment of Wfica
+  to 7
+  floating = 0
+assignment of emacs
+  to 5
+  floating = 0
+assignment of VCLSalFrame.DocumentWindow
+  to 6
+  floating = 0
+assignment of VCLSalFrame
+  to 6
+  floating = 0
+	Found symbolic mod64 with key F11 and command exec /usr/bin/xscreensaver-command -lock
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "f" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "y" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "w" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "e" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "space" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "t" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "h" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "j" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "k" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "l" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Tab" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Tab" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Left" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Down" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Up" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Right" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "h" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "j" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "k" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "l" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Left" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Down" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Up" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Right" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "h" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "j" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "k" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "l" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Left" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Down" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Up" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Right" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "h" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "j" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "k" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "l" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Left" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Down" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Up" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Right" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "h" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "j" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "k" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "l" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "m" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "Return" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "c" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "r" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "s" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "p" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "q" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "q" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:translate_keysyms:162 - Translated symbol "F11" to 1 keycode
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 41
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 29
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 25
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 26
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 65
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 28
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 43
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 44
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 45
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 46
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 23
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 23
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 100
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 104
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 98
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 102
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 43
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 44
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 45
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 46
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 100
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 104
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 98
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 102
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 43
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 44
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 45
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 46
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 100
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 104
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 98
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 102
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 43
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 44
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 45
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 46
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 100
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 104
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 98
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 102
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 43
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 44
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 45
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 46
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 10
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 11
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 12
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 13
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 14
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 15
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 16
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 17
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 18
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 19
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 10
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 11
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 12
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 13
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 14
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 15
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 16
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 17
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 18
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 19
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 58
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 36
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 54
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 27
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 39
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 33
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 24
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 24
+03/19/2010 09:33:08 AM - src/config.c:grab_keycode_for_binding:72 - Grabbing 95
+03/19/2010 09:33:08 AM - src/mainx.c:main:530 - Checking for XRandR...
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:77 - Got 9 workspaces
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 0: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 1: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 2: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 3: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 4: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 5: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 6: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 7: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:81 - storing 8: 0x0 with 0 x 0
+03/19/2010 09:33:08 AM - src/ewmh.c:ewmh_update_workarea:90 - re-using last_rect (0x0, 0, 0)
+03/19/2010 09:33:08 AM - ERROR: ERROR: No screen at 400 x 300, starting on the first screen

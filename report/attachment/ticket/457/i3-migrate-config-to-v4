@@ -1,0 +1,381 @@
+#!/usr/bin/env perl
+# vim:ts=4:sw=4:expandtab
+#
+# script to migrate an old config file (i3 < 4.0) to the new format (>= 4.0)
+# this script only uses modules which come with perl 5.10
+#
+# reads an i3 v3 config from stdin and spits out a v4 config on stdout
+# exit codes:
+#     0 = the input was a v3 config
+#     1 = the input was already a v4 config
+#         (the config is printed to stdout nevertheless)
+#
+# © 2011 Michael Stapelberg and contributors, see LICENSE
+
+use strict;
+use warnings;
+use Getopt::Long;
+use v5.10;
+use feature qw(say switch);
+
+# is this a version 3 config file? disables auto-detection
+my $v3 = 0;
+my $result = GetOptions( 'v3' => \$v3 );
+
+my @unchanged = qw(
+  font
+  set
+  mode
+  exec
+  assign
+  floating_modifier
+  focus_follows_mouse
+  ipc-socket
+  ipc_socket
+  client.focused
+  client.focused_inactive
+  client.unfocused
+  client.urgent
+  client.background
+);
+
+my %workspace_names;
+my $workspace_bar = 1;
+
+my @lines = map { chomp; $_ } <>;
+
+# Try to auto-detect if this is a v3 config file.
+sub need_to_convert {
+
+    # If the user passed --v3, we need to convert in any case
+    return 1 if $v3;
+
+  LINE:
+    for my $line (@lines) {
+
+        # only v4 configfiles can use bindcode or workspace_layout
+        return 0
+          if $line =~ m/\A(?:bindcode|workspace_layout|force_focus_wrapping)/;
+
+        # have a look at bindings
+        next LINE unless $line =~ m/\Abind/xms;
+
+        my ( $statement, $key, $command ) =
+          ( $line =~ /([a-zA-Z_-]+)\s+(\S+)\s+(.*)/ );
+        return 0
+          if $command =~
+m/\A(?:layout|floating|workspace|focus\s+(?:left|right|up|down)|border\s+(?:normal|1pixel|none))/xms;
+    }
+
+    return 1;
+}
+
+if ( !need_to_convert() ) {
+
+    # If this is already a v4 config file, we will spit out the lines
+    # and exit with return code 1
+    print join "\n", @lines;
+    exit 1;
+}
+
+FIRST:
+
+# first pass: get workspace names
+for my $line (@lines) {
+    next FIRST if $line =~ m/\A\s*[#$]/xms;
+
+    my ( $statement, $parameters ) = ( $line =~ m/\A\s*([-a-zA-Z._]+)(.*)/xms );
+
+    # skip everything but workspace lines
+    next FIRST unless defined($statement) and $statement eq 'workspace';
+
+    my ( $number, $params ) = ( $parameters =~ m/\s+(\d+)\s+(.+)/xms );
+
+    # save workspace name (unless the line is actually a workspace assignment)
+    $workspace_names{$number} = $params unless $params =~ m/\Aoutput/xms;
+}
+
+SECOND:
+for my $line (@lines) {
+
+    # directly use comments and empty lines
+    if ( $line =~ m/\A\s*[#$]/xms ) {
+        say $line;
+        next SECOND;
+    }
+
+    my ( $statement, $parameters ) = ( $line =~ m/([-a-zA-Z._]+)(.*)/xms );
+
+    # directly use lines which have not changed between 3.x and 4.x
+    if ( !defined($statement) || ( lc $statement ~~ @unchanged ) ) {
+        say $line;
+        next SECOND;
+    }
+
+    # new_container changed only the statement name to workspace_layout
+    if ( $statement eq 'new_container' ) {
+
+        # TODO: new_container stack-limit
+        say "workspace_layout$parameters";
+        next SECOND;
+    }
+
+    # workspace_bar is gone, you should use i3bar now
+    if ( $statement eq 'workspace_bar' ) {
+        $workspace_bar =
+          ( $parameters =~ m/\s+(yes|true|on|enable|active)/xms );
+        say
+"# XXX: REMOVED workspace_bar line. There is no internal workspace bar in v4.";
+        next SECOND;
+    }
+
+    # new_window changed the parameters from bb to none etc.
+    if ( $statement eq 'new_window' ) {
+        given ($parameters) {
+            when (/bb/) { say "new_window none" }
+            when (/bp/) { say "new_window 1pixel" }
+            when (/bn/) { say "new_window normal" }
+            default {
+                say
+                  "# XXX: Invalid parameter for new_window, not touching line:";
+                say "$line";
+            }
+        }
+        next SECOND;
+    }
+
+    # bar colors are obsolete, need to be configured in i3bar
+    if ( $statement =~ m/\Abar\./xms ) {
+        say "# XXX: REMOVED $statement, configure i3bar instead.";
+        say "# Old line: $line";
+        next SECOND;
+    }
+
+# one form of this is still ok (workspace assignments), the other (named workspaces) isn’t
+    if ( $statement eq 'workspace' ) {
+        my ( $number, $params ) = ( $parameters =~ m/\s+(\d+)\s+(.+)/xms );
+        if ( $params =~ m/\Aoutput/xms ) {
+            say "$line";
+            next SECOND;
+        }
+        else {
+            say
+"# XXX: workspace name will end up in the corresponding bindings.";
+            next SECOND;
+        }
+    }
+
+    if ( $statement eq 'bind' || $statement eq 'bindsym' ) {
+        convert_command($line);
+        next SECOND;
+    }
+
+    say "# XXX: migration script could not handle line: $line";
+}
+
+#
+# Converts a command (after bind/bindsym)
+#
+sub convert_command {
+    my ($line) = @_;
+
+    my @unchanged_cmds = qw(
+      exec
+      mark
+      kill
+      restart
+      reload
+      exit
+      stack-limit
+    );
+
+    my ( $indent, $statement, $key, $command ) =
+      ( $line =~ m/\A(\s*)([-a-zA-Z_]+)\s+(\S+)\s+(.*)/xms );
+
+    # turn 'bind' to 'bindcode'
+    $statement = 'bindcode' if $statement eq 'bind';
+
+    # check if it’s one of the unchanged commands
+    my ($cmd) = ( $command =~ m/([-a-zA-Z_]+)/xms );
+    if ( $cmd ~~ @unchanged_cmds ) {
+        say "$indent$statement $key $command";
+        return;
+    }
+
+    # simple replacements
+    my %replace = (
+        'layout stacking'   => qr/^s/,
+        'layout default'    => qr/^d/,
+        'layout tabbed'     => qr/^T/,
+        'fullscreen'        => qr/^f($|[^go])/,
+        'fullscreen global' => qr/^fg/,
+        'floating toggle'   => qr/^t/,
+        'focus left'        => qr/^h/,
+        'focus down'        => qr/^j($|[^u])/,
+        'focus up'          => qr/^k/,
+        'focus right'       => qr/^l/,
+        'move left'         => qr/^mh/,
+        'move down'         => qr/^mj/,
+        'move up'           => qr/^mk/,
+        'move right'        => qr/^ml/,
+        'border normal'     => qr/^bn/,
+        'border 1pixel'     => qr/^bp/,
+        'border none'       => qr/^bb/,
+        'border toggle'     => qr/^bt/,
+        'workspace prev'    => qr/^pw/,
+        'workspace next'    => qr/^nw/,
+    );
+
+    my $replaced = 0;
+  REPLACE:
+    while ( my ( $s, $r ) = each %replace ) {
+        if ( $command =~ $r ) {
+            $command  = $s;
+            $replaced = 1;
+            last REPLACE;
+        }
+    }
+
+    # goto command is now obsolete due to criteria + focus command
+    if ( $command =~ m/\Agoto/xms ) {
+        my ($mark) = ( $command =~ m/\Agoto (.*)/xms );
+        say qq|$indent$statement $key [con_mark="$mark"] focus|;
+        return;
+    }
+
+    # the jump command is also obsolete due to criteria + focus
+    if ( $command =~ m/\Ajump/xms ) {
+        my ($params) = ( $command =~ m/\Ajump (.*)/xms );
+        if ( $params =~ m/\A"/xms ) {
+
+            # jump ["]window class[/window title]["]
+            ($params) = ( $params =~ m/\A"([^"]+?)"/xms );
+
+            # check if a window title was specified
+            if ( $params =~ m{/}xms ) {
+                my ( $class, $title ) = ( $params =~ m{([^/]+)/(.+)}xms );
+                say
+qq|$indent$statement $key [class="$class" title="$title"] focus|;
+            }
+            else {
+                say qq|$indent$statement $key [class="$params"] focus|;
+            }
+            return;
+        }
+        else {
+
+            # jump <workspace> [ column row ]
+            say "# XXX: jump workspace is obsolete in 4.x: $line";
+            return;
+        }
+    }
+
+    if ( !$replaced && $command =~ m/\Afocus/xms ) {
+        my ($what) = ( $command =~ m/\Afocus\s+(.*)/xms );
+        $what =~ s/\s+//g;
+        if ( $what eq 'ft' ) {
+            $what = 'mode_toggle';
+        }
+        elsif ( $what eq 'floating' || $what eq 'tiling' ) {
+
+            # those are unchanged
+        }
+        else {
+            say "# XXX: focus <number> is obsolete in 4.x: $line";
+            return;
+        }
+        say qq|$indent$statement $key focus $what|;
+        return;
+    }
+
+    if ( $command =~ m/\Amode/xms ) {
+        my ($parameters) = ( $command =~ m/\Amode\s+(.*)/xms );
+        $parameters = qq("$parameters")
+          if $parameters and $parameters !~ m/\A".+"\z/xms;
+        say qq|$indent$statement $key mode $parameters|;
+        return;
+    }
+
+    # the parameters of the resize command have changed
+    if ( $command =~ m/\Aresize/xms ) {
+
+        # OLD: resize <left|right|top|bottom> [+|-]<pixels>\n")
+        # NEW: resize <grow|shrink> <direction> [<px> px] [or <ppt> ppt]
+        my ( $direction, $sign, $px ) = ( $command =~
+              m/\Aresize\s+(left|right|top|bottom)\s+([-+]?)(\d+)/xms );
+        my $cmd = 'resize ';
+        $cmd .= ( $sign eq '+' ? 'grow' : 'shrink' ) . ' ';
+        $cmd .= "$direction ";
+        $cmd .= "$px px";
+        say qq|$indent$statement $key $cmd|;
+        return;
+    }
+
+    # switch workspace
+    if ( $command =~ m/\A\d+/xms ) {
+        my ($number) = ( $command =~ m/\A(\d+)/xms );
+        if ( exists $workspace_names{$number} ) {
+            say qq|$indent$statement $key workspace $workspace_names{$number}|;
+            return;
+        }
+        else {
+            say qq|$indent$statement $key workspace $number|;
+            return;
+        }
+    }
+
+    # move to workspace
+    if ( $command =~ m/\Am\d+/xms ) {
+        my ($number) = ( $command =~ m/^m(\d+)/xms );
+        if ( exists $workspace_names{$number} ) {
+            say
+qq|$indent$statement $key move workspace $workspace_names{$number}|;
+            return;
+        }
+        else {
+            say qq|$indent$statement $key move workspace $number|;
+            return;
+        }
+    }
+
+    # With Container-commands are now obsolete due to different abstraction
+    if ( $command =~ m/\Awc/xms ) {
+        $command =~ s/\Awc//gxms;
+        my $wc_replaced = 0;
+      REPLACE2:
+        while ( my ( $s, $r ) = each %replace ) {
+            if ( $command =~ $r ) {
+                $command     = $s;
+                $wc_replaced = 1;
+                last REPLACE2;
+            }
+        }
+
+        if ( !$wc_replaced ) {
+            say "# XXX: migration script could not handle command: $line";
+        }
+        else {
+
+            # NOTE: This is not 100% accurate, as it only works for one level
+            # of nested containers. As this is a common use case, we use 'focus
+            # parent; $command' nevertheless. For advanced use cases, the user
+            # has to modify his config.
+            say "$indent$statement $key focus parent; $command";
+        }
+        return;
+    }
+
+    if ($replaced) {
+        say "$indent$statement $key $command";
+    }
+    else {
+        say "# XXX: migration script could not handle command: $line";
+    }
+}
+
+# add an i3bar invocation automatically if no 'workspace_bar no' was found
+if ($workspace_bar) {
+    say '';
+    say "# XXX: Automatically added a call to i3bar to provide a workspace bar";
+    say "exec i3status | i3bar -d";
+}

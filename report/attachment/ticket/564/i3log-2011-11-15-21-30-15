@@ -1,0 +1,818 @@
+11/15/2011 09:30:16 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+single command completely parsed, dropping state...
+done, json output = (null)
+11/15/2011 09:30:16 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:16 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:16 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:16 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 0)
+11/15/2011 09:30:16 PM - src/render.c:render_con:111 - Rendering node 0x8ff53e8 / topdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:16 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 900)
+11/15/2011 09:30:16 PM - src/render.c:render_con:111 - Rendering node 0x8ff5538 / content / layout 0 / children 1 / orient 0
+11/15/2011 09:30:16 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x8ff5868 / 1: remote / layout 0 / children 1 / orient 1
+11/15/2011 09:30:16 PM - src/render.c:render_con:335 - child at (0, 0) with (1440 x 900)
+11/15/2011 09:30:16 PM - src/render.c:render_con:111 - Rendering node 0x901a6e8 / #aa0000 / layout 0 / children 0 / orient 0
+11/15/2011 09:30:16 PM - src/render.c:render_con:180 - child will be at 1x1 with size 1438x898
+11/15/2011 09:30:16 PM - src/render.c:render_l_output:93 - child at (0, 900) with (1440 x 0)
+11/15/2011 09:30:16 PM - src/render.c:render_con:111 - Rendering node 0x8ff5688 / bottomdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:16 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:16 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:16 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:16 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:16 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:16 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:16 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:16 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:16 PM - src/handlers.c:handle_expose_event:626 - window = 00a0000f
+11/15/2011 09:30:16 PM - src/handlers.c:handle_normal_hints:740 - Minimum size: 8 (width) x 17 (height)
+11/15/2011 09:30:16 PM - src/handlers.c:handle_normal_hints:757 - resize increments changed
+11/15/2011 09:30:16 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:16 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:16 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:16 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 0)
+11/15/2011 09:30:16 PM - src/render.c:render_con:111 - Rendering node 0x8ff53e8 / topdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:16 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 900)
+11/15/2011 09:30:16 PM - src/render.c:render_con:111 - Rendering node 0x8ff5538 / content / layout 0 / children 1 / orient 0
+11/15/2011 09:30:16 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x8ff5868 / 1: remote / layout 0 / children 1 / orient 1
+11/15/2011 09:30:16 PM - src/render.c:render_con:335 - child at (0, 0) with (1440 x 900)
+11/15/2011 09:30:16 PM - src/render.c:render_con:111 - Rendering node 0x901a6e8 / #aa0000 / layout 0 / children 0 / orient 0
+11/15/2011 09:30:16 PM - src/render.c:render_con:170 - Lost 14 pixel due to client's height_increment (17 px, base_height = 0)
+11/15/2011 09:30:16 PM - src/render.c:render_con:177 - Lost 6 pixel due to client's width_increment (8 px, base_width = 0)
+11/15/2011 09:30:16 PM - src/render.c:render_con:180 - child will be at 1x1 with size 1432x884
+11/15/2011 09:30:16 PM - src/render.c:render_l_output:93 - child at (0, 900) with (1440 x 0)
+11/15/2011 09:30:16 PM - src/render.c:render_con:111 - Rendering node 0x8ff5688 / bottomdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:16 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:16 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:16 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:16 PM - src/x.c:x_push_node:630 - setting window rect (1, 1, 1432, 884)
+11/15/2011 09:30:16 PM - src/x.c:x_push_node:681 - Sending fake configure notify
+11/15/2011 09:30:16 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (1, 1, 1432, 884)
+11/15/2011 09:30:16 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:16 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:16 PM - src/handlers.c:handle_normal_hints:740 - Minimum size: 8 (width) x 17 (height)
+11/15/2011 09:30:16 PM - src/handlers.c:handle_focus_in:949 - focus change in, for window 0x01000007
+11/15/2011 09:30:16 PM - src/handlers.c:handle_focus_in:953 - That is con 0x901a6e8 / #aa0000
+11/15/2011 09:30:16 PM - src/handlers.c:handle_focus_in:957 - FocusIn event for grab/ungrab, ignoring
+11/15/2011 09:30:16 PM - src/handlers.c:handle_normal_hints:740 - Minimum size: 8 (width) x 17 (height)
+11/15/2011 09:30:16 PM - src/handlers.c:handle_normal_hints:740 - Minimum size: 8 (width) x 17 (height)
+11/15/2011 09:30:16 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/15/2011 09:30:16 PM - src/handlers.c:handle_expose_event:626 - window = 00a0000f
+11/15/2011 09:30:21 PM - src/handlers.c:handle_hints:851 - Ignoring urgency flag for current client
+11/15/2011 09:30:26 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/15/2011 09:30:27 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/15/2011 09:30:30 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/15/2011 09:30:30 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/15/2011 09:30:31 PM - src/handlers.c:handle_map_request:318 - window = 0x01800001, serial is 2110.
+11/15/2011 09:30:31 PM - src/manage.c:manage_window:147 - Managing window 0x01800001
+11/15/2011 09:30:31 PM - WM_CLASS changed to xv (instance), MPlayer (class)
+11/15/2011 09:30:31 PM - WM_NAME changed to "MPlayer"
+11/15/2011 09:30:31 PM - Using legacy window title. Note that in order to get Unicode window titles in i3, the application has to set _NET_WM_NAME (UTF-8)
+11/15/2011 09:30:31 PM - src/window.c:window_update_name:56 - _NET_WM_NAME not specified, not changing
+11/15/2011 09:30:31 PM - src/window.c:window_update_leader:155 - CLIENT_LEADER not set.
+11/15/2011 09:30:31 PM - src/window.c:window_update_transient_for:179 - TRANSIENT_FOR not set.
+11/15/2011 09:30:31 PM - src/window.c:window_update_strut_partial:203 - _NET_WM_STRUT_PARTIAL not set.
+11/15/2011 09:30:31 PM - src/window.c:window_update_role:228 - WM_WINDOW_ROLE not set.
+11/15/2011 09:30:31 PM - src/startup.c:startup_workspace_for_window:207 - No _NET_STARTUP_ID set on this window
+11/15/2011 09:30:31 PM - src/manage.c:manage_window:176 - startup workspace = (null)
+11/15/2011 09:30:31 PM - src/manage.c:manage_window:214 - Initial geometry: (80, 178, 1280, 544)
+11/15/2011 09:30:31 PM - Checking window 0x01800001 (class MPlayer)
+11/15/2011 09:30:31 PM - dock status does not match
+11/15/2011 09:30:31 PM - Checking window 0x01800001 (class MPlayer)
+11/15/2011 09:30:31 PM - dock status does not match
+11/15/2011 09:30:31 PM - Checking window 0x01800001 (class MPlayer)
+11/15/2011 09:30:31 PM - Regular expression "^MPlayer$" matches "MPlayer"
+11/15/2011 09:30:31 PM - window class matches (MPlayer)
+11/15/2011 09:30:31 PM - src/assignments.c:assignment_for:67 - got a matching assignment (to 5: media)
+11/15/2011 09:30:31 PM - src/manage.c:manage_window:227 - Assignment matches (0xb745a7e6)
+11/15/2011 09:30:31 PM - Creating new workspace "5: media"
+11/15/2011 09:30:31 PM - got output 0x900acd8 with content 0x8ff5538
+11/15/2011 09:30:31 PM - src/con.c:con_new:43 - opening window 7
+11/15/2011 09:30:31 PM - src/con.c:con_new:46 - color #00aa00
+11/15/2011 09:30:31 PM - src/x.c:x_con_init:112 - adding new state for window id 0x00a00012
+11/15/2011 09:30:31 PM - num = 5
+11/15/2011 09:30:31 PM - src/workspace.c:workspace_get:73 - Auto orientation. Output resolution set to (0,0), setting orientation to 1.
+11/15/2011 09:30:31 PM - src/con.c:con_attach:86 - it's a workspace. num = 5
+11/15/2011 09:30:31 PM - src/manage.c:manage_window:230 - focused on ws 5: media: 0x901aa98 / 5: media
+11/15/2011 09:30:31 PM - src/con.c:con_new:43 - opening window 8
+11/15/2011 09:30:31 PM - src/con.c:con_new:46 - color #0000aa
+11/15/2011 09:30:31 PM - src/x.c:x_con_init:112 - adding new state for window id 0x00a00013
+11/15/2011 09:30:31 PM - src/manage.c:manage_window:261 - new container = 0x901abe8
+11/15/2011 09:30:31 PM - src/x.c:x_reinit:129 - resetting state 0x901ace8 to initial
+11/15/2011 09:30:31 PM - src/manage.c:manage_window:278 - Not in fullscreen mode, focusing
+11/15/2011 09:30:31 PM - workspace visible? fs = 0x8ff5868, ws = 0x901aa98
+11/15/2011 09:30:31 PM - src/manage.c:manage_window:288 - workspace not visible, not focusing
+11/15/2011 09:30:31 PM - src/assignments.c:run_assignments:18 - Checking if any assignments match this window
+11/15/2011 09:30:31 PM - Checking window 0x01800001 (class MPlayer)
+11/15/2011 09:30:31 PM - Regular expression "^MPlayer$" matches "MPlayer"
+11/15/2011 09:30:31 PM - window class matches (MPlayer)
+11/15/2011 09:30:31 PM - src/assignments.c:run_assignments:39 - matching assignment, would do:
+11/15/2011 09:30:31 PM - Checking window 0x01800001 (class MPlayer)
+11/15/2011 09:30:31 PM - Regular expression "^Cssh$" does not match "MPlayer"
+11/15/2011 09:30:31 PM - Checking window 0x01800001 (class MPlayer)
+11/15/2011 09:30:31 PM - Regular expression "^processing-app-Base$" does not match "MPlayer"
+11/15/2011 09:30:31 PM - Checking window 0x01800001 (class MPlayer)
+11/15/2011 09:30:31 PM - Regular expression "Pidgin" does not match "MPlayer"
+11/15/2011 09:30:31 PM - Checking window 0x01800001 (class MPlayer)
+11/15/2011 09:30:31 PM - Regular expression "Pidgin" does not match "MPlayer"
+11/15/2011 09:30:31 PM - Checking window 0x01800001 (class MPlayer)
+11/15/2011 09:30:31 PM - Regular expression "^URxvt$" does not match "MPlayer"
+11/15/2011 09:30:31 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:31 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:31 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:31 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 0)
+11/15/2011 09:30:31 PM - src/render.c:render_con:111 - Rendering node 0x8ff53e8 / topdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:31 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 900)
+11/15/2011 09:30:31 PM - src/render.c:render_con:111 - Rendering node 0x8ff5538 / content / layout 0 / children 2 / orient 0
+11/15/2011 09:30:31 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x8ff5868 / 1: remote / layout 0 / children 1 / orient 1
+11/15/2011 09:30:31 PM - src/render.c:render_con:335 - child at (0, 0) with (1440 x 900)
+11/15/2011 09:30:31 PM - src/render.c:render_con:111 - Rendering node 0x901a6e8 / #aa0000 / layout 0 / children 0 / orient 0
+11/15/2011 09:30:31 PM - src/render.c:render_con:170 - Lost 14 pixel due to client's height_increment (17 px, base_height = 0)
+11/15/2011 09:30:31 PM - src/render.c:render_con:177 - Lost 6 pixel due to client's width_increment (8 px, base_width = 0)
+11/15/2011 09:30:31 PM - src/render.c:render_con:180 - child will be at 1x1 with size 1432x884
+11/15/2011 09:30:31 PM - src/render.c:render_l_output:93 - child at (0, 900) with (1440 x 0)
+11/15/2011 09:30:31 PM - src/render.c:render_con:111 - Rendering node 0x8ff5688 / bottomdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:31 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:31 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:31 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:31 PM - src/x.c:x_push_node:518 - pushing name [i3 con] workspace 5: media for con 0x901aa98
+11/15/2011 09:30:31 PM - src/x.c:x_push_node:518 - pushing name [i3 con] container around 0x901a9c8 for con 0x901abe8
+11/15/2011 09:30:31 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:31 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:31 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:31 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:31 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:31 PM - src/ipc.c:ipc_receive_message:776 - IPC: n = 14
+11/15/2011 09:30:31 PM - workspace visible? fs = 0x8ff5868, ws = 0x8ff5868
+11/15/2011 09:30:31 PM - workspace visible? fs = 0x8ff5868, ws = 0x901aa98
+11/15/2011 09:30:32 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/15/2011 09:30:32 PM - src/handlers.c:handle_key_press:89 - Keypress 14, state raw = 64
+11/15/2011 09:30:32 PM - src/handlers.c:handle_key_press:93 - (removed numlock, state = 64)
+11/15/2011 09:30:32 PM - src/handlers.c:handle_key_press:97 - (removed upper 8 bits, state = 64)
+11/15/2011 09:30:32 PM - src/handlers.c:handle_key_press:102 - (checked mode_switch, state 64)
+11/15/2011 09:30:32 PM - COMMAND: *workspace 5: media*
+should switch to workspace 5: media
+11/15/2011 09:30:32 PM - switching to 0x901aa98
+11/15/2011 09:30:32 PM - src/con.c:con_focus:184 - con_focus = 0x901abe8
+11/15/2011 09:30:32 PM - src/con.c:con_focus:184 - con_focus = 0x901aa98
+11/15/2011 09:30:32 PM - src/con.c:con_focus:184 - con_focus = 0x8ff5538
+11/15/2011 09:30:32 PM - src/con.c:con_focus:184 - con_focus = 0x900acd8
+11/15/2011 09:30:32 PM - focused now = 0x901abe8 / #0000aa
+11/15/2011 09:30:32 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:32 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 0)
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering node 0x8ff53e8 / topdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:32 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 900)
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering node 0x8ff5538 / content / layout 0 / children 2 / orient 0
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901aa98 / 5: media / layout 0 / children 1 / orient 1
+11/15/2011 09:30:32 PM - src/render.c:render_con:335 - child at (0, 18) with (1440 x 882)
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:32 PM - src/render.c:render_con:180 - child will be at 2x0 with size 1436x880
+11/15/2011 09:30:32 PM - src/render.c:render_l_output:93 - child at (0, 900) with (1440 x 0)
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering node 0x8ff5688 / bottomdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:32 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:32 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:32 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:32 PM - src/x.c:x_push_node:611 - setting rect (0, 0, 1440, 18)
+11/15/2011 09:30:32 PM - src/x.c:x_push_node:674 - mapping container 00a00012 (serial 2166)
+11/15/2011 09:30:32 PM - src/x.c:x_push_node:681 - Sending fake configure notify
+11/15/2011 09:30:32 PM - src/x.c:x_push_node:611 - setting rect (0, 18, 1440, 882)
+11/15/2011 09:30:32 PM - src/x.c:x_push_node:630 - setting window rect (2, 0, 1436, 880)
+11/15/2011 09:30:32 PM - src/x.c:x_push_node:660 - mapping child window (serial 2186)
+11/15/2011 09:30:32 PM - src/x.c:x_push_node:674 - mapping container 00a00013 (serial 2188)
+11/15/2011 09:30:32 PM - src/x.c:x_push_node:681 - Sending fake configure notify
+11/15/2011 09:30:32 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (2, 18, 1436, 880)
+11/15/2011 09:30:32 PM - src/x.c:x_push_changes:852 - Updating focus (focused: 0x901abe8 / #0000aa)
+11/15/2011 09:30:32 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:32 PM - src/x.c:x_push_node_unmaps:721 - unmapping container (serial 2203)
+11/15/2011 09:30:32 PM - src/x.c:x_push_node_unmaps:727 - ignore_unmap for con 0x901a6e8 (frame 0x00a0000f) now 1
+11/15/2011 09:30:32 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+single command completely parsed, dropping state...
+done, json output = (null)
+11/15/2011 09:30:32 PM - src/ipc.c:ipc_receive_message:776 - IPC: n = 14
+11/15/2011 09:30:32 PM - workspace visible? fs = 0x901aa98, ws = 0x8ff5868
+11/15/2011 09:30:32 PM - workspace visible? fs = 0x901aa98, ws = 0x901aa98
+11/15/2011 09:30:32 PM - src/handlers.c:handle_expose_event:626 - window = 00a00012
+11/15/2011 09:30:32 PM - src/handlers.c:handle_expose_event:626 - window = 00a00013
+11/15/2011 09:30:32 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x00a0000f (received from 0x00a0000f), serial 2203
+11/15/2011 09:30:32 PM - src/handlers.c:handle_unmap_notify_event:472 - ignore_unmap = 0 for frame of container 0x901a6e8
+11/15/2011 09:30:32 PM - Urgency flag changed to 0
+11/15/2011 09:30:32 PM - src/workspace.c:workspace_update_urgent_flag:420 - Workspace urgency flag changed from 0 to 0
+11/15/2011 09:30:32 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:32 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 0)
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering node 0x8ff53e8 / topdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:32 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 900)
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering node 0x8ff5538 / content / layout 0 / children 2 / orient 0
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901aa98 / 5: media / layout 0 / children 1 / orient 1
+11/15/2011 09:30:32 PM - src/render.c:render_con:335 - child at (0, 18) with (1440 x 882)
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:32 PM - src/render.c:render_con:180 - child will be at 2x0 with size 1436x880
+11/15/2011 09:30:32 PM - src/render.c:render_l_output:93 - child at (0, 900) with (1440 x 0)
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering node 0x8ff5688 / bottomdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:32 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:32 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:32 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:32 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:32 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:32 PM - src/handlers.c:handle_normal_hints:740 - Minimum size: 4 (width) x 4 (height)
+11/15/2011 09:30:32 PM - src/handlers.c:handle_normal_hints:797 - Aspect ratio set: minimum 2.352941, maximum 2.352941
+11/15/2011 09:30:32 PM - src/handlers.c:handle_normal_hints:798 - width = 1440.000000, height = 882.000000
+11/15/2011 09:30:32 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:32 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 0)
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering node 0x8ff53e8 / topdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:32 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 900)
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering node 0x8ff5538 / content / layout 0 / children 2 / orient 0
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901aa98 / 5: media / layout 0 / children 1 / orient 1
+11/15/2011 09:30:32 PM - src/render.c:render_con:335 - child at (0, 18) with (1440 x 882)
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:32 PM - src/render.c:render_con:180 - child will be at 2x136 with size 1436x609
+11/15/2011 09:30:32 PM - src/render.c:render_l_output:93 - child at (0, 900) with (1440 x 0)
+11/15/2011 09:30:32 PM - src/render.c:render_con:111 - Rendering node 0x8ff5688 / bottomdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:32 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:32 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:32 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:32 PM - src/x.c:x_push_node:630 - setting window rect (2, 136, 1436, 609)
+11/15/2011 09:30:32 PM - src/x.c:x_push_node:681 - Sending fake configure notify
+11/15/2011 09:30:32 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (2, 154, 1436, 609)
+11/15/2011 09:30:32 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:32 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:32 PM - src/handlers.c:handle_configure_request:336 - window 0x01800001 wants to be at 2x18 with 1280x544
+11/15/2011 09:30:32 PM - src/handlers.c:handle_configure_request:367 - Configure request!
+11/15/2011 09:30:32 PM - src/con.c:con_is_floating:339 - checking if con 0x901abe8 is floating
+11/15/2011 09:30:32 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (2, 154, 1436, 609)
+11/15/2011 09:30:32 PM - src/handlers.c:handle_focus_in:949 - focus change in, for window 0x01800001
+11/15/2011 09:30:32 PM - src/handlers.c:handle_focus_in:953 - That is con 0x901abe8 / #0000aa
+11/15/2011 09:30:32 PM - src/handlers.c:handle_focus_in:957 - FocusIn event for grab/ungrab, ignoring
+11/15/2011 09:30:32 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/15/2011 09:30:32 PM - src/handlers.c:handle_expose_event:626 - window = 00a00013
+11/15/2011 09:30:33 PM - ClientMessage for window 0x01800001
+11/15/2011 09:30:33 PM - src/handlers.c:handle_client_message:672 - toggling fullscreen
+11/15/2011 09:30:33 PM - src/con.c:con_toggle_fullscreen:511 - toggling fullscreen for 0x901abe8 / #0000aa
+11/15/2011 09:30:33 PM - src/con.c:con_toggle_fullscreen:535 - mode now: 1
+11/15/2011 09:30:33 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:33 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:33 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:33 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:33 PM - src/render.c:render_con:180 - child will be at 0x145 with size 1440x611
+11/15/2011 09:30:33 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:33 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:33 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:33 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:33 PM - src/x.c:x_push_node:611 - setting rect (0, 0, 1440, 900)
+11/15/2011 09:30:33 PM - src/x.c:x_push_node:630 - setting window rect (0, 145, 1440, 611)
+11/15/2011 09:30:33 PM - src/x.c:x_push_node:681 - Sending fake configure notify
+11/15/2011 09:30:33 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (0, 145, 1440, 611)
+11/15/2011 09:30:33 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:33 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:33 PM - src/x.c:x_push_node_unmaps:721 - unmapping container (serial 2257)
+11/15/2011 09:30:33 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:33 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:33 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:33 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:33 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:33 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x00a00012 (received from 0x00a00012), serial 2257
+11/15/2011 09:30:33 PM - src/handlers.c:handle_unmap_notify_event:472 - ignore_unmap = 0 for frame of container 0x901aa98
+11/15/2011 09:30:33 PM - src/handlers.c:handle_configure_request:336 - window 0x01800001 wants to be at 0x145 with 1440x611
+11/15/2011 09:30:33 PM - src/handlers.c:handle_configure_request:367 - Configure request!
+11/15/2011 09:30:33 PM - src/con.c:con_is_floating:339 - checking if con 0x901abe8 is floating
+11/15/2011 09:30:33 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (0, 145, 1440, 611)
+11/15/2011 09:30:33 PM - src/handlers.c:handle_configure_request:336 - window 0x01800001 wants to be at 0x145 with 1440x611
+11/15/2011 09:30:33 PM - src/handlers.c:handle_configure_request:367 - Configure request!
+11/15/2011 09:30:33 PM - src/con.c:con_is_floating:339 - checking if con 0x901abe8 is floating
+11/15/2011 09:30:33 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (0, 145, 1440, 611)
+11/15/2011 09:30:34 PM - ClientMessage for window 0x01800001
+11/15/2011 09:30:34 PM - src/handlers.c:handle_client_message:672 - toggling fullscreen
+11/15/2011 09:30:34 PM - src/con.c:con_toggle_fullscreen:511 - toggling fullscreen for 0x901abe8 / #0000aa
+11/15/2011 09:30:34 PM - src/con.c:con_toggle_fullscreen:535 - mode now: 0
+11/15/2011 09:30:34 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:34 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:34 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:34 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 0)
+11/15/2011 09:30:34 PM - src/render.c:render_con:111 - Rendering node 0x8ff53e8 / topdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:34 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 900)
+11/15/2011 09:30:34 PM - src/render.c:render_con:111 - Rendering node 0x8ff5538 / content / layout 0 / children 2 / orient 0
+11/15/2011 09:30:34 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901aa98 / 5: media / layout 0 / children 1 / orient 1
+11/15/2011 09:30:34 PM - src/render.c:render_con:335 - child at (0, 18) with (1440 x 882)
+11/15/2011 09:30:34 PM - src/render.c:render_con:111 - Rendering node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:34 PM - src/render.c:render_con:180 - child will be at 2x136 with size 1436x609
+11/15/2011 09:30:34 PM - src/render.c:render_l_output:93 - child at (0, 900) with (1440 x 0)
+11/15/2011 09:30:34 PM - src/render.c:render_con:111 - Rendering node 0x8ff5688 / bottomdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:34 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:34 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:34 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:34 PM - src/x.c:x_push_node:674 - mapping container 00a00012 (serial 2268)
+11/15/2011 09:30:34 PM - src/x.c:x_push_node:611 - setting rect (0, 18, 1440, 882)
+11/15/2011 09:30:34 PM - src/x.c:x_push_node:630 - setting window rect (2, 136, 1436, 609)
+11/15/2011 09:30:34 PM - src/x.c:x_push_node:681 - Sending fake configure notify
+11/15/2011 09:30:34 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (2, 154, 1436, 609)
+11/15/2011 09:30:34 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:34 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:34 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:34 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:34 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:34 PM - src/handlers.c:handle_expose_event:626 - window = 00a00012
+11/15/2011 09:30:34 PM - src/handlers.c:handle_configure_request:336 - window 0x01800001 wants to be at 2x136 with 1436x609
+11/15/2011 09:30:34 PM - src/handlers.c:handle_configure_request:367 - Configure request!
+11/15/2011 09:30:34 PM - src/con.c:con_is_floating:339 - checking if con 0x901abe8 is floating
+11/15/2011 09:30:34 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (2, 154, 1436, 609)
+11/15/2011 09:30:34 PM - src/handlers.c:handle_configure_request:336 - window 0x01800001 wants to be at 2x136 with 1436x609
+11/15/2011 09:30:34 PM - src/handlers.c:handle_configure_request:367 - Configure request!
+11/15/2011 09:30:34 PM - src/con.c:con_is_floating:339 - checking if con 0x901abe8 is floating
+11/15/2011 09:30:34 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (2, 154, 1436, 609)
+11/15/2011 09:30:36 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/15/2011 09:30:36 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/15/2011 09:30:36 PM - src/handlers.c:handle_key_press:89 - Keypress 65, state raw = 65
+11/15/2011 09:30:36 PM - src/handlers.c:handle_key_press:93 - (removed numlock, state = 65)
+11/15/2011 09:30:36 PM - src/handlers.c:handle_key_press:97 - (removed upper 8 bits, state = 65)
+11/15/2011 09:30:36 PM - src/handlers.c:handle_key_press:102 - (checked mode_switch, state 65)
+11/15/2011 09:30:36 PM - COMMAND: *floating toggle*
+matching: 0x901abe8 / #0000aa
+should toggle mode
+11/15/2011 09:30:36 PM - src/con.c:con_is_floating:339 - checking if con 0x901abe8 is floating
+11/15/2011 09:30:36 PM - src/con.c:con_is_floating:339 - checking if con 0x901abe8 is floating
+11/15/2011 09:30:36 PM - src/con.c:con_new:43 - opening window 9
+11/15/2011 09:30:36 PM - src/con.c:con_new:46 - color #aa00aa
+11/15/2011 09:30:36 PM - src/x.c:x_con_init:112 - adding new state for window id 0x00a00018
+11/15/2011 09:30:36 PM - src/floating.c:floating_enable:100 - Original rect: (0, 18) with 1440 x 882
+11/15/2011 09:30:36 PM - src/floating.c:floating_enable:101 - Geometry = (80, 178) with 1280 x 544
+11/15/2011 09:30:36 PM - src/randr.c:get_output_containing:84 - comparing x=80 y=178 with x=0 and y=0 width 1440 height 900
+11/15/2011 09:30:36 PM - src/floating.c:floating_enable:160 - Floating rect: (80, 178) with 1284 x 564
+11/15/2011 09:30:36 PM - src/render.c:render_con:111 - Rendering node 0x901a838 / #aa00aa / layout 0 / children 1 / orient 0
+11/15/2011 09:30:36 PM - src/render.c:render_con:335 - child at (80, 196) with (1284 x 546)
+11/15/2011 09:30:36 PM - src/render.c:render_con:111 - Rendering node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:36 PM - src/render.c:render_con:180 - child will be at 2x1 with size 1280x543
+11/15/2011 09:30:36 PM - src/render.c:render_con:111 - Rendering node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:36 PM - src/render.c:render_con:180 - child will be at 2x1 with size 1280x543
+11/15/2011 09:30:36 PM - src/con.c:con_focus:184 - con_focus = 0x901abe8
+11/15/2011 09:30:36 PM - src/con.c:con_focus:184 - con_focus = 0x901a838
+11/15/2011 09:30:36 PM - src/con.c:con_focus:184 - con_focus = 0x901aa98
+11/15/2011 09:30:36 PM - src/con.c:con_focus:184 - con_focus = 0x8ff5538
+11/15/2011 09:30:36 PM - src/con.c:con_focus:184 - con_focus = 0x900acd8
+11/15/2011 09:30:36 PM - src/randr.c:get_output_containing:84 - comparing x=722 y=460 with x=0 and y=0 width 1440 height 900
+11/15/2011 09:30:36 PM - src/floating.c:floating_maybe_reassign_ws:284 - still the same ws
+11/15/2011 09:30:36 PM - src/randr.c:get_output_containing:84 - comparing x=80 y=178 with x=0 and y=0 width 1440 height 900
+11/15/2011 09:30:36 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:36 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:36 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:36 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 0)
+11/15/2011 09:30:36 PM - src/render.c:render_con:111 - Rendering node 0x8ff53e8 / topdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:36 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 900)
+11/15/2011 09:30:36 PM - src/render.c:render_con:111 - Rendering node 0x8ff5538 / content / layout 0 / children 2 / orient 0
+11/15/2011 09:30:36 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901aa98 / 5: media / layout 0 / children 0 / orient 1
+11/15/2011 09:30:36 PM - src/render.c:render_l_output:93 - child at (0, 900) with (1440 x 0)
+11/15/2011 09:30:36 PM - src/render.c:render_con:111 - Rendering node 0x8ff5688 / bottomdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:36 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:36 PM - src/render.c:render_con:241 - floating child at (80,178) with 1284 x 564
+11/15/2011 09:30:36 PM - src/render.c:render_con:111 - Rendering node 0x901a838 / #aa00aa / layout 0 / children 1 / orient 0
+11/15/2011 09:30:36 PM - src/render.c:render_con:335 - child at (80, 196) with (1284 x 546)
+11/15/2011 09:30:36 PM - src/render.c:render_con:111 - Rendering node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:36 PM - src/render.c:render_con:180 - child will be at 2x1 with size 1280x543
+11/15/2011 09:30:36 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:36 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:36 PM - src/x.c:x_push_node:518 - pushing name [i3 con] floatingcon around 0x901abe8 for con 0x901a838
+11/15/2011 09:30:36 PM - src/x.c:x_push_node:611 - setting rect (80, 178, 1284, 18)
+11/15/2011 09:30:36 PM - src/x.c:x_push_node:674 - mapping container 00a00018 (serial 2328)
+11/15/2011 09:30:36 PM - src/x.c:x_push_node:681 - Sending fake configure notify
+11/15/2011 09:30:36 PM - src/x.c:x_push_node:611 - setting rect (80, 196, 1284, 546)
+11/15/2011 09:30:36 PM - src/x.c:x_push_node:630 - setting window rect (2, 1, 1280, 543)
+11/15/2011 09:30:36 PM - src/x.c:x_push_node:681 - Sending fake configure notify
+11/15/2011 09:30:36 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (82, 197, 1280, 543)
+11/15/2011 09:30:36 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:36 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:36 PM - src/x.c:x_push_node_unmaps:721 - unmapping container (serial 2358)
+11/15/2011 09:30:36 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+single command completely parsed, dropping state...
+done, json output = (null)
+11/15/2011 09:30:36 PM - src/handlers.c:handle_expose_event:626 - window = 00a00018
+11/15/2011 09:30:36 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x00a00012 (received from 0x00a00012), serial 2358
+11/15/2011 09:30:36 PM - src/handlers.c:handle_unmap_notify_event:472 - ignore_unmap = 0 for frame of container 0x901aa98
+11/15/2011 09:30:36 PM - src/handlers.c:handle_focus_in:949 - focus change in, for window 0x01800001
+11/15/2011 09:30:36 PM - src/handlers.c:handle_focus_in:953 - That is con 0x901abe8 / #0000aa
+11/15/2011 09:30:36 PM - src/handlers.c:handle_focus_in:957 - FocusIn event for grab/ungrab, ignoring
+11/15/2011 09:30:36 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/15/2011 09:30:36 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/15/2011 09:30:37 PM - ClientMessage for window 0x01800001
+11/15/2011 09:30:37 PM - src/handlers.c:handle_client_message:672 - toggling fullscreen
+11/15/2011 09:30:37 PM - src/con.c:con_toggle_fullscreen:511 - toggling fullscreen for 0x901abe8 / #0000aa
+11/15/2011 09:30:37 PM - src/con.c:con_toggle_fullscreen:535 - mode now: 1
+11/15/2011 09:30:37 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:37 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:37 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:37 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:37 PM - src/render.c:render_con:180 - child will be at 0x145 with size 1440x611
+11/15/2011 09:30:37 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:37 PM - src/render.c:render_con:241 - floating child at (80,178) with 1284 x 564
+11/15/2011 09:30:37 PM - src/render.c:render_con:111 - Rendering node 0x901a838 / #aa00aa / layout 0 / children 1 / orient 0
+11/15/2011 09:30:37 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:37 PM - src/render.c:render_con:180 - child will be at 0x10 with size 1284x544
+11/15/2011 09:30:37 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:37 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:37 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:37 PM - src/x.c:x_push_node:611 - setting rect (80, 178, 1284, 564)
+11/15/2011 09:30:37 PM - src/x.c:x_push_node:630 - setting window rect (0, 10, 1284, 544)
+11/15/2011 09:30:37 PM - src/x.c:x_push_node:681 - Sending fake configure notify
+11/15/2011 09:30:37 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (80, 188, 1284, 544)
+11/15/2011 09:30:37 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:37 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:37 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:37 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:37 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:37 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:37 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:37 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:37 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:37 PM - src/handlers.c:handle_configure_request:336 - window 0x01800001 wants to be at 2x1 with 1280x543
+11/15/2011 09:30:37 PM - src/handlers.c:handle_configure_request:367 - Configure request!
+11/15/2011 09:30:37 PM - src/con.c:con_is_floating:339 - checking if con 0x901abe8 is floating
+11/15/2011 09:30:37 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:37 PM - src/handlers.c:handle_configure_request:379 - Container is a floating leaf node, will do that.
+11/15/2011 09:30:37 PM - src/randr.c:get_output_containing:84 - comparing x=722 y=460 with x=0 and y=0 width 1440 height 900
+11/15/2011 09:30:37 PM - src/floating.c:floating_maybe_reassign_ws:284 - still the same ws
+11/15/2011 09:30:37 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:37 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:37 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:37 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:37 PM - src/render.c:render_con:180 - child will be at 0x145 with size 1440x611
+11/15/2011 09:30:37 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:37 PM - src/render.c:render_con:241 - floating child at (80,178) with 1284 x 564
+11/15/2011 09:30:37 PM - src/render.c:render_con:111 - Rendering node 0x901a838 / #aa00aa / layout 0 / children 1 / orient 0
+11/15/2011 09:30:37 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:37 PM - src/render.c:render_con:180 - child will be at 0x10 with size 1284x544
+11/15/2011 09:30:37 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:37 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:37 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:37 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:37 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:37 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:37 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (80, 188, 1284, 544)
+11/15/2011 09:30:37 PM - src/handlers.c:handle_configure_request:336 - window 0x01800001 wants to be at 2x1 with 1280x543
+11/15/2011 09:30:37 PM - src/handlers.c:handle_configure_request:367 - Configure request!
+11/15/2011 09:30:37 PM - src/con.c:con_is_floating:339 - checking if con 0x901abe8 is floating
+11/15/2011 09:30:37 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:37 PM - src/handlers.c:handle_configure_request:379 - Container is a floating leaf node, will do that.
+11/15/2011 09:30:37 PM - src/randr.c:get_output_containing:84 - comparing x=722 y=460 with x=0 and y=0 width 1440 height 900
+11/15/2011 09:30:37 PM - src/floating.c:floating_maybe_reassign_ws:284 - still the same ws
+11/15/2011 09:30:37 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:37 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:37 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:37 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:37 PM - src/render.c:render_con:180 - child will be at 0x145 with size 1440x611
+11/15/2011 09:30:37 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:37 PM - src/render.c:render_con:241 - floating child at (80,178) with 1284 x 564
+11/15/2011 09:30:37 PM - src/render.c:render_con:111 - Rendering node 0x901a838 / #aa00aa / layout 0 / children 1 / orient 0
+11/15/2011 09:30:37 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:37 PM - src/render.c:render_con:180 - child will be at 0x10 with size 1284x544
+11/15/2011 09:30:37 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:37 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:37 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:37 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:37 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:37 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:37 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (80, 188, 1284, 544)
+11/15/2011 09:30:38 PM - ClientMessage for window 0x01800001
+11/15/2011 09:30:38 PM - src/handlers.c:handle_client_message:672 - toggling fullscreen
+11/15/2011 09:30:38 PM - src/con.c:con_toggle_fullscreen:511 - toggling fullscreen for 0x901abe8 / #0000aa
+11/15/2011 09:30:38 PM - src/con.c:con_toggle_fullscreen:535 - mode now: 0
+11/15/2011 09:30:38 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:38 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 0)
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x8ff53e8 / topdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:38 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 900)
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x8ff5538 / content / layout 0 / children 2 / orient 0
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901aa98 / 5: media / layout 0 / children 0 / orient 1
+11/15/2011 09:30:38 PM - src/render.c:render_l_output:93 - child at (0, 900) with (1440 x 0)
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x8ff5688 / bottomdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:38 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:38 PM - src/render.c:render_con:241 - floating child at (80,178) with 1284 x 564
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x901a838 / #aa00aa / layout 0 / children 1 / orient 0
+11/15/2011 09:30:38 PM - src/render.c:render_con:335 - child at (80, 196) with (1284 x 546)
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:38 PM - src/render.c:render_con:180 - child will be at 2x1 with size 1280x543
+11/15/2011 09:30:38 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:38 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:38 PM - src/x.c:x_push_node:611 - setting rect (80, 196, 1284, 546)
+11/15/2011 09:30:38 PM - src/x.c:x_push_node:630 - setting window rect (2, 1, 1280, 543)
+11/15/2011 09:30:38 PM - src/x.c:x_push_node:681 - Sending fake configure notify
+11/15/2011 09:30:38 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (82, 197, 1280, 543)
+11/15/2011 09:30:38 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:38 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:38 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:38 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:38 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:38 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:38 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:38 PM - src/handlers.c:handle_configure_request:336 - window 0x01800001 wants to be at 0x10 with 1284x544
+11/15/2011 09:30:38 PM - src/handlers.c:handle_configure_request:367 - Configure request!
+11/15/2011 09:30:38 PM - src/con.c:con_is_floating:339 - checking if con 0x901abe8 is floating
+11/15/2011 09:30:38 PM - src/handlers.c:handle_configure_request:379 - Container is a floating leaf node, will do that.
+11/15/2011 09:30:38 PM - src/randr.c:get_output_containing:84 - comparing x=722 y=460 with x=0 and y=0 width 1440 height 900
+11/15/2011 09:30:38 PM - src/floating.c:floating_maybe_reassign_ws:284 - still the same ws
+11/15/2011 09:30:38 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:38 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 0)
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x8ff53e8 / topdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:38 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 900)
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x8ff5538 / content / layout 0 / children 2 / orient 0
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901aa98 / 5: media / layout 0 / children 0 / orient 1
+11/15/2011 09:30:38 PM - src/render.c:render_l_output:93 - child at (0, 900) with (1440 x 0)
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x8ff5688 / bottomdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:38 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:38 PM - src/render.c:render_con:241 - floating child at (80,178) with 1284 x 564
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x901a838 / #aa00aa / layout 0 / children 1 / orient 0
+11/15/2011 09:30:38 PM - src/render.c:render_con:335 - child at (80, 196) with (1284 x 546)
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:38 PM - src/render.c:render_con:180 - child will be at 2x1 with size 1280x543
+11/15/2011 09:30:38 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:38 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:38 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:38 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:38 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:38 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (82, 197, 1280, 543)
+11/15/2011 09:30:38 PM - src/handlers.c:handle_configure_request:336 - window 0x01800001 wants to be at 0x10 with 1284x544
+11/15/2011 09:30:38 PM - src/handlers.c:handle_configure_request:367 - Configure request!
+11/15/2011 09:30:38 PM - src/con.c:con_is_floating:339 - checking if con 0x901abe8 is floating
+11/15/2011 09:30:38 PM - src/handlers.c:handle_configure_request:379 - Container is a floating leaf node, will do that.
+11/15/2011 09:30:38 PM - src/randr.c:get_output_containing:84 - comparing x=722 y=460 with x=0 and y=0 width 1440 height 900
+11/15/2011 09:30:38 PM - src/floating.c:floating_maybe_reassign_ws:284 - still the same ws
+11/15/2011 09:30:38 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:38 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 0)
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x8ff53e8 / topdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:38 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 900)
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x8ff5538 / content / layout 0 / children 2 / orient 0
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901aa98 / 5: media / layout 0 / children 0 / orient 1
+11/15/2011 09:30:38 PM - src/render.c:render_l_output:93 - child at (0, 900) with (1440 x 0)
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x8ff5688 / bottomdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:38 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:38 PM - src/render.c:render_con:241 - floating child at (80,178) with 1284 x 564
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x901a838 / #aa00aa / layout 0 / children 1 / orient 0
+11/15/2011 09:30:38 PM - src/render.c:render_con:335 - child at (80, 196) with (1284 x 546)
+11/15/2011 09:30:38 PM - src/render.c:render_con:111 - Rendering node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:38 PM - src/render.c:render_con:180 - child will be at 2x1 with size 1280x543
+11/15/2011 09:30:38 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:38 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:38 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:38 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:38 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:38 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (82, 197, 1280, 543)
+11/15/2011 09:30:39 PM - ClientMessage for window 0x01800001
+11/15/2011 09:30:39 PM - src/handlers.c:handle_client_message:672 - toggling fullscreen
+11/15/2011 09:30:39 PM - src/con.c:con_toggle_fullscreen:511 - toggling fullscreen for 0x901abe8 / #0000aa
+11/15/2011 09:30:39 PM - src/con.c:con_toggle_fullscreen:535 - mode now: 1
+11/15/2011 09:30:39 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:180 - child will be at 0x145 with size 1440x611
+11/15/2011 09:30:39 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:39 PM - src/render.c:render_con:241 - floating child at (80,178) with 1284 x 564
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x901a838 / #aa00aa / layout 0 / children 1 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:180 - child will be at 0x10 with size 1284x544
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:39 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:39 PM - src/x.c:x_push_node:611 - setting rect (80, 178, 1284, 564)
+11/15/2011 09:30:39 PM - src/x.c:x_push_node:630 - setting window rect (0, 10, 1284, 544)
+11/15/2011 09:30:39 PM - src/x.c:x_push_node:681 - Sending fake configure notify
+11/15/2011 09:30:39 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (80, 188, 1284, 544)
+11/15/2011 09:30:39 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:39 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:39 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:39 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:39 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:39 PM - src/handlers.c:handle_configure_request:336 - window 0x01800001 wants to be at 2x1 with 1280x543
+11/15/2011 09:30:39 PM - src/handlers.c:handle_configure_request:367 - Configure request!
+11/15/2011 09:30:39 PM - src/con.c:con_is_floating:339 - checking if con 0x901abe8 is floating
+11/15/2011 09:30:39 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:39 PM - src/handlers.c:handle_configure_request:379 - Container is a floating leaf node, will do that.
+11/15/2011 09:30:39 PM - src/randr.c:get_output_containing:84 - comparing x=722 y=460 with x=0 and y=0 width 1440 height 900
+11/15/2011 09:30:39 PM - src/floating.c:floating_maybe_reassign_ws:284 - still the same ws
+11/15/2011 09:30:39 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:180 - child will be at 0x145 with size 1440x611
+11/15/2011 09:30:39 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:39 PM - src/render.c:render_con:241 - floating child at (80,178) with 1284 x 564
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x901a838 / #aa00aa / layout 0 / children 1 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:180 - child will be at 0x10 with size 1284x544
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:39 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:39 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:39 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:39 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (80, 188, 1284, 544)
+11/15/2011 09:30:39 PM - src/handlers.c:handle_configure_request:336 - window 0x01800001 wants to be at 2x1 with 1280x543
+11/15/2011 09:30:39 PM - src/handlers.c:handle_configure_request:367 - Configure request!
+11/15/2011 09:30:39 PM - src/con.c:con_is_floating:339 - checking if con 0x901abe8 is floating
+11/15/2011 09:30:39 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:39 PM - src/handlers.c:handle_configure_request:379 - Container is a floating leaf node, will do that.
+11/15/2011 09:30:39 PM - src/randr.c:get_output_containing:84 - comparing x=722 y=460 with x=0 and y=0 width 1440 height 900
+11/15/2011 09:30:39 PM - src/floating.c:floating_maybe_reassign_ws:284 - still the same ws
+11/15/2011 09:30:39 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:180 - child will be at 0x145 with size 1440x611
+11/15/2011 09:30:39 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:39 PM - src/render.c:render_con:241 - floating child at (80,178) with 1284 x 564
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x901a838 / #aa00aa / layout 0 / children 1 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:180 - child will be at 0x10 with size 1284x544
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:39 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:39 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:39 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:39 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (80, 188, 1284, 544)
+11/15/2011 09:30:39 PM - ClientMessage for window 0x01800001
+11/15/2011 09:30:39 PM - src/handlers.c:handle_client_message:672 - toggling fullscreen
+11/15/2011 09:30:39 PM - src/con.c:con_toggle_fullscreen:511 - toggling fullscreen for 0x901abe8 / #0000aa
+11/15/2011 09:30:39 PM - src/con.c:con_toggle_fullscreen:535 - mode now: 0
+11/15/2011 09:30:39 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 0)
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x8ff53e8 / topdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:39 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 900)
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x8ff5538 / content / layout 0 / children 2 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901aa98 / 5: media / layout 0 / children 0 / orient 1
+11/15/2011 09:30:39 PM - src/render.c:render_l_output:93 - child at (0, 900) with (1440 x 0)
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x8ff5688 / bottomdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:39 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:39 PM - src/render.c:render_con:241 - floating child at (80,178) with 1284 x 564
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x901a838 / #aa00aa / layout 0 / children 1 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:335 - child at (80, 196) with (1284 x 546)
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:180 - child will be at 2x1 with size 1280x543
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:39 PM - src/x.c:x_push_node:611 - setting rect (80, 196, 1284, 546)
+11/15/2011 09:30:39 PM - src/x.c:x_push_node:630 - setting window rect (2, 1, 1280, 543)
+11/15/2011 09:30:39 PM - src/x.c:x_push_node:681 - Sending fake configure notify
+11/15/2011 09:30:39 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (82, 197, 1280, 543)
+11/15/2011 09:30:39 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:39 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:39 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:39 PM - src/handlers.c:handle_configure_request:336 - window 0x01800001 wants to be at 0x10 with 1284x544
+11/15/2011 09:30:39 PM - src/handlers.c:handle_configure_request:367 - Configure request!
+11/15/2011 09:30:39 PM - src/con.c:con_is_floating:339 - checking if con 0x901abe8 is floating
+11/15/2011 09:30:39 PM - src/handlers.c:handle_configure_request:379 - Container is a floating leaf node, will do that.
+11/15/2011 09:30:39 PM - src/randr.c:get_output_containing:84 - comparing x=722 y=460 with x=0 and y=0 width 1440 height 900
+11/15/2011 09:30:39 PM - src/floating.c:floating_maybe_reassign_ws:284 - still the same ws
+11/15/2011 09:30:39 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 0)
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x8ff53e8 / topdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:39 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 900)
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x8ff5538 / content / layout 0 / children 2 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901aa98 / 5: media / layout 0 / children 0 / orient 1
+11/15/2011 09:30:39 PM - src/render.c:render_l_output:93 - child at (0, 900) with (1440 x 0)
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x8ff5688 / bottomdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:39 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:39 PM - src/render.c:render_con:241 - floating child at (80,178) with 1284 x 564
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x901a838 / #aa00aa / layout 0 / children 1 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:335 - child at (80, 196) with (1284 x 546)
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:180 - child will be at 2x1 with size 1280x543
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:39 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:39 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:39 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (82, 197, 1280, 543)
+11/15/2011 09:30:39 PM - src/handlers.c:handle_configure_request:336 - window 0x01800001 wants to be at 0x10 with 1284x544
+11/15/2011 09:30:39 PM - src/handlers.c:handle_configure_request:367 - Configure request!
+11/15/2011 09:30:39 PM - src/con.c:con_is_floating:339 - checking if con 0x901abe8 is floating
+11/15/2011 09:30:39 PM - src/handlers.c:handle_configure_request:379 - Container is a floating leaf node, will do that.
+11/15/2011 09:30:39 PM - src/randr.c:get_output_containing:84 - comparing x=722 y=460 with x=0 and y=0 width 1440 height 900
+11/15/2011 09:30:39 PM - src/floating.c:floating_maybe_reassign_ws:284 - still the same ws
+11/15/2011 09:30:39 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 0)
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x8ff53e8 / topdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:39 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 900)
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x8ff5538 / content / layout 0 / children 2 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901aa98 / 5: media / layout 0 / children 0 / orient 1
+11/15/2011 09:30:39 PM - src/render.c:render_l_output:93 - child at (0, 900) with (1440 x 0)
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x8ff5688 / bottomdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:39 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:39 PM - src/render.c:render_con:241 - floating child at (80,178) with 1284 x 564
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x901a838 / #aa00aa / layout 0 / children 1 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:335 - child at (80, 196) with (1284 x 546)
+11/15/2011 09:30:39 PM - src/render.c:render_con:111 - Rendering node 0x901abe8 / #0000aa / layout 0 / children 0 / orient 0
+11/15/2011 09:30:39 PM - src/render.c:render_con:180 - child will be at 2x1 with size 1280x543
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:39 PM - src/con.c:con_border_style:928 - this one is fullscreen! overriding BS_NONE
+11/15/2011 09:30:39 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:39 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:39 PM - src/xcb.c:fake_absolute_configure_notify:96 - fake rect = (82, 197, 1280, 543)
+11/15/2011 09:30:40 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x01800001 (received from 0x01800001), serial 2544
+11/15/2011 09:30:40 PM - src/tree.c:tree_close:143 - next = 0x901a838, focused = 0x901abe8
+11/15/2011 09:30:40 PM - src/tree.c:tree_close:145 - closing 0x901abe8, kill_window = 0
+11/15/2011 09:30:40 PM - src/con.c:con_is_floating:339 - checking if con 0x901abe8 is floating
+11/15/2011 09:30:40 PM - src/tree.c:tree_close:205 - Container was floating, killing floating container
+11/15/2011 09:30:40 PM - src/con.c:con_next_focused:707 - selecting next for CT_FLOATING_CON
+11/15/2011 09:30:40 PM - src/con.c:con_next_focused:709 - next = (nil)
+11/15/2011 09:30:40 PM - src/con.c:con_next_focused:712 - using prev, next = (nil)
+11/15/2011 09:30:40 PM - src/con.c:con_next_focused:717 - no more floating containers for next = 0x901aa98, restoring workspace focus
+11/15/2011 09:30:40 PM - src/con.c:con_next_focused:721 - skipping container itself, we want the next client
+11/15/2011 09:30:40 PM - src/con.c:con_next_focused:726 - Focus list empty, returning ws
+11/15/2011 09:30:40 PM - src/tree.c:tree_close:143 - next = 0x901aa98, focused = 0x901abe8
+11/15/2011 09:30:40 PM - src/tree.c:tree_close:145 - closing 0x901a838, kill_window = 0
+11/15/2011 09:30:40 PM - src/con.c:con_is_floating:339 - checking if con 0x901a838 is floating
+11/15/2011 09:30:40 PM - src/tree.c:tree_close:234 - focusing 0x901aa98 / 5: media
+11/15/2011 09:30:40 PM - src/con.c:con_focus:184 - con_focus = 0x901aa98
+11/15/2011 09:30:40 PM - src/con.c:con_focus:184 - con_focus = 0x8ff5538
+11/15/2011 09:30:40 PM - src/con.c:con_focus:184 - con_focus = 0x900acd8
+11/15/2011 09:30:40 PM - src/con.c:con_on_remove_child:1008 - on_remove_child
+11/15/2011 09:30:40 PM - workspace visible? fs = 0x901aa98, ws = 0x901aa98
+11/15/2011 09:30:40 PM - src/tree.c:tree_close:207 - parent container killed
+11/15/2011 09:30:40 PM - src/tree.c:tree_close:228 - No next container, i will just exit now
+11/15/2011 09:30:40 PM - src/tree.c:tree_render:375 - -- BEGIN RENDERING --
+11/15/2011 09:30:40 PM - src/render.c:render_con:111 - Rendering node 0x8ff5cc8 / root / layout 0 / children 1 / orient 0
+11/15/2011 09:30:40 PM - src/render.c:render_con:111 - Rendering node 0x900acd8 / eDP1 / layout 4 / children 3 / orient 0
+11/15/2011 09:30:40 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 0)
+11/15/2011 09:30:40 PM - src/render.c:render_con:111 - Rendering node 0x8ff53e8 / topdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:40 PM - src/render.c:render_l_output:93 - child at (0, 0) with (1440 x 900)
+11/15/2011 09:30:40 PM - src/render.c:render_con:111 - Rendering node 0x8ff5538 / content / layout 0 / children 2 / orient 0
+11/15/2011 09:30:40 PM - src/render.c:render_con:111 - Rendering fullscreen node 0x901aa98 / 5: media / layout 0 / children 0 / orient 1
+11/15/2011 09:30:40 PM - src/render.c:render_l_output:93 - child at (0, 900) with (1440 x 0)
+11/15/2011 09:30:40 PM - src/render.c:render_con:111 - Rendering node 0x8ff5688 / bottomdock / layout 3 / children 0 / orient 2
+11/15/2011 09:30:40 PM - src/render.c:render_con:233 - Rendering floating windows:
+11/15/2011 09:30:40 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:40 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:40 PM - src/x.c:x_push_changes:848 - Not updating focus (to 0x901aa98 / 5: media), focused window is not mapped.
+11/15/2011 09:30:40 PM - src/x.c:x_push_changes:877 - Still no window focused, better set focus to the root window
+11/15/2011 09:30:40 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:40 PM - src/tree.c:tree_render:384 - -- END RENDERING --
+11/15/2011 09:30:40 PM - src/x.c:x_push_changes:760 - -- PUSHING WINDOW STACK --
+11/15/2011 09:30:40 PM - src/x.c:x_push_changes:813 - PUSHING CHANGES
+11/15/2011 09:30:40 PM - src/x.c:x_push_changes:848 - Not updating focus (to 0x901aa98 / 5: media), focused window is not mapped.
+11/15/2011 09:30:40 PM - src/x.c:x_push_changes:877 - Still no window focused, better set focus to the root window
+11/15/2011 09:30:40 PM - src/x.c:x_push_changes:883 - ENDING CHANGES
+11/15/2011 09:30:40 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x01800001 (received from 0x00a00013), serial 2544
+11/15/2011 09:30:40 PM - Not a managed window, ignoring UnmapNotify event
+11/15/2011 09:30:40 PM - src/handlers.c:handle_focus_in:949 - focus change in, for window 0x01800001
+11/15/2011 09:30:40 PM - src/handlers.c:handle_expose_event:626 - window = 00a00013
+11/15/2011 09:30:40 PM - expose event for unknown window, ignoring
+11/15/2011 09:30:40 PM - src/handlers.c:handle_enter_notify:172 - enter_notify for 00a00013, mode = 0, detail 2, serial 2544
+11/15/2011 09:30:40 PM - src/handlers.c:handle_enter_notify:173 - coordinates 640, 254
+11/15/2011 09:30:40 PM - src/handlers.c:handle_enter_notify:194 - Getting screen at 720 x 450
+11/15/2011 09:30:40 PM - src/randr.c:get_output_containing:84 - comparing x=720 y=450 with x=0 and y=0 width 1440 height 900
+11/15/2011 09:30:40 PM - src/workspace.c:_workspace_show:201 - Not switching, already there.
+11/15/2011 09:30:40 PM - src/con.c:con_focus:184 - con_focus = 0x901aa98
+11/15/2011 09:30:40 PM - src/con.c:con_focus:184 - con_focus = 0x8ff5538
+11/15/2011 09:30:40 PM - src/con.c:con_focus:184 - con_focus = 0x900acd8
+11/15/2011 09:30:40 PM - src/handlers.c:handle_destroy_notify_event:537 - destroy notify for 0x01800001, 0x01800001
+11/15/2011 09:30:40 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x01800001 (received from 0x01800001), serial 2544
+11/15/2011 09:30:40 PM - Not a managed window, ignoring UnmapNotify event
+11/15/2011 09:30:40 PM - src/handlers.c:handle_destroy_notify_event:537 - destroy notify for 0x00a00013, 0x01800001
+11/15/2011 09:30:40 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x01800001 (received from 0x00a00013), serial 2544
+11/15/2011 09:30:40 PM - Not a managed window, ignoring UnmapNotify event
+11/15/2011 09:30:40 PM - src/main.c:xcb_check_cb:110 - Expected X11 Error received for sequence 9f1
+11/15/2011 09:30:40 PM - src/main.c:xcb_check_cb:110 - Expected X11 Error received for sequence 9f2
+11/15/2011 09:30:40 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x00a00013 (received from 0x00a00013), serial 2547
+11/15/2011 09:30:40 PM - Not a managed window, ignoring UnmapNotify event
+11/15/2011 09:30:40 PM - src/handlers.c:handle_enter_notify:172 - enter_notify for 000000ab, mode = 0, detail 2, serial 2547
+11/15/2011 09:30:40 PM - src/handlers.c:handle_enter_notify:173 - coordinates 720, 450
+11/15/2011 09:30:40 PM - src/handlers.c:handle_enter_notify:194 - Getting screen at 720 x 450
+11/15/2011 09:30:40 PM - src/randr.c:get_output_containing:84 - comparing x=720 y=450 with x=0 and y=0 width 1440 height 900
+11/15/2011 09:30:40 PM - src/workspace.c:_workspace_show:201 - Not switching, already there.
+11/15/2011 09:30:40 PM - src/con.c:con_focus:184 - con_focus = 0x901aa98
+11/15/2011 09:30:40 PM - src/con.c:con_focus:184 - con_focus = 0x8ff5538
+11/15/2011 09:30:40 PM - src/con.c:con_focus:184 - con_focus = 0x900acd8
+11/15/2011 09:30:40 PM - src/handlers.c:handle_destroy_notify_event:537 - destroy notify for 0x00a00013, 0x00a00013
+11/15/2011 09:30:40 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x00a00013 (received from 0x00a00013), serial 2547
+11/15/2011 09:30:40 PM - Not a managed window, ignoring UnmapNotify event
+11/15/2011 09:30:40 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x00a00018 (received from 0x00a00018), serial 2550
+11/15/2011 09:30:40 PM - Not a managed window, ignoring UnmapNotify event
+11/15/2011 09:30:40 PM - src/handlers.c:handle_destroy_notify_event:537 - destroy notify for 0x00a00018, 0x00a00018
+11/15/2011 09:30:40 PM - src/handlers.c:handle_unmap_notify_event:460 - UnmapNotify for 0x00a00018 (received from 0x00a00018), serial 2550
+11/15/2011 09:30:40 PM - Not a managed window, ignoring UnmapNotify event
+11/15/2011 09:30:40 PM - src/main.c:xkb_got_event:136 - Handling XKB event
+11/15/2011 09:30:40 PM - src/handlers.c:handle_key_press:89 - Keypress 10, state raw = 64
+11/15/2011 09:30:40 PM - src/handlers.c:handle_key_press:93 - (removed numlock, state = 64)
+11/15/2011 09:30:40 PM - src/handlers.c:handle_key_press:97 - (removed upper 8 bits, state = 64)
+11/15/2011 09:30:40 PM - src/handlers.c:handle_key_press:102 - (checked mode_switch, state 64)

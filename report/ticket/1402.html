@@ -1,0 +1,716 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #1402 (i3status battery output messed up)
+     – i3 window manager
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/report/search" />
+        <link rel="prev" href="/report/ticket/1401" title="Ticket #1401" />
+        <link rel="last" href="/report/ticket/1444" title="Ticket #1444" />
+        <link rel="help" href="/report/wiki/TracGuide" />
+        <link rel="alternate" href="/report/ticket/1402?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/report/ticket/1402?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/report/ticket/1402?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/report/ticket/1403" title="Ticket #1403" />
+        <link rel="start" href="/report/wiki" />
+        <link rel="stylesheet" href="/report/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/report/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/report/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/report/chrome/common/favicon.png" type="image/png" />
+        <link rel="icon" href="/report/chrome/common/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/report/search/opensearch" title="Search i3 window manager" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="934595faf7e6641afb388887";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/report/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript" src="/report/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        $(".trac-topnav a").click(function() { $("#modify").parent().removeClass("collapsed"); });
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/report/wiki/TracIni#header_logo-section"><img src="/chrome/common/logo_bugs.png" alt="(i3 logo)" height="62" width="65" /></a>
+      </div>
+      <form id="search" action="/report/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/login">Login</a></li><li><a href="/report/prefs">Preferences</a></li><li class="last"><a href="/report/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/report/timeline">Timeline</a></li><li class="active"><a href="/report/report">View Tickets</a></li><li class="last"><a href="/report/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/report/ticket/1401" title="Ticket #1401">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/report/ticket/1403" title="Ticket #1403">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/report/timeline?from=2014-11-30T14%3A42%3A05%2B01%3A00&amp;precision=second" title="See timeline at 11/30/14 14:42:05">4 months ago</a></p>
+    <p>Last modified <a class="timeline" href="/report/timeline?from=2014-12-22T11%3A09%3A40%2B01%3A00&amp;precision=second" title="See timeline at 12/22/14 11:09:40">3 months ago</a></p>
+  </div>
+  <h2>
+    <a href="/report/ticket/1402" class="trac-id">#1402</a>
+    <span class="trac-status">
+      <a href="/report/query?status=infoneeded_new">infoneeded_new</a>
+    </span>
+    <span class="trac-type">
+      <a href="/report/query?status=!closed&amp;type=defect">defect</a>
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">i3status battery output messed up</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable">leonard.r.koenig@…</td>
+      <th id="h_owner" class="missing">Owned by:</th>
+      <td headers="h_owner"></td>
+    </tr>
+    <tr>
+        <th id="h_priority">
+          Priority:
+        </th>
+        <td headers="h_priority">
+              <a href="/report/query?status=!closed&amp;priority=major">major</a>
+        </td>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/report/query?status=!closed&amp;component=general">general</a>
+        </td>
+    </tr><tr>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/report/query?status=!closed&amp;version=4.8">4.8</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_reprod">
+          Is it reproducible?:
+        </th>
+        <td headers="h_reprod">
+              <a href="/report/query?status=!closed&amp;reprod=Always">Always</a>
+        </td>
+    </tr><tr>
+        <th id="h_gitversion">
+          git version:
+        </th>
+        <td headers="h_gitversion">
+              4.8 (2014-06-15, branch "4.8")
+        </td>
+        <th id="h_os">
+          Operating system:
+        </th>
+        <td headers="h_os">
+              <a href="/report/query?status=!closed&amp;os=Affects+all">Affects all</a>
+        </td>
+    </tr><tr>
+        <th id="h_app" class="missing">
+          X11 program:
+        </th>
+        <td headers="h_app">
+        </td>
+        <th id="h_distri" class="missing">
+          Distribution / flavor:
+        </th>
+        <td headers="h_distri">
+        </td>
+    </tr><tr>
+        <th id="h_ircnick" class="missing">
+          Your IRC nick:
+        </th>
+        <td headers="h_ircnick">
+        </td>
+        <th class="missing">
+        </th>
+        <td>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <div class="searchable">
+      <p>
+When i3status' "output_format = term", with no battery inserted "No battery" is displayed but in i3bar "BAT -nan%" is shown (this also does happen when the format is "dzen2" or "xmobar").<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(2)</span></h3>
+        <div class="attachments">
+          <dl class="attachments">
+              <dt>
+    <a href="/report/attachment/ticket/1402/i3status.log.bz2" title="View attachment">i3status.log.bz2</a><a href="/report/raw-attachment/ticket/1402/i3status.log.bz2" class="trac-rawlink" title="Download">​</a>
+       (<span title="11026 bytes">10.8 KB</span>) -
+      added by <em>leonard.r.koenig@…</em> <a class="timeline" href="/report/timeline?from=2014-12-14T20%3A39%3A56%2B01%3A00&amp;precision=second" title="See timeline at 12/14/14 20:39:56">4 months ago</a>.
+  </dt>
+              <dt>
+    <a href="/report/attachment/ticket/1402/i3bar.log.bz2" title="View attachment">i3bar.log.bz2</a><a href="/report/raw-attachment/ticket/1402/i3bar.log.bz2" class="trac-rawlink" title="Download">​</a>
+       (<span title="75682 bytes">73.9 KB</span>) -
+      added by <em>leonard.r.koenig@…</em> <a class="timeline" href="/report/timeline?from=2014-12-14T20%3A42%3A36%2B01%3A00&amp;precision=second" title="See timeline at 12/14/14 20:42:36">4 months ago</a>.
+  </dt>
+          </dl>
+          <p>
+            Download all attachments as: <a rel="nofollow" href="/report/zip-attachment/ticket/1402/">.zip</a>
+          </p>
+          
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/report/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(12)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1417365215709827">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-11-30T17%3A33%3A35%2B01%3A00&amp;precision=second" title="See timeline at 11/30/14 17:33:35">4 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-reprod">
+      <strong class="trac-field-reprod">Is it reproducible?</strong>
+        set to <em>Always</em>
+    </li><li class="trac-field-os">
+      <strong class="trac-field-os">Operating system</strong>
+        set to <em>Affects all</em>
+    </li><li class="trac-field-status">
+      <strong class="trac-field-status">Status</strong>
+        changed from <em>new</em> to <em>infoneeded_new</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+That sounds really weird. Are you 100% sure that both i3status instances use the same config file? What happens when you change output_format to i3bar, but run i3status on the terminal? Can you provide that output?<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1417367190346927">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-11-30T18%3A06%3A30%2B01%3A00&amp;precision=second" title="See timeline at 11/30/14 18:06:30">4 months ago</a> by leonard.r.koenig@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+that's exactly what I meant and that's why thought that it's a i3status bug. Here you go:<br />
+</p>
+<p>
+{"version":1}<br />
+[<br />
+[{"name":"ipv6","color":"<a class="missing ticket">#00</a>FF00","full_text":"2003:45:ee73:5500:21e:64ff:fe33:331c&#34;},{&#34;name&#34;:&#34;disk_info&#34;,&#34;instance&#34;:&#34;/&#34;,&#34;full_text&#34;:&#34;10,2 GiB"},{"name":"wireless","instance":"wlp7s0","color":"<a class="missing ticket">#00</a>FF00","full_text":"W: (100% at Fritz!Box KuDo15) 192.168.178.25"},{"name":"ethernet","instance":"eth0","color":"#FF0000","full_text":"E: down"},{"name":"battery","instance":"/sys/class/power_supply/ACAD/uevent","full_text":"BAT -nan%"},{"name":"tztime","full_text":"2014-11-30 18:01:31"}]<br />
+</p>
+<p>
+My batteryconfig in .i3status:<br />
+</p>
+<p>
+battery 0 {<br />
+</p>
+<blockquote>
+<p>
+format = "%status %remaining %percentage"                                                                                                                         <br />
+</p>
+</blockquote>
+<blockquote>
+<p>
+path = "/sys/class/power_supply/ACAD/uevent"<br />
+</p>
+</blockquote>
+<p>
+I've figured out that the "-%nan" comes from the %percentage and %status is responsible for the "BAT".<br />
+</p>
+<p>
+2014-11-30 17:33 GMT+01:00 i3 window manager bar:<br />
+<a class="infoneeded_new ticket" href="/report/ticket/1402" title="defect: i3status battery output messed up (infoneeded_new)">#1402</a>: i3status battery output messed up<br />
+</p>
+<hr />
+<blockquote>
+<p>
+Reporter:  foo   |                  Owner:<br />
+</p>
+<blockquote>
+<p>
+Type:  defect               |                 Status:<br />
+</p>
+</blockquote>
+<p>
+Priority:  major                |  infoneeded_new<br />
+</p>
+<blockquote>
+<p>
+Version:  4.8                  |              Component:  general<br />
+</p>
+</blockquote>
+<p>
+Keywords:                       |             Resolution:<br />
+</p>
+</blockquote>
+<blockquote>
+<p>
+git version:  4.8 (2014-06-15,     |    Is it reproducible?:  Always<br />
+branch "4.8")                      |       Operating system:  Affects all<br />
+X11 program:                       |  Distribution / flavor:<br />
+</p>
+</blockquote>
+<p>
+Your IRC nick:                       |<br />
+</p>
+<hr />
+<p>
+Changes (by michael):<br />
+</p>
+<ul><li>status:  new =&gt; infoneeded_new
+</li><li>os:   =&gt; Affects all
+</li><li>reprod:   =&gt; Always
+</li></ul><p>
+Comment:<br />
+</p>
+<blockquote>
+<p>
+That sounds really weird. Are you 100% sure that both i3status instances<br />
+use the same config file? What happens when you change output_format to<br />
+i3bar, but run i3status on the terminal? Can you provide that output?<br />
+</p>
+</blockquote>
+<p>
+--<br />
+Ticket URL: bar<br />
+i3 window manager bar<br />
+an improved dynamic tiling window manager<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-3-1417367498545972">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:3" class="cnum">
+    <a href="#comment:3">comment:3</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-11-30T18%3A11%3A38%2B01%3A00&amp;precision=second" title="See timeline at 11/30/14 18:11:38">4 months ago</a> by leonard.r.koenig@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I'm sorry for this messed-up comment but I didn't get the modification system at first<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-4-1418111830080662">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:4" class="cnum">
+    <a href="#comment:4">comment:4</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-12-09T08%3A57%3A10%2B01%3A00&amp;precision=second" title="See timeline at 12/09/14 08:57:10">4 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Can you please run the following two commands? For each of them, let it run for 5 seconds, then cancel using Ctrl+C.<br />
+</p>
+<pre class="wiki">strace -o /tmp/i3status.log -s 2048 -f i3status
+bzip2 /tmp/i3status.log
+</pre><pre class="wiki">ps auxf | grep i3bar
+strace -o /tmp/i3bar.log -s 2048 -f i3bar --bar_id=bar-0 --socket=/run/user/1000/i3/ipc-socket.1555
+bzip2 /tmp/i3bar.log
+</pre><p>
+(replace the i3bar arguments with the same ones that the currently running i3bar uses, hence the ps(1) call).<br />
+</p>
+<p>
+Then provide both /tmp/i3status.log.bz2 and /tmp/i3bar.log.bz2 please.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-12-14T20%3A39%3A56%2B01%3A00&amp;precision=second" title="See timeline at 12/14/14 20:39:56">4 months ago</a> by leonard.r.koenig@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1402/i3status.log.bz2"><em>i3status.log.bz2</em></a><a href="/report/raw-attachment/ticket/1402/i3status.log.bz2" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-5-1418586132736173">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:5" class="cnum">
+    <a href="#comment:5">comment:5</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-12-14T20%3A42%3A12%2B01%3A00&amp;precision=second" title="See timeline at 12/14/14 20:42:12">4 months ago</a> by leonard.r.koenig@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+here you go<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change">
+                
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-12-14T20%3A42%3A36%2B01%3A00&amp;precision=second" title="See timeline at 12/14/14 20:42:36">4 months ago</a> by leonard.r.koenig@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+  <ul class="changes">
+    <li class="trac-field-attachment">
+      <strong class="trac-field-attachment">Attachment</strong>
+        <a href="/report/attachment/ticket/1402/i3bar.log.bz2"><em>i3bar.log.bz2</em></a><a href="/report/raw-attachment/ticket/1402/i3bar.log.bz2" title="Download" class="trac-rawlink">​</a>
+          added
+    </li>
+  </ul>
+
+              </div>
+              <div class="change" id="trac-change-6-1418719248128190">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:6" class="cnum">
+    <a href="#comment:6">comment:6</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-12-16T09%3A40%3A48%2B01%3A00&amp;precision=second" title="See timeline at 12/16/14 09:40:48">3 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Leonard, /sys/class/power_supply/ACAD/uevent is the status of your AC<br />
+</p>
+<blockquote>
+<p>
+adapter, not your battery.  The path to your battery on Linux is usually<br />
+/sys/class/power_supply/BAT0/uevent, or sometimes .../BAT1/uevent, thus<br />
+you don't need to change "path" in .i3status.conf at all; if you have<br />
+BAT1, just change "battery 0" to "battery 1".<br />
+</p>
+</blockquote>
+<blockquote>
+<p>
+If you don't have other subdirectories in /sys/class/power_supply/ except<br />
+ACAD with your battery plugged in, then it sounds like your firmware (ACPI<br />
+DSDT) does not expose battery status to the operating system.<br />
+</p>
+</blockquote>
+
+    </div>
+  <div class="trac-lastedit ">
+    Last edited <a class="timeline" href="/report/timeline?from=2014-12-22T11%3A06%3A19%2B01%3A00&amp;precision=second" title="See timeline at 12/22/14 11:06:19">3 months ago</a>
+        by michael
+      (<a href="/report/ticket/1402?cversion=0&amp;cnum_hist=6#comment:6">previous</a>)
+      (<a href="/report/ticket/1402?action=comment-diff&amp;cnum=6&amp;version=1">diff</a>)
+  </div>
+
+              </div>
+              <div class="change" id="trac-change-7-1418753062466810">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:7" class="cnum">
+    <a href="#comment:7">comment:7</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-12-16T19%3A04%3A22%2B01%3A00&amp;precision=second" title="See timeline at 12/16/14 19:04:22">3 months ago</a> by leonard.r.koenig@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Ah, ok, thanks for this info. I changed it after someone stated it in a forum. Dumb me for not trying BAT1 &gt;.&lt;.<br />
+</p>
+<p>
+Still I'm wondering why i3status was set to "term" it displayed "no battery" whereas else it displayed this cryptic thing. It doesn't use a different config as "output_format" definitely effects it.<br />
+</p>
+<p>
+Anyway, I think you can close it now. My apologies for this :-/.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-8-1418917124688606">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:8" class="cnum">
+    <a href="#comment:8">comment:8</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-12-18T16%3A38%3A44%2B01%3A00&amp;precision=second" title="See timeline at 12/18/14 16:38:44">3 months ago</a> by anonymous
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I've submitted a minor bugfix to battery stats: <a class="ext-link" href="http://cr.i3wm.org/patch/693"><span class="icon">​</span>http://cr.i3wm.org/patch/693</a> , but I don't see how changing only the output format would have the effect you described, either.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-9-1418928080931314">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:9" class="cnum">
+    <a href="#comment:9">comment:9</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-12-18T19%3A41%3A20%2B01%3A00&amp;precision=second" title="See timeline at 12/18/14 19:41:20">3 months ago</a> by leonard.r.koenig@…
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+Atleast, then,  my bugreport wasn't as senseless as it could've been ;-). I've asked a friend who's a bit more in programming than I am but he couldn't find something wrong with it, too (given the short time he just looked over it).<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-10-1419242980489728">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:10" class="cnum">
+    <a href="#comment:10">comment:10</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/report/timeline?from=2014-12-22T11%3A09%3A40%2B01%3A00&amp;precision=second" title="See timeline at 12/22/14 11:09:40">3 months ago</a> by michael
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+    <div class="comment searchable">
+      <p>
+I can’t really say anything with regards to the bug that you originally reported, which is that the output differs depending on the output_format, because in both your strace files, the output_format is set to “i3bar”.<br />
+</p>
+
+    </div>
+
+              </div>
+          </div>
+        </div>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/report/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/report/ticket/1402?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/report/ticket/1402?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/report/ticket/1402?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/report/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/report/about"><strong>Trac 1.0.2</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"><a href="http://i3wm.org/">http://i3wm.org</a></p>
+    </div>
+  </body>
+</html>

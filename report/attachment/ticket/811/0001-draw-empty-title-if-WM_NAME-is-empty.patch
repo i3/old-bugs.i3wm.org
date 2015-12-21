@@ -1,0 +1,35 @@
+From 6bc1c8f2be5ad759d6c88baaec3bdce15f4561ff Mon Sep 17 00:00:00 2001
+From: Sascha Kruse <knopwob@googlemail.com>
+Date: Sun, 23 Sep 2012 06:09:34 +0200
+Subject: [PATCH] draw empty title if WM_NAME is empty
+
+---
+ src/x.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/src/x.c b/src/x.c
+index 0be83ad..f1bfeb7 100644
+--- a/src/x.c
++++ b/src/x.c
+@@ -481,7 +481,7 @@ void x_draw_decoration(Con *con) {
+     int text_offset_y = (con->deco_rect.height - config.font.height) / 2;
+ 
+     struct Window *win = con->window;
+-    if (win == NULL || win->name == NULL) {
++    if (win == NULL) {
+         /* we have a split container which gets a representation
+          * of its children as title
+          */
+@@ -499,6 +499,9 @@ void x_draw_decoration(Con *con) {
+         goto copy_pixmaps;
+     }
+ 
++    if (win->name == NULL)
++        goto copy_pixmaps;
++
+     int indent_level = 0,
+         indent_mult = 0;
+     Con *il_parent = parent;
+-- 
+1.7.12.1
+
